@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="fr" ng-app="vgmApp" ng-controller="MainCtrl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Philippe Matray">
+
+    <title>{{data.title}} : {{data.subtitle}}</title>
+
+    <!-- CDN CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/vgm.min.css" rel="stylesheet" />
+
+    <!-- CDN JS -->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-sanitize.min.js"></script>
+    <script src="//cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+    <script src="//cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature.
+    More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0C0gw1k-il5w_xvWr3Nd11VR4aPSfcbY&sensor=false"></script>
+
+    <!-- Custom JS -->
+    <script src="js/vgm.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top text-shadow-black" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>
+                    <span class="light">{{data.title}}</span> {{data.address.city}}
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse" style="margin-right: -15px;">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">À propos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#hours">Horaires</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#products">Produits</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Intro Header -->
+    <header class="intro" ng-style="{'background': 'url('+data.images.background1+') no-repeat bottom center scroll', 'background-size': 'cover'}">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+
+                    <div class="hidden-xs hidden-sm col-md-3">
+                        <div style="border: solid 2px #999; margin-bottom: 80px; margin-top: 80px; width: 204px;" class="pull-left">
+                            <img ng-src="{{data.images.ban1}}" alt="" style="width: 200px;" />
+                            <img ng-src="{{data.images.logo}}" alt="" style="margin-top: -30px; width: 200px;" />
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="color: #da251c; horiz-align: center; padding-left: 0; padding-right: 0; vert-align: middle;">
+
+                        <div style="background: rgba(0, 0, 0, 0.5); border: 2px solid #666; margin-top: 81px; padding-left: 80px; padding-right: 80px; width: 100%;">
+
+                            <div style="padding: 23px 0;">
+                                <h1 class="brand-heading text-shadow-white-2x">
+                                    <span ng-bind-html="data.title"></span>
+                                </h1>
+                                <h2 class="text-shadow-white-2x" style="margin-top: -30px;">
+                                    <span ng-bind-html="data.title2"></span>
+                                </h2>
+                                <p class="intro-text text-shadow-white" style="font-size: 2em;">
+                                    <span ng-bind-html="data.subtitle"></span>
+                                    <br />
+                                    <a ng-href="tel:{{data.tel2}}">
+                                        <span ng-bind-html="data.tel"></span>
+                                    </a>
+                                </p>
+                                <a href="#about" class="btn btn-circle page-scroll">
+                                    <i class="fa fa-angle-double-down animated" style="color: #da251c;"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="hidden-xs hidden-sm col-md-3">
+                        <div style="border: solid 2px #999; margin-bottom: 80px; margin-top: 80px; width: 204px;" class="pull-right">
+                            <img ng-src="{{data.images.ban2}}" alt="" style="width: 200px;" />
+                            <img ng-src="{{data.images.logo}}" alt="" style="margin-top: -30px; width: 200px;" />
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center"
+             ng-style="{'background': 'url('+data.images.background2+') no-repeat center center', 'background-size': 'cover'}">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2" style="background: rgba(0, 0, 0, 0.5); border: 2px solid #666; margin-bottom: 100px; padding-bottom: 25px; padding-top: 50px;">
+                <h2>À propos</h2>
+                <p>
+                    <span ng-bind-html="data.description.resume"></span>
+                </p>
+                <address>
+                    <p>
+                        <span ng-bind-html="data.address.street"></span>
+                        <br />
+                        {{data.address.zipcode}}&nbsp{{data.address.city | uppercase}}
+                    </p>
+                </address>
+                <p class="intro-text"
+                   style="font-family: Arial; font-size: 2em; text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;">
+                    <a ng-href="tel:{{data.tel2}}">
+                        <span ng-bind-html="data.tel"></span>
+                    </a>
+                </p>
+                <p>
+                    <span ng-bind-html="data.description.info1"></span>
+                </p>
+                <p>
+                    <span ng-bind-html="data.description.info2"></span>
+                </p>
+                <p class="intro-text"
+                   style="font-family: Arial; font-size: 2em; text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;">
+                    <a ng-href="mailto:{{data.email}}">{{data.email}}</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hours Section -->
+    <section id="hours" class="content-section text-center">
+        <div class="hours-section"
+             ng-style="{'background': 'url('+data.images.background3+') no-repeat center center scroll', 'background-size': 'cover'}">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div style="background: rgba(0, 0, 0, 0.5); border: 2px solid #666; margin: -30px; padding: 20px; padding-top: 50px;">
+                        <h2>Horaires</h2>
+                        <p>
+                            <span ng-bind-html="data.hours.opening"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="products" class="container-fluid content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2" style="font-family: arial">
+
+                <h2>Nouveautés</h2>
+                <div class="row">
+                    <div class="flex-container">
+                        <div class="thumbnail" ng-repeat="g in data.games.new" style="margin-right: 20px;">
+                            <img style="width: 200px;" ng-src="{{g.image}}" />
+                            <div class="caption">
+                                <h3>{{g.price | currency : "€"}}</h3>
+                                <p>
+                                    <b style="color: #00cc00;">{{g.available}}</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 50px;">Occasions</h2>
+                <div class="row">
+                    <div class="flex-container">
+                        <div class="thumbnail" ng-repeat="g in data.games.used" style="margin-right: 20px;">
+                            <img style="width: 200px;" ng-src="{{g.image}}" />
+                            <div class="caption">
+                                <h3>{{g.price | currency : "€"}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Map Section -->
+    <div id="map">
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; {{data.title}} 2015</p>
+            <p style="font-size: 1em;">
+                Créé par <a href="http://www.ccross.net">CCross</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

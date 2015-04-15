@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{DEC2AD07-D8D8-4404-9CBC-83BBCEC8BF5E}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{1DE9891B-134F-4851-891F-1D38F11002C8}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\VGMWebsite-WAWS-dev.json = PublishScripts\Configurations\VGMWebsite-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VGM.Web", "VGM.Web\VGM.Web.csproj", "{16C9AB1B-83CE-4B6C-9402-976C1771379C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".documentation", ".documentation", "{3626CC69-DBF8-4EAF-92E2-DA3E196FA9CD}"
+	ProjectSection(SolutionItems) = preProject
+		info.md = info.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16C9AB1B-83CE-4B6C-9402-976C1771379C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C9AB1B-83CE-4B6C-9402-976C1771379C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C9AB1B-83CE-4B6C-9402-976C1771379C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C9AB1B-83CE-4B6C-9402-976C1771379C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DE9891B-134F-4851-891F-1D38F11002C8} = {DEC2AD07-D8D8-4404-9CBC-83BBCEC8BF5E}
+	EndGlobalSection
+EndGlobal
