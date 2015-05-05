@@ -92,39 +92,63 @@
 
                     <div class="hidden-xs hidden-sm col-md-3">
                         <div style="border: solid 2px #999; margin-bottom: 80px; margin-top: 80px; width: 204px;" class="pull-left">
-                            <img ng-src="{{data.images.ban1}}" alt="" style="width: 200px;" />
-                            <img ng-src="{{data.images.logo}}" alt="" style="margin-top: -30px; width: 200px;" />
+                            <img ng-src="{{data.images.ban1}}" alt="" style="width: 200px;"/>
+                            <img ng-src="{{data.images.logo}}" alt="" style="margin-top: -30px; width: 200px;"/>
                         </div>
                     </div>
                     <div class="col-md-6" style="color: #da251c; horiz-align: center; padding-left: 0; padding-right: 0; vert-align: middle;">
 
-                        <div style="background: rgba(0, 0, 0, 0.5); border: 2px solid #666; margin-top: 81px; padding-left: 80px; padding-right: 80px; width: 100%;">
+                        <div class="row">
+                            <div class="col-md-12">
 
-                            <div style="padding: 23px 0; margin-left: -60px; margin-right: -60px;">
-                                <h1 class="brand-heading text-shadow-white-2x">
-                                    <span ng-bind-html="data.title"></span>
-                                </h1>
-                                <h2 class="text-shadow-white-2x" style="margin-top: -30px;">
-                                    <span ng-bind-html="data.title2"></span>
-                                </h2>
-                                <p class="intro-text text-shadow-white" style="font-size: 2em;">
-                                    <span ng-bind-html="data.subtitle" style="font-size: 0.9em;"></span>
-                                    <br />
-                                    <a ng-href="tel:{{data.tel2}}">
-                                        <span ng-bind-html="data.tel"></span>
-                                    </a>
-                                </p>
-                                <a href="#about" class="btn btn-circle page-scroll">
-                                    <i class="fa fa-angle-double-down animated" style="color: #da251c;"></i>
-                                </a>
+                                <div style="background: rgba(0, 0, 0, 0.5); border: 2px solid #666; margin-top: 81px; padding-left: 80px; padding-right: 80px; width: 100%;">
+
+                                    <div style="padding: 23px 0; margin-left: -60px; margin-right: -60px;">
+                                        <h1 class="brand-heading text-shadow-white-2x">
+                                            <span ng-bind-html="data.title"></span>
+                                        </h1>
+                                        <h2 class="text-shadow-white-2x" style="margin-top: -30px;">
+                                            <span ng-bind-html="data.title2"></span>
+                                        </h2>
+                                        <p class="intro-text text-shadow-white" style="font-size: 2em;">
+                                            <span ng-bind-html="data.subtitle" style="font-size: 0.9em;"></span>
+                                            <br />
+                                            <a ng-href="tel:{{data.tel2}}">
+                                                <span ng-bind-html="data.tel"></span>
+                                            </a>
+                                        </p>
+                                        <a href="#about" class="btn btn-circle page-scroll">
+                                            <i class="fa fa-angle-double-down animated" style="color: #da251c;"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
 
+                                <div style="background: rgba(0, 0, 0, 0.5); border: 2px solid #666; margin-top: 20px; margin-bottom: 80px; padding-left: 80px; padding-right: 80px; width: 100%; height: 234px;">
+
+                                    <div style="padding: 23px 0; margin-left: -60px; margin-right: -60px;">
+                                        <h3>
+                                            <span ng-bind-html="data.communication.title"></span>
+                                        </h3>
+                                        <p style="font-size: 1.2em; color: white; margin-top: -20px;">
+                                            <span ng-bind-html="data.communication.content"></span>
+                                        </p>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                     <div class="hidden-xs hidden-sm col-md-3">
                         <div style="border: solid 2px #999; margin-bottom: 80px; margin-top: 80px; width: 204px;" class="pull-right">
-                            <img ng-src="{{data.images.ban2}}" alt="" style="width: 200px;" />
-                            <img ng-src="{{data.images.logo}}" alt="" style="margin-top: -30px; width: 200px;" />
+                            <img ng-src="{{data.images.ban2}}" alt="" style="width: 200px;"/>
+                            <img ng-src="{{data.images.logo}}" alt="" style="margin-top: -30px; width: 200px;"/>
                         </div>
 
                     </div>
@@ -217,6 +241,9 @@
                             <img style="width: 150px;" ng-src="{{g.image}}" />
                             <div class="caption">
                                 <h3>{{g.price | currency : "€"}}</h3>
+                                <p>
+                                    <b style="color: #00cc00;">{{g.available}}</b>
+                                </p>
                             </div>
                         </div>
                     </div>
