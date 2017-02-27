@@ -85,7 +85,8 @@ namespace Microsoft.Toolkit.Uwp.SampleApp
 
         public void NavigateToSample(Sample sample)
         {
-            var pageType = Type.GetType("Microsoft.Toolkit.Uwp.SampleApp.SamplePages." + sample.Type);
+            var domain = sample.Type.Remove(sample.Type.Length - 4);
+            var pageType = Type.GetType($"MidiMinuit.SamplePages.{domain}.{sample.Type}");
 
             if (pageType != null)
             {
