@@ -13,8 +13,9 @@
 using System;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
+using Microsoft.Toolkit.Uwp;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Common
+namespace MidiMinuit.Common
 {
     public class SolidColorBrushConverter : IValueConverter
     {

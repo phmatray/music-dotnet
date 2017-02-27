@@ -13,7 +13,7 @@
 using System;
 using Windows.UI.Xaml.Data;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Common
+namespace MidiMinuit.Common
 {
     internal class BoolStringConverter : IValueConverter
     {

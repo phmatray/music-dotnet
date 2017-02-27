@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.SampleApp;
+using MidiMinuit.Models;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Pages
+namespace MidiMinuit.Pages
 {
     public sealed partial class SamplePicker : INotifyPropertyChanged
     {

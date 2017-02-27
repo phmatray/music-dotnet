@@ -29,7 +29,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -42,7 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -54,7 +54,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -67,7 +67,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -79,7 +79,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -92,7 +92,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
@@ -150,6 +150,9 @@
     <Compile Include="Common\Tools.cs" />
     <Compile Include="Controls\CodeRenderer\CodeRenderer.cs" />
     <Compile Include="Controls\CodeRenderer\CodeRenderer.Properties.cs" />
+    <Compile Include="Controls\GuitarChordControl.xaml.cs">
+      <DependentUpon>GuitarChordControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PropertyControl.xaml.cs">
       <DependentUpon>PropertyControl.xaml</DependentUpon>
     </Compile>
@@ -207,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\GuitarChordControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PropertyControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -243,7 +250,12 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MidiMinuit.Lib\MidiMinuit.Lib.csproj">
+      <Project>{eb72f60a-b97e-4f34-9d19-9e19f81127b1}</Project>
+      <Name>MidiMinuit.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -19,13 +19,15 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Microsoft.Toolkit.Uwp.SampleApp.Models;
+using Microsoft.Toolkit.Uwp;
+using Microsoft.Toolkit.Uwp.SampleApp;
 using Microsoft.Toolkit.Uwp.UI.Controls;
+using MidiMinuit.Models.PropertyDescriptor;
 using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 using Windows.Web.Http;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp
+namespace MidiMinuit.Models
 {
     public class Sample
     {
@@ -38,7 +40,7 @@ namespace Microsoft.Toolkit.Uwp.SampleApp
                 .FirstOrDefault(s => s.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
-        private PropertyDescriptor _propertyDescriptor;
+        private PropertyDescriptor.PropertyDescriptor _propertyDescriptor;
 
         public string Name { get; set; }
 
@@ -171,7 +173,7 @@ namespace Microsoft.Toolkit.Uwp.SampleApp
             }
         }
 
-        public PropertyDescriptor PropertyDescriptor => _propertyDescriptor;
+        public PropertyDescriptor.PropertyDescriptor PropertyDescriptor => _propertyDescriptor;
 
         public async Task PreparePropertyDescriptorAsync()
         {
@@ -190,7 +192,7 @@ namespace Microsoft.Toolkit.Uwp.SampleApp
                     // Look for @[] values and generate associated properties
                     var regularExpression = new Regex(@"@\[(?<name>.+?):(?<type>.+?):(?<value>.+?)(:(?<parameters>.+?))?(:(?<options>.*))*\]");
 
-                    _propertyDescriptor = new PropertyDescriptor { Expando = new ExpandoObject() };
+                    _propertyDescriptor = new PropertyDescriptor.PropertyDescriptor { Expando = new ExpandoObject() };
                     var proxy = (IDictionary<string, object>)_propertyDescriptor.Expando;
 
                     foreach (Match match in regularExpression.Matches(XamlCode))

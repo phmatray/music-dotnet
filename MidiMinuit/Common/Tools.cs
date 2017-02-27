@@ -12,9 +12,10 @@
 
 using System;
 using System.Threading.Tasks;
+using Microsoft.Toolkit.Uwp;
 using Windows.UI.Popups;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp
+namespace MidiMinuit.Common
 {
     internal static class Tools
     {

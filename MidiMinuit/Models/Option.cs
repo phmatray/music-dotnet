@@ -12,7 +12,7 @@
 
 using System;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp
+namespace MidiMinuit.Models
 {
     public class Option
     {

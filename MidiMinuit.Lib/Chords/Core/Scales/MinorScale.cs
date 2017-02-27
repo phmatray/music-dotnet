@@ -1,0 +1,31 @@
+﻿using System.Collections.Generic;
+using GuitarChords.Lib.Notes;
+using GuitarChords.Lib.Scales.Enum;
+
+namespace GuitarChords.Lib.Scales
+{
+    public class MinorScale : Scale
+    {
+        public MinorScale(Note key, ScaleMode mode = ScaleMode.Ionian)
+            : base(ScaleType.Minor, mode)
+        {
+            Notes = new List<Note>
+            {
+                key,
+                key + 2,
+                key + 3,
+                key + 5,
+                key + 7,
+                key + 8,
+                key + 10
+            };
+        }
+
+        public MajorScale RelativeMajor => GetRelativeMajor(Key, Mode);
+
+        public static MajorScale GetRelativeMajor(Note key, ScaleMode mode)
+        {
+            return new MajorScale(key + 3, mode);
+        }
+    }
+}

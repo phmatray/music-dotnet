@@ -14,9 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Toolkit.Uwp;
 using Newtonsoft.Json;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp
+namespace MidiMinuit.Models
 {
     public static class Samples
     {

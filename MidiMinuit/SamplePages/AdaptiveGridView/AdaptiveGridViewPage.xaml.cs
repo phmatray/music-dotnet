@@ -12,12 +12,11 @@
 
 using System;
 using System.Linq;
-using Microsoft.Toolkit.Uwp.SampleApp.Data;
-using Microsoft.Toolkit.Uwp.SampleApp.Models;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Navigation;
+using MidiMinuit.Data;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.SamplePages
+namespace MidiMinuit.SamplePages.AdaptiveGridView
 {
     public sealed partial class AdaptiveGridViewPage
     {
@@ -30,7 +29,7 @@ namespace Microsoft.Toolkit.Uwp.SampleApp.SamplePages
         {
             base.OnNavigatedTo(e);
 
-            AdaptiveGridViewControl.ItemsSource = await new Data.PhotosDataSource().GetItemsAsync();
+            AdaptiveGridViewControl.ItemsSource = await new PhotosDataSource().GetItemsAsync();
             AdaptiveGridViewControl.ItemClick += AdaptiveGridViewControl_ItemClick;
             AdaptiveGridViewControl.SelectionChanged += AdaptiveGridViewControl_SelectionChanged;
         }

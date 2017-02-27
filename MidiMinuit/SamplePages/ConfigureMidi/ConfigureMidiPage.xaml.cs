@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using MidiMinuit;
 using Windows.Devices.Enumeration;
 using Windows.Devices.Midi;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.SamplePages
+namespace MidiMinuit.SamplePages.ConfigureMidi
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

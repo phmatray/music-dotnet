@@ -10,7 +10,7 @@
 // THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
 // ******************************************************************
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Data
+namespace MidiMinuit.Data
 {
     public class PhotoDataItemWithDimension : PhotoDataItem
     {

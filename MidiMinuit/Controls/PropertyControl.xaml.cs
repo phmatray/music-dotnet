@@ -13,16 +13,18 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using Microsoft.Toolkit.Uwp.SampleApp.Common;
-using Microsoft.Toolkit.Uwp.SampleApp.Models;
+using Microsoft.Toolkit.Uwp.SampleApp;
+using MidiMinuit.Common;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
+using MidiMinuit.Models;
+using MidiMinuit.Models.PropertyDescriptor;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Controls
+namespace MidiMinuit.Controls
 {
     public sealed partial class PropertyControl
     {

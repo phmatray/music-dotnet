@@ -13,7 +13,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Models
+namespace MidiMinuit.Models.PropertyDescriptor
 {
     public class PropertyDescriptor
     {

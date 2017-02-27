@@ -4,7 +4,7 @@ using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using MidiMinuit.SamplePages.ConfigureMidi;
 
-namespace MidiMinuit.ViewModels
+namespace MidiMinuit.SamplePages
 {
     /// <summary>
     /// This class contains static references to all the view models in the

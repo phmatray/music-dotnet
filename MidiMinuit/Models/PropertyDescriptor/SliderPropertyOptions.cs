@@ -10,7 +10,7 @@
 // THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
 // ******************************************************************
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Models
+namespace MidiMinuit.Models.PropertyDescriptor
 {
     public class SliderPropertyOptions : PropertyOptions
     {

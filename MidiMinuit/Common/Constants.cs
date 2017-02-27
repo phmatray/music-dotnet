@@ -13,7 +13,7 @@
 using System;
 using Windows.UI;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Common
+namespace MidiMinuit.Common
 {
     public static class Constants
     {

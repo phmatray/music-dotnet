@@ -14,7 +14,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Common
+namespace MidiMinuit.Common
 {
     public class DelegateCommand<T> : ICommand
     {

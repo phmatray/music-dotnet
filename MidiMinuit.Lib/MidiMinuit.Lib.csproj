@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB72F60A-B97E-4F34-9D19-9E19F81127B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MidiMinuit.Lib</RootNamespace>
+    <AssemblyName>MidiMinuit.Lib</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>midiminuit.lib.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="MidiMinuit.Lib.ruleset" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chords\Core\Chords\Base\Chord.cs" />
+    <Compile Include="Chords\Core\Chords\ChordFifth.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajorAugmented.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajorAugmentedSeventhMinor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajorNinthMajor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajorSeventhMajor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajorSeventhMinor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMajorSixthMajor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinorDiminished.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinorDiminishedSeventhDiminished.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinorFifthDiminishedSeventhMinor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinorSeventhMajor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinorSeventhMinor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordMinorSixthMajor.cs" />
+    <Compile Include="Chords\Core\Chords\ChordSuspendedFourth.cs" />
+    <Compile Include="Chords\Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
+    <Compile Include="Chords\Core\Chords\Enum\ChordQuality.cs" />
+    <Compile Include="Chords\Core\Notes\Base\INoteRole.cs" />
+    <Compile Include="Chords\Core\Notes\Base\Interval.cs" />
+    <Compile Include="Chords\Core\Notes\Base\Note.cs" />
+    <Compile Include="Chords\Core\Notes\Base\NoteRole.cs" />
+    <Compile Include="Chords\Core\Notes\Enum\NoteAccidental.cs" />
+    <Compile Include="Chords\Core\Notes\Enum\NoteName.cs" />
+    <Compile Include="Chords\Core\Notes\NoteEleventhAugmented.cs" />
+    <Compile Include="Chords\Core\Notes\NoteEleventhPerfect.cs" />
+    <Compile Include="Chords\Core\Notes\NoteFifthAugmented.cs" />
+    <Compile Include="Chords\Core\Notes\NoteFifthDiminished.cs" />
+    <Compile Include="Chords\Core\Notes\NoteFifthPerfect.cs" />
+    <Compile Include="Chords\Core\Notes\NoteFondamental.cs" />
+    <Compile Include="Chords\Core\Notes\NoteFourthAugmented.cs" />
+    <Compile Include="Chords\Core\Notes\NoteFourthPerfect.cs" />
+    <Compile Include="Chords\Core\Notes\NoteNinthAugmented.cs" />
+    <Compile Include="Chords\Core\Notes\NoteNinthMajor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteNinthMinor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSecondAugmented.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSecondMajor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSecondMinor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSeventhAugmented.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSeventhDiminished.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSeventhMajor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSeventhMinor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSixthMajor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteSixthMinor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteThirdMajor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteThirdMinor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteThirteenthMajor.cs" />
+    <Compile Include="Chords\Core\Notes\NoteThirteenthMinor.cs" />
+    <Compile Include="Chords\Core\Scales\Base\Scale.cs" />
+    <Compile Include="Chords\Core\Scales\Enum\ScaleMode.cs" />
+    <Compile Include="Chords\Core\Scales\Enum\ScaleType.cs" />
+    <Compile Include="Chords\Core\Scales\MajorScale.cs" />
+    <Compile Include="Chords\Core\Scales\MinorScale.cs" />
+    <Compile Include="Chords\Core\Tunings\Base\Tuning.cs" />
+    <Compile Include="Chords\Core\Tunings\Enum\TuningType.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningBaritone.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDobroOpenG.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDoubleDroppedD.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDroppedB.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDroppedC.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDroppedD.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDroppedDVariant.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningDroppedE.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningLuteOrVihuela.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningNashville.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenA.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenAm.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenC.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenC6.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenCm.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenCM7.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenD.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenD5.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenD6.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenDm.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenDsus4.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenE.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenEm.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenEsus11.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenF.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenG.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenG6.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenGm.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningOpenGsus4.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningStandard.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningTuneDownHalfStep.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningTuneDownOneStep.cs" />
+    <Compile Include="Chords\Core\Tunings\TuningTuneDownTwoStep.cs" />
+    <Compile Include="Chords\Tools\Enum\Degree.cs" />
+    <Compile Include="Chords\Tools\Enum\Interval\IntervalEleventh.cs" />
+    <Compile Include="Chords\Tools\Enum\Interval\IntervalFifth.cs" />
+    <Compile Include="Chords\Tools\Enum\Interval\IntervalNinth.cs" />
+    <Compile Include="Chords\Tools\Enum\Interval\IntervalSeventh.cs" />
+    <Compile Include="Chords\Tools\Enum\Interval\IntervalThird.cs" />
+    <Compile Include="Chords\Tools\Enum\Interval\IntervalThirteenth.cs" />
+    <Compile Include="Chords\Tools\Enum\Role.cs" />
+    <Compile Include="Chords\Tools\Enum\UnicodeMusicSymbol.cs" />
+    <Compile Include="Chords\Tools\Extensions\EnumerableExtension.cs" />
+    <Compile Include="Chords\Tools\Extensions\EnumExtension.cs" />
+    <Compile Include="Chords\Tools\Extensions\NoteExtension.cs" />
+    <Compile Include="Chords\Tools\Helpers\EnumTextParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\MidiMinuit.Lib.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chords\Core\Chords\Extensions\" />
+    <Folder Include="Chords\Core\Necks\Base\" />
+    <Folder Include="Chords\Core\Necks\Extensions\" />
+    <Folder Include="Chords\Core\Positions\" />
+    <Folder Include="Chords\Core\Tunings\Extensions\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

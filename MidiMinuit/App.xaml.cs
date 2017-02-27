@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.Toolkit.Uwp;
 using Microsoft.Toolkit.Uwp.SampleApp;
-using Microsoft.Toolkit.Uwp.SampleApp.Common;
+using MidiMinuit.Common;
+using MidiMinuit.Models;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation.Metadata;

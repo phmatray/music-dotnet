@@ -3,13 +3,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MidiMinuit"
-    xmlns:vm="using:MidiMinuit.ViewModels"
+    xmlns:samplePages="using:MidiMinuit.SamplePages"
     RequestedTheme="Light">
 
     <Application.Resources>
 
         <!-- ViewModel Locator -->
-        <vm:ViewModelLocator xmlns:vm="using:MidiMinuit.ViewModels" x:Key="Locator" />
+        <samplePages:ViewModelLocator x:Key="Locator" />
         
         <!--  Colors  -->
         <Color x:Key="Grey-01">#FF333333</Color>

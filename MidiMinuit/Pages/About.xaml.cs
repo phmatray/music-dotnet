@@ -12,8 +12,9 @@
 
 using Windows.ApplicationModel;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.SampleApp;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Pages
+namespace MidiMinuit.Pages
 {
     public sealed partial class About
     {

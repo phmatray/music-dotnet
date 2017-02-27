@@ -1,0 +1,30 @@
+﻿namespace GuitarChords.Lib.Enum
+{
+    public enum Role
+    {
+        NoteFondamental,
+        NoteSecondMinor,
+        NoteSecondMajor,
+        NoteSecondAugmented,
+        NoteThirdMinor,
+        NoteThirdMajor,
+        NoteFourthPerfect,
+        NoteFourthAugmented,
+        NoteFifthDiminished,
+        NoteFifthPerfect,
+        NoteFifthAugmented,
+        NoteSixthMinor,
+        NoteSixthMajor,
+        NoteSeventhDiminished,
+        NoteSeventhMinor,
+        NoteSeventhMajor,
+        NoteSeventhAugmented,
+        NoteNinthMinor,
+        NoteNinthMajor,
+        NoteNinthAugmented,
+        NoteEleventhPerfect,
+        NoteEleventhAugmented,
+        NoteThirteenthMinor,
+        NoteThirteenthMajor
+    }
+}

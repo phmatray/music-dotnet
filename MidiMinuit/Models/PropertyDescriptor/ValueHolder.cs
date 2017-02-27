@@ -12,7 +12,7 @@
 
 using System.ComponentModel;
 
-namespace Microsoft.Toolkit.Uwp.SampleApp.Models
+namespace MidiMinuit.Models.PropertyDescriptor
 {
     // Need to use this class as ExpandoObject does not raise PropertyChanged event
     public class ValueHolder : INotifyPropertyChanged
