@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
-using GuitarChords.Lib.Chords;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
-using GuitarChords.Lib.Scales.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Scales.Base;
+using MidiMinuit.Lib.Chords.Core.Scales.Enum;
 
-namespace GuitarChords.Lib.Scales
+namespace MidiMinuit.Lib.Chords.Core.Scales
 {
     public class MajorScale : Scale
     {
@@ -26,12 +24,12 @@ namespace GuitarChords.Lib.Scales
 
         public MinorScale RelativeMinor => new MinorScale(Key - 3, Mode);
 
-        //public List<Chord> Harmonize()
-        //{
+        // public List<Chord> Harmonize()
+        // {
         //    if (Mode != ScaleMode.Ionian)
         //        throw new Exception("This mode is not supported.");
 
-        //    var result = new List<Chord>
+        // var result = new List<Chord>
         //    {
         //        Notes[0].GetChord(ChordQuality.Major),
         //        Notes[1].GetChord(ChordQuality.Minor),
@@ -42,7 +40,7 @@ namespace GuitarChords.Lib.Scales
         //        Notes[6].GetChord(ChordQuality.MinorDiminished)
         //    };
 
-        //    return result;
-        //}
+        // return result;
+        // }
     }
 }

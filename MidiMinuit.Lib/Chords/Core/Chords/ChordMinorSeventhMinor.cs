@@ -1,29 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+﻿using System.Collections.Generic;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords
 {
     public class ChordMinorSeventhMinor : Chord
     {
-        public NoteFondamental  Fondamental  { get; }
-        public NoteThirdMinor   ThirdMinor   { get; }
+        public NoteFondamental Fondamental { get; }
+
+        public NoteThirdMinor ThirdMinor { get; }
+
         public NoteFifthPerfect FifthPerfect { get; }
+
         public NoteSeventhMinor SeventhMinor { get; }
 
         protected internal ChordMinorSeventhMinor(Note fondamental, Note thirdMinor, Note fifthPerfect, Note seventhMinor)
             : base(ChordQuality.MinorSeventhMinor)
         {
-            Fondamental  = new NoteFondamental (fondamental );
-            ThirdMinor   = new NoteThirdMinor  (thirdMinor  );
+            Fondamental = new NoteFondamental(fondamental);
+            ThirdMinor = new NoteThirdMinor(thirdMinor);
             FifthPerfect = new NoteFifthPerfect(fifthPerfect);
             SeventhMinor = new NoteSeventhMinor(seventhMinor);
         }
 
         public override List<NoteRole> GetNotes()
         {
-            return new List<NoteRole> {Fondamental, ThirdMinor, FifthPerfect, SeventhMinor};
+            return new List<NoteRole> { Fondamental, ThirdMinor, FifthPerfect, SeventhMinor };
         }
 
         public override string GetDescription()

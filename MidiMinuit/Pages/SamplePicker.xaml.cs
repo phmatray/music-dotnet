@@ -12,11 +12,11 @@
 
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Microsoft.Toolkit.Uwp.SampleApp;
+using MidiMinuit.Models;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Toolkit.Uwp.SampleApp;
-using MidiMinuit.Models;
 
 namespace MidiMinuit.Pages
 {

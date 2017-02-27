@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using MidiMinuit.Helpers;
 using Windows.Devices.Enumeration;
 using Windows.Devices.Midi;
 using Windows.UI.Core;

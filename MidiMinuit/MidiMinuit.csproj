@@ -29,7 +29,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>midiminuit.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -42,7 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>midiminuit.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -54,7 +54,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>midiminuit.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -67,7 +67,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>midiminuit.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -79,7 +79,8 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>midiminuit.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -92,7 +93,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Lib\MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>midiminuit.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
@@ -159,7 +160,7 @@
     <Compile Include="Data\PhotoDataItem.cs" />
     <Compile Include="Data\PhotoDataItemWithDimension.cs" />
     <Compile Include="Data\PhotosDataSource.cs" />
-    <Compile Include="MyMidiDeviceWatcher.cs" />
+    <Compile Include="Helpers\MyMidiDeviceWatcher.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\PropertyDescriptor\PropertyDescriptor.cs" />
     <Compile Include="Models\PropertyDescriptor\PropertyKind.cs" />

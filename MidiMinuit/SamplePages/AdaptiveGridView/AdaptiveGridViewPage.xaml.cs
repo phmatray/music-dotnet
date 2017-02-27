@@ -12,9 +12,9 @@
 
 using System;
 using System.Linq;
+using MidiMinuit.Data;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Navigation;
-using MidiMinuit.Data;
 
 namespace MidiMinuit.SamplePages.AdaptiveGridView
 {

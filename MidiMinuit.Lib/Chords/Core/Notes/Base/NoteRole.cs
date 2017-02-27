@@ -1,7 +1,7 @@
-using GuitarChords.Lib.Enum;
-using GuitarChords.Lib.Notes.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Enum;
+using MidiMinuit.Lib.Chords.Tools.Enum;
 
-namespace GuitarChords.Lib.Notes
+namespace MidiMinuit.Lib.Chords.Core.Notes.Base
 {
     public abstract class NoteRole : Note, INoteRole
     {
@@ -21,7 +21,9 @@ namespace GuitarChords.Lib.Notes
         }
 
         public abstract Role Role { get; }
+
         public abstract string RoleName { get; }
+
         public abstract string RoleAbbreviation { get; }
     }
 }

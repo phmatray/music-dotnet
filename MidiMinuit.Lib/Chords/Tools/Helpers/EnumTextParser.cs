@@ -1,20 +1,19 @@
 ﻿using System;
-using GuitarChords.Lib.Enum;
+using MidiMinuit.Lib.Chords.Tools.Enum;
 
-namespace GuitarChords.Lib.Helpers
+namespace MidiMinuit.Lib.Chords.Tools.Helpers
 {
     public static class EnumTextParser
     {
         public static char ToUnicodeChar(this UnicodeMusicSymbol symbol)
         {
-            //♩ 2669  quarter note
-            //♪ 266A  eighth note
-            //♫ 266B  beamed eighth notes
-            //♬ 266C  beamed sixteenth notes
-            //♭ 266D  music flat sign
-            //♮ 266E  music natural sign
-            //♯ 266F  music sharp sign
-
+            // ♩ 2669  quarter note
+            // ♪ 266A  eighth note
+            // ♫ 266B  beamed eighth notes
+            // ♬ 266C  beamed sixteenth notes
+            // ♭ 266D  music flat sign
+            // ♮ 266E  music natural sign
+            // ♯ 266F  music sharp sign
             switch (symbol)
             {
                 case UnicodeMusicSymbol.QuarterNote:

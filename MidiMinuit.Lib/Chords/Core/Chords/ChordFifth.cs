@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+﻿using System.Collections.Generic;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords
 {
     public class ChordFifth : Chord
     {
         public NoteFondamental Fondamental { get; }
+
         public NoteFifthPerfect FifthPerfect { get; }
 
         protected internal ChordFifth(Note fondamental, Note fifthPerfect)
@@ -19,7 +21,7 @@ namespace GuitarChords.Lib.Chords
 
         public override List<NoteRole> GetNotes()
         {
-            return new List<NoteRole> {Fondamental, FifthPerfect};
+            return new List<NoteRole> { Fondamental, FifthPerfect };
         }
 
         public override string GetDescription()

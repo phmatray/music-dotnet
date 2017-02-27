@@ -1,7 +1,8 @@
-using GuitarChords.Lib.Enum;
-using GuitarChords.Lib.Notes.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Notes.Enum;
+using MidiMinuit.Lib.Chords.Tools.Enum;
 
-namespace GuitarChords.Lib.Notes
+namespace MidiMinuit.Lib.Chords.Core.Notes
 {
     public class NoteThirteenthMinor : NoteRole
     {
@@ -10,16 +11,20 @@ namespace GuitarChords.Lib.Notes
         {
         }
 
-        public NoteThirteenthMinor(string note) : base(note)
+        public NoteThirteenthMinor(string note)
+            : base(note)
         {
         }
 
-        public NoteThirteenthMinor(Note note) : base(note)
+        public NoteThirteenthMinor(Note note)
+            : base(note)
         {
         }
 
         public override Role Role => Role.NoteThirteenthMinor;
+
         public override string RoleName => "Thirteenth Minor";
+
         public override string RoleAbbreviation => "NO DATA";
     }
 }

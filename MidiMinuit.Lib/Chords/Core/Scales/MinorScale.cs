@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using GuitarChords.Lib.Notes;
-using GuitarChords.Lib.Scales.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Scales.Base;
+using MidiMinuit.Lib.Chords.Core.Scales.Enum;
 
-namespace GuitarChords.Lib.Scales
+namespace MidiMinuit.Lib.Chords.Core.Scales
 {
     public class MinorScale : Scale
     {

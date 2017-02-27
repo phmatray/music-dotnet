@@ -1,4 +1,4 @@
-namespace GuitarChords.Lib.Chords.Enum
+namespace MidiMinuit.Lib.Chords.Core.Chords.Enum
 {
     public enum ChordQuality
     {

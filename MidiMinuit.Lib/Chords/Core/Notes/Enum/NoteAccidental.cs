@@ -1,4 +1,4 @@
-namespace GuitarChords.Lib.Notes.Enum
+namespace MidiMinuit.Lib.Chords.Core.Notes.Enum
 {
     public enum NoteAccidental
     {

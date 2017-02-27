@@ -1,7 +1,8 @@
-﻿using GuitarChords.Lib.Enum;
-using GuitarChords.Lib.Notes.Enum;
+﻿using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Notes.Enum;
+using MidiMinuit.Lib.Chords.Tools.Enum;
 
-namespace GuitarChords.Lib.Notes
+namespace MidiMinuit.Lib.Chords.Core.Notes
 {
     public class NoteFondamental : NoteRole
     {
@@ -21,7 +22,9 @@ namespace GuitarChords.Lib.Notes
         }
 
         public override Role Role => Role.NoteFondamental;
+
         public override string RoleName => "Fondamental";
+
         public override string RoleAbbreviation => "Fond";
     }
 }

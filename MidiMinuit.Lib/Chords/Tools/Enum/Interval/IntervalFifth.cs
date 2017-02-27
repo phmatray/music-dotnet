@@ -1,4 +1,4 @@
-namespace GuitarChords.Lib.Enum
+namespace MidiMinuit.Lib.Chords.Tools.Enum.Interval
 {
     public enum IntervalFifth
     {

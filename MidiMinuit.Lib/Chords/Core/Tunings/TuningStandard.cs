@@ -1,4 +1,6 @@
-namespace GuitarChords.Lib.Tunings
+using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+
+namespace MidiMinuit.Lib.Chords.Core.Tunings
 {
     public class TuningStandard : Tuning
     {

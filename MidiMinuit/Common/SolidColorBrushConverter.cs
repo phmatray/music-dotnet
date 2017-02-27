@@ -11,9 +11,9 @@
 // ******************************************************************
 
 using System;
+using Microsoft.Toolkit.Uwp;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
-using Microsoft.Toolkit.Uwp;
 
 namespace MidiMinuit.Common
 {

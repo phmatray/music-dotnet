@@ -1,29 +1,34 @@
-using System;
 using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords
 {
     public class ChordMinorDiminishedSeventhDiminished : Chord
     {
-        public NoteFondamental       Fondamental       { get; }
-        public NoteThirdMinor        ThirdMinor        { get; }
-        public NoteFifthDiminished   FifthDiminished   { get; }
+        public NoteFondamental Fondamental { get; }
+
+        public NoteThirdMinor ThirdMinor { get; }
+
+        public NoteFifthDiminished FifthDiminished { get; }
+
         public NoteSeventhDiminished SeventhDiminished { get; }
 
-        protected internal ChordMinorDiminishedSeventhDiminished(Note fondamental, Note thirdMinor, Note fifthDiminished, Note seventhDiminished)
+        protected internal ChordMinorDiminishedSeventhDiminished(
+            Note fondamental, Note thirdMinor, Note fifthDiminished, Note seventhDiminished)
             : base(ChordQuality.MinorDiminishedSeventhDiminished)
         {
-            Fondamental       = new NoteFondamental      (fondamental      );
-            ThirdMinor        = new NoteThirdMinor       (thirdMinor       );
-            FifthDiminished   = new NoteFifthDiminished  (fifthDiminished  );
+            Fondamental = new NoteFondamental(fondamental);
+            ThirdMinor = new NoteThirdMinor(thirdMinor);
+            FifthDiminished = new NoteFifthDiminished(fifthDiminished);
             SeventhDiminished = new NoteSeventhDiminished(seventhDiminished);
         }
 
         public override List<NoteRole> GetNotes()
         {
-            return new List<NoteRole> {Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished};
+            return new List<NoteRole> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
         }
 
         public override string GetDescription()

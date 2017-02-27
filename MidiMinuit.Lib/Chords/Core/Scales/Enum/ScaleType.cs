@@ -1,4 +1,4 @@
-﻿namespace GuitarChords.Lib.Scales.Enum
+﻿namespace MidiMinuit.Lib.Chords.Core.Scales.Enum
 {
     public enum ScaleType
     {

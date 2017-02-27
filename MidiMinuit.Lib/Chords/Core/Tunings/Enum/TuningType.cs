@@ -1,4 +1,4 @@
-namespace GuitarChords.Lib.Tunings.Enum
+namespace MidiMinuit.Lib.Chords.Core.Tunings.Enum
 {
     public enum TuningType
     {

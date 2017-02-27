@@ -10,9 +10,9 @@
 // THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
 // ******************************************************************
 
+using Microsoft.Toolkit.Uwp.SampleApp;
 using Windows.ApplicationModel;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Toolkit.Uwp.SampleApp;
 
 namespace MidiMinuit.Pages
 {

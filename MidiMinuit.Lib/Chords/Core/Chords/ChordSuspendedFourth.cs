@@ -1,27 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+﻿using System.Collections.Generic;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords
 {
     public class ChordSuspendedFourth : Chord
     {
-        public NoteFondamental   Fondamental   { get; }
+        public NoteFondamental Fondamental { get; }
+
         public NoteFourthPerfect FourthPerfect { get; }
-        public NoteFifthPerfect  FifthPerfect  { get; }
+
+        public NoteFifthPerfect FifthPerfect { get; }
 
         protected internal ChordSuspendedFourth(Note fondamental, Note fourthPerfect, Note fifthPerfect)
             : base(ChordQuality.MajorSuspendedFourth)
         {
-            Fondamental   = new NoteFondamental  (fondamental  );
+            Fondamental = new NoteFondamental(fondamental);
             FourthPerfect = new NoteFourthPerfect(fourthPerfect);
-            FifthPerfect  = new NoteFifthPerfect (fifthPerfect );
+            FifthPerfect = new NoteFifthPerfect(fifthPerfect);
         }
 
         public override List<NoteRole> GetNotes()
         {
-            return new List<NoteRole> {Fondamental, FourthPerfect, FifthPerfect};
+            return new List<NoteRole> { Fondamental, FourthPerfect, FifthPerfect };
         }
 
         public override string GetDescription()

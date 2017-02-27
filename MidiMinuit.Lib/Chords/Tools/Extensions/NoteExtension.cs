@@ -1,23 +1,18 @@
 using System;
 using System.Collections.Generic;
-using GuitarChords.Lib.Notes;
-using GuitarChords.Lib.Scales;
-using GuitarChords.Lib.Scales.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Scales;
+using MidiMinuit.Lib.Chords.Core.Scales.Base;
+using MidiMinuit.Lib.Chords.Core.Scales.Enum;
 
-namespace GuitarChords.Lib.Extensions
+namespace MidiMinuit.Lib.Chords.Tools.Extensions
 {
     public static class NoteExtension
     {
-        #region Interval
-
         public static Interval GetInterval(this Note note)
         {
             return Note.GetInterval(note);
         }
-
-        #endregion
-
-        #region Scale
 
         public static Scale GetScale(this Note key, ScaleType type = ScaleType.Major)
         {
@@ -38,7 +33,6 @@ namespace GuitarChords.Lib.Extensions
         ////private static MajorScale GetScaleMajor(Note key)
         ////{
         ////    return new MajorScale(key);
-
 
         ////    var scaleMajor = new List<Note>
         ////    {
@@ -116,7 +110,5 @@ namespace GuitarChords.Lib.Extensions
                 key - 10
             };
         }
-
-        #endregion
     }
 }

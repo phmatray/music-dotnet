@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords.Base
 {
     public abstract class Chord
     {
@@ -59,10 +59,12 @@ namespace GuitarChords.Lib.Chords
         }
 
         public abstract List<NoteRole> GetNotes();
-        public abstract string GetDescription();
-        public abstract string Format();
-        public abstract override string ToString();
 
+        public abstract string GetDescription();
+
+        public abstract string Format();
+
+        public abstract override string ToString();
 
         ////private readonly List<Note> _notes;
 
@@ -88,7 +90,6 @@ namespace GuitarChords.Lib.Chords
         ////            : symbol[0].ToString());
 
         ////    var rootNote = new Note(root);
-
 
         ////    // var chord = Chord.Search("Am");
         ////    // var chord = Chord.Search("Cmaj7");
@@ -138,7 +139,7 @@ namespace GuitarChords.Lib.Chords
         //////public string Quality { get; private set; }
 
         /////// <summary>
-        ///////     The number of an interval (e.g. seventh, or 7), 
+        ///////     The number of an interval (e.g. seventh, or 7),
         ///////     or less often its full name or symbol (e.g. major seventh, maj7, or M7).
         /////// </summary>
         ////public string NumberOfAnInterval { get; set; }
@@ -152,7 +153,6 @@ namespace GuitarChords.Lib.Chords
         ///////     An additional interval number (e.g. add 13 or add13), in added tone chords.
         /////// </summary>
         ////public string AdditionalIntervalNumber { get; set; }
-
 
         ////private List<int> GetIntervals(/*string third, string fifth, string? seventh*/)
         ////{
@@ -172,8 +172,7 @@ namespace GuitarChords.Lib.Chords
         ////    result.Add((int)fifth);
 
         ////    return result;
-        ////} 
-
+        ////}
 
         //////private List<Note> GetNotes(Note root, Triads triads)
         //////{

@@ -1,11 +1,13 @@
-using GuitarChords.Lib.Enum;
+using MidiMinuit.Lib.Chords.Tools.Enum;
 
-namespace GuitarChords.Lib.Notes
+namespace MidiMinuit.Lib.Chords.Core.Notes.Base
 {
     internal interface INoteRole
     {
         Role Role { get; }
+
         string RoleName { get; }
+
         string RoleAbbreviation { get; }
     }
 }

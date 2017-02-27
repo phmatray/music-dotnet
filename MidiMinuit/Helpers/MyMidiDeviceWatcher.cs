@@ -4,7 +4,7 @@ using Windows.Devices.Enumeration;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 
-namespace MidiMinuit
+namespace MidiMinuit.Helpers
 {
     public class MyMidiDeviceWatcher
     {

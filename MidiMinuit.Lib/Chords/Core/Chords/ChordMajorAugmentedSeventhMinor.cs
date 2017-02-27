@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+﻿using System.Collections.Generic;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords
 {
     public class ChordMajorAugmentedSeventhMinor : Chord
     {
-        public NoteFondamental    Fondamental    { get; }
-        public NoteThirdMajor     ThirdMajor     { get; }
+        public NoteFondamental Fondamental { get; }
+
+        public NoteThirdMajor ThirdMajor { get; }
+
         public NoteFifthAugmented FifthAugmented { get; }
-        public NoteSeventhMinor   SeventhMinor   { get; }
+
+        public NoteSeventhMinor SeventhMinor { get; }
 
         protected internal ChordMajorAugmentedSeventhMinor(Note fondamental, Note thirdMajor, Note fifthAugmented, Note seventhMinor)
             : base(ChordQuality.MajorAugmentedSeventhMinor)

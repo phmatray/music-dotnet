@@ -16,10 +16,10 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Data;
-using Newtonsoft.Json;
 
 namespace MidiMinuit.Data
 {

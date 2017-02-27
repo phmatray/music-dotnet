@@ -1,29 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using GuitarChords.Lib.Chords.Enum;
-using GuitarChords.Lib.Notes;
+﻿using System.Collections.Generic;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
 
-namespace GuitarChords.Lib.Chords
+namespace MidiMinuit.Lib.Chords.Core.Chords
 {
     public class ChordMinorFifthDiminishedSeventhMinor : Chord
     {
-        public NoteFondamental Fondamental     { get; }
-        public NoteThirdMinor      ThirdMinor      { get; }
+        public NoteFondamental Fondamental { get; }
+
+        public NoteThirdMinor ThirdMinor { get; }
+
         public NoteFifthDiminished FifthDiminished { get; }
-        public NoteSeventhMinor    SeventhMinor    { get; }
+
+        public NoteSeventhMinor SeventhMinor { get; }
 
         protected internal ChordMinorFifthDiminishedSeventhMinor(Note fondamental, Note thirdMinor, Note fifthDiminished, Note seventhMinor)
             : base(ChordQuality.MinorFifthDiminishedSeventhMinor)
         {
-            Fondamental     = new NoteFondamental    (fondamental    );
-            ThirdMinor      = new NoteThirdMinor     (thirdMinor     );
+            Fondamental = new NoteFondamental(fondamental);
+            ThirdMinor = new NoteThirdMinor(thirdMinor);
             FifthDiminished = new NoteFifthDiminished(fifthDiminished);
-            SeventhMinor    = new NoteSeventhMinor   (seventhMinor   );
+            SeventhMinor = new NoteSeventhMinor(seventhMinor);
         }
 
         public override List<NoteRole> GetNotes()
         {
-            return new List<NoteRole> {Fondamental, ThirdMinor, FifthDiminished, SeventhMinor};
+            return new List<NoteRole> { Fondamental, ThirdMinor, FifthDiminished, SeventhMinor };
         }
 
         public override string GetDescription()

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-//using GuitarChords.Lib.Necks;
-using GuitarChords.Lib.Notes;
-using GuitarChords.Lib.Tunings.Enum;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Tunings.Enum;
 
-namespace GuitarChords.Lib.Tunings
+namespace MidiMinuit.Lib.Chords.Core.Tunings.Base
 {
     public abstract class Tuning
     {
@@ -113,7 +112,9 @@ namespace GuitarChords.Lib.Tunings
         {
             var sb = new StringBuilder();
             foreach (var note in Notes)
+            {
                 sb.Append(note + " ");
+            }
 
             var notes = sb.ToString().Trim();
             var result = $"{GetName()} ({notes})";
@@ -121,11 +122,11 @@ namespace GuitarChords.Lib.Tunings
             return result;
         }
 
-        //public List<Cord> GetCords()
-        //{
+        // public List<Cord> GetCords()
+        // {
         //    return Notes
         //        .Select(note => new Cord(note))
         //        .ToList();
-        //}
+        // }
     }
 }
