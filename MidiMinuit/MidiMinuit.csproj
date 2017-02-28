@@ -155,6 +155,8 @@
     <Compile Include="Controls\GuitarChordControl.xaml.cs">
       <DependentUpon>GuitarChordControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Loading\Loading.cs" />
+    <Compile Include="Controls\Loading\Loading.Properties.cs" />
     <Compile Include="Controls\PropertyControl.xaml.cs">
       <DependentUpon>PropertyControl.xaml</DependentUpon>
     </Compile>
@@ -220,6 +222,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Loading\Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PropertyControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -265,6 +271,9 @@
       <Project>{eb72f60a-b97e-4f34-9d19-9e19f81127b1}</Project>
       <Name>MidiMinuit.Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\GuitarChord\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
