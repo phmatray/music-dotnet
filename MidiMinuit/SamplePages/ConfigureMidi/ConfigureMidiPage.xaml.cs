@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Messaging;
 using MidiMinuit.Helpers;
 using Windows.Devices.Enumeration;
 using Windows.Devices.Midi;
@@ -35,7 +36,7 @@ namespace MidiMinuit.SamplePages.ConfigureMidi
             InitializeComponent();
 
             // Initialize the list of active MIDI output devices
-            this._midiOutPorts = new List<IMidiOutPort>();
+            _midiOutPorts = new List<IMidiOutPort>();
 
             // Set up the MIDI input device watcher
             _inputDeviceWatcher = new MyMidiDeviceWatcher(MidiInPort.GetDeviceSelector(), MidiInPortListBox, Dispatcher);
@@ -96,6 +97,7 @@ namespace MidiMinuit.SamplePages.ConfigureMidi
                 }
             });
 
+            Messenger.Default.Send<IMidiMessage>(receivedMidiMessage);
             _currentMidiOutputDevice?.SendMessage(receivedMidiMessage);
         }
 
@@ -118,14 +120,14 @@ namespace MidiMinuit.SamplePages.ConfigureMidi
             _currentMidiOutputDevice = await MidiOutPort.FromIdAsync(devInfo.Id);
             if (_currentMidiOutputDevice == null)
             {
-                System.Diagnostics.Debug.WriteLine("Unable to create MidiOutPort from output device");
+                Debug.WriteLine("Unable to create MidiOutPort from output device");
                 return;
             }
 
             // We have successfully created a MidiOutPort; add the device to the list of active devices
-            if (!this._midiOutPorts.Contains(this._currentMidiOutputDevice))
+            if (!_midiOutPorts.Contains(_currentMidiOutputDevice))
             {
-                this._midiOutPorts.Add(this._currentMidiOutputDevice);
+                _midiOutPorts.Add(_currentMidiOutputDevice);
             }
         }
 

@@ -230,6 +230,44 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
             return new Note(note);
         }
 
+        public static Note New(int midiValue)
+        {
+            if (midiValue < 0 || midiValue > 127)
+            {
+                throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+
+            switch (midiValue % 12)
+            {
+                case 0:
+                    return new Note(NoteName.C);
+                case 1:
+                    return new Note(NoteName.C, NoteAccidental.Sharp);
+                case 2:
+                    return new Note(NoteName.D);
+                case 3:
+                    return new Note(NoteName.D, NoteAccidental.Sharp);
+                case 4:
+                    return new Note(NoteName.E);
+                case 5:
+                    return new Note(NoteName.F);
+                case 6:
+                    return new Note(NoteName.F, NoteAccidental.Sharp);
+                case 7:
+                    return new Note(NoteName.G);
+                case 8:
+                    return new Note(NoteName.G, NoteAccidental.Sharp);
+                case 9:
+                    return new Note(NoteName.A);
+                case 10:
+                    return new Note(NoteName.A, NoteAccidental.Sharp);
+                case 11:
+                    return new Note(NoteName.B, NoteAccidental.Sharp);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+        }
+
         private NoteName _name;
         private NoteAccidental _accidental;
 

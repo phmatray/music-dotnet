@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using MidiMinuit.SamplePages.ConfigureMidi;
+using MidiMinuit.SamplePages.NoteFinder;
 
 namespace MidiMinuit.SamplePages
 {
@@ -32,6 +33,7 @@ namespace MidiMinuit.SamplePages
 
             // SimpleIoc.Default.Register<INavigationService, NavigationService>();
             SimpleIoc.Default.Register<ConfigureMidiViewModel>();
+            SimpleIoc.Default.Register<NoteFinderViewModel>();
         }
 
         // <summary>
@@ -42,6 +44,15 @@ namespace MidiMinuit.SamplePages
         // </value>
         public static ConfigureMidiViewModel ConfigureMidiInstance
             => ServiceLocator.Current.GetInstance<ConfigureMidiViewModel>();
+
+        // <summary>
+        // Gets the NoteFinder view model.
+        // </summary>
+        // <value>
+        // The NoteFinder view model.
+        // </value>
+        public static NoteFinderViewModel NoteFinderInstance
+            => ServiceLocator.Current.GetInstance<NoteFinderViewModel>();
 
         // <summary>
         // The cleanup.

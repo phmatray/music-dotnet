@@ -134,6 +134,7 @@
     <Content Include="Icons\Services.png" />
     <Content Include="SamplePages\AdaptiveGridView\AdaptiveGridView.png" />
     <Content Include="SamplePages\ConfigureMidi\ConfigureMidi.png" />
+    <Content Include="SamplePages\NoteFinder\NoteFinder.png" />
     <Content Include="SamplePages\samples.json" />
     <Content Include="SamplePages\AdaptiveGridView\AdaptiveGridViewCode.bind" />
   </ItemGroup>
@@ -180,6 +181,10 @@
       <DependentUpon>AdaptiveGridViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SamplePages\ConfigureMidi\ConfigureMidiViewModel.cs" />
+    <Compile Include="SamplePages\NoteFinder\NoteFinderPage.xaml.cs">
+      <DependentUpon>NoteFinderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\NoteFinder\NoteFinderViewModel.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -230,6 +235,10 @@
     <Page Include="SamplePages\AdaptiveGridView\AdaptiveGridViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SamplePages\NoteFinder\NoteFinderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
