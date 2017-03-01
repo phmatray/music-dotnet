@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock TextWrapping="Wrap" Text="{Binding NoteText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" Margin="0,10"/>
+        <TextBlock TextWrapping="Wrap" Text="{Binding NoteText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Margin="0,10"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             <TextBlock FontSize="36" Text="Adim7 (°7)" HorizontalAlignment="Center" />
@@ -29,11 +29,15 @@
                         <Run Text="7e dim = G♭" />
             </TextBlock>
 
-            <controls:GuitarChord Width="350" Height="350" Margin="10,20" FontBrush="Crimson" />
+            <controls:GuitarChord Width="350" Height="350" Margin="10,20" FontBrush="{Binding ChordFontBrush}" Tuning="{Binding Tuning}"/>
 
             <TextBlock Margin="0,10,0,0" FontSize="24" MaxWidth="600"
                        Text="Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale."
                        TextWrapping="Wrap" HorizontalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Margin="10,10,0,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button Content="Change Color" Command="{Binding ChangeColorCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+            <Button Content="Change Tuning" Command="{Binding ChangeTuningCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
         </StackPanel>
     </Grid>
 </Page>

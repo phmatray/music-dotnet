@@ -1,4 +1,8 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using MidiMinuit.Common;
+using MidiMinuit.Lib.Chords.Core.Tunings;
+using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
 namespace MidiMinuit.Controls
@@ -6,13 +10,80 @@ namespace MidiMinuit.Controls
     public partial class GuitarChord
     {
         /// <summary>
-        /// Defines the <see cref="FontBrush"/> dependency property.
+        /// Identifies the <see cref="FontBrush"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty FontBrushProperty = DependencyProperty.Register(
-            nameof(FontBrush),
-            typeof(Brush),
-            typeof(GuitarChord),
-            new PropertyMetadata(default(Brush)));
+        public static readonly DependencyProperty FontBrushProperty =
+            DependencyProperty.Register(nameof(FontBrush), typeof(Brush), typeof(GuitarChord), new PropertyMetadata(Constants.ThemeResources.SystemControlHighlightAccentBrush));
+
+        /// <summary>
+        /// Identifies the <see cref="Strings"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty StringsProperty =
+            DependencyProperty.Register(nameof(Strings), typeof(int), typeof(GuitarChord), new PropertyMetadata(6));
+
+        /// <summary>
+        /// Identifies the <see cref="IsInteractive"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsInteractiveProperty =
+            DependencyProperty.Register(nameof(IsInteractive), typeof(bool), typeof(GuitarChord), new PropertyMetadata(false));
+
+        /// <summary>
+        /// Identifies the <see cref="Tuning"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningProperty =
+            DependencyProperty.Register(nameof(Tuning), typeof(Tuning), typeof(GuitarChord), new PropertyMetadata(new TuningStandard(), OnTuningChanged));
+
+        /// <summary>
+        /// Identifies the <see cref="TuningNote1"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningNote1Property =
+            DependencyProperty.Register(nameof(TuningNote1), typeof(string), typeof(GuitarChord), new PropertyMetadata("E"));
+
+        /// <summary>
+        /// Identifies the <see cref="TuningNote2"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningNote2Property =
+            DependencyProperty.Register(nameof(TuningNote2), typeof(string), typeof(GuitarChord), new PropertyMetadata("A"));
+
+        /// <summary>
+        /// Identifies the <see cref="TuningNote3"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningNote3Property =
+            DependencyProperty.Register(nameof(TuningNote3), typeof(string), typeof(GuitarChord), new PropertyMetadata("D"));
+
+        /// <summary>
+        /// Identifies the <see cref="TuningNote4"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningNote4Property =
+            DependencyProperty.Register(nameof(TuningNote4), typeof(string), typeof(GuitarChord), new PropertyMetadata("G"));
+
+        /// <summary>
+        /// Identifies the <see cref="TuningNote5"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningNote5Property =
+            DependencyProperty.Register(nameof(TuningNote5), typeof(string), typeof(GuitarChord), new PropertyMetadata("B"));
+
+        /// <summary>
+        /// Identifies the <see cref="TuningNote6"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TuningNote6Property =
+            DependencyProperty.Register(nameof(TuningNote6), typeof(string), typeof(GuitarChord), new PropertyMetadata("e"));
+
+
+
+        // public string Note1 => Tuning?.Notes[0]?.ToString();
+        // public string Note2 => Tuning?.Notes[1]?.ToString();
+        // public string Note3 => Tuning?.Notes[2]?.ToString();
+        // public string Note4 => Tuning?.Notes[3]?.ToString();
+        // public string Note5 => Tuning?.Notes[4]?.ToString();
+        // public string Note6 => Tuning?.Notes[5]?.ToString();
+
+
+
+
+
+
+
 
         /// <summary>
         /// Gets or sets the font brush.
@@ -21,6 +92,87 @@ namespace MidiMinuit.Controls
         {
             get { return (Brush)GetValue(FontBrushProperty); }
             set { SetValue(FontBrushProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the number of strings.
+        /// </summary>
+        public int Strings
+        {
+            get { return (int)GetValue(StringsProperty); }
+            set { SetValue(StringsProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the control accepts setting its value through interaction.
+        /// </summary>
+        public bool IsInteractive
+        {
+            get { return (bool)GetValue(IsInteractiveProperty); }
+            set { SetValue(IsInteractiveProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the tuning used for this diagram
+        /// </summary>
+        public Tuning Tuning
+        {
+            get { return (Tuning)GetValue(TuningProperty); }
+            set { SetValue(TuningProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the 1st note of the tuning used for this diagram
+        /// </summary>
+        public string TuningNote1
+        {
+            get { return (string)GetValue(TuningNote1Property); }
+            private set { SetValue(TuningNote1Property, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the 2nd note of the tuning used for this diagram
+        /// </summary>
+        public string TuningNote2
+        {
+            get { return (string)GetValue(TuningNote2Property); }
+            private set { SetValue(TuningNote2Property, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the 3rd note of the tuning used for this diagram
+        /// </summary>
+        public string TuningNote3
+        {
+            get { return (string)GetValue(TuningNote3Property); }
+            private set { SetValue(TuningNote3Property, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the 4th note of the tuning used for this diagram
+        /// </summary>
+        public string TuningNote4
+        {
+            get { return (string)GetValue(TuningNote4Property); }
+            private set { SetValue(TuningNote4Property, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the 5th note of the tuning used for this diagram
+        /// </summary>
+        public string TuningNote5
+        {
+            get { return (string)GetValue(TuningNote5Property); }
+            private set { SetValue(TuningNote5Property, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the 6th note of the tuning used for this diagram
+        /// </summary>
+        public string TuningNote6
+        {
+            get { return (string)GetValue(TuningNote6Property); }
+            private set { SetValue(TuningNote6Property, value); }
         }
     }
 }

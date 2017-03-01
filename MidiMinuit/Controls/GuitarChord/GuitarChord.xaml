@@ -32,6 +32,7 @@
                                     <ColumnDefinition Width="20" />
                                     <ColumnDefinition Width="20" />
                                     <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="30" />
                                 </Grid.ColumnDefinitions>
 
                                 <Rectangle x:Name="RectangleNut1" Fill="{TemplateBinding Foreground}" Stretch="Fill"
@@ -61,33 +62,34 @@
                                 <Rectangle x:Name="RectangleFret5" Fill="{TemplateBinding Foreground}" Stretch="Fill"
                                            Stroke="{TemplateBinding Foreground}" Grid.ColumnSpan="6" Grid.Row="7"
                                            Grid.Column="1" Margin="9,11" />
+                                
                                 <TextBlock x:Name="TextTuningCord1" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap"
-                                           Text="E" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                           Text="{TemplateBinding TuningNote1}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                            FontFamily="{TemplateBinding FontFamily}"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding FontBrush}" />
                                 <TextBlock x:Name="TextTuningCord2" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap"
-                                           Text="A" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                           Text="{TemplateBinding TuningNote2}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                            FontFamily="{TemplateBinding FontFamily}"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding FontBrush}" />
                                 <TextBlock x:Name="TextTuningCord3" Grid.Column="3" Grid.Row="8" TextWrapping="Wrap"
-                                           Text="D" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                           Text="{TemplateBinding TuningNote3}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                            FontFamily="{TemplateBinding FontFamily}"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding FontBrush}" />
                                 <TextBlock x:Name="TextTuningCord4" Grid.Column="4" Grid.Row="8" TextWrapping="Wrap"
-                                           Text="G" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                           Text="{TemplateBinding TuningNote4}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                            FontFamily="{TemplateBinding FontFamily}"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding FontBrush}" />
                                 <TextBlock x:Name="TextTuningCord5" Grid.Column="5" Grid.Row="8" TextWrapping="Wrap"
-                                           Text="B" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                           Text="{TemplateBinding TuningNote5}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                            FontFamily="{TemplateBinding FontFamily}"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding FontBrush}" />
                                 <TextBlock x:Name="TextTuningCord6" Grid.Column="6" Grid.Row="8" TextWrapping="Wrap"
-                                           Text="e" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                           Text="{TemplateBinding TuningNote6}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                            FontFamily="{TemplateBinding FontFamily}"
                                            FontSize="{TemplateBinding FontSize}"
                                            Foreground="{TemplateBinding FontBrush}" />

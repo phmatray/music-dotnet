@@ -1,17 +1,7 @@
-﻿// ******************************************************************
-// Copyright (c) Microsoft. All rights reserved.
-// This code is licensed under the MIT License (MIT).
-// THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
-// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
-// ******************************************************************
-
-using System;
+﻿using System;
 using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 namespace MidiMinuit.Common
 {
@@ -25,5 +15,14 @@ namespace MidiMinuit.Common
         public static readonly Uri Square310x310Logo = new Uri("ms-appx:///Assets/Square310x310Logo.png");
 
         public static string ApplicationDisplayName { get; set; }
+
+        public static class ThemeResources
+        {
+            public static Brush SystemControlHighlightAccentBrush
+                => Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush;
+
+            public static Color SystemAccentColor
+                => (Color)Application.Current.Resources["SystemAccentColor"];
+        }
     }
 }
