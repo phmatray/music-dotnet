@@ -156,12 +156,16 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
                 case "":
                     return NoteAccidental.Natural;
                 case "b":
+                case "♭":
                     return NoteAccidental.Flat;
                 case "#":
+                case "♯":
                     return NoteAccidental.Sharp;
                 case "bb":
+                case "♭♭":
                     return NoteAccidental.DoubleFlat;
                 case "##":
+                case "♯♯":
                     return NoteAccidental.DoubleSharp;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -482,16 +486,16 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
                 case NoteAccidental.Natural:
                     break;
                 case NoteAccidental.Flat:
-                    sb.Append("b");
+                    sb.Append("♭");
                     break;
                 case NoteAccidental.Sharp:
-                    sb.Append("#");
+                    sb.Append("♯");
                     break;
                 case NoteAccidental.DoubleFlat:
-                    sb.Append("bb");
+                    sb.Append("♭♭");
                     break;
                 case NoteAccidental.DoubleSharp:
-                    sb.Append("##");
+                    sb.Append("♯♯");
                     break;
             }
 

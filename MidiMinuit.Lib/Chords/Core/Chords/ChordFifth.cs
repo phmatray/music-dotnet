@@ -26,7 +26,7 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
 
         public override string GetDescription()
         {
-            return "Descrition not added yet.";
+            return "Description not added yet.";
         }
 
         public override string Format()
