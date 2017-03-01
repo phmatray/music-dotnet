@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Xaml;
 
-namespace MidiMinuit.Controls.GuitarChord
+namespace MidiMinuit.Controls
 {
     /// <summary>
     /// Loading control allows to show an loading animation with some xaml in it.

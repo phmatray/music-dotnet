@@ -12,7 +12,7 @@
 
 using Windows.UI.Xaml;
 
-namespace MidiMinuit.Controls.CodeRenderer
+namespace MidiMinuit.Controls
 {
     public partial class CodeRenderer
     {

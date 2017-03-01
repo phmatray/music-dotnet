@@ -6,7 +6,6 @@
       xmlns:local="using:Microsoft.Toolkit.Uwp.SampleApp"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls1="using:MidiMinuit.Controls"
-      xmlns:codeRenderer="using:MidiMinuit.Controls.CodeRenderer"
       xmlns:models="using:MidiMinuit.Models"
       SizeChanged="Page_SizeChanged"
       mc:Ignorable="d">
@@ -144,17 +143,17 @@
 
                     <PivotItem x:Name="XamlPivotItem"
                                Header="XAML">
-                        <codeRenderer:CodeRenderer x:Name="XamlCodeRenderer" />
+                        <controls1:CodeRenderer x:Name="XamlCodeRenderer" />
                     </PivotItem>
 
                     <PivotItem x:Name="CSharpPivotItem"
                                Header="CODE">
-                        <codeRenderer:CodeRenderer x:Name="CSharpCodeRenderer" />
+                        <controls1:CodeRenderer x:Name="CSharpCodeRenderer" />
                     </PivotItem>
 
                     <PivotItem x:Name="JavaScriptPivotItem"
                                Header="JAVASCRIPT">
-                        <codeRenderer:CodeRenderer x:Name="JavaScriptCodeRenderer" />
+                        <controls1:CodeRenderer x:Name="JavaScriptCodeRenderer" />
                     </PivotItem>
 
                     <PivotItem x:Name="DocumentationPivotItem"

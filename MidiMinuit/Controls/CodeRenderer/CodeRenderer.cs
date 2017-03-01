@@ -15,9 +15,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
-using Microsoft.Toolkit.Uwp;
-using Microsoft.Toolkit.Uwp.SampleApp;
-using Newtonsoft.Json;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -25,8 +22,11 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
+using Microsoft.Toolkit.Uwp;
+using Microsoft.Toolkit.Uwp.SampleApp;
+using Newtonsoft.Json;
 
-namespace MidiMinuit.Controls.CodeRenderer
+namespace MidiMinuit.Controls
 {
     public partial class CodeRenderer : Control
     {

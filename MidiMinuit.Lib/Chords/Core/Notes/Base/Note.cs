@@ -262,7 +262,7 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
                 case 10:
                     return new Note(NoteName.A, NoteAccidental.Sharp);
                 case 11:
-                    return new Note(NoteName.B, NoteAccidental.Sharp);
+                    return new Note(NoteName.B);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(midiValue));
             }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace MidiMinuit.Controls.GuitarChord
+namespace MidiMinuit.Controls
 {
     /// <summary>
     /// Loading control allows to show an loading animation with some xaml in it.
