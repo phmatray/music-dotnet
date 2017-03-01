@@ -14,21 +14,21 @@ namespace MidiMinuit.Lib.Chords.Tools.Extensions
             return Note.GetInterval(note);
         }
 
-        public static Scale GetScale(this Note key, ScaleType type = ScaleType.Major)
-        {
-            switch (type)
-            {
-                case ScaleType.Major:
-                    return new MajorScale(key);
-                case ScaleType.Minor:
-                    return new MinorScale(key);
-                case ScaleType.MinorHarmonic:
-                case ScaleType.MinorMelodicAscendant:
-                case ScaleType.MinorMelodicDescendant:
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(type));
-            }
-        }
+        ////public static Scale GetScale(this Note key, ScaleType type = ScaleType.Major)
+        ////{
+        ////    switch (type)
+        ////    {
+        ////        case ScaleType.Major:
+        ////            return new MajorScale(key);
+        ////        case ScaleType.Minor:
+        ////            return new MinorScale(key);
+        ////        case ScaleType.MinorHarmonic:
+        ////        case ScaleType.MinorMelodicAscendant:
+        ////        case ScaleType.MinorMelodicDescendant:
+        ////        default:
+        ////            throw new ArgumentOutOfRangeException(nameof(type));
+        ////    }
+        ////}
 
         ////private static MajorScale GetScaleMajor(Note key)
         ////{

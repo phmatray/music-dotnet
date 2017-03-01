@@ -17,9 +17,9 @@ namespace MidiMinuit.Lib.Chords.Tools.Extensions
             return (int)noteAccidental;
         }
 
-        public static Scale GetScale(this ScaleType type, Note note)
-        {
-            return note.GetScale(type);
-        }
+        ////public static Scale GetScale(this ScaleType type, Note note)
+        ////{
+        ////    return note.GetScale(type);
+        ////}
     }
 }

@@ -3,6 +3,7 @@
     public enum ScaleType
     {
         // Todo: populate this enum
+        Chromatic,
         Major,
         Minor,
         MinorHarmonic,
