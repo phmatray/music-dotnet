@@ -5,6 +5,30 @@ using MidiMinuit.Lib.Chords.Core.Scales.Enum;
 
 namespace MidiMinuit.Lib.Chords.Core.Scales
 {
+    //public class ChromaticScale : Scale
+    //{
+    //    public ChromaticScale(Note key, ScaleMode mode = ScaleMode.Ionian)
+    //        : base(ScaleType.Chromatic, mode)
+    //    {
+    //        Notes = new List<Note>
+    //        {
+    //            key,
+    //            key + 1,
+    //            key + 2,
+    //            key + 3,
+    //            key + 4,
+    //            key + 5,
+    //            key + 6,
+    //            key + 7,
+    //            key + 8,
+    //            key + 9,
+    //            key + 10,
+    //            key + 11,
+    //        };
+    //    }
+    //}
+
+
     public class MajorScale : Scale
     {
         public MajorScale(Note key, ScaleMode mode = ScaleMode.Ionian)
@@ -22,7 +46,12 @@ namespace MidiMinuit.Lib.Chords.Core.Scales
             };
         }
 
-        public MinorScale RelativeMinor => new MinorScale(Key - 3, Mode);
+        public MinorScale RelativeMinor => GetRelativeMinor(Key, Mode);
+
+        public static MinorScale GetRelativeMinor(Note key, ScaleMode mode)
+        {
+            return new MinorScale(key - 3, mode);
+        }
 
         // public List<Chord> Harmonize()
         // {
