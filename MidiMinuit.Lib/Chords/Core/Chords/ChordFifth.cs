@@ -19,24 +19,21 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
             FifthPerfect = fifthPerfect as NoteFifthPerfect;
         }
 
-        public override List<NoteRole> GetNotes()
-        {
-            return new List<NoteRole> { Fondamental, FifthPerfect };
-        }
+        public override List<NoteRole> Notes
+            => new List<NoteRole> { Fondamental, FifthPerfect };
 
-        public override string GetDescription()
-        {
-            return "Description not added yet.";
-        }
+        public override string Name
+            => $"{Fondamental}5";
 
-        public override string Format()
-        {
-            return $"Fond: {Fondamental}, 5th: {FifthPerfect}";
-        }
+        public override string Details
+            => $"Fond: {Fondamental}, 5th: {FifthPerfect}";
+
+        public override string Description
+            => "Description not added yet.";
 
         public override string ToString()
         {
-            return $"{Fondamental}5";
+            return Name;
         }
     }
 }

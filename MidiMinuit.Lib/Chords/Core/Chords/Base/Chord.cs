@@ -51,18 +51,20 @@ namespace MidiMinuit.Lib.Chords.Core.Chords.Base
             }
         }
 
-        public ChordQuality Quality { get; private set; }
-
         protected Chord(ChordQuality quality)
         {
             Quality = quality;
         }
 
-        public abstract List<NoteRole> GetNotes();
+        public ChordQuality Quality { get; private set; }
 
-        public abstract string GetDescription();
+        public abstract List<NoteRole> Notes { get; }
 
-        public abstract string Format();
+        public abstract string Name { get; }
+
+        public abstract string Details { get; }
+
+        public abstract string Description { get; }
 
         public abstract override string ToString();
 

@@ -22,24 +22,21 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
             FifthDiminished = new NoteFifthDiminished(fifthDiminished);
         }
 
-        public override List<NoteRole> GetNotes()
-        {
-            return new List<NoteRole> { Fondamental, ThirdMinor, FifthDiminished };
-        }
+        public override List<NoteRole> Notes
+            => new List<NoteRole> { Fondamental, ThirdMinor, FifthDiminished };
 
-        public override string GetDescription()
-        {
-            return "Description not added yet.";
-        }
+        public override string Name
+            => $"{Fondamental}dim";
 
-        public override string Format()
-        {
-            return $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5th b: {FifthDiminished}";
-        }
+        public override string Details
+            => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5th b: {FifthDiminished}";
+
+        public override string Description
+            => "Description not added yet.";
 
         public override string ToString()
         {
-            return $"{Fondamental}dim";
+            return Name;
         }
     }
 }

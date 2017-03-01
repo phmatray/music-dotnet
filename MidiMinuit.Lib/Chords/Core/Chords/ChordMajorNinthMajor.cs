@@ -25,24 +25,21 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
             NinthMajor = new NoteNinthMajor(ninthMajor);
         }
 
-        public override List<NoteRole> GetNotes()
-        {
-            return new List<NoteRole> { Fondamental, ThirdMajor, FifthPerfect, NinthMajor };
-        }
+        public override List<NoteRole> Notes
+            => new List<NoteRole> { Fondamental, ThirdMajor, FifthPerfect, NinthMajor };
 
-        public override string GetDescription()
-        {
-            return "Description not added yet.";
-        }
+        public override string Name
+            => $"{Fondamental}add9";
 
-        public override string Format()
-        {
-            return $"Fond: {Fondamental}, 3rd: {ThirdMajor}, 5th: {FifthPerfect}, 9th: {NinthMajor}";
-        }
+        public override string Details
+            => $"Fond: {Fondamental}, 3rd: {ThirdMajor}, 5th: {FifthPerfect}, 9th: {NinthMajor}";
+
+        public override string Description
+            => "Description not added yet.";
 
         public override string ToString()
         {
-            return $"{Fondamental}add9";
+            return Name;
         }
     }
 }

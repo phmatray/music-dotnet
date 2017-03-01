@@ -17,10 +17,6 @@ namespace MidiMinuit.Controls
         private Compositor _compositor;
         private ContainerVisual _root;
 
-
-
-
-
         /// <summary>
         /// Initializes a new instance of the <see cref="GuitarChord"/> class.
         /// </summary>
@@ -32,7 +28,6 @@ namespace MidiMinuit.Controls
             FontSize = 12;
         }
 
-
         // Template Parts.
         private const string ContainerPartName = "PART_Container";
 
@@ -41,9 +36,6 @@ namespace MidiMinuit.Controls
             base.OnApplyTemplate();
             //Update();
         }
-
-
-
 
         private static void OnTuningChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

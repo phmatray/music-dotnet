@@ -114,13 +114,13 @@ namespace MidiMinuit.SamplePages.NoteFinder
         }
 
         public string ChordName
-            => Chord?.ToString();
+            => Chord?.Name;
 
         public string ChordFormat
-            => Chord?.Format();
+            => Chord?.Details;
 
         public string ChordDescription
-            => Chord?.GetDescription();
+            => Chord?.Description;
 
 
 
@@ -141,12 +141,9 @@ namespace MidiMinuit.SamplePages.NoteFinder
                 {
                     switch (action.Type)
                     {
-                        //case MidiMessageType.NoteOff:
-                        //    Note = "Note";
-                        //    break;
                         case MidiMessageType.NoteOn:
 
-                            if (((MidiNoteOnMessage) action).Note < 0 || ((MidiNoteOnMessage) action).Note > 127)
+                            if (((MidiNoteOnMessage)action).Note < 0 || ((MidiNoteOnMessage)action).Note > 127)
                             {
                                 // The range of MIDI notes goes from 0 to 127.
                                 return;

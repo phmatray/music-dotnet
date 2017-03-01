@@ -3,8 +3,6 @@ using MidiMinuit.Lib.Chords.Core.Chords.Base;
 using MidiMinuit.Lib.Chords.Core.Chords.Enum;
 using MidiMinuit.Lib.Chords.Core.Notes;
 using MidiMinuit.Lib.Chords.Core.Notes.Base;
-using MidiMinuit.Lib.Chords.Tools.Enum;
-using MidiMinuit.Lib.Chords.Tools.Helpers;
 
 namespace MidiMinuit.Lib.Chords.Core.Chords
 {
@@ -28,24 +26,21 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
             SeventhDiminished = new NoteSeventhDiminished(seventhDiminished);
         }
 
-        public override List<NoteRole> GetNotes()
-        {
-            return new List<NoteRole> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
-        }
+        public override List<NoteRole> Notes
+            => new List<NoteRole> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
 
-        public override string GetDescription()
-        {
-            return "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";
-        }
+        public override string Name
+            => $"{Fondamental}dim7";
 
-        public override string Format()
-        {
-            return $"Fond. = {Fondamental} ; 3ʳᵈ min = {ThirdMinor} ; 5ᵗʰ♭ = {FifthDiminished} ; 7ᵗʰ dim = {SeventhDiminished}";
-        }
+        public override string Details
+            => $"Fond. {Fondamental}, 3ʳᵈ min {ThirdMinor}, 5ᵗʰ♭ {FifthDiminished}, 7ᵗʰ dim {SeventhDiminished}";
+
+        public override string Description
+            => "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";
 
         public override string ToString()
         {
-            return $"{Fondamental}dim7";
+            return Name;
         }
     }
 }

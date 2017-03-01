@@ -25,24 +25,21 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
             SeventhMajor = new NoteSeventhMajor(seventhMajor);
         }
 
-        public override List<NoteRole> GetNotes()
-        {
-            return new List<NoteRole> { Fondamental, ThirdMajor, FifthPerfect, SeventhMajor };
-        }
+        public override List<NoteRole> Notes
+            => new List<NoteRole> { Fondamental, ThirdMajor, FifthPerfect, SeventhMajor };
 
-        public override string GetDescription()
-        {
-            return "Description not added yet.";
-        }
+        public override string Name
+            => $"{Fondamental}M7";
 
-        public override string Format()
-        {
-            return $"Fond: {Fondamental}, 3rd maj: {ThirdMajor}, 5th: {FifthPerfect}, 7th maj: {SeventhMajor}";
-        }
+        public override string Details
+            => $"Fond: {Fondamental}, 3rd maj: {ThirdMajor}, 5th: {FifthPerfect}, 7th maj: {SeventhMajor}";
+
+        public override string Description
+            => "Description not added yet.";
 
         public override string ToString()
         {
-            return $"{Fondamental}M7";
+            return Name;
         }
     }
 }
