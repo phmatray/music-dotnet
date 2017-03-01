@@ -4,6 +4,10 @@ using MidiMinuit.Lib.Chords.Core.Tunings;
 using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Notes.Enum;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
 
 namespace MidiMinuit.Controls
 {
@@ -14,12 +18,6 @@ namespace MidiMinuit.Controls
         /// </summary>
         public static readonly DependencyProperty FontBrushProperty =
             DependencyProperty.Register(nameof(FontBrush), typeof(Brush), typeof(GuitarChord), new PropertyMetadata(Constants.ThemeResources.SystemControlHighlightAccentBrush));
-
-        /// <summary>
-        /// Identifies the <see cref="Strings"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty StringsProperty =
-            DependencyProperty.Register(nameof(Strings), typeof(int), typeof(GuitarChord), new PropertyMetadata(6));
 
         /// <summary>
         /// Identifies the <see cref="IsInteractive"/> dependency property.
@@ -69,14 +67,17 @@ namespace MidiMinuit.Controls
         public static readonly DependencyProperty TuningNote6Property =
             DependencyProperty.Register(nameof(TuningNote6), typeof(string), typeof(GuitarChord), new PropertyMetadata("e"));
 
+        /// <summary>
+        /// Identifies the <see cref="Chord"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ChordProperty =
+            DependencyProperty.Register("Chord", typeof(Chord), typeof(GuitarChord), new PropertyMetadata(Chord.GetChord(Note.New(NoteName.E), ChordQuality.Major)));
 
 
-        // public string Note1 => Tuning?.Notes[0]?.ToString();
-        // public string Note2 => Tuning?.Notes[1]?.ToString();
-        // public string Note3 => Tuning?.Notes[2]?.ToString();
-        // public string Note4 => Tuning?.Notes[3]?.ToString();
-        // public string Note5 => Tuning?.Notes[4]?.ToString();
-        // public string Note6 => Tuning?.Notes[5]?.ToString();
+
+
+
+
 
 
 
@@ -92,15 +93,6 @@ namespace MidiMinuit.Controls
         {
             get { return (Brush)GetValue(FontBrushProperty); }
             set { SetValue(FontBrushProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the number of strings.
-        /// </summary>
-        public int Strings
-        {
-            get { return (int)GetValue(StringsProperty); }
-            set { SetValue(StringsProperty, value); }
         }
 
         /// <summary>
@@ -173,6 +165,15 @@ namespace MidiMinuit.Controls
         {
             get { return (string)GetValue(TuningNote6Property); }
             private set { SetValue(TuningNote6Property, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the chord represented by this diagram
+        /// </summary>
+        public Chord Chord
+        {
+            get { return (Chord)GetValue(ChordProperty); }
+            set { SetValue(ChordProperty, value); }
         }
     }
 }

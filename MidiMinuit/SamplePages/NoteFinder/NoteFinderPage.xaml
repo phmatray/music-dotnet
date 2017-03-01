@@ -17,9 +17,11 @@
         <TextBlock TextWrapping="Wrap" Text="{Binding NoteText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Margin="0,10"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
 
-            <TextBlock FontSize="36" Text="Adim7 (°7)" HorizontalAlignment="Center" />
+            <!--<TextBlock FontSize="36" Text="Adim7 (°7)" HorizontalAlignment="Center" />-->
+            <TextBlock FontSize="36" Text="{Binding ChordName}" HorizontalAlignment="Center" />
 
-            <TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center">
+            <!-- TODO: Use this formating style for all chords - Don't delete the following lines -->
+            <!--<TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center">
                         <Run Text="Fond = A" />
                         <Run Text=" ; " />
                         <Run Text="3ce min = C" />
@@ -27,17 +29,24 @@
                         <Run Text="5te♭ = E♭" />
                         <Run Text=" ; " />
                         <Run Text="7e dim = G♭" />
-            </TextBlock>
+            </TextBlock>-->
+
+            <TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" Text="{Binding ChordFormat}"/>
+
 
             <controls:GuitarChord Width="350" Height="350" Margin="10,20" FontBrush="{Binding ChordFontBrush}" Tuning="{Binding Tuning}"/>
 
-            <TextBlock Margin="0,10,0,0" FontSize="24" MaxWidth="600"
+            <!--<TextBlock Margin="0,10,0,0" FontSize="24" MaxWidth="600"
                        Text="Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale."
+                       TextWrapping="Wrap" HorizontalAlignment="Center" />-->
+            <TextBlock Margin="0,10,0,0" FontSize="24" MaxWidth="600"
+                       Text="{Binding ChordDescription}"
                        TextWrapping="Wrap" HorizontalAlignment="Center" />
         </StackPanel>
         <StackPanel Margin="10,10,0,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Button Content="Change Color" Command="{Binding ChangeColorCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
             <Button Content="Change Tuning" Command="{Binding ChangeTuningCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+            <Button Content="Change Chord" Command="{Binding ChangeChordCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
         </StackPanel>
     </Grid>
 </Page>

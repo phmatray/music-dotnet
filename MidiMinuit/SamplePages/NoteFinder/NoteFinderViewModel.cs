@@ -3,7 +3,10 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Toolkit.Uwp;
 using MidiMinuit.Common;
+using MidiMinuit.Lib.Chords.Core.Chords.Base;
+using MidiMinuit.Lib.Chords.Core.Chords.Enum;
 using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Core.Notes.Enum;
 using MidiMinuit.Lib.Chords.Core.Tunings;
 using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 using Windows.Devices.Midi;
@@ -73,6 +76,61 @@ namespace MidiMinuit.SamplePages.NoteFinder
             get { return _tuning; }
             set { Set(ref _tuning, value); }
         }
+
+        private RelayCommand _changeChordCommand;
+
+        public RelayCommand ChangeChordCommand
+        {
+            get
+            {
+                if (_changeChordCommand == null)
+                {
+                    _changeChordCommand = new RelayCommand(() =>
+                    {
+                        Chord = Chord.GetChord(Note.New(NoteName.E), ChordQuality.MinorDiminishedSeventhDiminished);
+                    });
+                }
+
+                return _changeChordCommand;
+            }
+        }
+
+        private Chord _chord = Chord.GetChord(Note.New(NoteName.C), ChordQuality.Minor);
+
+        public Chord Chord
+        {
+            get
+            {
+                return _chord;
+            }
+
+            set
+            {
+                Set(ref _chord, value);
+                RaisePropertyChanged(nameof(ChordName));
+                RaisePropertyChanged(nameof(ChordFormat));
+                RaisePropertyChanged(nameof(ChordDescription));
+            }
+        }
+
+        public string ChordName
+            => Chord?.ToString();
+
+        public string ChordFormat
+            => Chord?.Format();
+
+        public string ChordDescription
+            => Chord?.GetDescription();
+
+
+
+
+
+
+
+
+
+
 
 
         public NoteFinderViewModel()
