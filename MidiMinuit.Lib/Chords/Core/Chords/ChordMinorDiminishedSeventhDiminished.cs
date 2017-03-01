@@ -1,8 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MidiMinuit.Lib.Chords.Core.Chords.Base;
 using MidiMinuit.Lib.Chords.Core.Chords.Enum;
 using MidiMinuit.Lib.Chords.Core.Notes;
 using MidiMinuit.Lib.Chords.Core.Notes.Base;
+using MidiMinuit.Lib.Chords.Tools.Enum;
+using MidiMinuit.Lib.Chords.Tools.Helpers;
 
 namespace MidiMinuit.Lib.Chords.Core.Chords
 {
@@ -33,12 +35,12 @@ namespace MidiMinuit.Lib.Chords.Core.Chords
 
         public override string GetDescription()
         {
-            return "Un accord dim7 est un accord 7 dont toutes les notes ont �t� diminu�es d'un demi-ton (1 case) � l'exception de la fondamentale.";
+            return "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";
         }
 
         public override string Format()
         {
-            return $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5th b: {FifthDiminished}, 7th dim: {SeventhDiminished}";
+            return $"Fond. = {Fondamental} ; 3ʳᵈ min = {ThirdMinor} ; 5ᵗʰ♭ = {FifthDiminished} ; 7ᵗʰ dim = {SeventhDiminished}";
         }
 
         public override string ToString()

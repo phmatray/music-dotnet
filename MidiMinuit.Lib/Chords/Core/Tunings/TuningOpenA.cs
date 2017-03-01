@@ -1,11 +1,11 @@
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+﻿using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 
 namespace MidiMinuit.Lib.Chords.Core.Tunings
 {
     public class TuningOpenA : Tuning
     {
         public TuningOpenA()
-            : base("E", "A", "E", "A", "Db", "E")
+            : base("E", "A", "E", "A", "D♭", "E")
         {
         }
 

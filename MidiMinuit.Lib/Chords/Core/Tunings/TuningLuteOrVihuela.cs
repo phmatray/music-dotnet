@@ -1,11 +1,11 @@
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+﻿using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 
 namespace MidiMinuit.Lib.Chords.Core.Tunings
 {
     public class TuningLuteOrVihuela : Tuning
     {
         public TuningLuteOrVihuela()
-            : base("E", "A", "D", "Gb", "B", "E")
+            : base("E", "A", "D", "G♭", "B", "E")
         {
         }
 

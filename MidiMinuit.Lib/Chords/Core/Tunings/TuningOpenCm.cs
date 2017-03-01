@@ -1,11 +1,11 @@
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+﻿using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 
 namespace MidiMinuit.Lib.Chords.Core.Tunings
 {
     public class TuningOpenCm : Tuning
     {
         public TuningOpenCm()
-            : base("C", "G", "C", "G", "C", "Eb")
+            : base("C", "G", "C", "G", "C", "E♭")
         {
         }
 

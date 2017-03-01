@@ -156,12 +156,16 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
                 case "":
                     return NoteAccidental.Natural;
                 case "b":
+                case "♭":
                     return NoteAccidental.Flat;
                 case "#":
+                case "♯":
                     return NoteAccidental.Sharp;
                 case "bb":
+                case "♭♭":
                     return NoteAccidental.DoubleFlat;
                 case "##":
+                case "♯♯":
                     return NoteAccidental.DoubleSharp;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -179,39 +183,39 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
             switch (note.ToString())
             {
                 case "C":
-                    return new Interval("C", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "Bbb", "Bb", "B", "C");
-                case "C#":
-                    return new Interval("C#", "D", "D#", "D##", "E", "E#", "F#", "F##", "G", "G#", "G##", "A", "A#", "Bb", "B", "B#", "C#");
-                case "Db":
-                    return new Interval("Db", "Ebb", "Eb", "E", "Fb", "F", "Gb", "G", "Abb", "Ab", "A", "Bbb", "Bb", "Cbb", "Cb", "C", "Db");
+                    return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭", "B♭", "B", "C");
+                case "C♯":
+                    return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯", "B♭", "B", "B♯", "C♯");
+                case "D♭":
+                    return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭♭", "C♭", "C", "D♭");
                 case "D":
-                    return new Interval("D", "Eb", "E", "E#", "F", "F#", "G", "G#", "Ab", "A", "A#", "Bb", "B", "Cb", "C", "C#", "D");
-                case "D#":
-                    return new Interval("D#", "E", "E#", "E##", "F#", "F##", "G#", "G##", "A", "A#", "A##", "B", "B#", "C", "C#", "C##", "D#");
-                case "Eb":
-                    return new Interval("Eb", "Fb", "F", "F#", "Gb", "G", "Ab", "A", "Bbb", "Bb", "B", "Cb", "C", "Dbb", "Db", "D", "Eb");
+                    return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭", "C", "C♯", "D");
+                case "D♯":
+                    return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯", "C", "C♯", "C♯♯", "D♯");
+                case "E♭":
+                    return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭", "D♭", "D", "E♭");
                 case "E":
-                    return new Interval("E", "F", "F#", "F##", "G", "G#", "A", "A#", "Bb", "B", "B#", "C", "C#", "Db", "D", "D#", "E");
+                    return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭", "D", "D♯", "E");
                 case "F":
-                    return new Interval("F", "Gb", "G", "G#", "Ab", "A", "Bb", "B", "Cb", "C", "C#", "Db", "D", "Ebb", "Eb", "E", "F");
-                case "F#":
-                    return new Interval("F#", "G", "G#", "G##", "A", "A#", "B", "B#", "C", "C#", "C##", "D", "D#", "Eb", "E", "E#", "F#");
-                case "Gb":
-                    return new Interval("Gb", "Abb", "Ab", "A", "Bbb", "Bb", "Cb", "C", "Dbb", "Db", "D", "Ebb", "Eb", "Fbb", "Fb", "F", "Gb");
+                    return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭", "E♭", "E", "F");
+                case "F♯":
+                    return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭", "E", "E♯", "F♯");
+                case "G♭":
+                    return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭", "F♭♭", "F♭", "F", "G♭");
                 case "G":
-                    return new Interval("G", "Ab", "A", "A#", "Bb", "B", "C", "C#", "Db", "D", "D#", "Eb", "E", "Fb", "F", "F#", "G");
-                case "G#":
-                    return new Interval("G#", "A", "A#", "A##", "B", "B#", "C#", "C##", "D", "D#", "D##", "E", "E#", "F", "F#", "F##", "G#");
-                case "Ab":
-                    return new Interval("Ab", "Bbb", "Bb", "B", "Cb", "C", "Db", "D", "Ebb", "Eb", "E", "Fb", "F", "Gbb", "Gb", "G", "Ab");
+                    return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭", "F", "F♯", "G");
+                case "G♯":
+                    return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F", "F♯", "F♯♯", "G♯");
+                case "A♭":
+                    return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭", "G♭", "G", "A♭");
                 case "A":
-                    return new Interval("A", "Bb", "B", "B#", "C", "C#", "D", "D#", "Eb", "E", "E#", "F", "F#", "Gb", "G", "G#", "A");
-                case "A#":
-                    return new Interval("A#", "B", "B#", "B##", "C#", "C##", "D#", "D##", "E", "E#", "E##", "F#", "F##", "G", "G#", "G##", "A#");
-                case "Bb":
-                    return new Interval("Bb", "Cb", "C", "C#", "Db", "D", "Eb", "E", "Fb", "F", "F#", "Gb", "G", "Abb", "Ab", "A", "Bb");
+                    return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭", "G", "G♯", "A");
+                case "A♯":
+                    return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A♯");
+                case "B♭":
+                    return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭", "A♭", "A", "B♭");
                 case "B":
-                    return new Interval("B", "C", "C#", "C##", "D", "D#", "E", "E#", "F", "F#", "F##", "G", "G#", "Ab", "A", "A#", "B");
+                    return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭", "A", "A♯", "B");
 
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -300,7 +304,7 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
                 throw new ArgumentNullException(nameof(note));
             }
 
-            if (!new Regex("^[A-Ga-g](bb?|##?)?$").IsMatch(note))
+            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
             {
                 throw new ArgumentException("incorrect format");
             }
@@ -482,16 +486,16 @@ namespace MidiMinuit.Lib.Chords.Core.Notes.Base
                 case NoteAccidental.Natural:
                     break;
                 case NoteAccidental.Flat:
-                    sb.Append("b");
+                    sb.Append("♭");
                     break;
                 case NoteAccidental.Sharp:
-                    sb.Append("#");
+                    sb.Append("♯");
                     break;
                 case NoteAccidental.DoubleFlat:
-                    sb.Append("bb");
+                    sb.Append("♭♭");
                     break;
                 case NoteAccidental.DoubleSharp:
-                    sb.Append("##");
+                    sb.Append("♯♯");
                     break;
             }
 

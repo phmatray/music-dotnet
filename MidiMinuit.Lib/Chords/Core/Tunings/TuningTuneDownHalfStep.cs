@@ -1,11 +1,11 @@
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+﻿using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 
 namespace MidiMinuit.Lib.Chords.Core.Tunings
 {
     public class TuningTuneDownHalfStep : Tuning
     {
         public TuningTuneDownHalfStep()
-            : base("Eb", "Ab", "Db", "Gb", "Bb", "Eb")
+            : base("E♭", "A♭", "D♭", "G♭", "B♭", "E♭")
         {
         }
 

@@ -1,11 +1,11 @@
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
+﻿using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 
 namespace MidiMinuit.Lib.Chords.Core.Tunings
 {
     public class TuningBaritone : Tuning
     {
         public TuningBaritone()
-            : base("B", "E", "A", "D", "Gb", "B")
+            : base("B", "E", "A", "D", "G♭", "B")
         {
         }
 
