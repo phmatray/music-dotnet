@@ -1,9 +1,8 @@
 ﻿
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MidiMinuit.Lib.Chords.Core.Scales.Base;
-using MidiMinuit.Lib.Chords.Core.Notes.Base;
-using MidiMinuit.Lib.Chords.Core.Scales.Enum;
+using MidiMinuit.Lib.Core.Notes;
+using MidiMinuit.Lib.Core.Scales;
 
 namespace MidiMinuit.Tests
 {
@@ -13,7 +12,7 @@ namespace MidiMinuit.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var notes = IntervalHelper.GetScale(Note.New(), ScaleType.Major);
+            var notes = IntervalHelper.GetScale(Note.New(), ScaleTypeEnum.Major);
         }
     }
 }

@@ -3,15 +3,12 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Toolkit.Uwp;
 using MidiMinuit.Common;
-using MidiMinuit.Lib.Chords.Core.Chords.Base;
-using MidiMinuit.Lib.Chords.Core.Chords.Enum;
-using MidiMinuit.Lib.Chords.Core.Notes.Base;
-using MidiMinuit.Lib.Chords.Core.Notes.Enum;
-using MidiMinuit.Lib.Chords.Core.Tunings;
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 using Windows.Devices.Midi;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
+using MidiMinuit.Lib.Core.Chords;
+using MidiMinuit.Lib.Core.Notes;
+using MidiMinuit.Lib.Instruments.GuitarTunings;
 
 namespace MidiMinuit.SamplePages.NoteFinder
 {
@@ -87,7 +84,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
                 {
                     _changeChordCommand = new RelayCommand(() =>
                     {
-                        Chord = Chord.GetChord(Note.New(NoteName.E), ChordQuality.MinorDiminishedSeventhDiminished);
+                        Chord = ChordBase.GetChord(Note.New(NoteNameEnum.E), ChordQualityEnum.MinorDiminishedSeventhDiminished);
                     });
                 }
 
@@ -95,9 +92,9 @@ namespace MidiMinuit.SamplePages.NoteFinder
             }
         }
 
-        private Chord _chord = Chord.GetChord(Note.New(NoteName.C), ChordQuality.Minor);
+        private ChordBase _chord = ChordBase.GetChord(Note.New(NoteNameEnum.C), ChordQualityEnum.Minor);
 
-        public Chord Chord
+        public ChordBase Chord
         {
             get
             {

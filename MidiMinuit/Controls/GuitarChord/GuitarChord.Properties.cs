@@ -1,13 +1,10 @@
 ﻿using System;
 using MidiMinuit.Common;
-using MidiMinuit.Lib.Chords.Core.Tunings;
-using MidiMinuit.Lib.Chords.Core.Tunings.Base;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
-using MidiMinuit.Lib.Chords.Core.Chords.Base;
-using MidiMinuit.Lib.Chords.Core.Notes.Base;
-using MidiMinuit.Lib.Chords.Core.Notes.Enum;
-using MidiMinuit.Lib.Chords.Core.Chords.Enum;
+using MidiMinuit.Lib.Core.Chords;
+using MidiMinuit.Lib.Core.Notes;
+using MidiMinuit.Lib.Instruments.GuitarTunings;
 
 namespace MidiMinuit.Controls
 {
@@ -71,7 +68,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Chord"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ChordProperty =
-            DependencyProperty.Register("Chord", typeof(Chord), typeof(GuitarChord), new PropertyMetadata(Chord.GetChord(Note.New(NoteName.E), ChordQuality.Major)));
+            DependencyProperty.Register("Chord", typeof(ChordBase), typeof(GuitarChord), new PropertyMetadata(ChordBase.GetChord(Note.New(NoteNameEnum.E), ChordQualityEnum.Major)));
 
 
 
@@ -170,9 +167,9 @@ namespace MidiMinuit.Controls
         /// <summary>
         /// Gets or sets the chord represented by this diagram
         /// </summary>
-        public Chord Chord
+        public ChordBase Chord
         {
-            get { return (Chord)GetValue(ChordProperty); }
+            get { return (ChordBase)GetValue(ChordProperty); }
             set { SetValue(ChordProperty, value); }
         }
     }
