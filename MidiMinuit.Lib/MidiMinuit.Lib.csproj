@@ -230,6 +230,7 @@
     <Compile Include="Core\Intervals\Enum\IntervalThirteenthEnum.cs" />
     <Compile Include="Core\Notes\Enum\NoteQualityEnum.cs" />
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

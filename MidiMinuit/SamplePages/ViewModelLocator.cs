@@ -1,8 +1,10 @@
-﻿using GalaSoft.MvvmLight;
+﻿using Windows.UI.Xaml;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using MidiMinuit.SamplePages.ConfigureMidi;
+using MidiMinuit.SamplePages.DegreeInfo;
 using MidiMinuit.SamplePages.NoteFinder;
 
 namespace MidiMinuit.SamplePages
@@ -13,6 +15,9 @@ namespace MidiMinuit.SamplePages
     /// </summary>
     public class ViewModelLocator
     {
+        public static ViewModelLocator Instance
+            => Application.Current.Resources["Locator"] as ViewModelLocator;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModelLocator"/> class.
         /// </summary>
@@ -33,6 +38,7 @@ namespace MidiMinuit.SamplePages
 
             // SimpleIoc.Default.Register<INavigationService, NavigationService>();
             SimpleIoc.Default.Register<ConfigureMidiViewModel>();
+            SimpleIoc.Default.Register<DegreeInfoViewModel>();
             SimpleIoc.Default.Register<NoteFinderViewModel>();
         }
 
@@ -42,8 +48,17 @@ namespace MidiMinuit.SamplePages
         // <value>
         // The ConfigureMidi view model.
         // </value>
-        public static ConfigureMidiViewModel ConfigureMidiInstance
+        public ConfigureMidiViewModel ConfigureMidiInstance
             => ServiceLocator.Current.GetInstance<ConfigureMidiViewModel>();
+
+        // <summary>
+        // Gets the DegreeInfo view model.
+        // </summary>
+        // <value>
+        // The DegreeInfo view model.
+        // </value>
+        public DegreeInfoViewModel DegreeInfoInstance
+            => ServiceLocator.Current.GetInstance<DegreeInfoViewModel>();
 
         // <summary>
         // Gets the NoteFinder view model.
@@ -51,7 +66,7 @@ namespace MidiMinuit.SamplePages
         // <value>
         // The NoteFinder view model.
         // </value>
-        public static NoteFinderViewModel NoteFinderInstance
+        public NoteFinderViewModel NoteFinderInstance
             => ServiceLocator.Current.GetInstance<NoteFinderViewModel>();
 
         // <summary>

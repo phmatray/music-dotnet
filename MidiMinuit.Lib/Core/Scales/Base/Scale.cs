@@ -343,7 +343,7 @@ namespace MidiMinuit.Lib.Core.Scales
     {
         public Scale7Major(Note key = null)
         {
-            Key = key ?? new Note();
+            Key = key ?? new Note(NoteNameEnum.C);
             Name = "Major";
             Imperfections = 3;
             Intervals = new List<int> { 2, 2, 1, 2, 2, 2, 1 };
@@ -386,7 +386,7 @@ namespace MidiMinuit.Lib.Core.Scales
     {
         public Scale7AscendingMelodicMinor(Note key = null)
         {
-            Key = key ?? new Note();
+            Key = key ?? new Note(NoteNameEnum.C);
             Name = "Ascending Melodic Minor";
             Imperfections = 3;
             Intervals = new List<int> { 2, 2, 2, 2, 1, 2, 1 };

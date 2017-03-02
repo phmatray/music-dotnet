@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="MidiMinuit.SamplePages.DegreeInfo.DegreeInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MidiMinuit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" 
+    xmlns:degrees="using:MidiMinuit.Lib.Core.Degrees"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="DegreesTemplate" x:DataType="degrees:DegreeBase" >
+            <StackPanel>
+                <TextBlock Text="{x:Bind DegreeEnum}"/>
+                <TextBlock Text="{x:Bind DiatonicFunction}"/>
+                <TextBlock Text="{x:Bind CorrespondingModeMajorKey}"/>
+                <TextBlock Text="{x:Bind CorrespondingModeMinorKey}"/>
+                <TextBlock Text="{x:Bind Meaning}"/>
+                <TextBlock Text="{x:Bind NoteInCMajor}"/>
+                <TextBlock Text="{x:Bind NoteInCMinor}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:AdaptiveGridView 
+            ItemsSource="{x:Bind ViewModel.Degrees}"
+            OneRowModeEnabled="False"
+            ItemHeight="200"
+            DesiredWidth="300"
+            SelectionMode="None"
+            IsItemClickEnabled="False"
+            ItemTemplate="{StaticResource DegreesTemplate}"/>
+    </Grid>
+</Page>

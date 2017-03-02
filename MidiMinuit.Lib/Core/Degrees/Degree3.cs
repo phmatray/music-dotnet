@@ -4,11 +4,6 @@ namespace MidiMinuit.Lib.Core.Degrees
 {
     public class Degree3 : DegreeBase
     {
-        protected internal Degree3()
-            : base()
-        {
-        }
-
         public override DegreeEnum DegreeEnum
             => DegreeEnum.III;
 

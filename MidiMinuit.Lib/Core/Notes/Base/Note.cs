@@ -26,7 +26,7 @@ namespace MidiMinuit.Lib.Core.Notes
             switch (value)
             {
                 case 0:
-                    return new Note();
+                    return new Note(NoteNameEnum.C);
                 case 1:
                     return new Note(NoteNameEnum.C, NoteAccidentalEnum.Sharp);
                 case 2:
@@ -59,7 +59,7 @@ namespace MidiMinuit.Lib.Core.Notes
             switch (value)
             {
                 case 0:
-                    return new Note();
+                    return new Note(NoteNameEnum.C);
                 case 1:
                     return new Note(NoteNameEnum.D, NoteAccidentalEnum.Flat);
                 case 2:
@@ -171,6 +171,142 @@ namespace MidiMinuit.Lib.Core.Notes
             }
         }
 
+        public static Note operator +(Note note, int semitone)
+            => note.Add(semitone);
+
+        public static Note operator -(Note note, int semitone)
+            => note.Substract(semitone);
+
+        public static bool operator ==(Note left, Note right)
+            => Equals(left, right);
+
+        public static bool operator !=(Note left, Note right)
+            => !Equals(left, right);
+
+        public static bool operator >(Note left, Note right)
+            => left.Pitch > right.Pitch;
+
+        public static bool operator <(Note left, Note right)
+            => left.Pitch < right.Pitch;
+
+        private NoteNameEnum _name;
+        private NoteAccidentalEnum _accidental;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="name">The name of the note.</param>
+        /// <param name="accidental">The accidental of the note.</param>
+        public Note(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        {
+            Name = name;
+            Accidental = accidental;
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="note">
+        ///     The name of the note with its accidental.
+        ///     ex: "C#" or "Db" or E...
+        /// </param>
+        /// <exception cref="System.ArgumentNullException">note</exception>
+        /// <exception cref="System.ArgumentException">incorrect format</exception>
+        public Note(string note)
+        {
+            if (string.IsNullOrWhiteSpace(note))
+            {
+                throw new ArgumentNullException(nameof(note));
+            }
+
+            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
+            {
+                throw new ArgumentException("incorrect format");
+            }
+
+            Name = GetName(note[0].ToString());
+            Accidental = GetAccidental(note.Substring(1, note.Length - 1));
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="midiValue">
+        ///     The midi value of the note.
+        /// </param>
+        /// <exception cref="System.ArgumentNullException">note</exception>
+        /// <exception cref="System.ArgumentException">incorrect format</exception>
+        public Note(int midiValue)
+        {
+            if (midiValue < 0 || midiValue > 127)
+            {
+                throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+
+            switch (midiValue % 12)
+            {
+                case 0:
+                    Name = NoteNameEnum.C;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 1:
+                    Name = NoteNameEnum.C;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 2:
+                    Name = NoteNameEnum.D;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 3:
+                    Name = NoteNameEnum.D;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 4:
+                    Name = NoteNameEnum.E;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 5:
+                    Name = NoteNameEnum.F;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 6:
+                    Name = NoteNameEnum.F;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 7:
+                    Name = NoteNameEnum.G;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 8:
+                    Name = NoteNameEnum.G;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 9:
+                    Name = NoteNameEnum.A;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 10:
+                    Name = NoteNameEnum.A;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 11:
+                    Name = NoteNameEnum.B;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="note">The note.</param>
+        public Note(Note note)
+            : this(note.Name, note.Accidental)
+        {
+        }
+
         public Interval GetInterval()
         {
             // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
@@ -214,106 +350,6 @@ namespace MidiMinuit.Lib.Core.Notes
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
-
-        public static Note New(
-            NoteNameEnum name = NoteNameEnum.C,
-            NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        {
-            return new Note(name, accidental);
-        }
-
-        public static Note New(string note)
-        {
-            return new Note(note);
-        }
-
-        public static Note New(int midiValue)
-        {
-            if (midiValue < 0 || midiValue > 127)
-            {
-                throw new ArgumentOutOfRangeException(nameof(midiValue));
-            }
-
-            switch (midiValue % 12)
-            {
-                case 0:
-                    return new Note(NoteNameEnum.C);
-                case 1:
-                    return new Note(NoteNameEnum.C, NoteAccidentalEnum.Sharp);
-                case 2:
-                    return new Note(NoteNameEnum.D);
-                case 3:
-                    return new Note(NoteNameEnum.D, NoteAccidentalEnum.Sharp);
-                case 4:
-                    return new Note(NoteNameEnum.E);
-                case 5:
-                    return new Note(NoteNameEnum.F);
-                case 6:
-                    return new Note(NoteNameEnum.F, NoteAccidentalEnum.Sharp);
-                case 7:
-                    return new Note(NoteNameEnum.G);
-                case 8:
-                    return new Note(NoteNameEnum.G, NoteAccidentalEnum.Sharp);
-                case 9:
-                    return new Note(NoteNameEnum.A);
-                case 10:
-                    return new Note(NoteNameEnum.A, NoteAccidentalEnum.Sharp);
-                case 11:
-                    return new Note(NoteNameEnum.B);
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(midiValue));
-            }
-        }
-
-        private NoteNameEnum _name;
-        private NoteAccidentalEnum _accidental;
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="name">The name of the note.</param>
-        /// <param name="accidental">The accidental of the note.</param>
-        public Note(
-            NoteNameEnum name = NoteNameEnum.C,
-            NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        {
-            Name = name;
-            Accidental = accidental;
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="note">
-        ///     The name of the note with its accidental.
-        ///     ex: "C#" or "Db" or E...
-        /// </param>
-        /// <exception cref="System.ArgumentNullException">note</exception>
-        /// <exception cref="System.ArgumentException">incorrect format</exception>
-        public Note(string note)
-        {
-            if (string.IsNullOrWhiteSpace(note))
-            {
-                throw new ArgumentNullException(nameof(note));
-            }
-
-            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
-            {
-                throw new ArgumentException("incorrect format");
-            }
-
-            Name = GetName(note[0].ToString());
-            Accidental = GetAccidental(note.Substring(1, note.Length - 1));
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="note">The note.</param>
-        public Note(Note note)
-            : this(note.Name, note.Accidental)
-        {
         }
 
         public NoteNameEnum Name
@@ -435,41 +471,6 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public static Note operator +(Note note, int semitone)
-        {
-            return note.Add(semitone);
-        }
-
-        public static Note operator -(Note note, int semitone)
-        {
-            return note.Substract(semitone);
-        }
-
-        public static bool operator ==(Note left, Note right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(Note left, Note right)
-        {
-            return !Equals(left, right);
-        }
-
-        public static bool operator >(Note left, Note right)
-        {
-            return left.Pitch > right.Pitch;
-        }
-
-        public static bool operator <(Note left, Note right)
-        {
-            return left.Pitch < right.Pitch;
-        }
-
         public override string ToString()
         {
             var sb = new StringBuilder();
@@ -494,6 +495,11 @@ namespace MidiMinuit.Lib.Core.Notes
             }
 
             return sb.ToString();
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

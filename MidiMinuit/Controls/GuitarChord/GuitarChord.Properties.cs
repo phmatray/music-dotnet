@@ -1,10 +1,10 @@
 ﻿using System;
 using MidiMinuit.Common;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Media;
 using MidiMinuit.Lib.Core.Chords;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Instruments.GuitarTunings;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 namespace MidiMinuit.Controls
 {
@@ -68,7 +68,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Chord"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ChordProperty =
-            DependencyProperty.Register("Chord", typeof(ChordBase), typeof(GuitarChord), new PropertyMetadata(ChordBase.GetChord(Note.New(NoteNameEnum.E), ChordQualityEnum.Major)));
+            DependencyProperty.Register(nameof(Chord), typeof(ChordBase), typeof(GuitarChord), new PropertyMetadata(ChordBase.GetChord(new Note(NoteNameEnum.E), ChordQualityEnum.Major)));
 
 
 

@@ -1,20 +1,23 @@
 ﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Toolkit.Uwp;
 using MidiMinuit.Common;
-using Windows.Devices.Midi;
-using Windows.UI;
-using Windows.UI.Xaml.Media;
 using MidiMinuit.Lib.Core.Chords;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Instruments.GuitarTunings;
+using Windows.Devices.Midi;
+using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media;
 
 namespace MidiMinuit.SamplePages.NoteFinder
 {
     public class NoteFinderViewModel : ViewModelBase
     {
         private string _noteText = "Use your MIDI keyboard";
+        private Brush _chordFontBrush = Constants.ThemeResources.SystemControlHighlightAccentBrush;
+        private Tuning _tuning = new TuningStandard();
+        private ChordBase _chord = ChordBase.GetChord(new Note(NoteNameEnum.C), ChordQualityEnum.Minor);
 
         public string NoteText
         {
@@ -22,51 +25,11 @@ namespace MidiMinuit.SamplePages.NoteFinder
             set { Set(ref _noteText, value); }
         }
 
-        private RelayCommand _changeColorCommand;
-
-        public RelayCommand ChangeColorCommand
-        {
-            get
-            {
-                if (_changeColorCommand == null)
-                {
-                    _changeColorCommand = new RelayCommand(() =>
-                    {
-                        ChordFontBrush = new SolidColorBrush(Colors.Crimson);
-                    });
-                }
-
-                return _changeColorCommand;
-            }
-        }
-
-        private Brush _chordFontBrush = Constants.ThemeResources.SystemControlHighlightAccentBrush;
-
         public Brush ChordFontBrush
         {
             get { return _chordFontBrush; }
             set { Set(ref _chordFontBrush, value); }
         }
-
-        private RelayCommand _changeTuningCommand;
-
-        public RelayCommand ChangeTuningCommand
-        {
-            get
-            {
-                if (_changeTuningCommand == null)
-                {
-                    _changeTuningCommand = new RelayCommand(() =>
-                    {
-                        Tuning = new TuningTuneDownHalfStep();
-                    });
-                }
-
-                return _changeTuningCommand;
-            }
-        }
-
-        private Tuning _tuning = new TuningStandard();
 
         public Tuning Tuning
         {
@@ -74,61 +37,11 @@ namespace MidiMinuit.SamplePages.NoteFinder
             set { Set(ref _tuning, value); }
         }
 
-        private RelayCommand _changeChordCommand;
-
-        public RelayCommand ChangeChordCommand
-        {
-            get
-            {
-                if (_changeChordCommand == null)
-                {
-                    _changeChordCommand = new RelayCommand(() =>
-                    {
-                        Chord = ChordBase.GetChord(Note.New(NoteNameEnum.E), ChordQualityEnum.MinorDiminishedSeventhDiminished);
-                    });
-                }
-
-                return _changeChordCommand;
-            }
-        }
-
-        private ChordBase _chord = ChordBase.GetChord(Note.New(NoteNameEnum.C), ChordQualityEnum.Minor);
-
         public ChordBase Chord
         {
-            get
-            {
-                return _chord;
-            }
-
-            set
-            {
-                Set(ref _chord, value);
-                RaisePropertyChanged(nameof(ChordName));
-                RaisePropertyChanged(nameof(ChordFormat));
-                RaisePropertyChanged(nameof(ChordDescription));
-            }
+            get { return _chord; }
+            set { Set(ref _chord, value); }
         }
-
-        public string ChordName
-            => Chord?.Name;
-
-        public string ChordFormat
-            => Chord?.Details;
-
-        public string ChordDescription
-            => Chord?.Description;
-
-
-
-
-
-
-
-
-
-
-
 
         public NoteFinderViewModel()
         {
@@ -146,11 +59,26 @@ namespace MidiMinuit.SamplePages.NoteFinder
                                 return;
                             }
 
-                            NoteText = Note.New(((MidiNoteOnMessage) action).Note).ToString();
+                            NoteText = new Note(((MidiNoteOnMessage) action).Note).ToString();
                             break;
                     }
                 });
             });
+        }
+
+        public void ChangeColor_OnClick(object sender, RoutedEventArgs e)
+        {
+            ChordFontBrush = new SolidColorBrush(Colors.Crimson);
+        }
+
+        public void ChangeTuning_OnClick(object sender, RoutedEventArgs e)
+        {
+            Tuning = new TuningTuneDownHalfStep();
+        }
+
+        public void ChangeChord_OnClick(object sender, RoutedEventArgs e)
+        {
+            Chord = ChordBase.GetChord(new Note(NoteNameEnum.E), ChordQualityEnum.MinorDiminishedSeventhDiminished);
         }
     }
 }

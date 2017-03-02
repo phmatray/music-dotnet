@@ -2,6 +2,7 @@
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
+using MidiMinuit.SamplePages;
 
 namespace MidiMinuit.Common
 {

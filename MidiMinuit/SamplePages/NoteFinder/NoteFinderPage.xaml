@@ -6,19 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:MidiMinuit.Controls"
-    mc:Ignorable="d"
-    DataContext="{Binding Source={StaticResource Locator}, Path=NoteFinderInstance}">
+    mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock TextWrapping="Wrap" Text="{Binding NoteText}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Margin="0,10"/>
+        <TextBlock TextWrapping="Wrap" Text="{x:Bind ViewModel.NoteText, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Margin="0,10"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             <!--<TextBlock FontSize="36" Text="Adim7 (°7)" HorizontalAlignment="Center" />-->
-            <TextBlock FontSize="36" Text="{Binding ChordName}" HorizontalAlignment="Center" />
+            <TextBlock FontSize="36" Text="{x:Bind ViewModel.Chord.Name}" HorizontalAlignment="Center" />
 
             <!-- TODO: Use this formating style for all chords - Don't delete the following lines -->
             <!--<TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center">
@@ -31,22 +30,26 @@
                         <Run Text="7e dim = G♭" />
             </TextBlock>-->
 
-            <TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" Text="{Binding ChordFormat}"/>
+            <TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center"
+                       Text="{x:Bind ViewModel.Chord.Details}"/>
 
 
-            <controls:GuitarChord Width="350" Height="350" Margin="10,20" FontBrush="{Binding ChordFontBrush}" Tuning="{Binding Tuning}"/>
+            <controls:GuitarChord 
+                Width="350" Height="350" Margin="10,20"
+                FontBrush="{x:Bind ViewModel.ChordFontBrush, Mode=TwoWay}"
+                Tuning="{x:Bind ViewModel.Tuning, Mode=TwoWay}"/>
 
             <!--<TextBlock Margin="0,10,0,0" FontSize="24" MaxWidth="600"
                        Text="Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale."
                        TextWrapping="Wrap" HorizontalAlignment="Center" />-->
             <TextBlock Margin="0,10,0,0" FontSize="24" MaxWidth="600"
-                       Text="{Binding ChordDescription}"
+                       Text="{x:Bind ViewModel.Chord.Description}"
                        TextWrapping="Wrap" HorizontalAlignment="Center" />
         </StackPanel>
         <StackPanel Margin="10,10,0,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button Content="Change Color" Command="{Binding ChangeColorCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
-            <Button Content="Change Tuning" Command="{Binding ChangeTuningCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
-            <Button Content="Change Chord" Command="{Binding ChangeChordCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+            <Button Content="Change Color" Click="{x:Bind ViewModel.ChangeColor_OnClick}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+            <Button Content="Change Tuning" Click="{x:Bind ViewModel.ChangeTuning_OnClick}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+            <Button Content="Change Chord" Click="{x:Bind ViewModel.ChangeChord_OnClick}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
         </StackPanel>
     </Grid>
 </Page>
