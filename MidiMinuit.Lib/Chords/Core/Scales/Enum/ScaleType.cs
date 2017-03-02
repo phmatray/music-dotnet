@@ -2,12 +2,24 @@
 {
     public enum ScaleType
     {
-        // Todo: populate this enum
-        Chromatic,
         Major,
-        Minor,
+        MinorMelodic,
         MinorHarmonic,
-        MinorMelodicAscendant,
-        MinorMelodicDescendant
+        MinorNaturalEolian,
+        ModeDorian,
+        ModeMixolydian,
+        ModeLydian,
+        ModeLydianB7,
+        PentatonicMajor,
+        PentatonicMinor,
+        Blues,
+        ModePhrygian,
+        ModeLocrian,
+        ModeLocrianBec2,
+        ModeMixolydianB2B6,
+        ModeAltered,
+        ModeLydianAdded,
+        ModeDiminishedReverse,
+        ModeDiminished
     }
 }

@@ -56,7 +56,7 @@ namespace MidiMinuit.Lib.Chords.Core.Chords.Base
             Quality = quality;
         }
 
-        public ChordQuality Quality { get; private set; }
+        public ChordQuality Quality { get; }
 
         public abstract List<NoteRole> Notes { get; }
 

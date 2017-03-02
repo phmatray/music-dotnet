@@ -6,6 +6,30 @@ using MidiMinuit.Lib.Chords.Tools.Extensions;
 
 namespace MidiMinuit.Lib.Chords.Core.Scales.Base
 {
+    /*
+     * Une gamme est l'application d'un mode. Par exemple la gamme de Sol majeur est l'application du mode majeur avec Sol comme note  fondamentale (Sol La Si Do Re Mi Fa#).
+     *
+     * Modes naturels / harmoniques / mélodiques
+     *
+     * gamme majeure aka mode Ionien
+     * gamme mineure aka aeolien
+     *
+     * Parmi les 7 « modes naturels » il y a trois gammes majeures et quatre gammes mineures parmi lesquelles une gamme diminuée ( mode locrien ),
+     *
+     * Le mode «mixolydien b9/b13» (phrygien dominant), qui a des sonorité arabes, n’a rien à voir avec son altère ego naturel (le mode mixolydien), qui a des sonorités bluesy.
+     *
+     * intervalle d'une seconde augmentée (#9) qui est le même que celui de la tierce mineure (b3)
+     *
+     * Chaque degré a une fonction :
+     * Le Ier degré a fonction de tonique
+     * Le IIeme degré a fonction de sus-tonique
+     * Le IIIeme degré a fonction de médiante
+     * Le IVeme degré a fonction de sous-dominante
+     * Le Veme degré a fonction de dominante
+     * Le VIeme degré a fonction de sus-dominante
+     * Le VIIeme degré a fonction de note sensible
+    */
+
     public static class IntervalHelper
     {
         public static List<NoteRole> GetScale(Note key, ScaleType scaleType)
@@ -14,6 +38,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
 
             if (scaleType == ScaleType.Major)
             {
+                // gamme majeure : T 2M 3M 4j 5j 6M 7M
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -27,6 +52,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.MinorMelodic)
             {
+                // gamme mineure mélodique : T 2M 3m 4j 5j 6M 7M
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -40,6 +66,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.MinorHarmonic)
             {
+                // gamme mineure harmonique : T 2M 3m 4j 5j 6m 7M
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -53,6 +80,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.MinorNaturalEolian)
             {
+                // gamme mineure naturelle (mode éolien) : T 2M 3m 4j 5j 6m 7m
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -66,6 +94,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.ModeDorian)
             {
+                // mode dorien : T 2M 3m 4j 5j 6M 7m
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -79,6 +108,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.ModeMixolydian)
             {
+                // mode mixolydien : T 2M 3M 4j 5j 6M 7m
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -90,27 +120,29 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
                     i.SeventhMinor
                 };
             }
-            else if (scaleType == ScaleType.ModeLydian)
+            else if (scaleType == ScaleType.ModeLydian) // ?
             {
+                // mode lydien : T 2M 3M #11 5j 6M 7M
                 return new List<NoteRole>
                 {
                     i.Fondamental,
                     i.SecondMajor,
                     i.ThirdMajor,
-                    i.EleventhAugmented, //?
+                    i.EleventhAugmented,
                     i.FifthPerfect,
                     i.SixthMajor,
                     i.SeventhMajor
                 };
             }
-            else if (scaleType == ScaleType.ModeLydianB7)
+            else if (scaleType == ScaleType.ModeLydianB7) // ?
             {
+                // mode lydien b7 : T 2M 3M #11 5j 6M 7m
                 return new List<NoteRole>
                 {
                     i.Fondamental,
                     i.SecondMajor,
                     i.ThirdMajor,
-                    i.EleventhAugmented, //?
+                    i.EleventhAugmented,
                     i.FifthPerfect,
                     i.SixthMajor,
                     i.SeventhMinor
@@ -118,6 +150,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.PentatonicMajor)
             {
+                // gamme pentatonique majeure : T 2M 3M 5j 6M
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -129,6 +162,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.PentatonicMinor)
             {
+                // gamme pentatonique mineure : T 3m 4j 5j 7m
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -140,6 +174,7 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
             }
             else if (scaleType == ScaleType.Blues)
             {
+                // gamme blues : T 3m 4j b5 5j 7m
                 return new List<NoteRole>
                 {
                     i.Fondamental,
@@ -150,17 +185,124 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
                     i.SeventhMinor
                 };
             }
+            else if (scaleType == ScaleType.ModePhrygian)
+            {
+                // mode phrygien : T 2m 3m 4j 5j 6m 7m
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMinor,
+                    i.ThirdMinor,
+                    i.FourthPerfect,
+                    i.FifthPerfect,
+                    i.SixthMinor,
+                    i.SeventhMinor
+                };
+            }
+            else if (scaleType == ScaleType.ModeLocrian)
+            {
+                // mode locrien : T 2m 3m 4j b5 6m 7m
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMinor,
+                    i.ThirdMinor,
+                    i.FourthPerfect,
+                    i.FifthDiminished,
+                    i.SixthMinor,
+                    i.SeventhMinor
+                };
+            }
+            else if (scaleType == ScaleType.ModeLocrianBec2)
+            {
+                // mode locrien béc2 : T 2M 3m 4j b5 6m 7m
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMajor,
+                    i.ThirdMinor,
+                    i.FourthPerfect,
+                    i.FifthDiminished,
+                    i.SixthMinor,
+                    i.SeventhMinor
+                };
+            }
+            else if (scaleType == ScaleType.ModeMixolydianB2B6)
+            {
+                // mode mixolydienb2b6 : T 2m 3M 4j 5j 6m 7m
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMinor,
+                    i.ThirdMajor,
+                    i.FourthPerfect,
+                    i.FifthPerfect,
+                    i.SixthMinor,
+                    i.SeventhMinor
+                };
+            }
+            else if (scaleType == ScaleType.ModeAltered)
+            {
+                // mode altéré : T 2m 3m 3M b5 6m 7m
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMinor,
+                    i.ThirdMinor,
+                    i.ThirdMajor,
+                    i.FifthDiminished,
+                    i.SixthMinor,
+                    i.SeventhMinor
+                };
+            }
+            else if (scaleType == ScaleType.ModeLydianAdded) // ?
+            {
+                // mode lydien augmenté : T 2M 3M #11 #5 6M 7M
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMajor,
+                    i.ThirdMajor,
+                    i.EleventhAugmented,
+                    i.FifthAugmented,
+                    i.SixthMajor,
+                    i.SeventhMajor
+                };
+            }
+            else if (scaleType == ScaleType.ModeDiminishedReverse)
+            {
+                // mode diminué inversé : T 2m 3m 3M b5 5j 6M 7m
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMinor,
+                    i.ThirdMinor,
+                    i.ThirdMajor,
+                    i.FifthDiminished,
+                    i.FifthPerfect,
+                    i.SixthMajor,
+                    i.SeventhMinor
+                };
+            }
+            else if (scaleType == ScaleType.ModeDiminished) // ?
+            {
+                // mode diminué : T 2M 3m 4j #11 #5 6M 7M
+                return new List<NoteRole>
+                {
+                    i.Fondamental,
+                    i.SecondMajor,
+                    i.ThirdMinor,
+                    i.FourthPerfect,
+                    i.EleventhAugmented,
+                    i.FifthAugmented,
+                    i.SixthMajor,
+                    i.SeventhMajor
+                };
+            }
 
             return null;
         }
-
-
-
-
-
     }
-
-
 
     ////public class Toto
     ////{
@@ -231,13 +373,13 @@ namespace MidiMinuit.Lib.Chords.Core.Scales.Base
 
     public enum Scale7MajorMode
     {
-        Mode0_Lydian = 0,
-        Mode1_Mixolydian = 1,
-        Mode2_Aeolian = 2,
-        Mode3_Locrian = 3,
-        Mode4_Ionian = 4,
-        Mode5_Dorian = 5,
-        Mode6_Phrygian = 6
+        Mode4_Ionian = 0,
+        Mode5_Dorian = 1,
+        Mode6_Phrygian = 2,
+        Mode0_Lydian = 3,
+        Mode1_Mixolydian = 4,
+        Mode2_Aeolian = 5,
+        Mode3_Locrian = 6
     }
 
     public class Scale7AscendingMelodicMinor

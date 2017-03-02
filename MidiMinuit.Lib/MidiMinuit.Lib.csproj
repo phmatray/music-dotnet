@@ -136,6 +136,15 @@
     <Compile Include="Chords\Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Chords\Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
     <Compile Include="Chords\Core\Chords\Enum\ChordQuality.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree1.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree2.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree3.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree4.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree5.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree6.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree7.cs" />
+    <Compile Include="Chords\Core\Degrees\Degree8.cs" />
+    <Compile Include="Chords\Core\Degrees\Enum\DegreeOrder.cs" />
     <Compile Include="Chords\Core\Notes\Base\INoteRole.cs" />
     <Compile Include="Chords\Core\Notes\Base\Interval.cs" />
     <Compile Include="Chords\Core\Notes\Base\Note.cs" />
@@ -206,7 +215,7 @@
     <Compile Include="Chords\Core\Tunings\TuningTuneDownHalfStep.cs" />
     <Compile Include="Chords\Core\Tunings\TuningTuneDownOneStep.cs" />
     <Compile Include="Chords\Core\Tunings\TuningTuneDownTwoStep.cs" />
-    <Compile Include="Chords\Tools\Enum\Degree.cs" />
+    <Compile Include="Chords\Core\Degrees\Base\Degree.cs" />
     <Compile Include="Chords\Tools\Enum\Interval\IntervalEleventh.cs" />
     <Compile Include="Chords\Tools\Enum\Interval\IntervalFifth.cs" />
     <Compile Include="Chords\Tools\Enum\Interval\IntervalNinth.cs" />
@@ -224,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chords\Core\Chords\Extensions\" />
+    <Folder Include="Chords\Core\Degrees\Extensions\" />
     <Folder Include="Chords\Core\Positions\" />
     <Folder Include="Chords\Core\Tunings\Extensions\" />
   </ItemGroup>
