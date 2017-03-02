@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace MidiMinuit.Lib.Core.Chords
@@ -8,6 +9,19 @@ namespace MidiMinuit.Lib.Core.Chords
         public NoteFondamental Fondamental { get; }
 
         public NoteFifthPerfect FifthPerfect { get; }
+
+        public ChordFifth(Note fondamental)
+            : base(ChordQualityEnum.Fifth)
+        {
+            if (fondamental == null)
+            {
+                throw new ArgumentNullException(nameof(fondamental));
+            }
+
+            var i = fondamental.Interval;
+            Fondamental = i.Fondamental;
+            FifthPerfect = i.FifthPerfect;
+        }
 
         protected internal ChordFifth(Note fondamental, Note fifthPerfect)
             : base(ChordQualityEnum.Fifth)

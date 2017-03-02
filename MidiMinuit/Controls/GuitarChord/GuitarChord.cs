@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Linq;
 using MidiMinuit.Common;
 using Windows.ApplicationModel;
 using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using System.Linq;
 
 namespace MidiMinuit.Controls
 {

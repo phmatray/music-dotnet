@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MidiMinuit.Lib.Core.Notes;
 
@@ -10,6 +11,20 @@ namespace MidiMinuit.Lib.Core.Chords
         public NoteThirdMinor ThirdMinor { get; }
 
         public NoteFifthDiminished FifthDiminished { get; }
+
+        public ChordMinorDiminished(Note fondamental)
+            : base(ChordQualityEnum.MinorDiminished)
+        {
+            if (fondamental == null)
+            {
+                throw new ArgumentNullException(nameof(fondamental));
+            }
+
+            var i = fondamental.Interval;
+            Fondamental = i.Fondamental;
+            ThirdMinor = i.ThirdMinor;
+            FifthDiminished = i.FifthDiminished;
+        }
 
         protected internal ChordMinorDiminished(Note fondamental, Note thirdMinor, Note fifthDiminished)
             : base(ChordQualityEnum.MinorDiminished)

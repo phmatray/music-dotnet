@@ -8,43 +8,42 @@ namespace MidiMinuit.Lib.Core.Chords
     {
         public static ChordBase GetChord(Note fondamental, ChordQualityEnum quality = ChordQualityEnum.Major)
         {
-            var i = fondamental.Interval;
             switch (quality)
             {
                 case ChordQualityEnum.Major:
-                    return new ChordMajor(fondamental, i.ThirdMajor, i.FifthPerfect);
+                    return new ChordMajor(fondamental);
                 case ChordQualityEnum.Minor:
-                    return new ChordMinor(fondamental, i.ThirdMinor, i.FifthPerfect);
+                    return new ChordMinor(fondamental);
                 case ChordQualityEnum.MajorSixthMajor:
-                    return new ChordMajorSixthMajor(fondamental, i.ThirdMajor, i.FifthPerfect, i.SixthMajor);
+                    return new ChordMajorSixthMajor(fondamental);
                 case ChordQualityEnum.MinorSixthMajor:
-                    return new ChordMinorSixthMajor(fondamental, i.ThirdMinor, i.FifthPerfect, i.SixthMajor);
+                    return new ChordMinorSixthMajor(fondamental);
                 case ChordQualityEnum.MajorSuspendedFourth:
-                    return new ChordSuspendedFourth(fondamental, i.FourthPerfect, i.FifthPerfect);
+                    return new ChordSuspendedFourth(fondamental);
                 case ChordQualityEnum.Fifth:
-                    return new ChordFifth(fondamental, i.FifthPerfect);
+                    return new ChordFifth(fondamental);
                 case ChordQualityEnum.MajorAugmented:
-                    return new ChordMajorAugmented(fondamental, i.ThirdMajor, i.FifthAugmented);
+                    return new ChordMajorAugmented(fondamental);
                 case ChordQualityEnum.MinorDiminished:
-                    return new ChordMinorDiminished(fondamental, i.ThirdMinor, i.FifthDiminished);
+                    return new ChordMinorDiminished(fondamental);
                 case ChordQualityEnum.MajorSeventhMajor:
-                    return new ChordMajorSeventhMajor(fondamental, i.ThirdMajor, i.FifthPerfect, i.SeventhMajor);
+                    return new ChordMajorSeventhMajor(fondamental);
                 case ChordQualityEnum.MajorSeventhMinor:
-                    return new ChordMajorSeventhMinor(fondamental, i.ThirdMajor, i.FifthPerfect, i.SeventhMinor);
+                    return new ChordMajorSeventhMinor(fondamental);
                 case ChordQualityEnum.MinorSeventhMinor:
-                    return new ChordMinorSeventhMinor(fondamental, i.ThirdMinor, i.FifthPerfect, i.SeventhMinor);
+                    return new ChordMinorSeventhMinor(fondamental);
                 case ChordQualityEnum.MinorFifthDiminishedSeventhMinor:
-                    return new ChordMinorFifthDiminishedSeventhMinor(fondamental, i.ThirdMinor, i.FifthDiminished, i.SeventhMinor);
+                    return new ChordMinorFifthDiminishedSeventhMinor(fondamental);
                 case ChordQualityEnum.MajorSuspendedFourthSeventhMinor:
-                    return new ChordSuspendedFourthSeventhMinor(fondamental, i.FourthPerfect, i.FifthPerfect, i.SeventhMinor);
+                    return new ChordSuspendedFourthSeventhMinor(fondamental);
                 case ChordQualityEnum.MajorAugmentedSeventhMinor:
-                    return new ChordMajorAugmentedSeventhMinor(fondamental, i.ThirdMajor, i.FifthAugmented, i.SeventhMinor);
+                    return new ChordMajorAugmentedSeventhMinor(fondamental);
                 case ChordQualityEnum.MinorDiminishedSeventhDiminished:
-                    return new ChordMinorDiminishedSeventhDiminished(fondamental, i.ThirdMinor, i.FifthDiminished, i.SeventhDiminished);
+                    return new ChordMinorDiminishedSeventhDiminished(fondamental);
                 case ChordQualityEnum.MinorSeventhMajor:
-                    return new ChordMinorSeventhMajor(fondamental, i.ThirdMinor, i.FifthPerfect, i.SeventhMajor);
+                    return new ChordMinorSeventhMajor(fondamental);
                 case ChordQualityEnum.MajorNinthMajor:
-                    return new ChordMajorNinthMajor(fondamental, i.ThirdMajor, i.FifthPerfect, i.NinthMajor);
+                    return new ChordMajorNinthMajor(fondamental);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(quality));
             }

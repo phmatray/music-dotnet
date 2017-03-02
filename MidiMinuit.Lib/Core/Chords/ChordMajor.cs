@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using MidiMinuit.Lib.Annotations;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace MidiMinuit.Lib.Core.Chords
@@ -11,7 +13,21 @@ namespace MidiMinuit.Lib.Core.Chords
 
         public NoteFifthPerfect FifthPerfect { get; }
 
-        protected internal ChordMajor(Note fondamental, Note thirdMajor, Note fifthPerfect)
+        public ChordMajor(Note fondamental)
+            : base(ChordQualityEnum.Major)
+        {
+            if (fondamental == null)
+            {
+                throw new ArgumentNullException(nameof(fondamental));
+            }
+
+            var i = fondamental.Interval;
+            Fondamental = i.Fondamental;
+            ThirdMajor = i.ThirdMajor;
+            FifthPerfect = i.FifthPerfect;
+        }
+
+        protected internal ChordMajor(Note fondamental, Note thirdMajor = null, Note fifthPerfect = null)
             : base(ChordQualityEnum.Major)
         {
             Fondamental = new NoteFondamental(fondamental);

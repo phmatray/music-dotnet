@@ -307,7 +307,7 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public Interval GetInterval()
+        private Interval GetInterval()
         {
             // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
             switch (ToString())

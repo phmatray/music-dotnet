@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace MidiMinuit.Lib.Core.Chords
@@ -10,6 +11,20 @@ namespace MidiMinuit.Lib.Core.Chords
         public NoteFourthPerfect FourthPerfect { get; }
 
         public NoteFifthPerfect FifthPerfect { get; }
+
+        public ChordSuspendedFourth(Note fondamental)
+            : base(ChordQualityEnum.MajorSuspendedFourth)
+        {
+            if (fondamental == null)
+            {
+                throw new ArgumentNullException(nameof(fondamental));
+            }
+
+            var i = fondamental.Interval;
+            Fondamental = i.Fondamental;
+            FourthPerfect = i.FourthPerfect;
+            FifthPerfect = i.FifthPerfect;
+        }
 
         protected internal ChordSuspendedFourth(Note fondamental, Note fourthPerfect, Note fifthPerfect)
             : base(ChordQualityEnum.MajorSuspendedFourth)
