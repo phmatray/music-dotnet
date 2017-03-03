@@ -19,8 +19,10 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public abstract NoteQualityEnum Quality { get; }
 
-        public abstract string RoleName { get; }
+        public abstract string QualityName { get; }
 
-        public abstract string RoleAbbreviation { get; }
+        public abstract string QualityAbbreviation { get; }
+
+        public abstract string QualityComposition { get; }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Core.Scales;
@@ -12,7 +11,7 @@ namespace MidiMinuit.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var notes = IntervalHelper.GetScale(Note.New(), ScaleTypeEnum.Major);
+            var notes = IntervalHelper.GetScale(new Note(NoteNameEnum.C), ScaleTypeEnum.Major);
         }
     }
 }

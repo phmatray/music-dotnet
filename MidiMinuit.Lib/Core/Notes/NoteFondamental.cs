@@ -2,7 +2,7 @@
 {
     public class NoteFondamental : NoteQuality
     {
-        public NoteFondamental(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteFondamental(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -17,10 +17,13 @@
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteFondamental;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteFondamental;
 
-        public override string RoleName => "Fondamental";
+        public override string QualityName
+            => "Fondamental";
 
-        public override string RoleAbbreviation => "Fond";
+        public override string QualityAbbreviation
+            => "Fond";
     }
 }

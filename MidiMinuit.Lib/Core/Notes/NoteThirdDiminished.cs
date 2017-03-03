@@ -1,32 +1,32 @@
 namespace MidiMinuit.Lib.Core.Notes
 {
-    public class NoteSecondMinor : NoteQuality
+    public class NoteThirdDiminished : NoteQuality
     {
-        public NoteSecondMinor(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteThirdDiminished(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
 
-        public NoteSecondMinor(string note)
+        public NoteThirdDiminished(string note)
             : base(note)
         {
         }
 
-        public NoteSecondMinor(Note note)
+        public NoteThirdDiminished(Note note)
             : base(note)
         {
         }
 
         public override NoteQualityEnum Quality
-            => NoteQualityEnum.NoteSecondMinor;
+            => NoteQualityEnum.NoteThirdDiminished;
 
         public override string QualityName
-            => "Second Minor";
+            => "Third Diminished";
 
         public override string QualityAbbreviation
             => "NO DATA";
 
         public override string QualityComposition
-            => "1 demi-ton diatonique";
+            => "2 demi-tons diatoniques";
     }
 }

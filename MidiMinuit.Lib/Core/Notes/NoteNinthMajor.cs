@@ -2,7 +2,7 @@ namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteNinthMajor : NoteQuality
     {
-        public NoteNinthMajor(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteNinthMajor(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -17,10 +17,13 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteNinthMajor;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteNinthMajor;
 
-        public override string RoleName => "Ninth Major";
+        public override string QualityName
+            => "Ninth Major";
 
-        public override string RoleAbbreviation => "NO DATA";
+        public override string QualityAbbreviation
+            => "NO DATA";
     }
 }

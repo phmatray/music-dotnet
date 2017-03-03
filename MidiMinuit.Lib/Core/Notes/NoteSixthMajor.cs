@@ -2,7 +2,7 @@ namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteSixthMajor : NoteQuality
     {
-        public NoteSixthMajor(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteSixthMajor(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -17,10 +17,16 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteSixthMajor;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteSixthMajor;
 
-        public override string RoleName => "Sixth Major";
+        public override string QualityName
+            => "Sixth Major";
 
-        public override string RoleAbbreviation => "NO DATA";
+        public override string QualityAbbreviation
+            => "NO DATA";
+
+        public override string QualityComposition
+            => "4 tons et 1 demi-ton diatonique";
     }
 }
