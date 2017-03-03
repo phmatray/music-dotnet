@@ -54,15 +54,36 @@ namespace MidiMinuit.Lib.Core.Chords
             Quality = quality;
         }
 
+        /// <summary>
+        /// Gets the quality of the chord.
+        /// </summary>
         public ChordQualityEnum Quality { get; }
 
+        /// <summary>
+        /// Gets notes of the chord.
+        /// </summary>
         public abstract List<NoteQuality> Notes { get; }
 
+        /// <summary>
+        /// Gets name of the chord.
+        /// </summary>
         public abstract string Name { get; }
 
+        /// <summary>
+        /// Gets details of the chord.
+        /// </summary>
         public abstract string Details { get; }
 
+        /// <summary>
+        /// Gets description of the chord.
+        /// </summary>
         public abstract string Description { get; }
+
+        /// <summary>
+        /// Gets nombre de sons constituant l'accord
+        /// </summary>
+        public int ToneCount
+            => Notes.Count;
 
         public abstract override string ToString();
 

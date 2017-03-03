@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using MidiMinuit.Lib.Core.Chords;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Tools;
 
@@ -28,6 +29,53 @@ namespace MidiMinuit.Lib.Core.Scales
      * Le VIeme degré a fonction de sus-dominante
      * Le VIIeme degré a fonction de note sensible
     */
+
+
+    public class ScaleMajor
+    {
+        public ScaleMajor(Note key)
+        {
+            var i = key.GetInterval();
+
+            // gamme majeure : T 2M 3M 4j 5j 6M 7M
+            this.Notes = new List<NoteQuality>
+            {
+                i.Fondamental,
+                i.SecondMajor,
+                i.ThirdMajor,
+                i.FourthPerfect,
+                i.FifthPerfect,
+                i.SixthMajor,
+                i.SeventhMajor
+            };
+        }
+
+        public string Name => "Major";
+
+        public List<NoteQuality> Notes { get; private set; }
+
+        public ScaleTypeEnum ScaleType => ScaleTypeEnum.Major;
+
+        public ChordBase GetChord(NoteQuality note1, NoteQuality note2, NoteQuality note3)
+        {
+            //if (note1 is NoteFondamental)
+            //    return 
+
+            return null;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static class IntervalHelper
     {
