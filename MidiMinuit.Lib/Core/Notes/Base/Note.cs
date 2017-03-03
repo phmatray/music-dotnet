@@ -210,8 +210,8 @@ namespace MidiMinuit.Lib.Core.Notes
         ///     The name of the note with its accidental.
         ///     ex: "C#" or "Db" or E...
         /// </param>
-        /// <exception cref="System.ArgumentNullException">note</exception>
-        /// <exception cref="System.ArgumentException">incorrect format</exception>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
         public Note(string note)
         {
             if (string.IsNullOrWhiteSpace(note))
@@ -234,8 +234,8 @@ namespace MidiMinuit.Lib.Core.Notes
         /// <param name="midiValue">
         ///     The midi value of the note.
         /// </param>
-        /// <exception cref="System.ArgumentNullException">note</exception>
-        /// <exception cref="System.ArgumentException">incorrect format</exception>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
         public Note(int midiValue)
         {
             if (midiValue < 0 || midiValue > 127)
@@ -307,7 +307,7 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        private Interval GetInterval()
+        public Interval GetInterval()
         {
             // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
             switch (ToString())

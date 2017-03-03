@@ -2,7 +2,7 @@ namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteEleventhPerfect : NoteQuality
     {
-        public NoteEleventhPerfect(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteEleventhPerfect(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -17,10 +17,13 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteEleventhPerfect;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteEleventhPerfect;
 
-        public override string RoleName => "Eleventh Perfect";
+        public override string QualityName
+            => "Eleventh Perfect";
 
-        public override string RoleAbbreviation => "NO DATA";
+        public override string QualityAbbreviation
+            => "NO DATA";
     }
 }

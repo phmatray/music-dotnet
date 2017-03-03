@@ -162,6 +162,7 @@
     <Compile Include="Core\Notes\NoteFifthPerfect.cs" />
     <Compile Include="Core\Notes\NoteFondamental.cs" />
     <Compile Include="Core\Notes\NoteFourthAugmented.cs" />
+    <Compile Include="Core\Notes\NoteFourthDiminished.cs" />
     <Compile Include="Core\Notes\NoteFourthPerfect.cs" />
     <Compile Include="Core\Notes\NoteNinthAugmented.cs" />
     <Compile Include="Core\Notes\NoteNinthMajor.cs" />
@@ -173,8 +174,12 @@
     <Compile Include="Core\Notes\NoteSeventhDiminished.cs" />
     <Compile Include="Core\Notes\NoteSeventhMajor.cs" />
     <Compile Include="Core\Notes\NoteSeventhMinor.cs" />
+    <Compile Include="Core\Notes\NoteSixthAugmented.cs" />
+    <Compile Include="Core\Notes\NoteSixthDiminished.cs" />
     <Compile Include="Core\Notes\NoteSixthMajor.cs" />
     <Compile Include="Core\Notes\NoteSixthMinor.cs" />
+    <Compile Include="Core\Notes\NoteThirdAugmented.cs" />
+    <Compile Include="Core\Notes\NoteThirdDiminished.cs" />
     <Compile Include="Core\Notes\NoteThirdMajor.cs" />
     <Compile Include="Core\Notes\NoteThirdMinor.cs" />
     <Compile Include="Core\Notes\NoteThirteenthMajor.cs" />
@@ -231,6 +236,7 @@
     <Compile Include="Core\Notes\Enum\NoteQualityEnum.cs" />
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Tmp\SemitoneTypeEnum.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

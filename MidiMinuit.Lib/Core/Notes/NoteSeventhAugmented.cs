@@ -2,7 +2,7 @@ namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteSeventhAugmented : NoteQuality
     {
-        public NoteSeventhAugmented(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteSeventhAugmented(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -17,10 +17,16 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteSeventhAugmented;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteSeventhAugmented;
 
-        public override string RoleName => "Seventh Augmented";
+        public override string QualityName
+            => "Seventh Augmented";
 
-        public override string RoleAbbreviation => "NO DATA";
+        public override string QualityAbbreviation
+            => "NO DATA";
+
+        public override string QualityComposition
+            => "Inusitée dans la pratique";
     }
 }

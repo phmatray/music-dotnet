@@ -12,15 +12,21 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public NoteSeventhMinor(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteSeventhMinor(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteSeventhMinor;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteSeventhMinor;
 
-        public override string RoleName => "Seventh Minor";
+        public override string QualityName
+            => "Seventh Minor";
 
-        public override string RoleAbbreviation => "NO DATA";
+        public override string QualityAbbreviation
+            => "NO DATA";
+
+        public override string QualityComposition
+            => "4 tons et 2 demi-tons diatoniques";
     }
 }

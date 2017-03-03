@@ -2,7 +2,7 @@ namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteSeventhDiminished : NoteQuality
     {
-        public NoteSeventhDiminished(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public NoteSeventhDiminished(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -17,10 +17,16 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public override NoteQualityEnum Quality => NoteQualityEnum.NoteSeventhDiminished;
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteSeventhDiminished;
 
-        public override string RoleName => "Seventh Diminished";
+        public override string QualityName
+            => "Seventh Diminished";
 
-        public override string RoleAbbreviation => "7th dim";
+        public override string QualityAbbreviation
+            => "7th dim";
+
+        public override string QualityComposition
+            => "3 tons et 3 demi-tons diatoniques";
     }
 }
