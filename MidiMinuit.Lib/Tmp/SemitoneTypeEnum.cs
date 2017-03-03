@@ -1,7 +1,9 @@
 ﻿namespace MidiMinuit.Lib.Tmp
 {
     /*
-     * Lorsqu'une quarte augmentée est constituée de 3 tons on emploie le terme triton pour la désigner. 
+     * Lorsqu'une quarte augmentée est constituée de 3 tons on emploie le terme triton pour la désigner.
+     *
+     * Intervalles simple et composés (Les intervalles composés ne peuvent être renversés, seuls les intervalles simples peuvent être renversés.)
      */
 
     public enum SemitoneTypeEnum

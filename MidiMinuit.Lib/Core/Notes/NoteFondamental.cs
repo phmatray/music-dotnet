@@ -25,5 +25,8 @@
 
         public override string QualityAbbreviation
             => "Fond";
+
+        public override string QualityComposition
+            => "NO DATA";
     }
 }

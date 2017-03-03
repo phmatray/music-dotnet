@@ -25,5 +25,8 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public override string QualityAbbreviation
             => "NO DATA";
+
+        public override string QualityComposition
+            => "NO DATA";
     }
 }

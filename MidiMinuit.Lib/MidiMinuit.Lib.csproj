@@ -167,6 +167,9 @@
     <Compile Include="Core\Notes\NoteNinthAugmented.cs" />
     <Compile Include="Core\Notes\NoteNinthMajor.cs" />
     <Compile Include="Core\Notes\NoteNinthMinor.cs" />
+    <Compile Include="Core\Notes\NoteOctaveAugmented.cs" />
+    <Compile Include="Core\Notes\NoteOctaveDiminished.cs" />
+    <Compile Include="Core\Notes\NoteOctavePerfect.cs" />
     <Compile Include="Core\Notes\NoteSecondAugmented.cs" />
     <Compile Include="Core\Notes\NoteSecondMajor.cs" />
     <Compile Include="Core\Notes\NoteSecondMinor.cs" />
