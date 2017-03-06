@@ -32,9 +32,38 @@ namespace MidiMinuit.Lib.Core.Scales
      * Le VIIeme degré a fonction de note sensible
     */
 
+        
 
     public abstract class ScaleBase
     {
+        protected ScaleBase(ScaleTypeEnum scaleType)
+        {
+            ScaleType = scaleType;
+        }
+
+        /// <summary>
+        /// Gets the type of the scale.
+        /// </summary>
+        public ScaleTypeEnum ScaleType { get; }
+
+        /// <summary>
+        /// Gets notes of the scale.
+        /// </summary>
+        public abstract List<NoteQuality> Notes { get; }
+
+        /// <summary>
+        /// Gets name of the scale.
+        /// </summary>
+        public abstract string Name { get; }
+
+        public abstract override string ToString();
+
+
+
+
+
+
+
 
         public ChordBase GetChordMajor(DegreeBase degree)
         {
@@ -81,324 +110,12 @@ namespace MidiMinuit.Lib.Core.Scales
             return isDiminished ? new ChordMinorDiminished(fondamental) : null;
         }
 
-        public abstract string Name { get; }
 
-        public abstract List<NoteQuality> Notes { get; }
     }
 
 
 
-    public class ScaleMajor
-        : ScaleBase
-    {
-        public ScaleMajor(Note key)
-        {
-            var i = key.GetInterval();
 
-            // gamme majeure : T 2M 3M 4j 5j 6M 7M
-            this.Notes = new List<NoteQuality>
-            {
-                i.Fondamental,
-                i.SecondMajor,
-                i.ThirdMajor,
-                i.FourthPerfect,
-                i.FifthPerfect,
-                i.SixthMajor,
-                i.SeventhMajor
-            };
-        }
-
-        public override string Name => "Major";
-
-        public override List<NoteQuality> Notes { get; }
-
-        public ScaleTypeEnum ScaleType => ScaleTypeEnum.Major;
-
-        public ChordBase GetChord(NoteQuality note1, NoteQuality note2, NoteQuality note3)
-        {
-            //var combinaisons;
-
-            //List<NoteQuality>
-            //if (note1 is NoteFondamental)
-            //    return 
-
-            return null;
-        }
-    }
-
-    public static class IntervalHelper
-    {
-        public static List<NoteQuality> GetScale(Note key, ScaleTypeEnum scaleType)
-        {
-            var i = key.GetInterval();
-
-            if (scaleType == ScaleTypeEnum.Major)
-            {
-                // gamme majeure : T 2M 3M 4j 5j 6M 7M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMajor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMajor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.MinorMelodic)
-            {
-                // gamme mineure mélodique : T 2M 3m 4j 5j 6M 7M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMajor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.MinorHarmonic)
-            {
-                // gamme mineure harmonique : T 2M 3m 4j 5j 6m 7M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMinor,
-                    i.SeventhMajor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.MinorNaturalEolian)
-            {
-                // gamme mineure naturelle (mode éolien) : T 2M 3m 4j 5j 6m 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMinor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeDorian)
-            {
-                // mode dorien : T 2M 3m 4j 5j 6M 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeMixolydian)
-            {
-                // mode mixolydien : T 2M 3M 4j 5j 6M 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMajor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeLydian) // ?
-            {
-                // mode lydien : T 2M 3M #11 5j 6M 7M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMajor,
-                    i.EleventhAugmented,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMajor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeLydianB7) // ?
-            {
-                // mode lydien b7 : T 2M 3M #11 5j 6M 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMajor,
-                    i.EleventhAugmented,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.PentatonicMajor)
-            {
-                // gamme pentatonique majeure : T 2M 3M 5j 6M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMajor,
-                    i.FifthPerfect,
-                    i.SixthMajor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.PentatonicMinor)
-            {
-                // gamme pentatonique mineure : T 3m 4j 5j 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.Blues)
-            {
-                // gamme blues : T 3m 4j b5 5j 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthDiminished,
-                    i.FifthPerfect,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModePhrygian)
-            {
-                // mode phrygien : T 2m 3m 4j 5j 6m 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMinor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMinor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeLocrian)
-            {
-                // mode locrien : T 2m 3m 4j b5 6m 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMinor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthDiminished,
-                    i.SixthMinor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeLocrianBec2)
-            {
-                // mode locrien béc2 : T 2M 3m 4j b5 6m 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.FifthDiminished,
-                    i.SixthMinor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeMixolydianB2B6)
-            {
-                // mode mixolydienb2b6 : T 2m 3M 4j 5j 6m 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMinor,
-                    i.ThirdMajor,
-                    i.FourthPerfect,
-                    i.FifthPerfect,
-                    i.SixthMinor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeAltered)
-            {
-                // mode altéré : T 2m 3m 3M b5 6m 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMinor,
-                    i.ThirdMinor,
-                    i.ThirdMajor,
-                    i.FifthDiminished,
-                    i.SixthMinor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeLydianAdded) // ?
-            {
-                // mode lydien augmenté : T 2M 3M #11 #5 6M 7M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMajor,
-                    i.EleventhAugmented,
-                    i.FifthAugmented,
-                    i.SixthMajor,
-                    i.SeventhMajor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeDiminishedReverse)
-            {
-                // mode diminué inversé : T 2m 3m 3M b5 5j 6M 7m
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMinor,
-                    i.ThirdMinor,
-                    i.ThirdMajor,
-                    i.FifthDiminished,
-                    i.FifthPerfect,
-                    i.SixthMajor,
-                    i.SeventhMinor
-                };
-            }
-            else if (scaleType == ScaleTypeEnum.ModeDiminished) // ?
-            {
-                // mode diminué : T 2M 3m 4j #11 #5 6M 7M
-                return new List<NoteQuality>
-                {
-                    i.Fondamental,
-                    i.SecondMajor,
-                    i.ThirdMinor,
-                    i.FourthPerfect,
-                    i.EleventhAugmented,
-                    i.FifthAugmented,
-                    i.SixthMajor,
-                    i.SeventhMajor
-                };
-            }
-
-            return null;
-        }
-    }
 
     ////public class Toto
     ////{
