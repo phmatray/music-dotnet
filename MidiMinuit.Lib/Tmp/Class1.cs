@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MidiMinuit.Lib.Annotations;
 using MidiMinuit.Lib.Core.Chords;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Core.Scales;
+using MidiMinuit.Lib.Core.Degrees;
 
 namespace MidiMinuit.Lib.Tmp
 {
     public static class Class1
     {
+        public static void TestMethod_HarmonizeScale()
+        {
+            ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
+            var chord = scale.GetChord(new Degree7(), ChordQualityEnum.MinorDiminished);
+        }
+
         public static void TestMethod_Generate3tonesChords()
         {
             List<NoteQuality> notes = IntervalHelper.GetScale(new Note(NoteNameEnum.C), ScaleTypeEnum.Major);
@@ -23,7 +29,7 @@ namespace MidiMinuit.Lib.Tmp
             }
         }
 
-        public static ChordBase GetChord([NotNull] List<NoteQuality> notes)
+        public static ChordBase GetChord(List<NoteQuality> notes)
         {
             if (notes == null)
             {
@@ -39,8 +45,9 @@ namespace MidiMinuit.Lib.Tmp
             {
                 throw new ArgumentException("Value must contains 3 elements.", nameof(notes));
             }
-
             return null;
+
+            //return new ChordMajor();
         }
 
 

@@ -37,26 +37,90 @@ namespace MidiMinuit.Lib.Core.Scales
     {
         public ChordBase GetChord(DegreeBase degree, ChordQualityEnum chordQuality)
         {
-            var fondamental = Notes[degree.DegreeIndex];
-            var thirdMinor = fondamental.Interval.ThirdMinor;
+            switch (chordQuality)
+            {
+                case ChordQualityEnum.Major:
+                    return GetChordMajor(degree);
+                case ChordQualityEnum.Minor:
+                    return GetChordMinor(degree);
+                case ChordQualityEnum.MajorSixthMajor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MinorSixthMajor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MajorSuspendedFourth:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.Fifth:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MajorAugmented:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MinorDiminished:
+                    return GetChordMinorDiminished(degree);
+                case ChordQualityEnum.MajorSeventhMajor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MajorSeventhMinor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MinorSeventhMinor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MinorFifthDiminishedSeventhMinor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MajorSuspendedFourthSeventhMinor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MajorAugmentedSeventhMinor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MinorDiminishedSeventhDiminished:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MinorSeventhMajor:
+                    throw new NotImplementedException();
+                case ChordQualityEnum.MajorNinthMajor:
+                    throw new NotImplementedException();
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(chordQuality), chordQuality, null);
+            }
+        }
+
+        public ChordBase GetChordMajor(DegreeBase degree)
+        {
+            // Rebase the fondamental.
+            var fondamental = Notes[degree.DegreeIndex].Interval.Fondamental;
+
+            // Based on the new fondamental, gets the others notes.
             var thirdMajor = fondamental.Interval.ThirdMajor;
             var fifthPerfect = fondamental.Interval.FifthPerfect;
 
             var isMajor = Notes.Any(x => x.Pitch == thirdMajor.Pitch) &&
                 Notes.Any(x => x.Pitch == fifthPerfect.Pitch);
+
+            return isMajor ? new ChordMajor(fondamental, thirdMajor, fifthPerfect) : null;
+        }
+
+        public ChordBase GetChordMinor(DegreeBase degree)
+        {
+            // Rebase the fondamental.
+            var fondamental = Notes[degree.DegreeIndex].Interval.Fondamental;
+
+            // Based on the new fondamental, gets the others notes.
+            var thirdMinor = fondamental.Interval.ThirdMinor;
+            var fifthPerfect = fondamental.Interval.FifthPerfect;
+
             var isMinor = Notes.Any(x => x.Pitch == thirdMinor.Pitch) &&
                 Notes.Any(x => x.Pitch == fifthPerfect.Pitch);
 
-            if (isMajor)
-            {
-                return new ChordMajor(fondamental, thirdMajor, fifthPerfect);
-            }
-            else if (isMinor)
-            {
-                return new ChordMinor(fondamental, thirdMinor, fifthPerfect);
-            }
+            return isMinor ? new ChordMinor(fondamental, thirdMinor, fifthPerfect) : null;
+        }
 
-            return null;
+        public ChordBase GetChordMinorDiminished(DegreeBase degree)
+        {
+            // Rebase the fondamental.
+            var fondamental = Notes[degree.DegreeIndex].Interval.Fondamental;
+
+            // Based on the new fondamental, gets the others notes.
+            var thirdMinor = fondamental.Interval.ThirdMinor;
+            var fifthDiminished = fondamental.Interval.FifthDiminished;
+
+            var isDiminished = Notes.Any(x => x.Pitch == thirdMinor.Pitch) &&
+                Notes.Any(x => x.Pitch == fifthDiminished.Pitch);
+
+            return isDiminished ? new ChordMinor(fondamental, thirdMinor, fifthDiminished) : null;
         }
 
         public abstract string Name { get; }

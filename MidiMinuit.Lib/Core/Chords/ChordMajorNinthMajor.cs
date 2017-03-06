@@ -29,15 +29,6 @@ namespace MidiMinuit.Lib.Core.Chords
             NinthMajor = i.NinthMajor;
         }
 
-        protected internal ChordMajorNinthMajor(Note fondamental, Note thirdMajor, Note fifthPerfect, Note ninthMajor)
-            : base(ChordQualityEnum.MajorNinthMajor)
-        {
-            Fondamental = new NoteFondamental(fondamental);
-            ThirdMajor = new NoteThirdMajor(thirdMajor);
-            FifthPerfect = new NoteFifthPerfect(fifthPerfect);
-            NinthMajor = new NoteNinthMajor(ninthMajor);
-        }
-
         public override List<NoteQuality> Notes
             => new List<NoteQuality> { Fondamental, ThirdMajor, FifthPerfect, NinthMajor };
 

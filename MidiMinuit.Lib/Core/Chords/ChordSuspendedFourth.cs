@@ -13,7 +13,7 @@ namespace MidiMinuit.Lib.Core.Chords
         public NoteFifthPerfect FifthPerfect { get; }
 
         public ChordSuspendedFourth(Note fondamental)
-            : base(ChordQualityEnum.MajorSuspendedFourth)
+            : base(ChordQualityEnum.SuspendedFourth)
         {
             if (fondamental == null)
             {
@@ -24,14 +24,6 @@ namespace MidiMinuit.Lib.Core.Chords
             Fondamental = i.Fondamental;
             FourthPerfect = i.FourthPerfect;
             FifthPerfect = i.FifthPerfect;
-        }
-
-        protected internal ChordSuspendedFourth(Note fondamental, Note fourthPerfect, Note fifthPerfect)
-            : base(ChordQualityEnum.MajorSuspendedFourth)
-        {
-            Fondamental = new NoteFondamental(fondamental);
-            FourthPerfect = new NoteFourthPerfect(fourthPerfect);
-            FifthPerfect = new NoteFifthPerfect(fifthPerfect);
         }
 
         public override List<NoteQuality> Notes

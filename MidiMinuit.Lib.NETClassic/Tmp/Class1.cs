@@ -13,7 +13,7 @@ namespace MidiMinuit.Lib.Tmp
         public static void TestMethod_HarmonizeScale()
         {
             ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
-            var chord = scale.GetChord(new Degree2(), ChordQualityEnum.Minor);
+            var chord = scale.GetChord(new Degree2(), ChordQualityEnum.MinorDiminished);
         }
 
         public static void TestMethod_Generate3tonesChords()

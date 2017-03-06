@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using MidiMinuit.Lib.Core.Chords;
+using MidiMinuit.Lib.Core.Degrees;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Tools;
 
@@ -31,7 +33,63 @@ namespace MidiMinuit.Lib.Core.Scales
     */
 
 
+    public abstract class ScaleBase
+    {
+
+        public ChordBase GetChordMajor(DegreeBase degree)
+        {
+            // Rebase the fondamental.
+            var fondamental = Notes[degree.DegreeIndex].Interval.Fondamental;
+
+            // Based on the new fondamental, gets the others notes.
+            var thirdMajor = fondamental.Interval.ThirdMajor;
+            var fifthPerfect = fondamental.Interval.FifthPerfect;
+
+            var isMajor = Notes.Any(x => x.Pitch == thirdMajor.Pitch) &&
+                Notes.Any(x => x.Pitch == fifthPerfect.Pitch);
+
+            return isMajor ? new ChordMajor(fondamental) : null;
+        }
+
+        public ChordBase GetChordMinor(DegreeBase degree)
+        {
+            // Rebase the fondamental.
+            var fondamental = Notes[degree.DegreeIndex].Interval.Fondamental;
+
+            // Based on the new fondamental, gets the others notes.
+            var thirdMinor = fondamental.Interval.ThirdMinor;
+            var fifthPerfect = fondamental.Interval.FifthPerfect;
+
+            var isMinor = Notes.Any(x => x.Pitch == thirdMinor.Pitch) &&
+                Notes.Any(x => x.Pitch == fifthPerfect.Pitch);
+
+            return isMinor ? new ChordMinor(fondamental) : null;
+        }
+
+        public ChordBase GetChordMinorDiminished(DegreeBase degree)
+        {
+            // Rebase the fondamental.
+            var fondamental = Notes[degree.DegreeIndex].Interval.Fondamental;
+
+            // Based on the new fondamental, gets the others notes.
+            var thirdMinor = fondamental.Interval.ThirdMinor;
+            var fifthDiminished = fondamental.Interval.FifthDiminished;
+
+            var isDiminished = Notes.Any(x => x.Pitch == thirdMinor.Pitch) &&
+                Notes.Any(x => x.Pitch == fifthDiminished.Pitch);
+
+            return isDiminished ? new ChordMinorDiminished(fondamental) : null;
+        }
+
+        public abstract string Name { get; }
+
+        public abstract List<NoteQuality> Notes { get; }
+    }
+
+
+
     public class ScaleMajor
+        : ScaleBase
     {
         public ScaleMajor(Note key)
         {
@@ -50,9 +108,9 @@ namespace MidiMinuit.Lib.Core.Scales
             };
         }
 
-        public string Name => "Major";
+        public override string Name => "Major";
 
-        public List<NoteQuality> Notes { get; private set; }
+        public override List<NoteQuality> Notes { get; }
 
         public ScaleTypeEnum ScaleType => ScaleTypeEnum.Major;
 
@@ -67,18 +125,6 @@ namespace MidiMinuit.Lib.Core.Scales
             return null;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static class IntervalHelper
     {

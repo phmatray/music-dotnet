@@ -136,6 +136,7 @@
     <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
     <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
+    <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
     <Compile Include="Core\Chords\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Degrees\Extensions\DegreeExtensions.cs" />
     <Compile Include="Core\Degrees\Degree1.cs" />
