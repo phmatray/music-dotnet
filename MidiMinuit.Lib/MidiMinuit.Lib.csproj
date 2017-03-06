@@ -240,6 +240,7 @@
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tmp\Class1.cs" />
+    <Compile Include="Tmp\HelperBeta.cs" />
     <Compile Include="Tmp\SemitoneTypeEnum.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />

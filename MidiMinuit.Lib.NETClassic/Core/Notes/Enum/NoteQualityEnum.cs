@@ -1,0 +1,38 @@
+﻿namespace MidiMinuit.Lib.Core.Notes
+{
+    public enum NoteQualityEnum
+    {
+        NoteFondamental,
+        NoteSecondMinor,
+        NoteSecondMajor,
+        NoteSecondAugmented,
+        NoteThirdDiminished,
+        NoteThirdMinor,
+        NoteThirdMajor,
+        NoteThirdAugmented,
+        NoteFourthDiminished,
+        NoteFourthPerfect,
+        NoteFourthAugmented,
+        NoteFifthDiminished,
+        NoteFifthPerfect,
+        NoteFifthAugmented,
+        NoteSixthDiminished,
+        NoteSixthMinor,
+        NoteSixthMajor,
+        NoteSixthAugmented,
+        NoteSeventhDiminished,
+        NoteSeventhMinor,
+        NoteSeventhMajor,
+        NoteSeventhAugmented,
+        NoteOctaveDiminished,
+        NoteOctavePerfect,
+        NoteOctaveAugmented,
+        NoteNinthMinor,
+        NoteNinthMajor,
+        NoteNinthAugmented,
+        NoteEleventhPerfect,
+        NoteEleventhAugmented,
+        NoteThirteenthMinor,
+        NoteThirteenthMajor
+    }
+}

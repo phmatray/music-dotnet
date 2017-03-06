@@ -58,6 +58,9 @@ namespace MidiMinuit.Lib.Core.Scales
 
         public ChordBase GetChord(NoteQuality note1, NoteQuality note2, NoteQuality note3)
         {
+            //var combinaisons;
+
+            //List<NoteQuality>
             //if (note1 is NoteFondamental)
             //    return 
 

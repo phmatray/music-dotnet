@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EB48180-FB55-4D3A-B7DA-23B419921018}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MidiMinuit.Lib.NETClassic</RootNamespace>
+    <AssemblyName>MidiMinuit.Lib.NETClassic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Chords\Base\ChordBase.cs" />
+    <Compile Include="Core\Chords\ChordFifth.cs" />
+    <Compile Include="Core\Chords\ChordMajor.cs" />
+    <Compile Include="Core\Chords\ChordMajorAugmented.cs" />
+    <Compile Include="Core\Chords\ChordMajorAugmentedSeventhMinor.cs" />
+    <Compile Include="Core\Chords\ChordMajorNinthMajor.cs" />
+    <Compile Include="Core\Chords\ChordMajorSeventhMajor.cs" />
+    <Compile Include="Core\Chords\ChordMajorSeventhMinor.cs" />
+    <Compile Include="Core\Chords\ChordMajorSixthMajor.cs" />
+    <Compile Include="Core\Chords\ChordMinor.cs" />
+    <Compile Include="Core\Chords\ChordMinorDiminished.cs" />
+    <Compile Include="Core\Chords\ChordMinorDiminishedSeventhDiminished.cs" />
+    <Compile Include="Core\Chords\ChordMinorFifthDiminishedSeventhMinor.cs" />
+    <Compile Include="Core\Chords\ChordMinorSeventhMajor.cs" />
+    <Compile Include="Core\Chords\ChordMinorSeventhMinor.cs" />
+    <Compile Include="Core\Chords\ChordMinorSixthMajor.cs" />
+    <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
+    <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
+    <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
+    <Compile Include="Core\Chords\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Degrees\Base\DegreeBase.cs" />
+    <Compile Include="Core\Degrees\Degree1.cs" />
+    <Compile Include="Core\Degrees\Degree2.cs" />
+    <Compile Include="Core\Degrees\Degree3.cs" />
+    <Compile Include="Core\Degrees\Degree4.cs" />
+    <Compile Include="Core\Degrees\Degree5.cs" />
+    <Compile Include="Core\Degrees\Degree6.cs" />
+    <Compile Include="Core\Degrees\Degree7.cs" />
+    <Compile Include="Core\Degrees\Degree8.cs" />
+    <Compile Include="Core\Degrees\Enum\DegreeEnum.cs" />
+    <Compile Include="Core\Degrees\Extensions\DegreeExtensions.cs" />
+    <Compile Include="Core\Degrees\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalEleventhEnum.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalFifthEnum.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalNinthEnum.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalSeventhEnum.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalThirdEnum.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalThirteenthEnum.cs" />
+    <Compile Include="Core\Intervals\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Intervals\Interval.cs" />
+    <Compile Include="Core\Notes\Base\Note.cs" />
+    <Compile Include="Core\Notes\Base\NoteQuality.cs" />
+    <Compile Include="Core\Notes\Enum\NoteAccidentalEnum.cs" />
+    <Compile Include="Core\Notes\Enum\NoteNameEnum.cs" />
+    <Compile Include="Core\Notes\Enum\NoteQualityEnum.cs" />
+    <Compile Include="Core\Notes\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Notes\NoteEleventhAugmented.cs" />
+    <Compile Include="Core\Notes\NoteEleventhPerfect.cs" />
+    <Compile Include="Core\Notes\NoteFifthAugmented.cs" />
+    <Compile Include="Core\Notes\NoteFifthDiminished.cs" />
+    <Compile Include="Core\Notes\NoteFifthPerfect.cs" />
+    <Compile Include="Core\Notes\NoteFondamental.cs" />
+    <Compile Include="Core\Notes\NoteFourthAugmented.cs" />
+    <Compile Include="Core\Notes\NoteFourthDiminished.cs" />
+    <Compile Include="Core\Notes\NoteFourthPerfect.cs" />
+    <Compile Include="Core\Notes\NoteNinthAugmented.cs" />
+    <Compile Include="Core\Notes\NoteNinthMajor.cs" />
+    <Compile Include="Core\Notes\NoteNinthMinor.cs" />
+    <Compile Include="Core\Notes\NoteOctaveAugmented.cs" />
+    <Compile Include="Core\Notes\NoteOctaveDiminished.cs" />
+    <Compile Include="Core\Notes\NoteOctavePerfect.cs" />
+    <Compile Include="Core\Notes\NoteSecondAugmented.cs" />
+    <Compile Include="Core\Notes\NoteSecondMajor.cs" />
+    <Compile Include="Core\Notes\NoteSecondMinor.cs" />
+    <Compile Include="Core\Notes\NoteSeventhAugmented.cs" />
+    <Compile Include="Core\Notes\NoteSeventhDiminished.cs" />
+    <Compile Include="Core\Notes\NoteSeventhMajor.cs" />
+    <Compile Include="Core\Notes\NoteSeventhMinor.cs" />
+    <Compile Include="Core\Notes\NoteSixthAugmented.cs" />
+    <Compile Include="Core\Notes\NoteSixthDiminished.cs" />
+    <Compile Include="Core\Notes\NoteSixthMajor.cs" />
+    <Compile Include="Core\Notes\NoteSixthMinor.cs" />
+    <Compile Include="Core\Notes\NoteThirdAugmented.cs" />
+    <Compile Include="Core\Notes\NoteThirdDiminished.cs" />
+    <Compile Include="Core\Notes\NoteThirdMajor.cs" />
+    <Compile Include="Core\Notes\NoteThirdMinor.cs" />
+    <Compile Include="Core\Notes\NoteThirteenthMajor.cs" />
+    <Compile Include="Core\Notes\NoteThirteenthMinor.cs" />
+    <Compile Include="Core\Scales\Base\Scale.cs" />
+    <Compile Include="Core\Scales\Enum\ScaleMode.cs" />
+    <Compile Include="Core\Scales\Enum\ScaleTypeEnum.cs" />
+    <Compile Include="Core\Scales\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Scales\MajorScale.cs" />
+    <Compile Include="Core\Scales\MinorScale.cs" />
+    <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
+    <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\Tuning.cs" />
+    <Compile Include="Instruments\GuitarTunings\Enum\TuningTypeEnum.cs" />
+    <Compile Include="Instruments\GuitarTunings\Extensions\EnumExtensions.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningBaritone.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDobroOpenG.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDoubleDroppedD.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDroppedB.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDroppedC.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDroppedD.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDroppedDVariant.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningDroppedE.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningLuteOrVihuela.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningNashville.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenA.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenAm.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenC.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenC6.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenCm.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenCM7.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenD.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenD5.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenD6.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenDm.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenDsus4.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenE.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenEm.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenEsus11.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenF.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenG.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenG6.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenGm.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningOpenGsus4.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningStandard.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningTuneDownHalfStep.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningTuneDownOneStep.cs" />
+    <Compile Include="Instruments\GuitarTunings\TuningTuneDownTwoStep.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tmp\Class1.cs" />
+    <Compile Include="Tmp\HelperBeta.cs" />
+    <Compile Include="Tmp\SemitoneTypeEnum.cs" />
+    <Compile Include="Tools\EnumerableExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Intervals\Base\" />
+    <Folder Include="Core\Symbols\Base\" />
+    <Folder Include="Instruments\GuitarPositions\Base\" />
+    <Folder Include="Instruments\GuitarPositions\Enum\" />
+    <Folder Include="Instruments\GuitarPositions\Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using MidiMinuit.Lib.Annotations;
 using MidiMinuit.Lib.Core.Chords;
 using MidiMinuit.Lib.Core.Notes;
 using MidiMinuit.Lib.Core.Scales;
@@ -11,8 +13,42 @@ namespace MidiMinuit.Lib.Tmp
         public static void TestMethod_Generate3tonesChords()
         {
             List<NoteQuality> notes = IntervalHelper.GetScale(new Note(NoteNameEnum.C), ScaleTypeEnum.Major);
-            var isMajorChord = IsMajorChord(notes);
+            var combinaisons = HelperBeta.GetCombinaisons(notes);
+
+            var chords = new List<ChordBase>();
+            foreach (var c in combinaisons)
+            {
+                var chord = GetMajorChord(c);
+                chords.Add(chord);
+            }
         }
+
+        public static ChordBase GetChord([NotNull] List<NoteQuality> notes)
+        {
+            if (notes == null)
+            {
+                throw new ArgumentNullException(nameof(notes));
+            }
+
+            if (notes.Count == 0)
+            {
+                throw new ArgumentException("Value cannot be an empty collection.", nameof(notes));
+            }
+
+            if (notes.Count != 3)
+            {
+                throw new ArgumentException("Value must contains 3 elements.", nameof(notes));
+            }
+
+            return null;
+        }
+
+
+
+
+
+
+
 
         public static ChordMajor GetMajorChord(List<NoteQuality> notes)
         {

@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using MidiMinuit.Lib.Core.Notes;
+
+namespace MidiMinuit.Lib.Core.Chords
+{
+    public class ChordFifth : ChordBase
+    {
+        public NoteFondamental Fondamental { get; }
+
+        public NoteFifthPerfect FifthPerfect { get; }
+
+        public ChordFifth(Note fondamental)
+            : base(ChordQualityEnum.Fifth)
+        {
+            if (fondamental == null)
+            {
+                throw new ArgumentNullException(nameof(fondamental));
+            }
+
+            var i = fondamental.Interval;
+            Fondamental = i.Fondamental;
+            FifthPerfect = i.FifthPerfect;
+        }
+
+        protected internal ChordFifth(Note fondamental, Note fifthPerfect)
+            : base(ChordQualityEnum.Fifth)
+        {
+            Fondamental = fondamental as NoteFondamental;
+            FifthPerfect = fifthPerfect as NoteFifthPerfect;
+        }
+
+        public override List<NoteQuality> Notes
+            => new List<NoteQuality> { Fondamental, FifthPerfect };
+
+        public override string Name
+            => $"{Fondamental}5";
+
+        public override string Details
+            => $"Fond: {Fondamental}, 5th: {FifthPerfect}";
+
+        public override string Description
+            => "Description not added yet.";
+
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+}

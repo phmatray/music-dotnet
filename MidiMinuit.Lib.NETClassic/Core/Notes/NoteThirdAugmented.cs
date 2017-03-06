@@ -1,0 +1,32 @@
+namespace MidiMinuit.Lib.Core.Notes
+{
+    public class NoteThirdAugmented : NoteQuality
+    {
+        public NoteThirdAugmented(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+            : base(name, accidental)
+        {
+        }
+
+        public NoteThirdAugmented(string note)
+            : base(note)
+        {
+        }
+
+        public NoteThirdAugmented(Note note)
+            : base(note)
+        {
+        }
+
+        public override NoteQualityEnum Quality
+            => NoteQualityEnum.NoteThirdAugmented;
+
+        public override string QualityName
+            => "Third Augmented";
+
+        public override string QualityAbbreviation
+            => "NO DATA";
+
+        public override string QualityComposition
+            => "2 tons et 1 demi-ton chromatique";
+    }
+}
