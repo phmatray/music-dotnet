@@ -48,6 +48,9 @@ namespace MidiMinuit.Lib.Core.Degrees
 
         public abstract Note NoteInCMinor { get; }
 
+        public int DegreeIndex
+            => ((int)DegreeEnum) - 1;
+
         public override string ToString()
         {
             return DegreeEnum.ToString();

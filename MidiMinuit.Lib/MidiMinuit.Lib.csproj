@@ -136,6 +136,7 @@
     <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
     <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
+    <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
     <Compile Include="Core\Chords\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Degrees\Extensions\DegreeExtensions.cs" />
     <Compile Include="Core\Degrees\Degree1.cs" />
@@ -193,6 +194,11 @@
     <Compile Include="Core\Scales\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Scales\MajorScale.cs" />
     <Compile Include="Core\Scales\MinorScale.cs" />
+    <Compile Include="Core\Scales\ScaleMajor.cs" />
+    <Compile Include="Core\Scales\ScaleMinorHarmonic.cs" />
+    <Compile Include="Core\Scales\ScaleMinorMelodic.cs" />
+    <Compile Include="Core\Scales\ScaleMinorNaturalEolian.cs" />
+    <Compile Include="Core\Scales\ScaleModeDorian.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\Tuning.cs" />
     <Compile Include="Instruments\GuitarTunings\Enum\TuningTypeEnum.cs" />
     <Compile Include="Instruments\GuitarTunings\Extensions\EnumExtensions.cs" />

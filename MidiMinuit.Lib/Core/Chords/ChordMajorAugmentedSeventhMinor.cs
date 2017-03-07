@@ -29,15 +29,6 @@ namespace MidiMinuit.Lib.Core.Chords
             SeventhMinor = i.SeventhMinor;
         }
 
-        protected internal ChordMajorAugmentedSeventhMinor(Note fondamental, Note thirdMajor, Note fifthAugmented, Note seventhMinor)
-            : base(ChordQualityEnum.MajorAugmentedSeventhMinor)
-        {
-            Fondamental = new NoteFondamental(fondamental);
-            ThirdMajor = new NoteThirdMajor(thirdMajor);
-            FifthAugmented = new NoteFifthAugmented(fifthAugmented);
-            SeventhMinor = new NoteSeventhMinor(seventhMinor);
-        }
-
         public override List<NoteQuality> Notes
             => new List<NoteQuality> { Fondamental, ThirdMajor, FifthAugmented, SeventhMinor };
 

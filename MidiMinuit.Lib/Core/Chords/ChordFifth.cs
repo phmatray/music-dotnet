@@ -23,13 +23,6 @@ namespace MidiMinuit.Lib.Core.Chords
             FifthPerfect = i.FifthPerfect;
         }
 
-        protected internal ChordFifth(Note fondamental, Note fifthPerfect)
-            : base(ChordQualityEnum.Fifth)
-        {
-            Fondamental = fondamental as NoteFondamental;
-            FifthPerfect = fifthPerfect as NoteFifthPerfect;
-        }
-
         public override List<NoteQuality> Notes
             => new List<NoteQuality> { Fondamental, FifthPerfect };
 

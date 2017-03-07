@@ -13,6 +13,7 @@
 using Microsoft.Toolkit.Uwp.SampleApp;
 using Windows.ApplicationModel;
 using Windows.UI.Xaml.Navigation;
+using MidiMinuit.Lib.Tmp;
 
 namespace MidiMinuit.Pages
 {
@@ -31,6 +32,13 @@ namespace MidiMinuit.Pages
 
             var packageVersion = Package.Current.Id.Version;
             Version.Text = $"{packageVersion.Major}.{packageVersion.Minor}.{packageVersion.Build}";
+
+            TestMethod();
+        }
+
+        private void TestMethod()
+        {
+            Class1.TestMethod_HarmonizeScale();
         }
     }
 }
