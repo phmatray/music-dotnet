@@ -6,19 +6,19 @@ namespace MidiMinuit.Lib.Core.Scales
 {
     public class ScaleModeDorian : ScaleBase
     {
-        public NoteFondamental Fondamental { get; set; }
+        public NoteFondamental Fondamental { get; }
 
-        public NoteSecondMajor SecondMajor { get; set; }
+        public NoteSecondMajor SecondMajor { get; }
 
-        public NoteThirdMinor ThirdMinor { get; set; }
+        public NoteThirdMinor ThirdMinor { get; }
 
-        public NoteFourthPerfect FourthPerfect { get; set; }
+        public NoteFourthPerfect FourthPerfect { get; }
 
-        public NoteFifthPerfect FifthPerfect { get; set; }
+        public NoteFifthPerfect FifthPerfect { get; }
 
-        public NoteSixthMajor SixthMajor { get; set; }
+        public NoteSixthMajor SixthMajor { get; }
 
-        public NoteSeventhMinor SeventhMinor { get; set; }
+        public NoteSeventhMinor SeventhMinor { get; }
 
         public ScaleModeDorian(Note key)
             : base(ScaleTypeEnum.ModeDorian)

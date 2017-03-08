@@ -6,19 +6,19 @@ namespace MidiMinuit.Lib.Core.Scales
 {
     public class ScaleMajor : ScaleBase
     {
-        public NoteFondamental Fondamental { get; set; }
+        public NoteFondamental Fondamental { get; }
 
-        public NoteSecondMajor SecondMajor { get; set; }
+        public NoteSecondMajor SecondMajor { get; }
 
-        public NoteThirdMajor ThirdMajor { get; set; }
+        public NoteThirdMajor ThirdMajor { get; }
 
-        public NoteFourthPerfect FourthPerfect { get; set; }
+        public NoteFourthPerfect FourthPerfect { get; }
 
-        public NoteFifthPerfect FifthPerfect { get; set; }
+        public NoteFifthPerfect FifthPerfect { get; }
 
-        public NoteSixthMajor SixthMajor { get; set; }
+        public NoteSixthMajor SixthMajor { get; }
 
-        public NoteSeventhMajor SeventhMajor { get; set; }
+        public NoteSeventhMajor SeventhMajor { get; }
 
         public ScaleMajor(Note key)
             : base(ScaleTypeEnum.Major)
