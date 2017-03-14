@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MidiMinuit.Lib.Core.Intervals;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace MidiMinuit.Lib.Core.Scales

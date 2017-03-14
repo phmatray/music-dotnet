@@ -1,3 +1,5 @@
+using MidiMinuit.Lib.Core.Intervals;
+
 namespace MidiMinuit.Lib.Core.Notes
 {
     public abstract class NoteQuality : Note
@@ -17,7 +19,7 @@ namespace MidiMinuit.Lib.Core.Notes
         {
         }
 
-        public abstract NoteQualityEnum Quality { get; }
+        public abstract IntervalQualityEnum Quality { get; }
 
         public abstract string QualityName { get; }
 

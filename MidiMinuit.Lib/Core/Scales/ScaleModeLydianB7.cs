@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MidiMinuit.Lib.Core.Intervals;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace MidiMinuit.Lib.Core.Scales
@@ -12,7 +13,7 @@ namespace MidiMinuit.Lib.Core.Scales
 
         public NoteThirdMajor ThirdMajor { get; }
 
-        public NoteEleventhAugmented EleventhAugmented { get; }
+        public IntervalAugmentedEleventh Eleventh { get; }
 
         public NoteFifthPerfect FifthPerfect { get; }
 
@@ -33,7 +34,7 @@ namespace MidiMinuit.Lib.Core.Scales
             Fondamental = i.Fondamental;
             SecondMajor = i.SecondMajor;
             ThirdMajor = i.ThirdMajor;
-            EleventhAugmented = i.EleventhAugmented;
+            Eleventh = i.Eleventh;
             FifthPerfect = i.FifthPerfect;
             SixthMajor = i.SixthMajor;
             SeventhMinor = i.SeventhMinor;
@@ -45,7 +46,7 @@ namespace MidiMinuit.Lib.Core.Scales
                 Fondamental,
                 SecondMajor,
                 ThirdMajor,
-                EleventhAugmented,
+                Eleventh,
                 FifthPerfect,
                 SixthMajor,
                 SeventhMinor

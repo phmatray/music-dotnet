@@ -1,0 +1,40 @@
+﻿namespace MidiMinuit.Lib.Core.Intervals
+{
+    public enum IntervalQualityEnum
+    {
+        IntervalPerfectUnison,
+        IntervalPerfectFourth,
+        IntervalPerfectFifth,
+        IntervalPerfectOctave,
+        IntervalMajorSecond,
+        IntervalMajorThird,
+        IntervalMajorSixth,
+        IntervalMajorSeventh,
+        IntervalMinorSecond,
+        IntervalMinorThird,
+        IntervalMinorSixth,
+        IntervalMinorSeventh,
+        IntervalAugmentedUnison,
+        IntervalAugmentedSecond,
+        IntervalAugmentedThird,
+        IntervalAugmentedFourth,
+        IntervalAugmentedFifth,
+        IntervalAugmentedSixth,
+        IntervalAugmentedSeventh,
+        IntervalAugmentedOctave,
+        IntervalDiminishedSecond,
+        IntervalDiminishedThird,
+        IntervalDiminishedFourth,
+        IntervalDiminishedFifth,
+        IntervalDiminishedSixth,
+        IntervalDiminishedSeventh,
+        IntervalDiminishedOctave,
+
+        IntervalPerfectEleventh,
+        IntervalMajorNinth,
+        IntervalMajorThirteenth,
+        IntervalMinorNinth,
+        IntervalAugmentedNinth,
+        IntervalAugmentedEleventh,
+    }
+}

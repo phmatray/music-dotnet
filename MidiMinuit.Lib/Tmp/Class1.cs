@@ -1,4 +1,6 @@
-﻿namespace MidiMinuit.Lib.Tmp
+﻿using MidiMinuit.Lib.Core.Intervals;
+
+namespace MidiMinuit.Lib.Tmp
 {
     using System;
     using System.Collections.Generic;
