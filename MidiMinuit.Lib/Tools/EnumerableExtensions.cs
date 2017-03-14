@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace MidiMinuit.Lib.Tools
 {
-    public static class EnumerableExtensions
+    internal static class EnumerableExtensions
     {
         /// <summary>
         ///     Distincts by.
@@ -24,7 +24,7 @@ namespace MidiMinuit.Lib.Tools
         /// <param name="source">The source.</param>
         /// <param name="keySelector">The key selector.</param>
         /// <returns>The distinctby collection.</returns>
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>(
+        internal static IEnumerable<TSource> DistinctBy<TSource, TKey>(
             this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
         {
             var seenKeys = new HashSet<TKey>();
@@ -37,7 +37,7 @@ namespace MidiMinuit.Lib.Tools
         /// <typeparam name="T">An object type.</typeparam>
         /// <param name="source">The source.</param>
         /// <returns>The collection shuffled.</returns>
-        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
+        internal static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
         {
             var randomGenerator = new Random();
             return source.Shuffle(randomGenerator);
@@ -55,7 +55,7 @@ namespace MidiMinuit.Lib.Tools
         ///     randomGenerator
         /// </exception>
         /// <returns>The shuffled collection.</returns>
-        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, Random randomGenerator)
+        internal static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, Random randomGenerator)
         {
             if (source == null)
             {
@@ -79,7 +79,7 @@ namespace MidiMinuit.Lib.Tools
         /// <exception cref="System.ArgumentNullException">source</exception>
         /// <exception cref="System.ArgumentOutOfRangeException">iteration</exception>
         /// <returns>The collection.</returns>
-        public static List<T> ShiftLeft<T>(this IEnumerable<T> source, int iteration = 1)
+        internal static List<T> ShiftLeft<T>(this IEnumerable<T> source, int iteration = 1)
         {
             if (source == null)
             {
@@ -111,7 +111,7 @@ namespace MidiMinuit.Lib.Tools
         /// <returns>The collection.</returns>
         /// <exception cref="System.ArgumentNullException">source</exception>
         /// <exception cref="System.ArgumentOutOfRangeException">iteration</exception>
-        public static List<T> ShiftRight<T>(this IEnumerable<T> source, int iteration = 1)
+        internal static List<T> ShiftRight<T>(this IEnumerable<T> source, int iteration = 1)
         {
             if (source == null)
             {

@@ -2,7 +2,9 @@
 {
     public enum NoteQualityEnum
     {
-        NoteFondamental,
+        NoteUnison,
+        NoteUnisonAugmented,
+        NoteSecondDiminished,
         NoteSecondMinor,
         NoteSecondMajor,
         NoteSecondAugmented,

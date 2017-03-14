@@ -27,6 +27,9 @@ namespace MidiMinuit.Lib.Core.Notes
             => "NO DATA";
 
         public override string QualityComposition
-            => "Inusit�e dans la pratique";
+            => "Inusitée dans la pratique";
+
+        public override int Semitones
+            => 12;
     }
 }

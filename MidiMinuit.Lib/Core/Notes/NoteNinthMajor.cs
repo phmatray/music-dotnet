@@ -28,5 +28,7 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public override string QualityComposition
             => "NO DATA";
+
+        public override int Semitones { get; }
     }
 }

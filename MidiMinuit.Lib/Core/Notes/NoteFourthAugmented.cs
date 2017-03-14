@@ -28,5 +28,8 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public override string QualityComposition
             => "2 tons, 1 demi-ton diatonique et 1 demi-ton chromatique ou 3 tons(Triton)";
+
+        public override int Semitones
+            => 6;
     }
 }

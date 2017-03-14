@@ -28,5 +28,8 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public override string QualityComposition
             => "1 ton";
+
+        public override int Semitones
+            => 2;
     }
 }

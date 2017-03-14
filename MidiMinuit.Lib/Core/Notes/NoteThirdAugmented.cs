@@ -28,5 +28,8 @@
 
         public override string QualityComposition
             => "2 tons et 1 demi-ton chromatique";
+
+        public override int Semitones
+            => 5;
     }
 }

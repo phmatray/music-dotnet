@@ -206,12 +206,11 @@
         /// <summary>
         ///     Initializes a new instance of the <see cref="Note" /> class.
         /// </summary>
-        /// <param name="name">The name of the note.</param>
+        /// <param name="name">The latin name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
         public Note(NoteNameLatinEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+            : this(name.ToNoteName(), accidental)
         {
-            Name = name.ToNoteName();
-            Accidental = accidental;
         }
 
         /// <summary>
@@ -376,6 +375,9 @@
                 OnPropertyChanged();
             }
         }
+
+        public NoteNameLatinEnum NameLatin
+            => (NoteNameLatinEnum)(int)Name;
 
         public NoteAccidentalEnum Accidental
         {

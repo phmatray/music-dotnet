@@ -2,7 +2,7 @@ namespace MidiMinuit.Lib.Core.Notes
 {
     public abstract class NoteQuality : Note
     {
-        protected NoteQuality(NoteNameEnum name = NoteNameEnum.C, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        protected NoteQuality(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
             : base(name, accidental)
         {
         }
@@ -24,5 +24,7 @@ namespace MidiMinuit.Lib.Core.Notes
         public abstract string QualityAbbreviation { get; }
 
         public abstract string QualityComposition { get; }
+
+        public abstract int Semitones { get; }
     }
 }
