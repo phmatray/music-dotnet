@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using MidiMinuit.Lib.Core.Intervals;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Scales
+﻿namespace MidiMinuit.Lib.Core.Scales
 {
+    using System;
+    using System.Collections.Generic;
+    using MidiMinuit.Lib.Core.Intervals;
+    using MidiMinuit.Lib.Core.Notes;
+
     public class ScaleModeLydianAdded : ScaleBase
     {
         public NoteFondamental Fondamental { get; }
 
-        public NoteSecondMajor SecondMajor { get; }
+        public IntervalMajorSecond SecondMajor { get; }
 
-        public NoteThirdMajor ThirdMajor { get; }
+        public IntervalMajorThird ThirdMajor { get; }
 
         public IntervalAugmentedEleventh Eleventh { get; }
 
-        public NoteFifthAugmented FifthAugmented { get; }
+        public IntervalAugmentedFifth FifthAugmented { get; }
 
-        public NoteSixthMajor SixthMajor { get; }
+        public IntervalMajorSixth SixthMajor { get; }
 
-        public NoteSeventhMajor SeventhMajor { get; }
+        public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleModeLydianAdded(Note key)
             : base(ScaleTypeEnum.ModeLydianAdded)

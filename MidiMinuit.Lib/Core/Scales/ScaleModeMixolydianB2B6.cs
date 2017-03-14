@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using MidiMinuit.Lib.Core.Intervals;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Scales
+﻿namespace MidiMinuit.Lib.Core.Scales
 {
+    using System;
+    using System.Collections.Generic;
+    using MidiMinuit.Lib.Core.Intervals;
+    using MidiMinuit.Lib.Core.Notes;
+
     public class ScaleModeMixolydianB2B6 : ScaleBase
     {
         public NoteFondamental Fondamental { get; }
 
-        public NoteSecondMinor SecondMinor { get; }
+        public IntervalMinorSecond SecondMinor { get; }
 
-        public NoteThirdMajor ThirdMajor { get; }
+        public IntervalMajorThird ThirdMajor { get; }
 
-        public NoteFourthPerfect FourthPerfect { get; }
+        public IntervalPerfectFourth FourthPerfect { get; }
 
-        public NoteFifthPerfect FifthPerfect { get; }
+        public IntervalPerfectFifth FifthPerfect { get; }
 
-        public NoteSixthMinor SixthMinor { get; }
+        public IntervalMinorSixth SixthMinor { get; }
 
-        public NoteSeventhMinor SeventhMinor { get; }
+        public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeMixolydianB2B6(Note key)
             : base(ScaleTypeEnum.ModeMixolydianB2B6)

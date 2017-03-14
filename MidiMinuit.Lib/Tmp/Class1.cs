@@ -1,12 +1,11 @@
-﻿using MidiMinuit.Lib.Core.Intervals;
-
-namespace MidiMinuit.Lib.Tmp
+﻿namespace MidiMinuit.Lib.Tmp
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using MidiMinuit.Lib.Core.Chords;
     using MidiMinuit.Lib.Core.Degrees;
+    using MidiMinuit.Lib.Core.Intervals;
     using MidiMinuit.Lib.Core.Notes;
     using MidiMinuit.Lib.Core.Scales;
 
@@ -87,15 +86,15 @@ namespace MidiMinuit.Lib.Tmp
         public static bool IsMajorChord(List<NoteQuality> notes)
         {
             return notes.OfType<NoteFondamental>().Any() &&
-                   notes.OfType<NoteThirdMajor>().Any() &&
-                   notes.OfType<NoteFifthPerfect>().Any();
+                   notes.OfType<IntervalMajorThird>().Any() &&
+                   notes.OfType<IntervalPerfectFifth>().Any();
         }
 
         public static bool IsMinorChord(List<NoteQuality> notes)
         {
             return notes.OfType<NoteFondamental>().Any() &&
-                   notes.OfType<NoteThirdMinor>().Any() &&
-                   notes.OfType<NoteFifthPerfect>().Any();
+                   notes.OfType<IntervalMinorThird>().Any() &&
+                   notes.OfType<IntervalPerfectFifth>().Any();
         }
     }
 }

@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using MidiMinuit.Lib.Core.Intervals;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Chords
+﻿namespace MidiMinuit.Lib.Core.Chords
 {
+    using System;
+    using System.Collections.Generic;
+    using MidiMinuit.Lib.Core.Intervals;
+    using MidiMinuit.Lib.Core.Notes;
+
     public class ChordMinor : ChordBase
     {
         public NoteFondamental Fondamental { get; }
 
-        public NoteThirdMinor ThirdMinor { get; }
+        public IntervalMinorThird ThirdMinor { get; }
 
-        public NoteFifthPerfect FifthPerfect { get; }
+        public IntervalPerfectFifth FifthPerfect { get; }
 
         public ChordMinor(Note fondamental)
             : base(ChordQualityEnum.Minor)

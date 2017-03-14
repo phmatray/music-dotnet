@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using MidiMinuit.Lib.Core.Intervals;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Chords
+﻿namespace MidiMinuit.Lib.Core.Chords
 {
+    using System;
+    using System.Collections.Generic;
+    using MidiMinuit.Lib.Core.Intervals;
+    using MidiMinuit.Lib.Core.Notes;
+
     public class ChordMajorAugmentedSeventhMinor : ChordBase
     {
         public NoteFondamental Fondamental { get; }
 
-        public NoteThirdMajor ThirdMajor { get; }
+        public IntervalMajorThird ThirdMajor { get; }
 
-        public NoteFifthAugmented FifthAugmented { get; }
+        public IntervalAugmentedFifth FifthAugmented { get; }
 
-        public NoteSeventhMinor SeventhMinor { get; }
+        public IntervalMinorSeventh SeventhMinor { get; }
 
         public ChordMajorAugmentedSeventhMinor(Note fondamental)
             : base(ChordQualityEnum.MajorAugmentedSeventhMinor)

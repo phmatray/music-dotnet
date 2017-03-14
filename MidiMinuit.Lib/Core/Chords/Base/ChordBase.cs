@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Chords
+﻿namespace MidiMinuit.Lib.Core.Chords
 {
+    using System;
+    using System.Collections.Generic;
+    using MidiMinuit.Lib.Core.Notes;
+
     public abstract class ChordBase
     {
         protected ChordBase(ChordQualityEnum quality)

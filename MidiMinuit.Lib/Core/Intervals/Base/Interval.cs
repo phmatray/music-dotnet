@@ -1,8 +1,8 @@
-using System;
-using MidiMinuit.Lib.Core.Notes;
-
 namespace MidiMinuit.Lib.Core.Intervals
 {
+    using System;
+    using MidiMinuit.Lib.Core.Notes;
+
     public class Interval
     {
         public Interval(
@@ -110,29 +110,29 @@ namespace MidiMinuit.Lib.Core.Intervals
             }
 
             Fondamental = fondamental as NoteFondamental;
-            SecondMinor = secondMinor as NoteSecondMinor;
-            SecondMajor = secondMajor as NoteSecondMajor;
-            SecondAugmented = secondAugmented as NoteSecondAugmented;
-            ThirdMinor = thirdMinor as NoteThirdMinor;
-            ThirdMajor = thirdMajor as NoteThirdMajor;
-            FourthPerfect = fourthPerfect as NoteFourthPerfect;
-            FourthAugmented = fourthAugmented as NoteFourthAugmented;
-            FifthDiminished = fifthDiminished as NoteFifthDiminished;
-            FifthPerfect = fifthPerfect as NoteFifthPerfect;
-            FifthAugmented = fifthAugmented as NoteFifthAugmented;
-            SixthMinor = sixthMinor as NoteSixthMinor;
-            SixthMajor = sixthMajor as NoteSixthMajor;
-            SeventhDiminished = seventhDiminished as NoteSeventhDiminished;
-            SeventhMinor = seventhMinor as NoteSeventhMinor;
-            SeventhMajor = seventhMajor as NoteSeventhMajor;
-            SeventhAugmented = seventhAugmented as NoteSeventhAugmented;
-            NinthMinor = secondMinor as NoteNinthMinor;
-            NinthMajor = secondMajor as NoteNinthMajor;
-            NinthAugmented = secondAugmented as NoteNinthAugmented;
+            SecondMinor = secondMinor as IntervalMinorSecond;
+            SecondMajor = secondMajor as IntervalMajorSecond;
+            SecondAugmented = secondAugmented as IntervalAugmentedSecond;
+            ThirdMinor = thirdMinor as IntervalMinorThird;
+            ThirdMajor = thirdMajor as IntervalMajorThird;
+            FourthPerfect = fourthPerfect as IntervalPerfectFourth;
+            FourthAugmented = fourthAugmented as IntervalAugmentedFourth;
+            FifthDiminished = fifthDiminished as IntervalDiminishedFifth;
+            FifthPerfect = fifthPerfect as IntervalPerfectFifth;
+            FifthAugmented = fifthAugmented as IntervalAugmentedFifth;
+            SixthMinor = sixthMinor as IntervalMinorSixth;
+            SixthMajor = sixthMajor as IntervalMajorSixth;
+            SeventhDiminished = seventhDiminished as IntervalDiminishedSeventh;
+            SeventhMinor = seventhMinor as IntervalMinorSeventh;
+            SeventhMajor = seventhMajor as IntervalMajorSeventh;
+            SeventhAugmented = seventhAugmented as IntervalAugmentedSeventh;
+            NinthMinor = secondMinor as IntervalMinorNinth;
+            NinthMajor = secondMajor as IntervalMajorNinth;
+            NinthAugmented = secondAugmented as IntervalAugmentedNinth;
             EleventhPerfect = fourthPerfect as IntervalPerfectEleventh;
             Eleventh = fourthAugmented as IntervalAugmentedEleventh;
-            ThirteenthMinor = sixthMinor as NoteThirteenthMinor;
-            ThirteenthMajor = sixthMajor as NoteThirteenthMajor;
+            ThirteenthMinor = sixthMinor as IntervalMinorThirteenth;
+            ThirteenthMajor = sixthMajor as IntervalMajorThirteenth;
         }
 
         public Interval(
@@ -240,77 +240,77 @@ namespace MidiMinuit.Lib.Core.Intervals
             }
 
             Fondamental = new NoteFondamental(fondamental);
-            SecondMinor = new NoteSecondMinor(secondMinor);
-            SecondMajor = new NoteSecondMajor(secondMajor);
-            SecondAugmented = new NoteSecondAugmented(secondAugmented);
-            ThirdMinor = new NoteThirdMinor(thirdMinor);
-            ThirdMajor = new NoteThirdMajor(thirdMajor);
-            FourthPerfect = new NoteFourthPerfect(fourthPerfect);
-            FourthAugmented = new NoteFourthAugmented(fourthAugmented);
-            FifthDiminished = new NoteFifthDiminished(fifthDiminished);
-            FifthPerfect = new NoteFifthPerfect(fifthPerfect);
-            FifthAugmented = new NoteFifthAugmented(fifthAugmented);
-            SixthMinor = new NoteSixthMinor(sixthMinor);
-            SixthMajor = new NoteSixthMajor(sixthMajor);
-            SeventhDiminished = new NoteSeventhDiminished(seventhDiminished);
-            SeventhMinor = new NoteSeventhMinor(seventhMinor);
-            SeventhMajor = new NoteSeventhMajor(seventhMajor);
-            SeventhAugmented = new NoteSeventhAugmented(seventhAugmented);
-            NinthMinor = new NoteNinthMinor(secondMinor);
-            NinthMajor = new NoteNinthMajor(secondMajor);
-            NinthAugmented = new NoteNinthAugmented(secondAugmented);
+            SecondMinor = new IntervalMinorSecond(secondMinor);
+            SecondMajor = new IntervalMajorSecond(secondMajor);
+            SecondAugmented = new IntervalAugmentedSecond(secondAugmented);
+            ThirdMinor = new IntervalMinorThird(thirdMinor);
+            ThirdMajor = new IntervalMajorThird(thirdMajor);
+            FourthPerfect = new IntervalPerfectFourth(fourthPerfect);
+            FourthAugmented = new IntervalAugmentedFourth(fourthAugmented);
+            FifthDiminished = new IntervalDiminishedFifth(fifthDiminished);
+            FifthPerfect = new IntervalPerfectFifth(fifthPerfect);
+            FifthAugmented = new IntervalAugmentedFifth(fifthAugmented);
+            SixthMinor = new IntervalMinorSixth(sixthMinor);
+            SixthMajor = new IntervalMajorSixth(sixthMajor);
+            SeventhDiminished = new IntervalDiminishedSeventh(seventhDiminished);
+            SeventhMinor = new IntervalMinorSeventh(seventhMinor);
+            SeventhMajor = new IntervalMajorSeventh(seventhMajor);
+            SeventhAugmented = new IntervalAugmentedSeventh(seventhAugmented);
+            NinthMinor = new IntervalMinorNinth(secondMinor);
+            NinthMajor = new IntervalMajorNinth(secondMajor);
+            NinthAugmented = new IntervalAugmentedNinth(secondAugmented);
             EleventhPerfect = new IntervalPerfectEleventh(fourthPerfect);
             Eleventh = new IntervalAugmentedEleventh(fourthAugmented);
-            ThirteenthMinor = new NoteThirteenthMinor(sixthMinor);
-            ThirteenthMajor = new NoteThirteenthMajor(sixthMajor);
+            ThirteenthMinor = new IntervalMinorThirteenth(sixthMinor);
+            ThirteenthMajor = new IntervalMajorThirteenth(sixthMajor);
         }
 
         public NoteFondamental Fondamental { get; private set; }
 
-        public NoteSecondMinor SecondMinor { get; private set; }
+        public IntervalMinorSecond SecondMinor { get; private set; }
 
-        public NoteSecondMajor SecondMajor { get; private set; }
+        public IntervalMajorSecond SecondMajor { get; private set; }
 
-        public NoteSecondAugmented SecondAugmented { get; private set; }
+        public IntervalAugmentedSecond SecondAugmented { get; private set; }
 
-        public NoteThirdMinor ThirdMinor { get; private set; }
+        public IntervalMinorThird ThirdMinor { get; private set; }
 
-        public NoteThirdMajor ThirdMajor { get; private set; }
+        public IntervalMajorThird ThirdMajor { get; private set; }
 
-        public NoteFourthPerfect FourthPerfect { get; private set; }
+        public IntervalPerfectFourth FourthPerfect { get; private set; }
 
-        public NoteFourthAugmented FourthAugmented { get; private set; }
+        public IntervalAugmentedFourth FourthAugmented { get; private set; }
 
-        public NoteFifthDiminished FifthDiminished { get; private set; }
+        public IntervalDiminishedFifth FifthDiminished { get; private set; }
 
-        public NoteFifthPerfect FifthPerfect { get; private set; }
+        public IntervalPerfectFifth FifthPerfect { get; private set; }
 
-        public NoteFifthAugmented FifthAugmented { get; private set; }
+        public IntervalAugmentedFifth FifthAugmented { get; private set; }
 
-        public NoteSixthMinor SixthMinor { get; private set; }
+        public IntervalMinorSixth SixthMinor { get; private set; }
 
-        public NoteSixthMajor SixthMajor { get; private set; }
+        public IntervalMajorSixth SixthMajor { get; private set; }
 
-        public NoteSeventhDiminished SeventhDiminished { get; private set; }
+        public IntervalDiminishedSeventh SeventhDiminished { get; private set; }
 
-        public NoteSeventhMinor SeventhMinor { get; private set; }
+        public IntervalMinorSeventh SeventhMinor { get; private set; }
 
-        public NoteSeventhMajor SeventhMajor { get; private set; }
+        public IntervalMajorSeventh SeventhMajor { get; private set; }
 
-        public NoteSeventhAugmented SeventhAugmented { get; private set; }
+        public IntervalAugmentedSeventh SeventhAugmented { get; private set; }
 
-        public NoteNinthMinor NinthMinor { get; private set; }
+        public IntervalMinorNinth NinthMinor { get; private set; }
 
-        public NoteNinthMajor NinthMajor { get; private set; }
+        public IntervalMajorNinth NinthMajor { get; private set; }
 
-        public NoteNinthAugmented NinthAugmented { get; private set; }
+        public IntervalAugmentedNinth NinthAugmented { get; private set; }
 
         public IntervalPerfectEleventh Eleventh { get; private set; }
 
         public IntervalAugmentedEleventh Eleventh { get; private set; }
 
-        public NoteThirteenthMinor ThirteenthMinor { get; private set; }
+        public IntervalMinorThirteenth ThirteenthMinor { get; private set; }
 
-        public NoteThirteenthMajor ThirteenthMajor { get; private set; }
+        public IntervalMajorThirteenth ThirteenthMajor { get; private set; }
     }
 }

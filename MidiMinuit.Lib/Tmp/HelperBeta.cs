@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace MidiMinuit.Lib.Tmp
+﻿namespace MidiMinuit.Lib.Tmp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public static class HelperBeta
     {
         public static List<List<T>> GetCombinaisons<T>(List<T> list)

@@ -1,8 +1,8 @@
-﻿using System;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Chords
+﻿namespace MidiMinuit.Lib.Core.Chords
 {
+    using System;
+    using MidiMinuit.Lib.Core.Notes;
+
     public static class ChordExtensions
     {
         public static ChordBase GetChord(this ChordQualityEnum chordQuality, Note fondamental)

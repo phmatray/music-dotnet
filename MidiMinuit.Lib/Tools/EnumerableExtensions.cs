@@ -8,12 +8,12 @@
  * http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace MidiMinuit.Lib.Tools
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     internal static class EnumerableExtensions
     {
         /// <summary>

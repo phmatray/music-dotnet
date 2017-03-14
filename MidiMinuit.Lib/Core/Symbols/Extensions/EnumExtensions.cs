@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace MidiMinuit.Lib.Core.Symbols
+﻿namespace MidiMinuit.Lib.Core.Symbols
 {
+    using System;
+
     public static class EnumExtensions
     {
         public static char ToUnicodeChar(this UnicodeMusicSymbolEnum symbol)

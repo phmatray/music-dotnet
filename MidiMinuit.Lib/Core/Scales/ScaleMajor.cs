@@ -1,25 +1,25 @@
-using System;
-using System.Collections.Generic;
-using MidiMinuit.Lib.Core.Intervals;
-using MidiMinuit.Lib.Core.Notes;
-
 namespace MidiMinuit.Lib.Core.Scales
 {
+    using System;
+    using System.Collections.Generic;
+    using MidiMinuit.Lib.Core.Intervals;
+    using MidiMinuit.Lib.Core.Notes;
+
     public class ScaleMajor : ScaleBase
     {
         public NoteFondamental Fondamental { get; }
 
-        public NoteSecondMajor SecondMajor { get; }
+        public IntervalMajorSecond SecondMajor { get; }
 
-        public NoteThirdMajor ThirdMajor { get; }
+        public IntervalMajorThird ThirdMajor { get; }
 
-        public NoteFourthPerfect FourthPerfect { get; }
+        public IntervalPerfectFourth FourthPerfect { get; }
 
-        public NoteFifthPerfect FifthPerfect { get; }
+        public IntervalPerfectFifth FifthPerfect { get; }
 
-        public NoteSixthMajor SixthMajor { get; }
+        public IntervalMajorSixth SixthMajor { get; }
 
-        public NoteSeventhMajor SeventhMajor { get; }
+        public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleMajor(Note key)
             : base(ScaleTypeEnum.Major)

@@ -1,7 +1,7 @@
-using MidiMinuit.Lib.Core.Intervals;
-
 namespace MidiMinuit.Lib.Core.Notes
 {
+    using MidiMinuit.Lib.Core.Intervals;
+
     public abstract class NoteQuality : Note
     {
         protected NoteQuality(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)

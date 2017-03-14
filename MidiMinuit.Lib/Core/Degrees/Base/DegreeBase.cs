@@ -1,8 +1,8 @@
-﻿using System;
-using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Degrees
+﻿namespace MidiMinuit.Lib.Core.Degrees
 {
+    using System;
+    using MidiMinuit.Lib.Core.Notes;
+
     public abstract class DegreeBase
     {
         public static DegreeBase GetDegree(DegreeEnum degreeEnum)

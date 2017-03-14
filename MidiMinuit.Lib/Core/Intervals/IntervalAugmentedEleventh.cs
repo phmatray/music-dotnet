@@ -1,7 +1,7 @@
-using MidiMinuit.Lib.Core.Notes;
-
 namespace MidiMinuit.Lib.Core.Intervals
 {
+    using MidiMinuit.Lib.Core.Notes;
+
     public class IntervalAugmentedEleventh : NoteQuality
     {
         public IntervalAugmentedEleventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)

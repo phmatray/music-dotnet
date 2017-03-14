@@ -1,7 +1,7 @@
-﻿using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Core.Degrees
+﻿namespace MidiMinuit.Lib.Core.Degrees
 {
+    using MidiMinuit.Lib.Core.Notes;
+
     public class Degree7 : DegreeBase
     {
         public override DegreeEnum DegreeEnum
