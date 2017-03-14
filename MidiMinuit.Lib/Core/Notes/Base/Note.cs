@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using MidiMinuit.Lib.Core.Intervals;
-
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using Intervals;
+
     /// <summary>
     ///     Note Pitch (hauteur).
     ///     Cette classe représente la hauteur d'un son
@@ -16,6 +16,27 @@ namespace MidiMinuit.Lib.Core.Notes
     /// </summary>
     public class Note : IEquatable<Note>, INotifyPropertyChanged
     {
+        private NoteNameEnum _name;
+        private NoteAccidentalEnum _accidental;
+
+        public static Note operator +(Note note, int semitone)
+            => note.Add(semitone);
+
+        public static Note operator -(Note note, int semitone)
+            => note.Substract(semitone);
+
+        public static bool operator ==(Note left, Note right)
+            => Equals(left, right);
+
+        public static bool operator !=(Note left, Note right)
+            => !Equals(left, right);
+
+        public static bool operator >(Note left, Note right)
+            => left.Pitch > right.Pitch;
+
+        public static bool operator <(Note left, Note right)
+            => left.Pitch < right.Pitch;
+
         public static Note GetNoteSharp(int value)
         {
             if (value < 0)
@@ -171,27 +192,6 @@ namespace MidiMinuit.Lib.Core.Notes
             }
         }
 
-        public static Note operator +(Note note, int semitone)
-            => note.Add(semitone);
-
-        public static Note operator -(Note note, int semitone)
-            => note.Substract(semitone);
-
-        public static bool operator ==(Note left, Note right)
-            => Equals(left, right);
-
-        public static bool operator !=(Note left, Note right)
-            => !Equals(left, right);
-
-        public static bool operator >(Note left, Note right)
-            => left.Pitch > right.Pitch;
-
-        public static bool operator <(Note left, Note right)
-            => left.Pitch < right.Pitch;
-
-        private NoteNameEnum _name;
-        private NoteAccidentalEnum _accidental;
-
         /// <summary>
         ///     Initializes a new instance of the <see cref="Note" /> class.
         /// </summary>
@@ -200,6 +200,17 @@ namespace MidiMinuit.Lib.Core.Notes
         public Note(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
         {
             Name = name;
+            Accidental = accidental;
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="name">The name of the note.</param>
+        /// <param name="accidental">The accidental of the note.</param>
+        public Note(NoteNameLatinEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        {
+            Name = name.ToNoteName();
             Accidental = accidental;
         }
 

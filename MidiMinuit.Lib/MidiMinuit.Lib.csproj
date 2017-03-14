@@ -48,7 +48,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -96,7 +96,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -117,10 +117,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzers\Class1.cs" />
-    <Compile Include="Analyzers\ComplexNumber.cs" />
-    <Compile Include="Analyzers\FftAlgorithm.cs" />
-    <Compile Include="Analyzers\FrequencyUtils.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Core\Chords\Base\ChordBase.cs" />
     <Compile Include="Core\Chords\ChordFifth.cs" />
@@ -159,6 +155,7 @@
     <Compile Include="Core\Notes\Base\Note.cs" />
     <Compile Include="Core\Notes\Base\NoteQuality.cs" />
     <Compile Include="Core\Notes\Enum\NoteAccidentalEnum.cs" />
+    <Compile Include="Core\Notes\Enum\NoteNameLatinEnum.cs" />
     <Compile Include="Core\Notes\Enum\NoteNameEnum.cs" />
     <Compile Include="Core\Notes\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Notes\NoteEleventhAugmented.cs" />
