@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalAugmentedSecond;
 
         public override string QualityName
-            => "Second Augmented";
+            => "Augmented Second";
 
         public override string QualityAbbreviation
             => "NO DATA";

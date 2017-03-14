@@ -76,7 +76,7 @@
         {
             if (IsMajorChord(notes))
             {
-                var fondamental = notes.OfType<NoteFondamental>().SingleOrDefault();
+                var fondamental = notes.OfType<IntervalPerfectUnison>().SingleOrDefault();
                 return fondamental != null ? new ChordMajor(fondamental) : null;
             }
 
@@ -85,14 +85,14 @@
 
         public static bool IsMajorChord(List<NoteQuality> notes)
         {
-            return notes.OfType<NoteFondamental>().Any() &&
+            return notes.OfType<IntervalPerfectUnison>().Any() &&
                    notes.OfType<IntervalMajorThird>().Any() &&
                    notes.OfType<IntervalPerfectFifth>().Any();
         }
 
         public static bool IsMinorChord(List<NoteQuality> notes)
         {
-            return notes.OfType<NoteFondamental>().Any() &&
+            return notes.OfType<IntervalPerfectUnison>().Any() &&
                    notes.OfType<IntervalMinorThird>().Any() &&
                    notes.OfType<IntervalPerfectFifth>().Any();
         }

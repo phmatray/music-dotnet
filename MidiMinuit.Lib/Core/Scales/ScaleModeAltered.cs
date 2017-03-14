@@ -7,7 +7,7 @@
 
     public class ScaleModeAltered : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMinorSecond SecondMinor { get; }
 

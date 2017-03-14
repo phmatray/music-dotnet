@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalPerfectOctave;
 
         public override string QualityName
-            => "Octave Perfect";
+            => "Perfect Octave";
 
         public override string QualityAbbreviation
             => "NO DATA";

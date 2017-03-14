@@ -23,7 +23,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             => IntervalQualityEnum.IntervalPerfectEleventh;
 
         public override string QualityName
-            => "Eleventh Perfect";
+            => "Perfect Eleventh";
 
         public override string QualityAbbreviation
             => "NO DATA";

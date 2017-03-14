@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalAugmentedFifth;
 
         public override string QualityName
-            => "Fifth Augmented";
+            => "Augmented Fifth";
 
         public override string QualityAbbreviation
             => "NO DATA";

@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalDiminishedSixth;
 
         public override string QualityName
-            => "Sixth Diminished";
+            => "Diminished Sixth";
 
         public override string QualityAbbreviation
             => "NO DATA";

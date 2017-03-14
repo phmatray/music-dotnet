@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalAugmentedThird;
 
         public override string QualityName
-            => "Third Augmented";
+            => "Augmented Third";
 
         public override string QualityAbbreviation
             => "3ᵗʰ ♯";

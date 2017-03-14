@@ -7,7 +7,7 @@
 
     public class ChordFifth : ChordBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalPerfectFifth FifthPerfect { get; }
 

@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalDiminishedSecond;
 
         public override string QualityName
-            => "Second Diminished";
+            => "Diminished Second";
 
         public override string QualityAbbreviation
             => "NO DATA";

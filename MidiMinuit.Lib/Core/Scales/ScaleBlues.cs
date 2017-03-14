@@ -7,7 +7,7 @@
 
     public class ScaleBlues : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMinorThird ThirdMinor { get; }
 

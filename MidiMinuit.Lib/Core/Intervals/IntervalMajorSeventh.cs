@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalMajorSeventh;
 
         public override string QualityName
-            => "Seventh Major";
+            => "Major Seventh";
 
         public override string QualityAbbreviation
             => "NO DATA";

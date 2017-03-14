@@ -7,7 +7,7 @@
 
     public class ChordMinorSeventhMinor : ChordBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMinorThird ThirdMinor { get; }
 

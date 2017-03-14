@@ -7,7 +7,7 @@
 
     public class ChordSuspendedFourthSeventhMinor : ChordBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalPerfectFourth FourthPerfect { get; }
 

@@ -7,7 +7,7 @@ namespace MidiMinuit.Lib.Core.Scales
 
     public class ScaleMajor : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMajorSecond SecondMajor { get; }
 

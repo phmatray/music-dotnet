@@ -7,7 +7,7 @@
 
     public class ScaleModeLydianB7 : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMajorSecond SecondMajor { get; }
 
@@ -34,7 +34,7 @@
             Fondamental = i.Fondamental;
             SecondMajor = i.SecondMajor;
             ThirdMajor = i.ThirdMajor;
-            Eleventh = i.Eleventh;
+            Eleventh = i.EleventhAugmented;
             FifthPerfect = i.FifthPerfect;
             SixthMajor = i.SixthMajor;
             SeventhMinor = i.SeventhMinor;

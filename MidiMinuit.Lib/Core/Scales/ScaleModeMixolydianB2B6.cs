@@ -7,7 +7,7 @@
 
     public class ScaleModeMixolydianB2B6 : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMinorSecond SecondMinor { get; }
 

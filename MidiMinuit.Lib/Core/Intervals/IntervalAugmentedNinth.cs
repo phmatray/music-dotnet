@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalAugmentedNinth;
 
         public override string QualityName
-            => "Ninth Augmented";
+            => "Augmented Ninth";
 
         public override string QualityAbbreviation
             => "NO DATA";

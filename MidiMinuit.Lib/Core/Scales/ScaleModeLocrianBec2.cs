@@ -7,7 +7,7 @@
 
     public class ScaleModeLocrianBec2 : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMajorSecond SecondMajor { get; }
 

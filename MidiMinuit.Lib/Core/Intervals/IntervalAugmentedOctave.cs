@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalAugmentedOctave;
 
         public override string QualityName
-            => "Octave Augmented";
+            => "Augmented Octave";
 
         public override string QualityAbbreviation
             => "NO DATA";

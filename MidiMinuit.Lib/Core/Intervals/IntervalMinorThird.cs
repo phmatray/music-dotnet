@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalMinorThird;
 
         public override string QualityName
-            => "Third Minor";
+            => "Minor Third";
 
         public override string QualityAbbreviation
             => "3ʳᵈ min";

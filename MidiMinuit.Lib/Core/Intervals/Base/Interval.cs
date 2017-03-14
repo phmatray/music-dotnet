@@ -109,7 +109,7 @@ namespace MidiMinuit.Lib.Core.Intervals
                 throw new ArgumentNullException(nameof(seventhAugmented));
             }
 
-            Fondamental = fondamental as NoteFondamental;
+            Fondamental = fondamental as IntervalPerfectUnison;
             SecondMinor = secondMinor as IntervalMinorSecond;
             SecondMajor = secondMajor as IntervalMajorSecond;
             SecondAugmented = secondAugmented as IntervalAugmentedSecond;
@@ -130,7 +130,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             NinthMajor = secondMajor as IntervalMajorNinth;
             NinthAugmented = secondAugmented as IntervalAugmentedNinth;
             EleventhPerfect = fourthPerfect as IntervalPerfectEleventh;
-            Eleventh = fourthAugmented as IntervalAugmentedEleventh;
+            EleventhAugmented = fourthAugmented as IntervalAugmentedEleventh;
             ThirteenthMinor = sixthMinor as IntervalMinorThirteenth;
             ThirteenthMajor = sixthMajor as IntervalMajorThirteenth;
         }
@@ -239,7 +239,7 @@ namespace MidiMinuit.Lib.Core.Intervals
                 throw new ArgumentNullException(nameof(seventhAugmented));
             }
 
-            Fondamental = new NoteFondamental(fondamental);
+            Fondamental = new IntervalPerfectUnison(fondamental);
             SecondMinor = new IntervalMinorSecond(secondMinor);
             SecondMajor = new IntervalMajorSecond(secondMajor);
             SecondAugmented = new IntervalAugmentedSecond(secondAugmented);
@@ -260,12 +260,12 @@ namespace MidiMinuit.Lib.Core.Intervals
             NinthMajor = new IntervalMajorNinth(secondMajor);
             NinthAugmented = new IntervalAugmentedNinth(secondAugmented);
             EleventhPerfect = new IntervalPerfectEleventh(fourthPerfect);
-            Eleventh = new IntervalAugmentedEleventh(fourthAugmented);
+            EleventhAugmented = new IntervalAugmentedEleventh(fourthAugmented);
             ThirteenthMinor = new IntervalMinorThirteenth(sixthMinor);
             ThirteenthMajor = new IntervalMajorThirteenth(sixthMajor);
         }
 
-        public NoteFondamental Fondamental { get; private set; }
+        public IntervalPerfectUnison Fondamental { get; private set; }
 
         public IntervalMinorSecond SecondMinor { get; private set; }
 
@@ -305,9 +305,9 @@ namespace MidiMinuit.Lib.Core.Intervals
 
         public IntervalAugmentedNinth NinthAugmented { get; private set; }
 
-        public IntervalPerfectEleventh Eleventh { get; private set; }
+        public IntervalPerfectEleventh EleventhPerfect { get; private set; }
 
-        public IntervalAugmentedEleventh Eleventh { get; private set; }
+        public IntervalAugmentedEleventh EleventhAugmented { get; private set; }
 
         public IntervalMinorThirteenth ThirteenthMinor { get; private set; }
 

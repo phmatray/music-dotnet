@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalDiminishedThird;
 
         public override string QualityName
-            => "Third Diminished";
+            => "Diminished Third";
 
         public override string QualityAbbreviation
             => "NO DATA";

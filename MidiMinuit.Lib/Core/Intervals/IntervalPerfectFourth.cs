@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalPerfectFourth;
 
         public override string QualityName
-            => "Fourth Perfect";
+            => "Perfect Fourth";
 
         public override string QualityAbbreviation
             => "NO DATA";

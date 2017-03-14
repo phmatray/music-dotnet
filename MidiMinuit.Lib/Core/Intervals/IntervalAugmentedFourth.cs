@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalAugmentedFourth;
 
         public override string QualityName
-            => "Fourth Augmented";
+            => "Augmented Fourth";
 
         public override string QualityAbbreviation
             => "NO DATA";

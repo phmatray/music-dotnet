@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalPerfectFifth;
 
         public override string QualityName
-            => "Fifth Perfect";
+            => "Perfect Fifth";
 
         public override string QualityAbbreviation
             => "5ᵗʰ";

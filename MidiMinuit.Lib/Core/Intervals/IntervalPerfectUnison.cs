@@ -23,7 +23,7 @@
             => IntervalQualityEnum.IntervalPerfectUnison;
 
         public override string QualityName
-            => "Unison Perfect";
+            => "Perfect Unison";
 
         public override string QualityAbbreviation
             => "NO DATA";

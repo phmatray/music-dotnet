@@ -34,6 +34,7 @@
         IntervalMajorNinth,
         IntervalMajorThirteenth,
         IntervalMinorNinth,
+        IntervalMinorThirteenth,
         IntervalAugmentedNinth,
         IntervalAugmentedEleventh,
     }

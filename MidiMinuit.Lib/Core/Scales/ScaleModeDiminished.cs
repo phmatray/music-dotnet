@@ -7,7 +7,7 @@
 
     public class ScaleModeDiminished : ScaleBase
     {
-        public NoteFondamental Fondamental { get; }
+        public IntervalPerfectUnison Fondamental { get; }
 
         public IntervalMajorSecond SecondMajor { get; }
 
@@ -37,7 +37,7 @@
             SecondMajor = i.SecondMajor;
             ThirdMinor = i.ThirdMinor;
             FourthPerfect = i.FourthPerfect;
-            Eleventh = i.Eleventh;
+            Eleventh = i.EleventhAugmented;
             FifthAugmented = i.FifthAugmented;
             SixthMajor = i.SixthMajor;
             SeventhMajor = i.SeventhMajor;
