@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using MidiMinuit.Lib.Core.Notes;
 
@@ -33,7 +33,7 @@ namespace MidiMinuit.Lib.Core.Chords
             => $"{Fondamental}min";
 
         public override string Details
-            => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5th: {FifthPerfect}";
+            => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5ᵗʰ: {FifthPerfect}";
 
         public override string Description
             => "Description not added yet.";

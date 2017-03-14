@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteFifthPerfect : NoteQuality
     {
@@ -24,7 +24,7 @@ namespace MidiMinuit.Lib.Core.Notes
             => "Fifth Perfect";
 
         public override string QualityAbbreviation
-            => "NO DATA";
+            => "5ᵗʰ";
 
         public override string QualityComposition
             => "3 tons et 1 demi-ton diatonique";

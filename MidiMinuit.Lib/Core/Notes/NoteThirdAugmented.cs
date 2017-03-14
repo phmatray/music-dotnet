@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteThirdAugmented : NoteQuality
     {
@@ -24,7 +24,7 @@ namespace MidiMinuit.Lib.Core.Notes
             => "Third Augmented";
 
         public override string QualityAbbreviation
-            => "NO DATA";
+            => "3ᵗʰ ♯";
 
         public override string QualityComposition
             => "2 tons et 1 demi-ton chromatique";

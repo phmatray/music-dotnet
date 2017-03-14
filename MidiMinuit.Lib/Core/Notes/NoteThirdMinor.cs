@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteThirdMinor : NoteQuality
     {
@@ -24,7 +24,7 @@ namespace MidiMinuit.Lib.Core.Notes
             => "Third Minor";
 
         public override string QualityAbbreviation
-            => "3rd min";
+            => "3ʳᵈ min";
 
         public override string QualityComposition
             => "1 ton et 1 demi-ton diatonique";

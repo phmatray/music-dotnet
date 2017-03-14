@@ -33,7 +33,7 @@ namespace MidiMinuit.Lib.Core.Chords
             => $"{Fondamental}aug";
 
         public override string Details
-            => $"Fond: {Fondamental}, 3rd maj: {ThirdMajor}, 5th #: {FifthAugmented}";
+            => $"Fond: {Fondamental}, 3rd maj: {ThirdMajor}, 5ᵗʰ ♯: {FifthAugmented}";
 
         public override string Description
             => "Description not added yet.";

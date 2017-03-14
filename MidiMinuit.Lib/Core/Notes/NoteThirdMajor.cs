@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
     public class NoteThirdMajor : NoteQuality
     {
@@ -24,7 +24,7 @@ namespace MidiMinuit.Lib.Core.Notes
             => "Third Major";
 
         public override string QualityAbbreviation
-            => "NO DATA";
+            => "3ʳᵈ maj";
 
         public override string QualityComposition
             => "2 tons";

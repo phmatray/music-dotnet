@@ -36,7 +36,7 @@ namespace MidiMinuit.Lib.Core.Chords
             => $"{Fondamental}min7b5";
 
         public override string Details
-            => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5th b: {FifthDiminished}, 7th min: {SeventhMinor}";
+            => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5ᵗʰ♭: {FifthDiminished}, 7ᵗʰ min: {SeventhMinor}";
 
         public override string Description
             => "Description not added yet.";

@@ -12,7 +12,7 @@
     {
         public static List<ChordBase> GetAllChordScaleMajorC()
         {
-            ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
+            ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.G));
             var result = scale.GetAllChord();
             return result;
         }
