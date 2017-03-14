@@ -1,11 +1,10 @@
-﻿using System;
-using Windows.UI;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Media;
-using MidiMinuit.SamplePages;
-
-namespace MidiMinuit.Common
+﻿namespace MidiMinuit.Common
 {
+    using System;
+    using Windows.UI;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Media;
+
     public static class Constants
     {
         public static readonly Color ApplicationBackgroundColor = Color.FromArgb(255, 51, 51, 51);

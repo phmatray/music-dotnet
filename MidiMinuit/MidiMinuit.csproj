@@ -79,7 +79,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>MidiMinuit.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -136,6 +136,7 @@
     <Content Include="Icons\Services.png" />
     <Content Include="SamplePages\AdaptiveGridView\AdaptiveGridView.png" />
     <Content Include="SamplePages\ConfigureMidi\ConfigureMidi.png" />
+    <Content Include="SamplePages\ScaleInfo\ScaleInfo.png" />
     <Content Include="SamplePages\DegreeInfo\DegreeInfo.png" />
     <Content Include="SamplePages\NoteFinder\NoteFinder.png" />
     <Content Include="SamplePages\samples.json" />
@@ -184,6 +185,10 @@
       <DependentUpon>AdaptiveGridViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SamplePages\ConfigureMidi\ConfigureMidiViewModel.cs" />
+    <Compile Include="SamplePages\ScaleInfo\ScaleInfoPage.xaml.cs">
+      <DependentUpon>ScaleInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\ScaleInfo\ScaleInfoViewModel.cs" />
     <Compile Include="SamplePages\DegreeInfo\DegreeInfoPage.xaml.cs">
       <DependentUpon>DegreeInfoPage.xaml</DependentUpon>
     </Compile>
@@ -233,6 +238,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\PropertyControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SamplePages\ScaleInfo\ScaleInfoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

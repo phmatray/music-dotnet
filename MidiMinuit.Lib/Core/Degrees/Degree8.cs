@@ -2,7 +2,6 @@
 
 namespace MidiMinuit.Lib.Core.Degrees
 {
-
     public class Degree8 : DegreeBase
     {
         public override DegreeEnum DegreeEnum

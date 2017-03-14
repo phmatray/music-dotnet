@@ -11,7 +11,6 @@ namespace MidiMinuit.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var notes = IntervalHelper.GetScale(new Note(NoteNameEnum.C), ScaleTypeEnum.Major);
         }
     }
 }

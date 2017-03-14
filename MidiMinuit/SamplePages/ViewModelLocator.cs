@@ -1,14 +1,15 @@
-﻿using Windows.UI.Xaml;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
-using Microsoft.Practices.ServiceLocation;
-using MidiMinuit.SamplePages.ConfigureMidi;
-using MidiMinuit.SamplePages.DegreeInfo;
-using MidiMinuit.SamplePages.NoteFinder;
-
-namespace MidiMinuit.SamplePages
+﻿namespace MidiMinuit.SamplePages
 {
+    using GalaSoft.MvvmLight;
+    using GalaSoft.MvvmLight.Ioc;
+    using GalaSoft.MvvmLight.Views;
+    using Microsoft.Practices.ServiceLocation;
+    using MidiMinuit.SamplePages.ConfigureMidi;
+    using MidiMinuit.SamplePages.DegreeInfo;
+    using MidiMinuit.SamplePages.NoteFinder;
+    using MidiMinuit.SamplePages.ScaleInfo;
+    using Windows.UI.Xaml;
+
     /// <summary>
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
@@ -39,6 +40,7 @@ namespace MidiMinuit.SamplePages
             // SimpleIoc.Default.Register<INavigationService, NavigationService>();
             SimpleIoc.Default.Register<ConfigureMidiViewModel>();
             SimpleIoc.Default.Register<DegreeInfoViewModel>();
+            SimpleIoc.Default.Register<ScaleInfoViewModel>();
             SimpleIoc.Default.Register<NoteFinderViewModel>();
         }
 
@@ -59,6 +61,15 @@ namespace MidiMinuit.SamplePages
         // </value>
         public DegreeInfoViewModel DegreeInfoInstance
             => ServiceLocator.Current.GetInstance<DegreeInfoViewModel>();
+
+        // <summary>
+        // Gets the ScaleInfo view model.
+        // </summary>
+        // <value>
+        // The ScaleInfo view model.
+        // </value>
+        public ScaleInfoViewModel ScaleInfoInstance
+            => ServiceLocator.Current.GetInstance<ScaleInfoViewModel>();
 
         // <summary>
         // Gets the NoteFinder view model.

@@ -10,13 +10,13 @@
 // THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
 // ******************************************************************
 
-using Microsoft.Toolkit.Uwp.SampleApp;
-using Windows.ApplicationModel;
-using Windows.UI.Xaml.Navigation;
-using MidiMinuit.Lib.Tmp;
-
 namespace MidiMinuit.Pages
 {
+    using Microsoft.Toolkit.Uwp.SampleApp;
+    using MidiMinuit.Lib.Tmp;
+    using Windows.ApplicationModel;
+    using Windows.UI.Xaml.Navigation;
+
     public sealed partial class About
     {
         public About()
@@ -36,9 +36,9 @@ namespace MidiMinuit.Pages
             TestMethod();
         }
 
-        private void TestMethod()
+        public static void TestMethod()
         {
-            Class1.TestMethod_HarmonizeScale();
+            var result = Class1.GetAllChordScaleMajorC();
         }
     }
 }

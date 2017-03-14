@@ -20,7 +20,6 @@ namespace MidiMinuit.Lib.Core.Scales
 
         public NoteSeventhMinor SeventhMinor { get; }
 
-
         public ScaleModeLydianB7(Note key)
             : base(ScaleTypeEnum.ModeLydianB7)
         {

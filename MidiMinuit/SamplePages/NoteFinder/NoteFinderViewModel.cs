@@ -17,7 +17,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
         private string _noteText = "Use your MIDI keyboard";
         private Brush _chordFontBrush = Constants.ThemeResources.SystemControlHighlightAccentBrush;
         private Tuning _tuning = new TuningStandard();
-        private ChordBase _chord = ChordBase.GetChord(new Note(NoteNameEnum.C), ChordQualityEnum.Minor);
+        private ChordBase _chord = ChordQualityEnum.Minor.GetChord(new Note(NoteNameEnum.C));
 
         public string NoteText
         {
@@ -78,7 +78,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
 
         public void ChangeChord_OnClick(object sender, RoutedEventArgs e)
         {
-            Chord = ChordBase.GetChord(new Note(NoteNameEnum.E), ChordQualityEnum.MinorDiminishedSeventhDiminished);
+            Chord = ChordQualityEnum.MinorDiminishedSeventhDiminished.GetChord(new Note(NoteNameEnum.E));
         }
     }
 }

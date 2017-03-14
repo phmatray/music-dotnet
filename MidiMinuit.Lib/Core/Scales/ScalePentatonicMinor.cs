@@ -16,7 +16,6 @@ namespace MidiMinuit.Lib.Core.Scales
 
         public NoteSeventhMinor SeventhMinor { get; }
 
-
         public ScalePentatonicMinor(Note key)
             : base(ScaleTypeEnum.PentatonicMinor)
         {

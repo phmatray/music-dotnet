@@ -96,7 +96,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>MidiMinuit.Lib.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -117,6 +117,11 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyzers\Class1.cs" />
+    <Compile Include="Analyzers\ComplexNumber.cs" />
+    <Compile Include="Analyzers\FftAlgorithm.cs" />
+    <Compile Include="Analyzers\FrequencyUtils.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Core\Chords\Base\ChordBase.cs" />
     <Compile Include="Core\Chords\ChordFifth.cs" />
     <Compile Include="Core\Chords\ChordMajor.cs" />
@@ -189,7 +194,6 @@
     <Compile Include="Core\Notes\NoteThirteenthMajor.cs" />
     <Compile Include="Core\Notes\NoteThirteenthMinor.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
-    <Compile Include="Core\Scales\Enum\ScaleMode.cs" />
     <Compile Include="Core\Scales\Enum\ScaleTypeEnum.cs" />
     <Compile Include="Core\Scales\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Scales\Extensions\ScaleExtensions.cs" />
@@ -212,6 +216,7 @@
     <Compile Include="Core\Scales\ScaleModePhrygian.cs" />
     <Compile Include="Core\Scales\ScalePentatonicMajor.cs" />
     <Compile Include="Core\Scales\ScalePentatonicMinor.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\Tuning.cs" />
     <Compile Include="Instruments\GuitarTunings\Enum\TuningTypeEnum.cs" />
     <Compile Include="Instruments\GuitarTunings\Extensions\EnumExtensions.cs" />
@@ -257,7 +262,6 @@
     <Compile Include="Core\Intervals\Enum\IntervalThirteenthEnum.cs" />
     <Compile Include="Core\Notes\Enum\NoteQualityEnum.cs" />
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
-    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tmp\Class1.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
     <Compile Include="Tmp\SemitoneTypeEnum.cs" />

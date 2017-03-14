@@ -34,7 +34,7 @@ namespace MidiMinuit.Controls
         protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            //Update();
+            // Update();
         }
 
         private static void OnTuningChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -53,34 +53,26 @@ namespace MidiMinuit.Controls
             guitarChord.TuningNote5 = guitarChord.Tuning?.Notes[4].ToString();
             guitarChord.TuningNote6 = guitarChord.Tuning?.Notes[5].ToString();
 
-            //GuitarChord guitarChord = (GuitarChord)d;
+            // GuitarChord guitarChord = (GuitarChord)d;
 
-            //var container = guitarChord.GetTemplateChild(ContainerPartName) as Grid;
-            //if (container == null || DesignMode.DesignModeEnabled)
-            //{
+            // var container = guitarChord.GetTemplateChild(ContainerPartName) as Grid;
+            // if (container == null || DesignMode.DesignModeEnabled)
+            // {
             //    // Bad template.
             //    return;
-            //}
+            // }
 
-            //guitarChord._root = container.GetVisual();
-            ////guitarChord._root.Children.RemoveAll();
-            //guitarChord._compositor = guitarChord._root.Compositor;
+            // guitarChord._root = container.GetVisual();
+            // //guitarChord._root.Children.RemoveAll();
+            // guitarChord._compositor = guitarChord._root.Compositor;
 
-            //// Tuning.
-            //var control = guitarChord._root.Children.FirstOrDefault();
-            ////guitarChord._root.Children.FirstOrDefault(x => x.Name = "TextTuningCord1").Text = _compositor.Cre
+            // // Tuning.
+            // var control = guitarChord._root.Children.FirstOrDefault();
+            // //guitarChord._root.Children.FirstOrDefault(x => x.Name = "TextTuningCord1").Text = _compositor.Cre
 
-            ////guitarChord.TextTuningCord1.Text = "Z";
-            ////throw new NotImplementedException();
+            // //guitarChord.TextTuningCord1.Text = "Z";
+            // //throw new NotImplementedException();
         }
-
-
-
-
-
-
-
-
 
         private static void OnInteractivityChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

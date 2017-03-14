@@ -44,7 +44,7 @@ namespace MidiMinuit.Lib.Core.Degrees
 
         public abstract string Meaning { get; }
 
-        public abstract Note NoteInCMajor{ get; }
+        public abstract Note NoteInCMajor { get; }
 
         public abstract Note NoteInCMinor { get; }
 
