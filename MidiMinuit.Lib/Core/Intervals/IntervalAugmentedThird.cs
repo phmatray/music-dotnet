@@ -26,6 +26,9 @@
             => "Augmented Third";
 
         public override string QualityAbbreviation
+            => "A3";
+
+        public override string QualityAbbreviation2
             => "3ᵗʰ ♯";
 
         public override string QualityComposition

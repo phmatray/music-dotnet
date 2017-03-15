@@ -26,6 +26,9 @@
             => "Diminished Fifth";
 
         public override string QualityAbbreviation
+            => "d5";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

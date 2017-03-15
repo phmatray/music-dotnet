@@ -26,6 +26,9 @@
             => "Augmented Ninth";
 
         public override string QualityAbbreviation
+            => "A9";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

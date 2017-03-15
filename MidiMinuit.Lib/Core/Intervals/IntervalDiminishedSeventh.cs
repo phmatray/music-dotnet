@@ -26,6 +26,9 @@
             => "Diminished Seventh";
 
         public override string QualityAbbreviation
+            => "d7";
+
+        public override string QualityAbbreviation2
             => "7th dim";
 
         public override string QualityComposition

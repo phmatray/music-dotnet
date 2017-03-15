@@ -26,6 +26,9 @@
             => "Minor Seventh";
 
         public override string QualityAbbreviation
+            => "m7";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

@@ -25,6 +25,8 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public abstract string QualityAbbreviation { get; }
 
+        public abstract string QualityAbbreviation2 { get; }
+
         public abstract string QualityComposition { get; }
 
         public abstract int Semitones { get; }

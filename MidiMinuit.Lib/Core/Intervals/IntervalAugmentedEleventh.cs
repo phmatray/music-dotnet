@@ -26,6 +26,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             => "Augmented Eleventh";
 
         public override string QualityAbbreviation
+            => "A11";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

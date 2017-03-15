@@ -26,6 +26,9 @@
             => "Augmented Fifth";
 
         public override string QualityAbbreviation
+            => "A5";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

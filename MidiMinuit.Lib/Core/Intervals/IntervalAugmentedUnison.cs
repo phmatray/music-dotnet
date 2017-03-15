@@ -26,6 +26,9 @@
             => "Augmented Unison";
 
         public override string QualityAbbreviation
+            => "A1";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

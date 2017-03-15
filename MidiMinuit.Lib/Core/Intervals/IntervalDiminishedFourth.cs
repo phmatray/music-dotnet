@@ -26,6 +26,9 @@
             => "Diminished Fourth";
 
         public override string QualityAbbreviation
+            => "d4";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

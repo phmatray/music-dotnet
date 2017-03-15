@@ -26,6 +26,9 @@
             => "Diminished Second";
 
         public override string QualityAbbreviation
+            => "d2";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

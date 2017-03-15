@@ -26,6 +26,9 @@
             => "Perfect Unison";
 
         public override string QualityAbbreviation
+            => "P1";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

@@ -26,6 +26,9 @@
             => "Minor Second";
 
         public override string QualityAbbreviation
+            => "m2";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

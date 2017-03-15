@@ -26,6 +26,9 @@
             => "Perfect Fifth";
 
         public override string QualityAbbreviation
+            => "P5";
+
+        public override string QualityAbbreviation2
             => "5ᵗʰ";
 
         public override string QualityComposition

@@ -26,6 +26,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             => "Perfect Eleventh";
 
         public override string QualityAbbreviation
+            => "P11";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

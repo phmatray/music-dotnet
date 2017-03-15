@@ -26,6 +26,9 @@
             => "Diminished Third";
 
         public override string QualityAbbreviation
+            => "d3";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

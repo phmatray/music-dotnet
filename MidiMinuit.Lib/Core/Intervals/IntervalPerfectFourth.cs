@@ -26,6 +26,9 @@
             => "Perfect Fourth";
 
         public override string QualityAbbreviation
+            => "P4";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

@@ -26,6 +26,9 @@
             => "Augmented Sixth";
 
         public override string QualityAbbreviation
+            => "A6";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

@@ -26,6 +26,9 @@
             => "Minor Third";
 
         public override string QualityAbbreviation
+            => "m3";
+
+        public override string QualityAbbreviation2
             => "3ʳᵈ min";
 
         public override string QualityComposition

@@ -26,6 +26,9 @@
             => "Augmented Octave";
 
         public override string QualityAbbreviation
+            => "A8";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition

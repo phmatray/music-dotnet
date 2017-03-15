@@ -26,6 +26,9 @@
             => "Perfect Octave";
 
         public override string QualityAbbreviation
+            => "P8";
+
+        public override string QualityAbbreviation2
             => "NO DATA";
 
         public override string QualityComposition
