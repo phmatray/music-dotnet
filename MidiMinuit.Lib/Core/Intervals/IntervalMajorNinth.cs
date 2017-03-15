@@ -20,21 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalMajorNinth;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalMajorNinth;
 
-        public override List<string> QualityName
-            => new List<string> { "Major Ninth" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Major Ninth" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "M9" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "M9" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Maj. 9" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Maj. 9" };
 
-        public override string QualityComposition
-            => "NO DATA";
+        public override string QualityComposition { get; }
+            = "NO DATA";
 
         public override int Semitones { get; }
+            = 14;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

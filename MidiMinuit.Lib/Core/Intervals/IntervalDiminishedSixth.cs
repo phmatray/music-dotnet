@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalDiminishedSixth;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalDiminishedSixth;
 
-        public override List<string> QualityName
-            => new List<string> { "Diminished Sixth" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Diminished Sixth" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "d6", "°6" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "d6", "°6" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "deg. 6", "dim. 6" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "deg. 6", "dim. 6" };
 
-        public override string QualityComposition
-            => "2 tons et 3 demi-tons diatoniques";
+        public override string QualityComposition { get; }
+            = "2 tons et 3 demi-tons diatoniques";
 
-        public override int Semitones
-            => 7;
+        public override int Semitones { get; }
+            = 7;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

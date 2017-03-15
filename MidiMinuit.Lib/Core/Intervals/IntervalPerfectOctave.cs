@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalPerfectOctave;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalPerfectOctave;
 
-        public override List<string> QualityName
-            => new List<string> { "Perfect Octave" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Perfect Octave" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "P8" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "P8" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Perf. 8" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Perf. 8" };
 
-        public override string QualityComposition
-            => "5 tons et 2 demi-tons diatoniques";
+        public override string QualityComposition { get; }
+            = "5 tons et 2 demi-tons diatoniques";
 
-        public override int Semitones
-            => 12;
+        public override int Semitones { get; }
+            = 12;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

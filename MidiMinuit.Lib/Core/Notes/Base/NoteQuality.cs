@@ -31,5 +31,7 @@ namespace MidiMinuit.Lib.Core.Notes
         public abstract string QualityComposition { get; }
 
         public abstract int Semitones { get; }
+
+        public abstract NoteQuality Inverse { get; }
     }
 }

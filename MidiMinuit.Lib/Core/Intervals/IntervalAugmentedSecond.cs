@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalAugmentedSecond;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalAugmentedSecond;
 
-        public override List<string> QualityName
-            => new List<string> { "Augmented Second" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Augmented Second" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "A2", "+2" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "A2", "+2" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Aug. 2" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Aug. 2" };
 
-        public override string QualityComposition
-            => "1 ton et 1 demi-ton chromatique";
+        public override string QualityComposition { get; }
+            = "1 ton et 1 demi-ton chromatique";
 
-        public override int Semitones
-            => 3;
+        public override int Semitones { get; }
+            = 3;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalMajorSecond;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalMajorSecond;
 
-        public override List<string> QualityName
-            => new List<string> { "Major Second", "Tone", "Whole Tone", "Whole Step" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Major Second", "Tone", "Whole Tone", "Whole Step" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "M2" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "M2" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Maj. 2" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Maj. 2" };
 
-        public override string QualityComposition
-            => "1 ton";
+        public override string QualityComposition { get; }
+            = "1 ton";
 
-        public override int Semitones
-            => 2;
+        public override int Semitones { get; }
+            = 2;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

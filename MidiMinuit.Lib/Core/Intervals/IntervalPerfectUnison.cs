@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalPerfectUnison;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalPerfectUnison;
 
-        public override List<string> QualityName
-            => new List<string> { "Perfect Unison", "Prime", "Perfect Prime" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Perfect Unison", "Prime", "Perfect Prime" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "P1" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "P1" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Perf. 1" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Perf. 1" };
 
-        public override string QualityComposition
-            => "NO DATA";
+        public override string QualityComposition { get; }
+            = "NO DATA";
 
-        public override int Semitones
-            => 0;
+        public override int Semitones { get; }
+            = 0;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

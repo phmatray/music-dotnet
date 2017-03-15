@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalMinorThird;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalMinorThird;
 
-        public override List<string> QualityName
-            => new List<string> { "Minor Third" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Minor Third" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "m3" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "m3" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "min. 3" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "min. 3" };
 
-        public override string QualityComposition
-            => "1 ton et 1 demi-ton diatonique";
+        public override string QualityComposition { get; }
+            = "1 ton et 1 demi-ton diatonique";
 
-        public override int Semitones
-            => 3;
+        public override int Semitones { get; }
+            = 3;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

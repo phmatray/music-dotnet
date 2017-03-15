@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalPerfectFifth;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalPerfectFifth;
 
-        public override List<string> QualityName
-            => new List<string> { "Perfect Fifth", "Diapente" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Perfect Fifth", "Diapente" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "P5" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "P5" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Perf. 5" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Perf. 5" };
 
-        public override string QualityComposition
-            => "3 tons et 1 demi-ton diatonique";
+        public override string QualityComposition { get; }
+            = "3 tons et 1 demi-ton diatonique";
 
-        public override int Semitones
-            => 7;
+        public override int Semitones { get; }
+            = 7;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }

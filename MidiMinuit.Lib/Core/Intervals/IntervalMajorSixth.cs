@@ -20,22 +20,25 @@
         {
         }
 
-        public override IntervalQualityEnum Quality
-            => IntervalQualityEnum.IntervalMajorSixth;
+        public override IntervalQualityEnum Quality { get; }
+            = IntervalQualityEnum.IntervalMajorSixth;
 
-        public override List<string> QualityName
-            => new List<string> { "Major Sixth", "Septimal Major Sixth", "Supermajor Sixth", "Major Hexachord", "Greater Hexachord", "Hexachordon Maius" };
+        public override List<string> QualityName { get; }
+            = new List<string> { "Major Sixth", "Septimal Major Sixth", "Supermajor Sixth", "Major Hexachord", "Greater Hexachord", "Hexachordon Maius" };
 
-        public override List<string> QualityAbbreviation
-            => new List<string> { "M6" };
+        public override List<string> QualityAbbreviation { get; }
+            = new List<string> { "M6" };
 
-        public override List<string> QualityAbbreviation2
-            => new List<string> { "Maj. 6" };
+        public override List<string> QualityAbbreviation2 { get; }
+            = new List<string> { "Maj. 6" };
 
-        public override string QualityComposition
-            => "4 tons et 1 demi-ton diatonique";
+        public override string QualityComposition { get; }
+            = "4 tons et 1 demi-ton diatonique";
 
-        public override int Semitones
-            => 9;
+        public override int Semitones { get; }
+            = 9;
+
+        public override NoteQuality Inverse { get; }
+            = null;
     }
 }
