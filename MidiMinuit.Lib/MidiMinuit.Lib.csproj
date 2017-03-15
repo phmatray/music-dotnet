@@ -261,6 +261,7 @@
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MusicMathFormulaHelpers.cs" />
     <EmbeddedResource Include="Properties\MidiMinuit.Lib.rd.xml" />
   </ItemGroup>
   <ItemGroup>

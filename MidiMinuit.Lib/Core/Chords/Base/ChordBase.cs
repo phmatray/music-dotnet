@@ -4,7 +4,7 @@ namespace MidiMinuit.Lib.Core.Chords
 {
     using System;
     using System.Collections.Generic;
-    using MidiMinuit.Lib.Core.Notes;
+    using Notes;
 
     public abstract class ChordBase
     {

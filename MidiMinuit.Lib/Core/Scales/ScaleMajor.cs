@@ -2,8 +2,8 @@ namespace MidiMinuit.Lib.Core.Scales
 {
     using System;
     using System.Collections.Generic;
-    using MidiMinuit.Lib.Core.Intervals;
-    using MidiMinuit.Lib.Core.Notes;
+    using Intervals;
+    using Notes;
 
     public class ScaleMajor : ScaleBase
     {

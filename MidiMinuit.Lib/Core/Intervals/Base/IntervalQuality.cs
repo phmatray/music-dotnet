@@ -1,4 +1,5 @@
 using System;
+using MidiMinuit.Lib.Tools;
 
 namespace MidiMinuit.Lib.Core.Intervals
 {
@@ -41,12 +42,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         /// An interval class is the shortest distance in pitch class space between two unordered pitch classes.
         /// </summary>
         /// <returns>The interval class</returns>
-        public int IntervalClass()
-        {
-            var simpleSemitones = Semitones > 12 ? Semitones % 12 : Semitones;
-            var result = simpleSemitones >= 6 ? Math.Abs(12 - simpleSemitones) : simpleSemitones;
-            return result;
-        }
+        public int IntervalClass
+            => MusicMathFormulaHelpers.InvervalClass(Semitones);
     }
 
     public abstract class IntervalQualitySimple

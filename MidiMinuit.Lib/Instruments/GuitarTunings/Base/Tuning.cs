@@ -5,7 +5,7 @@
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Text;
-    using MidiMinuit.Lib.Core.Notes;
+    using Core.Notes;
 
     public abstract class Tuning
     {

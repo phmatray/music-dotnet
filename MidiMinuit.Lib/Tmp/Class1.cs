@@ -3,11 +3,11 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using MidiMinuit.Lib.Core.Chords;
-    using MidiMinuit.Lib.Core.Degrees;
-    using MidiMinuit.Lib.Core.Intervals;
-    using MidiMinuit.Lib.Core.Notes;
-    using MidiMinuit.Lib.Core.Scales;
+    using Core.Chords;
+    using Core.Degrees;
+    using Core.Intervals;
+    using Core.Notes;
+    using Core.Scales;
 
     public static class Class1
     {

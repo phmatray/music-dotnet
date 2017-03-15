@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using MidiMinuit.Lib.Core.Chords;
+    using Core.Chords;
 
     public static class Constants
     {

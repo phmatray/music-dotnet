@@ -1,7 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Degrees
 {
     using System;
-    using MidiMinuit.Lib.Core.Notes;
+    using Notes;
 
     public abstract class DegreeBase
     {

@@ -1,7 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Chords
 {
     using System;
-    using MidiMinuit.Lib.Core.Notes;
+    using Notes;
 
     public static class ChordExtensions
     {

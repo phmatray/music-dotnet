@@ -1,11 +1,11 @@
 ﻿namespace MidiMinuit.Lib.Core.Degrees
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using Notes;
 
     public class Degree4 : DegreeBase
     {
         public override DegreeEnum DegreeEnum
-            => Degrees.DegreeEnum.IV;
+            => DegreeEnum.IV;
 
         public override string DiatonicFunction
             => "Subdominant";
