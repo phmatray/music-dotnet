@@ -150,6 +150,8 @@
     <Compile Include="Core\Degrees\Degree8.cs" />
     <Compile Include="Core\Degrees\Enum\DegreeEnum.cs" />
     <Compile Include="Core\Degrees\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalQualityCompound.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalQualitySimple.cs" />
     <Compile Include="Core\Intervals\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Intervals\Base\Interval.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedFifth.cs" />
@@ -254,6 +256,7 @@
     <Compile Include="Core\Degrees\Base\DegreeBase.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalQualityEnum.cs" />
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
+    <Compile Include="Tmp\BranchIntervals.cs" />
     <Compile Include="Tmp\Class1.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalSpanningEnum.cs" />

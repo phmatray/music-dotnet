@@ -1,10 +1,8 @@
-using System;
-using MidiMinuit.Lib.Tools;
-
 namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using Notes;
+    using Tools;
 
     public abstract class IntervalQuality
     {
@@ -44,16 +42,5 @@ namespace MidiMinuit.Lib.Core.Intervals
         /// <returns>The interval class</returns>
         public int IntervalClass
             => MusicMathFormulaHelpers.InvervalClass(Semitones);
-    }
-
-    public abstract class IntervalQualitySimple
-        : IntervalQuality
-    {
-        public abstract IntervalQualitySimple Inverse { get; }
-    }
-
-    public abstract class IntervalQualityCompound
-        : IntervalQuality
-    {
     }
 }

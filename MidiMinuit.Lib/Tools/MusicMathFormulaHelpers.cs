@@ -4,7 +4,9 @@ namespace MidiMinuit.Lib.Tools
 {
     public class MusicMathFormulaHelpers
     {
-        // http://www.sengpielaudio.com/calculator-centsratio.htm
+        /*
+         * http://www.sengpielaudio.com/calculator-centsratio.htm
+         */
 
         private static double GetFrequencyRatioF2F1(double freq1, double freq2)
         {

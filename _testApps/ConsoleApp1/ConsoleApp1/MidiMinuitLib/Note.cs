@@ -1,0 +1,579 @@
+﻿namespace MidiMinuit.Lib.Core.Notes
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    ////using Intervals;
+
+    /// <summary>
+    ///     Note Pitch (hauteur).
+    ///     Cette classe représente la hauteur d'un son
+    ///     http://programmers.stackexchange.com/questions/178817/oo-design-how-to-model-tonal-harmony
+    /// </summary>
+    public class Note : IEquatable<Note>, INotifyPropertyChanged
+    {
+        private NoteNameEnum _name;
+        private NoteAccidentalEnum _accidental;
+
+        public static Note operator +(Note note, int semitone)
+            => note.Add(semitone);
+
+        public static Note operator -(Note note, int semitone)
+            => note.Substract(semitone);
+
+        public static bool operator ==(Note left, Note right)
+            => Equals(left, right);
+
+        public static bool operator !=(Note left, Note right)
+            => !Equals(left, right);
+
+        public static bool operator >(Note left, Note right)
+            => left.Pitch > right.Pitch;
+
+        public static bool operator <(Note left, Note right)
+            => left.Pitch < right.Pitch;
+
+        public static Note GetNoteSharp(int value)
+        {
+            if (value < 0)
+            {
+                value += 12;
+            }
+
+            switch (value)
+            {
+                case 0:
+                    return new Note(NoteNameEnum.C);
+                case 1:
+                    return new Note(NoteNameEnum.C, NoteAccidentalEnum.Sharp);
+                case 2:
+                    return new Note(NoteNameEnum.D);
+                case 3:
+                    return new Note(NoteNameEnum.D, NoteAccidentalEnum.Sharp);
+                case 4:
+                    return new Note(NoteNameEnum.E);
+                case 5:
+                    return new Note(NoteNameEnum.F);
+                case 6:
+                    return new Note(NoteNameEnum.F, NoteAccidentalEnum.Sharp);
+                case 7:
+                    return new Note(NoteNameEnum.G);
+                case 8:
+                    return new Note(NoteNameEnum.G, NoteAccidentalEnum.Sharp);
+                case 9:
+                    return new Note(NoteNameEnum.A);
+                case 10:
+                    return new Note(NoteNameEnum.A, NoteAccidentalEnum.Sharp);
+                case 11:
+                    return new Note(NoteNameEnum.B);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(value));
+            }
+        }
+
+        public static Note GetNoteFlat(int value)
+        {
+            switch (value)
+            {
+                case 0:
+                    return new Note(NoteNameEnum.C);
+                case 1:
+                    return new Note(NoteNameEnum.D, NoteAccidentalEnum.Flat);
+                case 2:
+                    return new Note(NoteNameEnum.D);
+                case 3:
+                    return new Note(NoteNameEnum.E, NoteAccidentalEnum.Flat);
+                case 4:
+                    return new Note(NoteNameEnum.E);
+                case 5:
+                    return new Note(NoteNameEnum.F);
+                case 6:
+                    return new Note(NoteNameEnum.G, NoteAccidentalEnum.Flat);
+                case 7:
+                    return new Note(NoteNameEnum.G);
+                case 8:
+                    return new Note(NoteNameEnum.A, NoteAccidentalEnum.Flat);
+                case 9:
+                    return new Note(NoteNameEnum.A);
+                case 10:
+                    return new Note(NoteNameEnum.B, NoteAccidentalEnum.Flat);
+                case 11:
+                    return new Note(NoteNameEnum.B);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(value));
+            }
+        }
+
+        public static List<Note> GetNotesSharp()
+        {
+            return Enumerable
+                .Range(0, 12)
+                .Select(GetNoteSharp)
+                .ToList();
+        }
+
+        public static List<Note> GetNotesFlat()
+        {
+            return Enumerable
+                .Range(0, 12)
+                .Select(GetNoteFlat)
+                .ToList();
+        }
+
+        public static List<Note> GetNotesNatural()
+        {
+            return new[] { 0, 2, 4, 5, 7, 9, 11 }
+                .Select(GetNoteFlat)
+                .ToList();
+        }
+
+        public static NoteNameEnum GetName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
+            if (name.Length != 1)
+            {
+                throw new ArgumentException("invalid format");
+            }
+
+            switch (name.ToUpper())
+            {
+                case "C":
+                    return NoteNameEnum.C;
+                case "D":
+                    return NoteNameEnum.D;
+                case "E":
+                    return NoteNameEnum.E;
+                case "F":
+                    return NoteNameEnum.F;
+                case "G":
+                    return NoteNameEnum.G;
+                case "A":
+                    return NoteNameEnum.A;
+                case "B":
+                    return NoteNameEnum.B;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public static NoteAccidentalEnum GetAccidental(string accidental)
+        {
+            if (accidental.Length < 0 || accidental.Length > 2)
+            {
+                throw new ArgumentException("invalid format");
+            }
+
+            switch (accidental.ToLowerInvariant())
+            {
+                case "":
+                    return NoteAccidentalEnum.Natural;
+                case "b":
+                case "♭":
+                    return NoteAccidentalEnum.Flat;
+                case "#":
+                case "♯":
+                    return NoteAccidentalEnum.Sharp;
+                case "bb":
+                case "♭♭":
+                    return NoteAccidentalEnum.DoubleFlat;
+                case "##":
+                case "♯♯":
+                    return NoteAccidentalEnum.DoubleSharp;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="name">The name of the note.</param>
+        /// <param name="accidental">The accidental of the note.</param>
+        public Note(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        {
+            Name = name;
+            Accidental = accidental;
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="name">The latin name of the note.</param>
+        /// <param name="accidental">The accidental of the note.</param>
+        public Note(NoteNameLatinEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+            : this(name.ToNoteName(), accidental)
+        {
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="note">
+        ///     The name of the note with its accidental.
+        ///     ex: "C#" or "Db" or E...
+        /// </param>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
+        public Note(string note)
+        {
+            if (string.IsNullOrWhiteSpace(note))
+            {
+                throw new ArgumentNullException(nameof(note));
+            }
+
+            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
+            {
+                throw new ArgumentException("incorrect format");
+            }
+
+            Name = GetName(note[0].ToString());
+            Accidental = GetAccidental(note.Substring(1, note.Length - 1));
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="midiValue">
+        ///     The midi value of the note.
+        /// </param>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
+        public Note(int midiValue)
+        {
+            if (midiValue < 0 || midiValue > 127)
+            {
+                throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+
+            switch (midiValue % 12)
+            {
+                case 0:
+                    Name = NoteNameEnum.C;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 1:
+                    Name = NoteNameEnum.C;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 2:
+                    Name = NoteNameEnum.D;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 3:
+                    Name = NoteNameEnum.D;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 4:
+                    Name = NoteNameEnum.E;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 5:
+                    Name = NoteNameEnum.F;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 6:
+                    Name = NoteNameEnum.F;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 7:
+                    Name = NoteNameEnum.G;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 8:
+                    Name = NoteNameEnum.G;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 9:
+                    Name = NoteNameEnum.A;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                case 10:
+                    Name = NoteNameEnum.A;
+                    Accidental = NoteAccidentalEnum.Sharp;
+                    break;
+                case 11:
+                    Name = NoteNameEnum.B;
+                    Accidental = NoteAccidentalEnum.Natural;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="note">The note.</param>
+        public Note(Note note)
+            : this(note.Name, note.Accidental)
+        {
+        }
+
+        ////public Interval GetInterval()
+        ////{
+        ////    // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
+        ////    switch (ToString())
+        ////    {
+        ////        case "C":
+        ////            return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭", "B♭", "B", "C");
+        ////        case "C♯":
+        ////            return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯", "B♭", "B", "B♯", "C♯");
+        ////        case "D♭":
+        ////            return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭♭", "C♭", "C", "D♭");
+        ////        case "D":
+        ////            return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭", "C", "C♯", "D");
+        ////        case "D♯":
+        ////            return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯", "C", "C♯", "C♯♯", "D♯");
+        ////        case "E♭":
+        ////            return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭", "D♭", "D", "E♭");
+        ////        case "E":
+        ////            return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭", "D", "D♯", "E");
+        ////        case "F":
+        ////            return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭", "E♭", "E", "F");
+        ////        case "F♯":
+        ////            return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭", "E", "E♯", "F♯");
+        ////        case "G♭":
+        ////            return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭", "F♭♭", "F♭", "F", "G♭");
+        ////        case "G":
+        ////            return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭", "F", "F♯", "G");
+        ////        case "G♯":
+        ////            return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F", "F♯", "F♯♯", "G♯");
+        ////        case "A♭":
+        ////            return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭", "G♭", "G", "A♭");
+        ////        case "A":
+        ////            return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭", "G", "G♯", "A");
+        ////        case "A♯":
+        ////            return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A♯");
+        ////        case "B♭":
+        ////            return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭", "A♭", "A", "B♭");
+        ////        case "B":
+        ////            return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭", "A", "A♯", "B");
+
+        ////        default:
+        ////            throw new ArgumentOutOfRangeException();
+        ////    }
+        ////}
+
+        public NoteNameEnum Name
+        {
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public NoteNameLatinEnum NameLatin
+            => (NoteNameLatinEnum)(int)Name;
+
+        public NoteAccidentalEnum Accidental
+        {
+            get
+            {
+                return _accidental;
+            }
+
+            set
+            {
+                _accidental = value;
+                OnPropertyChanged();
+            }
+        }
+
+        ////public Interval Interval => GetInterval();
+
+        public int Pitch => Name.GetValue() + Accidental.GetValue();
+
+        public Note Add(int semitone)
+        {
+            return GetNoteSharp((Pitch + semitone) % 12);
+        }
+
+        public Note Substract(int semitone)
+        {
+            return Add(-semitone);
+        }
+
+        public double GetFrequency(int octave = 4)
+        {
+            // http://blog.jerome.rouaix.eu/2009/09/la-formule-de-la-frequence-exacte-des.html
+            // Dans cette formule 0=La, donc -9 sur le pitch pour rétabli 0=Do
+            var pitch = Pitch;
+            var absolutePicth = octave + ((pitch - 9) / 12d);
+            var noteFrequency = Math.Pow(2, absolutePicth + 6) - (9d * Math.Pow(2, absolutePicth));
+            var result = Math.Round(noteFrequency, 2);
+
+            return result;
+        }
+
+        public Note ToFlat()
+        {
+            return GetNoteFlat(Pitch);
+        }
+
+        public Note ToSharp()
+        {
+            return GetNoteSharp(Pitch);
+        }
+
+        public int FromNote(Note relativeNote)
+        {
+            var value = Pitch;
+            var relative = relativeNote.Pitch;
+
+            return relative > value
+                ? value - relative + 12
+                : value - relative - 12;
+        }
+
+        public bool Equals(Note other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return Name == other.Name && Accidental == other.Accidental;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((Note)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((int)Name * 397) ^ (int)Accidental;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append(Name);
+
+            switch (Accidental)
+            {
+                case NoteAccidentalEnum.Natural:
+                    break;
+                case NoteAccidentalEnum.Flat:
+                    sb.Append("♭");
+                    break;
+                case NoteAccidentalEnum.Sharp:
+                    sb.Append("♯");
+                    break;
+                case NoteAccidentalEnum.DoubleFlat:
+                    sb.Append("♭♭");
+                    break;
+                case NoteAccidentalEnum.DoubleSharp:
+                    sb.Append("♯♯");
+                    break;
+            }
+
+            return sb.ToString();
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
+
+namespace MidiMinuit.Lib.Core.Notes
+{
+    public enum NoteNameEnum
+    {
+        C = 0,
+        D = 2,
+        E = 4,
+        F = 5,
+        G = 7,
+        A = 9,
+        B = 11
+    }
+}
+
+namespace MidiMinuit.Lib.Core.Notes
+{
+    public enum NoteAccidentalEnum
+    {
+        Natural = 0,
+        Flat = -1, // bémol
+        Sharp = 1, // dièse
+        DoubleFlat = -2, // double bémol
+        DoubleSharp = 2 // double dièse
+    }
+}
+
+namespace MidiMinuit.Lib.Core.Notes
+{
+    public enum NoteNameLatinEnum
+    {
+        Do = 0,
+        Re = 2,
+        Mi = 4,
+        Fa = 5,
+        Sol = 7,
+        La = 9,
+        Si = 11
+    }
+}
+
+namespace MidiMinuit.Lib.Core.Notes
+{
+    public static class EnumExtensions
+    {
+        public static int GetValue(this NoteAccidentalEnum noteAccidental)
+            => (int)noteAccidental;
+
+        public static int GetValue(this NoteNameEnum noteName)
+            => (int)noteName;
+
+        public static int GetValue(this NoteNameLatinEnum noteName)
+            => (int)noteName;
+
+        public static NoteNameEnum ToNoteName(this NoteNameLatinEnum noteName)
+            => (NoteNameEnum)(int)noteName;
+
+        public static NoteNameLatinEnum ToNoteNameLatin(this NoteNameEnum noteName)
+            => (NoteNameLatinEnum)(int)noteName;
+    }
+}
