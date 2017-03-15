@@ -30,8 +30,8 @@
             NinthMajor = i.NinthMajor;
         }
 
-        public override List<NoteQuality> Notes
-            => new List<NoteQuality> { Fondamental, ThirdMajor, FifthPerfect, NinthMajor };
+        public override List<IntervalQuality> Notes
+            => new List<IntervalQuality> { Fondamental, ThirdMajor, FifthPerfect, NinthMajor };
 
         public override string Name
             => $"{Fondamental}add9";

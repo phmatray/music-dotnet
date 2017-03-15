@@ -3,22 +3,27 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalPerfectFifth : NoteQuality
+    public class IntervalPerfectFifth : IntervalQualitySimple
     {
-        public IntervalPerfectFifth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        private IntervalQualitySimple _inverse;
 
-        public IntervalPerfectFifth(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalPerfectFifth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalPerfectFifth(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalPerfectFifth(string note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        ////public IntervalPerfectFifth(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Simple;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalPerfectFifth;
@@ -38,7 +43,7 @@
         public override int Semitones { get; }
             = 7;
 
-        public override NoteQuality Inverse { get; }
-            = null;
+        public override IntervalQualitySimple Inverse
+            => _inverse ?? (_inverse = new IntervalPerfectFourth());
     }
 }

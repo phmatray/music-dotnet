@@ -3,22 +3,25 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalAugmentedEleventh : NoteQuality
+    public class IntervalAugmentedEleventh : IntervalQualityCompound
     {
-        public IntervalAugmentedEleventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        ////public IntervalAugmentedEleventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalAugmentedEleventh(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalAugmentedEleventh(string note)
+        ////    : base(note)
+        ////{
+        ////}
 
-        public IntervalAugmentedEleventh(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalAugmentedEleventh(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Compound;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalAugmentedEleventh;
@@ -37,8 +40,5 @@
 
         public override int Semitones { get; }
             = 18;
-
-        public override NoteQuality Inverse { get; }
-            = null;
     }
 }

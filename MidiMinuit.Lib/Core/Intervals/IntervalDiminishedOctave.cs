@@ -3,22 +3,27 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalDiminishedOctave : NoteQuality
+    public class IntervalDiminishedOctave : IntervalQualitySimple
     {
-        public IntervalDiminishedOctave(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        private IntervalQualitySimple _inverse;
 
-        public IntervalDiminishedOctave(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalDiminishedOctave(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalDiminishedOctave(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalDiminishedOctave(string note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        ////public IntervalDiminishedOctave(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Simple;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalDiminishedOctave;
@@ -38,7 +43,7 @@
         public override int Semitones { get; }
             = 11;
 
-        public override NoteQuality Inverse { get; }
-            = null;
+        public override IntervalQualitySimple Inverse
+            => _inverse ?? (_inverse = new IntervalAugmentedUnison());
     }
 }

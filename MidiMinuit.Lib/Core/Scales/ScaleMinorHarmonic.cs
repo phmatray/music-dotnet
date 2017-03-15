@@ -40,8 +40,8 @@
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override List<NoteQuality> Notes
-            => new List<NoteQuality>
+        public override List<IntervalQuality> Notes
+            => new List<IntervalQuality>
             {
                 Fondamental,
                 SecondMajor,

@@ -3,22 +3,25 @@ namespace MidiMinuit.Lib.Core.Intervals
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalPerfectEleventh : NoteQuality
+    public class IntervalPerfectEleventh : IntervalQualityCompound
     {
-        public IntervalPerfectEleventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        ////public IntervalPerfectEleventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalPerfectEleventh(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalPerfectEleventh(string note)
+        ////    : base(note)
+        ////{
+        ////}
 
-        public IntervalPerfectEleventh(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalPerfectEleventh(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Compound;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalPerfectEleventh;
@@ -37,8 +40,5 @@ namespace MidiMinuit.Lib.Core.Intervals
 
         public override int Semitones { get; }
             = 17;
-
-        public override NoteQuality Inverse { get; }
-            = null;
     }
 }

@@ -30,8 +30,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override List<NoteQuality> Notes
-            => new List<NoteQuality> { Fondamental, ThirdMajor, FifthAugmented, SeventhMinor };
+        public override List<IntervalQuality> Notes
+            => new List<IntervalQuality> { Fondamental, ThirdMajor, FifthAugmented, SeventhMinor };
 
         public override string Name
             => $"{Fondamental}aug7";

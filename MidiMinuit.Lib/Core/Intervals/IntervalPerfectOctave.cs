@@ -3,22 +3,27 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalPerfectOctave : NoteQuality
+    public class IntervalPerfectOctave : IntervalQualitySimple
     {
-        public IntervalPerfectOctave(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        private IntervalQualitySimple _inverse;
 
-        public IntervalPerfectOctave(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalPerfectOctave(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalPerfectOctave(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalPerfectOctave(string note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        ////public IntervalPerfectOctave(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Simple;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalPerfectOctave;
@@ -38,7 +43,7 @@
         public override int Semitones { get; }
             = 12;
 
-        public override NoteQuality Inverse { get; }
-            = null;
+        public override IntervalQualitySimple Inverse
+            => _inverse ?? (_inverse = new IntervalPerfectUnison());
     }
 }

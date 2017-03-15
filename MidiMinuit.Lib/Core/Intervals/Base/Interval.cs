@@ -1,7 +1,7 @@
 namespace MidiMinuit.Lib.Core.Intervals
 {
     using System;
-    using MidiMinuit.Lib.Core.Notes;
+    using Notes;
 
     public class Interval
     {

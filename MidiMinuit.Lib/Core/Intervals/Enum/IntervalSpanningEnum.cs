@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Lib.Tmp
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     public enum IntervalSpanningEnum
     {

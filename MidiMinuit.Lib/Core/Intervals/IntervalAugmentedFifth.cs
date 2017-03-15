@@ -3,22 +3,27 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalAugmentedFifth : NoteQuality
+    public class IntervalAugmentedFifth : IntervalQualitySimple
     {
-        public IntervalAugmentedFifth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        private IntervalQualitySimple _inverse;
 
-        public IntervalAugmentedFifth(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalAugmentedFifth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalAugmentedFifth(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalAugmentedFifth(string note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        ////public IntervalAugmentedFifth(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Simple;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalAugmentedFifth;
@@ -38,7 +43,7 @@
         public override int Semitones { get; }
             = 8;
 
-        public override NoteQuality Inverse { get; }
-            = null;
+        public override IntervalQualitySimple Inverse
+            => _inverse ?? (_inverse = new IntervalDiminishedFourth());
     }
 }

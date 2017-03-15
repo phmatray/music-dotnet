@@ -3,22 +3,25 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalMajorThirteenth : NoteQuality
+    public class IntervalMajorThirteenth : IntervalQualityCompound
     {
-        public IntervalMajorThirteenth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        ////public IntervalMajorThirteenth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalMajorThirteenth(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalMajorThirteenth(string note)
+        ////    : base(note)
+        ////{
+        ////}
 
-        public IntervalMajorThirteenth(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalMajorThirteenth(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Compound;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalMajorThirteenth;
@@ -37,8 +40,5 @@
 
         public override int Semitones { get; }
             = 21;
-
-        public override NoteQuality Inverse { get; }
-            = null;
     }
 }

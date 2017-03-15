@@ -50,7 +50,7 @@
             }
         }
 
-        public static ChordBase GetChord(List<NoteQuality> notes)
+        public static ChordBase GetChord(List<IntervalQuality> notes)
         {
             if (notes == null)
             {
@@ -72,7 +72,7 @@
             // return new ChordMajor();
         }
 
-        public static ChordMajor GetMajorChord(List<NoteQuality> notes)
+        public static ChordMajor GetMajorChord(List<IntervalQuality> notes)
         {
             if (IsMajorChord(notes))
             {
@@ -83,14 +83,14 @@
             return null;
         }
 
-        public static bool IsMajorChord(List<NoteQuality> notes)
+        public static bool IsMajorChord(List<IntervalQuality> notes)
         {
             return notes.OfType<IntervalPerfectUnison>().Any() &&
                    notes.OfType<IntervalMajorThird>().Any() &&
                    notes.OfType<IntervalPerfectFifth>().Any();
         }
 
-        public static bool IsMinorChord(List<NoteQuality> notes)
+        public static bool IsMinorChord(List<IntervalQuality> notes)
         {
             return notes.OfType<IntervalPerfectUnison>().Any() &&
                    notes.OfType<IntervalMinorThird>().Any() &&

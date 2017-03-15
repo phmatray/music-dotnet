@@ -155,7 +155,6 @@
     <Compile Include="Core\Intervals\IntervalAugmentedFifth.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedFourth.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedNinth.cs" />
-    <Compile Include="Core\Intervals\IntervalAugmentedOctave.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedSecond.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedSeventh.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedSixth.cs" />
@@ -185,7 +184,7 @@
     <Compile Include="Core\Intervals\IntervalPerfectOctave.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectUnison.cs" />
     <Compile Include="Core\Notes\Base\Note.cs" />
-    <Compile Include="Core\Notes\Base\NoteQuality.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalQuality.cs" />
     <Compile Include="Core\Notes\Enum\NoteAccidentalEnum.cs" />
     <Compile Include="Core\Notes\Enum\NoteNameLatinEnum.cs" />
     <Compile Include="Core\Notes\Enum\NoteNameEnum.cs" />
@@ -257,7 +256,7 @@
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
     <Compile Include="Tmp\Class1.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
-    <Compile Include="Tmp\IntervalSpanningEnum.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalSpanningEnum.cs" />
     <Compile Include="Tmp\SemitoneTypeEnum.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />

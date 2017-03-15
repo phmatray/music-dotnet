@@ -3,22 +3,27 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalMajorSecond : NoteQuality
+    public class IntervalMajorSecond : IntervalQualitySimple
     {
-        public IntervalMajorSecond(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        private IntervalQualitySimple _inverse;
 
-        public IntervalMajorSecond(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalMajorSecond(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalMajorSecond(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalMajorSecond(string note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        ////public IntervalMajorSecond(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Simple;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalMajorSecond;
@@ -38,7 +43,7 @@
         public override int Semitones { get; }
             = 2;
 
-        public override NoteQuality Inverse { get; }
-            = null;
+        public override IntervalQualitySimple Inverse
+            => _inverse ?? (_inverse = new IntervalMinorSeventh());
     }
 }

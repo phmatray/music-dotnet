@@ -27,8 +27,8 @@
             FifthDiminished = i.FifthDiminished;
         }
 
-        public override List<NoteQuality> Notes
-            => new List<NoteQuality> { Fondamental, ThirdMinor, FifthDiminished };
+        public override List<IntervalQuality> Notes
+            => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthDiminished };
 
         public override string Name
             => $"{Fondamental}dim";

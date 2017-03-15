@@ -27,8 +27,8 @@
             FifthPerfect = i.FifthPerfect;
         }
 
-        public override List<NoteQuality> Notes
-            => new List<NoteQuality> { Fondamental, ThirdMinor, FifthPerfect };
+        public override List<IntervalQuality> Notes
+            => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthPerfect };
 
         public override string Name
             => $"{Fondamental}min";

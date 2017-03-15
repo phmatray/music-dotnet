@@ -3,22 +3,27 @@
     using System.Collections.Generic;
     using Notes;
 
-    public class IntervalAugmentedFourth : NoteQuality
+    public class IntervalAugmentedFourth : IntervalQualitySimple
     {
-        public IntervalAugmentedFourth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : base(name, accidental)
-        {
-        }
+        private IntervalQualitySimple _inverse;
 
-        public IntervalAugmentedFourth(string note)
-            : base(note)
-        {
-        }
+        ////public IntervalAugmentedFourth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        ////    : base(name, accidental)
+        ////{
+        ////}
 
-        public IntervalAugmentedFourth(Note note)
-            : base(note)
-        {
-        }
+        ////public IntervalAugmentedFourth(string note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        ////public IntervalAugmentedFourth(Note note)
+        ////    : base(note)
+        ////{
+        ////}
+
+        public override IntervalSpanningEnum Spanning { get; }
+            = IntervalSpanningEnum.Simple;
 
         public override IntervalQualityEnum Quality { get; }
             = IntervalQualityEnum.IntervalAugmentedFourth;
@@ -27,7 +32,7 @@
             = new List<string> { "Augmented Fourth", "Tritone" };
 
         public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "A4", "+4" };
+            = new List<string> { "A4", "+4", "TT" };
 
         public override List<string> QualityAbbreviation2 { get; }
             = new List<string> { "Aug. 4" };
@@ -38,7 +43,7 @@
         public override int Semitones { get; }
             = 6;
 
-        public override NoteQuality Inverse { get; }
-            = null;
+        public override IntervalQualitySimple Inverse
+            => _inverse ?? (_inverse = new IntervalDiminishedFifth());
     }
 }

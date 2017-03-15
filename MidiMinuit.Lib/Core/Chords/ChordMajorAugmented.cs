@@ -27,8 +27,8 @@
             FifthAugmented = i.FifthAugmented;
         }
 
-        public override List<NoteQuality> Notes
-            => new List<NoteQuality> { Fondamental, ThirdMajor, FifthAugmented };
+        public override List<IntervalQuality> Notes
+            => new List<IntervalQuality> { Fondamental, ThirdMajor, FifthAugmented };
 
         public override string Name
             => $"{Fondamental}aug";

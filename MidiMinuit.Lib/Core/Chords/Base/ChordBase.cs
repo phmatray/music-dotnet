@@ -1,4 +1,6 @@
-﻿namespace MidiMinuit.Lib.Core.Chords
+﻿using MidiMinuit.Lib.Core.Intervals;
+
+namespace MidiMinuit.Lib.Core.Chords
 {
     using System;
     using System.Collections.Generic;
@@ -19,7 +21,7 @@
         /// <summary>
         /// Gets notes of the chord.
         /// </summary>
-        public abstract List<NoteQuality> Notes { get; }
+        public abstract List<IntervalQuality> Notes { get; }
 
         /// <summary>
         /// Gets name of the chord.
