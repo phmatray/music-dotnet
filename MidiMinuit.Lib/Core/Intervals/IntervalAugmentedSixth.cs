@@ -29,7 +29,7 @@
             => "A6";
 
         public override string QualityAbbreviation2
-            => "NO DATA";
+            => "6th Aug.";
 
         public override string QualityComposition
             => "4 tons, 1 demi-ton diatonique et 1 demi-ton chromatique";

@@ -29,7 +29,7 @@
             => "A7";
 
         public override string QualityAbbreviation2
-            => "NO DATA";
+            => "7th Aug.";
 
         public override string QualityComposition
             => "Inusitée dans la pratique";

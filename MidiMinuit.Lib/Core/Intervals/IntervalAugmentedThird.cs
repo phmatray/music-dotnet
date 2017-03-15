@@ -29,7 +29,7 @@
             => "A3";
 
         public override string QualityAbbreviation2
-            => "3ᵗʰ ♯";
+            => "3rd Aug.";
 
         public override string QualityComposition
             => "2 tons et 1 demi-ton chromatique";
