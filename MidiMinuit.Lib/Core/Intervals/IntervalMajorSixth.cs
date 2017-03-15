@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMajorSixth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMajorSixth;
 
-        public override string QualityName
-            => "Major Sixth";
+        public override List<string> QualityName
+            => new List<string> { "Major Sixth", "Septimal Major Sixth", "Supermajor Sixth", "Major Hexachord", "Greater Hexachord", "Hexachordon Maius" };
 
-        public override string QualityAbbreviation
-            => "M6";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "M6" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Maj. 6" };
 
         public override string QualityComposition
             => "4 tons et 1 demi-ton diatonique";

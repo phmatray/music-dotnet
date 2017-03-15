@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalPerfectFourth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalPerfectFourth;
 
-        public override string QualityName
-            => "Perfect Fourth";
+        public override List<string> QualityName
+            => new List<string> { "Perfect Fourth", "Diatessaron" };
 
-        public override string QualityAbbreviation
-            => "P4";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "P4" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Perf. 4" };
 
         public override string QualityComposition
             => "2 tons et 1 demi-ton diatonique";

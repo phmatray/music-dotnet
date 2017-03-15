@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalAugmentedFourth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalAugmentedFourth;
 
-        public override string QualityName
-            => "Augmented Fourth";
+        public override List<string> QualityName
+            => new List<string> { "Augmented Fourth", "Tritone" };
 
-        public override string QualityAbbreviation
-            => "A4";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "A4", "+4" };
 
-        public override string QualityAbbreviation2
-            => "4th Aug.";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Aug. 4" };
 
         public override string QualityComposition
             => "2 tons, 1 demi-ton diatonique et 1 demi-ton chromatique ou 3 tons(Triton)";

@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalDiminishedSixth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalDiminishedSixth;
 
-        public override string QualityName
-            => "Diminished Sixth";
+        public override List<string> QualityName
+            => new List<string> { "Diminished Sixth" };
 
-        public override string QualityAbbreviation
-            => "d6";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "d6", "°6" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "deg. 6", "dim. 6" };
 
         public override string QualityComposition
             => "2 tons et 3 demi-tons diatoniques";

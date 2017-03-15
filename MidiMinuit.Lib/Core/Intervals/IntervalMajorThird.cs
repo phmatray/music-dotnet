@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMajorThird : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMajorThird;
 
-        public override string QualityName
-            => "Major Third";
+        public override List<string> QualityName
+            => new List<string> { "Major Third" };
 
-        public override string QualityAbbreviation
-            => "M3";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "M3" };
 
-        public override string QualityAbbreviation2
-            => "3ʳᵈ maj";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Maj. 3" };
 
         public override string QualityComposition
             => "2 tons";

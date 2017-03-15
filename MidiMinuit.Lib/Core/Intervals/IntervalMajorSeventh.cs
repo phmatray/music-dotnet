@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMajorSeventh : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMajorSeventh;
 
-        public override string QualityName
-            => "Major Seventh";
+        public override List<string> QualityName
+            => new List<string> { "Major Seventh", "Supermajor Seventh" };
 
-        public override string QualityAbbreviation
-            => "M7";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "M7" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Maj. 7" };
 
         public override string QualityComposition
             => "5 tons et 1 demi-ton diatonique";

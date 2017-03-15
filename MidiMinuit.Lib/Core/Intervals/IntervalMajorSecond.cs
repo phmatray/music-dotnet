@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMajorSecond : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMajorSecond;
 
-        public override string QualityName
-            => "Major Second";
+        public override List<string> QualityName
+            => new List<string> { "Major Second", "Tone", "Whole Tone", "Whole Step" };
 
-        public override string QualityAbbreviation
-            => "M2";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "M2" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Maj. 2" };
 
         public override string QualityComposition
             => "1 ton";

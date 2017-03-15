@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMinorSecond : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMinorSecond;
 
-        public override string QualityName
-            => "Minor Second";
+        public override List<string> QualityName
+            => new List<string> { "Minor Second", "Semitone", "Half Tone", "Half Step" };
 
-        public override string QualityAbbreviation
-            => "m2";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "m2" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "min. 2" };
 
         public override string QualityComposition
             => "1 demi-ton diatonique";

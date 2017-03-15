@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalPerfectFifth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalPerfectFifth;
 
-        public override string QualityName
-            => "Perfect Fifth";
+        public override List<string> QualityName
+            => new List<string> { "Perfect Fifth", "Diapente" };
 
-        public override string QualityAbbreviation
-            => "P5";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "P5" };
 
-        public override string QualityAbbreviation2
-            => "5ᵗʰ";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Perf. 5" };
 
         public override string QualityComposition
             => "3 tons et 1 demi-ton diatonique";

@@ -1,6 +1,7 @@
 namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalPerfectEleventh : NoteQuality
     {
@@ -22,14 +23,14 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalPerfectEleventh;
 
-        public override string QualityName
-            => "Perfect Eleventh";
+        public override List<string> QualityName
+            => new List<string> { "Perfect Eleventh" };
 
-        public override string QualityAbbreviation
-            => "P11";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "P11" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Perf. 11" };
 
         public override string QualityComposition
             => "NO DATA";

@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalDiminishedOctave : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalDiminishedOctave;
 
-        public override string QualityName
-            => "Diminished Octave";
+        public override List<string> QualityName
+            => new List<string> { "Diminished Octave", "Diminished Eighth" };
 
-        public override string QualityAbbreviation
-            => "d8";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "d8", "°8" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "deg. 8", "dim. 8" };
 
         public override string QualityComposition
             => "4 tons et 3 demi-tons diatoniques";

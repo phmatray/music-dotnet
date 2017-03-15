@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMinorThirteenth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMinorThirteenth;
 
-        public override string QualityName
-            => "Minor Thirteenth";
+        public override List<string> QualityName
+            => new List<string> { "Minor Thirteenth" };
 
-        public override string QualityAbbreviation
-            => "m13";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "m13" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "min. 13" };
 
         public override string QualityComposition
             => "NO DATA";

@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalPerfectUnison : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalPerfectUnison;
 
-        public override string QualityName
-            => "Perfect Unison";
+        public override List<string> QualityName
+            => new List<string> { "Perfect Unison", "Prime", "Perfect Prime" };
 
-        public override string QualityAbbreviation
-            => "P1";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "P1" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Perf. 1" };
 
         public override string QualityComposition
             => "NO DATA";

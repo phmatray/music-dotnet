@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMinorNinth : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMinorNinth;
 
-        public override string QualityName
-            => "Minor Ninth";
+        public override List<string> QualityName
+            => new List<string> { "Minor Ninth" };
 
-        public override string QualityAbbreviation
-            => "m9";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "m9" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "min. 9" };
 
         public override string QualityComposition
             => "NO DATA";

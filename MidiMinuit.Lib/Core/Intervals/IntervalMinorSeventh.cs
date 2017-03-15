@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalMinorSeventh : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalMinorSeventh;
 
-        public override string QualityName
-            => "Minor Seventh";
+        public override List<string> QualityName
+            => new List<string> { "Minor Seventh" };
 
-        public override string QualityAbbreviation
-            => "m7";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "m7" };
 
-        public override string QualityAbbreviation2
-            => "NO DATA";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "min. 7" };
 
         public override string QualityComposition
             => "4 tons et 2 demi-tons diatoniques";

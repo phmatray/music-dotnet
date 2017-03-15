@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    using MidiMinuit.Lib.Core.Notes;
+    using System.Collections.Generic;
+    using Notes;
 
     public class IntervalAugmentedSeventh : NoteQuality
     {
@@ -22,14 +23,14 @@
         public override IntervalQualityEnum Quality
             => IntervalQualityEnum.IntervalAugmentedSeventh;
 
-        public override string QualityName
-            => "Augmented Seventh";
+        public override List<string> QualityName
+            => new List<string> { "Augmented Seventh" };
 
-        public override string QualityAbbreviation
-            => "A7";
+        public override List<string> QualityAbbreviation
+            => new List<string> { "A7", "+7" };
 
-        public override string QualityAbbreviation2
-            => "7th Aug.";
+        public override List<string> QualityAbbreviation2
+            => new List<string> { "Aug. 7" };
 
         public override string QualityComposition
             => "Inusitée dans la pratique";
