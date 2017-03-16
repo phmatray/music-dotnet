@@ -14,7 +14,7 @@
         public IntervalPerfectFifth FifthPerfect { get; }
 
         public ChordSuspendedFourth(Note fondamental)
-            : base(ChordQualityEnum.SuspendedFourth)
+            : base(ChordQuality.SuspendedFourth)
         {
             if (fondamental == null)
             {

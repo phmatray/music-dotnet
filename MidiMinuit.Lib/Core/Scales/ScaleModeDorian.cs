@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeDorian(Note key)
-            : base(ScaleTypeEnum.ModeDorian)
+            : base(ScaleType.ModeDorian)
         {
             // mode dorien : T 2M 3m 4j 5j 6M 7m
             if (key == null)

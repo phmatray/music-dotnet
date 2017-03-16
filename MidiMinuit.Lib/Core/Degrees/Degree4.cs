@@ -20,9 +20,9 @@
             => "Lower dominant, same interval below tonic as dominant is above tonic";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.F);
+            => new Note(NoteName.F);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.F);
+            => new Note(NoteName.F);
     }
 }

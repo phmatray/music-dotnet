@@ -14,7 +14,7 @@
         public IntervalAugmentedFifth FifthAugmented { get; }
 
         public ChordMajorAugmented(Note fondamental)
-            : base(ChordQualityEnum.MajorAugmented)
+            : base(ChordQuality.MajorAugmented)
         {
             if (fondamental == null)
             {

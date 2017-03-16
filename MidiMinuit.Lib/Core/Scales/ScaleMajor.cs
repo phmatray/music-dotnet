@@ -22,7 +22,7 @@ namespace MidiMinuit.Lib.Core.Scales
         public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleMajor(Note key)
-            : base(ScaleTypeEnum.Major)
+            : base(ScaleType.Major)
         {
             // gamme majeure : T 2M 3M 4j 5j 6M 7M
             if (key == null)

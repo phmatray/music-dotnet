@@ -20,9 +20,9 @@
             => "Lower mediant, midway between tonic and subdominant, (in major key) root of relative minor key";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.A);
+            => new Note(NoteName.A);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.A, NoteAccidentalEnum.Flat);
+            => new Note(NoteName.A, NoteAccidental.Flat);
     }
 }

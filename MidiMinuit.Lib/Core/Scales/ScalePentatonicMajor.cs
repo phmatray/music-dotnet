@@ -18,7 +18,7 @@
         public IntervalMajorSixth SixthMajor { get; }
 
         public ScalePentatonicMajor(Note key)
-            : base(ScaleTypeEnum.PentatonicMajor)
+            : base(ScaleType.PentatonicMajor)
         {
             // gamme pentatonique majeure : T 2M 3M 5j 6M
             if (key == null)

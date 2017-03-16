@@ -16,7 +16,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ChordMajorAugmentedSeventhMinor(Note fondamental)
-            : base(ChordQualityEnum.MajorAugmentedSeventhMinor)
+            : base(ChordQuality.MajorAugmentedSeventhMinor)
         {
             if (fondamental == null)
             {

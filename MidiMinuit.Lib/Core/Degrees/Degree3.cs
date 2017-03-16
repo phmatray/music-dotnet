@@ -20,9 +20,9 @@
             => "Midway between tonic and dominant, (in minor key) root of relative major key";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.E);
+            => new Note(NoteName.E);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.E, NoteAccidentalEnum.Flat);
+            => new Note(NoteName.E, NoteAccidental.Flat);
     }
 }

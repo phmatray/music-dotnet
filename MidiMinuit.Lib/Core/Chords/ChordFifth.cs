@@ -12,7 +12,7 @@
         public IntervalPerfectFifth FifthPerfect { get; }
 
         public ChordFifth(Note fondamental)
-            : base(ChordQualityEnum.Fifth)
+            : base(ChordQuality.Fifth)
         {
             if (fondamental == null)
             {

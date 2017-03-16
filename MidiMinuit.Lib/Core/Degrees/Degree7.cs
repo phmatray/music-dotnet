@@ -20,9 +20,9 @@
             => "Melodically strong affinity for and leads to tonic/One half step below tonic in Major scale and whole step in Natural minor.";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.B);
+            => new Note(NoteName.B);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.B, NoteAccidentalEnum.Flat);
+            => new Note(NoteName.B, NoteAccidental.Flat);
     }
 }

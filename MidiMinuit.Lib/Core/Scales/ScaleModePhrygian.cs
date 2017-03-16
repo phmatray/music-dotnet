@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModePhrygian(Note key)
-            : base(ScaleTypeEnum.ModePhrygian)
+            : base(ScaleType.ModePhrygian)
         {
             // mode phrygien : T 2m 3m 4j 5j 6m 7m
             if (key == null)

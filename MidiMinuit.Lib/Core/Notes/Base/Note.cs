@@ -16,8 +16,10 @@
     /// </summary>
     public class Note : IEquatable<Note>, INotifyPropertyChanged
     {
-        private NoteNameEnum _name;
-        private NoteAccidentalEnum _accidental;
+        ////private NoteNameEnum _name;
+        ////private NoteAccidentalEnum _accidental;
+        private NoteName _name;
+        private NoteAccidental _accidental;
 
         public static Note operator +(Note note, int semitone)
             => note.Add(semitone);
@@ -47,29 +49,29 @@
             switch (value)
             {
                 case 0:
-                    return new Note(NoteNameEnum.C);
+                    return new Note(NoteName.C);
                 case 1:
-                    return new Note(NoteNameEnum.C, NoteAccidentalEnum.Sharp);
+                    return new Note(NoteName.C, NoteAccidental.Sharp);
                 case 2:
-                    return new Note(NoteNameEnum.D);
+                    return new Note(NoteName.D);
                 case 3:
-                    return new Note(NoteNameEnum.D, NoteAccidentalEnum.Sharp);
+                    return new Note(NoteName.D, NoteAccidental.Sharp);
                 case 4:
-                    return new Note(NoteNameEnum.E);
+                    return new Note(NoteName.E);
                 case 5:
-                    return new Note(NoteNameEnum.F);
+                    return new Note(NoteName.F);
                 case 6:
-                    return new Note(NoteNameEnum.F, NoteAccidentalEnum.Sharp);
+                    return new Note(NoteName.F, NoteAccidental.Sharp);
                 case 7:
-                    return new Note(NoteNameEnum.G);
+                    return new Note(NoteName.G);
                 case 8:
-                    return new Note(NoteNameEnum.G, NoteAccidentalEnum.Sharp);
+                    return new Note(NoteName.G, NoteAccidental.Sharp);
                 case 9:
-                    return new Note(NoteNameEnum.A);
+                    return new Note(NoteName.A);
                 case 10:
-                    return new Note(NoteNameEnum.A, NoteAccidentalEnum.Sharp);
+                    return new Note(NoteName.A, NoteAccidental.Sharp);
                 case 11:
-                    return new Note(NoteNameEnum.B);
+                    return new Note(NoteName.B);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(value));
             }
@@ -80,29 +82,29 @@
             switch (value)
             {
                 case 0:
-                    return new Note(NoteNameEnum.C);
+                    return new Note(NoteName.C);
                 case 1:
-                    return new Note(NoteNameEnum.D, NoteAccidentalEnum.Flat);
+                    return new Note(NoteName.D, NoteAccidental.Flat);
                 case 2:
-                    return new Note(NoteNameEnum.D);
+                    return new Note(NoteName.D);
                 case 3:
-                    return new Note(NoteNameEnum.E, NoteAccidentalEnum.Flat);
+                    return new Note(NoteName.E, NoteAccidental.Flat);
                 case 4:
-                    return new Note(NoteNameEnum.E);
+                    return new Note(NoteName.E);
                 case 5:
-                    return new Note(NoteNameEnum.F);
+                    return new Note(NoteName.F);
                 case 6:
-                    return new Note(NoteNameEnum.G, NoteAccidentalEnum.Flat);
+                    return new Note(NoteName.G, NoteAccidental.Flat);
                 case 7:
-                    return new Note(NoteNameEnum.G);
+                    return new Note(NoteName.G);
                 case 8:
-                    return new Note(NoteNameEnum.A, NoteAccidentalEnum.Flat);
+                    return new Note(NoteName.A, NoteAccidental.Flat);
                 case 9:
-                    return new Note(NoteNameEnum.A);
+                    return new Note(NoteName.A);
                 case 10:
-                    return new Note(NoteNameEnum.B, NoteAccidentalEnum.Flat);
+                    return new Note(NoteName.B, NoteAccidental.Flat);
                 case 11:
-                    return new Note(NoteNameEnum.B);
+                    return new Note(NoteName.B);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(value));
             }
@@ -131,86 +133,76 @@
                 .ToList();
         }
 
-        public static NoteNameEnum GetName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
+        ////public static NoteNameEnum GetName(string name)
+        ////{
+        ////    if (string.IsNullOrWhiteSpace(name))
+        ////    {
+        ////        throw new ArgumentNullException(nameof(name));
+        ////    }
 
-            if (name.Length != 1)
-            {
-                throw new ArgumentException("invalid format");
-            }
+        ////    if (name.Length != 1)
+        ////    {
+        ////        throw new ArgumentException("invalid format");
+        ////    }
 
-            switch (name.ToUpper())
-            {
-                case "C":
-                    return NoteNameEnum.C;
-                case "D":
-                    return NoteNameEnum.D;
-                case "E":
-                    return NoteNameEnum.E;
-                case "F":
-                    return NoteNameEnum.F;
-                case "G":
-                    return NoteNameEnum.G;
-                case "A":
-                    return NoteNameEnum.A;
-                case "B":
-                    return NoteNameEnum.B;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+        ////    switch (name.ToUpper())
+        ////    {
+        ////        case "C":
+        ////            return NoteNameEnum.C;
+        ////        case "D":
+        ////            return NoteNameEnum.D;
+        ////        case "E":
+        ////            return NoteNameEnum.E;
+        ////        case "F":
+        ////            return NoteNameEnum.F;
+        ////        case "G":
+        ////            return NoteNameEnum.G;
+        ////        case "A":
+        ////            return NoteNameEnum.A;
+        ////        case "B":
+        ////            return NoteNameEnum.B;
+        ////        default:
+        ////            throw new ArgumentOutOfRangeException();
+        ////    }
+        ////}
 
-        public static NoteAccidentalEnum GetAccidental(string accidental)
-        {
-            if (accidental.Length < 0 || accidental.Length > 2)
-            {
-                throw new ArgumentException("invalid format");
-            }
+        ////public static NoteAccidentalEnum GetAccidental(string accidental)
+        ////{
+        ////    if (accidental.Length < 0 || accidental.Length > 2)
+        ////    {
+        ////        throw new ArgumentException("invalid format");
+        ////    }
 
-            switch (accidental.ToLowerInvariant())
-            {
-                case "":
-                    return NoteAccidentalEnum.Natural;
-                case "b":
-                case "♭":
-                    return NoteAccidentalEnum.Flat;
-                case "#":
-                case "♯":
-                    return NoteAccidentalEnum.Sharp;
-                case "bb":
-                case "♭♭":
-                    return NoteAccidentalEnum.DoubleFlat;
-                case "##":
-                case "♯♯":
-                    return NoteAccidentalEnum.DoubleSharp;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+        ////    switch (accidental.ToLowerInvariant())
+        ////    {
+        ////        case "":
+        ////            return NoteAccidentalEnum.Natural;
+        ////        case "b":
+        ////        case "♭":
+        ////            return NoteAccidentalEnum.Flat;
+        ////        case "#":
+        ////        case "♯":
+        ////            return NoteAccidentalEnum.Sharp;
+        ////        case "bb":
+        ////        case "♭♭":
+        ////            return NoteAccidentalEnum.DoubleFlat;
+        ////        case "##":
+        ////        case "♯♯":
+        ////            return NoteAccidentalEnum.DoubleSharp;
+        ////        default:
+        ////            throw new ArgumentOutOfRangeException();
+        ////    }
+        ////}
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="Note" /> class.
         /// </summary>
         /// <param name="name">The name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
-        public Note(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
+        public Note(NoteName name, NoteAccidental accidental = null)
         {
             Name = name;
-            Accidental = accidental;
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="name">The latin name of the note.</param>
-        /// <param name="accidental">The accidental of the note.</param>
-        public Note(NoteNameLatinEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-            : this(name.ToNoteName(), accidental)
-        {
+            Accidental = accidental ?? NoteAccidental.Natural;
         }
 
         /// <summary>
@@ -234,8 +226,8 @@
                 throw new ArgumentException("incorrect format");
             }
 
-            Name = GetName(note[0].ToString());
-            Accidental = GetAccidental(note.Substring(1, note.Length - 1));
+            Name = NoteName.GetName(note[0].ToString());
+            Accidental = NoteAccidental.GetAccidental(note.Substring(1, note.Length - 1));
         }
 
         /// <summary>
@@ -256,52 +248,52 @@
             switch (midiValue % 12)
             {
                 case 0:
-                    Name = NoteNameEnum.C;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.C;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 case 1:
-                    Name = NoteNameEnum.C;
-                    Accidental = NoteAccidentalEnum.Sharp;
+                    Name = NoteName.C;
+                    Accidental = NoteAccidental.Sharp;
                     break;
                 case 2:
-                    Name = NoteNameEnum.D;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.D;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 case 3:
-                    Name = NoteNameEnum.D;
-                    Accidental = NoteAccidentalEnum.Sharp;
+                    Name = NoteName.D;
+                    Accidental = NoteAccidental.Sharp;
                     break;
                 case 4:
-                    Name = NoteNameEnum.E;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.E;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 case 5:
-                    Name = NoteNameEnum.F;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.F;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 case 6:
-                    Name = NoteNameEnum.F;
-                    Accidental = NoteAccidentalEnum.Sharp;
+                    Name = NoteName.F;
+                    Accidental = NoteAccidental.Sharp;
                     break;
                 case 7:
-                    Name = NoteNameEnum.G;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.G;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 case 8:
-                    Name = NoteNameEnum.G;
-                    Accidental = NoteAccidentalEnum.Sharp;
+                    Name = NoteName.G;
+                    Accidental = NoteAccidental.Sharp;
                     break;
                 case 9:
-                    Name = NoteNameEnum.A;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.A;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 case 10:
-                    Name = NoteNameEnum.A;
-                    Accidental = NoteAccidentalEnum.Sharp;
+                    Name = NoteName.A;
+                    Accidental = NoteAccidental.Sharp;
                     break;
                 case 11:
-                    Name = NoteNameEnum.B;
-                    Accidental = NoteAccidentalEnum.Natural;
+                    Name = NoteName.B;
+                    Accidental = NoteAccidental.Natural;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(midiValue));
@@ -362,7 +354,7 @@
             }
         }
 
-        public NoteNameEnum Name
+        public NoteName Name
         {
             get
             {
@@ -376,10 +368,10 @@
             }
         }
 
-        public NoteNameLatinEnum NameLatin
-            => (NoteNameLatinEnum)(int)Name;
+        ////public NoteNameLatinEnum NameLatin
+        ////    => (NoteNameLatinEnum)(int)Name;
 
-        public NoteAccidentalEnum Accidental
+        public NoteAccidental Accidental
         {
             get
             {
@@ -395,7 +387,7 @@
 
         public Interval Interval => GetInterval();
 
-        public int Pitch => Name.GetValue() + Accidental.GetValue();
+        public int Pitch => Name.Value + Accidental.Value;
 
         public Note Add(int semitone)
         {
@@ -478,7 +470,7 @@
         {
             unchecked
             {
-                return ((int)Name * 397) ^ (int)Accidental;
+                return (Name.Value * 397) ^ Accidental.Value;
             }
         }
 
@@ -486,28 +478,7 @@
 
         public override string ToString()
         {
-            var sb = new StringBuilder();
-            sb.Append(Name);
-
-            switch (Accidental)
-            {
-                case NoteAccidentalEnum.Natural:
-                    break;
-                case NoteAccidentalEnum.Flat:
-                    sb.Append("♭");
-                    break;
-                case NoteAccidentalEnum.Sharp:
-                    sb.Append("♯");
-                    break;
-                case NoteAccidentalEnum.DoubleFlat:
-                    sb.Append("♭♭");
-                    break;
-                case NoteAccidentalEnum.DoubleSharp:
-                    sb.Append("♯♯");
-                    break;
-            }
-
-            return sb.ToString();
+            return $"{Name}{Accidental}";
         }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

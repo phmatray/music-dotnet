@@ -20,9 +20,9 @@
             => "One whole step above the tonic";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.D);
+            => new Note(NoteName.D);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.D);
+            => new Note(NoteName.D);
     }
 }

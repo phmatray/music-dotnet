@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeMixolydian(Note key)
-            : base(ScaleTypeEnum.ModeMixolydian)
+            : base(ScaleType.ModeMixolydian)
         {
             // mode mixolydien : T 2M 3M 4j 5j 6M 7m
             if (key == null)

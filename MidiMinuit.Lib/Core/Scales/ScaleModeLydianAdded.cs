@@ -22,7 +22,7 @@
         public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleModeLydianAdded(Note key)
-            : base(ScaleTypeEnum.ModeLydianAdded)
+            : base(ScaleType.ModeLydianAdded)
         {
             // mode lydien augmenté : T 2M 3M #11 #5 6M 7M
             if (key == null)

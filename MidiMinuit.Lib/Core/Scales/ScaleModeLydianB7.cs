@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeLydianB7(Note key)
-            : base(ScaleTypeEnum.ModeLydianB7)
+            : base(ScaleType.ModeLydianB7)
         {
             // mode lydien b7 : T 2M 3M #11 5j 6M 7m ???
             if (key == null)

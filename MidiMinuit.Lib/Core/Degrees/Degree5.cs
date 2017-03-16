@@ -20,9 +20,9 @@
             => "2nd in importance to the tonic";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.G);
+            => new Note(NoteName.G);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.G);
+            => new Note(NoteName.G);
     }
 }

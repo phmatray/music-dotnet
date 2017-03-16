@@ -24,7 +24,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeDiminishedReverse(Note key)
-            : base(ScaleTypeEnum.ModeDiminishedReverse)
+            : base(ScaleType.ModeDiminishedReverse)
         {
             // mode diminué inversé : T 2m 3m 3M b5 5j 6M 7m
             if (key == null)

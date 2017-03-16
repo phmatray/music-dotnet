@@ -14,7 +14,7 @@
         public IntervalDiminishedFifth FifthDiminished { get; }
 
         public ChordMinorDiminished(Note fondamental)
-            : base(ChordQualityEnum.MinorDiminished)
+            : base(ChordQuality.MinorDiminished)
         {
             if (fondamental == null)
             {

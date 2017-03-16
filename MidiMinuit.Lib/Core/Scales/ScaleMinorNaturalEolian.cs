@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleMinorNaturalEolian(Note key)
-            : base(ScaleTypeEnum.MinorNaturalEolian)
+            : base(ScaleType.MinorNaturalEolian)
         {
             // gamme mineure naturelle (mode éolien) : T 2M 3m 4j 5j 6m 7m
             if (key == null)

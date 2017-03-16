@@ -20,9 +20,9 @@
             => "Tonal center, note of final resolution";
 
         public override Note NoteInCMajor
-            => new Note(NoteNameEnum.C);
+            => new Note(NoteName.C);
 
         public override Note NoteInCMinor
-            => new Note(NoteNameEnum.C);
+            => new Note(NoteName.C);
     }
 }

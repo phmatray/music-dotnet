@@ -8,7 +8,7 @@ namespace MidiMinuit.Lib.Core.Chords
 
     public abstract class ChordBase
     {
-        protected ChordBase(ChordQualityEnum quality)
+        protected ChordBase(ChordQuality quality)
         {
             Quality = quality;
         }
@@ -16,7 +16,7 @@ namespace MidiMinuit.Lib.Core.Chords
         /// <summary>
         /// Gets the quality of the chord.
         /// </summary>
-        public ChordQualityEnum Quality { get; }
+        public ChordQuality Quality { get; }
 
         /// <summary>
         /// Gets notes of the chord.

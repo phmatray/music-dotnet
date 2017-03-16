@@ -24,7 +24,7 @@
         public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleModeDiminished(Note key)
-            : base(ScaleTypeEnum.ModeDiminished)
+            : base(ScaleType.ModeDiminished)
         {
             // mode diminué : T 2M 3m 4j #11 #5 6M 7M
             if (key == null)

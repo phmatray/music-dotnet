@@ -14,7 +14,7 @@
         public IntervalPerfectFifth FifthPerfect { get; }
 
         public ChordMajor(Note fondamental)
-            : base(ChordQualityEnum.Major)
+            : base(ChordQuality.Major)
         {
             if (fondamental == null)
             {

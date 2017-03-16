@@ -36,7 +36,7 @@ namespace MidiMinuit.Lib.Core.Scales
 
     public abstract class ScaleBase
     {
-        protected ScaleBase(ScaleTypeEnum scaleType)
+        protected ScaleBase(ScaleType scaleType)
         {
             ScaleType = scaleType;
         }
@@ -44,7 +44,7 @@ namespace MidiMinuit.Lib.Core.Scales
         /// <summary>
         /// Gets the type of the scale.
         /// </summary>
-        public ScaleTypeEnum ScaleType { get; }
+        public ScaleType ScaleType { get; }
 
         /// <summary>
         /// Gets notes of the scale.

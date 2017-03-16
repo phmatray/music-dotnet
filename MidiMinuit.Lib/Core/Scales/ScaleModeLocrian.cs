@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeLocrian(Note key)
-            : base(ScaleTypeEnum.ModeLocrian)
+            : base(ScaleType.ModeLocrian)
         {
             // mode locrien : T 2m 3m 4j b5 6m 7m
             if (key == null)

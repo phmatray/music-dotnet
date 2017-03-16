@@ -136,9 +136,8 @@
     <Compile Include="Core\Chords\ChordMinorSixthMajor.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
-    <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
+    <Compile Include="Core\Chords\Enum\ChordQuality.cs" />
     <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
-    <Compile Include="Core\Chords\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Degrees\Extensions\DegreeExtensions.cs" />
     <Compile Include="Core\Degrees\Degree1.cs" />
     <Compile Include="Core\Degrees\Degree2.cs" />
@@ -187,15 +186,12 @@
     <Compile Include="Core\Intervals\IntervalPerfectUnison.cs" />
     <Compile Include="Core\Notes\Base\Note.cs" />
     <Compile Include="Core\Intervals\Base\IntervalQuality.cs" />
-    <Compile Include="Core\Notes\Enum\NoteAccidentalEnum.cs" />
-    <Compile Include="Core\Notes\Enum\NoteNameLatinEnum.cs" />
-    <Compile Include="Core\Notes\Enum\NoteNameEnum.cs" />
-    <Compile Include="Core\Notes\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Notes\Enum\NoteAccidental.cs" />
+    <Compile Include="Core\Notes\Enum\NoteName.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedEleventh.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectEleventh.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
-    <Compile Include="Core\Scales\Enum\ScaleTypeEnum.cs" />
-    <Compile Include="Core\Scales\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Scales\Enum\ScaleType.cs" />
     <Compile Include="Core\Scales\Extensions\ScaleExtensions.cs" />
     <Compile Include="Core\Scales\ScaleBlues.cs" />
     <Compile Include="Core\Scales\ScaleMajor.cs" />
@@ -255,20 +251,21 @@
     <Compile Include="Instruments\GuitarTunings\TuningTuneDownTwoStep.cs" />
     <Compile Include="Core\Degrees\Base\DegreeBase.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalQualityEnum.cs" />
-    <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbolEnum.cs" />
+    <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbol.cs" />
     <Compile Include="Tmp\BranchIntervals.cs" />
     <Compile Include="Tmp\Class1.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalSpanningEnum.cs" />
     <Compile Include="Tmp\SemitoneTypeEnum.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
-    <Compile Include="Core\Symbols\Extensions\EnumExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\MusicMathFormulaHelpers.cs" />
     <EmbeddedResource Include="Properties\MidiMinuit.Lib.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\Notes\Extensions\" />
     <Folder Include="Core\Symbols\Base\" />
+    <Folder Include="Core\Symbols\Extensions\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Extensions\" />

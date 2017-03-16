@@ -16,7 +16,7 @@
         public IntervalMajorSixth SixthMajor { get; }
 
         public ChordMajorSixthMajor(Note fondamental)
-            : base(ChordQualityEnum.MajorSixthMajor)
+            : base(ChordQuality.MajorSixthMajor)
         {
             if (fondamental == null)
             {

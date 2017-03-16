@@ -22,7 +22,7 @@ namespace MidiMinuit.Lib.Core.Scales
         public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleMinorMelodic(Note key)
-            : base(ScaleTypeEnum.MinorMelodic)
+            : base(ScaleType.MinorMelodic)
         {
             // gamme mineure mélodique : T 2M 3m 4j 5j 6M 7M
             if (key == null)

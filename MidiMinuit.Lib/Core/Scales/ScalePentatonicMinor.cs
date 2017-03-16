@@ -18,7 +18,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScalePentatonicMinor(Note key)
-            : base(ScaleTypeEnum.PentatonicMinor)
+            : base(ScaleType.PentatonicMinor)
         {
             // gamme pentatonique mineure : T 3m 4j 5j 7m
             if (key == null)

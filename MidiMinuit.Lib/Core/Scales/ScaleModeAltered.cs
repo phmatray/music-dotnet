@@ -22,7 +22,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleModeAltered(Note key)
-            : base(ScaleTypeEnum.ModeAltered)
+            : base(ScaleType.ModeAltered)
         {
             // mode altéré : T 2m 3m 3M b5 6m 7m
             if (key == null)

@@ -20,7 +20,7 @@
         public IntervalMinorSeventh SeventhMinor { get; }
 
         public ScaleBlues(Note key)
-            : base(ScaleTypeEnum.Blues)
+            : base(ScaleType.Blues)
         {
             // gamme blues : T 3m 4j b5 5j 7m
             if (key == null)

@@ -22,7 +22,7 @@
         public IntervalMajorSeventh SeventhMajor { get; }
 
         public ScaleMinorHarmonic(Note key)
-            : base(ScaleTypeEnum.MinorHarmonic)
+            : base(ScaleType.MinorHarmonic)
         {
             // gamme mineure harmonique : T 2M 3m 4j 5j 6m 7M
             if (key == null)
