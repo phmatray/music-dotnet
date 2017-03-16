@@ -138,7 +138,8 @@
     <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
     <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
-    <Compile Include="Core\Degrees\Extensions\DegreeExtensions.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.cs" />
+    <Compile Include="Core\Degrees\Base\DegreeFactory.cs" />
     <Compile Include="Core\Degrees\Degree1.cs" />
     <Compile Include="Core\Degrees\Degree2.cs" />
     <Compile Include="Core\Degrees\Degree3.cs" />
@@ -148,7 +149,6 @@
     <Compile Include="Core\Degrees\Degree7.cs" />
     <Compile Include="Core\Degrees\Degree8.cs" />
     <Compile Include="Core\Degrees\Enum\DegreeEnum.cs" />
-    <Compile Include="Core\Degrees\Extensions\EnumExtensions.cs" />
     <Compile Include="Core\Intervals\Base\IntervalQualityCompound.cs" />
     <Compile Include="Core\Intervals\Base\IntervalQualitySimple.cs" />
     <Compile Include="Core\Intervals\Extensions\EnumExtensions.cs" />
@@ -249,7 +249,6 @@
     <Compile Include="Instruments\GuitarTunings\TuningTuneDownHalfStep.cs" />
     <Compile Include="Instruments\GuitarTunings\TuningTuneDownOneStep.cs" />
     <Compile Include="Instruments\GuitarTunings\TuningTuneDownTwoStep.cs" />
-    <Compile Include="Core\Degrees\Base\DegreeBase.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalQualityEnum.cs" />
     <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbol.cs" />
     <Compile Include="Tmp\BranchIntervals.cs" />

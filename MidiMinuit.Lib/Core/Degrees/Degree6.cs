@@ -2,10 +2,10 @@
 {
     using Notes;
 
-    public class Degree6 : DegreeBase
+    public class Degree6 : Degree
     {
-        public override DegreeEnum DegreeEnum
-            => DegreeEnum.VI;
+        public override DegreeNumberEnum Number
+            => DegreeNumberEnum.VI;
 
         public override string DiatonicFunction
             => "Submediant";
@@ -18,6 +18,9 @@
 
         public override string Meaning
             => "Lower mediant, midway between tonic and subdominant, (in major key) root of relative minor key";
+
+        public override string Function { get; }
+            = "sus-dominante";
 
         public override Note NoteInCMajor
             => new Note(NoteName.A);

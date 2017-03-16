@@ -2,10 +2,10 @@
 {
     using Notes;
 
-    public class Degree1 : DegreeBase
+    public class Degree1 : Degree
     {
-        public override DegreeEnum DegreeEnum
-            => DegreeEnum.I;
+        public override DegreeNumberEnum Number
+            => DegreeNumberEnum.I;
 
         public override string DiatonicFunction
             => "Tonic";
@@ -18,6 +18,9 @@
 
         public override string Meaning
             => "Tonal center, note of final resolution";
+
+        public override string Function { get; }
+            = "tonique";
 
         public override Note NoteInCMajor
             => new Note(NoteName.C);

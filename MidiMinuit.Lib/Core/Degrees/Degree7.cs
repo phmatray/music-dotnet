@@ -2,10 +2,10 @@
 {
     using Notes;
 
-    public class Degree7 : DegreeBase
+    public class Degree7 : Degree
     {
-        public override DegreeEnum DegreeEnum
-            => DegreeEnum.VII;
+        public override DegreeNumberEnum Number
+            => DegreeNumberEnum.VII;
 
         public override string DiatonicFunction
             => "Leading tone(in Major scale) / Subtonic (in Natural Minor Scale)";
@@ -18,6 +18,9 @@
 
         public override string Meaning
             => "Melodically strong affinity for and leads to tonic/One half step below tonic in Major scale and whole step in Natural minor.";
+
+        public override string Function { get; }
+            = "sensible";
 
         public override Note NoteInCMajor
             => new Note(NoteName.B);

@@ -2,10 +2,10 @@
 {
     using Notes;
 
-    public class Degree4 : DegreeBase
+    public class Degree4 : Degree
     {
-        public override DegreeEnum DegreeEnum
-            => DegreeEnum.IV;
+        public override DegreeNumberEnum Number
+            => DegreeNumberEnum.IV;
 
         public override string DiatonicFunction
             => "Subdominant";
@@ -18,6 +18,9 @@
 
         public override string Meaning
             => "Lower dominant, same interval below tonic as dominant is above tonic";
+
+        public override string Function { get; }
+            = "sous-dominante";
 
         public override Note NoteInCMajor
             => new Note(NoteName.F);
