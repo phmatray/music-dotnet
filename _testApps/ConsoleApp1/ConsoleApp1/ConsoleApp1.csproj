@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chord.cs" />
-    <Compile Include="Interval.cs" />
+    <Compile Include="Intervals\Extensions\EnumExtensions.cs" />
+    <Compile Include="Intervals\Base\Interval.cs" />
+    <Compile Include="Intervals\Enum\IntervalNumberEnum.cs" />
+    <Compile Include="Intervals\Enum\IntervalQualityEnum.cs" />
     <Compile Include="MusicMathFormulaHelpers.cs" />
     <Compile Include="MidiMinuitLib\Note.cs" />
     <Compile Include="Program.cs" />
@@ -52,5 +55,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

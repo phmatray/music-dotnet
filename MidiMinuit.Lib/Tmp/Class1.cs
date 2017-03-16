@@ -11,12 +11,12 @@
 
     public static class Class1
     {
-        public static List<ChordBase> GetAllChordScaleMajorC()
-        {
-            ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.G));
-            var result = scale.GetAllChord();
-            return result;
-        }
+        ////public static List<ChordBase> GetAllChordScaleMajorC()
+        ////{
+        ////    ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.G));
+        ////    var result = scale.GetAllChord();
+        ////    return result;
+        ////}
 
         ////public static List<ChordBase> GetAllChord(this ScaleBase scale)
         ////{
@@ -31,24 +31,24 @@
         ////    return chords;
         ////}
 
-        public static void TestMethod_HarmonizeScale()
-        {
-            ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
-            var chord = scale.GetChordMajor(new Degree1());
-        }
+        ////public static void TestMethod_HarmonizeScale()
+        ////{
+        ////    ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
+        ////    var chord = scale.GetChordMajor(new Degree1());
+        ////}
 
-        public static void TestMethod_Generate3tonesChords()
-        {
-            ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
-            var combinaisons = HelperBeta.GetCombinaisons(scale.Notes);
+        ////public static void TestMethod_Generate3tonesChords()
+        ////{
+        ////    ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
+        ////    var combinaisons = HelperBeta.GetCombinaisons(scale.Notes);
 
-            var chords = new List<ChordBase>();
-            foreach (var c in combinaisons)
-            {
-                var chord = GetMajorChord(c);
-                chords.Add(chord);
-            }
-        }
+        ////    var chords = new List<ChordBase>();
+        ////    foreach (var c in combinaisons)
+        ////    {
+        ////        var chord = GetMajorChord(c);
+        ////        chords.Add(chord);
+        ////    }
+        ////}
 
         public static ChordBase GetChord(List<IntervalQuality> notes)
         {
@@ -72,16 +72,16 @@
             // return new ChordMajor();
         }
 
-        public static ChordMajor GetMajorChord(List<IntervalQuality> notes)
-        {
-            if (IsMajorChord(notes))
-            {
-                var fondamental = notes.OfType<IntervalPerfectUnison>().SingleOrDefault();
-                return fondamental != null ? new ChordMajor(fondamental) : null;
-            }
+        ////public static ChordMajor GetMajorChord(List<IntervalQuality> notes)
+        ////{
+        ////    if (IsMajorChord(notes))
+        ////    {
+        ////        var fondamental = notes.OfType<IntervalPerfectUnison>().SingleOrDefault();
+        ////        return fondamental != null ? new ChordMajor(fondamental) : null;
+        ////    }
 
-            return null;
-        }
+        ////    return null;
+        ////}
 
         public static bool IsMajorChord(List<IntervalQuality> notes)
         {

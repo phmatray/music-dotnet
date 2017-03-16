@@ -4,10 +4,10 @@ namespace MidiMinuit.Lib.Tmp
 {
     public class IntervalTmp
     {
-        public static IntervalTmp CreateInterval(Note note1, Note note2)
-        {
+        ////public static IntervalTmp CreateInterval(Note note1, Note note2)
+        ////{
             
-        }
+        ////}
 
 
         private readonly Note _note1;
