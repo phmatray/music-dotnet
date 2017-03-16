@@ -7,14 +7,6 @@
 
     public class ChordMinorSeventhMajor : Chord
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMajorSeventh SeventhMajor { get; }
-
         public ChordMinorSeventhMajor(Note fondamental)
         {
             if (fondamental == null)
@@ -29,8 +21,19 @@
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override ChordQualityEnum Quality
-            => ChordQualityEnum.MinorSeventhMajor;
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMajorSeventh SeventhMajor { get; }
+
+        public override ChordQualityEnum Quality { get; }
+            = ChordQualityEnum.MinorSeventhMajor;
+
+        public override string Description { get; }
+            = "Description not added yet.";
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthPerfect, SeventhMajor };
@@ -41,17 +44,10 @@
         public override string Details
             => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5ᵗʰ: {FifthPerfect}, 7ᵗʰ maj: {SeventhMajor}";
 
-        public override string Description
-            => "Description not added yet.";
-
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
 
         public override Chord Clone()
-        {
-            return MemberwiseClone() as Chord;
-        }
+            => MemberwiseClone() as Chord;
     }
 }

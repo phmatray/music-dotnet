@@ -4,28 +4,34 @@
 
     public class Degree2 : Degree
     {
-        public override DegreeNumberEnum Number
-            => DegreeNumberEnum.II;
+        public override DegreeNumberEnum Number { get; }
+            = DegreeNumberEnum.II;
 
-        public override string DiatonicFunction
-            => "Supertonic";
+        public override string DiatonicFunction { get; }
+            = "Supertonic";
 
-        public override string CorrespondingModeMajorKey
-            => "Dorian";
+        public override string CorrespondingModeMajorKey { get; }
+            = "Dorian";
 
-        public override string CorrespondingModeMinorKey
-            => "Locrian";
+        public override string CorrespondingModeMinorKey { get; }
+            = "Locrian";
 
-        public override string Meaning
-            => "One whole step above the tonic";
+        public override string Meaning { get; }
+            = "One whole step above the tonic";
 
         public override string Function { get; }
             = "sus-tonique";
 
-        public override Note NoteInCMajor
-            => new Note(NoteName.D);
+        public override Note NoteInCMajor { get; }
+            = new Note(NoteName.D);
 
-        public override Note NoteInCMinor
-            => new Note(NoteName.D);
+        public override Note NoteInCMinor { get; }
+            = new Note(NoteName.D);
+
+        public override string ToString()
+            => Number.ToString();
+
+        public override Degree Clone()
+            => MemberwiseClone() as Degree;
     }
 }

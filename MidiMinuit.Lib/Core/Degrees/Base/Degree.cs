@@ -27,9 +27,8 @@
         public int DegreeIndex
             => ((int)Number) - 1;
 
-        public override string ToString()
-        {
-            return Number.ToString();
-        }
+        public abstract override string ToString();
+
+        public abstract Degree Clone();
     }
 }

@@ -7,14 +7,6 @@
 
     public class ChordMinorFifthDiminishedSeventhMinor : Chord
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalDiminishedFifth FifthDiminished { get; }
-
-        public IntervalMinorSeventh SeventhMinor { get; }
-
         public ChordMinorFifthDiminishedSeventhMinor(Note fondamental)
         {
             if (fondamental == null)
@@ -29,8 +21,19 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ChordQualityEnum Quality
-            => ChordQualityEnum.MinorFifthDiminishedSeventhMinor;
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalDiminishedFifth FifthDiminished { get; }
+
+        public IntervalMinorSeventh SeventhMinor { get; }
+
+        public override ChordQualityEnum Quality { get; }
+            = ChordQualityEnum.MinorFifthDiminishedSeventhMinor;
+
+        public override string Description { get; }
+            = "Description not added yet.";
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthDiminished, SeventhMinor };
@@ -41,17 +44,10 @@
         public override string Details
             => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5ᵗʰ♭: {FifthDiminished}, 7ᵗʰ min: {SeventhMinor}";
 
-        public override string Description
-            => "Description not added yet.";
-
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
 
         public override Chord Clone()
-        {
-            return MemberwiseClone() as Chord;
-        }
+            => MemberwiseClone() as Chord;
     }
 }
