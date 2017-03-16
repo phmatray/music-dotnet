@@ -50,7 +50,7 @@
         ////    }
         ////}
 
-        public static ChordBase GetChord(List<IntervalQuality> notes)
+        public static Chord GetChord(List<IntervalQuality> notes)
         {
             if (notes == null)
             {

@@ -5,7 +5,7 @@
     using Intervals;
     using Notes;
 
-    public class ChordMajorSeventhMajor : ChordBase
+    public class ChordMajorSeventhMajor : Chord
     {
         public IntervalPerfectUnison Fondamental { get; }
 
@@ -16,7 +16,6 @@
         public IntervalMajorSeventh SeventhMajor { get; }
 
         public ChordMajorSeventhMajor(Note fondamental)
-            : base(ChordQuality.MajorSeventhMajor)
         {
             if (fondamental == null)
             {
@@ -29,6 +28,9 @@
             FifthPerfect = i.FifthPerfect;
             SeventhMajor = i.SeventhMajor;
         }
+
+        public override ChordQualityEnum Quality
+            => ChordQualityEnum.MajorSeventhMajor;
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, ThirdMajor, FifthPerfect, SeventhMajor };
@@ -47,9 +49,9 @@
             return Name;
         }
 
-        public override ChordBase Clone()
+        public override Chord Clone()
         {
-            return MemberwiseClone() as ChordBase;
+            return MemberwiseClone() as Chord;
         }
     }
 }

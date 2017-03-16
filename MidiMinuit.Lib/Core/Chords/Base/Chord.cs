@@ -1,22 +1,14 @@
-﻿using MidiMinuit.Lib.Core.Intervals;
-
-namespace MidiMinuit.Lib.Core.Chords
+﻿namespace MidiMinuit.Lib.Core.Chords
 {
-    using System;
     using System.Collections.Generic;
-    using Notes;
+    using Intervals;
 
-    public abstract class ChordBase
+    public abstract class Chord
     {
-        protected ChordBase(ChordQuality quality)
-        {
-            Quality = quality;
-        }
-
         /// <summary>
         /// Gets the quality of the chord.
         /// </summary>
-        public ChordQuality Quality { get; }
+        public abstract ChordQualityEnum Quality { get; }
 
         /// <summary>
         /// Gets notes of the chord.
@@ -46,7 +38,7 @@ namespace MidiMinuit.Lib.Core.Chords
 
         public abstract override string ToString();
 
-        public abstract ChordBase Clone();
+        public abstract Chord Clone();
 
         ////private readonly List<Note> _notes;
 

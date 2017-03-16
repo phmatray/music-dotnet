@@ -118,7 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Core\Chords\Base\ChordBase.cs" />
+    <Compile Include="Core\Chords\Base\Chord.cs" />
+    <Compile Include="Core\Chords\Base\ChordFactory.cs" />
     <Compile Include="Core\Chords\ChordFifth.cs" />
     <Compile Include="Core\Chords\ChordMajor.cs" />
     <Compile Include="Core\Chords\ChordMajorAugmented.cs" />
@@ -136,8 +137,7 @@
     <Compile Include="Core\Chords\ChordMinorSixthMajor.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
-    <Compile Include="Core\Chords\Enum\ChordQuality.cs" />
-    <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
+    <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
     <Compile Include="Core\Degrees\Extensions\DegreeExtensions.cs" />
     <Compile Include="Core\Degrees\Degree1.cs" />
     <Compile Include="Core\Degrees\Degree2.cs" />

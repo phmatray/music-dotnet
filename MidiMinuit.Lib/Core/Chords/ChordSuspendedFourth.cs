@@ -5,7 +5,7 @@
     using Intervals;
     using Notes;
 
-    public class ChordSuspendedFourth : ChordBase
+    public class ChordSuspendedFourth : Chord
     {
         public IntervalPerfectUnison Fondamental { get; }
 
@@ -14,7 +14,6 @@
         public IntervalPerfectFifth FifthPerfect { get; }
 
         public ChordSuspendedFourth(Note fondamental)
-            : base(ChordQuality.SuspendedFourth)
         {
             if (fondamental == null)
             {
@@ -26,6 +25,9 @@
             FourthPerfect = i.FourthPerfect;
             FifthPerfect = i.FifthPerfect;
         }
+
+        public override ChordQualityEnum Quality
+            => ChordQualityEnum.SuspendedFourth;
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, FourthPerfect, FifthPerfect };
@@ -44,9 +46,9 @@
             return Name;
         }
 
-        public override ChordBase Clone()
+        public override Chord Clone()
         {
-            return MemberwiseClone() as ChordBase;
+            return MemberwiseClone() as Chord;
         }
     }
 }
