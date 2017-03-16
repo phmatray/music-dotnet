@@ -46,5 +46,10 @@
         {
             return Name;
         }
+
+        public override ChordBase Clone()
+        {
+            return MemberwiseClone() as ChordBase;
+        }
     }
 }

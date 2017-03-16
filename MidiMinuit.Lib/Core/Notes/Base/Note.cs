@@ -16,8 +16,6 @@
     /// </summary>
     public class Note : IEquatable<Note>, INotifyPropertyChanged
     {
-        ////private NoteNameEnum _name;
-        ////private NoteAccidentalEnum _accidental;
         private NoteName _name;
         private NoteAccidental _accidental;
 
@@ -132,67 +130,6 @@
                 .Select(GetNoteFlat)
                 .ToList();
         }
-
-        ////public static NoteNameEnum GetName(string name)
-        ////{
-        ////    if (string.IsNullOrWhiteSpace(name))
-        ////    {
-        ////        throw new ArgumentNullException(nameof(name));
-        ////    }
-
-        ////    if (name.Length != 1)
-        ////    {
-        ////        throw new ArgumentException("invalid format");
-        ////    }
-
-        ////    switch (name.ToUpper())
-        ////    {
-        ////        case "C":
-        ////            return NoteNameEnum.C;
-        ////        case "D":
-        ////            return NoteNameEnum.D;
-        ////        case "E":
-        ////            return NoteNameEnum.E;
-        ////        case "F":
-        ////            return NoteNameEnum.F;
-        ////        case "G":
-        ////            return NoteNameEnum.G;
-        ////        case "A":
-        ////            return NoteNameEnum.A;
-        ////        case "B":
-        ////            return NoteNameEnum.B;
-        ////        default:
-        ////            throw new ArgumentOutOfRangeException();
-        ////    }
-        ////}
-
-        ////public static NoteAccidentalEnum GetAccidental(string accidental)
-        ////{
-        ////    if (accidental.Length < 0 || accidental.Length > 2)
-        ////    {
-        ////        throw new ArgumentException("invalid format");
-        ////    }
-
-        ////    switch (accidental.ToLowerInvariant())
-        ////    {
-        ////        case "":
-        ////            return NoteAccidentalEnum.Natural;
-        ////        case "b":
-        ////        case "♭":
-        ////            return NoteAccidentalEnum.Flat;
-        ////        case "#":
-        ////        case "♯":
-        ////            return NoteAccidentalEnum.Sharp;
-        ////        case "bb":
-        ////        case "♭♭":
-        ////            return NoteAccidentalEnum.DoubleFlat;
-        ////        case "##":
-        ////        case "♯♯":
-        ////            return NoteAccidentalEnum.DoubleSharp;
-        ////        default:
-        ////            throw new ArgumentOutOfRangeException();
-        ////    }
-        ////}
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="Note" /> class.
@@ -367,9 +304,6 @@
                 OnPropertyChanged();
             }
         }
-
-        ////public NoteNameLatinEnum NameLatin
-        ////    => (NoteNameLatinEnum)(int)Name;
 
         public NoteAccidental Accidental
         {

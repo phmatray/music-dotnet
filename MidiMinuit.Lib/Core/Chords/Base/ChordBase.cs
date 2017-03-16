@@ -46,6 +46,8 @@ namespace MidiMinuit.Lib.Core.Chords
 
         public abstract override string ToString();
 
+        public abstract ChordBase Clone();
+
         ////private readonly List<Note> _notes;
 
         ////public Chord(params Note[] notes)
