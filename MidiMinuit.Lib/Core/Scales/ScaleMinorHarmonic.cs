@@ -5,24 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleMinorHarmonic : ScaleBase
+    public class ScaleMinorHarmonic : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMinorSixth SixthMinor { get; }
-
-        public IntervalMajorSeventh SeventhMajor { get; }
-
         public ScaleMinorHarmonic(Note key)
-            : base(ScaleType.MinorHarmonic)
         {
             // gamme mineure harmonique : T 2M 3m 4j 5j 6m 7M
             if (key == null)
@@ -40,6 +25,23 @@
             SeventhMajor = i.SeventhMajor;
         }
 
+        public override ScaleTypeEnum Quality { get; }
+            = ScaleTypeEnum.MinorHarmonic;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMinorSixth SixthMinor { get; }
+
+        public IntervalMajorSeventh SeventhMajor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@
                 SeventhMajor
             };
 
-        public override string Name
-            => $"Minor Harmonic";
+        public override string Name { get; }
+            = "Minor Harmonic";
+
+        public override string Details { get; }
+            = "T 2M 3m 4j 5j 6m 7M";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

@@ -5,24 +5,9 @@ namespace MidiMinuit.Lib.Core.Scales
     using Intervals;
     using Notes;
 
-    public class ScaleMajor : ScaleBase
+    public class ScaleMajor : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMajorThird ThirdMajor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMajorSixth SixthMajor { get; }
-
-        public IntervalMajorSeventh SeventhMajor { get; }
-
         public ScaleMajor(Note key)
-            : base(ScaleType.Major)
         {
             // gamme majeure : T 2M 3M 4j 5j 6M 7M
             if (key == null)
@@ -40,6 +25,23 @@ namespace MidiMinuit.Lib.Core.Scales
             SeventhMajor = i.SeventhMajor;
         }
 
+        public override ScaleTypeEnum Quality { get; }
+            = ScaleTypeEnum.Major;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMajorThird ThirdMajor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMajorSixth SixthMajor { get; }
+
+        public IntervalMajorSeventh SeventhMajor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@ namespace MidiMinuit.Lib.Core.Scales
                 SeventhMajor
             };
 
-        public override string Name
-            => $"Major";
+        public override string Name { get; }
+            = "Major";
+
+        public override string Details { get; }
+            = "T 2M 3M 4j 5j 6M 7M";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

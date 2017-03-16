@@ -191,8 +191,8 @@
     <Compile Include="Core\Intervals\IntervalAugmentedEleventh.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectEleventh.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
+    <Compile Include="Core\Scales\Base\ScaleFactory.cs" />
     <Compile Include="Core\Scales\Enum\ScaleType.cs" />
-    <Compile Include="Core\Scales\Extensions\ScaleExtensions.cs" />
     <Compile Include="Core\Scales\ScaleBlues.cs" />
     <Compile Include="Core\Scales\ScaleMajor.cs" />
     <Compile Include="Core\Scales\ScaleMinorHarmonic.cs" />
@@ -250,7 +250,7 @@
     <Compile Include="Instruments\GuitarTunings\TuningTuneDownOneStep.cs" />
     <Compile Include="Instruments\GuitarTunings\TuningTuneDownTwoStep.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalQualityEnum.cs" />
-    <Compile Include="Core\Symbols\Enum\UnicodeMusicSymbol.cs" />
+    <Compile Include="Core\Symbols\UnicodeMusicSymbol.cs" />
     <Compile Include="Tmp\BranchIntervals.cs" />
     <Compile Include="Tmp\Class1.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
@@ -263,8 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Notes\Extensions\" />
-    <Folder Include="Core\Symbols\Base\" />
-    <Folder Include="Core\Symbols\Extensions\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Extensions\" />

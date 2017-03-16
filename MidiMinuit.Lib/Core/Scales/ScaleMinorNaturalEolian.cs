@@ -5,24 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleMinorNaturalEolian : ScaleBase
+    public class ScaleMinorNaturalEolian : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMinorSixth SixthMinor { get; }
-
-        public IntervalMinorSeventh SeventhMinor { get; }
-
         public ScaleMinorNaturalEolian(Note key)
-            : base(ScaleType.MinorNaturalEolian)
         {
             // gamme mineure naturelle (mode éolien) : T 2M 3m 4j 5j 6m 7m
             if (key == null)
@@ -40,6 +25,23 @@
             SeventhMinor = i.SeventhMinor;
         }
 
+        public override ScaleTypeEnum Quality { get; }
+            = ScaleTypeEnum.MinorNaturalEolian;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMinorSixth SixthMinor { get; }
+
+        public IntervalMinorSeventh SeventhMinor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@
                 SeventhMinor
             };
 
-        public override string Name
-            => $"Minor Natural Eolian";
+        public override string Name { get; }
+            = "Minor Natural Eolian";
+
+        public override string Details { get; }
+            = "T 2M 3m 4j 5j 6m 7m";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }
