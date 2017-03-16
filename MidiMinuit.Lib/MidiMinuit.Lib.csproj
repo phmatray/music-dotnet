@@ -137,7 +137,7 @@
     <Compile Include="Core\Chords\ChordMinorSixthMajor.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourth.cs" />
     <Compile Include="Core\Chords\ChordSuspendedFourthSeventhMinor.cs" />
-    <Compile Include="Core\Chords\Enum\ChordQualityEnum.cs" />
+    <Compile Include="Core\Chords\Enum\ChordQuality.cs" />
     <Compile Include="Core\Degrees\Base\Degree.cs" />
     <Compile Include="Core\Degrees\Base\DegreeFactory.cs" />
     <Compile Include="Core\Degrees\Degree1.cs" />
@@ -148,7 +148,7 @@
     <Compile Include="Core\Degrees\Degree6.cs" />
     <Compile Include="Core\Degrees\Degree7.cs" />
     <Compile Include="Core\Degrees\Degree8.cs" />
-    <Compile Include="Core\Degrees\Enum\DegreeEnum.cs" />
+    <Compile Include="Core\Degrees\Enum\DegreeNumber.cs" />
     <Compile Include="Core\Intervals\Base\IntervalQualityCompound.cs" />
     <Compile Include="Core\Intervals\Base\IntervalQualitySimple.cs" />
     <Compile Include="Core\Intervals\Extensions\EnumExtensions.cs" />
@@ -186,8 +186,8 @@
     <Compile Include="Core\Intervals\IntervalPerfectUnison.cs" />
     <Compile Include="Core\Notes\Base\Note.cs" />
     <Compile Include="Core\Intervals\Base\IntervalQuality.cs" />
-    <Compile Include="Core\Notes\Enum\NoteAccidental.cs" />
-    <Compile Include="Core\Notes\Enum\NoteName.cs" />
+    <Compile Include="Core\Notes\Base\NoteAccidental.cs" />
+    <Compile Include="Core\Notes\Base\NoteName.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedEleventh.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectEleventh.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
@@ -213,7 +213,7 @@
     <Compile Include="Core\Scales\ScalePentatonicMajor.cs" />
     <Compile Include="Core\Scales\ScalePentatonicMinor.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Instruments\GuitarTunings\Base\Tuning.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.cs" />
     <Compile Include="Instruments\GuitarTunings\Enum\TuningTypeEnum.cs" />
     <Compile Include="Instruments\GuitarTunings\Extensions\EnumExtensions.cs" />
     <Compile Include="Instruments\GuitarTunings\TuningBaritone.cs" />
@@ -262,6 +262,7 @@
     <EmbeddedResource Include="Properties\MidiMinuit.Lib.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\Notes\Enum\" />
     <Folder Include="Core\Notes\Extensions\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />

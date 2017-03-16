@@ -8,7 +8,7 @@
         {
         }
 
-        public abstract DegreeNumberEnum Number { get; }
+        public abstract DegreeNumber Number { get; }
 
         public abstract string DiatonicFunction { get; }
 

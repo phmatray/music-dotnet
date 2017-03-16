@@ -1,6 +1,6 @@
 namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public class TuningDroppedD : Tuning
+    public class TuningDroppedD : GuitarTuning
     {
         public TuningDroppedD()
             : base("D", "A", "D", "G", "B", "E")

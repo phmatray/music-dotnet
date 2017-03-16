@@ -1,6 +1,6 @@
 namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public enum TuningTypeEnum
+    public enum GuitarTuningType
     {
         Standard,
         TuneDownHalfStep,

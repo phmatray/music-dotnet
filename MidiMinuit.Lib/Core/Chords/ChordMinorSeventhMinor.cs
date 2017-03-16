@@ -29,8 +29,8 @@
 
         public IntervalMinorSeventh SeventhMinor { get; }
 
-        public override ChordQualityEnum Quality { get; }
-            = ChordQualityEnum.MinorSeventhMinor;
+        public override ChordQuality Quality { get; }
+            = ChordQuality.MinorSeventhMinor;
 
         public override string Description { get; }
             = "Description not added yet.";

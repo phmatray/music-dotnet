@@ -29,8 +29,8 @@
 
         public IntervalMajorSixth SixthMajor { get; }
 
-        public override ChordQualityEnum Quality { get; }
-            = ChordQualityEnum.MajorSixthMajor;
+        public override ChordQuality Quality { get; }
+            = ChordQuality.MajorSixthMajor;
 
         public override string Description { get; }
             = "Description not added yet.";

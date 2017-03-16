@@ -25,8 +25,8 @@
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override ScaleTypeEnum Quality { get; }
-            = ScaleTypeEnum.MinorHarmonic;
+        public override ScaleType Quality { get; }
+            = ScaleType.MinorHarmonic;
 
         public IntervalPerfectUnison Fondamental { get; }
 

@@ -25,8 +25,8 @@
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override ScaleTypeEnum Quality { get; }
-            = ScaleTypeEnum.ModeLydian;
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeLydian;
 
         public IntervalPerfectUnison Fondamental { get; }
 

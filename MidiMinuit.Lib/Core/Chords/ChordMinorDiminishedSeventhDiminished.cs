@@ -29,8 +29,8 @@
 
         public IntervalDiminishedSeventh SeventhDiminished { get; }
 
-        public override ChordQualityEnum Quality { get; }
-            = ChordQualityEnum.MinorDiminishedSeventhDiminished;
+        public override ChordQuality Quality { get; }
+            = ChordQuality.MinorDiminishedSeventhDiminished;
 
         public override string Description { get; }
             = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";

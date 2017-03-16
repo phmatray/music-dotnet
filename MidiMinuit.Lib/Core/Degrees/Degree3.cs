@@ -4,8 +4,8 @@
 
     public class Degree3 : Degree
     {
-        public override DegreeNumberEnum Number { get; }
-            = DegreeNumberEnum.III;
+        public override DegreeNumber Number { get; }
+            = DegreeNumber.III;
 
         public override string DiatonicFunction { get; }
             = "Mediant";

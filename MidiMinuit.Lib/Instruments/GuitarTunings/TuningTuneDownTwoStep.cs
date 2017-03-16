@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public class TuningTuneDownTwoStep : Tuning
+    public class TuningTuneDownTwoStep : GuitarTuning
     {
         public TuningTuneDownTwoStep()
             : base("C", "F", "B♭", "E♭", "G", "C")

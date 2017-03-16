@@ -26,8 +26,8 @@
 
         public IntervalPerfectFifth FifthPerfect { get; }
 
-        public override ChordQualityEnum Quality { get; }
-            = ChordQualityEnum.Major;
+        public override ChordQuality Quality { get; }
+            = ChordQuality.Major;
 
         public override string Description { get; }
             = "Description not added yet.";

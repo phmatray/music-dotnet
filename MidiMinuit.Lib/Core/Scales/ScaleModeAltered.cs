@@ -25,8 +25,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ScaleTypeEnum Quality { get; }
-            = ScaleTypeEnum.ModeAltered;
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeAltered;
 
         public IntervalPerfectUnison Fondamental { get; }
 

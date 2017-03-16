@@ -1,6 +1,6 @@
 namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public class TuningOpenEm : Tuning
+    public class TuningOpenEm : GuitarTuning
     {
         public TuningOpenEm()
             : base("E", "B", "E", "G", "B", "E")

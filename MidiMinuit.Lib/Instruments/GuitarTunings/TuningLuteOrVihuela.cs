@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public class TuningLuteOrVihuela : Tuning
+    public class TuningLuteOrVihuela : GuitarTuning
     {
         public TuningLuteOrVihuela()
             : base("E", "A", "D", "G♭", "B", "E")

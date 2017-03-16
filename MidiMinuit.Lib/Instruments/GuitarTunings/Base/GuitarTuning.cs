@@ -7,19 +7,19 @@
     using System.Text;
     using Core.Notes;
 
-    public abstract class Tuning
+    public abstract class GuitarTuning
     {
-        protected Tuning(List<Note> tuning)
+        protected GuitarTuning(List<Note> tuning)
         {
             Notes = new ReadOnlyCollection<Note>(tuning);
         }
 
-        protected Tuning(params Note[] tuning)
+        protected GuitarTuning(params Note[] tuning)
         {
             Notes = new ReadOnlyCollection<Note>(tuning);
         }
 
-        protected Tuning(params string[] tuning)
+        protected GuitarTuning(params string[] tuning)
         {
             var notes = tuning
                 .Select((n, i) => new Note(tuning[i]))
@@ -30,75 +30,75 @@
 
         public ReadOnlyCollection<Note> Notes { get; }
 
-        public static Tuning GetTuning(TuningTypeEnum tuningType = TuningTypeEnum.Standard)
+        public static GuitarTuning GetTuning(GuitarTuningType tuningType = GuitarTuningType.Standard)
         {
             switch (tuningType)
             {
-                case TuningTypeEnum.Standard:
+                case GuitarTuningType.Standard:
                     return new TuningStandard();
-                case TuningTypeEnum.TuneDownHalfStep:
+                case GuitarTuningType.TuneDownHalfStep:
                     return new TuningTuneDownHalfStep();
-                case TuningTypeEnum.TuneDownOneStep:
+                case GuitarTuningType.TuneDownOneStep:
                     return new TuningTuneDownOneStep();
-                case TuningTypeEnum.TuneDownTwoStep:
+                case GuitarTuningType.TuneDownTwoStep:
                     return new TuningTuneDownTwoStep();
-                case TuningTypeEnum.DroppedD:
+                case GuitarTuningType.DroppedD:
                     return new TuningDroppedD();
-                case TuningTypeEnum.DroppedDVariant:
+                case GuitarTuningType.DroppedDVariant:
                     return new TuningDroppedDVariant();
-                case TuningTypeEnum.DoubleDroppedD:
+                case GuitarTuningType.DoubleDroppedD:
                     return new TuningDoubleDroppedD();
-                case TuningTypeEnum.DroppedC:
+                case GuitarTuningType.DroppedC:
                     return new TuningDroppedC();
-                case TuningTypeEnum.DroppedE:
+                case GuitarTuningType.DroppedE:
                     return new TuningDroppedE();
-                case TuningTypeEnum.DroppedB:
+                case GuitarTuningType.DroppedB:
                     return new TuningDroppedB();
-                case TuningTypeEnum.Baritone:
+                case GuitarTuningType.Baritone:
                     return new TuningBaritone();
-                case TuningTypeEnum.OpenC:
+                case GuitarTuningType.OpenC:
                     return new TuningOpenC();
-                case TuningTypeEnum.OpenCm:
+                case GuitarTuningType.OpenCm:
                     return new TuningOpenCm();
-                case TuningTypeEnum.OpenC6:
+                case GuitarTuningType.OpenC6:
                     return new TuningOpenC6();
-                case TuningTypeEnum.OpenCM7:
+                case GuitarTuningType.OpenCM7:
                     return new TuningOpenCM7();
-                case TuningTypeEnum.OpenD:
+                case GuitarTuningType.OpenD:
                     return new TuningOpenD();
-                case TuningTypeEnum.OpenDm:
+                case GuitarTuningType.OpenDm:
                     return new TuningOpenDm();
-                case TuningTypeEnum.OpenD5:
+                case GuitarTuningType.OpenD5:
                     return new TuningOpenD5();
-                case TuningTypeEnum.OpenD6:
+                case GuitarTuningType.OpenD6:
                     return new TuningOpenD6();
-                case TuningTypeEnum.OpenDsus4:
+                case GuitarTuningType.OpenDsus4:
                     return new TuningOpenDsus4();
-                case TuningTypeEnum.OpenE:
+                case GuitarTuningType.OpenE:
                     return new TuningOpenE();
-                case TuningTypeEnum.OpenEm:
+                case GuitarTuningType.OpenEm:
                     return new TuningOpenEm();
-                case TuningTypeEnum.OpenEsus11:
+                case GuitarTuningType.OpenEsus11:
                     return new TuningOpenEsus11();
-                case TuningTypeEnum.OpenF:
+                case GuitarTuningType.OpenF:
                     return new TuningOpenF();
-                case TuningTypeEnum.OpenG:
+                case GuitarTuningType.OpenG:
                     return new TuningOpenG();
-                case TuningTypeEnum.OpenGm:
+                case GuitarTuningType.OpenGm:
                     return new TuningOpenGm();
-                case TuningTypeEnum.OpenGsus4:
+                case GuitarTuningType.OpenGsus4:
                     return new TuningOpenGsus4();
-                case TuningTypeEnum.OpenG6:
+                case GuitarTuningType.OpenG6:
                     return new TuningOpenG6();
-                case TuningTypeEnum.OpenA:
+                case GuitarTuningType.OpenA:
                     return new TuningOpenA();
-                case TuningTypeEnum.OpenAm:
+                case GuitarTuningType.OpenAm:
                     return new TuningOpenAm();
-                case TuningTypeEnum.DobroOpenG:
+                case GuitarTuningType.DobroOpenG:
                     return new TuningDobroOpenG();
-                case TuningTypeEnum.Nashville:
+                case GuitarTuningType.Nashville:
                     return new TuningNashville();
-                case TuningTypeEnum.LuteOrVihuela:
+                case GuitarTuningType.LuteOrVihuela:
                     return new TuningLuteOrVihuela();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(tuningType));

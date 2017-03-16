@@ -4,25 +4,25 @@
 
     public class DegreeFactory
     {
-        public virtual Degree CreateDegree(DegreeNumberEnum degree)
+        public virtual Degree CreateDegree(DegreeNumber degree)
         {
             switch (degree)
             {
-                case DegreeNumberEnum.I:
+                case DegreeNumber.I:
                     return new Degree1();
-                case DegreeNumberEnum.II:
+                case DegreeNumber.II:
                     return new Degree2();
-                case DegreeNumberEnum.III:
+                case DegreeNumber.III:
                     return new Degree3();
-                case DegreeNumberEnum.IV:
+                case DegreeNumber.IV:
                     return new Degree4();
-                case DegreeNumberEnum.V:
+                case DegreeNumber.V:
                     return new Degree5();
-                case DegreeNumberEnum.VI:
+                case DegreeNumber.VI:
                     return new Degree6();
-                case DegreeNumberEnum.VII:
+                case DegreeNumber.VII:
                     return new Degree7();
-                case DegreeNumberEnum.VIII:
+                case DegreeNumber.VIII:
                     return new Degree8();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(degree));

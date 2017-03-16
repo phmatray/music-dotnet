@@ -39,7 +39,7 @@ namespace MidiMinuit.Lib.Core.Scales
         /// <summary>
         /// Gets the type of the scale.
         /// </summary>
-        public abstract ScaleTypeEnum Quality { get; }
+        public abstract ScaleType Quality { get; }
 
         /// <summary>
         /// Gets notes of the scale.

@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public class TuningTuneDownHalfStep : Tuning
+    public class TuningTuneDownHalfStep : GuitarTuning
     {
         public TuningTuneDownHalfStep()
             : base("E♭", "A♭", "D♭", "G♭", "B♭", "E♭")

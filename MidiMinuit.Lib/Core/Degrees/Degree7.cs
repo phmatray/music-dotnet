@@ -4,8 +4,8 @@
 
     public class Degree7 : Degree
     {
-        public override DegreeNumberEnum Number { get; }
-            = DegreeNumberEnum.VII;
+        public override DegreeNumber Number { get; }
+            = DegreeNumber.VII;
 
         public override string DiatonicFunction { get; }
             = "Leading tone(in Major scale) / Subtonic (in Natural Minor Scale)";

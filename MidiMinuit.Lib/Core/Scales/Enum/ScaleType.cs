@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Core.Scales
 {
-    public enum ScaleTypeEnum
+    public enum ScaleType
     {
         Major,
         MinorMelodic,

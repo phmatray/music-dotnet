@@ -5,47 +5,47 @@
 
     public class ScaleFactory
     {
-        public virtual Scale CreateScale(ScaleTypeEnum scaleType, Note key)
+        public virtual Scale CreateScale(ScaleType scaleType, Note key)
         {
             switch (scaleType)
             {
-                case ScaleTypeEnum.Major:
+                case ScaleType.Major:
                     return new ScaleMajor(key);
-                case ScaleTypeEnum.MinorMelodic:
+                case ScaleType.MinorMelodic:
                     return new ScaleMinorMelodic(key);
-                case ScaleTypeEnum.MinorHarmonic:
+                case ScaleType.MinorHarmonic:
                     return new ScaleMinorHarmonic(key);
-                case ScaleTypeEnum.MinorNaturalEolian:
+                case ScaleType.MinorNaturalEolian:
                     return new ScaleMinorNaturalEolian(key);
-                case ScaleTypeEnum.ModeDorian:
+                case ScaleType.ModeDorian:
                     return new ScaleModeDorian(key);
-                case ScaleTypeEnum.ModeMixolydian:
+                case ScaleType.ModeMixolydian:
                     return new ScaleModeMixolydian(key);
-                case ScaleTypeEnum.ModeLydian:
+                case ScaleType.ModeLydian:
                     return new ScaleModeLydian(key);
-                case ScaleTypeEnum.ModeLydianB7:
+                case ScaleType.ModeLydianB7:
                     return new ScaleModeLydianB7(key);
-                case ScaleTypeEnum.PentatonicMajor:
+                case ScaleType.PentatonicMajor:
                     return new ScalePentatonicMajor(key);
-                case ScaleTypeEnum.PentatonicMinor:
+                case ScaleType.PentatonicMinor:
                     return new ScalePentatonicMinor(key);
-                case ScaleTypeEnum.Blues:
+                case ScaleType.Blues:
                     return new ScaleBlues(key);
-                case ScaleTypeEnum.ModePhrygian:
+                case ScaleType.ModePhrygian:
                     return new ScaleModePhrygian(key);
-                case ScaleTypeEnum.ModeLocrian:
+                case ScaleType.ModeLocrian:
                     return new ScaleModeLocrian(key);
-                case ScaleTypeEnum.ModeLocrianBec2:
+                case ScaleType.ModeLocrianBec2:
                     return new ScaleModeLocrianBec2(key);
-                case ScaleTypeEnum.ModeMixolydianB2B6:
+                case ScaleType.ModeMixolydianB2B6:
                     return new ScaleModeMixolydianB2B6(key);
-                case ScaleTypeEnum.ModeAltered:
+                case ScaleType.ModeAltered:
                     return new ScaleModeAltered(key);
-                case ScaleTypeEnum.ModeLydianAdded:
+                case ScaleType.ModeLydianAdded:
                     return new ScaleModeLydianAdded(key);
-                case ScaleTypeEnum.ModeDiminishedReverse:
+                case ScaleType.ModeDiminishedReverse:
                     return new ScaleModeDiminishedReverse(key);
-                case ScaleTypeEnum.ModeDiminished:
+                case ScaleType.ModeDiminished:
                     return new ScaleModeDiminished(key);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(scaleType), scaleType, null);

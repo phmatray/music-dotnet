@@ -25,8 +25,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ScaleTypeEnum Quality { get; }
-            = ScaleTypeEnum.MinorNaturalEolian;
+        public override ScaleType Quality { get; }
+            = ScaleType.MinorNaturalEolian;
 
         public IntervalPerfectUnison Fondamental { get; }
 

@@ -4,8 +4,8 @@
 
     public class Degree6 : Degree
     {
-        public override DegreeNumberEnum Number { get; }
-            = DegreeNumberEnum.VI;
+        public override DegreeNumber Number { get; }
+            = DegreeNumber.VI;
 
         public override string DiatonicFunction { get; }
             = "Submediant";

@@ -26,7 +26,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Tuning"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty TuningProperty =
-            DependencyProperty.Register(nameof(Tuning), typeof(Tuning), typeof(GuitarChord), new PropertyMetadata(new TuningStandard(), OnTuningChanged));
+            DependencyProperty.Register(nameof(Tuning), typeof(GuitarTuning), typeof(GuitarChord), new PropertyMetadata(new TuningStandard(), OnTuningChanged));
 
         /// <summary>
         /// Identifies the <see cref="TuningNote1"/> dependency property.
@@ -68,7 +68,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Chord"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ChordProperty =
-            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(ChordQualityEnum.Major.GetChord(new Note(NoteNameEnum.C))));
+            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(ChordQuality.Major.GetChord(new Note(NoteNameEnum.C))));
 
 
 
@@ -104,9 +104,9 @@ namespace MidiMinuit.Controls
         /// <summary>
         /// Gets or sets the tuning used for this diagram
         /// </summary>
-        public Tuning Tuning
+        public GuitarTuning Tuning
         {
-            get { return (Tuning)GetValue(TuningProperty); }
+            get { return (GuitarTuning)GetValue(TuningProperty); }
             set { SetValue(TuningProperty, value); }
         }
 

@@ -23,8 +23,8 @@
             SixthMajor = i.SixthMajor;
         }
 
-        public override ScaleTypeEnum Quality { get; }
-            = ScaleTypeEnum.PentatonicMajor;
+        public override ScaleType Quality { get; }
+            = ScaleType.PentatonicMajor;
 
         public IntervalPerfectUnison Fondamental { get; }
 

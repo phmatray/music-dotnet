@@ -1,6 +1,6 @@
 namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
-    public class TuningNashville : Tuning
+    public class TuningNashville : GuitarTuning
     {
         public TuningNashville()
             : base("E", "A", "D", "G", "B", "E")

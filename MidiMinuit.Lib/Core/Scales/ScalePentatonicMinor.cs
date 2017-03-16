@@ -23,8 +23,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ScaleTypeEnum Quality { get; }
-            = ScaleTypeEnum.PentatonicMinor;
+        public override ScaleType Quality { get; }
+            = ScaleType.PentatonicMinor;
 
         public IntervalPerfectUnison Fondamental { get; }
 
