@@ -26,7 +26,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Tuning"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty TuningProperty =
-            DependencyProperty.Register(nameof(Tuning), typeof(GuitarTuning), typeof(GuitarChord), new PropertyMetadata(new TuningStandard(), OnTuningChanged));
+            DependencyProperty.Register(nameof(Tuning), typeof(GuitarTuning), typeof(GuitarChord), new PropertyMetadata(new GuitarTuningStandard(), OnTuningChanged));
 
         /// <summary>
         /// Identifies the <see cref="TuningNote1"/> dependency property.

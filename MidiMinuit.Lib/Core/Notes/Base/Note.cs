@@ -131,6 +131,15 @@
                 .ToList();
         }
 
+        public static List<Note> GetNotes(params string[] tuning)
+        {
+            var notes = tuning
+                .Select((n, i) => new Note(tuning[i]))
+                .ToList();
+
+            return new List<Note>(notes);
+        }
+
         /// <summary>
         ///     Initializes a new instance of the <see cref="Note" /> class.
         /// </summary>
