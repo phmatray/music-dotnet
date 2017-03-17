@@ -36,6 +36,6 @@
         IntervalMinorNinth,
         IntervalMinorThirteenth,
         IntervalAugmentedNinth,
-        IntervalAugmentedEleventh,
+        IntervalAugmentedEleventh
     }
 }

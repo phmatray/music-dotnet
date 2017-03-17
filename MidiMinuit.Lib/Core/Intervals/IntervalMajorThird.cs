@@ -1,7 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
-    using Notes;
 
     public class IntervalMajorThird : IntervalQualitySimple
     {

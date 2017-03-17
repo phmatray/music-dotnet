@@ -1,12 +1,12 @@
-﻿using MidiMinuit.Lib.Core.Notes;
-
-namespace MidiMinuit.Lib.Tmp
+﻿namespace MidiMinuit.Lib.Tmp
 {
+    using Core.Notes;
+
     public class IntervalTmp
     {
         ////public static IntervalTmp CreateInterval(Note note1, Note note2)
         ////{
-            
+
         ////}
 
 

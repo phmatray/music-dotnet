@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings.Base
+﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
     using System;
 
@@ -10,70 +10,82 @@
             {
                 case GuitarTuningType.Standard:
                     return new GuitarTuningStandard();
-                case GuitarTuningType.TuneDownHalfStep:
-                    return new GuitarTuningTuneDownHalfStep();
-                case GuitarTuningType.TuneDownOneStep:
-                    return new GuitarTuningTuneDownOneStep();
-                case GuitarTuningType.TuneDownTwoStep:
-                    return new GuitarTuningTuneDownTwoStep();
-                case GuitarTuningType.DroppedD:
-                    return new GuitarTuningDroppedD();
-                case GuitarTuningType.DroppedDVariant:
-                    return new GuitarTuningDroppedDVariant();
-                case GuitarTuningType.DoubleDroppedD:
-                    return new GuitarTuningDoubleDroppedD();
-                case GuitarTuningType.DroppedC:
-                    return new GuitarTuningDroppedC();
-                case GuitarTuningType.DroppedE:
-                    return new GuitarTuningDroppedE();
-                case GuitarTuningType.DroppedB:
-                    return new GuitarTuningDroppedB();
-                case GuitarTuningType.Baritone:
-                    return new GuitarTuningBaritone();
                 case GuitarTuningType.OpenC:
                     return new GuitarTuningOpenC();
-                case GuitarTuningType.OpenCm:
-                    return new GuitarTuningOpenCm();
-                case GuitarTuningType.OpenC6:
-                    return new GuitarTuningOpenC6();
-                case GuitarTuningType.OpenCM7:
-                    return new GuitarTuningOpenCM7();
                 case GuitarTuningType.OpenD:
                     return new GuitarTuningOpenD();
-                case GuitarTuningType.OpenDm:
-                    return new GuitarTuningOpenDm();
-                case GuitarTuningType.OpenD5:
-                    return new GuitarTuningOpenD5();
-                case GuitarTuningType.OpenD6:
-                    return new GuitarTuningOpenD6();
-                case GuitarTuningType.OpenDsus4:
-                    return new GuitarTuningOpenDsus4();
-                case GuitarTuningType.OpenE:
-                    return new GuitarTuningOpenE();
-                case GuitarTuningType.OpenEm:
-                    return new GuitarTuningOpenEm();
-                case GuitarTuningType.OpenEsus11:
-                    return new GuitarTuningOpenEsus11();
-                case GuitarTuningType.OpenF:
-                    return new GuitarTuningOpenF();
+                case GuitarTuningType.ModalD:
+                    return new GuitarTuningModalD();
+                case GuitarTuningType.OpenDMinor:
+                    return new GuitarTuningOpenDMinor();
                 case GuitarTuningType.OpenG:
                     return new GuitarTuningOpenG();
-                case GuitarTuningType.OpenGm:
-                    return new GuitarTuningOpenGm();
-                case GuitarTuningType.OpenGsus4:
-                    return new GuitarTuningOpenGsus4();
-                case GuitarTuningType.OpenG6:
-                    return new GuitarTuningOpenG6();
+                case GuitarTuningType.ModalG:
+                    return new GuitarTuningModalG();
+                case GuitarTuningType.OpenGMinor:
+                    return new GuitarTuningOpenGMinor();
                 case GuitarTuningType.OpenA:
                     return new GuitarTuningOpenA();
-                case GuitarTuningType.OpenAm:
-                    return new GuitarTuningOpenAm();
-                case GuitarTuningType.DobroOpenG:
-                    return new GuitarTuningDobroOpenG();
-                case GuitarTuningType.Nashville:
-                    return new GuitarTuningNashville();
-                case GuitarTuningType.LuteOrVihuela:
-                    return new GuitarTuningLuteOrVihuela();
+                case GuitarTuningType.Balalaika:
+                    return new GuitarTuningBalalaika();
+                case GuitarTuningType.Charango:
+                    return new GuitarTuningCharango();
+                case GuitarTuningType.Cittern1:
+                    return new GuitarTuningCittern1();
+                case GuitarTuningType.Cittern2:
+                    return new GuitarTuningCittern2();
+                case GuitarTuningType.Dobro:
+                    return new GuitarTuningDobro();
+                case GuitarTuningType.Lefty:
+                    return new GuitarTuningLefty();
+                case GuitarTuningType.Overtone:
+                    return new GuitarTuningOvertone();
+                case GuitarTuningType.Pentatonic:
+                    return new GuitarTuningPentatonic();
+                case GuitarTuningType.MinorThird:
+                    return new GuitarTuningMinorThird();
+                case GuitarTuningType.MajorThird:
+                    return new GuitarTuningMajorThird();
+                case GuitarTuningType.AllFourths:
+                    return new GuitarTuningAllFourths();
+                case GuitarTuningType.AugFourths:
+                    return new GuitarTuningAugFourths();
+                case GuitarTuningType.Mandoguitar:
+                    return new GuitarTuningMandoguitar();
+                case GuitarTuningType.MinorSixth:
+                    return new GuitarTuningMinorSixth();
+                case GuitarTuningType.MajorSixth:
+                    return new GuitarTuningMajorSixth();
+                case GuitarTuningType.Admiral:
+                    return new GuitarTuningAdmiral();
+                case GuitarTuningType.Buzzard:
+                    return new GuitarTuningBuzzard();
+                case GuitarTuningType.DropD:
+                    return new GuitarTuningDropD();
+                case GuitarTuningType.Face:
+                    return new GuitarTuningFace();
+                case GuitarTuningType.FourAndTwenty:
+                    return new GuitarTuningFourAndTwenty();
+                case GuitarTuningType.HotType:
+                    return new GuitarTuningHotType();
+                case GuitarTuningType.Layover:
+                    return new GuitarTuningLayover();
+                case GuitarTuningType.MagicFarmer:
+                    return new GuitarTuningMagicFarmer();
+                case GuitarTuningType.Pelican:
+                    return new GuitarTuningPelican();
+                case GuitarTuningType.Processional:
+                    return new GuitarTuningProcessional();
+                case GuitarTuningType.SlowMotion:
+                    return new GuitarTuningSlowMotion();
+                case GuitarTuningType.Spirit:
+                    return new GuitarTuningSpirit();
+                case GuitarTuningType.Tarboulton:
+                    return new GuitarTuningTarboulton();
+                case GuitarTuningType.Toulouse:
+                    return new GuitarTuningToulouse();
+                case GuitarTuningType.Triqueen:
+                    return new GuitarTuningTriqueen();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(guitarTuningType), guitarTuningType, null);
             }

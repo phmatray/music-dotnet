@@ -51,7 +51,7 @@ namespace MidiMinuit.Lib.Core.Scales
                 FourthPerfect,
                 FifthPerfect,
                 SixthMajor,
-                SeventhMajor,
+                SeventhMajor
             };
 
         public override string Name { get; }

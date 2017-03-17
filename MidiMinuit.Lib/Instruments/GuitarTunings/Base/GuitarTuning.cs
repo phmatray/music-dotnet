@@ -1,26 +1,52 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Core.Notes;
-    using MidiMinuit.Lib.Instruments.GuitarTunings.Enum;
 
     public abstract class GuitarTuning
     {
         /// <summary>
-        /// Gets notes of the Guitar Tuning.
+        ///     Gets the tuning type of the Guitar Tuning.
         /// </summary>
-        public abstract List<Note> Notes { get; }
+        public abstract GuitarTuningType TuningType { get; }
 
         /// <summary>
-        /// Gets name of the Guitar Tuning.
+        ///     Gets the tuning category of the Guitar Tuning.
+        /// </summary>
+        public abstract GuitarTuningCategory Category { get; }
+
+        /// <summary>
+        ///     Gets name of the Guitar Tuning.
         /// </summary>
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets category of the Guitar Tuning.
+        ///     Gets tuning of the Guitar Tuning.
         /// </summary>
-        public abstract GuitarTuningCategory Category { get; }
+        public abstract string Tuning { get; }
+
+        /// <summary>
+        ///     Gets description of the Guitar Tuning.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
+        ///     Gets strings of the Guitar Tuning.
+        /// </summary>
+        public abstract List<GuitarString> Strings { get; }
+
+        /// <summary>
+        ///     Gets notes of the Guitar Tuning.
+        /// </summary>
+        public List<Note> Notes
+            => Strings.Select(x => x.Note).ToList();
+
+        public string Intervals
+        {
+            get { throw new NotImplementedException(); }
+        }
 
         public override string ToString()
         {
@@ -30,5 +56,7 @@
 
             return $"{Name} ({notes})";
         }
+
+        public abstract GuitarTuning Clone();
     }
 }

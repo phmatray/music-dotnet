@@ -6,32 +6,32 @@
     public abstract class Chord
     {
         /// <summary>
-        /// Gets the quality of the chord.
+        ///     Gets the quality of the chord.
         /// </summary>
         public abstract ChordQuality Quality { get; }
 
         /// <summary>
-        /// Gets notes of the chord.
+        ///     Gets notes of the chord.
         /// </summary>
         public abstract List<IntervalQuality> Notes { get; }
 
         /// <summary>
-        /// Gets name of the chord.
+        ///     Gets name of the chord.
         /// </summary>
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets details of the chord.
+        ///     Gets details of the chord.
         /// </summary>
         public abstract string Details { get; }
 
         /// <summary>
-        /// Gets description of the chord.
+        ///     Gets description of the chord.
         /// </summary>
         public abstract string Description { get; }
 
         /// <summary>
-        /// Gets nombre de sons constituant l'accord
+        ///     Gets nombre de sons constituant l'accord
         /// </summary>
         public int ToneCount
             => Notes.Count;
@@ -40,16 +40,16 @@
 
         public abstract Chord Clone();
 
-        ////private readonly List<Note> _notes;
+        ////    _notes = notes.ToList();
+        ////        throw new ArgumentException("notes cannot be empty", "notes");
+        ////    if (notes.Length == 0)
+        ////        throw new ArgumentNullException("notes");
+        ////    if (notes == null)
+        ////{
 
         ////public Chord(params Note[] notes)
-        ////{
-        ////    if (notes == null)
-        ////        throw new ArgumentNullException("notes");
-        ////    if (notes.Length == 0)
-        ////        throw new ArgumentException("notes cannot be empty", "notes");
 
-        ////    _notes = notes.ToList();
+        ////private readonly List<Note> _notes;
         ////}
 
         ////public Chord(string symbol)

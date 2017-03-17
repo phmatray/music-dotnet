@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
+    using System;
+
     public sealed class NoteAccidental
     {
         private NoteAccidental(int value, int order, string name, string symbol)
@@ -13,34 +13,42 @@ namespace MidiMinuit.Lib.Core.Notes
         }
 
         /// <summary>
-        /// Gets Natural
+        ///     Gets Natural
         /// </summary>
         public static NoteAccidental Natural { get; }
             = new NoteAccidental(0, 0, nameof(Natural), string.Empty);
 
         /// <summary>
-        /// Gets bémol
+        ///     Gets bémol
         /// </summary>
         public static NoteAccidental Flat { get; }
             = new NoteAccidental(-1, 1, nameof(Flat), "♭");
 
         /// <summary>
-        /// Gets dièse
+        ///     Gets dièse
         /// </summary>
         public static NoteAccidental Sharp { get; }
             = new NoteAccidental(1, 2, nameof(Sharp), "♯");
 
         /// <summary>
-        /// Gets double bémol
+        ///     Gets double bémol
         /// </summary>
         public static NoteAccidental DoubleFlat { get; }
             = new NoteAccidental(-2, 3, nameof(DoubleFlat), "♭♭");
 
         /// <summary>
-        /// Gets double dièse
+        ///     Gets double dièse
         /// </summary>
         public static NoteAccidental DoubleSharp { get; }
             = new NoteAccidental(2, 4, nameof(DoubleSharp), "♯♯");
+
+        public int Value { get; }
+
+        public int Order { get; }
+
+        public string Name { get; }
+
+        public string Symbol { get; }
 
         public static NoteAccidental GetAccidental(string accidental)
         {
@@ -69,14 +77,6 @@ namespace MidiMinuit.Lib.Core.Notes
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        public int Value { get; }
-
-        public int Order { get; }
-
-        public string Name { get; }
-
-        public string Symbol { get; }
 
         public override string ToString()
             => Symbol;

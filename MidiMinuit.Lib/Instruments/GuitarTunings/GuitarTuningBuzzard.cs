@@ -1,0 +1,37 @@
+﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
+{
+    using System.Collections.Generic;
+
+    public class GuitarTuningBuzzard
+        : GuitarTuning
+    {
+        public override GuitarTuningType TuningType { get; }
+            = GuitarTuningType.Buzzard;
+
+        public override GuitarTuningCategory Category { get; }
+            = GuitarTuningCategory.Special;
+
+        public override string Name { get; }
+            = "The Buzzard Tuning";
+
+        public override string Tuning { get; }
+            = "C F C G A# F";
+
+        public override string Description { get; }
+            = "";
+
+        public override List<GuitarString> Strings { get; }
+            = new List<GuitarString>
+            {
+                new GuitarString(6, 48, -4, 5),
+                new GuitarString(5, 53, -4, 7),
+                new GuitarString(4, 60, -2, 7),
+                new GuitarString(3, 67, 0, 3),
+                new GuitarString(2, 70, -1, 7),
+                new GuitarString(1, 77, 1)
+            };
+
+        public override GuitarTuning Clone()
+            => MemberwiseClone() as GuitarTuning;
+    }
+}

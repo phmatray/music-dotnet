@@ -143,11 +143,11 @@ namespace MidiMinuit.Lib.Tools
         /// <returns>The shuffled collection (yield return).</returns>
         private static IEnumerable<T> ShuffleIterator<T>(this IEnumerable<T> source, Random randomGenerator)
         {
-            List<T> buffer = source.ToList();
+            var buffer = source.ToList();
 
-            for (int i = 0; i < buffer.Count; i++)
+            for (var i = 0; i < buffer.Count; i++)
             {
-                int j = randomGenerator.Next(i, buffer.Count);
+                var j = randomGenerator.Next(i, buffer.Count);
                 yield return buffer[j];
 
                 buffer[j] = buffer[i];

@@ -15,12 +15,13 @@
     public enum IntervalType
     {
         /// <summary>
-        /// L'intervalle mélodique fait entendre les deux sons successivement.
+        ///     L'intervalle mélodique fait entendre les deux sons successivement.
         /// </summary>
         Melodic,
 
         /// <summary>
-        /// L'intervalle harmonique fait entendre les deux sons simultanément. Il se lit toujours de façon ascendante, c'est-à-dire de bas en haut.
+        ///     L'intervalle harmonique fait entendre les deux sons simultanément. Il se lit toujours de façon ascendante,
+        ///     c'est-à-dire de bas en haut.
         /// </summary>
         Harmonic
     }
@@ -28,14 +29,13 @@
     public enum MelodicIntervalType
     {
         /// <summary>
-        /// L'intervalle mélodique ascendant est celui dont la note inférieure est écrite la première.
+        ///     L'intervalle mélodique ascendant est celui dont la note inférieure est écrite la première.
         /// </summary>
         Ascending,
 
         /// <summary>
-        /// L'intervalle mélodique descendant est celui dont la note supérieure est écrite la première.
+        ///     L'intervalle mélodique descendant est celui dont la note supérieure est écrite la première.
         /// </summary>
         Descending
     }
-
 }

@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace MidiMinuit.Lib.Tools
+﻿namespace MidiMinuit.Lib.Tools
 {
+    using System;
+
     public class MusicMathFormulaHelpers
     {
         /*

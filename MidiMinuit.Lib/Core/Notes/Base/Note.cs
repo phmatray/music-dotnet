@@ -5,7 +5,6 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using System.Text;
     using System.Text.RegularExpressions;
     using Intervals;
 
@@ -16,8 +15,166 @@
     /// </summary>
     public class Note : IEquatable<Note>, INotifyPropertyChanged
     {
-        private NoteName _name;
         private NoteAccidental _accidental;
+        private NoteName _name;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="name">The name of the note.</param>
+        /// <param name="accidental">The accidental of the note.</param>
+        public Note(NoteName name, NoteAccidental accidental = null)
+        {
+            Name = name;
+            Accidental = accidental ?? NoteAccidental.Natural;
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="note">
+        ///     The name of the note with its accidental.
+        ///     ex: "C#" or "Db" or E...
+        /// </param>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
+        public Note(string note)
+        {
+            if (string.IsNullOrWhiteSpace(note))
+            {
+                throw new ArgumentNullException(nameof(note));
+            }
+
+            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
+            {
+                throw new ArgumentException("incorrect format");
+            }
+
+            Name = NoteName.GetName(note[0].ToString());
+            Accidental = NoteAccidental.GetAccidental(note.Substring(1, note.Length - 1));
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="midiValue">
+        ///     The midi value of the note.
+        /// </param>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
+        public Note(int midiValue)
+        {
+            if (midiValue < 0 || midiValue > 127)
+            {
+                throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+
+            switch (midiValue % 12)
+            {
+                case 0:
+                    Name = NoteName.C;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                case 1:
+                    Name = NoteName.C;
+                    Accidental = NoteAccidental.Sharp;
+                    break;
+                case 2:
+                    Name = NoteName.D;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                case 3:
+                    Name = NoteName.D;
+                    Accidental = NoteAccidental.Sharp;
+                    break;
+                case 4:
+                    Name = NoteName.E;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                case 5:
+                    Name = NoteName.F;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                case 6:
+                    Name = NoteName.F;
+                    Accidental = NoteAccidental.Sharp;
+                    break;
+                case 7:
+                    Name = NoteName.G;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                case 8:
+                    Name = NoteName.G;
+                    Accidental = NoteAccidental.Sharp;
+                    break;
+                case 9:
+                    Name = NoteName.A;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                case 10:
+                    Name = NoteName.A;
+                    Accidental = NoteAccidental.Sharp;
+                    break;
+                case 11:
+                    Name = NoteName.B;
+                    Accidental = NoteAccidental.Natural;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(midiValue));
+            }
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="note">The note.</param>
+        public Note(Note note)
+            : this(note.Name, note.Accidental)
+        {
+        }
+
+        public NoteName Name
+        {
+            get { return _name; }
+
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public NoteAccidental Accidental
+        {
+            get { return _accidental; }
+
+            set
+            {
+                _accidental = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Interval Interval => GetInterval();
+
+        public int Pitch => Name.Value + Accidental.Value;
+
+        public bool Equals(Note other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return Name == other.Name && Accidental == other.Accidental;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public static Note operator +(Note note, int semitone)
             => note.Add(semitone);
@@ -140,197 +297,67 @@
             return new List<Note>(notes);
         }
 
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="name">The name of the note.</param>
-        /// <param name="accidental">The accidental of the note.</param>
-        public Note(NoteName name, NoteAccidental accidental = null)
-        {
-            Name = name;
-            Accidental = accidental ?? NoteAccidental.Natural;
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="note">
-        ///     The name of the note with its accidental.
-        ///     ex: "C#" or "Db" or E...
-        /// </param>
-        /// <exception cref="ArgumentNullException">note</exception>
-        /// <exception cref="ArgumentException">incorrect format</exception>
-        public Note(string note)
-        {
-            if (string.IsNullOrWhiteSpace(note))
-            {
-                throw new ArgumentNullException(nameof(note));
-            }
-
-            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
-            {
-                throw new ArgumentException("incorrect format");
-            }
-
-            Name = NoteName.GetName(note[0].ToString());
-            Accidental = NoteAccidental.GetAccidental(note.Substring(1, note.Length - 1));
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="midiValue">
-        ///     The midi value of the note.
-        /// </param>
-        /// <exception cref="ArgumentNullException">note</exception>
-        /// <exception cref="ArgumentException">incorrect format</exception>
-        public Note(int midiValue)
-        {
-            if (midiValue < 0 || midiValue > 127)
-            {
-                throw new ArgumentOutOfRangeException(nameof(midiValue));
-            }
-
-            switch (midiValue % 12)
-            {
-                case 0:
-                    Name = NoteName.C;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                case 1:
-                    Name = NoteName.C;
-                    Accidental = NoteAccidental.Sharp;
-                    break;
-                case 2:
-                    Name = NoteName.D;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                case 3:
-                    Name = NoteName.D;
-                    Accidental = NoteAccidental.Sharp;
-                    break;
-                case 4:
-                    Name = NoteName.E;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                case 5:
-                    Name = NoteName.F;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                case 6:
-                    Name = NoteName.F;
-                    Accidental = NoteAccidental.Sharp;
-                    break;
-                case 7:
-                    Name = NoteName.G;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                case 8:
-                    Name = NoteName.G;
-                    Accidental = NoteAccidental.Sharp;
-                    break;
-                case 9:
-                    Name = NoteName.A;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                case 10:
-                    Name = NoteName.A;
-                    Accidental = NoteAccidental.Sharp;
-                    break;
-                case 11:
-                    Name = NoteName.B;
-                    Accidental = NoteAccidental.Natural;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(midiValue));
-            }
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Note" /> class.
-        /// </summary>
-        /// <param name="note">The note.</param>
-        public Note(Note note)
-            : this(note.Name, note.Accidental)
-        {
-        }
-
         public Interval GetInterval()
         {
             // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
             switch (ToString())
             {
                 case "C":
-                    return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭", "B♭", "B", "C");
+                    return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭",
+                        "B♭", "B", "C");
                 case "C♯":
-                    return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯", "B♭", "B", "B♯", "C♯");
+                    return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯",
+                        "B♭", "B", "B♯", "C♯");
                 case "D♭":
-                    return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭♭", "C♭", "C", "D♭");
+                    return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭",
+                        "C♭♭", "C♭", "C", "D♭");
                 case "D":
-                    return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭", "C", "C♯", "D");
+                    return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭",
+                        "C", "C♯", "D");
                 case "D♯":
-                    return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯", "C", "C♯", "C♯♯", "D♯");
+                    return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯",
+                        "C", "C♯", "C♯♯", "D♯");
                 case "E♭":
-                    return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭", "D♭", "D", "E♭");
+                    return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭",
+                        "D♭", "D", "E♭");
                 case "E":
-                    return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭", "D", "D♯", "E");
+                    return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭",
+                        "D", "D♯", "E");
                 case "F":
-                    return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭", "E♭", "E", "F");
+                    return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭",
+                        "E♭", "E", "F");
                 case "F♯":
-                    return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭", "E", "E♯", "F♯");
+                    return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭",
+                        "E", "E♯", "F♯");
                 case "G♭":
-                    return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭", "F♭♭", "F♭", "F", "G♭");
+                    return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭",
+                        "F♭♭", "F♭", "F", "G♭");
                 case "G":
-                    return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭", "F", "F♯", "G");
+                    return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭",
+                        "F", "F♯", "G");
                 case "G♯":
-                    return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F", "F♯", "F♯♯", "G♯");
+                    return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F",
+                        "F♯", "F♯♯", "G♯");
                 case "A♭":
-                    return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭", "G♭", "G", "A♭");
+                    return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭",
+                        "G♭", "G", "A♭");
                 case "A":
-                    return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭", "G", "G♯", "A");
+                    return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭",
+                        "G", "G♯", "A");
                 case "A♯":
-                    return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A♯");
+                    return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯",
+                        "G", "G♯", "G♯♯", "A♯");
                 case "B♭":
-                    return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭", "A♭", "A", "B♭");
+                    return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭",
+                        "A♭", "A", "B♭");
                 case "B":
-                    return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭", "A", "A♯", "B");
+                    return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭",
+                        "A", "A♯", "B");
 
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        public NoteName Name
-        {
-            get
-            {
-                return _name;
-            }
-
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public NoteAccidental Accidental
-        {
-            get
-            {
-                return _accidental;
-            }
-
-            set
-            {
-                _accidental = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Interval Interval => GetInterval();
-
-        public int Pitch => Name.Value + Accidental.Value;
 
         public Note Add(int semitone)
         {
@@ -347,8 +374,8 @@
             // http://blog.jerome.rouaix.eu/2009/09/la-formule-de-la-frequence-exacte-des.html
             // Dans cette formule 0=La, donc -9 sur le pitch pour rétabli 0=Do
             var pitch = Pitch;
-            var absolutePicth = octave + ((pitch - 9) / 12d);
-            var noteFrequency = Math.Pow(2, absolutePicth + 6) - (9d * Math.Pow(2, absolutePicth));
+            var absolutePicth = octave + (pitch - 9) / 12d;
+            var noteFrequency = Math.Pow(2, absolutePicth + 6) - 9d * Math.Pow(2, absolutePicth);
             var result = Math.Round(noteFrequency, 2);
 
             return result;
@@ -372,21 +399,6 @@
             return relative > value
                 ? value - relative + 12
                 : value - relative - 12;
-        }
-
-        public bool Equals(Note other)
-        {
-            if (ReferenceEquals(null, other))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return Name == other.Name && Accidental == other.Accidental;
         }
 
         public override bool Equals(object obj)
@@ -416,8 +428,6 @@
                 return (Name.Value * 397) ^ Accidental.Value;
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public override string ToString()
         {

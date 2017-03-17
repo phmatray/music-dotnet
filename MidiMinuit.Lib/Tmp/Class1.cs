@@ -4,10 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Core.Chords;
-    using Core.Degrees;
     using Core.Intervals;
-    using Core.Notes;
-    using Core.Scales;
 
     public static class Class1
     {

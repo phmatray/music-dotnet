@@ -1,15 +1,37 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
     using System.Collections.Generic;
-    using MidiMinuit.Lib.Core.Notes;
 
     public class GuitarTuningStandard
         : GuitarTuning
     {
-        public override List<Note> Notes { get; }
-            = Note.GetNotes("E", "A", "D", "G", "B", "E");
+        public override GuitarTuningType TuningType { get; }
+            = GuitarTuningType.Standard;
+
+        public override GuitarTuningCategory Category { get; }
+            = GuitarTuningCategory.Standard;
 
         public override string Name { get; }
             = "Standard";
+
+        public override string Tuning { get; }
+            = "E A D G B E";
+
+        public override string Description { get; }
+            = "";
+
+        public override List<GuitarString> Strings { get; }
+            = new List<GuitarString>
+            {
+                new GuitarString(6, 52, 0, 5),
+                new GuitarString(5, 57, 0, 5),
+                new GuitarString(4, 62, 0, 5),
+                new GuitarString(3, 67, 0, 4),
+                new GuitarString(2, 71, 0, 5),
+                new GuitarString(1, 76, 0)
+            };
+
+        public override GuitarTuning Clone()
+            => MemberwiseClone() as GuitarTuning;
     }
 }

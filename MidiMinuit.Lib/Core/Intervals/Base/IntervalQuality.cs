@@ -1,7 +1,6 @@
 namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
-    using Notes;
     using Tools;
 
     public abstract class IntervalQuality
@@ -36,8 +35,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         public abstract int Semitones { get; }
 
         /// <summary>
-        /// Gets the interval class
-        /// An interval class is the shortest distance in pitch class space between two unordered pitch classes.
+        ///     Gets the interval class
+        ///     An interval class is the shortest distance in pitch class space between two unordered pitch classes.
         /// </summary>
         /// <returns>The interval class</returns>
         public int IntervalClass

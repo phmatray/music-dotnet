@@ -1,26 +1,37 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
     using System.Collections.Generic;
-    using MidiMinuit.Lib.Core.Notes;
-    using MidiMinuit.Lib.Instruments.GuitarTunings.Enum;
 
     public class GuitarTuningOpenA
         : GuitarTuning
     {
-        public override List<Note> Notes { get; }
-            = Note.GetNotes("E", "A", "E", "A", "D♭", "E");
-
-        public override string Name { get; }
-            = "Open A";
+        public override GuitarTuningType TuningType { get; }
+            = GuitarTuningType.OpenA;
 
         public override GuitarTuningCategory Category { get; }
-            = GuitarTuningCategory.OpenMajor;
+            = GuitarTuningCategory.Open;
 
-        public List<string> Songs { get; }
-            = new List<string>
+        public override string Name { get; }
+            = "The Open A Tuning";
+
+        public override string Tuning { get; }
+            = "E A C# E A E";
+
+        public override string Description { get; }
+            = "";
+
+        public override List<GuitarString> Strings { get; }
+            = new List<GuitarString>
             {
-                "Jimmy Page on In My Time of Dying",
-                "Jack White on Seven Nation Army"
+                new GuitarString(6, 52, 0, 5),
+                new GuitarString(5, 57, 0, 4),
+                new GuitarString(4, 61, -1, 3),
+                new GuitarString(3, 64, -3, 5),
+                new GuitarString(2, 69, -2, 7),
+                new GuitarString(1, 76, 0)
             };
+
+        public override GuitarTuning Clone()
+            => MemberwiseClone() as GuitarTuning;
     }
 }

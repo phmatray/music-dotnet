@@ -1,14 +1,7 @@
-﻿using MidiMinuit.Lib.Core.Intervals;
-
-namespace MidiMinuit.Lib.Core.Scales
+﻿namespace MidiMinuit.Lib.Core.Scales
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using Chords;
-    using Degrees;
-    using Notes;
-    using Tools;
+    using Intervals;
 
     /*
      * Une gamme est l'application d'un mode. Par exemple la gamme de Sol majeur est l'application du mode majeur avec Sol comme note  fondamentale (Sol La Si Do Re Mi Fa#).
@@ -37,22 +30,22 @@ namespace MidiMinuit.Lib.Core.Scales
     public abstract class Scale
     {
         /// <summary>
-        /// Gets the type of the scale.
+        ///     Gets the type of the scale.
         /// </summary>
         public abstract ScaleType Quality { get; }
 
         /// <summary>
-        /// Gets notes of the scale.
+        ///     Gets notes of the scale.
         /// </summary>
         public abstract List<IntervalQuality> Notes { get; }
 
         /// <summary>
-        /// Gets name of the scale.
+        ///     Gets name of the scale.
         /// </summary>
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets details of the scale.
+        ///     Gets details of the scale.
         /// </summary>
         public abstract string Details { get; }
 
@@ -60,13 +53,13 @@ namespace MidiMinuit.Lib.Core.Scales
 
         public abstract Scale Clone();
 
-        ////public bool HasChord(ChordBase chord)
-        ////{
-        ////    var hasChord = chord.Notes
-        ////        .Select(x => Notes.Any(y => y.Pitch == x.Pitch))
-        ////        .All(x => x);
-
         ////    return hasChord;
+        ////        .All(x => x);
+        ////        .Select(x => Notes.Any(y => y.Pitch == x.Pitch))
+        ////    var hasChord = chord.Notes
+        ////{
+
+        ////public bool HasChord(ChordBase chord)
         ////}
 
         ////public List<ChordBase> GetAllChord()
@@ -81,11 +74,6 @@ namespace MidiMinuit.Lib.Core.Scales
 
         ////    return chords;
         ////}
-
-
-
-
-
 
 
         ////// TODO: Move to ChordMajor

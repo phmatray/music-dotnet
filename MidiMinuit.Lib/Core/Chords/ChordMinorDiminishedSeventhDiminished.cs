@@ -33,7 +33,8 @@
             = ChordQuality.MinorDiminishedSeventhDiminished;
 
         public override string Description { get; }
-            = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";
+            = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées " +
+              "d'un demi-ton (1 case) à l'exception de la fondamentale.";
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };

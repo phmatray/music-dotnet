@@ -1,7 +1,7 @@
-using System;
-
 namespace MidiMinuit.Lib.Core.Notes
 {
+    using System;
+
     public sealed class NoteName
     {
         private NoteName(int value, int order, string name, string nameLatin)
@@ -32,6 +32,14 @@ namespace MidiMinuit.Lib.Core.Notes
 
         public static NoteName B { get; }
             = new NoteName(11, 6, nameof(B), "Si");
+
+        public int Value { get; }
+
+        public int Order { get; }
+
+        public string Name { get; }
+
+        public string NameLatin { get; }
 
         public static NoteName GetName(string name)
         {
@@ -65,14 +73,6 @@ namespace MidiMinuit.Lib.Core.Notes
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        public int Value { get; }
-
-        public int Order { get; }
-
-        public string Name { get; }
-
-        public string NameLatin { get; }
 
         public override string ToString()
             => Name;

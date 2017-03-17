@@ -17,7 +17,8 @@
             = "Mixolydian";
 
         public override string Meaning { get; }
-            = "Melodically strong affinity for and leads to tonic/One half step below tonic in Major scale and whole step in Natural minor.";
+            = "Melodically strong affinity for and leads to tonic/One half step below " +
+              "tonic in Major scale and whole step in Natural minor.";
 
         public override string Function { get; }
             = "sensible";
