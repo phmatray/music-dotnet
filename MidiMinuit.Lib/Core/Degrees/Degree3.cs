@@ -2,27 +2,36 @@
 {
     using Notes;
 
-    public class Degree3 : DegreeBase
+    public class Degree3 : Degree
     {
-        public override DegreeEnum DegreeEnum
-            => DegreeEnum.III;
+        public override DegreeNumber Number { get; }
+            = DegreeNumber.III;
 
-        public override string DiatonicFunction
-            => "Mediant";
+        public override string DiatonicFunction { get; }
+            = "Mediant";
 
-        public override string CorrespondingModeMajorKey
-            => "Phrygian";
+        public override string CorrespondingModeMajorKey { get; }
+            = "Phrygian";
 
-        public override string CorrespondingModeMinorKey
-            => "Ionian";
+        public override string CorrespondingModeMinorKey { get; }
+            = "Ionian";
 
-        public override string Meaning
-            => "Midway between tonic and dominant, (in minor key) root of relative major key";
+        public override string Meaning { get; }
+            = "Midway between tonic and dominant, (in minor key) root of relative major key";
 
-        public override Note NoteInCMajor
-            => new Note(NoteName.E);
+        public override string Function { get; }
+            = "médiante";
 
-        public override Note NoteInCMinor
-            => new Note(NoteName.E, NoteAccidental.Flat);
+        public override Note NoteInCMajor { get; }
+            = new Note(NoteName.E);
+
+        public override Note NoteInCMinor { get; }
+            = new Note(NoteName.E, NoteAccidental.Flat);
+
+        public override string ToString()
+            => Number.ToString();
+
+        public override Degree Clone()
+            => MemberwiseClone() as Degree;
     }
 }

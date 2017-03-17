@@ -2,27 +2,36 @@
 {
     using Notes;
 
-    public class Degree4 : DegreeBase
+    public class Degree4 : Degree
     {
-        public override DegreeEnum DegreeEnum
-            => DegreeEnum.IV;
+        public override DegreeNumber Number { get; }
+            = DegreeNumber.IV;
 
-        public override string DiatonicFunction
-            => "Subdominant";
+        public override string DiatonicFunction { get; }
+            = "Subdominant";
 
-        public override string CorrespondingModeMajorKey
-            => "Lydian";
+        public override string CorrespondingModeMajorKey { get; }
+            = "Lydian";
 
-        public override string CorrespondingModeMinorKey
-            => "Dorian";
+        public override string CorrespondingModeMinorKey { get; }
+            = "Dorian";
 
-        public override string Meaning
-            => "Lower dominant, same interval below tonic as dominant is above tonic";
+        public override string Meaning { get; }
+            = "Lower dominant, same interval below tonic as dominant is above tonic";
 
-        public override Note NoteInCMajor
-            => new Note(NoteName.F);
+        public override string Function { get; }
+            = "sous-dominante";
 
-        public override Note NoteInCMinor
-            => new Note(NoteName.F);
+        public override Note NoteInCMajor { get; }
+            = new Note(NoteName.F);
+
+        public override Note NoteInCMinor { get; }
+            = new Note(NoteName.F);
+
+        public override string ToString()
+            => Number.ToString();
+
+        public override Degree Clone()
+            => MemberwiseClone() as Degree;
     }
 }

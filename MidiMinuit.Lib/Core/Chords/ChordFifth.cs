@@ -7,10 +7,6 @@
 
     public class ChordFifth : Chord
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
         public ChordFifth(Note fondamental)
         {
             if (fondamental == null)
@@ -23,8 +19,15 @@
             FifthPerfect = i.FifthPerfect;
         }
 
-        public override ChordQualityEnum Quality
-            => ChordQualityEnum.Fifth;
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public override ChordQuality Quality { get; }
+            = ChordQuality.Fifth;
+
+        public override string Description { get; }
+            = "Description not added yet.";
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, FifthPerfect };
@@ -35,17 +38,10 @@
         public override string Details
             => $"Fond. {Fondamental}, 5ᵗʰ {FifthPerfect}";
 
-        public override string Description
-            => "Description not added yet.";
-
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
 
         public override Chord Clone()
-        {
-            return MemberwiseClone() as Chord;
-        }
+            => MemberwiseClone() as Chord;
     }
 }

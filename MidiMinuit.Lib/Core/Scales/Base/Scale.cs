@@ -34,17 +34,12 @@ namespace MidiMinuit.Lib.Core.Scales
      * Le VIIeme degré a fonction de note sensible
     */
 
-    public abstract class ScaleBase
+    public abstract class Scale
     {
-        protected ScaleBase(ScaleType scaleType)
-        {
-            ScaleType = scaleType;
-        }
-
         /// <summary>
         /// Gets the type of the scale.
         /// </summary>
-        public ScaleType ScaleType { get; }
+        public abstract ScaleType Quality { get; }
 
         /// <summary>
         /// Gets notes of the scale.
@@ -56,7 +51,14 @@ namespace MidiMinuit.Lib.Core.Scales
         /// </summary>
         public abstract string Name { get; }
 
+        /// <summary>
+        /// Gets details of the scale.
+        /// </summary>
+        public abstract string Details { get; }
+
         public abstract override string ToString();
+
+        public abstract Scale Clone();
 
         ////public bool HasChord(ChordBase chord)
         ////{

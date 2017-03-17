@@ -8,7 +8,7 @@
         /// <summary>
         /// Gets the quality of the chord.
         /// </summary>
-        public abstract ChordQualityEnum Quality { get; }
+        public abstract ChordQuality Quality { get; }
 
         /// <summary>
         /// Gets notes of the chord.

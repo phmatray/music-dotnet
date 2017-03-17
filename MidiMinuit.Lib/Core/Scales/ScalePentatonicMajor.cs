@@ -5,20 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScalePentatonicMajor : ScaleBase
+    public class ScalePentatonicMajor : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMajorThird ThirdMajor { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMajorSixth SixthMajor { get; }
-
         public ScalePentatonicMajor(Note key)
-            : base(ScaleType.PentatonicMajor)
         {
             // gamme pentatonique majeure : T 2M 3M 5j 6M
             if (key == null)
@@ -34,6 +23,19 @@
             SixthMajor = i.SixthMajor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.PentatonicMajor;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMajorThird ThirdMajor { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMajorSixth SixthMajor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -44,12 +46,16 @@
                 SixthMajor
             };
 
-        public override string Name
-            => $"Pentatonic Major";
+        public override string Name { get; }
+            = "Pentatonic Major";
+
+        public override string Details { get; }
+            = "T 2M 3M 5j 6M";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

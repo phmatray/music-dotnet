@@ -5,24 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleModeLocrian : ScaleBase
+    public class ScaleModeLocrian : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMinorSecond SecondMinor { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalDiminishedFifth FifthDiminished { get; }
-
-        public IntervalMinorSixth SixthMinor { get; }
-
-        public IntervalMinorSeventh SeventhMinor { get; }
-
         public ScaleModeLocrian(Note key)
-            : base(ScaleType.ModeLocrian)
         {
             // mode locrien : T 2m 3m 4j b5 6m 7m
             if (key == null)
@@ -40,6 +25,23 @@
             SeventhMinor = i.SeventhMinor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeLocrian;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMinorSecond SecondMinor { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalDiminishedFifth FifthDiminished { get; }
+
+        public IntervalMinorSixth SixthMinor { get; }
+
+        public IntervalMinorSeventh SeventhMinor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@
                 SeventhMinor
             };
 
-        public override string Name
-            => $"Mode Locrian";
+        public override string Name { get; }
+            = "Mode Locrian";
+
+        public override string Details { get; }
+            = "T 2m 3m 4j b5 6m 7m";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

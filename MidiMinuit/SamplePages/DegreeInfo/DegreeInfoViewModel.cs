@@ -6,11 +6,11 @@ namespace MidiMinuit.SamplePages.DegreeInfo
 {
     public class DegreeInfoViewModel : ViewModelBase
     {
-        public ObservableCollection<DegreeBase> Degrees { get; private set; }
+        public ObservableCollection<Degree> Degrees { get; private set; }
 
         public DegreeInfoViewModel()
         {
-            Degrees = new ObservableCollection<DegreeBase>
+            Degrees = new ObservableCollection<Degree>
             {
                 new Degree1(),
                 new Degree2(),

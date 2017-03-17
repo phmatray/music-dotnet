@@ -5,26 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleModeDiminished : ScaleBase
+    public class ScaleModeDiminished : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalAugmentedEleventh Eleventh { get; }
-
-        public IntervalAugmentedFifth FifthAugmented { get; }
-
-        public IntervalMajorSixth SixthMajor { get; }
-
-        public IntervalMajorSeventh SeventhMajor { get; }
-
         public ScaleModeDiminished(Note key)
-            : base(ScaleType.ModeDiminished)
         {
             // mode diminué : T 2M 3m 4j #11 #5 6M 7M
             if (key == null)
@@ -43,6 +26,25 @@
             SeventhMajor = i.SeventhMajor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeDiminished;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalAugmentedEleventh Eleventh { get; }
+
+        public IntervalAugmentedFifth FifthAugmented { get; }
+
+        public IntervalMajorSixth SixthMajor { get; }
+
+        public IntervalMajorSeventh SeventhMajor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -56,12 +58,16 @@
                 SeventhMajor
             };
 
-        public override string Name
-            => $"Mode Diminished";
+        public override string Name { get; }
+            = "Mode Diminished";
+
+        public override string Details { get; }
+            = "T 2M 3m 4j #11 #5 6M 7M";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

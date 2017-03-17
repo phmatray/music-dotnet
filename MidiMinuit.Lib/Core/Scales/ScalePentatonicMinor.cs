@@ -5,20 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScalePentatonicMinor : ScaleBase
+    public class ScalePentatonicMinor : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMinorSeventh SeventhMinor { get; }
-
         public ScalePentatonicMinor(Note key)
-            : base(ScaleType.PentatonicMinor)
         {
             // gamme pentatonique mineure : T 3m 4j 5j 7m
             if (key == null)
@@ -34,6 +23,19 @@
             SeventhMinor = i.SeventhMinor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.PentatonicMinor;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMinorSeventh SeventhMinor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -44,12 +46,16 @@
                 SeventhMinor
             };
 
-        public override string Name
-            => $"Pentatonic Minor";
+        public override string Name { get; }
+            = "Pentatonic Minor";
+
+        public override string Details { get; }
+            = "T 3m 4j 5j 7m";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

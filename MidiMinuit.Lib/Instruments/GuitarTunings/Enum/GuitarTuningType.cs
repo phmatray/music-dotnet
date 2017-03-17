@@ -1,0 +1,39 @@
+namespace MidiMinuit.Lib.Instruments.GuitarTunings
+{
+    public enum GuitarTuningType
+    {
+        Standard,
+        TuneDownHalfStep,
+        TuneDownOneStep,
+        TuneDownTwoStep,
+        DroppedD,
+        DroppedDVariant,
+        DoubleDroppedD,
+        DroppedC,
+        DroppedE,
+        DroppedB,
+        Baritone,
+        OpenC,
+        OpenCm,
+        OpenC6,
+        OpenCM7,
+        OpenD,
+        OpenDm,
+        OpenD5,
+        OpenD6,
+        OpenDsus4,
+        OpenE,
+        OpenEm,
+        OpenEsus11,
+        OpenF,
+        OpenG,
+        OpenGm,
+        OpenGsus4,
+        OpenG6,
+        OpenA,
+        OpenAm,
+        DobroOpenG,
+        Nashville,
+        LuteOrVihuela
+    }
+}

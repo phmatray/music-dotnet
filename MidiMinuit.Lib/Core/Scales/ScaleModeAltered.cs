@@ -5,24 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleModeAltered : ScaleBase
+    public class ScaleModeAltered : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMinorSecond SecondMinor { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalMajorThird ThirdMajor { get; }
-
-        public IntervalDiminishedFifth FifthDiminished { get; }
-
-        public IntervalMinorSixth SixthMinor { get; }
-
-        public IntervalMinorSeventh SeventhMinor { get; }
-
         public ScaleModeAltered(Note key)
-            : base(ScaleType.ModeAltered)
         {
             // mode altéré : T 2m 3m 3M b5 6m 7m
             if (key == null)
@@ -40,6 +25,23 @@
             SeventhMinor = i.SeventhMinor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeAltered;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMinorSecond SecondMinor { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalMajorThird ThirdMajor { get; }
+
+        public IntervalDiminishedFifth FifthDiminished { get; }
+
+        public IntervalMinorSixth SixthMinor { get; }
+
+        public IntervalMinorSeventh SeventhMinor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@
                 SeventhMinor
             };
 
-        public override string Name
-            => $"Mode Altered";
+        public override string Name { get; }
+            = "Mode Altered";
+
+        public override string Details { get; }
+            = "T 2m 3m 3M b5 6m 7m";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

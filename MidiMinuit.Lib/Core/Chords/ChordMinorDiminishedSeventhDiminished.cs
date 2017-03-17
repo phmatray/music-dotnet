@@ -7,14 +7,6 @@
 
     public class ChordMinorDiminishedSeventhDiminished : Chord
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMinorThird ThirdMinor { get; }
-
-        public IntervalDiminishedFifth FifthDiminished { get; }
-
-        public IntervalDiminishedSeventh SeventhDiminished { get; }
-
         public ChordMinorDiminishedSeventhDiminished(Note fondamental)
         {
             if (fondamental == null)
@@ -29,8 +21,19 @@
             SeventhDiminished = i.SeventhDiminished;
         }
 
-        public override ChordQualityEnum Quality
-            => ChordQualityEnum.MinorDiminishedSeventhDiminished;
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMinorThird ThirdMinor { get; }
+
+        public IntervalDiminishedFifth FifthDiminished { get; }
+
+        public IntervalDiminishedSeventh SeventhDiminished { get; }
+
+        public override ChordQuality Quality { get; }
+            = ChordQuality.MinorDiminishedSeventhDiminished;
+
+        public override string Description { get; }
+            = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";
 
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
@@ -41,17 +44,10 @@
         public override string Details
             => $"Fond. {Fondamental}, 3ʳᵈ min {ThirdMinor}, 5ᵗʰ♭ {FifthDiminished}, 7ᵗʰ dim {SeventhDiminished}";
 
-        public override string Description
-            => "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées d'un demi-ton (1 case) à l'exception de la fondamentale.";
-
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
 
         public override Chord Clone()
-        {
-            return MemberwiseClone() as Chord;
-        }
+            => MemberwiseClone() as Chord;
     }
 }

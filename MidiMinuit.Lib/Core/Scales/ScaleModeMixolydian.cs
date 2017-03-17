@@ -5,24 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleModeMixolydian : ScaleBase
+    public class ScaleModeMixolydian : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMajorThird ThirdMajor { get; }
-
-        public IntervalPerfectFourth FourthPerfect { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMajorSixth SixthMajor { get; }
-
-        public IntervalMinorSeventh SeventhMinor { get; }
-
         public ScaleModeMixolydian(Note key)
-            : base(ScaleType.ModeMixolydian)
         {
             // mode mixolydien : T 2M 3M 4j 5j 6M 7m
             if (key == null)
@@ -40,6 +25,23 @@
             SeventhMinor = i.SeventhMinor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeMixolydian;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMajorThird ThirdMajor { get; }
+
+        public IntervalPerfectFourth FourthPerfect { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMajorSixth SixthMajor { get; }
+
+        public IntervalMinorSeventh SeventhMinor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@
                 SeventhMinor
             };
 
-        public override string Name
-            => $"Mode Mixolydian";
+        public override string Name { get; }
+            = "Mode Mixolydian";
+
+        public override string Details { get; }
+            = "T 2M 3M 4j 5j 6M 7m";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

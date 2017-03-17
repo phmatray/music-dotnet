@@ -5,24 +5,9 @@
     using Intervals;
     using Notes;
 
-    public class ScaleModeLydian : ScaleBase
+    public class ScaleModeLydian : Scale
     {
-        public IntervalPerfectUnison Fondamental { get; }
-
-        public IntervalMajorSecond SecondMajor { get; }
-
-        public IntervalMajorThird ThirdMajor { get; }
-
-        public IntervalAugmentedEleventh Eleventh { get; }
-
-        public IntervalPerfectFifth FifthPerfect { get; }
-
-        public IntervalMajorSixth SixthMajor { get; }
-
-        public IntervalMajorSeventh SeventhMajor { get; }
-
         public ScaleModeLydian(Note key)
-            : base(ScaleType.ModeLydian)
         {
             // mode lydien : T 2M 3M #11 5j 6M 7M ???
             if (key == null)
@@ -40,6 +25,23 @@
             SeventhMajor = i.SeventhMajor;
         }
 
+        public override ScaleType Quality { get; }
+            = ScaleType.ModeLydian;
+
+        public IntervalPerfectUnison Fondamental { get; }
+
+        public IntervalMajorSecond SecondMajor { get; }
+
+        public IntervalMajorThird ThirdMajor { get; }
+
+        public IntervalAugmentedEleventh Eleventh { get; }
+
+        public IntervalPerfectFifth FifthPerfect { get; }
+
+        public IntervalMajorSixth SixthMajor { get; }
+
+        public IntervalMajorSeventh SeventhMajor { get; }
+
         public override List<IntervalQuality> Notes
             => new List<IntervalQuality>
             {
@@ -52,12 +54,16 @@
                 SeventhMajor
             };
 
-        public override string Name
-            => $"Mode Lydian";
+        public override string Name { get; }
+            = "Mode Lydian";
+
+        public override string Details { get; }
+            = "T 2M 3M #11 5j 6M 7M";
 
         public override string ToString()
-        {
-            return Name;
-        }
+            => Name;
+
+        public override Scale Clone()
+            => MemberwiseClone() as Scale;
     }
 }

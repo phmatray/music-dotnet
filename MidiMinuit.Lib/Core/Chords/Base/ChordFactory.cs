@@ -5,7 +5,7 @@
 
     public class ChordFactory
     {
-        public virtual Chord CreateChord(ChordQualityEnum chordQuality, Note fondamental)
+        public virtual Chord CreateChord(ChordQuality chordQuality, Note fondamental)
         {
             /*
              * Implements FactoryPattern
@@ -14,39 +14,39 @@
 
             switch (chordQuality)
             {
-                case ChordQualityEnum.Major:
+                case ChordQuality.Major:
                     return new ChordMajor(fondamental);
-                case ChordQualityEnum.Minor:
+                case ChordQuality.Minor:
                     return new ChordMinor(fondamental);
-                case ChordQualityEnum.MajorSixthMajor:
+                case ChordQuality.MajorSixthMajor:
                     return new ChordMajorSixthMajor(fondamental);
-                case ChordQualityEnum.MinorSixthMajor:
+                case ChordQuality.MinorSixthMajor:
                     return new ChordMinorSixthMajor(fondamental);
-                case ChordQualityEnum.SuspendedFourth:
+                case ChordQuality.SuspendedFourth:
                     return new ChordSuspendedFourth(fondamental);
-                case ChordQualityEnum.Fifth:
+                case ChordQuality.Fifth:
                     return new ChordFifth(fondamental);
-                case ChordQualityEnum.MajorAugmented:
+                case ChordQuality.MajorAugmented:
                     return new ChordMajorAugmented(fondamental);
-                case ChordQualityEnum.MinorDiminished:
+                case ChordQuality.MinorDiminished:
                     return new ChordMinorDiminished(fondamental);
-                case ChordQualityEnum.MajorSeventhMajor:
+                case ChordQuality.MajorSeventhMajor:
                     return new ChordMajorSeventhMajor(fondamental);
-                case ChordQualityEnum.MajorSeventhMinor:
+                case ChordQuality.MajorSeventhMinor:
                     return new ChordMajorSeventhMinor(fondamental);
-                case ChordQualityEnum.MinorSeventhMinor:
+                case ChordQuality.MinorSeventhMinor:
                     return new ChordMinorSeventhMinor(fondamental);
-                case ChordQualityEnum.MinorFifthDiminishedSeventhMinor:
+                case ChordQuality.MinorFifthDiminishedSeventhMinor:
                     return new ChordMinorFifthDiminishedSeventhMinor(fondamental);
-                case ChordQualityEnum.SuspendedFourthSeventhMinor:
+                case ChordQuality.SuspendedFourthSeventhMinor:
                     return new ChordSuspendedFourthSeventhMinor(fondamental);
-                case ChordQualityEnum.MajorAugmentedSeventhMinor:
+                case ChordQuality.MajorAugmentedSeventhMinor:
                     return new ChordMajorAugmentedSeventhMinor(fondamental);
-                case ChordQualityEnum.MinorDiminishedSeventhDiminished:
+                case ChordQuality.MinorDiminishedSeventhDiminished:
                     return new ChordMinorDiminishedSeventhDiminished(fondamental);
-                case ChordQualityEnum.MinorSeventhMajor:
+                case ChordQuality.MinorSeventhMajor:
                     return new ChordMinorSeventhMajor(fondamental);
-                case ChordQualityEnum.MajorNinthMajor:
+                case ChordQuality.MajorNinthMajor:
                     return new ChordMajorNinthMajor(fondamental);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(chordQuality), chordQuality, null);

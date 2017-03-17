@@ -8,12 +8,12 @@
 
     public class ScaleInfoViewModel : ViewModelBase
     {
-        public ObservableCollection<ScaleBase> Scales { get; private set; }
+        public ObservableCollection<Scale> Scales { get; private set; }
 
         public ScaleInfoViewModel()
         {
             var key = new Note(NoteNameEnum.C);
-            Scales = new ObservableCollection<ScaleBase>
+            Scales = new ObservableCollection<Scale>
             {
                 new ScaleMajor(key),
                 new ScaleMinorHarmonic(key),
