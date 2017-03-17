@@ -2,6 +2,7 @@
 {
     public enum GuitarTuningCategory
     {
+        Standard,
         Open,
         Instrumental,
         Regular,

@@ -1,0 +1,1240 @@
+public class GuitarTuningStandard
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Standard ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Standard ;
+
+public override string Name { get; }
+= "Standard";
+
+public override string Tuning { get; }
+= "E A D G B E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 52, 0, 5),
+new GuitarString(5, 57, 0, 5),
+new GuitarString(4, 62, 0, 5),
+new GuitarString(3, 67, 0, 4),
+new GuitarString(2, 71, 0, 5),
+new GuitarString(1, 76, 0)
+}
+}
+
+public class GuitarTuningOpenC
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.OpenC ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Open C Tuning";
+
+public override string Tuning { get; }
+= "C G C G C E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, -4, 7),
+new GuitarString(5, 55, -2, 5),
+new GuitarString(4, 60, -2, 7),
+new GuitarString(3, 67, 0, 5),
+new GuitarString(2, 72, 1, 4),
+new GuitarString(1, 76, 0,)
+}
+}
+
+public class GuitarTuningOpenD
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.OpenD ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Open D Tuning";
+
+public override string Tuning { get; }
+= "D A D F# A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, -2, 7),
+new GuitarString(5, 57, 0, 5),
+new GuitarString(4, 62, 0, 4),
+new GuitarString(3, 66, -1, 3),
+new GuitarString(2, 69, -2, 5),
+new GuitarString(1, 74, -2)
+}
+}
+
+public class GuitarTuningModalD
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.ModalD ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Modal D Tuning";
+
+public override string Tuning { get; }
+= "D A D G A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, -2, ),
+new GuitarString(5, 57, 0, ),
+new GuitarString(4, 62, 0, ),
+new GuitarString(3, 67, 0, ),
+new GuitarString(2, 69, -2, ),
+new GuitarString(1, 74, -2, )
+Fret 7 5 5 2 5 
+}
+}
+
+public class GuitarTuningOpenDMinor
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.OpenDMinor ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Open D Minor Tuning";
+
+public override string Tuning { get; }
+= "D A D F A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, -2, ),
+new GuitarString(5, 57, 0, ),
+new GuitarString(4, 62, 0, ),
+new GuitarString(3, 65, -2, ),
+new GuitarString(2, 69, -2, ),
+new GuitarString(1, 74, -2, )
+Fret 7 5 3 4 5 
+}
+}
+
+public class GuitarTuningOpenG
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.OpenG ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Open G Tuning";
+
+public override string Tuning { get; }
+= "D G D G B D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 71, ),
+new GuitarString(1, 74, )
+Retune -2 -2 0 0 0 -2
+Fret 5 7 5 4 3 
+}
+}
+
+public class GuitarTuningModalG
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.ModalG ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Modal G Tuning";
+
+public override string Tuning { get; }
+= "D G D G C D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 74, )
+Retune -2 -2 0 0 1 -2
+Fret 5 7 5 5 2 
+}
+}
+
+public class GuitarTuningOpenGMinor
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.OpenGMinor ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Open G Minor Tuning";
+
+public override string Tuning { get; }
+= "D G D G A# D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 70, ),
+new GuitarString(1, 74, )
+Retune -2 -2 0 0 -1 -2
+Fret 5 7 5 3 4 
+}
+}
+
+public class GuitarTuningOpenA
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.OpenA ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Open ;
+
+public override string Name { get; }
+= "The Open A Tuning";
+
+public override string Tuning { get; }
+= "E A C# E A E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 52, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 61, ),
+new GuitarString(3, 64, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 76, )
+Retune 0 0 -1 -3 -2 0
+Fret 5 4 3 5 7 
+}
+}
+
+public class GuitarTuningBalalaika
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Balalaika ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "The Balalaika Tuning";
+
+public override string Tuning { get; }
+= "E A D E E A";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 52, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 64, ),
+new GuitarString(2, 64, ),
+new GuitarString(1, 69, )
+Retune 0 0 0 -3 -7 -7
+Fret 5 5 2 0 5 
+}
+}
+
+public class GuitarTuningCharango
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Charango ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "The Charango Tuning";
+
+public override string Tuning { get; }
+= "X G C E A E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 0 , ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 52, ),
+new GuitarString(2, 57, ),
+new GuitarString(1, 64, )
+Retune -2 -2 -15 -14 -12
+Fret 5 -8 5 7 
+}
+}
+
+public class GuitarTuningCittern1
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Cittern1 ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "Cittern Tuning One";
+
+public override string Tuning { get; }
+= "C F C G C D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 53, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 74, )
+Retune -4 -4 -2 0 1 -2
+Fret 5 7 7 5 2 
+}
+}
+
+public class GuitarTuningCittern2
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Cittern2 ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "Cittern Tuning Two";
+
+public override string Tuning { get; }
+= "C G C G C G";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 79, )
+Retune -4 -2 -2 0 1 3
+Fret 7 5 7 5 7 
+}
+}
+
+public class GuitarTuningDobro
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Dobro ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "The Dobro Tuning";
+
+public override string Tuning { get; }
+= "G B D G B D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 55, ),
+new GuitarString(5, 59, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 71, ),
+new GuitarString(1, 74, )
+Retune 3 2 0 0 0 -2
+Fret 4 3 5 4 3 
+}
+}
+
+public class GuitarTuningLefty
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Lefty ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "The Lefty Tuning";
+
+public override string Tuning { get; }
+= "E B G D A E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 76, ),
+new GuitarString(5, 71, ),
+new GuitarString(4, 67, ),
+new GuitarString(3, 62, ),
+new GuitarString(2, 57, ),
+new GuitarString(1, 52, )
+Retune 24 14 5 -5 -14 -24
+Fret -5 -4 -5 -5 -5 
+}
+}
+
+public class GuitarTuningOvertone
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Overtone ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "The Overtone Tuning";
+
+public override string Tuning { get; }
+= "C E G A# C D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 60, ),
+new GuitarString(5, 64, ),
+new GuitarString(4, 67, ),
+new GuitarString(3, 70, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 74, )
+Retune 8 7 5 3 1 -2
+Fret 4 3 3 2 2 
+}
+}
+
+public class GuitarTuningPentatonic
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Pentatonic ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Instrumental ;
+
+public override string Name { get; }
+= "The Pentatonic Tuning";
+
+public override string Tuning { get; }
+= "A C D E G A";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 57, ),
+new GuitarString(5, 60, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 64, ),
+new GuitarString(2, 67, ),
+new GuitarString(1, 69, )
+Retune 5 3 0 -3 -4 -7
+Fret 3 2 2 3 2 
+}
+}
+
+public class GuitarTuningMinorThird
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.MinorThird ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The Minor Third Tuning";
+
+public override string Tuning { get; }
+= "C D# F# A C D#";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 60, ),
+new GuitarString(5, 63, ),
+new GuitarString(4, 66, ),
+new GuitarString(3, 69, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 75, )
+Retune 8 6 4 2 1 -1
+Fret 3 3 3 3 3 
+}
+}
+
+public class GuitarTuningMajorThird
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.MajorThird ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The Major Third Tuning";
+
+public override string Tuning { get; }
+= "C E G# C E G#";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 60, ),
+new GuitarString(5, 64, ),
+new GuitarString(4, 68, ),
+new GuitarString(3, 72, ),
+new GuitarString(2, 76, ),
+new GuitarString(1, 80, )
+Retune 8 7 6 5 5 4
+Fret 4 4 4 4 4 
+}
+}
+
+public class GuitarTuningAllFourths
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.AllFourths ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The All Fourths Tuning";
+
+public override string Tuning { get; }
+= "E A D G C F";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 52, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 77, )
+Retune 0 0 0 0 1 1
+Fret 5 5 5 5 5 
+}
+}
+
+public class GuitarTuningAugFourths
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.AugFourths ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The Augmented Fourths Tuning";
+
+public override string Tuning { get; }
+= "C F# C F# C F#";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 54, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 66, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 78, )
+Retune -4 -3 -2 -1 1 2
+Fret 6 6 6 6 6 
+}
+}
+
+public class GuitarTuningMandoguitar
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Mandoguitar ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The Mandoguitar Tuning";
+
+public override string Tuning { get; }
+= "C G D A E B";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 69, ),
+new GuitarString(2, 76, ),
+new GuitarString(1, 83, )
+Retune -4 -2 0 2 5 7
+Fret 7 7 7 7 7 
+}
+}
+
+public class GuitarTuningMinorSixth
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.MinorSixth ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The Minor Sixth Tuning";
+
+public override string Tuning { get; }
+= "C G# E C G# E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 36, ),
+new GuitarString(5, 44, ),
+new GuitarString(4, 52, ),
+new GuitarString(3, 60, ),
+new GuitarString(2, 68, ),
+new GuitarString(1, 76, )
+Retune -16 -13 -10 -7 -3 0
+Fret 8 8 8 8 8 
+}
+}
+
+public class GuitarTuningMajorSixth
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.MajorSixth ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Regular ;
+
+public override string Name { get; }
+= "The Major Sixth Tuning";
+
+public override string Tuning { get; }
+= "C A F# D# C A";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 36, ),
+new GuitarString(5, 45, ),
+new GuitarString(4, 54, ),
+new GuitarString(3, 63, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 81, )
+Retune -16 -12 -8 -4 1 5
+Fret 9 9 9 9 9 
+}
+}
+
+public class GuitarTuningAdmiral
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Admiral ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Admiral Tuning";
+
+public override string Tuning { get; }
+= "C G D G B C";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 71, ),
+new GuitarString(1, 72, )
+Retune -4 -2 0 0 0 -4
+Fret 7 7 5 4 1 
+}
+}
+
+public class GuitarTuningBuzzard
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Buzzard ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Buzzard Tuning";
+
+public override string Tuning { get; }
+= "C F C G A# F";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 53, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 70, ),
+new GuitarString(1, 77, )
+Retune -4 -4 -2 0 -1 1
+Fret 5 7 7 3 7 
+}
+}
+
+public class GuitarTuningDropD
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.DropD ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Drop D Tuning";
+
+public override string Tuning { get; }
+= "D A D G B E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 71, ),
+new GuitarString(1, 76, )
+Retune -2 0 0 0 0 0
+Fret 7 5 5 4 5 
+}
+}
+
+public class GuitarTuningFace
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Face ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Face Tuning";
+
+public override string Tuning { get; }
+= "C G D G A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 74, )
+Retune -4 -2 0 0 -2 -2
+Fret 7 7 5 2 5 
+}
+}
+
+public class GuitarTuningFourAndTwenty
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.FourAndTwenty ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Four and Twenty Tuning";
+
+public override string Tuning { get; }
+= "D A D D A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 62, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 74, )
+Retune -2 0 0 -5 -2 -2
+Fret 7 5 0 7 5 
+}
+}
+
+public class GuitarTuningHotType
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.HotType ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Hot Type Tuning";
+
+public override string Tuning { get; }
+= "A B E F# A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 45, ),
+new GuitarString(5, 59, ),
+new GuitarString(4, 64, ),
+new GuitarString(3, 66, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 74, )
+Retune -7 2 2 -1 -2 -2
+Fret 14 5 2 3 5 
+}
+}
+
+public class GuitarTuningLayover
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Layover ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Layover Tuning";
+
+public override string Tuning { get; }
+= "D A C G C E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 76, )
+Retune -2 0 -2 0 1 0
+Fret 7 3 7 5 4 
+}
+}
+
+public class GuitarTuningMagicFarmer
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.MagicFarmer ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Magic Farmer Tuning";
+
+public override string Tuning { get; }
+= "C F C G A E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 53, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 67, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 76, )
+Retune -4 -4 -2 0 -2 0
+Fret 5 7 7 2 7 
+}
+}
+
+public class GuitarTuningPelican
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Pelican ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Pelican Tuning";
+
+public override string Tuning { get; }
+= "D A D E A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 64, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 74, )
+Retune -2 0 0 -3 -2 -2
+Fret 7 5 2 5 5 
+}
+}
+
+public class GuitarTuningProcessional
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Processional ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Processional Tuning";
+
+public override string Tuning { get; }
+= "D G D F A A#";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 65, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 70, )
+Retune -2 -2 0 -2 -2 -6
+Fret 5 7 3 4 1 
+}
+}
+
+public class GuitarTuningSlowMotion
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.SlowMotion ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Slow Motion Tuning";
+
+public override string Tuning { get; }
+= "D G D F C D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 65, ),
+new GuitarString(2, 72, ),
+new GuitarString(1, 74, )
+Retune -2 -2 0 -2 1 -2
+Fret 5 7 3 7 2 
+}
+}
+
+public class GuitarTuningSpirit
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Spirit ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Spirit Tuning";
+
+public override string Tuning { get; }
+= "C# A C# G# A E";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 49, ),
+new GuitarString(5, 57, ),
+new GuitarString(4, 61, ),
+new GuitarString(3, 68, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 76, )
+Retune -3 0 -1 1 -2 0
+Fret 8 4 7 1 7 
+}
+}
+
+public class GuitarTuningTarboulton
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Tarboulton ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Tarboulton Tuning";
+
+public override string Tuning { get; }
+= "C A# C F A# F";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 48, ),
+new GuitarString(5, 58, ),
+new GuitarString(4, 60, ),
+new GuitarString(3, 65, ),
+new GuitarString(2, 70, ),
+new GuitarString(1, 77, )
+Retune -4 1 -2 -2 -1 1
+Fret 10 2 5 5 7 
+}
+}
+
+public class GuitarTuningToulouse
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Toulouse ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Toulouse Tuning";
+
+public override string Tuning { get; }
+= "E C D F A D";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 52, ),
+new GuitarString(5, 60, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 65, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 74, )
+Retune 0 3 0 -2 -2 -2
+Fret 8 2 3 4 5 
+}
+}
+
+public class GuitarTuningTriqueen
+ : GuitarTuning
+{
+public override GuitarTuningType TuningType { get; }
+= GuitarTuningType.Triqueen ;
+
+public override GuitarTuningCategory Category { get; }
+= GuitarTuningCategory.Special ;
+
+public override string Name { get; }
+= "The Triqueen Tuning";
+
+public override string Tuning { get; }
+= "D G D F# A B";
+
+public override string Description { get; }
+= "";
+
+public override List<GuitarString> Strings { get; }
+= new List<GuitarString>
+{
+new GuitarString(6, 50, ),
+new GuitarString(5, 55, ),
+new GuitarString(4, 62, ),
+new GuitarString(3, 66, ),
+new GuitarString(2, 69, ),
+new GuitarString(1, 71, )
+Retune -2 -2 0 -1 -2 -5
+Fret 5 7 4 3 2 
+}
+}
+

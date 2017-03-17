@@ -215,6 +215,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\GuitarTuningFactory.cs" />
+    <Compile Include="Instruments\GuitarTunings\Enum\Class1.cs" />
     <Compile Include="Instruments\GuitarTunings\Enum\GuitarTuningCategory.cs" />
     <Compile Include="Instruments\GuitarTunings\Enum\GuitarTuningType.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningBaritone.cs" />

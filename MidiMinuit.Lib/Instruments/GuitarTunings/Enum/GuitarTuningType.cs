@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MidiMinuit.Lib.Core.Notes;
+using MidiMinuit.Lib.Instruments.GuitarTunings.Enum;
 
 namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
@@ -26,19 +27,22 @@ namespace MidiMinuit.Lib.Instruments.GuitarTunings
     public class GuitarTuningStandard
         : GuitarTuning
     {
-        public GuitarTuningType TuningType { get; }
+        public override GuitarTuningType TuningType { get; }
             = GuitarTuningType.Standard;
 
-        public string Tuning { get; }
+        public override GuitarTuningCategory Category { get; }
+            = GuitarTuningCategory.Standard;
+
+        public override string Tuning { get; }
             = "E A D G B E";
 
-        public string Name { get; }
+        public override string Name { get; }
             = "Standard";
 
-        public string Description { get; }
+        public override string Description { get; }
             = "";
 
-        public List<GuitarString> Strings { get; }
+        public override List<GuitarString> Strings { get; }
             = new List<GuitarString>
             {
                 new GuitarString(6, 52, 0, 5),
