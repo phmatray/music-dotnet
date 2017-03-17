@@ -2,12 +2,9 @@
 {
     public enum GuitarTuningCategory
     {
-        OpenMajor,
-        OpenMinor,
+        Open,
+        Instrumental,
         Regular,
-        Dropped,
-        Shifted,
-        Miscellaneous,
-        Instrumental
+        Special
     }
 }
