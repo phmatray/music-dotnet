@@ -4,23 +4,16 @@
     using MidiMinuit.Lib.Core.Notes;
     using MidiMinuit.Lib.Instruments.GuitarTunings.Enum;
 
-    public class GuitarTuningOpenA
+    public class GuitarTuningOpenB
         : GuitarTuning
     {
         public override List<Note> Notes { get; }
-            = Note.GetNotes("E", "A", "E", "A", "D♭", "E");
+            = Note.GetNotes("B", "F♯", "B", "F♯", "B", "D♯");
 
         public override string Name { get; }
-            = "Open A";
+            = "Open B";
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.OpenMajor;
-
-        public List<string> Songs { get; }
-            = new List<string>
-            {
-                "Jimmy Page on In My Time of Dying",
-                "Jack White on Seven Nation Army"
-            };
     }
 }

@@ -215,7 +215,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\GuitarTuningFactory.cs" />
-    <Compile Include="Instruments\GuitarTunings\Enum\Class1.cs" />
+    <Compile Include="Instruments\GuitarTunings\Enum\GuitarTuningCategory.cs" />
     <Compile Include="Instruments\GuitarTunings\Enum\GuitarTuningType.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningBaritone.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningDobroOpenG.cs" />
@@ -229,6 +229,7 @@
     <Compile Include="Instruments\GuitarTunings\GuitarTuningNashville.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningOpenA.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningOpenAm.cs" />
+    <Compile Include="Instruments\GuitarTunings\GuitarTuningOpenB.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningOpenC.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningOpenC6.cs" />
     <Compile Include="Instruments\GuitarTunings\GuitarTuningOpenCm.cs" />

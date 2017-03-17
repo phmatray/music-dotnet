@@ -4,7 +4,6 @@
     {
         OpenMajor,
         OpenMinor,
-
         Regular,
         Dropped,
         Shifted,
