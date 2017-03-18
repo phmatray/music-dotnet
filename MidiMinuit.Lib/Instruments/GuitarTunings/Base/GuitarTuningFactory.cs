@@ -1,9 +1,19 @@
 ﻿namespace MidiMinuit.Lib.Instruments.GuitarTunings
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class GuitarTuningFactory
     {
+        public virtual List<GuitarTuning> CreateAllGuitarTunings()
+        {
+            return Enum.GetValues(typeof(GuitarTuningType))
+                .Cast<GuitarTuningType>()
+                .Select(CreateGuitarTuning)
+                .ToList();
+        }
+
         public virtual GuitarTuning CreateGuitarTuning(GuitarTuningType guitarTuningType)
         {
             switch (guitarTuningType)

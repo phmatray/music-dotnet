@@ -1,10 +1,20 @@
 ﻿namespace MidiMinuit.Lib.Core.Chords
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Notes;
 
     public class ChordFactory
     {
+        public virtual List<Chord> CreateAllScales(Note fondamental)
+        {
+            return Enum.GetValues(typeof(ChordQuality))
+                .Cast<ChordQuality>()
+                .Select(x => CreateChord(x, fondamental))
+                .ToList();
+        }
+
         public virtual Chord CreateChord(ChordQuality chordQuality, Note fondamental)
         {
             /*

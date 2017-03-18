@@ -1,10 +1,20 @@
-﻿namespace MidiMinuit.Lib.Core.Scales.Base
+﻿namespace MidiMinuit.Lib.Core.Scales
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Notes;
 
     public class ScaleFactory
     {
+        public virtual List<Scale> CreateAllScales(Note key)
+        {
+            return Enum.GetValues(typeof(ScaleType))
+                .Cast<ScaleType>()
+                .Select(x => CreateScale(x, key))
+                .ToList();
+        }
+
         public virtual Scale CreateScale(ScaleType scaleType, Note key)
         {
             switch (scaleType)

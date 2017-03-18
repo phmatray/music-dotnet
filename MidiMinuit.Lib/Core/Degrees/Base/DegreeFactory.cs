@@ -1,9 +1,19 @@
-﻿namespace MidiMinuit.Lib.Core.Degrees.Base
+﻿namespace MidiMinuit.Lib.Core.Degrees
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class DegreeFactory
     {
+        public virtual List<Degree> CreateAllDegrees()
+        {
+            return Enum.GetValues(typeof(DegreeNumber))
+                .Cast<DegreeNumber>()
+                .Select(CreateDegree)
+                .ToList();
+        }
+
         public virtual Degree CreateDegree(DegreeNumber degree)
         {
             switch (degree)
