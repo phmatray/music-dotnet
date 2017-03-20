@@ -1,0 +1,33 @@
+﻿namespace ConsoleApp1.IntervalQualities
+{
+    public enum IntervalQuality
+    {
+        IntervalPerfectUnison,
+        IntervalPerfectFourth,
+        IntervalPerfectFifth,
+        IntervalPerfectOctave,
+        IntervalMajorSecond,
+        IntervalMajorThird,
+        IntervalMajorSixth,
+        IntervalMajorSeventh,
+        IntervalMinorSecond,
+        IntervalMinorThird,
+        IntervalMinorSixth,
+        IntervalMinorSeventh,
+        IntervalAugmentedUnison,
+        IntervalAugmentedSecond,
+        IntervalAugmentedThird,
+        IntervalAugmentedFourth,
+        IntervalAugmentedFifth,
+        IntervalAugmentedSixth,
+        IntervalAugmentedSeventh,
+        IntervalAugmentedOctave,
+        IntervalDiminishedSecond,
+        IntervalDiminishedThird,
+        IntervalDiminishedFourth,
+        IntervalDiminishedFifth,
+        IntervalDiminishedSixth,
+        IntervalDiminishedSeventh,
+        IntervalDiminishedOctave
+    }
+}

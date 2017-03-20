@@ -7,7 +7,7 @@
 
     public class ChordFactory
     {
-        public virtual List<Chord> CreateAllScales(Note fondamental)
+        public virtual List<Chord> CreateAllChords(Note fondamental)
         {
             return Enum.GetValues(typeof(ChordQuality))
                 .Cast<ChordQuality>()

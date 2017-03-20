@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1.Intervals;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace ConsoleApp1
@@ -11,14 +12,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var note1 = new Note(NoteNameEnum.C);
-            var note2 = new Note(NoteNameEnum.G);
+            var note1 = new Note(NoteName.E);
+            var note2 = new Note(NoteName.F);
 
-            var interval = new IntervalSimple(note1, note2);
+            var interval = new Interval(note1, note2);
             Console.WriteLine(interval);
 
-            var intervalInverse = interval.InverseRaisingLower();
-            Console.WriteLine(intervalInverse);
+            ////var intervalInverse = interval.InverseRaisingLower();
+            ////Console.WriteLine(intervalInverse);
 
 
 

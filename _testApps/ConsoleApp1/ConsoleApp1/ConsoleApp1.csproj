@@ -43,10 +43,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chord.cs" />
-    <Compile Include="Intervals\Extensions\EnumExtensions.cs" />
+    <Compile Include="IntervalModifiers\Base\IntervalModifier.cs" />
+    <Compile Include="IntervalModifiers\Base\IntervalModifierFactory.cs" />
+    <Compile Include="IntervalModifiers\Base\IntervalModifierRepository.cs" />
+    <Compile Include="IntervalModifiers\Enum\IntervalModifierEnum.cs" />
+    <Compile Include="IntervalModifiers\IntervalModifierAugmented.cs" />
+    <Compile Include="IntervalModifiers\IntervalModifierDiminished.cs" />
+    <Compile Include="IntervalModifiers\IntervalModifierMajor.cs" />
+    <Compile Include="IntervalModifiers\IntervalModifierMinor.cs" />
+    <Compile Include="IntervalModifiers\IntervalModifierPerfect.cs" />
+    <Compile Include="IntervalQualities\Base\IntervalFactory.cs" />
+    <Compile Include="IntervalQualities\Base\IntervalRepository.cs" />
+    <Compile Include="IntervalQualities\Enum\IntervalQuality.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedFifth.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedFourth.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedOctave.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedSecond.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedSeventh.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedSixth.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedThird.cs" />
+    <Compile Include="IntervalQualities\IntervalAugmentedUnison.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedFifth.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedFourth.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedOctave.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedSecond.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedSeventh.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedSixth.cs" />
+    <Compile Include="IntervalQualities\IntervalDiminishedThird.cs" />
+    <Compile Include="IntervalQualities\IntervalMajorSecond.cs" />
+    <Compile Include="IntervalQualities\IntervalMajorSeventh.cs" />
+    <Compile Include="IntervalQualities\IntervalMajorSixth.cs" />
+    <Compile Include="IntervalQualities\IntervalMajorThird.cs" />
+    <Compile Include="IntervalQualities\IntervalMinorSecond.cs" />
+    <Compile Include="IntervalQualities\IntervalMinorSeventh.cs" />
+    <Compile Include="IntervalQualities\IntervalMinorSixth.cs" />
+    <Compile Include="IntervalQualities\IntervalMinorThird.cs" />
+    <Compile Include="IntervalQualities\IntervalPerfectFifth.cs" />
+    <Compile Include="IntervalQualities\IntervalPerfectFourth.cs" />
+    <Compile Include="IntervalQualities\IntervalPerfectOctave.cs" />
+    <Compile Include="IntervalQualities\IntervalPerfectUnison.cs" />
+    <Compile Include="IntervalQualities\Base\Interval.cs" />
     <Compile Include="Intervals\Base\Interval.cs" />
-    <Compile Include="Intervals\Enum\IntervalNumberEnum.cs" />
-    <Compile Include="Intervals\Enum\IntervalQualityEnum.cs" />
+    <Compile Include="Intervals\Base\IntervalCompound.cs" />
+    <Compile Include="Intervals\Base\IntervalFactory.cs" />
+    <Compile Include="Intervals\Base\IntervalSimple.cs" />
+    <Compile Include="IntervalQualities\Enum\IntervalSpanning.cs" />
+    <Compile Include="Intervals\Enum\IntervalQuality.cs" />
+    <Compile Include="Intervals\Enum\IntervalNumber.cs" />
+    <Compile Include="Intervals\IntervalPerfectUnison.cs" />
     <Compile Include="MusicMathFormulaHelpers.cs" />
     <Compile Include="MidiMinuitLib\Note.cs" />
     <Compile Include="Program.cs" />
@@ -55,6 +99,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="IntervalNumbers\Base\" />
+    <Folder Include="IntervalNumbers\Enum\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

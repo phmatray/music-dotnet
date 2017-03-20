@@ -13,25 +13,25 @@ namespace MidiMinuit.Lib.Core.Notes
         }
 
         public static NoteName C { get; }
-            = new NoteName(0, 0, nameof(C), "Do");
+            = new NoteName(0, 1, nameof(C), "Do");
 
         public static NoteName D { get; }
-            = new NoteName(2, 1, nameof(D), "Ré");
+            = new NoteName(2, 2, nameof(D), "Ré");
 
         public static NoteName E { get; }
-            = new NoteName(4, 2, nameof(E), "Mi");
+            = new NoteName(4, 3, nameof(E), "Mi");
 
         public static NoteName F { get; }
-            = new NoteName(5, 3, nameof(F), "Fa");
+            = new NoteName(5, 4, nameof(F), "Fa");
 
         public static NoteName G { get; }
-            = new NoteName(7, 4, nameof(G), "Sol");
+            = new NoteName(7, 5, nameof(G), "Sol");
 
         public static NoteName A { get; }
-            = new NoteName(9, 5, nameof(A), "La");
+            = new NoteName(9, 6, nameof(A), "La");
 
         public static NoteName B { get; }
-            = new NoteName(11, 6, nameof(B), "Si");
+            = new NoteName(11, 7, nameof(B), "Si");
 
         public int Value { get; }
 
