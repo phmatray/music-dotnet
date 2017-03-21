@@ -1,5 +1,5 @@
 ﻿using System;
-using ConsoleApp1.Intervals;
+using ConsoleApp1.IntervalsOld;
 using MidiMinuit.Lib.Core.Notes;
 
 namespace ConsoleApp1
