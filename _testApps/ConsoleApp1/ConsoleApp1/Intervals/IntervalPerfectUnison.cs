@@ -1,5 +1,6 @@
 ﻿using System;
 using ConsoleApp1.IntervalModifiers;
+using ConsoleApp1.IntervalNumbers;
 using ConsoleApp1.IntervalQualities;
 
 namespace ConsoleApp1.Intervals
@@ -24,7 +25,7 @@ namespace ConsoleApp1.Intervals
             = IntervalSpanning.Simple;
 
         public override IntervalNumber Number { get; }
-            = IntervalNumber.Unison;
+            = new IntervalNumberUnison();
 
         public override IntervalModifier Modifier { get; }
             = new IntervalModifierPerfect();

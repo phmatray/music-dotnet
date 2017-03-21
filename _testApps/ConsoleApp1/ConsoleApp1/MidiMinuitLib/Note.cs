@@ -1,6 +1,4 @@
-﻿using ConsoleApp1;
-
-namespace MidiMinuit.Lib.Core.Notes
+﻿namespace MidiMinuit.Lib.Core.Notes
 {
     using System;
     using System.Collections.Generic;

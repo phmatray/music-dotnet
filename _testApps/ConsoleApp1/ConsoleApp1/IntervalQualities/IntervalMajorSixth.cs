@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using ConsoleApp1.IntervalModifiers;
-using ConsoleApp1.Intervals;
+using ConsoleApp1.IntervalNumbers;
 
 namespace ConsoleApp1.IntervalQualities
 {
@@ -33,7 +33,7 @@ namespace ConsoleApp1.IntervalQualities
             = 9;
 
         public override IntervalNumber Number { get; } 
-            = IntervalNumber.Sixth;
+            = new IntervalNumberSixth();
 
         public override IntervalModifier Modifier { get; } 
             = new IntervalModifierMajor();

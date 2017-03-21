@@ -46,12 +46,24 @@
     <Compile Include="IntervalModifiers\Base\IntervalModifier.cs" />
     <Compile Include="IntervalModifiers\Base\IntervalModifierFactory.cs" />
     <Compile Include="IntervalModifiers\Base\IntervalModifierRepository.cs" />
-    <Compile Include="IntervalModifiers\Enum\IntervalModifierEnum.cs" />
+    <Compile Include="IntervalModifiers\Enum\Modifier.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierAugmented.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierDiminished.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierMajor.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierMinor.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierPerfect.cs" />
+    <Compile Include="IntervalNumbers\Base\IntervalNumber.cs" />
+    <Compile Include="IntervalNumbers\Base\IntervalNumberFactory.cs" />
+    <Compile Include="IntervalNumbers\Base\IntervalNumberRepository.cs" />
+    <Compile Include="IntervalNumbers\Enum\Number.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberFifth.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberFourth.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberOctave.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberSecond.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberSeventh.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberSixth.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberThird.cs" />
+    <Compile Include="IntervalNumbers\IntervalNumberUnison.cs" />
     <Compile Include="IntervalQualities\Base\IntervalFactory.cs" />
     <Compile Include="IntervalQualities\Base\IntervalRepository.cs" />
     <Compile Include="IntervalQualities\Enum\IntervalQuality.cs" />
@@ -89,7 +101,6 @@
     <Compile Include="Intervals\Base\IntervalSimple.cs" />
     <Compile Include="IntervalQualities\Enum\IntervalSpanning.cs" />
     <Compile Include="Intervals\Enum\IntervalQuality.cs" />
-    <Compile Include="Intervals\Enum\IntervalNumber.cs" />
     <Compile Include="Intervals\IntervalPerfectUnison.cs" />
     <Compile Include="MusicMathFormulaHelpers.cs" />
     <Compile Include="MidiMinuitLib\Note.cs" />
@@ -99,9 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IntervalNumbers\Base\" />
-    <Folder Include="IntervalNumbers\Enum\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

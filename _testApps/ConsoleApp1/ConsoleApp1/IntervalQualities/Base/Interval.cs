@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
 using ConsoleApp1.IntervalModifiers;
-using ConsoleApp1.Intervals;
+using ConsoleApp1.IntervalNumbers;
 
 namespace ConsoleApp1.IntervalQualities
 {
     public abstract class Interval
     {
+        /* Possibilités d'évolution
+         * --------------------------------------
+         * Additionner une note et un interval: ex: Note.C + Interval.PerfectFifth = Note.G
+         * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
+         */
+
         public abstract int Semitones { get; }
 
         public abstract IntervalNumber Number { get; }

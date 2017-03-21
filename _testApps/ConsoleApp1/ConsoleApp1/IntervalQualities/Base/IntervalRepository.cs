@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ConsoleApp1.IntervalModifiers;
-using ConsoleApp1.Intervals;
+using ConsoleApp1.IntervalNumbers;
 
 namespace ConsoleApp1.IntervalQualities
 {

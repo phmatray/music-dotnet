@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using ConsoleApp1.IntervalModifiers;
-using ConsoleApp1.Intervals;
+using ConsoleApp1.IntervalNumbers;
 
 namespace ConsoleApp1.IntervalQualities
 {
-    public class IntervalAugmentedFifth : Interval
+    public class IntervalAugmentedFifth
+        : Interval
     {
         public override IntervalQuality Quality { get; }
             = IntervalQuality.IntervalAugmentedFifth;
@@ -25,7 +26,7 @@ namespace ConsoleApp1.IntervalQualities
             = 8;
 
         public override IntervalNumber Number { get; } 
-            = IntervalNumber.Fifth;
+            = new IntervalNumberFifth();
 
         public override IntervalModifier Modifier { get; } 
             = new IntervalModifierAugmented();

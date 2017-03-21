@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ConsoleApp1.IntervalModifiers;
+using ConsoleApp1.IntervalNumbers;
 using ConsoleApp1.IntervalQualities;
 using MidiMinuit.Lib.Core.Notes;
 
@@ -141,7 +142,7 @@ namespace ConsoleApp1.Intervals
                 number += 7;
             }
 
-            return IntervalNumber.GetNumber(number);
+            return new IntervalNumberRepository().Get(number);
         }
 
         private static IntervalModifier GetIntervalModifier(IntervalNumber number, int semitones)
@@ -160,7 +161,7 @@ namespace ConsoleApp1.Intervals
                 throw new ArgumentOutOfRangeException(nameof(semitones));
             }
 
-            if (number == IntervalNumber.Unison)
+            if (number.Number == IntervalNumbers.Number.Unison)
             {
                 switch (semitones)
                 {
@@ -170,7 +171,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Second)
+            else if (number.Number == IntervalNumbers.Number.Second)
             {
                 switch (semitones)
                 {
@@ -184,7 +185,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Third)
+            else if (number.Number == IntervalNumbers.Number.Third)
             {
                 switch (semitones)
                 {
@@ -198,7 +199,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Fourth)
+            else if (number.Number == IntervalNumbers.Number.Fourth)
             {
                 switch (semitones)
                 {
@@ -210,7 +211,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Fifth)
+            else if (number.Number == IntervalNumbers.Number.Fifth)
             {
                 switch (semitones)
                 {
@@ -222,7 +223,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Sixth)
+            else if (number.Number == IntervalNumbers.Number.Sixth)
             {
                 switch (semitones)
                 {
@@ -236,7 +237,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Seventh)
+            else if (number.Number == IntervalNumbers.Number.Seventh)
             {
                 switch (semitones)
                 {
@@ -250,7 +251,7 @@ namespace ConsoleApp1.Intervals
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number == IntervalNumber.Seventh)
+            else if (number.Number == IntervalNumbers.Number.Seventh)
             {
                 switch (semitones)
                 {

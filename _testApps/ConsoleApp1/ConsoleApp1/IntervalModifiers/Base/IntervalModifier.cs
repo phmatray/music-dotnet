@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConsoleApp1.IntervalModifiers
+﻿namespace ConsoleApp1.IntervalModifiers
 {
     public abstract class IntervalModifier
     {
