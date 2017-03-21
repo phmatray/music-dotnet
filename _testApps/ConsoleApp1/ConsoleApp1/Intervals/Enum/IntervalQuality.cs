@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.IntervalQualities
+﻿namespace ConsoleApp1.Intervals
 {
     public enum IntervalQuality
     {

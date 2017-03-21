@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using ConsoleApp1.IntervalModifiers;
 using ConsoleApp1.IntervalNumbers;
 
-namespace ConsoleApp1.IntervalQualities
+namespace ConsoleApp1.Intervals
 {
     public class IntervalPerfectUnison : Interval
     {
         public override IntervalQuality Quality { get; }
             = IntervalQuality.IntervalPerfectUnison;
+
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Parfaite;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Perfect Unison", "Prime", "Perfect Prime" };

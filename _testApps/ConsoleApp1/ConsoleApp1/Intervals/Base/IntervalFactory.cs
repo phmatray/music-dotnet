@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsoleApp1.IntervalQualities
+namespace ConsoleApp1.Intervals
 {
     public class IntervalFactory
     {
