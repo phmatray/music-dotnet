@@ -362,26 +362,6 @@ namespace ConsoleApp1.IntervalsOld
         Diatonic,
         Chromatic
     }
-
-    public enum IntervalClassification3
-    {
-        /*
-         * Consonance and dissonance are relative terms that refer to the stability, 
-         * or state of repose, of particular musical effects. Dissonant intervals are 
-         * those that cause tension, and desire to be resolved to consonant intervals.
-         */
-
-        Consonant,
-        Dissonant
-
-        /*
-         * Equisonance,
-         * Consonance Parfaite,
-         * Consonance Imparfaite,
-         * Consonance Mixte,
-         */
-    }
-
 }
 
 

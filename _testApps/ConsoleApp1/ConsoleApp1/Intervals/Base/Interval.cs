@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ConsoleApp1.IntervalModifiers;
 using ConsoleApp1.IntervalNumbers;
+using MidiMinuit.Lib.Core.Notes;
 
 namespace ConsoleApp1.Intervals
 {
@@ -11,7 +12,11 @@ namespace ConsoleApp1.Intervals
          * Additionner une note et un interval: ex: Note.C + Interval.PerfectFifth = Note.G
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
-        
+
+        public Note LowerNote { get; }
+
+        public Note UpperNote { get; }
+
         public abstract int Semitones { get; }
 
         public abstract IntervalNumber Number { get; }
@@ -34,6 +39,14 @@ namespace ConsoleApp1.Intervals
 
         public string Abbreviation
             => $"{Modifier.Abbreviation}{Number.Value}";
+
+        /// <summary>
+        ///     Gets the interval class
+        ///     An interval class is the shortest distance in pitch class space between two unordered pitch classes.
+        /// </summary>
+        /// <returns>The interval class</returns>
+        public int IntervalClass
+            => MusicMathFormulaHelpers.InvervalClass(Semitones);
 
         public abstract override string ToString();
 

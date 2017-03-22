@@ -67,6 +67,7 @@
     <Compile Include="Intervals\Base\IntervalRepository.cs" />
     <Compile Include="Intervals\Enum\IntervalConsonance.cs" />
     <Compile Include="Intervals\Enum\IntervalQuality.cs" />
+    <Compile Include="Intervals\Extensions\IntervalExtensions.cs" />
     <Compile Include="Intervals\IntervalAugmentedFifth.cs" />
     <Compile Include="Intervals\IntervalAugmentedFourth.cs" />
     <Compile Include="Intervals\IntervalAugmentedOctave.cs" />
@@ -101,6 +102,26 @@
     <Compile Include="Intervals\Enum\IntervalSpanning.cs" />
     <Compile Include="MusicMathFormulaHelpers.cs" />
     <Compile Include="MidiMinuitLib\Note.cs" />
+    <Compile Include="NoteAccidentals\Base\NoteAccidentalRepository.cs" />
+    <Compile Include="NoteAccidentals\Enum\Accidental.cs" />
+    <Compile Include="NoteAccidentals\Base\NoteAccidental.cs" />
+    <Compile Include="NoteAccidentals\NoteAccidentalDoubleFlat.cs" />
+    <Compile Include="NoteAccidentals\NoteAccidentalDoubleSharp.cs" />
+    <Compile Include="NoteAccidentals\Base\NoteAccidentalFactory.cs" />
+    <Compile Include="NoteAccidentals\NoteAccidentalFlat.cs" />
+    <Compile Include="NoteAccidentals\NoteAccidentalNatural.cs" />
+    <Compile Include="NoteAccidentals\NoteAccidentalSharp.cs" />
+    <Compile Include="NoteNames\Enum\Name.cs" />
+    <Compile Include="NoteNames\Base\NoteName.cs" />
+    <Compile Include="NoteNames\NoteNameA.cs" />
+    <Compile Include="NoteNames\NoteNameB.cs" />
+    <Compile Include="NoteNames\NoteNameC.cs" />
+    <Compile Include="NoteNames\NoteNameD.cs" />
+    <Compile Include="NoteNames\NoteNameE.cs" />
+    <Compile Include="NoteNames\NoteNameF.cs" />
+    <Compile Include="NoteNames\Base\NoteNameFactory.cs" />
+    <Compile Include="NoteNames\NoteNameG.cs" />
+    <Compile Include="NoteNames\Base\NoteNameRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

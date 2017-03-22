@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleApp1.Intervals;
 using ConsoleApp1.IntervalsOld;
 using MidiMinuit.Lib.Core.Notes;
 
@@ -8,11 +9,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var note1 = new Note(NoteName.E);
-            var note2 = new Note(NoteName.F);
+            var note1 = new Note(NoteName.C, NoteAccidental.DoubleSharp);
+            var note2 = new Note(NoteName.G);
+            var interval = new IntervalPerfectFifth();
 
-            var interval = new Interval(note1, note2);
-            Console.WriteLine(interval);
+            var upperNote = IntervalExtensions.GetUpperNote(note1, interval);
+            Console.WriteLine(upperNote);
+
+
+            //var interval = new Interval(note1, note2);
+            //Console.WriteLine(interval);
 
             ////var intervalInverse = interval.InverseRaisingLower();
             ////Console.WriteLine(intervalInverse);
