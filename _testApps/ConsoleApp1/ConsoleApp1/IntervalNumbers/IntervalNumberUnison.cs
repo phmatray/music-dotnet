@@ -3,8 +3,8 @@ namespace ConsoleApp1.IntervalNumbers
     public class IntervalNumberUnison
         : IntervalNumber
     {
-        public override Number Number { get; }
-            = Number.Unison;
+        public override IntervalNumberAlias Alias { get; }
+            = IntervalNumberAlias.Unison;
 
         public override int Value { get; }
             = 1;

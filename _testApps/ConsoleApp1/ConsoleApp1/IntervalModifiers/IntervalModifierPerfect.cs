@@ -3,8 +3,8 @@ namespace ConsoleApp1.IntervalModifiers
     public class IntervalModifierPerfect
         : IntervalModifier
     {
-        public override Modifier Modifier { get; }
-            = Modifier.Perfect;
+        public override IntervalModifierAlias Alias { get; }
+            = IntervalModifierAlias.Perfect;
 
         public override string Name { get; }
             = "Perfect";

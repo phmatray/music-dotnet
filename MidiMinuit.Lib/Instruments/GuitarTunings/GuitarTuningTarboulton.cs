@@ -5,8 +5,8 @@
     public class GuitarTuningTarboulton
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Tarboulton;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Tarboulton;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

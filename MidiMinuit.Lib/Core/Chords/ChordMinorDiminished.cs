@@ -26,8 +26,8 @@
 
         public IntervalDiminishedFifth FifthDiminished { get; }
 
-        public override ChordQuality Quality { get; }
-            = ChordQuality.MinorDiminished;
+        public override ChordAlias Alias { get; }
+            = ChordAlias.MinorDiminished;
 
         public override string Description { get; }
             = "Description not added yet.";

@@ -3,8 +3,8 @@ namespace ConsoleApp1.NoteAccidentals
     public class NoteAccidentalNatural
         : NoteAccidental
     {
-        public override Accidental Accidental { get; }
-            = Accidental.Natural;
+        public override NoteAccidentalAlias Alias { get; }
+            = NoteAccidentalAlias.Natural;
 
         public override int Value { get; }
             = 0;

@@ -5,8 +5,8 @@
     public class GuitarTuningSlowMotion
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.SlowMotion;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.SlowMotion;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

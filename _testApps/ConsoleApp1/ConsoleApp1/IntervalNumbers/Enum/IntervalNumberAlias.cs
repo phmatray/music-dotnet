@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.IntervalNumbers
 {
-    public enum Number
+    public enum IntervalNumberAlias
     {
         Unison = 1,
         Second = 2,

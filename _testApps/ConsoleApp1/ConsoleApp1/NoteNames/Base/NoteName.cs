@@ -2,7 +2,7 @@
 {
     public abstract class NoteName
     {
-        public abstract Name NameEnum { get; }
+        public abstract NoteNameAlias Alias { get; }
 
         public abstract int Value { get; }
 

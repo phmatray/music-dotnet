@@ -5,8 +5,8 @@
     public class GuitarTuningTriqueen
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Triqueen;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Triqueen;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

@@ -3,8 +3,8 @@ namespace ConsoleApp1.IntervalNumbers
     public class IntervalNumberOctave
         : IntervalNumber
     {
-        public override Number Number { get; }
-            = Number.Octave;
+        public override IntervalNumberAlias Alias { get; }
+            = IntervalNumberAlias.Octave;
 
         public override int Value { get; }
             = 8;

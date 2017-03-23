@@ -36,7 +36,7 @@ namespace ConsoleApp1.IntervalsOld
             Spanning = IntervalSpanning.Simple;
         }
 
-        public Interval(IntervalQuality quality, Note lowerNote)
+        public Interval(IntervalAlias quality, Note lowerNote)
         {
             if (lowerNote == null)
             {
@@ -56,7 +56,7 @@ namespace ConsoleApp1.IntervalsOld
 
         public int Semitones { get; }
 
-        public IntervalQuality Quality { get; }
+        public IntervalAlias Quality { get; }
 
         public virtual IntervalNumber Number { get; }
 
@@ -161,7 +161,7 @@ namespace ConsoleApp1.IntervalsOld
                 throw new ArgumentOutOfRangeException(nameof(semitones));
             }
 
-            if (number.Number == IntervalNumbers.Number.Unison)
+            if (number.Alias == IntervalNumbers.IntervalNumberAlias.Unison)
             {
                 switch (semitones)
                 {
@@ -171,7 +171,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Second)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Second)
             {
                 switch (semitones)
                 {
@@ -185,7 +185,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Third)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Third)
             {
                 switch (semitones)
                 {
@@ -199,7 +199,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Fourth)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Fourth)
             {
                 switch (semitones)
                 {
@@ -211,7 +211,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Fifth)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Fifth)
             {
                 switch (semitones)
                 {
@@ -223,7 +223,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Sixth)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Sixth)
             {
                 switch (semitones)
                 {
@@ -237,7 +237,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Seventh)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Seventh)
             {
                 switch (semitones)
                 {
@@ -251,7 +251,7 @@ namespace ConsoleApp1.IntervalsOld
                         return new IntervalModifierAugmented();
                 }
             }
-            else if (number.Number == IntervalNumbers.Number.Seventh)
+            else if (number.Alias == IntervalNumbers.IntervalNumberAlias.Seventh)
             {
                 switch (semitones)
                 {
@@ -267,64 +267,64 @@ namespace ConsoleApp1.IntervalsOld
             throw new ArgumentOutOfRangeException();
         }
 
-        private static Note GetUpperNote(Note lowerNote, IntervalQuality quality)
+        private static Note GetUpperNote(Note lowerNote, IntervalAlias quality)
         {
             return null;
             switch (quality)
             {
-                case IntervalQuality.IntervalPerfectUnison:
+                case IntervalAlias.IntervalPerfectUnison:
                     break;
-                case IntervalQuality.IntervalPerfectFourth:
+                case IntervalAlias.IntervalPerfectFourth:
                     break;
-                case IntervalQuality.IntervalPerfectFifth:
+                case IntervalAlias.IntervalPerfectFifth:
                     break;
-                case IntervalQuality.IntervalPerfectOctave:
+                case IntervalAlias.IntervalPerfectOctave:
                     break;
-                case IntervalQuality.IntervalMajorSecond:
+                case IntervalAlias.IntervalMajorSecond:
                     break;
-                case IntervalQuality.IntervalMajorThird:
+                case IntervalAlias.IntervalMajorThird:
                     break;
-                case IntervalQuality.IntervalMajorSixth:
+                case IntervalAlias.IntervalMajorSixth:
                     break;
-                case IntervalQuality.IntervalMajorSeventh:
+                case IntervalAlias.IntervalMajorSeventh:
                     break;
-                case IntervalQuality.IntervalMinorSecond:
+                case IntervalAlias.IntervalMinorSecond:
                     break;
-                case IntervalQuality.IntervalMinorThird:
+                case IntervalAlias.IntervalMinorThird:
                     break;
-                case IntervalQuality.IntervalMinorSixth:
+                case IntervalAlias.IntervalMinorSixth:
                     break;
-                case IntervalQuality.IntervalMinorSeventh:
+                case IntervalAlias.IntervalMinorSeventh:
                     break;
-                case IntervalQuality.IntervalAugmentedUnison:
+                case IntervalAlias.IntervalAugmentedUnison:
                     break;
-                case IntervalQuality.IntervalAugmentedSecond:
+                case IntervalAlias.IntervalAugmentedSecond:
                     break;
-                case IntervalQuality.IntervalAugmentedThird:
+                case IntervalAlias.IntervalAugmentedThird:
                     break;
-                case IntervalQuality.IntervalAugmentedFourth:
+                case IntervalAlias.IntervalAugmentedFourth:
                     break;
-                case IntervalQuality.IntervalAugmentedFifth:
+                case IntervalAlias.IntervalAugmentedFifth:
                     break;
-                case IntervalQuality.IntervalAugmentedSixth:
+                case IntervalAlias.IntervalAugmentedSixth:
                     break;
-                case IntervalQuality.IntervalAugmentedSeventh:
+                case IntervalAlias.IntervalAugmentedSeventh:
                     break;
-                case IntervalQuality.IntervalAugmentedOctave:
+                case IntervalAlias.IntervalAugmentedOctave:
                     break;
-                case IntervalQuality.IntervalDiminishedSecond:
+                case IntervalAlias.IntervalDiminishedSecond:
                     break;
-                case IntervalQuality.IntervalDiminishedThird:
+                case IntervalAlias.IntervalDiminishedThird:
                     break;
-                case IntervalQuality.IntervalDiminishedFourth:
+                case IntervalAlias.IntervalDiminishedFourth:
                     break;
-                case IntervalQuality.IntervalDiminishedFifth:
+                case IntervalAlias.IntervalDiminishedFifth:
                     break;
-                case IntervalQuality.IntervalDiminishedSixth:
+                case IntervalAlias.IntervalDiminishedSixth:
                     break;
-                case IntervalQuality.IntervalDiminishedSeventh:
+                case IntervalAlias.IntervalDiminishedSeventh:
                     break;
-                case IntervalQuality.IntervalDiminishedOctave:
+                case IntervalAlias.IntervalDiminishedOctave:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(quality), quality, null);

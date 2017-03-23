@@ -5,8 +5,8 @@
     public class GuitarTuningBalalaika
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Balalaika;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Balalaika;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Instrumental;

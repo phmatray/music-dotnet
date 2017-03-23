@@ -5,8 +5,8 @@
     public class GuitarTuningOpenGMinor
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.OpenGMinor;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.OpenGMinor;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Open;

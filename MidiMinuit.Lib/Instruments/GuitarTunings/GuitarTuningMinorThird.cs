@@ -5,8 +5,8 @@
     public class GuitarTuningMinorThird
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.MinorThird;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.MinorThird;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Regular;

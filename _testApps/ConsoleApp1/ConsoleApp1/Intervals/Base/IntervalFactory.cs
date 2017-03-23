@@ -8,72 +8,72 @@ namespace ConsoleApp1.Intervals
     {
         public virtual List<Interval> CreateAllIntervals()
         {
-            return Enum.GetValues(typeof(IntervalQuality))
-                .Cast<IntervalQuality>()
+            return Enum.GetValues(typeof(IntervalAlias))
+                .Cast<IntervalAlias>()
                 .Select(CreateInterval)
                 .ToList();
         }
 
-        public virtual Interval CreateInterval(IntervalQuality intervalQuality)
+        public virtual Interval CreateInterval(IntervalAlias interval)
         {
-            switch (intervalQuality)
+            switch (interval)
             {
-                case IntervalQuality.IntervalPerfectUnison:
+                case IntervalAlias.IntervalPerfectUnison:
                     return new IntervalPerfectUnison();
-                case IntervalQuality.IntervalPerfectFourth:
+                case IntervalAlias.IntervalPerfectFourth:
                     return new IntervalPerfectFourth();
-                case IntervalQuality.IntervalPerfectFifth:
+                case IntervalAlias.IntervalPerfectFifth:
                     return new IntervalPerfectFifth();
-                case IntervalQuality.IntervalPerfectOctave:
+                case IntervalAlias.IntervalPerfectOctave:
                     return new IntervalPerfectOctave();
-                case IntervalQuality.IntervalMajorSecond:
+                case IntervalAlias.IntervalMajorSecond:
                     return new IntervalMajorSecond();
-                case IntervalQuality.IntervalMajorThird:
+                case IntervalAlias.IntervalMajorThird:
                     return new IntervalMajorThird();
-                case IntervalQuality.IntervalMajorSixth:
+                case IntervalAlias.IntervalMajorSixth:
                     return new IntervalMajorSixth();
-                case IntervalQuality.IntervalMajorSeventh:
+                case IntervalAlias.IntervalMajorSeventh:
                     return new IntervalMajorSeventh();
-                case IntervalQuality.IntervalMinorSecond:
+                case IntervalAlias.IntervalMinorSecond:
                     return new IntervalMinorSecond();
-                case IntervalQuality.IntervalMinorThird:
+                case IntervalAlias.IntervalMinorThird:
                     return new IntervalMinorThird();
-                case IntervalQuality.IntervalMinorSixth:
+                case IntervalAlias.IntervalMinorSixth:
                     return new IntervalMinorSixth();
-                case IntervalQuality.IntervalMinorSeventh:
+                case IntervalAlias.IntervalMinorSeventh:
                     return new IntervalMinorSeventh();
-                case IntervalQuality.IntervalAugmentedUnison:
+                case IntervalAlias.IntervalAugmentedUnison:
                     return new IntervalAugmentedUnison();
-                case IntervalQuality.IntervalAugmentedSecond:
+                case IntervalAlias.IntervalAugmentedSecond:
                     return new IntervalAugmentedSecond();
-                case IntervalQuality.IntervalAugmentedThird:
+                case IntervalAlias.IntervalAugmentedThird:
                     return new IntervalAugmentedThird();
-                case IntervalQuality.IntervalAugmentedFourth:
+                case IntervalAlias.IntervalAugmentedFourth:
                     return new IntervalAugmentedFourth();
-                case IntervalQuality.IntervalAugmentedFifth:
+                case IntervalAlias.IntervalAugmentedFifth:
                     return new IntervalAugmentedFifth();
-                case IntervalQuality.IntervalAugmentedSixth:
+                case IntervalAlias.IntervalAugmentedSixth:
                     return new IntervalAugmentedSixth();
-                case IntervalQuality.IntervalAugmentedSeventh:
+                case IntervalAlias.IntervalAugmentedSeventh:
                     return new IntervalAugmentedSeventh();
-                case IntervalQuality.IntervalAugmentedOctave:
+                case IntervalAlias.IntervalAugmentedOctave:
                     return new IntervalAugmentedOctave();
-                case IntervalQuality.IntervalDiminishedSecond:
+                case IntervalAlias.IntervalDiminishedSecond:
                     return new IntervalDiminishedSecond();
-                case IntervalQuality.IntervalDiminishedThird:
+                case IntervalAlias.IntervalDiminishedThird:
                     return new IntervalDiminishedThird();
-                case IntervalQuality.IntervalDiminishedFourth:
+                case IntervalAlias.IntervalDiminishedFourth:
                     return new IntervalDiminishedFourth();
-                case IntervalQuality.IntervalDiminishedFifth:
+                case IntervalAlias.IntervalDiminishedFifth:
                     return new IntervalDiminishedFifth();
-                case IntervalQuality.IntervalDiminishedSixth:
+                case IntervalAlias.IntervalDiminishedSixth:
                     return new IntervalDiminishedSixth();
-                case IntervalQuality.IntervalDiminishedSeventh:
+                case IntervalAlias.IntervalDiminishedSeventh:
                     return new IntervalDiminishedSeventh();
-                case IntervalQuality.IntervalDiminishedOctave:
+                case IntervalAlias.IntervalDiminishedOctave:
                     return new IntervalDiminishedOctave();
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(intervalQuality), intervalQuality, null);
+                    throw new ArgumentOutOfRangeException(nameof(interval), interval, null);
             }
         }
     }

@@ -13,6 +13,8 @@ namespace ConsoleApp1.Intervals
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
+        public abstract IntervalAlias Alias { get; }
+
         public Note LowerNote { get; }
 
         public Note UpperNote { get; }
@@ -24,8 +26,6 @@ namespace ConsoleApp1.Intervals
         public abstract IntervalModifier Modifier { get; }
 
         public abstract IntervalSpanning Spanning { get; }
-
-        public abstract IntervalQuality Quality { get; }
 
         public abstract IntervalConsonance HarmonicConsonance { get; }
 

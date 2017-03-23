@@ -2,7 +2,7 @@
 {
     public abstract class IntervalModifier
     {
-        public abstract Modifier Modifier { get; }
+        public abstract IntervalModifierAlias Alias { get; }
 
         public abstract string Name { get; }
 

@@ -5,8 +5,8 @@
     public class GuitarTuningPentatonic
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Pentatonic;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Pentatonic;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Instrumental;

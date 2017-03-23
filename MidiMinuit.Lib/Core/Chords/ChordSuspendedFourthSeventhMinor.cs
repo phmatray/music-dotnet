@@ -29,8 +29,8 @@
 
         public IntervalMinorSeventh SeventhMinor { get; }
 
-        public override ChordQuality Quality { get; }
-            = ChordQuality.SuspendedFourthSeventhMinor;
+        public override ChordAlias Alias { get; }
+            = ChordAlias.SuspendedFourthSeventhMinor;
 
         public override string Description { get; }
             = "Description not added yet.";

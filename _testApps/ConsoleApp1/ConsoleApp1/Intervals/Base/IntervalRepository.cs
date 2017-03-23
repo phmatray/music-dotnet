@@ -43,8 +43,8 @@ namespace ConsoleApp1.Intervals
                 .Where(x => x.Semitones == semitones)
                 .ToList();
 
-        public Interval Get(IntervalQuality quality)
+        public Interval Get(IntervalAlias interval)
             => _intervals
-                .Single(x => x.Quality == quality);
+                .Single(x => x.Alias == interval);
     }
 }

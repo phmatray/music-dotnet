@@ -16,13 +16,13 @@ namespace ConsoleApp1.NoteAccidentals
         public List<NoteAccidental> GetAll()
             => _noteAccidentals;
 
-        public NoteAccidental Get(Accidental accidental)
+        public NoteAccidental Get(NoteAccidentalAlias accidental)
             => _noteAccidentals
-                .Single(x => x.Accidental == accidental);
+                .Single(x => x.Alias == accidental);
 
         public NoteAccidental Get(int accidentalValue)
             => _noteAccidentals
-                .Single(x => x.Accidental == (Accidental)accidentalValue);
+                .Single(x => x.Alias == (NoteAccidentalAlias)accidentalValue);
 
         public NoteAccidental GetBySymbol(string symbol)
             => _noteAccidentals

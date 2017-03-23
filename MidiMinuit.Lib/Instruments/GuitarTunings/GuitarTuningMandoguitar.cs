@@ -5,8 +5,8 @@
     public class GuitarTuningMandoguitar
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Mandoguitar;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Mandoguitar;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Regular;

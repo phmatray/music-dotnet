@@ -7,55 +7,55 @@
 
     public class ScaleFactory
     {
-        public virtual List<Scale> CreateAllScales(Note key)
+        public List<Scale> CreateAllScales(Note key)
         {
-            return Enum.GetValues(typeof(ScaleType))
-                .Cast<ScaleType>()
+            return Enum.GetValues(typeof(ScaleAlias))
+                .Cast<ScaleAlias>()
                 .Select(x => CreateScale(x, key))
                 .ToList();
         }
 
-        public virtual Scale CreateScale(ScaleType scaleType, Note key)
+        public Scale CreateScale(ScaleAlias scaleType, Note key)
         {
             switch (scaleType)
             {
-                case ScaleType.Major:
+                case ScaleAlias.Major:
                     return new ScaleMajor(key);
-                case ScaleType.MinorMelodic:
+                case ScaleAlias.MinorMelodic:
                     return new ScaleMinorMelodic(key);
-                case ScaleType.MinorHarmonic:
+                case ScaleAlias.MinorHarmonic:
                     return new ScaleMinorHarmonic(key);
-                case ScaleType.MinorNaturalEolian:
+                case ScaleAlias.MinorNaturalEolian:
                     return new ScaleMinorNaturalEolian(key);
-                case ScaleType.ModeDorian:
+                case ScaleAlias.ModeDorian:
                     return new ScaleModeDorian(key);
-                case ScaleType.ModeMixolydian:
+                case ScaleAlias.ModeMixolydian:
                     return new ScaleModeMixolydian(key);
-                case ScaleType.ModeLydian:
+                case ScaleAlias.ModeLydian:
                     return new ScaleModeLydian(key);
-                case ScaleType.ModeLydianB7:
+                case ScaleAlias.ModeLydianB7:
                     return new ScaleModeLydianB7(key);
-                case ScaleType.PentatonicMajor:
+                case ScaleAlias.PentatonicMajor:
                     return new ScalePentatonicMajor(key);
-                case ScaleType.PentatonicMinor:
+                case ScaleAlias.PentatonicMinor:
                     return new ScalePentatonicMinor(key);
-                case ScaleType.Blues:
+                case ScaleAlias.Blues:
                     return new ScaleBlues(key);
-                case ScaleType.ModePhrygian:
+                case ScaleAlias.ModePhrygian:
                     return new ScaleModePhrygian(key);
-                case ScaleType.ModeLocrian:
+                case ScaleAlias.ModeLocrian:
                     return new ScaleModeLocrian(key);
-                case ScaleType.ModeLocrianBec2:
+                case ScaleAlias.ModeLocrianBec2:
                     return new ScaleModeLocrianBec2(key);
-                case ScaleType.ModeMixolydianB2B6:
+                case ScaleAlias.ModeMixolydianB2B6:
                     return new ScaleModeMixolydianB2B6(key);
-                case ScaleType.ModeAltered:
+                case ScaleAlias.ModeAltered:
                     return new ScaleModeAltered(key);
-                case ScaleType.ModeLydianAdded:
+                case ScaleAlias.ModeLydianAdded:
                     return new ScaleModeLydianAdded(key);
-                case ScaleType.ModeDiminishedReverse:
+                case ScaleAlias.ModeDiminishedReverse:
                     return new ScaleModeDiminishedReverse(key);
-                case ScaleType.ModeDiminished:
+                case ScaleAlias.ModeDiminished:
                     return new ScaleModeDiminished(key);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(scaleType), scaleType, null);

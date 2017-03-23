@@ -8,31 +8,31 @@ namespace ConsoleApp1.IntervalNumbers
     {
         public virtual List<IntervalNumber> CreateAllIntervalNumbers()
         {
-            return Enum.GetValues(typeof(Number))
-                .Cast<Number>()
+            return Enum.GetValues(typeof(IntervalNumberAlias))
+                .Cast<IntervalNumberAlias>()
                 .Select(CreateIntervalNumber)
                 .ToList();
         }
 
-        public virtual IntervalNumber CreateIntervalNumber(Number number)
+        public virtual IntervalNumber CreateIntervalNumber(IntervalNumberAlias number)
         {
             switch (number)
             {
-                case Number.Unison:
+                case IntervalNumberAlias.Unison:
                     return new IntervalNumberUnison();
-                case Number.Second:
+                case IntervalNumberAlias.Second:
                     return new IntervalNumberSecond();
-                case Number.Third:
+                case IntervalNumberAlias.Third:
                     return new IntervalNumberThird();
-                case Number.Fourth:
+                case IntervalNumberAlias.Fourth:
                     return new IntervalNumberFourth();
-                case Number.Fifth:
+                case IntervalNumberAlias.Fifth:
                     return new IntervalNumberFifth();
-                case Number.Sixth:
+                case IntervalNumberAlias.Sixth:
                     return new IntervalNumberSixth();
-                case Number.Seventh:
+                case IntervalNumberAlias.Seventh:
                     return new IntervalNumberSeventh();
-                case Number.Octave:
+                case IntervalNumberAlias.Octave:
                     return new IntervalNumberOctave();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(number), number, null);

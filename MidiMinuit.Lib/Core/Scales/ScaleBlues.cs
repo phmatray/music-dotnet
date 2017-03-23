@@ -24,8 +24,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ScaleType Quality { get; }
-            = ScaleType.Blues;
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.Blues;
 
         public IntervalPerfectUnison Fondamental { get; }
 

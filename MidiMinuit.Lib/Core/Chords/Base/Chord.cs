@@ -8,7 +8,7 @@
         /// <summary>
         ///     Gets the quality of the chord.
         /// </summary>
-        public abstract ChordQuality Quality { get; }
+        public abstract ChordAlias Alias { get; }
 
         /// <summary>
         ///     Gets notes of the chord.

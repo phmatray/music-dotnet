@@ -2,7 +2,7 @@
 {
     public abstract class NoteAccidental
     {
-        public abstract Accidental Accidental { get; }
+        public abstract NoteAccidentalAlias Alias { get; }
 
         public abstract int Value { get; }
 

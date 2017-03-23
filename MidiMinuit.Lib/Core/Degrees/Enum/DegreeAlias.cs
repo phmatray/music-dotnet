@@ -7,7 +7,7 @@
      * Pour l'échelle chromatique qui contient 12 notes d'importance égale, la notion de degré a peu d'intérêt.
      */
 
-    public enum DegreeNumber
+    public enum DegreeAlias
     {
         I = 1,
         II = 2,

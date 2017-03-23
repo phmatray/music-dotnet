@@ -5,8 +5,8 @@
     public class GuitarTuningCittern1
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Cittern1;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Cittern1;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Instrumental;

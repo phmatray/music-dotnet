@@ -5,8 +5,8 @@
     public class GuitarTuningModalD
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.ModalD;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.ModalD;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Open;

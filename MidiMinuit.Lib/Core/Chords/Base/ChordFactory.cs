@@ -7,15 +7,15 @@
 
     public class ChordFactory
     {
-        public virtual List<Chord> CreateAllChords(Note fondamental)
+        public List<Chord> CreateAllChords(Note fondamental)
         {
-            return Enum.GetValues(typeof(ChordQuality))
-                .Cast<ChordQuality>()
+            return Enum.GetValues(typeof(ChordAlias))
+                .Cast<ChordAlias>()
                 .Select(x => CreateChord(x, fondamental))
                 .ToList();
         }
 
-        public virtual Chord CreateChord(ChordQuality chordQuality, Note fondamental)
+        public Chord CreateChord(ChordAlias chordQuality, Note fondamental)
         {
             /*
              * Implements FactoryPattern
@@ -24,39 +24,39 @@
 
             switch (chordQuality)
             {
-                case ChordQuality.Major:
+                case ChordAlias.Major:
                     return new ChordMajor(fondamental);
-                case ChordQuality.Minor:
+                case ChordAlias.Minor:
                     return new ChordMinor(fondamental);
-                case ChordQuality.MajorSixthMajor:
+                case ChordAlias.MajorSixthMajor:
                     return new ChordMajorSixthMajor(fondamental);
-                case ChordQuality.MinorSixthMajor:
+                case ChordAlias.MinorSixthMajor:
                     return new ChordMinorSixthMajor(fondamental);
-                case ChordQuality.SuspendedFourth:
+                case ChordAlias.SuspendedFourth:
                     return new ChordSuspendedFourth(fondamental);
-                case ChordQuality.Fifth:
+                case ChordAlias.Fifth:
                     return new ChordFifth(fondamental);
-                case ChordQuality.MajorAugmented:
+                case ChordAlias.MajorAugmented:
                     return new ChordMajorAugmented(fondamental);
-                case ChordQuality.MinorDiminished:
+                case ChordAlias.MinorDiminished:
                     return new ChordMinorDiminished(fondamental);
-                case ChordQuality.MajorSeventhMajor:
+                case ChordAlias.MajorSeventhMajor:
                     return new ChordMajorSeventhMajor(fondamental);
-                case ChordQuality.MajorSeventhMinor:
+                case ChordAlias.MajorSeventhMinor:
                     return new ChordMajorSeventhMinor(fondamental);
-                case ChordQuality.MinorSeventhMinor:
+                case ChordAlias.MinorSeventhMinor:
                     return new ChordMinorSeventhMinor(fondamental);
-                case ChordQuality.MinorFifthDiminishedSeventhMinor:
+                case ChordAlias.MinorFifthDiminishedSeventhMinor:
                     return new ChordMinorFifthDiminishedSeventhMinor(fondamental);
-                case ChordQuality.SuspendedFourthSeventhMinor:
+                case ChordAlias.SuspendedFourthSeventhMinor:
                     return new ChordSuspendedFourthSeventhMinor(fondamental);
-                case ChordQuality.MajorAugmentedSeventhMinor:
+                case ChordAlias.MajorAugmentedSeventhMinor:
                     return new ChordMajorAugmentedSeventhMinor(fondamental);
-                case ChordQuality.MinorDiminishedSeventhDiminished:
+                case ChordAlias.MinorDiminishedSeventhDiminished:
                     return new ChordMinorDiminishedSeventhDiminished(fondamental);
-                case ChordQuality.MinorSeventhMajor:
+                case ChordAlias.MinorSeventhMajor:
                     return new ChordMinorSeventhMajor(fondamental);
-                case ChordQuality.MajorNinthMajor:
+                case ChordAlias.MajorNinthMajor:
                     return new ChordMajorNinthMajor(fondamental);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(chordQuality), chordQuality, null);

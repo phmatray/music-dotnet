@@ -5,8 +5,8 @@
     public class GuitarTuningMajorSixth
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.MajorSixth;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.MajorSixth;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Regular;

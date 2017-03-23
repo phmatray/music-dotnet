@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.Intervals
 {
-    public enum IntervalQuality
+    public enum IntervalAlias
     {
         IntervalPerfectUnison,
         IntervalPerfectFourth,

@@ -3,8 +3,8 @@ namespace ConsoleApp1.IntervalNumbers
     public class IntervalNumberFifth
         : IntervalNumber
     {
-        public override Number Number { get; }
-            = Number.Fifth;
+        public override IntervalNumberAlias Alias { get; }
+            = IntervalNumberAlias.Fifth;
 
         public override int Value { get; }
             = 5;

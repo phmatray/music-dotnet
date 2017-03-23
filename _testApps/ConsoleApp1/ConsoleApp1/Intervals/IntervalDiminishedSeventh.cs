@@ -6,8 +6,8 @@ namespace ConsoleApp1.Intervals
 {
     public class IntervalDiminishedSeventh : Interval
     {
-        public override IntervalQuality Quality { get; }
-            = IntervalQuality.IntervalDiminishedSeventh;
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalDiminishedSeventh;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;

@@ -11,7 +11,7 @@ namespace ConsoleApp1.IntervalsOld
         {
         }
 
-        public IntervalSimple(IntervalQuality quality, Note lowerNote)
+        public IntervalSimple(IntervalAlias quality, Note lowerNote)
             : base(quality, lowerNote)
         {
         }

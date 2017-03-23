@@ -29,8 +29,8 @@
 
         public IntervalMajorSeventh SeventhMajor { get; }
 
-        public override ChordQuality Quality { get; }
-            = ChordQuality.MinorSeventhMajor;
+        public override ChordAlias Alias { get; }
+            = ChordAlias.MinorSeventhMajor;
 
         public override string Description { get; }
             = "Description not added yet.";

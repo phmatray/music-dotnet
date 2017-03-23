@@ -8,25 +8,25 @@ namespace ConsoleApp1.NoteAccidentals
     {
         public virtual List<NoteAccidental> CreateAllNoteAccidentals()
         {
-            return Enum.GetValues(typeof(Accidental))
-                .Cast<Accidental>()
+            return Enum.GetValues(typeof(NoteAccidentalAlias))
+                .Cast<NoteAccidentalAlias>()
                 .Select(CreateNoteAccidental)
                 .ToList();
         }
 
-        public virtual NoteAccidental CreateNoteAccidental(Accidental accidental)
+        public virtual NoteAccidental CreateNoteAccidental(NoteAccidentalAlias accidental)
         {
             switch (accidental)
             {
-                case Accidental.Natural:
+                case NoteAccidentalAlias.Natural:
                     return new NoteAccidentalNatural();
-                case Accidental.Flat:
+                case NoteAccidentalAlias.Flat:
                     return new NoteAccidentalFlat();
-                case Accidental.Sharp:
+                case NoteAccidentalAlias.Sharp:
                     return new NoteAccidentalSharp();
-                case Accidental.DoubleFlat:
+                case NoteAccidentalAlias.DoubleFlat:
                     return new NoteAccidentalDoubleFlat();
-                case Accidental.DoubleSharp:
+                case NoteAccidentalAlias.DoubleSharp:
                     return new NoteAccidentalDoubleSharp();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(accidental), accidental, null);

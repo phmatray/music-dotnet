@@ -1,6 +1,6 @@
-namespace ConsoleApp1.NoteAccidentals
+namespace MidiMinuit.Lib.NoteAccidentals
 {
-    public enum Accidental
+    public enum NoteAccidentalAlias
     {
         Natural,
         Flat,

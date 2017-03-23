@@ -29,8 +29,8 @@
 
         public IntervalMajorSixth SixthMajor { get; }
 
-        public override ChordQuality Quality { get; }
-            = ChordQuality.MinorSixthMajor;
+        public override ChordAlias Alias { get; }
+            = ChordAlias.MinorSixthMajor;
 
         public override string Description { get; }
             = "Description not added yet.";

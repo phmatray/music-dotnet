@@ -4,7 +4,7 @@
 
     public abstract class Degree
     {
-        public abstract DegreeNumber Number { get; }
+        public abstract DegreeAlias Alias { get; }
 
         public abstract string DiatonicFunction { get; }
 
@@ -21,7 +21,7 @@
         public abstract Note NoteInCMinor { get; }
 
         public int DegreeIndex
-            => (int)Number - 1;
+            => (int)Alias - 1;
 
         public abstract override string ToString();
 

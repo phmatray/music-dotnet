@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.IntervalModifiers
 {
-    public enum Modifier
+    public enum IntervalModifierAlias
     {
         Perfect,
         Major,

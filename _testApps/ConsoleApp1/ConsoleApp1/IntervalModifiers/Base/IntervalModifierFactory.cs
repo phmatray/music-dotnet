@@ -8,25 +8,25 @@ namespace ConsoleApp1.IntervalModifiers
     {
         public virtual List<IntervalModifier> CreateAllIntervalModifiers()
         {
-            return Enum.GetValues(typeof(Modifier))
-                .Cast<Modifier>()
+            return Enum.GetValues(typeof(IntervalModifierAlias))
+                .Cast<IntervalModifierAlias>()
                 .Select(CreateIntervalModifier)
                 .ToList();
         }
 
-        public virtual IntervalModifier CreateIntervalModifier(Modifier modifier)
+        public virtual IntervalModifier CreateIntervalModifier(IntervalModifierAlias modifier)
         {
             switch (modifier)
             {
-                case Modifier.Perfect:
+                case IntervalModifierAlias.Perfect:
                     return new IntervalModifierPerfect();
-                case Modifier.Major:
+                case IntervalModifierAlias.Major:
                     return new IntervalModifierMajor();
-                case Modifier.Minor:
+                case IntervalModifierAlias.Minor:
                     return new IntervalModifierMinor();
-                case Modifier.Augmented:
+                case IntervalModifierAlias.Augmented:
                     return new IntervalModifierAugmented();
-                case Modifier.Diminished:
+                case IntervalModifierAlias.Diminished:
                     return new IntervalModifierDiminished();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(modifier), modifier, null);

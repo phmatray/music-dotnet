@@ -25,8 +25,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ScaleType Quality { get; }
-            = ScaleType.ModeLocrianBec2;
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.ModeLocrianBec2;
 
         public IntervalPerfectUnison Fondamental { get; }
 

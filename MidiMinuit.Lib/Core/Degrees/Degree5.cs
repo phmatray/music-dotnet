@@ -4,8 +4,8 @@
 
     public class Degree5 : Degree
     {
-        public override DegreeNumber Number { get; }
-            = DegreeNumber.V;
+        public override DegreeAlias Alias { get; }
+            = DegreeAlias.V;
 
         public override string DiatonicFunction { get; }
             = "Dominant";
@@ -29,7 +29,7 @@
             = new Note(NoteName.G);
 
         public override string ToString()
-            => Number.ToString();
+            => Alias.ToString();
 
         public override Degree Clone()
             => MemberwiseClone() as Degree;

@@ -10,7 +10,7 @@
         /// <summary>
         ///     Gets the tuning type of the Guitar Tuning.
         /// </summary>
-        public abstract GuitarTuningType TuningType { get; }
+        public abstract GuitarTuningAlias Alias { get; }
 
         /// <summary>
         ///     Gets the tuning category of the Guitar Tuning.

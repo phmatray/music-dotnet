@@ -5,8 +5,8 @@
     public class GuitarTuningCharango
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Charango;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Charango;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Instrumental;

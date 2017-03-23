@@ -3,8 +3,8 @@
     public class NoteAccidentalFlat
         : NoteAccidental
     {
-        public override Accidental Accidental { get; }
-            = Accidental.Flat;
+        public override NoteAccidentalAlias Alias { get; }
+            = NoteAccidentalAlias.Flat;
 
         public override int Value { get; }
             = -1;

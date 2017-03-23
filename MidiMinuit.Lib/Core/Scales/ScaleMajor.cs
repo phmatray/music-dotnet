@@ -25,8 +25,8 @@ namespace MidiMinuit.Lib.Core.Scales
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override ScaleType Quality { get; }
-            = ScaleType.Major;
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.Major;
 
         public IntervalPerfectUnison Fondamental { get; }
 

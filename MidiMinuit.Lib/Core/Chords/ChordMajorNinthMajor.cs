@@ -29,8 +29,8 @@
 
         public IntervalMajorNinth NinthMajor { get; }
 
-        public override ChordQuality Quality { get; }
-            = ChordQuality.MajorNinthMajor;
+        public override ChordAlias Alias { get; }
+            = ChordAlias.MajorNinthMajor;
 
         public override string Description { get; }
             = "Description not added yet.";

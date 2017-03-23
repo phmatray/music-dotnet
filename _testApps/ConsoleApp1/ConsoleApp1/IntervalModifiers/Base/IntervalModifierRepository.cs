@@ -21,8 +21,8 @@ namespace ConsoleApp1.IntervalModifiers
                 .Where(x => x.Abbreviation == abbreviation)
                 .ToList();
 
-        public IntervalModifier Get(Modifier modifier)
+        public IntervalModifier Get(IntervalModifierAlias modifier)
             => _intervalModifiers
-                .Single(x => x.Modifier == modifier);
+                .Single(x => x.Alias == modifier);
     }
 }

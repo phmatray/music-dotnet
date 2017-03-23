@@ -25,8 +25,8 @@
             SeventhMinor = i.SeventhMinor;
         }
 
-        public override ScaleType Quality { get; }
-            = ScaleType.ModeMixolydian;
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.ModeMixolydian;
 
         public IntervalPerfectUnison Fondamental { get; }
 

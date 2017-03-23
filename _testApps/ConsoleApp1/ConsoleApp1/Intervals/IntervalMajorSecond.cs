@@ -6,8 +6,8 @@ namespace ConsoleApp1.Intervals
 {
     public class IntervalMajorSecond : Interval
     {
-        public override IntervalQuality Quality { get; }
-            = IntervalQuality.IntervalMajorSecond;
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalMajorSecond;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;

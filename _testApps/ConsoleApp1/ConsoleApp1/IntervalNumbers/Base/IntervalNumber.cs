@@ -6,7 +6,7 @@
          * See https://en.wikipedia.org/wiki/Interval_(music)
          */
 
-        public abstract Number Number { get; }
+        public abstract IntervalNumberAlias Alias { get; }
 
         public abstract int Value { get; }
 

@@ -16,9 +16,9 @@ namespace ConsoleApp1.NoteNames
         public List<NoteName> GetAll()
             => _noteNames;
 
-        public NoteName Get(Name name)
+        public NoteName Get(NoteNameAlias name)
             => _noteNames
-                .Single(x => x.NameEnum == name);
+                .Single(x => x.Alias == name);
 
         public NoteName GetByOrder(int order)
             => _noteNames

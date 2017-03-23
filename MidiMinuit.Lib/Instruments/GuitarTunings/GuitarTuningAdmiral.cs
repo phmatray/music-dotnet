@@ -5,8 +5,8 @@
     public class GuitarTuningAdmiral
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Admiral;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Admiral;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

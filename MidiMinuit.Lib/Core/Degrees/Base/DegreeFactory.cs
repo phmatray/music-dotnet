@@ -6,33 +6,33 @@
 
     public class DegreeFactory
     {
-        public virtual List<Degree> CreateAllDegrees()
+        public List<Degree> CreateAllDegrees()
         {
-            return Enum.GetValues(typeof(DegreeNumber))
-                .Cast<DegreeNumber>()
+            return Enum.GetValues(typeof(DegreeAlias))
+                .Cast<DegreeAlias>()
                 .Select(CreateDegree)
                 .ToList();
         }
 
-        public virtual Degree CreateDegree(DegreeNumber degree)
+        public Degree CreateDegree(DegreeAlias degree)
         {
             switch (degree)
             {
-                case DegreeNumber.I:
+                case DegreeAlias.I:
                     return new Degree1();
-                case DegreeNumber.II:
+                case DegreeAlias.II:
                     return new Degree2();
-                case DegreeNumber.III:
+                case DegreeAlias.III:
                     return new Degree3();
-                case DegreeNumber.IV:
+                case DegreeAlias.IV:
                     return new Degree4();
-                case DegreeNumber.V:
+                case DegreeAlias.V:
                     return new Degree5();
-                case DegreeNumber.VI:
+                case DegreeAlias.VI:
                     return new Degree6();
-                case DegreeNumber.VII:
+                case DegreeAlias.VII:
                     return new Degree7();
-                case DegreeNumber.VIII:
+                case DegreeAlias.VIII:
                     return new Degree8();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(degree));

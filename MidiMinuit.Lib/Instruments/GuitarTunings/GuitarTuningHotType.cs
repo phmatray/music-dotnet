@@ -5,8 +5,8 @@
     public class GuitarTuningHotType
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.HotType;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.HotType;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

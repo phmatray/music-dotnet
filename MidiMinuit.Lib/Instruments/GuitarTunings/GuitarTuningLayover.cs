@@ -5,8 +5,8 @@
     public class GuitarTuningLayover
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Layover;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Layover;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

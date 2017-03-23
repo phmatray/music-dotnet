@@ -5,8 +5,8 @@
     public class GuitarTuningMagicFarmer
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.MagicFarmer;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.MagicFarmer;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

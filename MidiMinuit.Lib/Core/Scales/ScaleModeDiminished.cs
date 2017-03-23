@@ -26,8 +26,8 @@
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override ScaleType Quality { get; }
-            = ScaleType.ModeDiminished;
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.ModeDiminished;
 
         public IntervalPerfectUnison Fondamental { get; }
 

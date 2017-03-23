@@ -25,8 +25,8 @@
             SeventhMajor = i.SeventhMajor;
         }
 
-        public override ScaleType Quality { get; }
-            = ScaleType.MinorHarmonic;
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.MinorHarmonic;
 
         public IntervalPerfectUnison Fondamental { get; }
 

@@ -5,8 +5,8 @@
     public class GuitarTuningMajorThird
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.MajorThird;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.MajorThird;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Regular;

@@ -3,8 +3,8 @@ namespace ConsoleApp1.NoteNames
     public class NoteNameE
         : NoteName
     {
-        public override Name NameEnum { get; }
-            = NoteNames.Name.E;
+        public override NoteNameAlias Alias { get; }
+            = NoteNames.NoteNameAlias.E;
 
         public override int Value { get; }
             = 4;

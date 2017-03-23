@@ -3,8 +3,8 @@ namespace ConsoleApp1.IntervalModifiers
     public class IntervalModifierMinor
         : IntervalModifier
     {
-        public override Modifier Modifier { get; }
-            = Modifier.Minor;
+        public override IntervalModifierAlias Alias { get; }
+            = IntervalModifierAlias.Minor;
 
         public override string Name { get; }
             = "Minor";

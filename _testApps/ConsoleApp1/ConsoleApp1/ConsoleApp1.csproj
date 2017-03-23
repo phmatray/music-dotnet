@@ -103,7 +103,7 @@
     <Compile Include="MusicMathFormulaHelpers.cs" />
     <Compile Include="MidiMinuitLib\Note.cs" />
     <Compile Include="NoteAccidentals\Base\NoteAccidentalRepository.cs" />
-    <Compile Include="NoteAccidentals\Enum\Accidental.cs" />
+    <Compile Include="NoteAccidentals\Enum\NoteAccidentalAlias.cs" />
     <Compile Include="NoteAccidentals\Base\NoteAccidental.cs" />
     <Compile Include="NoteAccidentals\NoteAccidentalDoubleFlat.cs" />
     <Compile Include="NoteAccidentals\NoteAccidentalDoubleSharp.cs" />
@@ -111,7 +111,7 @@
     <Compile Include="NoteAccidentals\NoteAccidentalFlat.cs" />
     <Compile Include="NoteAccidentals\NoteAccidentalNatural.cs" />
     <Compile Include="NoteAccidentals\NoteAccidentalSharp.cs" />
-    <Compile Include="NoteNames\Enum\Name.cs" />
+    <Compile Include="NoteNames\Enum\NoteNameAlias.cs" />
     <Compile Include="NoteNames\Base\NoteName.cs" />
     <Compile Include="NoteNames\NoteNameA.cs" />
     <Compile Include="NoteNames\NoteNameB.cs" />

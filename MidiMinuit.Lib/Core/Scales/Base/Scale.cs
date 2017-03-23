@@ -32,7 +32,7 @@
         /// <summary>
         ///     Gets the type of the scale.
         /// </summary>
-        public abstract ScaleType Quality { get; }
+        public abstract ScaleAlias Alias { get; }
 
         /// <summary>
         ///     Gets notes of the scale.

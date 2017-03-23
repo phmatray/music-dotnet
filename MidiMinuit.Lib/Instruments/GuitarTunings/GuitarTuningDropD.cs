@@ -5,8 +5,8 @@
     public class GuitarTuningDropD
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.DropD;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.DropD;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

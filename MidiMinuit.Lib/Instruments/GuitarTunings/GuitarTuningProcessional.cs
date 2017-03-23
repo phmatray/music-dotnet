@@ -5,8 +5,8 @@
     public class GuitarTuningProcessional
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Processional;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Processional;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Special;

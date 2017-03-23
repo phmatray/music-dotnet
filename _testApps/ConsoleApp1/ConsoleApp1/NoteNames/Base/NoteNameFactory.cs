@@ -8,29 +8,29 @@ namespace ConsoleApp1.NoteNames
     {
         public virtual List<NoteName> CreateAllNoteNames()
         {
-            return Enum.GetValues(typeof(Name))
-                .Cast<Name>()
+            return Enum.GetValues(typeof(NoteNameAlias))
+                .Cast<NoteNameAlias>()
                 .Select(CreateNoteName)
                 .ToList();
         }
 
-        public virtual NoteName CreateNoteName(Name name)
+        public virtual NoteName CreateNoteName(NoteNameAlias name)
         {
             switch (name)
             {
-                case Name.C:
+                case NoteNameAlias.C:
                     return new NoteNameC();
-                case Name.D:
+                case NoteNameAlias.D:
                     return new NoteNameD();
-                case Name.E:
+                case NoteNameAlias.E:
                     return new NoteNameE();
-                case Name.F:
+                case NoteNameAlias.F:
                     return new NoteNameF();
-                case Name.G:
+                case NoteNameAlias.G:
                     return new NoteNameG();
-                case Name.A:
+                case NoteNameAlias.A:
                     return new NoteNameA();
-                case Name.B:
+                case NoteNameAlias.B:
                     return new NoteNameB();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(name), name, null);

@@ -1,6 +1,6 @@
-namespace ConsoleApp1.NoteNames
+namespace MidiMinuit.Lib.Core.NoteNames
 {
-    public enum Name
+    public enum NoteNameAlias
     {
         C,
         D,

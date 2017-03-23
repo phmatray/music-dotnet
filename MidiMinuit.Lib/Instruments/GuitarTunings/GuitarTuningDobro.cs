@@ -5,8 +5,8 @@
     public class GuitarTuningDobro
         : GuitarTuning
     {
-        public override GuitarTuningType TuningType { get; }
-            = GuitarTuningType.Dobro;
+        public override GuitarTuningAlias Alias { get; }
+            = GuitarTuningAlias.Dobro;
 
         public override GuitarTuningCategory Category { get; }
             = GuitarTuningCategory.Instrumental;

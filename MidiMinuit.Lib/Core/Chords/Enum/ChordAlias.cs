@@ -1,6 +1,6 @@
 namespace MidiMinuit.Lib.Core.Chords
 {
-    public enum ChordQuality
+    public enum ChordAlias
     {
         Major,
         Minor,

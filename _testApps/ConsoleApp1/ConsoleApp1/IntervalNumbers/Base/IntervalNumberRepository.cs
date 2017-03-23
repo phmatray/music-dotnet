@@ -21,12 +21,12 @@ namespace ConsoleApp1.IntervalNumbers
                 .Where(x => x.Abbreviation == abbreviation)
                 .ToList();
 
-        public IntervalNumber Get(Number number)
+        public IntervalNumber Get(IntervalNumberAlias number)
             => _intervalNumbers
-                .Single(x => x.Number == number);
+                .Single(x => x.Alias == number);
 
         public IntervalNumber Get(int number)
             => _intervalNumbers
-                .Single(x => x.Number == (Number)number);
+                .Single(x => x.Alias == (IntervalNumberAlias)number);
     }
 }
