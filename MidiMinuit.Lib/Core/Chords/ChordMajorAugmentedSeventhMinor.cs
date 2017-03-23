@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ChordMajorAugmentedSeventhMinor : Chord
+    public class ChordMajorAugmentedSeventhMinor
+        : Chord
     {
         public ChordMajorAugmentedSeventhMinor(Note fondamental)
         {
@@ -13,12 +14,11 @@
             {
                 throw new ArgumentNullException(nameof(fondamental));
             }
-
-            var i = fondamental.Interval;
-            Fondamental = i.Fondamental;
-            ThirdMajor = i.ThirdMajor;
-            FifthAugmented = i.FifthAugmented;
-            SeventhMinor = i.SeventhMinor;
+            
+            Fondamental = new IntervalPerfectUnison(fondamental);
+            ThirdMajor = new IntervalMajorThird(fondamental);
+            FifthAugmented = new IntervalAugmentedFifth(fondamental);
+            SeventhMinor = new IntervalMinorSeventh(fondamental);
         }
 
         public IntervalPerfectUnison Fondamental { get; }
@@ -35,8 +35,8 @@
         public override string Description { get; }
             = "Description not added yet.";
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality> { Fondamental, ThirdMajor, FifthAugmented, SeventhMinor };
+        public override List<Interval> Notes
+            => new List<Interval> { Fondamental, ThirdMajor, FifthAugmented, SeventhMinor };
 
         public override string Name
             => $"{Fondamental}aug7";

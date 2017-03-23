@@ -13,7 +13,7 @@
         /// <summary>
         ///     Gets notes of the chord.
         /// </summary>
-        public abstract List<IntervalQuality> Notes { get; }
+        public abstract List<Interval> Notes { get; }
 
         /// <summary>
         ///     Gets name of the chord.

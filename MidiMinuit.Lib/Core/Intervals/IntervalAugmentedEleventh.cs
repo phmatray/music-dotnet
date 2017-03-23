@@ -1,29 +1,25 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalAugmentedEleventh : IntervalQualityCompound
+    public class IntervalAugmentedEleventh : Interval
     {
-        ////public IntervalAugmentedEleventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public IntervalAugmentedEleventh(Note lowerNote)
+        {
+        }
 
-        ////public IntervalAugmentedEleventh(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalAugmentedEleventh(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Compound;
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalAugmentedEleventh;
 
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalAugmentedEleventh;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Dissonante;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Augmented Eleventh" };
@@ -39,5 +35,20 @@
 
         public override int Semitones { get; }
             = 18;
+
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberEleventh();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierAugmented();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Compound;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }

@@ -5,10 +5,9 @@ namespace MidiMinuit.Lib.Core.Intervals
     using IntervalNumbers;
     using Notes;
 
-    public class IntervalMajorNinth
-        : Interval
+    public class IntervalAugmentedOctave : Interval
     {
-        public IntervalMajorNinth(Note lowerNote)
+        public IntervalAugmentedOctave(Note lowerNote)
         {
         }
 
@@ -17,34 +16,34 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override Note UpperNote { get; }
 
         public override IntervalAlias Alias { get; }
-            = IntervalAlias.IntervalMajorNinth;
+            = IntervalAlias.IntervalAugmentedOctave;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
         public override List<string> QualityName { get; }
-            = new List<string> { "Major Ninth" };
+            = new List<string> { "Augmented Octave", "Augmented Eighth" };
 
         public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "M9" };
+            = new List<string> { "A8", "+8" };
 
         public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Maj. 9" };
+            = new List<string> { "Aug. 8" };
 
         public override string QualityComposition { get; }
-            = "NO DATA";
+            = "5 tons et 3 demi-tons diatoniques";
 
         public override int Semitones { get; }
-            = 14;
+            = 13;
 
         public override IntervalNumber Number { get; }
-            = new IntervalNumberNinth();
+            = new IntervalNumberOctave();
 
         public override IntervalModifier Modifier { get; }
-            = new IntervalModifierMajor();
+            = new IntervalModifierAugmented();
 
         public override IntervalSpanning Spanning { get; }
-            = IntervalSpanning.Compound;
+            = IntervalSpanning.Simple;
 
         public override string ToString()
             => Abbreviation;

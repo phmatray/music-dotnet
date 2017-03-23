@@ -1,31 +1,25 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalMajorSecond : IntervalQualitySimple
+    public class IntervalMajorSecond : Interval
     {
-        private IntervalQualitySimple _inverse;
+        public IntervalMajorSecond(Note lowerNote)
+        {
+        }
 
-        ////public IntervalMajorSecond(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalMajorSecond(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        ////public IntervalMajorSecond(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalMajorSecond;
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Simple;
-
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalMajorSecond;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Dissonante;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Major Second", "Tone", "Whole Tone", "Whole Step" };
@@ -42,7 +36,19 @@
         public override int Semitones { get; }
             = 2;
 
-        public override IntervalQualitySimple Inverse
-            => _inverse ?? (_inverse = new IntervalMinorSeventh());
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberSecond();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierMajor();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }

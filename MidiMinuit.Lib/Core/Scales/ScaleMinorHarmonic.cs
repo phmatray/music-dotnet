@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ScaleMinorHarmonic : Scale
+    public class ScaleMinorHarmonic
+        : Scale
     {
         public ScaleMinorHarmonic(Note key)
         {
@@ -15,14 +16,13 @@
                 throw new ArgumentNullException(nameof(key));
             }
 
-            var i = key.Interval;
-            Fondamental = i.Fondamental;
-            SecondMajor = i.SecondMajor;
-            ThirdMinor = i.ThirdMinor;
-            FourthPerfect = i.FourthPerfect;
-            FifthPerfect = i.FifthPerfect;
-            SixthMinor = i.SixthMinor;
-            SeventhMajor = i.SeventhMajor;
+            Fondamental = new IntervalPerfectUnison(key);
+            SecondMajor = new IntervalMajorSecond(key);
+            ThirdMinor = new IntervalMinorThird(key);
+            FourthPerfect = new IntervalPerfectFourth(key);
+            FifthPerfect = new IntervalPerfectFifth(key);
+            SixthMinor = new IntervalMinorSixth(key);
+            SeventhMajor = new IntervalMajorSeventh(key);
         }
 
         public override ScaleAlias Alias { get; }
@@ -42,8 +42,8 @@
 
         public IntervalMajorSeventh SeventhMajor { get; }
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality>
+        public override List<Interval> Notes
+            => new List<Interval>
             {
                 Fondamental,
                 SecondMajor,

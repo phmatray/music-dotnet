@@ -4,8 +4,10 @@
     using System.Collections.Generic;
     using Intervals;
     using Notes;
+    using Windows.UI.Xaml.Controls;
 
-    public class ScaleMinorNaturalEolian : Scale
+    public class ScaleMinorNaturalEolian
+        : Scale
     {
         public ScaleMinorNaturalEolian(Note key)
         {
@@ -15,14 +17,13 @@
                 throw new ArgumentNullException(nameof(key));
             }
 
-            var i = key.Interval;
-            Fondamental = i.Fondamental;
-            SecondMajor = i.SecondMajor;
-            ThirdMinor = i.ThirdMinor;
-            FourthPerfect = i.FourthPerfect;
-            FifthPerfect = i.FifthPerfect;
-            SixthMinor = i.SixthMinor;
-            SeventhMinor = i.SeventhMinor;
+            Fondamental = new IntervalPerfectUnison(key);
+            SecondMajor = new IntervalMajorSecond(key);
+            ThirdMinor = new IntervalMinorThird(key);
+            FourthPerfect = new IntervalPerfectFourth(key);
+            FifthPerfect = new IntervalPerfectFifth(key);
+            SixthMinor = new IntervalMinorSixth(key);
+            SeventhMinor = new IntervalMinorSeventh(key);
         }
 
         public override ScaleAlias Alias { get; }
@@ -42,8 +43,8 @@
 
         public IntervalMinorSeventh SeventhMinor { get; }
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality>
+        public override List<Interval> Notes
+            => new List<Interval>
             {
                 Fondamental,
                 SecondMajor,

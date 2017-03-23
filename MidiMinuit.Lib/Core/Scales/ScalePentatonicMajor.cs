@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ScalePentatonicMajor : Scale
+    public class ScalePentatonicMajor
+        : Scale
     {
         public ScalePentatonicMajor(Note key)
         {
@@ -15,12 +16,11 @@
                 throw new ArgumentNullException(nameof(key));
             }
 
-            var i = key.Interval;
-            Fondamental = i.Fondamental;
-            SecondMajor = i.SecondMajor;
-            ThirdMajor = i.ThirdMajor;
-            FifthPerfect = i.FifthPerfect;
-            SixthMajor = i.SixthMajor;
+            Fondamental = new IntervalPerfectUnison(key);
+            SecondMajor = new IntervalMajorSecond(key);
+            ThirdMajor = new IntervalMajorThird(key);
+            FifthPerfect = new IntervalPerfectFifth(key);
+            SixthMajor = new IntervalMajorSixth(key);
         }
 
         public override ScaleAlias Alias { get; }
@@ -36,8 +36,8 @@
 
         public IntervalMajorSixth SixthMajor { get; }
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality>
+        public override List<Interval> Notes
+            => new List<Interval>
             {
                 Fondamental,
                 SecondMajor,

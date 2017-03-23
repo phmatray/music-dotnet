@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ScaleModeLydianB7 : Scale
+    public class ScaleModeLydianB7
+        : Scale
     {
         public ScaleModeLydianB7(Note key)
         {
@@ -15,14 +16,13 @@
                 throw new ArgumentNullException(nameof(key));
             }
 
-            var i = key.Interval;
-            Fondamental = i.Fondamental;
-            SecondMajor = i.SecondMajor;
-            ThirdMajor = i.ThirdMajor;
-            Eleventh = i.EleventhAugmented;
-            FifthPerfect = i.FifthPerfect;
-            SixthMajor = i.SixthMajor;
-            SeventhMinor = i.SeventhMinor;
+            Fondamental = new IntervalPerfectUnison(key);
+            SecondMajor = new IntervalMajorSecond(key);
+            ThirdMajor = new IntervalMajorThird(key);
+            Eleventh = new IntervalAugmentedEleventh(key);
+            FifthPerfect = new IntervalPerfectFifth(key);
+            SixthMajor = new IntervalMajorSixth(key);
+            SeventhMinor = new IntervalMinorSeventh(key);
         }
 
         public override ScaleAlias Alias { get; }
@@ -42,8 +42,8 @@
 
         public IntervalMinorSeventh SeventhMinor { get; }
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality>
+        public override List<Interval> Notes
+            => new List<Interval>
             {
                 Fondamental,
                 SecondMajor,

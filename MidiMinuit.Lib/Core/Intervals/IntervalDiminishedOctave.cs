@@ -1,37 +1,31 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalDiminishedOctave : IntervalQualitySimple
+    public class IntervalDiminishedOctave : Interval
     {
-        private IntervalQualitySimple _inverse;
+        public IntervalDiminishedOctave(Note lowerNote)
+        {
+        }
 
-        ////public IntervalDiminishedOctave(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalDiminishedOctave(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        ////public IntervalDiminishedOctave(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalDiminishedOctave;
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Simple;
-
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalDiminishedOctave;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Dissonante;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Diminished Octave", "Diminished Eighth" };
 
         public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "d8", "°8" };
+            = new List<string> { "d8", "�8" };
 
         public override List<string> QualityAbbreviation2 { get; }
             = new List<string> { "deg. 8", "dim. 8" };
@@ -42,7 +36,19 @@
         public override int Semitones { get; }
             = 11;
 
-        public override IntervalQualitySimple Inverse
-            => _inverse ?? (_inverse = new IntervalAugmentedUnison());
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberOctave();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierDiminished();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }

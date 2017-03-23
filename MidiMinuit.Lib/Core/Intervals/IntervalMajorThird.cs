@@ -1,31 +1,25 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalMajorThird : IntervalQualitySimple
+    public class IntervalMajorThird : Interval
     {
-        private IntervalQualitySimple _inverse;
+        public IntervalMajorThird(Note lowerNote)
+        {
+        }
 
-        ////public IntervalMajorThird(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalMajorThird(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        ////public IntervalMajorThird(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalMajorThird;
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Simple;
-
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalMajorThird;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Imparfaite;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Major Third" };
@@ -42,7 +36,19 @@
         public override int Semitones { get; }
             = 4;
 
-        public override IntervalQualitySimple Inverse
-            => _inverse ?? (_inverse = new IntervalMinorSixth());
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberThird();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierMajor();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }

@@ -1,31 +1,25 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalMinorSixth : IntervalQualitySimple
+    public class IntervalMinorSixth : Interval
     {
-        private IntervalQualitySimple _inverse;
+        public IntervalMinorSixth(Note lowerNote)
+        {
+        }
 
-        ////public IntervalMinorSixth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalMinorSixth(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        ////public IntervalMinorSixth(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalMinorSixth;
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Simple;
-
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalMinorSixth;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Imparfaite;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Minor Sixth", "Minor Hexachord", "Hexachordon Minus", "Lesser Hexachord" };
@@ -42,7 +36,19 @@
         public override int Semitones { get; }
             = 8;
 
-        public override IntervalQualitySimple Inverse
-            => _inverse ?? (_inverse = new IntervalMajorThird());
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberSixth();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierMinor();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }

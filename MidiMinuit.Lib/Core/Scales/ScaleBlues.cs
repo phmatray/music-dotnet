@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ScaleBlues : Scale
+    public class ScaleBlues
+        : Scale
     {
         public ScaleBlues(Note key)
         {
@@ -15,13 +16,12 @@
                 throw new ArgumentNullException(nameof(key));
             }
 
-            var i = key.Interval;
-            Fondamental = i.Fondamental;
-            ThirdMinor = i.ThirdMinor;
-            FourthPerfect = i.FourthPerfect;
-            FifthDiminished = i.FifthDiminished;
-            FifthPerfect = i.FifthPerfect;
-            SeventhMinor = i.SeventhMinor;
+            Fondamental = new IntervalPerfectUnison(key);
+            ThirdMinor = new IntervalMinorThird(key);
+            FourthPerfect = new IntervalPerfectFourth(key);
+            FifthDiminished = new IntervalDiminishedFifth(key);
+            FifthPerfect = new IntervalPerfectFifth(key);
+            SeventhMinor = new IntervalMinorSeventh(key);
         }
 
         public override ScaleAlias Alias { get; }
@@ -39,8 +39,8 @@
 
         public IntervalMinorSeventh SeventhMinor { get; }
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality>
+        public override List<Interval> Notes
+            => new List<Interval>
             {
                 Fondamental,
                 ThirdMinor,

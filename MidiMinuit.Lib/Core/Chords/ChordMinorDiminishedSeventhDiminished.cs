@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ChordMinorDiminishedSeventhDiminished : Chord
+    public class ChordMinorDiminishedSeventhDiminished
+        : Chord
     {
         public ChordMinorDiminishedSeventhDiminished(Note fondamental)
         {
@@ -13,12 +14,11 @@
             {
                 throw new ArgumentNullException(nameof(fondamental));
             }
-
-            var i = fondamental.Interval;
-            Fondamental = i.Fondamental;
-            ThirdMinor = i.ThirdMinor;
-            FifthDiminished = i.FifthDiminished;
-            SeventhDiminished = i.SeventhDiminished;
+            
+            Fondamental = new IntervalPerfectUnison(fondamental);
+            ThirdMinor = new IntervalMinorThird(fondamental);
+            FifthDiminished = new IntervalDiminishedFifth(fondamental);
+            SeventhDiminished = new IntervalDiminishedSeventh(fondamental);
         }
 
         public IntervalPerfectUnison Fondamental { get; }
@@ -36,8 +36,8 @@
             = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées " +
               "d'un demi-ton (1 case) à l'exception de la fondamentale.";
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
+        public override List<Interval> Notes
+            => new List<Interval> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
 
         public override string Name
             => $"{Fondamental}dim7";

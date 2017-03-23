@@ -5,7 +5,8 @@
     using Intervals;
     using Notes;
 
-    public class ChordSuspendedFourth : Chord
+    public class ChordSuspendedFourth
+        : Chord
     {
         public ChordSuspendedFourth(Note fondamental)
         {
@@ -13,11 +14,10 @@
             {
                 throw new ArgumentNullException(nameof(fondamental));
             }
-
-            var i = fondamental.Interval;
-            Fondamental = i.Fondamental;
-            FourthPerfect = i.FourthPerfect;
-            FifthPerfect = i.FifthPerfect;
+            
+            Fondamental = new IntervalPerfectUnison(fondamental);
+            FourthPerfect = new IntervalPerfectFourth(fondamental);
+            FifthPerfect = new IntervalPerfectFifth(fondamental);
         }
 
         public IntervalPerfectUnison Fondamental { get; }
@@ -32,8 +32,8 @@
         public override string Description { get; }
             = "Description not added yet.";
 
-        public override List<IntervalQuality> Notes
-            => new List<IntervalQuality> { Fondamental, FourthPerfect, FifthPerfect };
+        public override List<Interval> Notes
+            => new List<Interval> { Fondamental, FourthPerfect, FifthPerfect };
 
         public override string Name
             => $"{Fondamental}sus4";

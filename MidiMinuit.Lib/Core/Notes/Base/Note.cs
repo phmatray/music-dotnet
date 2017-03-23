@@ -299,64 +299,66 @@
 
         public Interval GetInterval()
         {
+            throw new NotImplementedException();
             // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
-            switch (ToString())
-            {
-                case "C":
-                    return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭",
-                        "B♭", "B", "C");
-                case "C♯":
-                    return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯",
-                        "B♭", "B", "B♯", "C♯");
-                case "D♭":
-                    return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭",
-                        "C♭♭", "C♭", "C", "D♭");
-                case "D":
-                    return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭",
-                        "C", "C♯", "D");
-                case "D♯":
-                    return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯",
-                        "C", "C♯", "C♯♯", "D♯");
-                case "E♭":
-                    return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭",
-                        "D♭", "D", "E♭");
-                case "E":
-                    return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭",
-                        "D", "D♯", "E");
-                case "F":
-                    return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭",
-                        "E♭", "E", "F");
-                case "F♯":
-                    return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭",
-                        "E", "E♯", "F♯");
-                case "G♭":
-                    return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭",
-                        "F♭♭", "F♭", "F", "G♭");
-                case "G":
-                    return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭",
-                        "F", "F♯", "G");
-                case "G♯":
-                    return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F",
-                        "F♯", "F♯♯", "G♯");
-                case "A♭":
-                    return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭",
-                        "G♭", "G", "A♭");
-                case "A":
-                    return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭",
-                        "G", "G♯", "A");
-                case "A♯":
-                    return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯",
-                        "G", "G♯", "G♯♯", "A♯");
-                case "B♭":
-                    return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭",
-                        "A♭", "A", "B♭");
-                case "B":
-                    return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭",
-                        "A", "A♯", "B");
+            // ne serait-ce pas plutôt une chromatic scale
+            ////switch (ToString())
+            ////{
+            ////    case "C":
+            ////        return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭",
+            ////            "B♭", "B", "C");
+            ////    case "C♯":
+            ////        return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯",
+            ////            "B♭", "B", "B♯", "C♯");
+            ////    case "D♭":
+            ////        return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭",
+            ////            "C♭♭", "C♭", "C", "D♭");
+            ////    case "D":
+            ////        return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭",
+            ////            "C", "C♯", "D");
+            ////    case "D♯":
+            ////        return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯",
+            ////            "C", "C♯", "C♯♯", "D♯");
+            ////    case "E♭":
+            ////        return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭",
+            ////            "D♭", "D", "E♭");
+            ////    case "E":
+            ////        return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭",
+            ////            "D", "D♯", "E");
+            ////    case "F":
+            ////        return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭",
+            ////            "E♭", "E", "F");
+            ////    case "F♯":
+            ////        return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭",
+            ////            "E", "E♯", "F♯");
+            ////    case "G♭":
+            ////        return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭",
+            ////            "F♭♭", "F♭", "F", "G♭");
+            ////    case "G":
+            ////        return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭",
+            ////            "F", "F♯", "G");
+            ////    case "G♯":
+            ////        return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F",
+            ////            "F♯", "F♯♯", "G♯");
+            ////    case "A♭":
+            ////        return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭",
+            ////            "G♭", "G", "A♭");
+            ////    case "A":
+            ////        return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭",
+            ////            "G", "G♯", "A");
+            ////    case "A♯":
+            ////        return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯",
+            ////            "G", "G♯", "G♯♯", "A♯");
+            ////    case "B♭":
+            ////        return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭",
+            ////            "A♭", "A", "B♭");
+            ////    case "B":
+            ////        return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭",
+            ////            "A", "A♯", "B");
 
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            ////    default:
+            ////        throw new ArgumentOutOfRangeException();
+            ////}
         }
 
         public Note Add(int semitone)

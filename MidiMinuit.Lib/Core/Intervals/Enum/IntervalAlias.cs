@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
-    public enum IntervalQualityEnum
+    public enum IntervalAlias
     {
         IntervalPerfectUnison,
         IntervalPerfectFourth,
@@ -29,13 +29,7 @@
         IntervalDiminishedSixth,
         IntervalDiminishedSeventh,
         IntervalDiminishedOctave,
-
-        IntervalPerfectEleventh,
         IntervalMajorNinth,
-        IntervalMajorThirteenth,
-        IntervalMinorNinth,
-        IntervalMinorThirteenth,
-        IntervalAugmentedNinth,
         IntervalAugmentedEleventh
     }
 }

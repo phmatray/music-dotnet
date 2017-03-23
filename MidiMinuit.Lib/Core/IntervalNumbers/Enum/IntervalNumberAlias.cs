@@ -9,6 +9,8 @@
         Fifth = 5,
         Sixth = 6,
         Seventh = 7,
-        Octave = 8
+        Octave = 8,
+        Ninth = 9,
+        Eleventh = 11
     }
 }

@@ -1,31 +1,25 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalAugmentedSeventh : IntervalQualitySimple
+    public class IntervalAugmentedSeventh : Interval
     {
-        private IntervalQualitySimple _inverse;
+        public IntervalAugmentedSeventh(Note lowerNote)
+        {
+        }
 
-        ////public IntervalAugmentedSeventh(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalAugmentedSeventh(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        ////public IntervalAugmentedSeventh(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalAugmentedSeventh;
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Simple;
-
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalAugmentedSeventh;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Parfaite;
 
         public override List<string> QualityName { get; }
             = new List<string> { "Augmented Seventh" };
@@ -37,12 +31,24 @@
             = new List<string> { "Aug. 7" };
 
         public override string QualityComposition { get; }
-            = "Inusitée dans la pratique";
+            = "Inusit�e dans la pratique";
 
         public override int Semitones { get; }
             = 12;
 
-        public override IntervalQualitySimple Inverse
-            => _inverse ?? (_inverse = new IntervalDiminishedSecond());
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberSeventh();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierAugmented();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }

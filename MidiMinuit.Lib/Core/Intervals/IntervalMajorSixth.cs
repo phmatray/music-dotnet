@@ -1,31 +1,25 @@
-﻿namespace MidiMinuit.Lib.Core.Intervals
+namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
 
-    public class IntervalMajorSixth : IntervalQualitySimple
+    public class IntervalMajorSixth : Interval
     {
-        private IntervalQualitySimple _inverse;
+        public IntervalMajorSixth(Note lowerNote)
+        {
+        }
 
-        ////public IntervalMajorSixth(NoteNameEnum name, NoteAccidentalEnum accidental = NoteAccidentalEnum.Natural)
-        ////    : base(name, accidental)
-        ////{
-        ////}
+        public override Note LowerNote { get; }
 
-        ////public IntervalMajorSixth(string note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override Note UpperNote { get; }
 
-        ////public IntervalMajorSixth(Note note)
-        ////    : base(note)
-        ////{
-        ////}
+        public override IntervalAlias Alias { get; }
+            = IntervalAlias.IntervalMajorSixth;
 
-        public override IntervalSpanningEnum Spanning { get; }
-            = IntervalSpanningEnum.Simple;
-
-        public override IntervalQualityEnum Quality { get; }
-            = IntervalQualityEnum.IntervalMajorSixth;
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Imparfaite;
 
         public override List<string> QualityName { get; }
             = new List<string>
@@ -50,7 +44,19 @@
         public override int Semitones { get; }
             = 9;
 
-        public override IntervalQualitySimple Inverse
-            => _inverse ?? (_inverse = new IntervalMinorThird());
+        public override IntervalNumber Number { get; }
+            = new IntervalNumberSixth();
+
+        public override IntervalModifier Modifier { get; }
+            = new IntervalModifierMajor();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override string ToString()
+            => Abbreviation;
+
+        public override Interval Clone()
+            => MemberwiseClone() as Interval;
     }
 }
