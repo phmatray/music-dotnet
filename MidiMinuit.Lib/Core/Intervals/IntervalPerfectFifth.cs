@@ -9,6 +9,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     {
         public IntervalPerfectFifth(Note lowerNote)
         {
+            var lowerNoteOrder = lowerNote.Name.Order;
+            var intervalOrder = Number.Order;
+
+            var upperNoteOrder = LowerNote + intervalOrder;
         }
 
         public override Note LowerNote { get; }

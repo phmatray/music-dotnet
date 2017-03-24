@@ -2,11 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using System.Text.RegularExpressions;
-    using Intervals;
     using NoteAccidentals;
     using NoteNames;
 
@@ -15,19 +12,16 @@
     ///     Cette classe représente la hauteur d'un son
     ///     http://programmers.stackexchange.com/questions/178817/oo-design-how-to-model-tonal-harmony
     /// </summary>
-    public class Note : IEquatable<Note>, INotifyPropertyChanged
+    public class Note : IEquatable<Note>
     {
-        private NoteAccidental _accidental;
-        private NoteName _name;
-
         /// <summary>
         ///     Initializes a new instance of the <see cref="Note" /> class.
         /// </summary>
         /// <param name="name">The name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
-        public Note(NoteName name, NoteAccidental accidental = null)
+        public Note(NoteName name = null, NoteAccidental accidental = null)
         {
-            Name = name;
+            Name = name ?? new NoteNameC();
             Accidental = accidental ?? new NoteAccidentalNatural();
         }
 
@@ -149,48 +143,13 @@
         {
         }
 
-        public NoteName Name
-        {
-            get { return _name; }
+        public NoteName Name { get; }
 
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
+        public NoteAccidental Accidental { get; }
 
-        public NoteAccidental Accidental
-        {
-            get { return _accidental; }
-
-            set
-            {
-                _accidental = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Interval Interval => GetInterval();
+        ////public Interval Interval => GetInterval();
 
         public int Pitch => Name.Value + Accidental.Value;
-
-        public bool Equals(Note other)
-        {
-            if (ReferenceEquals(null, other))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return Name == other.Name && Accidental == other.Accidental;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public static Note operator +(Note note, int semitone)
             => note.Add(semitone);
@@ -209,6 +168,21 @@
 
         public static bool operator <(Note left, Note right)
             => left.Pitch < right.Pitch;
+
+        public bool Equals(Note other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return Name == other.Name && Accidental == other.Accidental;
+        }
 
         public static Note GetNoteSharp(int value)
         {
@@ -313,79 +287,74 @@
             return new List<Note>(notes);
         }
 
-        public Interval GetInterval()
-        {
-            throw new NotImplementedException();
-            // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
-            // ne serait-ce pas plutôt une chromatic scale
-            ////switch (ToString())
-            ////{
-            ////    case "C":
-            ////        return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭",
-            ////            "B♭", "B", "C");
-            ////    case "C♯":
-            ////        return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯",
-            ////            "B♭", "B", "B♯", "C♯");
-            ////    case "D♭":
-            ////        return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭",
-            ////            "C♭♭", "C♭", "C", "D♭");
-            ////    case "D":
-            ////        return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭",
-            ////            "C", "C♯", "D");
-            ////    case "D♯":
-            ////        return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯",
-            ////            "C", "C♯", "C♯♯", "D♯");
-            ////    case "E♭":
-            ////        return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭",
-            ////            "D♭", "D", "E♭");
-            ////    case "E":
-            ////        return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭",
-            ////            "D", "D♯", "E");
-            ////    case "F":
-            ////        return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭",
-            ////            "E♭", "E", "F");
-            ////    case "F♯":
-            ////        return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭",
-            ////            "E", "E♯", "F♯");
-            ////    case "G♭":
-            ////        return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭",
-            ////            "F♭♭", "F♭", "F", "G♭");
-            ////    case "G":
-            ////        return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭",
-            ////            "F", "F♯", "G");
-            ////    case "G♯":
-            ////        return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F",
-            ////            "F♯", "F♯♯", "G♯");
-            ////    case "A♭":
-            ////        return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭",
-            ////            "G♭", "G", "A♭");
-            ////    case "A":
-            ////        return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭",
-            ////            "G", "G♯", "A");
-            ////    case "A♯":
-            ////        return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯",
-            ////            "G", "G♯", "G♯♯", "A♯");
-            ////    case "B♭":
-            ////        return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭",
-            ////            "A♭", "A", "B♭");
-            ////    case "B":
-            ////        return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭",
-            ////            "A", "A♯", "B");
+        ////public Interval GetInterval()
+        ////{
+        ////    // http://www.tabs4acoustic.com/forum-guitare/tableau-intervalles-et-gammes-majeure-et-mineures-t9478.html
+        ////    // ne serait-ce pas plutôt une chromatic scale
+        ////    switch (ToString())
+        ////    {
+        ////        case "C":
+        ////            return new Interval("C", "D♭", "D", "D♯", "E♭", "E", "F", "F♯", "G♭", "G", "G♯", "A♭", "A", "B♭♭",
+        ////                "B♭", "B", "C");
+        ////        case "C♯":
+        ////            return new Interval("C♯", "D", "D♯", "D♯♯", "E", "E♯", "F♯", "F♯♯", "G", "G♯", "G♯♯", "A", "A♯",
+        ////                "B♭", "B", "B♯", "C♯");
+        ////        case "D♭":
+        ////            return new Interval("D♭", "E♭♭", "E♭", "E", "F♭", "F", "G♭", "G", "A♭♭", "A♭", "A", "B♭♭", "B♭",
+        ////                "C♭♭", "C♭", "C", "D♭");
+        ////        case "D":
+        ////            return new Interval("D", "E♭", "E", "E♯", "F", "F♯", "G", "G♯", "A♭", "A", "A♯", "B♭", "B", "C♭",
+        ////                "C", "C♯", "D");
+        ////        case "D♯":
+        ////            return new Interval("D♯", "E", "E♯", "E♯♯", "F♯", "F♯♯", "G♯", "G♯♯", "A", "A♯", "A♯♯", "B", "B♯",
+        ////                "C", "C♯", "C♯♯", "D♯");
+        ////        case "E♭":
+        ////            return new Interval("E♭", "F♭", "F", "F♯", "G♭", "G", "A♭", "A", "B♭♭", "B♭", "B", "C♭", "C", "D♭♭",
+        ////                "D♭", "D", "E♭");
+        ////        case "E":
+        ////            return new Interval("E", "F", "F♯", "F♯♯", "G", "G♯", "A", "A♯", "B♭", "B", "B♯", "C", "C♯", "D♭",
+        ////                "D", "D♯", "E");
+        ////        case "F":
+        ////            return new Interval("F", "G♭", "G", "G♯", "A♭", "A", "B♭", "B", "C♭", "C", "C♯", "D♭", "D", "E♭♭",
+        ////                "E♭", "E", "F");
+        ////        case "F♯":
+        ////            return new Interval("F♯", "G", "G♯", "G♯♯", "A", "A♯", "B", "B♯", "C", "C♯", "C♯♯", "D", "D♯", "E♭",
+        ////                "E", "E♯", "F♯");
+        ////        case "G♭":
+        ////            return new Interval("G♭", "A♭♭", "A♭", "A", "B♭♭", "B♭", "C♭", "C", "D♭♭", "D♭", "D", "E♭♭", "E♭",
+        ////                "F♭♭", "F♭", "F", "G♭");
+        ////        case "G":
+        ////            return new Interval("G", "A♭", "A", "A♯", "B♭", "B", "C", "C♯", "D♭", "D", "D♯", "E♭", "E", "F♭",
+        ////                "F", "F♯", "G");
+        ////        case "G♯":
+        ////            return new Interval("G♯", "A", "A♯", "A♯♯", "B", "B♯", "C♯", "C♯♯", "D", "D♯", "D♯♯", "E", "E♯", "F",
+        ////                "F♯", "F♯♯", "G♯");
+        ////        case "A♭":
+        ////            return new Interval("A♭", "B♭♭", "B♭", "B", "C♭", "C", "D♭", "D", "E♭♭", "E♭", "E", "F♭", "F", "G♭♭",
+        ////                "G♭", "G", "A♭");
+        ////        case "A":
+        ////            return new Interval("A", "B♭", "B", "B♯", "C", "C♯", "D", "D♯", "E♭", "E", "E♯", "F", "F♯", "G♭",
+        ////                "G", "G♯", "A");
+        ////        case "A♯":
+        ////            return new Interval("A♯", "B", "B♯", "B♯♯", "C♯", "C♯♯", "D♯", "D♯♯", "E", "E♯", "E♯♯", "F♯", "F♯♯",
+        ////                "G", "G♯", "G♯♯", "A♯");
+        ////        case "B♭":
+        ////            return new Interval("B♭", "C♭", "C", "C♯", "D♭", "D", "E♭", "E", "F♭", "F", "F♯", "G♭", "G", "A♭♭",
+        ////                "A♭", "A", "B♭");
+        ////        case "B":
+        ////            return new Interval("B", "C", "C♯", "C♯♯", "D", "D♯", "E", "E♯", "F", "F♯", "F♯♯", "G", "G♯", "A♭",
+        ////                "A", "A♯", "B");
 
-            ////    default:
-            ////        throw new ArgumentOutOfRangeException();
-            ////}
-        }
+        ////        default:
+        ////            throw new ArgumentOutOfRangeException();
+        ////    }
+        ////}
 
         public Note Add(int semitone)
-        {
-            return GetNoteSharp((Pitch + semitone) % 12);
-        }
+            => GetNoteSharp((Pitch + semitone) % 12);
 
         public Note Substract(int semitone)
-        {
-            return Add(-semitone);
-        }
+            => Add(-semitone);
 
         public double GetFrequency(int octave = 4)
         {
@@ -400,14 +369,10 @@
         }
 
         public Note ToFlat()
-        {
-            return GetNoteFlat(Pitch);
-        }
+            => GetNoteFlat(Pitch);
 
         public Note ToSharp()
-        {
-            return GetNoteSharp(Pitch);
-        }
+            => GetNoteSharp(Pitch);
 
         public int FromNote(Note relativeNote)
         {
@@ -448,13 +413,6 @@
         }
 
         public override string ToString()
-        {
-            return $"{Name}{Accidental}";
-        }
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+            => $"{Name}{Accidental}";
     }
 }

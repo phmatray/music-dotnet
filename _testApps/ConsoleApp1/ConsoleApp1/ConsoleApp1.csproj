@@ -45,7 +45,7 @@
     <Compile Include="IntervalModifiers\Base\IntervalModifier.cs" />
     <Compile Include="IntervalModifiers\Base\IntervalModifierFactory.cs" />
     <Compile Include="IntervalModifiers\Base\IntervalModifierRepository.cs" />
-    <Compile Include="IntervalModifiers\Enum\Modifier.cs" />
+    <Compile Include="IntervalModifiers\Enum\IntervalModifierAlias.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierAugmented.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierDiminished.cs" />
     <Compile Include="IntervalModifiers\IntervalModifierMajor.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="IntervalNumbers\Base\IntervalNumber.cs" />
     <Compile Include="IntervalNumbers\Base\IntervalNumberFactory.cs" />
     <Compile Include="IntervalNumbers\Base\IntervalNumberRepository.cs" />
-    <Compile Include="IntervalNumbers\Enum\Number.cs" />
+    <Compile Include="IntervalNumbers\Enum\IntervalNumberAlias.cs" />
     <Compile Include="IntervalNumbers\IntervalNumberFifth.cs" />
     <Compile Include="IntervalNumbers\IntervalNumberFourth.cs" />
     <Compile Include="IntervalNumbers\IntervalNumberOctave.cs" />
@@ -66,7 +66,7 @@
     <Compile Include="Intervals\Base\IntervalFactory.cs" />
     <Compile Include="Intervals\Base\IntervalRepository.cs" />
     <Compile Include="Intervals\Enum\IntervalConsonance.cs" />
-    <Compile Include="Intervals\Enum\IntervalQuality.cs" />
+    <Compile Include="Intervals\Enum\IntervalAlias.cs" />
     <Compile Include="Intervals\Extensions\IntervalExtensions.cs" />
     <Compile Include="Intervals\IntervalAugmentedFifth.cs" />
     <Compile Include="Intervals\IntervalAugmentedFourth.cs" />
