@@ -1,5 +1,6 @@
 ﻿namespace MidiMinuit.Lib.Core.Degrees
 {
+    using NoteNames;
     using Notes;
 
     public class Degree2 : Degree
@@ -23,10 +24,10 @@
             = "sus-tonique";
 
         public override Note NoteInCMajor { get; }
-            = new Note(NoteName.D);
+            = new Note(new NoteNameD());
 
         public override Note NoteInCMinor { get; }
-            = new Note(NoteName.D);
+            = new Note(new NoteNameD());
 
         public override string ToString()
             => Alias.ToString();

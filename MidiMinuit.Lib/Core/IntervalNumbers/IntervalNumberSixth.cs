@@ -6,7 +6,7 @@ namespace MidiMinuit.Lib.Core.IntervalNumbers
         public override IntervalNumberAlias Alias { get; }
             = IntervalNumberAlias.Sixth;
 
-        public override int Value { get; }
+        public override int Order { get; }
             = 6;
 
         public override string Name { get; }

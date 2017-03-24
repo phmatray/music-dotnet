@@ -39,7 +39,7 @@
         public abstract string QualityComposition { get; }
 
         public string Abbreviation
-            => $"{Modifier.Abbreviation}{Number.Value}";
+            => $"{Modifier.Abbreviation}{Number.Order}";
 
         /// <summary>
         ///     Gets the interval class

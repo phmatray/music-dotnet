@@ -8,7 +8,7 @@
 
         public abstract IntervalNumberAlias Alias { get; }
 
-        public abstract int Value { get; }
+        public abstract int Order { get; }
 
         public abstract string Name { get; }
 

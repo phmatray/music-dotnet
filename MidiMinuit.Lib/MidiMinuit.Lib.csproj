@@ -208,8 +208,6 @@
     <Compile Include="Core\Intervals\IntervalPerfectOctave.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectUnison.cs" />
     <Compile Include="Core\Notes\Base\Note.cs" />
-    <Compile Include="Core\Notes\Base\NoteAccidental.cs" />
-    <Compile Include="Core\Notes\Base\NoteName.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
     <Compile Include="Core\Scales\Base\ScaleFactory.cs" />
     <Compile Include="Core\Scales\Enum\ScaleAlias.cs" />

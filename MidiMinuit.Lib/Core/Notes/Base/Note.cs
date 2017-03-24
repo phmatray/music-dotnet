@@ -7,6 +7,8 @@
     using System.Runtime.CompilerServices;
     using System.Text.RegularExpressions;
     using Intervals;
+    using NoteAccidentals;
+    using NoteNames;
 
     /// <summary>
     ///     Note Pitch (hauteur).
@@ -26,7 +28,18 @@
         public Note(NoteName name, NoteAccidental accidental = null)
         {
             Name = name;
-            Accidental = accidental ?? NoteAccidental.Natural;
+            Accidental = accidental ?? new NoteAccidentalNatural();
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Note" /> class.
+        /// </summary>
+        /// <param name="name">The name of the note.</param>
+        /// <param name="accidental">The accidental of the note.</param>
+        public Note(NoteNameAlias name, NoteAccidentalAlias accidental = NoteAccidentalAlias.Natural)
+        {
+            Name = new NoteNameRepository().Get(name);
+            Accidental = new NoteAccidentalRepository().Get(accidental);
         }
 
         /// <summary>
@@ -50,8 +63,11 @@
                 throw new ArgumentException("incorrect format");
             }
 
-            Name = NoteName.GetName(note[0].ToString());
-            Accidental = NoteAccidental.GetAccidental(note.Substring(1, note.Length - 1));
+            Name = new NoteNameRepository()
+                .GetByName(note[0].ToString());
+
+            Accidental = new NoteAccidentalRepository()
+                .GetBySymbol(note.Substring(1, note.Length - 1));
         }
 
         /// <summary>
@@ -72,52 +88,52 @@
             switch (midiValue % 12)
             {
                 case 0:
-                    Name = NoteName.C;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameC();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 case 1:
-                    Name = NoteName.C;
-                    Accidental = NoteAccidental.Sharp;
+                    Name = new NoteNameC();
+                    Accidental = new NoteAccidentalSharp();
                     break;
                 case 2:
-                    Name = NoteName.D;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameD();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 case 3:
-                    Name = NoteName.D;
-                    Accidental = NoteAccidental.Sharp;
+                    Name = new NoteNameD();
+                    Accidental = new NoteAccidentalSharp();
                     break;
                 case 4:
-                    Name = NoteName.E;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameE();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 case 5:
-                    Name = NoteName.F;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameF();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 case 6:
-                    Name = NoteName.F;
-                    Accidental = NoteAccidental.Sharp;
+                    Name = new NoteNameF();
+                    Accidental = new NoteAccidentalSharp();
                     break;
                 case 7:
-                    Name = NoteName.G;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameG();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 case 8:
-                    Name = NoteName.G;
-                    Accidental = NoteAccidental.Sharp;
+                    Name = new NoteNameG();
+                    Accidental = new NoteAccidentalSharp();
                     break;
                 case 9:
-                    Name = NoteName.A;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameA();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 case 10:
-                    Name = NoteName.A;
-                    Accidental = NoteAccidental.Sharp;
+                    Name = new NoteNameA();
+                    Accidental = new NoteAccidentalSharp();
                     break;
                 case 11:
-                    Name = NoteName.B;
-                    Accidental = NoteAccidental.Natural;
+                    Name = new NoteNameB();
+                    Accidental = new NoteAccidentalNatural();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(midiValue));
@@ -204,29 +220,29 @@
             switch (value)
             {
                 case 0:
-                    return new Note(NoteName.C);
+                    return new Note(new NoteNameC());
                 case 1:
-                    return new Note(NoteName.C, NoteAccidental.Sharp);
+                    return new Note(new NoteNameC(), new NoteAccidentalSharp());
                 case 2:
-                    return new Note(NoteName.D);
+                    return new Note(new NoteNameD());
                 case 3:
-                    return new Note(NoteName.D, NoteAccidental.Sharp);
+                    return new Note(new NoteNameD(), new NoteAccidentalSharp());
                 case 4:
-                    return new Note(NoteName.E);
+                    return new Note(new NoteNameE());
                 case 5:
-                    return new Note(NoteName.F);
+                    return new Note(new NoteNameF());
                 case 6:
-                    return new Note(NoteName.F, NoteAccidental.Sharp);
+                    return new Note(new NoteNameF(), new NoteAccidentalSharp());
                 case 7:
-                    return new Note(NoteName.G);
+                    return new Note(new NoteNameG());
                 case 8:
-                    return new Note(NoteName.G, NoteAccidental.Sharp);
+                    return new Note(new NoteNameG(), new NoteAccidentalSharp());
                 case 9:
-                    return new Note(NoteName.A);
+                    return new Note(new NoteNameA());
                 case 10:
-                    return new Note(NoteName.A, NoteAccidental.Sharp);
+                    return new Note(new NoteNameA(), new NoteAccidentalSharp());
                 case 11:
-                    return new Note(NoteName.B);
+                    return new Note(new NoteNameB());
                 default:
                     throw new ArgumentOutOfRangeException(nameof(value));
             }
@@ -237,29 +253,29 @@
             switch (value)
             {
                 case 0:
-                    return new Note(NoteName.C);
+                    return new Note(new NoteNameC());
                 case 1:
-                    return new Note(NoteName.D, NoteAccidental.Flat);
+                    return new Note(new NoteNameD(), new NoteAccidentalFlat());
                 case 2:
-                    return new Note(NoteName.D);
+                    return new Note(new NoteNameD());
                 case 3:
-                    return new Note(NoteName.E, NoteAccidental.Flat);
+                    return new Note(new NoteNameE(), new NoteAccidentalFlat());
                 case 4:
-                    return new Note(NoteName.E);
+                    return new Note(new NoteNameE());
                 case 5:
-                    return new Note(NoteName.F);
+                    return new Note(new NoteNameF());
                 case 6:
-                    return new Note(NoteName.G, NoteAccidental.Flat);
+                    return new Note(new NoteNameG(), new NoteAccidentalFlat());
                 case 7:
-                    return new Note(NoteName.G);
+                    return new Note(new NoteNameG());
                 case 8:
-                    return new Note(NoteName.A, NoteAccidental.Flat);
+                    return new Note(new NoteNameA(), new NoteAccidentalFlat());
                 case 9:
-                    return new Note(NoteName.A);
+                    return new Note(new NoteNameA());
                 case 10:
-                    return new Note(NoteName.B, NoteAccidental.Flat);
+                    return new Note(new NoteNameB(), new NoteAccidentalFlat());
                 case 11:
-                    return new Note(NoteName.B);
+                    return new Note(new NoteNameB());
                 default:
                     throw new ArgumentOutOfRangeException(nameof(value));
             }
