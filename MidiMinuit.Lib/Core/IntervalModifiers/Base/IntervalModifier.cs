@@ -15,5 +15,3 @@
         public abstract IntervalModifier Clone();
     }
 }
-
-

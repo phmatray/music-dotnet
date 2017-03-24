@@ -177,7 +177,6 @@
     <Compile Include="Core\Intervals\Enum\IntervalAlias.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalConsonance.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalSpanning.cs" />
-    <Compile Include="Core\Intervals\Extensions\IntervalExtensions.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedFifth.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedFourth.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedEleventh.cs" />
@@ -207,7 +206,12 @@
     <Compile Include="Core\Intervals\IntervalPerfectFourth.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectOctave.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectUnison.cs" />
+    <Compile Include="Core\NoteAccidentals\NoteAccidentalQuadrupleFlat.cs" />
+    <Compile Include="Core\NoteAccidentals\NoteAccidentalQuadrupleSharp.cs" />
+    <Compile Include="Core\NoteAccidentals\NoteAccidentalTripleSharp.cs" />
+    <Compile Include="Core\NoteAccidentals\NoteAccidentalTripleFlat.cs" />
     <Compile Include="Core\Notes\Base\Note.cs" />
+    <Compile Include="Core\Notes\Extensions\NoteExtensions.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
     <Compile Include="Core\Scales\Base\ScaleFactory.cs" />
     <Compile Include="Core\Scales\Enum\ScaleAlias.cs" />
@@ -305,7 +309,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Notes\Enum\" />
-    <Folder Include="Core\Notes\Extensions\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Extensions\" />

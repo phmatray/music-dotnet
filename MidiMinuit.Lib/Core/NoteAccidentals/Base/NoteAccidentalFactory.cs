@@ -28,6 +28,14 @@
                     return new NoteAccidentalDoubleFlat();
                 case NoteAccidentalAlias.DoubleSharp:
                     return new NoteAccidentalDoubleSharp();
+                case NoteAccidentalAlias.TripleFlat:
+                    return new NoteAccidentalTripleFlat();
+                case NoteAccidentalAlias.TripleSharp:
+                    return new NoteAccidentalTripleSharp();
+                case NoteAccidentalAlias.QuadrupleFlat:
+                    return new NoteAccidentalQuadrupleFlat();
+                case NoteAccidentalAlias.QuadrupleSharp:
+                    return new NoteAccidentalQuadrupleSharp();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(accidental), accidental, null);
             }

@@ -5,15 +5,13 @@ namespace MidiMinuit.Lib.Core.Intervals
     using IntervalNumbers;
     using Notes;
 
-    public class IntervalAugmentedSeventh : Interval
+    public class IntervalAugmentedSeventh
+        : Interval
     {
         public IntervalAugmentedSeventh(Note lowerNote)
+            : base(lowerNote)
         {
         }
-
-        public override Note LowerNote { get; }
-
-        public override Note UpperNote { get; }
 
         public override IntervalAlias Alias { get; }
             = IntervalAlias.IntervalAugmentedSeventh;

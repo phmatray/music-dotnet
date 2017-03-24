@@ -5,15 +5,13 @@ namespace MidiMinuit.Lib.Core.Intervals
     using IntervalNumbers;
     using Notes;
 
-    public class IntervalPerfectOctave : Interval
+    public class IntervalPerfectOctave
+        : Interval
     {
         public IntervalPerfectOctave(Note lowerNote)
+            : base(lowerNote)
         {
         }
-
-        public override Note LowerNote { get; }
-
-        public override Note UpperNote { get; }
 
         public override IntervalAlias Alias { get; }
             = IntervalAlias.IntervalPerfectOctave;

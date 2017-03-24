@@ -149,7 +149,19 @@
 
         ////public Interval Interval => GetInterval();
 
-        public int Pitch => Name.Value + Accidental.Value;
+        public int Pitch
+        {
+            get
+            {
+                var pitch = Name.Value + Accidental.Value;
+                if (pitch < 0)
+                {
+                    pitch += 12;
+                }
+
+                return pitch;
+            }
+        }
 
         public static Note operator +(Note note, int semitone)
             => note.Add(semitone);

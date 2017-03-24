@@ -1,22 +1,22 @@
 ﻿namespace MidiMinuit.Lib.Core.NoteAccidentals
 {
-    public class NoteAccidentalDoubleFlat
+    public class NoteAccidentalTripleSharp
         : NoteAccidental
     {
         public override NoteAccidentalAlias Alias { get; }
-            = NoteAccidentalAlias.DoubleFlat;
+            = NoteAccidentalAlias.TripleSharp;
 
         public override int Value { get; }
-            = -2;
+            = 3;
 
         public override string Name { get; }
-            = "Double Flat";
+            = "Triple Sharp";
 
         public override string Symbol { get; }
-            = "♭♭";
+            = "♯♯♯";
 
         public override string Symbol2 { get; }
-            = "bb";
+            = "###";
 
         public override string ToString()
             => Symbol;

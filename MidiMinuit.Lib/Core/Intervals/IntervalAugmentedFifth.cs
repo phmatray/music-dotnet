@@ -9,12 +9,9 @@ namespace MidiMinuit.Lib.Core.Intervals
         : Interval
     {
         public IntervalAugmentedFifth(Note lowerNote)
+            : base(lowerNote)
         {
         }
-
-        public override Note LowerNote { get; }
-
-        public override Note UpperNote { get; }
 
         public override IntervalAlias Alias { get; }
             = IntervalAlias.IntervalAugmentedFifth;

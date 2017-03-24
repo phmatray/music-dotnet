@@ -6,6 +6,10 @@ namespace MidiMinuit.Lib.Core.NoteAccidentals
         Flat,
         Sharp,
         DoubleFlat,
-        DoubleSharp
+        DoubleSharp,
+        TripleFlat,
+        TripleSharp,
+        QuadrupleFlat,
+        QuadrupleSharp
     }
 }

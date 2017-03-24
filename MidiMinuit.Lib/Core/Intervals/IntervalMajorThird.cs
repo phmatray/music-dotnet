@@ -5,15 +5,13 @@ namespace MidiMinuit.Lib.Core.Intervals
     using IntervalNumbers;
     using Notes;
 
-    public class IntervalMajorThird : Interval
+    public class IntervalMajorThird
+        : Interval
     {
         public IntervalMajorThird(Note lowerNote)
+            : base(lowerNote)
         {
         }
-
-        public override Note LowerNote { get; }
-
-        public override Note UpperNote { get; }
 
         public override IntervalAlias Alias { get; }
             = IntervalAlias.IntervalMajorThird;

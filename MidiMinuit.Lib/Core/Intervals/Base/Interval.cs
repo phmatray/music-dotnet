@@ -14,11 +14,17 @@
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
+        protected Interval(Note lowerNote)
+        {
+            LowerNote = lowerNote;
+            UpperNote = lowerNote.AddInterval(this);
+        }
+
+        public Note LowerNote { get; }
+
+        public Note UpperNote { get; }
+
         public abstract IntervalAlias Alias { get; }
-
-        public abstract Note LowerNote { get; }
-
-        public abstract Note UpperNote { get; }
 
         public abstract int Semitones { get; }
 

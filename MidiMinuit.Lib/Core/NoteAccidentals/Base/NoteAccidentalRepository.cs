@@ -22,7 +22,7 @@ namespace MidiMinuit.Lib.Core.NoteAccidentals
 
         public NoteAccidental Get(int accidentalValue)
             => _noteAccidentals
-                .Single(x => x.Alias == (NoteAccidentalAlias)accidentalValue);
+                .Single(x => x.Value == accidentalValue);
 
         public NoteAccidental GetBySymbol(string symbol)
             => _noteAccidentals

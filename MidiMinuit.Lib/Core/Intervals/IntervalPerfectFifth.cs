@@ -5,19 +5,13 @@ namespace MidiMinuit.Lib.Core.Intervals
     using IntervalNumbers;
     using Notes;
 
-    public class IntervalPerfectFifth : Interval
+    public class IntervalPerfectFifth
+        : Interval
     {
         public IntervalPerfectFifth(Note lowerNote)
+            : base(lowerNote)
         {
-            var lowerNoteOrder = lowerNote.Name.Order;
-            var intervalOrder = Number.Order;
-
-            var upperNoteOrder = LowerNote + intervalOrder;
         }
-
-        public override Note LowerNote { get; }
-
-        public override Note UpperNote { get; }
 
         public override IntervalAlias Alias { get; }
             = IntervalAlias.IntervalPerfectFifth;
