@@ -1,7 +1,10 @@
-﻿namespace MidiMinuit.Lib.Core.Chords
+﻿
+namespace MidiMinuit.Lib.Core.Chords
 {
     using System.Collections.Generic;
+    using System.Linq;
     using Intervals;
+    using Notes;
 
     public abstract class Chord
     {
@@ -11,9 +14,9 @@
         public abstract ChordAlias Alias { get; }
 
         /// <summary>
-        ///     Gets notes of the chord.
+        ///     Gets intervals of the chord.
         /// </summary>
-        public abstract List<Interval> Notes { get; }
+        public abstract List<Interval> Intervals { get; }
 
         /// <summary>
         ///     Gets name of the chord.
@@ -21,20 +24,29 @@
         public abstract string Name { get; }
 
         /// <summary>
-        ///     Gets details of the chord.
-        /// </summary>
-        public abstract string Details { get; }
-
-        /// <summary>
         ///     Gets description of the chord.
         /// </summary>
         public abstract string Description { get; }
 
         /// <summary>
+        ///     Gets notes of the chord.
+        /// </summary>
+        public List<Note> Notes
+            => Intervals.Select(x => x.UpperNote).ToList();
+
+        /// <summary>
+        ///     Gets details of the chord.
+        /// </summary>
+        public string Details
+            => Intervals.Aggregate(
+                string.Empty,
+                (current, interval) => current + $"{interval.UpperNote} ({interval.Abbreviation})");
+
+        /// <summary>
         ///     Gets nombre de sons constituant l'accord
         /// </summary>
         public int ToneCount
-            => Notes.Count;
+            => Intervals.Count;
 
         public abstract override string ToString();
 

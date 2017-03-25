@@ -14,7 +14,7 @@
             {
                 throw new ArgumentNullException(nameof(fondamental));
             }
-            
+
             Fondamental = new IntervalPerfectUnison(fondamental);
             ThirdMinor = new IntervalMinorThird(fondamental);
             FifthPerfect = new IntervalPerfectFifth(fondamental);
@@ -35,14 +35,11 @@
         public override string Description { get; }
             = "Description not added yet.";
 
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval> { Fondamental, ThirdMinor, FifthPerfect, SeventhMinor };
 
         public override string Name
             => $"{Fondamental}min7";
-
-        public override string Details
-            => $"Fond: {Fondamental}, 3rd min: {ThirdMinor}, 5ᵗʰ: {FifthPerfect}, 7ᵗʰ min: {SeventhMinor}";
 
         public override string ToString()
             => Name;

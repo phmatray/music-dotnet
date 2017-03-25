@@ -67,7 +67,6 @@
     <Compile Include="Intervals\Base\IntervalRepository.cs" />
     <Compile Include="Intervals\Enum\IntervalConsonance.cs" />
     <Compile Include="Intervals\Enum\IntervalAlias.cs" />
-    <Compile Include="Intervals\Extensions\IntervalExtensions.cs" />
     <Compile Include="Intervals\IntervalAugmentedFifth.cs" />
     <Compile Include="Intervals\IntervalAugmentedFourth.cs" />
     <Compile Include="Intervals\IntervalAugmentedOctave.cs" />
@@ -128,6 +127,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Intervals\Extensions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

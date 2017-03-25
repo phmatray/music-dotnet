@@ -32,14 +32,11 @@
         public override string Description { get; }
             = "Description not added yet.";
 
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval> { Fondamental, ThirdMajor, FifthAugmented };
 
         public override string Name
             => $"{Fondamental}aug";
-
-        public override string Details
-            => $"Fond: {Fondamental}, 3rd maj: {ThirdMajor}, 5ᵗʰ ♯: {FifthAugmented}";
 
         public override string ToString()
             => Name;

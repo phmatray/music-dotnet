@@ -14,7 +14,7 @@
             {
                 throw new ArgumentNullException(nameof(fondamental));
             }
-            
+
             Fondamental = new IntervalPerfectUnison(fondamental);
             ThirdMinor = new IntervalMinorThird(fondamental);
             FifthDiminished = new IntervalDiminishedFifth(fondamental);
@@ -36,14 +36,11 @@
             = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées " +
               "d'un demi-ton (1 case) à l'exception de la fondamentale.";
 
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
 
         public override string Name
             => $"{Fondamental}dim7";
-
-        public override string Details
-            => $"Fond. {Fondamental}, 3ʳᵈ min {ThirdMinor}, 5ᵗʰ♭ {FifthDiminished}, 7ᵗʰ dim {SeventhDiminished}";
 
         public override string ToString()
             => Name;
