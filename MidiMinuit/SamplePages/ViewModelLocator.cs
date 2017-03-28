@@ -1,4 +1,6 @@
-﻿namespace MidiMinuit.SamplePages
+﻿using MidiMinuit.SamplePages.IntervalCalculator;
+
+namespace MidiMinuit.SamplePages
 {
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Ioc;
@@ -42,6 +44,7 @@
             SimpleIoc.Default.Register<DegreeInfoViewModel>();
             SimpleIoc.Default.Register<ScaleInfoViewModel>();
             SimpleIoc.Default.Register<NoteFinderViewModel>();
+            SimpleIoc.Default.Register<IntervalCalculatorViewModel>();
         }
 
         // <summary>
@@ -79,6 +82,15 @@
         // </value>
         public NoteFinderViewModel NoteFinderInstance
             => ServiceLocator.Current.GetInstance<NoteFinderViewModel>();
+
+        // <summary>
+        // Gets the IntervalCalculator view model.
+        // </summary>
+        // <value>
+        // The IntervalCalculator view model.
+        // </value>
+        public IntervalCalculatorViewModel IntervalCalculatorInstance
+            => ServiceLocator.Current.GetInstance<IntervalCalculatorViewModel>();
 
         // <summary>
         // The cleanup.

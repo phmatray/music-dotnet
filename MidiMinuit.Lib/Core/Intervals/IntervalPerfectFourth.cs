@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalPerfectFourth
         : Interval
     {
+        public IntervalPerfectFourth()
+        {
+        }
+
         public IntervalPerfectFourth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Mixte;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Perfect Fourth", "Diatessaron" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "P4" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Perf. 4" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "P4", "Perf. 4" };
 
         public override string QualityComposition { get; }
             = "2 tons et 1 demi-ton diatonique";

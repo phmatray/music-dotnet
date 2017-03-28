@@ -68,7 +68,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Chord"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ChordProperty =
-            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(ChordAlias.Major.GetChord(new Note(NoteNameEnum.C))));
+            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(new ChordMajor(new Note())));
 
 
 

@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalAugmentedFourth
         : Interval
     {
+        public IntervalAugmentedFourth()
+        {
+        }
+
         public IntervalAugmentedFourth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Augmented Fourth", "Tritone" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "A4", "+4", "TT" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Aug. 4" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "A4", "+4", "TT", "Aug. 4" };
 
         public override string QualityComposition { get; }
             = "2 tons, 1 demi-ton diatonique et 1 demi-ton chromatique ou 3 tons(Triton)";

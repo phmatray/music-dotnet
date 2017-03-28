@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalPerfectUnison
         : Interval
     {
+        public IntervalPerfectUnison()
+        {
+        }
+
         public IntervalPerfectUnison(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Parfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Perfect Unison", "Prime", "Perfect Prime" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "P1" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Perf. 1" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "P1", "Perf. 1" };
 
         public override string QualityComposition { get; }
             = "NO DATA";

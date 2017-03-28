@@ -2,7 +2,6 @@
 {
     using System.Collections.ObjectModel;
     using GalaSoft.MvvmLight;
-    using MidiMinuit.Lib.Core.Degrees;
     using MidiMinuit.Lib.Core.Notes;
     using MidiMinuit.Lib.Core.Scales;
 
@@ -12,14 +11,8 @@
 
         public ScaleInfoViewModel()
         {
-            var key = new Note(NoteNameEnum.C);
-            Scales = new ObservableCollection<Scale>
-            {
-                new ScaleMajor(key),
-                new ScaleMinorHarmonic(key),
-                new ScaleMinorMelodic(key),
-                new ScaleMinorNaturalEolian(key)
-            };
+            var allScales = new ScaleFactory().CreateAllScales(new Note());
+            Scales = new ObservableCollection<Scale>(allScales);
         }
     }
 }

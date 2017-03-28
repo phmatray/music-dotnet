@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalMajorSecond
         : Interval
     {
+        public IntervalMajorSecond()
+        {
+        }
+
         public IntervalMajorSecond(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Major Second", "Tone", "Whole Tone", "Whole Step" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "M2" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Maj. 2" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "M2", "Maj. 2" };
 
         public override string QualityComposition { get; }
             = "1 ton";

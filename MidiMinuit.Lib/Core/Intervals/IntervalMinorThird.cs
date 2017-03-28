@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalMinorThird
         : Interval
     {
+        public IntervalMinorThird()
+        {
+        }
+
         public IntervalMinorThird(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Imparfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Minor Third" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "m3" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "min. 3" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "m3", "min. 3" };
 
         public override string QualityComposition { get; }
             = "1 ton et 1 demi-ton diatonique";

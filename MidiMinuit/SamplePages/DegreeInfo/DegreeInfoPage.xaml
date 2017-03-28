@@ -10,9 +10,9 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="DegreesTemplate" x:DataType="degrees:DegreeBase" >
+        <DataTemplate x:Key="DegreesTemplate" x:DataType="degrees:Degree" >
             <StackPanel>
-                <TextBlock Text="{x:Bind DegreeEnum}"/>
+                <TextBlock Text="{x:Bind Alias}"/>
                 <TextBlock Text="{x:Bind DiatonicFunction}"/>
                 <TextBlock Text="{x:Bind CorrespondingModeMajorKey}"/>
                 <TextBlock Text="{x:Bind CorrespondingModeMinorKey}"/>

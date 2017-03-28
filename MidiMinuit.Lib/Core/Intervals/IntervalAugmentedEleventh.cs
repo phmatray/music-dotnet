@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalAugmentedEleventh
         : Interval
     {
+        public IntervalAugmentedEleventh()
+        {
+        }
+
         public IntervalAugmentedEleventh(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Augmented Eleventh" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "A11", "+11" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Aug. 11" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "A11", "+11", "Aug. 11" };
 
         public override string QualityComposition { get; }
             = "NO DATA";

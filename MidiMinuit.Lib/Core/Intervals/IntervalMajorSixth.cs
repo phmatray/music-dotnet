@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalMajorSixth
         : Interval
     {
+        public IntervalMajorSixth()
+        {
+        }
+
         public IntervalMajorSixth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,7 +23,7 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Imparfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string>
             {
                 "Major Sixth",
@@ -30,11 +34,8 @@ namespace MidiMinuit.Lib.Core.Intervals
                 "Hexachordon Maius"
             };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "M6" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Maj. 6" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "M6", "Maj. 6" };
 
         public override string QualityComposition { get; }
             = "4 tons et 1 demi-ton diatonique";

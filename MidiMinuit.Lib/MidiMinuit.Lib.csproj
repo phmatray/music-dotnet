@@ -177,6 +177,7 @@
     <Compile Include="Core\Intervals\Enum\IntervalAlias.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalConsonance.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalSpanning.cs" />
+    <Compile Include="Core\Intervals\Extensions\IntervalExtensions.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedFifth.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedFourth.cs" />
     <Compile Include="Core\Intervals\IntervalAugmentedEleventh.cs" />

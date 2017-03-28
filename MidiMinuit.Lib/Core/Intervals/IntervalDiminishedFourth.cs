@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalDiminishedFourth
         : Interval
     {
+        public IntervalDiminishedFourth()
+        {
+        }
+
         public IntervalDiminishedFourth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Diminished Fourth" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "d4", "°4" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "deg. 4", "dim. 4" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "d4", "°4", "deg. 4", "dim. 4" };
 
         public override string QualityComposition { get; }
             = "1 ton et 2 demi-tons diatoniques";

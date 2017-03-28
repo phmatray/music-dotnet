@@ -49,6 +49,9 @@
         /// </summary>
         public abstract string Details { get; }
 
+        public string NoteDetails
+            => Notes.GetNoteDetails();
+
         public abstract override string ToString();
 
         public abstract Scale Clone();

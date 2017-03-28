@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalDiminishedFifth
         : Interval
     {
+        public IntervalDiminishedFifth()
+        {
+        }
+
         public IntervalDiminishedFifth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Diminished Fifth", "Tritone" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "d5", "°5", "TT" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "deg. 5", "dim. 5" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "d5", "°5", "TT", "deg. 5", "dim. 5" };
 
         public override string QualityComposition { get; }
             = "2 tons et 2 demi-tons diatoniques";

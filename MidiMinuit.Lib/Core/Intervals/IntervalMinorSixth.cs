@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalMinorSixth
         : Interval
     {
+        public IntervalMinorSixth()
+        {
+        }
+
         public IntervalMinorSixth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Imparfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Minor Sixth", "Minor Hexachord", "Hexachordon Minus", "Lesser Hexachord" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "m6" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "min. 6" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "m6", "min. 6" };
 
         public override string QualityComposition { get; }
             = "3 tons et 2 demi-tons diatoniques";

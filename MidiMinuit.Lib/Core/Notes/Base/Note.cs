@@ -147,6 +147,9 @@
 
         public NoteAccidental Accidental { get; }
 
+        public string Details
+            => $"{Name}{Accidental}";
+
         ////public Interval Interval => GetInterval();
 
         public int Pitch

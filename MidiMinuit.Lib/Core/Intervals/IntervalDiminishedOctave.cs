@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalDiminishedOctave
         : Interval
     {
+        public IntervalDiminishedOctave()
+        {
+        }
+
         public IntervalDiminishedOctave(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Diminished Octave", "Diminished Eighth" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "d8", "°8" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "deg. 8", "dim. 8" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "d8", "°8", "deg. 8", "dim. 8" };
 
         public override string QualityComposition { get; }
             = "4 tons et 3 demi-tons diatoniques";

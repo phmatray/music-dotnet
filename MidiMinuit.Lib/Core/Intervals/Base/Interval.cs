@@ -1,6 +1,7 @@
 ﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
+    using System.Linq;
     using IntervalModifiers;
     using IntervalNumbers;
     using Notes;
@@ -14,15 +15,33 @@
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
+        private Note _lowerNote;
+
+        protected Interval()
+        {
+        }
+
         protected Interval(Note lowerNote)
         {
             LowerNote = lowerNote;
             UpperNote = lowerNote.AddInterval(this);
         }
 
-        public Note LowerNote { get; }
+        public Note LowerNote
+        {
+            get
+            {
+                return _lowerNote;
+            }
 
-        public Note UpperNote { get; }
+            set
+            {
+                _lowerNote = value;
+                UpperNote = _lowerNote.AddInterval(this);
+            }
+        }
+
+        public Note UpperNote { get; private set; }
 
         public abstract IntervalAlias Alias { get; }
 
@@ -36,16 +55,20 @@
 
         public abstract IntervalConsonance HarmonicConsonance { get; }
 
-        public abstract List<string> QualityName { get; }
+        public abstract List<string> Names { get; }
 
-        public abstract List<string> QualityAbbreviation { get; }
-
-        public abstract List<string> QualityAbbreviation2 { get; }
+        public abstract List<string> Abbreviations { get; }
 
         public abstract string QualityComposition { get; }
 
+        public string Notes
+            => $"{LowerNote.Details} - {UpperNote.Details}";
+
+        public string Name
+            => Names.FirstOrDefault();
+
         public string Abbreviation
-            => $"{Modifier.Abbreviation}{Number.Order}";
+            => Abbreviations.FirstOrDefault();
 
         /// <summary>
         ///     Gets the interval class

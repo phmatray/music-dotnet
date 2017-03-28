@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalDiminishedSecond
         : Interval
     {
+        public IntervalDiminishedSecond()
+        {
+        }
+
         public IntervalDiminishedSecond(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Parfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Diminished Second" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "d2", "°2" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "deg. 2", "dim. 2" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "d2", "°2", "deg. 2", "dim. 2" };
 
         public override string QualityComposition { get; }
             = "NO DATA";

@@ -38,7 +38,7 @@ namespace MidiMinuit.Pages
 
         public static void TestMethod()
         {
-            var result = Class1.GetAllChordScaleMajorC();
+            //var result = Class1.GetAllChordScaleMajorC();
         }
     }
 }

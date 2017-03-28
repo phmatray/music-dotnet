@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using Intervals;
     using Notes;
-    using Windows.UI.Xaml.Controls;
 
     public class ScaleMinorNaturalEolian
         : Scale

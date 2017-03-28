@@ -36,7 +36,7 @@
 
         public List<Interval> GetByAbbreviation(string abbreviation)
             => _intervals
-                .Where(x => x.QualityAbbreviation.First() == abbreviation)
+                .Where(x => x.Abbreviations.First() == abbreviation)
                 .ToList();
 
         public List<Interval> GetBySemitones(int semitones)

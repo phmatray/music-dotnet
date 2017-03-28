@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalDiminishedSeventh
         : Interval
     {
+        public IntervalDiminishedSeventh()
+        {
+        }
+
         public IntervalDiminishedSeventh(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Diminished Seventh" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "d7", "°7" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "deg. 7", "dim. 7" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "d7", "°7", "deg. 7", "dim. 7" };
 
         public override string QualityComposition { get; }
             = "3 tons et 3 demi-tons diatoniques";

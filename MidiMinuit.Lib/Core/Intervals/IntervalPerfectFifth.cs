@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalPerfectFifth
         : Interval
     {
+        public IntervalPerfectFifth()
+        {
+        }
+
         public IntervalPerfectFifth(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Parfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Perfect Fifth", "Diapente" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "P5" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Perf. 5" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "P5", "Perf. 5" };
 
         public override string QualityComposition { get; }
             = "3 tons et 1 demi-ton diatonique";

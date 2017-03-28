@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalAugmentedSeventh
         : Interval
     {
+        public IntervalAugmentedSeventh()
+        {
+        }
+
         public IntervalAugmentedSeventh(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Parfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Augmented Seventh" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "A7", "+7" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Aug. 7" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "A7", "+7", "Aug. 7" };
 
         public override string QualityComposition { get; }
             = "Inusitée dans la pratique";

@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalMinorSecond
         : Interval
     {
+        public IntervalMinorSecond()
+        {
+        }
+
         public IntervalMinorSecond(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Minor Second", "Semitone", "Half Tone", "Half Step" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "m2" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "min. 2" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "m2", "min. 2" };
 
         public override string QualityComposition { get; }
             = "1 demi-ton diatonique";

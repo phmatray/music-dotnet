@@ -17,7 +17,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
         private string _noteText = "Use your MIDI keyboard";
         private Brush _chordFontBrush = Constants.ThemeResources.SystemControlHighlightAccentBrush;
         private GuitarTuning _tuning = new GuitarTuningStandard();
-        private Chord _chord = ChordAlias.Minor.GetChord(new Note(NoteNameEnum.C));
+        private Chord _chord = new ChordMinor(new Note());
 
         public string NoteText
         {
@@ -73,12 +73,12 @@ namespace MidiMinuit.SamplePages.NoteFinder
 
         public void ChangeTuning_OnClick(object sender, RoutedEventArgs e)
         {
-            Tuning = new GuitarTuningTuneDownHalfStep();
+            Tuning = new GuitarTuningStandard();
         }
 
         public void ChangeChord_OnClick(object sender, RoutedEventArgs e)
         {
-            Chord = ChordAlias.MinorDiminishedSeventhDiminished.GetChord(new Note(NoteNameEnum.E));
+            Chord = new ChordMinorDiminishedSeventhDiminished(new Note());
         }
     }
 }

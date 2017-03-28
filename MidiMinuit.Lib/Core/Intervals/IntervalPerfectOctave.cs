@@ -8,6 +8,10 @@ namespace MidiMinuit.Lib.Core.Intervals
     public class IntervalPerfectOctave
         : Interval
     {
+        public IntervalPerfectOctave()
+        {
+        }
+
         public IntervalPerfectOctave(Note lowerNote)
             : base(lowerNote)
         {
@@ -19,14 +23,11 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Parfaite;
 
-        public override List<string> QualityName { get; }
+        public override List<string> Names { get; }
             = new List<string> { "Perfect Octave" };
 
-        public override List<string> QualityAbbreviation { get; }
-            = new List<string> { "P8" };
-
-        public override List<string> QualityAbbreviation2 { get; }
-            = new List<string> { "Perf. 8" };
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "P8", "Perf. 8" };
 
         public override string QualityComposition { get; }
             = "5 tons et 2 demi-tons diatoniques";

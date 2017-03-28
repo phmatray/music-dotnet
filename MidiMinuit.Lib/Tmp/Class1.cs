@@ -1,4 +1,10 @@
-﻿namespace MidiMinuit.Lib.Tmp
+﻿using Microsoft.VisualBasic;
+using MidiMinuit.Lib.Core.Degrees;
+using MidiMinuit.Lib.Core.NoteNames;
+using MidiMinuit.Lib.Core.Notes;
+using MidiMinuit.Lib.Core.Scales;
+
+namespace MidiMinuit.Lib.Tmp
 {
     using System;
     using System.Collections.Generic;
@@ -8,14 +14,14 @@
 
     public static class Class1
     {
-        ////public static List<ChordBase> GetAllChordScaleMajorC()
+        ////public static List<Chord> GetAllChordScaleMajorC()
         ////{
-        ////    ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.G));
+        ////    Scale scale = new ScaleMajor(new Note(NoteNameAlias.G));
         ////    var result = scale.GetAllChord();
         ////    return result;
         ////}
 
-        ////public static List<ChordBase> GetAllChord(this ScaleBase scale)
+        ////public static List<Chord> GetAllChord(this Scale scale)
         ////{
         ////    var chords = scale.Notes
         ////        // for each scale degree, we'll seach all the possibilities of chords.
@@ -30,16 +36,16 @@
 
         ////public static void TestMethod_HarmonizeScale()
         ////{
-        ////    ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
+        ////    Scale scale = new ScaleMajor(new Note(NoteNameAlias.C));
         ////    var chord = scale.GetChordMajor(new Degree1());
         ////}
 
         ////public static void TestMethod_Generate3tonesChords()
         ////{
-        ////    ScaleBase scale = new ScaleMajor(new Note(NoteNameEnum.C));
+        ////    Scale scale = new ScaleMajor(new Note(NoteNameAlias.C));
         ////    var combinaisons = HelperBeta.GetCombinaisons(scale.Notes);
 
-        ////    var chords = new List<ChordBase>();
+        ////    var chords = new List<Chord>();
         ////    foreach (var c in combinaisons)
         ////    {
         ////        var chord = GetMajorChord(c);
