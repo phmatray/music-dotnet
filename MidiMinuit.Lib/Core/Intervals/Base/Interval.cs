@@ -61,6 +61,8 @@
 
         public abstract string QualityComposition { get; }
 
+        public abstract string WikipediaDescription { get; }
+
         public string Notes
             => $"{LowerNote.Details} - {UpperNote.Details}";
 

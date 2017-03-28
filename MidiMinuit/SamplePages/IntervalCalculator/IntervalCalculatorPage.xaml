@@ -6,8 +6,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" 
-    xmlns:scales="using:MidiMinuit.Lib.Core.Scales"
-    mc:Ignorable="d" RequestedTheme="Dark">
+    xmlns:scales="using:MidiMinuit.Lib.Core.Scales" 
+    xmlns:common="using:MidiMinuit.Common"
+    mc:Ignorable="d"
+    RequestedTheme="Dark">
 
     <Page.Resources>
         <Style TargetType="Button">
@@ -30,6 +32,8 @@
                 <TextBlock Text="{x:Bind NoteDetails}"/>
             </StackPanel>
         </DataTemplate>
+
+        <common:ToUpperConverter x:Key="ToUpperConverter" />
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -42,11 +46,16 @@
                 <RowDefinition/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
-                <TextBlock Margin="20" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold">
-                    <TextBlock.Foreground>
-                        <SolidColorBrush Color="{StaticResource White}"/>
-                    </TextBlock.Foreground>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical" BorderThickness="0,0,0,1">
+                <StackPanel.BorderBrush>
+                    <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
+                </StackPanel.BorderBrush>
+                <TextBlock Margin="20,12,20,20" FontSize="16" HorizontalAlignment="Left" FontWeight="SemiBold" 
+                           Foreground="{StaticResource Brush-White}">
+                    <Run Text="{x:Bind ViewModel.Interval.Name, Mode=OneWay, Converter={StaticResource ToUpperConverter}}"/>
+                </TextBlock>
+                <TextBlock Margin="20" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold" 
+                           Foreground="{StaticResource Brush-White}">
                     <Run Text="{x:Bind ViewModel.Interval.Notes, Mode=OneWay}"/>
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center">
@@ -63,7 +72,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
-                <Grid Margin="0,4">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -81,7 +90,7 @@
                     <Button Content="A" Click="{x:Bind ViewModel.NoteNameA_OnClick}" Grid.Column="5"/>
                     <Button Content="B" Click="{x:Bind ViewModel.NoteNameB_OnClick}" Grid.Column="6"/>
                 </Grid>
-                <Grid Grid.Row="1" Margin="0,4">
+                <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -89,13 +98,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="♭♭" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalDoubleFlat_OnClick}"/>
-                    <Button Content="♭" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalFlat_OnClick}" Grid.Column="1"/>
-                    <Button Content="♮" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalNatural_OnClick}" Grid.Column="2"/>
-                    <Button Content="♯" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalSharp_OnClick}" Grid.Column="3"/>
-                    <Button Content="♯♯" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalDoubleSharp_OnClick}" Grid.Column="4"/>
+                    <Button Content="♭♭" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalDoubleFlat_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}"/>
+                    <Button Content="♭" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalFlat_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="1"/>
+                    <Button Content="♮" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalNatural_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="2"/>
+                    <Button Content="♯" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalSharp_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3"/>
+                    <Button Content="♯♯" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalDoubleSharp_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4"/>
                 </Grid>
-                <Grid Margin="0,4,0,0" Grid.Row="2">
+                <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -111,25 +120,35 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="A2" Click="{x:Bind ViewModel.IntervalA2_OnClick}"/>
-                    <Button Content="A3" Click="{x:Bind ViewModel.IntervalA3_OnClick}" Grid.Column="1"/>
-                    <Button Content="A4" Click="{x:Bind ViewModel.IntervalA4_OnClick}" Grid.Column="2"/>
-                    <Button Content="A5" Click="{x:Bind ViewModel.IntervalA5_OnClick}" Grid.Column="3"/>
-                    <Button Content="A6" Click="{x:Bind ViewModel.IntervalA6_OnClick}" Grid.Column="4"/>
-                    <Button Content="A7" Click="{x:Bind ViewModel.IntervalA7_OnClick}" Grid.Column="5"/>
-                    <Button Content="A8" Click="{x:Bind ViewModel.IntervalA8_OnClick}" Grid.Column="6"/>
-                    <Button Content="M2" Click="{x:Bind ViewModel.IntervalM2_OnClick}" Grid.Row="1"/>
+                    <Button Content="A2" Click="{x:Bind ViewModel.IntervalA2_OnClick}" Grid.Column="0" Grid.Row="0"/>
+                    <Button Content="A3" Click="{x:Bind ViewModel.IntervalA3_OnClick}" Grid.Column="1" Grid.Row="0"/>
+                    <Button Content="A4" Click="{x:Bind ViewModel.IntervalA4_OnClick}" Grid.Column="2" Grid.Row="0"/>
+                    <Button Content="A5" Click="{x:Bind ViewModel.IntervalA5_OnClick}" Grid.Column="3" Grid.Row="0"/>
+                    <Button Content="A6" Click="{x:Bind ViewModel.IntervalA6_OnClick}" Grid.Column="4" Grid.Row="0"/>
+                    <Button Content="A7" Click="{x:Bind ViewModel.IntervalA7_OnClick}" Grid.Column="5" Grid.Row="0"/>
+                    <Button Content="A8" Click="{x:Bind ViewModel.IntervalA8_OnClick}" Grid.Column="6" Grid.Row="0"/>
+                    <Button Content="M2" Click="{x:Bind ViewModel.IntervalM2_OnClick}" Grid.Column="0" Grid.Row="1"/>
                     <Button Content="M3" Click="{x:Bind ViewModel.IntervalM3_OnClick}" Grid.Column="1" Grid.Row="1"/>
                     <Button Content="P4" Click="{x:Bind ViewModel.IntervalP4_OnClick}" Grid.Column="2" Grid.Row="1"/>
                     <Button Content="P5" Click="{x:Bind ViewModel.IntervalP5_OnClick}" Grid.Column="3" Grid.Row="1"/>
                     <Button Content="M6" Click="{x:Bind ViewModel.IntervalM6_OnClick}" Grid.Column="4" Grid.Row="1"/>
                     <Button Content="M7" Click="{x:Bind ViewModel.IntervalM7_OnClick}" Grid.Column="5" Grid.Row="1"/>
                     <Button Content="P8" Click="{x:Bind ViewModel.IntervalP8_OnClick}" Grid.Column="6" Grid.Row="1"/>
-                    <Button Content="m2" Click="{x:Bind ViewModel.IntervalMin2_OnClick}" Grid.Row="2"/>
+                    <Button Content="m2" Click="{x:Bind ViewModel.IntervalMin2_OnClick}" Grid.Column="0" Grid.Row="2"/>
                     <Button Content="m3" Click="{x:Bind ViewModel.IntervalMin3_OnClick}" Grid.Column="1" Grid.Row="2"/>
+                    <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="1">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
+                        </Border.BorderBrush>
+                    </Border>
                     <Button Content="m6" Click="{x:Bind ViewModel.IntervalMin6_OnClick}" Grid.Column="4" Grid.Row="2"/>
                     <Button Content="m7" Click="{x:Bind ViewModel.IntervalMin7_OnClick}" Grid.Column="5" Grid.Row="2"/>
-                    <Button Content="d2" Click="{x:Bind ViewModel.IntervalDim2_OnClick}" Grid.Row="3"/>
+                    <Border Grid.Column="6" Grid.Row="2" BorderThickness="1,1,0,1">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
+                        </Border.BorderBrush>
+                    </Border>
+                    <Button Content="d2" Click="{x:Bind ViewModel.IntervalDim2_OnClick}" Grid.Column="0" Grid.Row="3"/>
                     <Button Content="d3" Click="{x:Bind ViewModel.IntervalDim3_OnClick}" Grid.Column="1" Grid.Row="3"/>
                     <Button Content="d4" Click="{x:Bind ViewModel.IntervalDim4_OnClick}" Grid.Column="2" Grid.Row="3"/>
                     <Button Content="d5" Click="{x:Bind ViewModel.IntervalDim5_OnClick}" Grid.Column="3" Grid.Row="3"/>
@@ -143,6 +162,25 @@
             <Grid.BorderBrush>
                 <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
             </Grid.BorderBrush>
+            <Pivot>
+                <Pivot.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <TextBlock Text="{Binding}" FontSize="16" FontWeight="SemiBold" />
+                        </Grid>
+                    </DataTemplate>
+                </Pivot.HeaderTemplate>
+                <PivotItem Header="Description">
+                    <ScrollViewer Margin="0,0,-12,0" >
+                        <TextBlock Text="{x:Bind ViewModel.Interval.WikipediaDescription, Mode=OneWay}"
+                                TextWrapping="WrapWholeWords" TextAlignment="Justify" Padding="0,0,20,20">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{ThemeResource SystemChromeWhiteColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </ScrollViewer>
+                </PivotItem>
+            </Pivot>
         </Grid>
     </Grid>
 </Page>

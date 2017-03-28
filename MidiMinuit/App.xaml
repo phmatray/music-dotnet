@@ -39,7 +39,6 @@
                          Color="{StaticResource Blue-01}" />
 
         <!--  Styles  -->
-
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource Brush-Grey-01}" />
         </Style>

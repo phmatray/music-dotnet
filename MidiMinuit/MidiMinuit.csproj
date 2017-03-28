@@ -99,6 +99,7 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="Assets\Photos\OnlinePhotos.json" />
     <Content Include="Assets\Photos\Photos.json" />
+    <Compile Include="Common\ToUpperConverter.cs" />
     <Compile Include="Controls\ControlHelpers.Composition.cs" />
     <Compile Include="Controls\GuitarChord\GuitarChord.Properties.cs" />
     <None Include="MidiMinuit.ruleset" />

@@ -52,6 +52,9 @@ namespace MidiMinuit.Lib.Core.Intervals
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
 
+        public override string WikipediaDescription { get; }
+            = "NO DATA";
+
         public override string ToString()
             => Abbreviation;
 
