@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In music theory, a perfect fifth is the musical interval corresponding to a pair of pitches with a frequency ratio of 3:2, or very nearly so.
+
+In classical music from Western culture, a fifth is the interval from the first to the last of five consecutive notes in a diatonic scale. The perfect fifth (often abbreviated P5) spans seven semitones, while the diminished fifth spans six and the augmented fifth spans eight semitones. For example, the interval from C to G is a perfect fifth, as the note G lies seven semitones above C.";
 
         public override string ToString()
             => Abbreviation;

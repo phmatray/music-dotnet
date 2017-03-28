@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, a third is a musical interval encompassing three staff positions, and the major third is a third spanning four semitones. Along with the minor third, the major third is one of two commonly occurring thirds. It is qualified as major because it is the larger of the two: the major third spans four semitones, the minor third three. For example, the interval from C to E is a major third, as the note E lies four semitones above C, and there are three staff positions from C to E. Diminished and augmented thirds span the same number of staff positions, but consist of a different number of semitones (two and five).";
 
         public override string ToString()
             => Abbreviation;

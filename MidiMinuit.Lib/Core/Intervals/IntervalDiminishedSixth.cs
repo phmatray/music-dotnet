@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -27,7 +27,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = new List<string> { "Diminished Sixth" };
 
         public override List<string> Abbreviations { get; }
-            = new List<string> { "d6", "�6", "deg. 6", "dim. 6" };
+            = new List<string> { "d6", "°6", "deg. 6", "dim. 6" };
 
         public override string QualityComposition { get; }
             = "2 tons et 3 demi-tons diatoniques";
@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, a diminished sixth is an interval produced by narrowing a minor sixth by a chromatic semitone. For example, the interval from A to F is a minor sixth, eight semitones wide, and both the intervals from A♯ to F, and from A to F♭ are diminished sixths, spanning seven semitones. Being diminished, it is considered a dissonant interval.
+
+Its inversion is the augmented third, and its enharmonic equivalent is the perfect fifth.";
 
         public override string ToString()
             => Abbreviation;

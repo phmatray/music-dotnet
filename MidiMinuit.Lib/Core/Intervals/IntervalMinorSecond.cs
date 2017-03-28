@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"Melodically, this interval is very frequently used, and is of particular importance in cadences. In the perfect and deceptive cadences it appears as a resolution of the leading-tone to the tonic. In the plagal cadence, it appears as the falling of the subdominant to the mediant. It also occurs in many forms of the imperfect cadence, wherever the tonic falls to the leading-tone.
+
+Harmonically, the interval usually occurs as some form of dissonance or a nonchord tone that is not part of the functional harmony. It may also appear in inversions of a major seventh chord, and in many added tone chords.";
 
         public override string ToString()
             => Abbreviation;

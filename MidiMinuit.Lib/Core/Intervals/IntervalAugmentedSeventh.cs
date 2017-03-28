@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -30,7 +30,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = new List<string> { "A7", "+7", "Aug. 7" };
 
         public override string QualityComposition { get; }
-            = "Inusit�e dans la pratique";
+            = "Inusitée dans la pratique";
 
         public override int Semitones { get; }
             = 12;
@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, an augmented seventh is an interval produced by widening a major seventh by a chromatic semitone. For instance, the interval from C to B is a major seventh, eleven semitones wide, and both the intervals from C♭ to B, and from C to B♯ are augmented sevenths, spanning twelve semitones. Being augmented, it is classified as a dissonant interval. However, it is enharmonically equivalent to the perfect octave.";
 
         public override string ToString()
             => Abbreviation;

@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, an augmented third is an interval of five semitones. It may be produced by widening a major third by a chromatic semitone. For instance, the interval from C to E is a major third, four semitones wide, and both the intervals from C♭ to E, and from C to E♯ are augmented thirds, spanning five semitones. Being augmented, it is considered a dissonant interval.
+
+Its inversion is the diminished sixth, and its enharmonic equivalent is the perfect fourth.";
 
         public override string ToString()
             => Abbreviation;

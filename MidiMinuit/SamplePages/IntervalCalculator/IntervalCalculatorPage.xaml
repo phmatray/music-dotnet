@@ -17,7 +17,7 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="0"/>
             <Setter Property="FontSize" Value="20px"/>
-            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background">
                 <Setter.Value>
                     <SolidColorBrush Color="{ThemeResource SystemChromeMediumColor}"/>
@@ -58,12 +58,10 @@
                            Foreground="{StaticResource Brush-White}">
                     <Run Text="{x:Bind ViewModel.Interval.Notes, Mode=OneWay}"/>
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center">
-                    <Run Text="{x:Bind ViewModel.Interval.Name, Mode=OneWay}"/>
-                    <Run Text=" - "/>
-                    <Run Text="{x:Bind ViewModel.Interval.Spanning, Mode=OneWay}"/>
-                    <Run Text=" - "/>
+                <TextBlock HorizontalAlignment="Center"
+                           Foreground="{StaticResource Brush-White}" FontSize="18">
                     <Run Text="{x:Bind ViewModel.Interval.Semitones, Mode=OneWay}"/>
+                    <Run Text="semitones"/>
                 </TextBlock>
             </StackPanel>
             <Grid Grid.Row="1">

@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, an augmented sixth is an interval produced by widening a major sixth by a chromatic semitone. For instance, the interval from C to A is a major sixth, nine semitones wide, and both the intervals from C♭ to A, and from C to A♯ are augmented sixths, spanning ten semitones. Being augmented, it is considered a dissonant interval.
+
+Its inversion is the diminished third, and its enharmonic equivalent is the minor seventh.";
 
         public override string ToString()
             => Abbreviation;

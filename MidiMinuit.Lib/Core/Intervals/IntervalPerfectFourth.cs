@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, a fourth is a musical interval encompassing four staff positions, and the perfect fourth is a fourth spanning five semitones (half steps, or half tones). For example, the ascending interval from C to the next F is a perfect fourth, as the note F lies five semitones above C, and there are four staff positions from C to F. Diminished and augmented fourths span the same number of staff positions, but consist of a different number of semitones (four and six).
+
+The perfect fourth may be derived from the harmonic series as the interval between the third and fourth harmonics. The term perfect identifies this interval as belonging to the group of perfect intervals, so called because they are neither major nor minor (unlike thirds, which are either minor or major) but perfect.";
 
         public override string ToString()
             => Abbreviation;

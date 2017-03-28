@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In the music of Western culture, a seventh is a musical interval encompassing seven staff positions, and the minor seventh is one of two commonly occurring sevenths. It is qualified as minor because it is the smaller of the two: the minor seventh spans ten semitones, the major seventh eleven. For example, the interval from A to G is a minor seventh, as the note G lies ten semitones above A, and there are seven staff positions from A to G. Diminished and augmented sevenths span the same number of staff positions, but consist of a different number of semitones (nine and twelve).";
 
         public override string ToString()
             => Abbreviation;

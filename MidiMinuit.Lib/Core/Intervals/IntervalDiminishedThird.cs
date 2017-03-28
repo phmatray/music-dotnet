@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -27,7 +27,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = new List<string> { "Diminished Third" };
 
         public override List<string> Abbreviations { get; }
-            = new List<string> { "d3", "�3", "deg. 3", "dim. 3" };
+            = new List<string> { "d3", "°3", "deg. 3", "dim. 3" };
 
         public override string QualityComposition { get; }
             = "2 demi-tons diatoniques";
@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, a diminished third is the musical interval produced by narrowing a minor third by a chromatic semitone. For instance, the interval from A to C is a minor third, three semitones wide, and both the intervals from A♯ to C, and from A to C♭ are diminished thirds, two semitones wide. Being diminished, it is considered a dissonant interval.";
 
         public override string ToString()
             => Abbreviation;

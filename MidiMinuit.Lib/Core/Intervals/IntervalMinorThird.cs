@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In the music theory of Western culture, a minor third is a musical interval that encompasses three half steps, or semitones. Staff notation represents the minor third as encompassing three staff positions. The minor third is one of two commonly occurring thirds. It is called minor because it is the smaller of the two: the major third spans an additional semitone. For example, the interval from A to C is a minor third, as the note C lies three semitones above A, and (coincidentally) there are three staff positions from A to C. Diminished and augmented thirds span the same number of staff positions, but consist of a different number of semitones (two and five). The minor third is a skip melodically.";
 
         public override string ToString()
             => Abbreviation;

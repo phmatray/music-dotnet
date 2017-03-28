@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -27,7 +27,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = new List<string> { "Diminished Second" };
 
         public override List<string> Abbreviations { get; }
-            = new List<string> { "d2", "�2", "deg. 2", "dim. 2" };
+            = new List<string> { "d2", "°2", "deg. 2", "dim. 2" };
 
         public override string QualityComposition { get; }
             = "NO DATA";
@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In modern Western tonal music theory, a diminished second is the interval produced by narrowing a minor second by one chromatic semitone. It is enharmonically equivalent to a perfect unison. Thus, it is the interval between notes on two adjacent staff positions, or having adjacent note letters, altered in such a way that they have no pitch difference in twelve-tone equal temperament. An example is the interval from a B to the C♭ immediately above; another is the interval from a B♯ to the C immediately above.";
 
         public override string ToString()
             => Abbreviation;

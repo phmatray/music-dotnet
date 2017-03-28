@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -27,7 +27,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = new List<string> { "Diminished Seventh" };
 
         public override List<string> Abbreviations { get; }
-            = new List<string> { "d7", "�7", "deg. 7", "dim. 7" };
+            = new List<string> { "d7", "°7", "deg. 7", "dim. 7" };
 
         public override string QualityComposition { get; }
             = "3 tons et 3 demi-tons diatoniques";
@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, a diminished seventh is an interval produced by narrowing a minor seventh by a chromatic semitone. For instance, the interval from A to G is a minor seventh, ten semitones wide, and both the intervals from A♯ to G, and from A to G♭ are diminished sevenths, spanning nine semitones. Being diminished, it is considered a dissonant interval.
+
+The diminished seventh is enharmonically equivalent to a major sixth. Its inversion is the augmented second.";
 
         public override string ToString()
             => Abbreviation;

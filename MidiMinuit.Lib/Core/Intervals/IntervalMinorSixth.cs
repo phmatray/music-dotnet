@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, a sixth is a musical interval encompassing six staff positions, and the minor sixth is one of two commonly occurring sixths. It is qualified as minor because it is the smaller of the two: the minor sixth spans eight semitones, the major sixth nine. For example, the interval from A to F is a minor sixth, as the note F lies eight semitones above A, and there are six staff positions from A to F. Diminished and augmented sixths span the same number of staff positions, but consist of a different number of semitones (seven and ten).
+
+In equal temperament, the minor sixth is enharmonically equivalent to the augmented fifth. It occurs in first inversion major and dominant seventh chords and second inversion minor chords.";
 
         public override string ToString()
             => Abbreviation;

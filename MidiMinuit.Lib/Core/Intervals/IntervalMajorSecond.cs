@@ -45,7 +45,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In Western music theory, a major second (sometimes also called whole tone) is a second spanning two semitones. A second is a musical interval encompassing two adjacent staff positions. For example, the interval from C to D is a major second, as the note D lies two semitones above C, and the two notes are notated on adjacent staff positions. Diminished, minor and augmented seconds are notated on adjacent staff positions as well, but consist of a different number of semitones (zero, one, and three).";
 
         public override string ToString()
             => Abbreviation;

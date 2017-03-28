@@ -1,4 +1,4 @@
-namespace MidiMinuit.Lib.Core.Intervals
+﻿namespace MidiMinuit.Lib.Core.Intervals
 {
     using System.Collections.Generic;
     using IntervalModifiers;
@@ -45,7 +45,9 @@ namespace MidiMinuit.Lib.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In classical music from Western culture, an augmented fifth is an interval produced by widening a perfect fifth by a chromatic semitone. For instance, the interval from C to G is a perfect fifth, seven semitones wide, and both the intervals from C♭ to G, and from C to G♯ are augmented fifths, spanning eight semitones. Being augmented, it is considered a dissonant interval.
+
+Its inversion is the diminished fourth, and its enharmonic equivalent is the minor sixth.";
 
         public override string ToString()
             => Abbreviation;
