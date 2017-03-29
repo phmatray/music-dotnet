@@ -17,7 +17,7 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="0"/>
             <Setter Property="FontSize" Value="20px"/>
-            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Background">
                 <Setter.Value>
                     <SolidColorBrush Color="{ThemeResource SystemChromeMediumColor}"/>
@@ -25,6 +25,16 @@
             </Setter>
         </Style>
 
+        <Style x:Key="ButtonRadioButtonStyle" TargetType="RadioButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Button Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
         <DataTemplate x:Key="ScalesTemplate" x:DataType="scales:Scale" >
             <StackPanel>
                 <TextBlock Text="{x:Bind Name}"/>
@@ -80,13 +90,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="C" Click="{x:Bind ViewModel.NoteNameC_OnClick}" />
-                    <Button Content="D" Click="{x:Bind ViewModel.NoteNameD_OnClick}" Grid.Column="1"/>
-                    <Button Content="E" Click="{x:Bind ViewModel.NoteNameE_OnClick}" Grid.Column="2"/>
-                    <Button Content="F" Click="{x:Bind ViewModel.NoteNameF_OnClick}" Grid.Column="3"/>
-                    <Button Content="G" Click="{x:Bind ViewModel.NoteNameG_OnClick}" Grid.Column="4"/>
-                    <Button Content="A" Click="{x:Bind ViewModel.NoteNameA_OnClick}" Grid.Column="5"/>
-                    <Button Content="B" Click="{x:Bind ViewModel.NoteNameB_OnClick}" Grid.Column="6"/>
+                    <RadioButton GroupName="NoteName" Content="C" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameC}" Grid.Column="0" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="D" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameD}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="E" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameE}" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="F" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameF}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="G" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameG}" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="A" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameA}" Grid.Column="5" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="B" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameB}" Grid.Column="6" Style="{StaticResource ButtonRadioButtonStyle}"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
@@ -96,11 +106,11 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="♭♭" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalDoubleFlat_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}"/>
-                    <Button Content="♭" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalFlat_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="1"/>
-                    <Button Content="♮" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalNatural_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="2"/>
-                    <Button Content="♯" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalSharp_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3"/>
-                    <Button Content="♯♯" FontSize="24px" Click="{x:Bind ViewModel.NoteAccidentalDoubleSharp_OnClick}" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalDoubleFlat}" Content="♭♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalFlat}" Content="♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="1"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalNatural}" Content="♮" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="2"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalSharp}" Content="♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalDoubleSharp}" Content="♯♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4"/>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
@@ -118,41 +128,41 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="A2" Click="{x:Bind ViewModel.IntervalA2_OnClick}" Grid.Column="0" Grid.Row="0"/>
-                    <Button Content="A3" Click="{x:Bind ViewModel.IntervalA3_OnClick}" Grid.Column="1" Grid.Row="0"/>
-                    <Button Content="A4" Click="{x:Bind ViewModel.IntervalA4_OnClick}" Grid.Column="2" Grid.Row="0"/>
-                    <Button Content="A5" Click="{x:Bind ViewModel.IntervalA5_OnClick}" Grid.Column="3" Grid.Row="0"/>
-                    <Button Content="A6" Click="{x:Bind ViewModel.IntervalA6_OnClick}" Grid.Column="4" Grid.Row="0"/>
-                    <Button Content="A7" Click="{x:Bind ViewModel.IntervalA7_OnClick}" Grid.Column="5" Grid.Row="0"/>
-                    <Button Content="A8" Click="{x:Bind ViewModel.IntervalA8_OnClick}" Grid.Column="6" Grid.Row="0"/>
-                    <Button Content="M2" Click="{x:Bind ViewModel.IntervalM2_OnClick}" Grid.Column="0" Grid.Row="1"/>
-                    <Button Content="M3" Click="{x:Bind ViewModel.IntervalM3_OnClick}" Grid.Column="1" Grid.Row="1"/>
-                    <Button Content="P4" Click="{x:Bind ViewModel.IntervalP4_OnClick}" Grid.Column="2" Grid.Row="1"/>
-                    <Button Content="P5" Click="{x:Bind ViewModel.IntervalP5_OnClick}" Grid.Column="3" Grid.Row="1"/>
-                    <Button Content="M6" Click="{x:Bind ViewModel.IntervalM6_OnClick}" Grid.Column="4" Grid.Row="1"/>
-                    <Button Content="M7" Click="{x:Bind ViewModel.IntervalM7_OnClick}" Grid.Column="5" Grid.Row="1"/>
-                    <Button Content="P8" Click="{x:Bind ViewModel.IntervalP8_OnClick}" Grid.Column="6" Grid.Row="1"/>
-                    <Button Content="m2" Click="{x:Bind ViewModel.IntervalMin2_OnClick}" Grid.Column="0" Grid.Row="2"/>
-                    <Button Content="m3" Click="{x:Bind ViewModel.IntervalMin3_OnClick}" Grid.Column="1" Grid.Row="2"/>
+                    <RadioButton Content="A2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA2}" Grid.Column="0" Grid.Row="0"/>
+                    <RadioButton Content="A3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA3}" Grid.Column="1" Grid.Row="0"/>
+                    <RadioButton Content="A4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA4}" Grid.Column="2" Grid.Row="0"/>
+                    <RadioButton Content="A5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA5}" Grid.Column="3" Grid.Row="0"/>
+                    <RadioButton Content="A6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA6}" Grid.Column="4" Grid.Row="0"/>
+                    <RadioButton Content="A7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA7}" Grid.Column="5" Grid.Row="0"/>
+                    <RadioButton Content="A8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA8}" Grid.Column="6" Grid.Row="0"/>
+                    <RadioButton Content="M2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM2}" Grid.Column="0" Grid.Row="1"/>
+                    <RadioButton Content="M3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM3}" Grid.Column="1" Grid.Row="1"/>
+                    <RadioButton Content="P4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP4}" Grid.Column="2" Grid.Row="1"/>
+                    <RadioButton Content="P5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP5}" Grid.Column="3" Grid.Row="1"/>
+                    <RadioButton Content="M6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM6}" Grid.Column="4" Grid.Row="1"/>
+                    <RadioButton Content="M7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM7}" Grid.Column="5" Grid.Row="1"/>
+                    <RadioButton Content="P8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP8}" Grid.Column="6" Grid.Row="1"/>
+                    <RadioButton Content="m2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin2}" Grid.Column="0" Grid.Row="2"/>
+                    <RadioButton Content="m3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin3}" Grid.Column="1" Grid.Row="2"/>
                     <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="1">
                         <Border.BorderBrush>
                             <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
                         </Border.BorderBrush>
                     </Border>
-                    <Button Content="m6" Click="{x:Bind ViewModel.IntervalMin6_OnClick}" Grid.Column="4" Grid.Row="2"/>
-                    <Button Content="m7" Click="{x:Bind ViewModel.IntervalMin7_OnClick}" Grid.Column="5" Grid.Row="2"/>
+                    <RadioButton Content="m6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin6}" Grid.Column="4" Grid.Row="2"/>
+                    <RadioButton Content="m7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin7}" Grid.Column="5" Grid.Row="2"/>
                     <Border Grid.Column="6" Grid.Row="2" BorderThickness="1,1,0,1">
                         <Border.BorderBrush>
                             <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
                         </Border.BorderBrush>
                     </Border>
-                    <Button Content="d2" Click="{x:Bind ViewModel.IntervalDim2_OnClick}" Grid.Column="0" Grid.Row="3"/>
-                    <Button Content="d3" Click="{x:Bind ViewModel.IntervalDim3_OnClick}" Grid.Column="1" Grid.Row="3"/>
-                    <Button Content="d4" Click="{x:Bind ViewModel.IntervalDim4_OnClick}" Grid.Column="2" Grid.Row="3"/>
-                    <Button Content="d5" Click="{x:Bind ViewModel.IntervalDim5_OnClick}" Grid.Column="3" Grid.Row="3"/>
-                    <Button Content="d6" Click="{x:Bind ViewModel.IntervalDim6_OnClick}" Grid.Column="4" Grid.Row="3"/>
-                    <Button Content="d7" Click="{x:Bind ViewModel.IntervalDim7_OnClick}" Grid.Column="5" Grid.Row="3"/>
-                    <Button Content="d8" Click="{x:Bind ViewModel.IntervalDim8_OnClick}" Grid.Column="6" Grid.Row="3"/>
+                    <RadioButton Content="d2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim2}" Grid.Column="0" Grid.Row="3"/>
+                    <RadioButton Content="d3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim3}" Grid.Column="1" Grid.Row="3"/>
+                    <RadioButton Content="d4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim4}" Grid.Column="2" Grid.Row="3"/>
+                    <RadioButton Content="d5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim5}" Grid.Column="3" Grid.Row="3"/>
+                    <RadioButton Content="d6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim6}" Grid.Column="4" Grid.Row="3"/>
+                    <RadioButton Content="d7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim7}" Grid.Column="5" Grid.Row="3"/>
+                    <RadioButton Content="d8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim8}" Grid.Column="6" Grid.Row="3"/>
                 </Grid>
             </Grid>
         </Grid>
