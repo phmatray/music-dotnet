@@ -9,7 +9,8 @@
     xmlns:scales="using:MidiMinuit.Lib.Core.Scales" 
     xmlns:common="using:MidiMinuit.Common"
     mc:Ignorable="d"
-    RequestedTheme="Dark">
+    RequestedTheme="Dark"
+    Loaded="IntervalCalculatorPage_OnLoaded">
 
     <Page.Resources>
         <Style TargetType="Button">
@@ -25,7 +26,156 @@
             </Setter>
         </Style>
 
-        <Style x:Key="ButtonRadioButtonStyle" TargetType="RadioButton">
+        <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="MediumVioletRed"/>
+            <Setter Property="Foreground" Value="BlueViolet"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="FontSize" Value="20px"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="HoverBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CheckedHoverBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PressedBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CheckedPressedBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NixonGlyph" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource RadioButtonContentDisabledForegroundThemeBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource RadioButtonContentDisabledForegroundThemeBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CheckedBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked" />
+                                    <VisualState x:Name="Indeterminate" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="FocusVisualWhite" Storyboard.TargetProperty="Opacity" To="1" />
+                                            <DoubleAnimation Duration="0" Storyboard.TargetName="FocusVisualBlack" Storyboard.TargetProperty="Opacity" To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused" />
+                                    <VisualState x:Name="PointerFocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            
+                            
+                            <Grid>
+                                <Grid.Resources>
+                                    <Style TargetType="Rectangle" x:Name="FocusVisual">
+                                        <Setter Property="Opacity" Value="0" />
+                                        <Setter Property="StrokeDashArray" Value="1,1" />
+                                        <Setter Property="StrokeEndLineCap" Value="Square" />
+                                    </Style>
+                                </Grid.Resources>
+
+
+                                <!-- background -->
+                                <Grid x:Name="NotCheckedBackground" Grid.ColumnSpan="4">
+                                    <Rectangle x:Name="PressedBackground" Visibility="Collapsed" Fill="Aqua"/>
+                                    <Rectangle x:Name="HoverBackground" Visibility="Collapsed" Fill="Aquamarine"/>
+                                </Grid>
+                                <Grid x:Name="CheckedBackground" Grid.ColumnSpan="4" Visibility="Collapsed" Background="Goldenrod">
+                                    <Rectangle x:Name="CheckedPressedBackground" Visibility="Collapsed" Fill="Gold"/>
+                                    <Rectangle x:Name="CheckedHoverBackground" Visibility="Collapsed" Fill="DarkGoldenrod"/>
+                                </Grid>
+
+
+                                <!-- focus -->
+                                <Rectangle x:Name="FocusVisualWhite" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashOffset="1.5" Style="{StaticResource FocusVisual}" />
+                                <Rectangle x:Name="FocusVisualBlack" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashOffset="0.5" Style="{StaticResource FocusVisual}" />
+                                
+                                
+                                <!-- text -->
+                                <ContentPresenter x:Name="ContentPresenter"
+                        			Margin="{TemplateBinding Padding}"
+                        			HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        			VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        			AutomationProperties.AccessibilityView="Raw"
+                        			Content="{TemplateBinding Content}"
+                        			ContentTemplate="{TemplateBinding ContentTemplate}"
+                        			ContentTransitions="{TemplateBinding ContentTransitions}" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleNoteAccidental"
+               BasedOn="{StaticResource ButtonRadioButtonStyle}">
+            <Setter Property="BorderBrush" Value="GreenYellow"/>
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+        
+        <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleInterval"
+               BasedOn="{StaticResource ButtonRadioButtonStyle}">
+            <Setter Property="BorderBrush" Value="DeepSkyBlue"/>
+            <Setter Property="Foreground" Value="DarkSlateBlue"/>
+        </Style>
+        
+        <!--<Style x:Key="ButtonRadioButtonStyle" TargetType="RadioButton">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
@@ -33,15 +183,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-        
-        <DataTemplate x:Key="ScalesTemplate" x:DataType="scales:Scale" >
-            <StackPanel>
-                <TextBlock Text="{x:Bind Name}"/>
-                <TextBlock Text="{x:Bind Details}"/>
-                <TextBlock Text="{x:Bind NoteDetails}"/>
-            </StackPanel>
-        </DataTemplate>
+        </Style>-->
 
         <common:ToUpperConverter x:Key="ToUpperConverter" />
     </Page.Resources>
@@ -90,7 +232,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <RadioButton GroupName="NoteName" Content="C" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameC}" Grid.Column="0" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton Name="RadioButtonNoteNameC" GroupName="NoteName" Content="C" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameC}" Grid.Column="0" Style="{StaticResource ButtonRadioButtonStyle}"/>
                     <RadioButton GroupName="NoteName" Content="D" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameD}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyle}"/>
                     <RadioButton GroupName="NoteName" Content="E" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameE}" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyle}"/>
                     <RadioButton GroupName="NoteName" Content="F" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameF}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyle}"/>
@@ -106,11 +248,11 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalDoubleFlat}" Content="♭♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}"/>
-                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalFlat}" Content="♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="1"/>
-                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalNatural}" Content="♮" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="2"/>
-                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalSharp}" Content="♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3"/>
-                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalDoubleSharp}" Content="♯♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalDoubleFlat}" Content="♭♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalFlat}" Content="♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                    <RadioButton x:Name="RadioButtonNoteAccidentalNatural" GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalNatural}" Content="♮" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalSharp}" Content="♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                    <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.NoteAccidentalDoubleSharp}" Content="♯♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
@@ -128,41 +270,41 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <RadioButton Content="A2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA2}" Grid.Column="0" Grid.Row="0"/>
-                    <RadioButton Content="A3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA3}" Grid.Column="1" Grid.Row="0"/>
-                    <RadioButton Content="A4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA4}" Grid.Column="2" Grid.Row="0"/>
-                    <RadioButton Content="A5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA5}" Grid.Column="3" Grid.Row="0"/>
-                    <RadioButton Content="A6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA6}" Grid.Column="4" Grid.Row="0"/>
-                    <RadioButton Content="A7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA7}" Grid.Column="5" Grid.Row="0"/>
-                    <RadioButton Content="A8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA8}" Grid.Column="6" Grid.Row="0"/>
-                    <RadioButton Content="M2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM2}" Grid.Column="0" Grid.Row="1"/>
-                    <RadioButton Content="M3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM3}" Grid.Column="1" Grid.Row="1"/>
-                    <RadioButton Content="P4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP4}" Grid.Column="2" Grid.Row="1"/>
-                    <RadioButton Content="P5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP5}" Grid.Column="3" Grid.Row="1"/>
-                    <RadioButton Content="M6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM6}" Grid.Column="4" Grid.Row="1"/>
-                    <RadioButton Content="M7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM7}" Grid.Column="5" Grid.Row="1"/>
-                    <RadioButton Content="P8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP8}" Grid.Column="6" Grid.Row="1"/>
-                    <RadioButton Content="m2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin2}" Grid.Column="0" Grid.Row="2"/>
-                    <RadioButton Content="m3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin3}" Grid.Column="1" Grid.Row="2"/>
+                    <RadioButton Content="A2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA2}" Grid.Column="0" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="A3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA3}" Grid.Column="1" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="A4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA4}" Grid.Column="2" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="A5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA5}" Grid.Column="3" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="A6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA6}" Grid.Column="4" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="A7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA7}" Grid.Column="5" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="A8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalA8}" Grid.Column="6" Grid.Row="0" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="M2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM2}" Grid.Column="0" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="M3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM3}" Grid.Column="1" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="P4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP4}" Grid.Column="2" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton x:Name="RadioButtonIntervalPerfectFifth" Content="P5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP5}" Grid.Column="3" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="M6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM6}" Grid.Column="4" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="M7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalM7}" Grid.Column="5" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="P8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalP8}" Grid.Column="6" Grid.Row="1" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="m2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin2}" Grid.Column="0" Grid.Row="2" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="m3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin3}" Grid.Column="1" Grid.Row="2" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
                     <Border Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="1">
                         <Border.BorderBrush>
                             <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
                         </Border.BorderBrush>
                     </Border>
-                    <RadioButton Content="m6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin6}" Grid.Column="4" Grid.Row="2"/>
-                    <RadioButton Content="m7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin7}" Grid.Column="5" Grid.Row="2"/>
+                    <RadioButton Content="m6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin6}" Grid.Column="4" Grid.Row="2" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="m7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalMin7}" Grid.Column="5" Grid.Row="2" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
                     <Border Grid.Column="6" Grid.Row="2" BorderThickness="1,1,0,1">
                         <Border.BorderBrush>
                             <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
                         </Border.BorderBrush>
                     </Border>
-                    <RadioButton Content="d2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim2}" Grid.Column="0" Grid.Row="3"/>
-                    <RadioButton Content="d3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim3}" Grid.Column="1" Grid.Row="3"/>
-                    <RadioButton Content="d4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim4}" Grid.Column="2" Grid.Row="3"/>
-                    <RadioButton Content="d5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim5}" Grid.Column="3" Grid.Row="3"/>
-                    <RadioButton Content="d6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim6}" Grid.Column="4" Grid.Row="3"/>
-                    <RadioButton Content="d7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim7}" Grid.Column="5" Grid.Row="3"/>
-                    <RadioButton Content="d8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim8}" Grid.Column="6" Grid.Row="3"/>
+                    <RadioButton Content="d2" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim2}" Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="d3" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim3}" Grid.Column="1" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="d4" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim4}" Grid.Column="2" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="d5" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim5}" Grid.Column="3" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="d6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim6}" Grid.Column="4" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="d7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim7}" Grid.Column="5" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                    <RadioButton Content="d8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim8}" Grid.Column="6" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
                 </Grid>
             </Grid>
         </Grid>

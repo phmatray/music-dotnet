@@ -25,5 +25,12 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
         }
 
         public IntervalCalculatorViewModel ViewModel { get; set; }
+
+        private void IntervalCalculatorPage_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            RadioButtonNoteNameC.IsChecked = true;
+            RadioButtonNoteAccidentalNatural.IsChecked = true;
+            RadioButtonIntervalPerfectFifth.IsChecked = true;
+        }
     }
 }
