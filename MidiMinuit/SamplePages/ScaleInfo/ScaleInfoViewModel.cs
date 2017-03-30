@@ -1,9 +1,10 @@
-﻿namespace MidiMinuit.SamplePages.ScaleInfo
+﻿using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Core.Scales;
+
+namespace MidiMinuit.SamplePages.ScaleInfo
 {
     using System.Collections.ObjectModel;
     using GalaSoft.MvvmLight;
-    using MidiMinuit.Lib.Core.Notes;
-    using MidiMinuit.Lib.Core.Scales;
 
     public class ScaleInfoViewModel : ViewModelBase
     {

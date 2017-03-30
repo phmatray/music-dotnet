@@ -2,13 +2,13 @@
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Toolkit.Uwp;
 using MidiMinuit.Common;
-using MidiMinuit.Lib.Core.Chords;
-using MidiMinuit.Lib.Core.Notes;
-using MidiMinuit.Lib.Instruments.GuitarTunings;
 using Windows.Devices.Midi;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
+using MidiMinuit.Music.Core.Chords;
+using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Instruments.GuitarTunings;
 
 namespace MidiMinuit.SamplePages.NoteFinder
 {

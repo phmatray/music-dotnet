@@ -1,10 +1,11 @@
-﻿namespace MidiMinuit.SamplePages.IntervalCalculator
+﻿using MidiMinuit.Music.Core.Intervals;
+using MidiMinuit.Music.Core.NoteAccidentals;
+using MidiMinuit.Music.Core.NoteNames;
+using MidiMinuit.Music.Core.Notes;
+
+namespace MidiMinuit.SamplePages.IntervalCalculator
 {
     using GalaSoft.MvvmLight;
-    using Lib.Core.Intervals;
-    using Lib.Core.NoteAccidentals;
-    using Lib.Core.NoteNames;
-    using Lib.Core.Notes;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
-using MidiMinuit.Lib.Core.Degrees;
+using MidiMinuit.Music.Core.Degrees;
 
 namespace MidiMinuit.SamplePages.DegreeInfo
 {

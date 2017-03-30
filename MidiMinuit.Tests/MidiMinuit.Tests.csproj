@@ -29,7 +29,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Music\MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -42,7 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Music\MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -54,7 +54,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Music\MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -67,7 +67,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Music\MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -79,7 +79,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Music\MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -92,7 +92,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
-    <CodeAnalysisRuleSet>..\MidiMinuit.Library\MidiMinuit.Library.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\MidiMinuit.Music\MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <!--A reference to the entire .Net Framework and Windows SDK are automatically included-->
@@ -129,13 +129,13 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MidiMinuit.Lib\MidiMinuit.Lib.csproj">
-      <Project>{eb72f60a-b97e-4f34-9d19-9e19f81127b1}</Project>
-      <Name>MidiMinuit.Lib</Name>
-    </ProjectReference>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <ProjectReference Include="..\MidiMinuit.Music\MidiMinuit.Music.csproj">
+      <Project>{371df4d3-ed60-4abe-8e2b-3b7a8629eeda}</Project>
+      <Name>MidiMinuit.Music</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

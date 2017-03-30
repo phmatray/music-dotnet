@@ -13,7 +13,6 @@
 namespace MidiMinuit.Pages
 {
     using Microsoft.Toolkit.Uwp.SampleApp;
-    using MidiMinuit.Lib.Tmp;
     using Windows.ApplicationModel;
     using Windows.UI.Xaml.Navigation;
 
