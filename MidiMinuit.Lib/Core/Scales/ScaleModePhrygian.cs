@@ -8,7 +8,7 @@
     public class ScaleModePhrygian
         : Scale
     {
-        public ScaleModePhrygian(Note key)
+        public ScaleModePhrygian(Pitch key)
         {
             // mode phrygien : T 2m 3m 4j 5j 6m 7m
             if (key == null)

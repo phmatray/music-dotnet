@@ -17,8 +17,8 @@
                 <TextBlock Text="{x:Bind CorrespondingModeMajorKey}"/>
                 <TextBlock Text="{x:Bind CorrespondingModeMinorKey}"/>
                 <TextBlock Text="{x:Bind Meaning}"/>
-                <TextBlock Text="{x:Bind NoteInCMajor}"/>
-                <TextBlock Text="{x:Bind NoteInCMinor}"/>
+                <TextBlock Text="{x:Bind PitchInCMajor}"/>
+                <TextBlock Text="{x:Bind PitchInCMinor}"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>

@@ -23,11 +23,11 @@
         public override string Function { get; }
             = "octave";
 
-        public override Note NoteInCMajor { get; }
-            = new Note(new NoteNameC());
+        public override Pitch PitchInCMajor { get; }
+            = new Pitch(new NoteNameC());
 
-        public override Note NoteInCMinor { get; }
-            = new Note(new NoteNameC());
+        public override Pitch PitchInCMinor { get; }
+            = new Pitch(new NoteNameC());
 
         public override string ToString()
             => Alias.ToString();

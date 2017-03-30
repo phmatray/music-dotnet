@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalDiminishedOctave(Note lowerNote)
-            : base(lowerNote)
+        public IntervalDiminishedOctave(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

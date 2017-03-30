@@ -8,7 +8,7 @@
     public class ChordMajor
         : Chord
     {
-        public ChordMajor(Note fondamental)
+        public ChordMajor(Pitch fondamental)
         {
             if (fondamental == null)
             {
@@ -36,7 +36,7 @@
             => new List<Interval> { Fondamental, ThirdMajor, FifthPerfect };
 
         public override string Name
-            => $"{Fondamental.UpperNote}maj";
+            => $"{Fondamental.UpperPitch}maj";
 
 
         public override string ToString()

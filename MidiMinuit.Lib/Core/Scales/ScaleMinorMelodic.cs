@@ -8,7 +8,7 @@ namespace MidiMinuit.Lib.Core.Scales
     public class ScaleMinorMelodic
         : Scale
     {
-        public ScaleMinorMelodic(Note key)
+        public ScaleMinorMelodic(Pitch key)
         {
             // gamme mineure mélodique : T 2M 3m 4j 5j 6M 7M
             if (key == null)

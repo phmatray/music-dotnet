@@ -8,7 +8,7 @@
     public class ChordMinorFifthDiminishedSeventhMinor
         : Chord
     {
-        public ChordMinorFifthDiminishedSeventhMinor(Note fondamental)
+        public ChordMinorFifthDiminishedSeventhMinor(Pitch fondamental)
         {
             if (fondamental == null)
             {

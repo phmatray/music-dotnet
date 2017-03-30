@@ -7,7 +7,7 @@
         public GuitarString(int stringIndex)
         {
             StringIndex = stringIndex;
-            Note = null;
+            Pitch = null;
             Retune = null;
             Fret = null;
         }
@@ -15,14 +15,14 @@
         public GuitarString(int stringIndex, int noteMidi, int retune, int? fret = null)
         {
             StringIndex = stringIndex;
-            Note = new Note(noteMidi);
+            Pitch = new Pitch(noteMidi);
             Retune = retune;
             Fret = fret;
         }
 
         public int StringIndex { get; }
 
-        public Note Note { get; }
+        public Pitch Pitch { get; }
 
         public int? Retune { get; }
 

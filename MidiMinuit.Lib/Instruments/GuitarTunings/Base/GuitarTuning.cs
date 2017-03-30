@@ -40,8 +40,8 @@
         /// <summary>
         ///     Gets notes of the Guitar Tuning.
         /// </summary>
-        public List<Note> Notes
-            => Strings.Select(x => x.Note).ToList();
+        public List<Pitch> Notes
+            => Strings.Select(x => x.Pitch).ToList();
 
         public string Intervals
         {

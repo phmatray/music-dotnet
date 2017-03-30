@@ -14,7 +14,7 @@
         {
             NoteName = new NoteNameC();
             NoteAccidental = new NoteAccidentalNatural();
-            var note = new Note(NoteName, NoteAccidental);
+            var note = new Pitch(NoteName, NoteAccidental);
             Interval = new IntervalPerfectFifth(note);
         }
 
@@ -83,21 +83,21 @@
         public void NoteName_OnChecked(object sender, RoutedEventArgs e)
         {
             NoteName = (sender as RadioButton)?.Tag as NoteName;
-            Interval.LowerNote = new Note(NoteName, NoteAccidental);
+            Interval.LowerPitch = new Pitch(NoteName, NoteAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void NoteAccidental_OnChecked(object sender, RoutedEventArgs e)
         {
             NoteAccidental = (sender as RadioButton)?.Tag as NoteAccidental;
-            Interval.LowerNote = new Note(NoteName, NoteAccidental);
+            Interval.LowerPitch = new Pitch(NoteName, NoteAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void Interval_OnChecked(object sender, RoutedEventArgs e)
         {
             var interval = (sender as RadioButton)?.Tag as Interval;
-            interval.LowerNote = new Note(NoteName, NoteAccidental);
+            interval.LowerPitch = new Pitch(NoteName, NoteAccidental);
             Interval = interval;
         }
     }

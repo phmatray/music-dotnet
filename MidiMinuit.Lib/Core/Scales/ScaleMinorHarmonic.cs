@@ -8,7 +8,7 @@
     public class ScaleMinorHarmonic
         : Scale
     {
-        public ScaleMinorHarmonic(Note key)
+        public ScaleMinorHarmonic(Pitch key)
         {
             // gamme mineure harmonique : T 2M 3m 4j 5j 6m 7M
             if (key == null)

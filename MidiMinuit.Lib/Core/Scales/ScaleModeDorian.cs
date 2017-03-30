@@ -8,7 +8,7 @@
     public class ScaleModeDorian
         : Scale
     {
-        public ScaleModeDorian(Note key)
+        public ScaleModeDorian(Pitch key)
         {
             // mode dorien : T 2M 3m 4j 5j 6M 7m
             if (key == null)

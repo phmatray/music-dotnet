@@ -8,7 +8,7 @@
     public class ScaleModeMixolydianB2B6
         : Scale
     {
-        public ScaleModeMixolydianB2B6(Note key)
+        public ScaleModeMixolydianB2B6(Pitch key)
         {
             // mode mixolydienb2b6 : T 2m 3M 4j 5j 6m 7m
             if (key == null)

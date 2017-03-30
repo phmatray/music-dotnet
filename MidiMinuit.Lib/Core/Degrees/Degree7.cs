@@ -25,11 +25,11 @@
         public override string Function { get; }
             = "sensible";
 
-        public override Note NoteInCMajor { get; }
-            = new Note(new NoteNameB());
+        public override Pitch PitchInCMajor { get; }
+            = new Pitch(new NoteNameB());
 
-        public override Note NoteInCMinor { get; }
-            = new Note(new NoteNameB(), new NoteAccidentalFlat());
+        public override Pitch PitchInCMinor { get; }
+            = new Pitch(new NoteNameB(), new NoteAccidentalFlat());
 
         public override string ToString()
             => Alias.ToString();

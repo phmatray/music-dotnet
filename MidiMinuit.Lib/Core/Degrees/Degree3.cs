@@ -24,11 +24,11 @@
         public override string Function { get; }
             = "médiante";
 
-        public override Note NoteInCMajor { get; }
-            = new Note(new NoteNameE());
+        public override Pitch PitchInCMajor { get; }
+            = new Pitch(new NoteNameE());
 
-        public override Note NoteInCMinor { get; }
-            = new Note(new NoteNameE(), new NoteAccidentalFlat());
+        public override Pitch PitchInCMinor { get; }
+            = new Pitch(new NoteNameE(), new NoteAccidentalFlat());
 
         public override string ToString()
             => Alias.ToString();

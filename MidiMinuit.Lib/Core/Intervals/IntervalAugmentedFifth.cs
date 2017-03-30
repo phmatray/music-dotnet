@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalAugmentedFifth(Note lowerNote)
-            : base(lowerNote)
+        public IntervalAugmentedFifth(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

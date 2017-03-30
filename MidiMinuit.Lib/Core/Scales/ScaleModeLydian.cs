@@ -8,7 +8,7 @@
     public class ScaleModeLydian
         : Scale
     {
-        public ScaleModeLydian(Note key)
+        public ScaleModeLydian(Pitch key)
         {
             // mode lydien : T 2M 3M #11 5j 6M 7M ???
             if (key == null)

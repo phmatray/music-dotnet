@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalPerfectOctave(Note lowerNote)
-            : base(lowerNote)
+        public IntervalPerfectOctave(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalMajorThird(Note lowerNote)
-            : base(lowerNote)
+        public IntervalMajorThird(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

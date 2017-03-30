@@ -11,7 +11,7 @@
 
         public ScaleInfoViewModel()
         {
-            var allScales = new ScaleFactory().CreateAllScales(new Note());
+            var allScales = new ScaleFactory().CreateAllScales(new Pitch());
             Scales = new ObservableCollection<Scale>(allScales);
         }
     }

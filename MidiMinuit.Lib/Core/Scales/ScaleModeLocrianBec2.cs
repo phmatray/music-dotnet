@@ -8,7 +8,7 @@
     public class ScaleModeLocrianBec2
         : Scale
     {
-        public ScaleModeLocrianBec2(Note key)
+        public ScaleModeLocrianBec2(Pitch key)
         {
             // mode locrien béc2 : T 2M 3m 4j b5 6m 7m
             if (key == null)

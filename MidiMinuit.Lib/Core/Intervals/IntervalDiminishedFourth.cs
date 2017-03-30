@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalDiminishedFourth(Note lowerNote)
-            : base(lowerNote)
+        public IntervalDiminishedFourth(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

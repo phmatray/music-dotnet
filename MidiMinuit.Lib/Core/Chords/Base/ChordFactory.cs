@@ -7,7 +7,7 @@
 
     public class ChordFactory
     {
-        public List<Chord> CreateAllChords(Note fondamental)
+        public List<Chord> CreateAllChords(Pitch fondamental)
         {
             return Enum.GetValues(typeof(ChordAlias))
                 .Cast<ChordAlias>()
@@ -15,7 +15,7 @@
                 .ToList();
         }
 
-        public Chord CreateChord(ChordAlias chordQuality, Note fondamental)
+        public Chord CreateChord(ChordAlias chordQuality, Pitch fondamental)
         {
             /*
              * Implements FactoryPattern

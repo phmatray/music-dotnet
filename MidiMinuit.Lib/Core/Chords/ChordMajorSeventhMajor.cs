@@ -8,7 +8,7 @@
     public class ChordMajorSeventhMajor
         : Chord
     {
-        public ChordMajorSeventhMajor(Note fondamental)
+        public ChordMajorSeventhMajor(Pitch fondamental)
         {
             if (fondamental == null)
             {

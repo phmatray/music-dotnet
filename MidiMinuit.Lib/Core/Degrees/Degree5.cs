@@ -23,11 +23,11 @@
         public override string Function { get; }
             = "dominante";
 
-        public override Note NoteInCMajor { get; }
-            = new Note(new NoteNameG());
+        public override Pitch PitchInCMajor { get; }
+            = new Pitch(new NoteNameG());
 
-        public override Note NoteInCMinor { get; }
-            = new Note(new NoteNameG());
+        public override Pitch PitchInCMinor { get; }
+            = new Pitch(new NoteNameG());
 
         public override string ToString()
             => Alias.ToString();

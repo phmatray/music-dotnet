@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalAugmentedOctave(Note lowerNote)
-            : base(lowerNote)
+        public IntervalAugmentedOctave(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

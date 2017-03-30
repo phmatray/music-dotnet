@@ -8,7 +8,7 @@
     public class ScaleModeDiminishedReverse
         : Scale
     {
-        public ScaleModeDiminishedReverse(Note key)
+        public ScaleModeDiminishedReverse(Pitch key)
         {
             // mode diminué inversé : T 2m 3m 3M b5 5j 6M 7m
             if (key == null)

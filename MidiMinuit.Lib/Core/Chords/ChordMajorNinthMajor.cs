@@ -8,7 +8,7 @@
     public class ChordMajorNinthMajor
         : Chord
     {
-        public ChordMajorNinthMajor(Note fondamental)
+        public ChordMajorNinthMajor(Pitch fondamental)
         {
             if (fondamental == null)
             {

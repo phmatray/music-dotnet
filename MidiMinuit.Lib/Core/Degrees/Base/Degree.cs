@@ -16,9 +16,9 @@
 
         public abstract string Function { get; }
 
-        public abstract Note NoteInCMajor { get; }
+        public abstract Pitch PitchInCMajor { get; }
 
-        public abstract Note NoteInCMinor { get; }
+        public abstract Pitch PitchInCMinor { get; }
 
         public int DegreeIndex
             => (int)Alias - 1;

@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalAugmentedSecond(Note lowerNote)
-            : base(lowerNote)
+        public IntervalAugmentedSecond(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

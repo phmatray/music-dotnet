@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalMajorSeventh(Note lowerNote)
-            : base(lowerNote)
+        public IntervalMajorSeventh(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

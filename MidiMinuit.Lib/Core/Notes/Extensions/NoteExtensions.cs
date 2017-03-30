@@ -6,9 +6,9 @@
 
     public static class NoteExtensions
     {
-        public static Note AddInterval(this Note lowerNote, Interval interval)
+        public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)
         {
-            var lowerNoteOrder = lowerNote.Name.Order;
+            var lowerNoteOrder = lowerPitch.Name.Order;
             var intervalOrder = interval.Number.Order;
 
             var upperNoteOrder = lowerNoteOrder + intervalOrder - 1;
@@ -19,7 +19,7 @@
 
             var noteNameRepo = new NoteNameRepository();
             var upperNoteName = noteNameRepo.GetByOrder(upperNoteOrder);
-            var upperNotePitch = lowerNote.Pitch + interval.Semitones;
+            var upperNotePitch = lowerPitch.PitchAbsolute + interval.Semitones;
 
             var accidentalCorrection = upperNotePitch - upperNoteName.Value;
             while (accidentalCorrection >= 8)
@@ -30,7 +30,7 @@
             var accidentalRepo = new NoteAccidentalRepository();
             var noteAccidental = accidentalRepo.Get(accidentalCorrection);
 
-            var upperNote = new Note(upperNoteName, noteAccidental);
+            var upperNote = new Pitch(upperNoteName, noteAccidental);
             return upperNote;
         }
     }

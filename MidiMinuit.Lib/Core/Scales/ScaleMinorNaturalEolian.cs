@@ -8,7 +8,7 @@
     public class ScaleMinorNaturalEolian
         : Scale
     {
-        public ScaleMinorNaturalEolian(Note key)
+        public ScaleMinorNaturalEolian(Pitch key)
         {
             // gamme mineure naturelle (mode éolien) : T 2M 3m 4j 5j 6m 7m
             if (key == null)

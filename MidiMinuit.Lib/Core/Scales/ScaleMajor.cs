@@ -8,7 +8,7 @@ namespace MidiMinuit.Lib.Core.Scales
     public class ScaleMajor
         : Scale
     {
-        public ScaleMajor(Note key)
+        public ScaleMajor(Pitch key)
         {
             // gamme majeure : T 2M 3M 4j 5j 6M 7M
             if (key == null)

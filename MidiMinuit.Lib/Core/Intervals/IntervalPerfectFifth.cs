@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalPerfectFifth(Note lowerNote)
-            : base(lowerNote)
+        public IntervalPerfectFifth(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

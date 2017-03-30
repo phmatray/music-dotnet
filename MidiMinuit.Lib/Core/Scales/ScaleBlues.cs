@@ -8,7 +8,7 @@
     public class ScaleBlues
         : Scale
     {
-        public ScaleBlues(Note key)
+        public ScaleBlues(Pitch key)
         {
             // gamme blues : T 3m 4j b5 5j 7m
             if (key == null)

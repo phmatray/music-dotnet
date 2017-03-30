@@ -8,7 +8,7 @@
     public class ScaleModeMixolydian
         : Scale
     {
-        public ScaleModeMixolydian(Note key)
+        public ScaleModeMixolydian(Pitch key)
         {
             // mode mixolydien : T 2M 3M 4j 5j 6M 7m
             if (key == null)

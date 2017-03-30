@@ -14,7 +14,7 @@ namespace MidiMinuit.Lib.Core.Intervals
             }
 
             return intervals
-                .Select(x => x.UpperNote.ToString())
+                .Select(x => x.UpperPitch.ToString())
                 .Aggregate(string.Empty, (current, next) => current + " " + next);
         }
     }

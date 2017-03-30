@@ -8,7 +8,7 @@
     public class ScalePentatonicMinor
         : Scale
     {
-        public ScalePentatonicMinor(Note key)
+        public ScalePentatonicMinor(Pitch key)
         {
             // gamme pentatonique mineure : T 3m 4j 5j 7m
             if (key == null)

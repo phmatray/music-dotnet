@@ -7,76 +7,76 @@
 
     public class IntervalFactory
     {
-        public virtual List<Interval> CreateAllIntervals(Note lowerNote)
+        public virtual List<Interval> CreateAllIntervals(Pitch lowerPitch)
         {
             return Enum.GetValues(typeof(IntervalAlias))
                 .Cast<IntervalAlias>()
-                .Select(x => CreateInterval(x, lowerNote))
+                .Select(x => CreateInterval(x, lowerPitch))
                 .ToList();
         }
 
-        public virtual Interval CreateInterval(IntervalAlias interval, Note lowerNote)
+        public virtual Interval CreateInterval(IntervalAlias interval, Pitch lowerPitch)
         {
             switch (interval)
             {
                 case IntervalAlias.IntervalPerfectUnison:
-                    return new IntervalPerfectUnison(lowerNote);
+                    return new IntervalPerfectUnison(lowerPitch);
                 case IntervalAlias.IntervalPerfectFourth:
-                    return new IntervalPerfectFourth(lowerNote);
+                    return new IntervalPerfectFourth(lowerPitch);
                 case IntervalAlias.IntervalPerfectFifth:
-                    return new IntervalPerfectFifth(lowerNote);
+                    return new IntervalPerfectFifth(lowerPitch);
                 case IntervalAlias.IntervalPerfectOctave:
-                    return new IntervalPerfectOctave(lowerNote);
+                    return new IntervalPerfectOctave(lowerPitch);
                 case IntervalAlias.IntervalMajorSecond:
-                    return new IntervalMajorSecond(lowerNote);
+                    return new IntervalMajorSecond(lowerPitch);
                 case IntervalAlias.IntervalMajorThird:
-                    return new IntervalMajorThird(lowerNote);
+                    return new IntervalMajorThird(lowerPitch);
                 case IntervalAlias.IntervalMajorSixth:
-                    return new IntervalMajorSixth(lowerNote);
+                    return new IntervalMajorSixth(lowerPitch);
                 case IntervalAlias.IntervalMajorSeventh:
-                    return new IntervalMajorSeventh(lowerNote);
+                    return new IntervalMajorSeventh(lowerPitch);
                 case IntervalAlias.IntervalMinorSecond:
-                    return new IntervalMinorSecond(lowerNote);
+                    return new IntervalMinorSecond(lowerPitch);
                 case IntervalAlias.IntervalMinorThird:
-                    return new IntervalMinorThird(lowerNote);
+                    return new IntervalMinorThird(lowerPitch);
                 case IntervalAlias.IntervalMinorSixth:
-                    return new IntervalMinorSixth(lowerNote);
+                    return new IntervalMinorSixth(lowerPitch);
                 case IntervalAlias.IntervalMinorSeventh:
-                    return new IntervalMinorSeventh(lowerNote);
+                    return new IntervalMinorSeventh(lowerPitch);
                 case IntervalAlias.IntervalAugmentedUnison:
-                    return new IntervalAugmentedUnison(lowerNote);
+                    return new IntervalAugmentedUnison(lowerPitch);
                 case IntervalAlias.IntervalAugmentedSecond:
-                    return new IntervalAugmentedSecond(lowerNote);
+                    return new IntervalAugmentedSecond(lowerPitch);
                 case IntervalAlias.IntervalAugmentedThird:
-                    return new IntervalAugmentedThird(lowerNote);
+                    return new IntervalAugmentedThird(lowerPitch);
                 case IntervalAlias.IntervalAugmentedFourth:
-                    return new IntervalAugmentedFourth(lowerNote);
+                    return new IntervalAugmentedFourth(lowerPitch);
                 case IntervalAlias.IntervalAugmentedFifth:
-                    return new IntervalAugmentedFifth(lowerNote);
+                    return new IntervalAugmentedFifth(lowerPitch);
                 case IntervalAlias.IntervalAugmentedSixth:
-                    return new IntervalAugmentedSixth(lowerNote);
+                    return new IntervalAugmentedSixth(lowerPitch);
                 case IntervalAlias.IntervalAugmentedSeventh:
-                    return new IntervalAugmentedSeventh(lowerNote);
+                    return new IntervalAugmentedSeventh(lowerPitch);
                 case IntervalAlias.IntervalAugmentedOctave:
-                    return new IntervalAugmentedOctave(lowerNote);
+                    return new IntervalAugmentedOctave(lowerPitch);
                 case IntervalAlias.IntervalDiminishedSecond:
-                    return new IntervalDiminishedSecond(lowerNote);
+                    return new IntervalDiminishedSecond(lowerPitch);
                 case IntervalAlias.IntervalDiminishedThird:
-                    return new IntervalDiminishedThird(lowerNote);
+                    return new IntervalDiminishedThird(lowerPitch);
                 case IntervalAlias.IntervalDiminishedFourth:
-                    return new IntervalDiminishedFourth(lowerNote);
+                    return new IntervalDiminishedFourth(lowerPitch);
                 case IntervalAlias.IntervalDiminishedFifth:
-                    return new IntervalDiminishedFifth(lowerNote);
+                    return new IntervalDiminishedFifth(lowerPitch);
                 case IntervalAlias.IntervalDiminishedSixth:
-                    return new IntervalDiminishedSixth(lowerNote);
+                    return new IntervalDiminishedSixth(lowerPitch);
                 case IntervalAlias.IntervalDiminishedSeventh:
-                    return new IntervalDiminishedSeventh(lowerNote);
+                    return new IntervalDiminishedSeventh(lowerPitch);
                 case IntervalAlias.IntervalDiminishedOctave:
-                    return new IntervalDiminishedOctave(lowerNote);
+                    return new IntervalDiminishedOctave(lowerPitch);
                 case IntervalAlias.IntervalMajorNinth:
-                    return new IntervalMajorNinth(lowerNote);
+                    return new IntervalMajorNinth(lowerPitch);
                 case IntervalAlias.IntervalAugmentedEleventh:
-                    return new IntervalAugmentedEleventh(lowerNote);
+                    return new IntervalAugmentedEleventh(lowerPitch);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(interval), interval, null);
             }

@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalPerfectUnison(Note lowerNote)
-            : base(lowerNote)
+        public IntervalPerfectUnison(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

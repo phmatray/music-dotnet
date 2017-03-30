@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalAugmentedFourth(Note lowerNote)
-            : base(lowerNote)
+        public IntervalAugmentedFourth(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

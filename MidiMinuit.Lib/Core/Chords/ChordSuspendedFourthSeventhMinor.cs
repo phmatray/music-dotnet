@@ -8,7 +8,7 @@
     public class ChordSuspendedFourthSeventhMinor
         : Chord
     {
-        public ChordSuspendedFourthSeventhMinor(Note fondamental)
+        public ChordSuspendedFourthSeventhMinor(Pitch fondamental)
         {
             if (fondamental == null)
             {

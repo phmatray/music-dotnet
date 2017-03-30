@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalAugmentedThird(Note lowerNote)
-            : base(lowerNote)
+        public IntervalAugmentedThird(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

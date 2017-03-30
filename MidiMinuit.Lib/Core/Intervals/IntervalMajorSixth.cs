@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalMajorSixth(Note lowerNote)
-            : base(lowerNote)
+        public IntervalMajorSixth(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

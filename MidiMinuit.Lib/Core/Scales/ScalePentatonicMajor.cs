@@ -8,7 +8,7 @@
     public class ScalePentatonicMajor
         : Scale
     {
-        public ScalePentatonicMajor(Note key)
+        public ScalePentatonicMajor(Pitch key)
         {
             // gamme pentatonique majeure : T 2M 3M 5j 6M
             if (key == null)

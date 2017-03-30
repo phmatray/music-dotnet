@@ -7,7 +7,7 @@
 
     public class ScaleFactory
     {
-        public List<Scale> CreateAllScales(Note key)
+        public List<Scale> CreateAllScales(Pitch key)
         {
             return Enum.GetValues(typeof(ScaleAlias))
                 .Cast<ScaleAlias>()
@@ -15,7 +15,7 @@
                 .ToList();
         }
 
-        public Scale CreateScale(ScaleAlias scaleType, Note key)
+        public Scale CreateScale(ScaleAlias scaleType, Pitch key)
         {
             switch (scaleType)
             {

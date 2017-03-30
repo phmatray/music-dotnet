@@ -12,8 +12,8 @@
         {
         }
 
-        public IntervalAugmentedSeventh(Note lowerNote)
-            : base(lowerNote)
+        public IntervalAugmentedSeventh(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 

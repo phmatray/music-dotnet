@@ -8,7 +8,7 @@
     public class ScaleModeAltered
         : Scale
     {
-        public ScaleModeAltered(Note key)
+        public ScaleModeAltered(Pitch key)
         {
             // mode altéré : T 2m 3m 3M b5 6m 7m
             if (key == null)

@@ -31,8 +31,8 @@ namespace MidiMinuit.Lib.Core.Chords
         /// <summary>
         ///     Gets notes of the chord.
         /// </summary>
-        public List<Note> Notes
-            => Intervals.Select(x => x.UpperNote).ToList();
+        public List<Pitch> Notes
+            => Intervals.Select(x => x.UpperPitch).ToList();
 
         /// <summary>
         ///     Gets details of the chord.
@@ -40,7 +40,7 @@ namespace MidiMinuit.Lib.Core.Chords
         public string Details
             => Intervals.Aggregate(
                 string.Empty,
-                (current, interval) => current + $"{interval.UpperNote} ({interval.Abbreviation})");
+                (current, interval) => current + $"{interval.UpperPitch} ({interval.Abbreviation})");
 
         /// <summary>
         ///     Gets nombre de sons constituant l'accord

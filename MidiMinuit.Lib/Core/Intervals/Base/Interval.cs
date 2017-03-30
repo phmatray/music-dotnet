@@ -15,33 +15,32 @@
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
-        private Note _lowerNote;
+        private Pitch _lowerPitch;
 
         protected Interval()
         {
         }
 
-        protected Interval(Note lowerNote)
+        protected Interval(Pitch lowerPitch)
         {
-            LowerNote = lowerNote;
-            UpperNote = lowerNote.AddInterval(this);
+            LowerPitch = lowerPitch;
         }
 
-        public Note LowerNote
+        public Pitch LowerPitch
         {
             get
             {
-                return _lowerNote;
+                return _lowerPitch;
             }
 
             set
             {
-                _lowerNote = value;
-                UpperNote = _lowerNote.AddInterval(this);
+                _lowerPitch = value;
+                UpperPitch = _lowerPitch.AddInterval(this);
             }
         }
 
-        public Note UpperNote { get; private set; }
+        public Pitch UpperPitch { get; private set; }
 
         public abstract IntervalAlias Alias { get; }
 
@@ -64,7 +63,7 @@
         public abstract string WikipediaDescription { get; }
 
         public string Notes
-            => $"{LowerNote.Details} - {UpperNote.Details}";
+            => $"{LowerPitch.Details} - {UpperPitch.Details}";
 
         public string Name
             => Names.FirstOrDefault();
@@ -78,7 +77,7 @@
         /// </summary>
         /// <returns>The interval class</returns>
         public int IntervalClass
-            => MusicMathFormulaHelpers.InvervalClass(Semitones);
+            => UsefulMathHelpers.InvervalClass(Semitones);
 
         public abstract override string ToString();
 

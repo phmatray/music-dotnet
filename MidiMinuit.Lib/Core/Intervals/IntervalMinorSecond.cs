@@ -12,8 +12,8 @@ namespace MidiMinuit.Lib.Core.Intervals
         {
         }
 
-        public IntervalMinorSecond(Note lowerNote)
-            : base(lowerNote)
+        public IntervalMinorSecond(Pitch lowerPitch)
+            : base(lowerPitch)
         {
         }
 
