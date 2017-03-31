@@ -28,7 +28,7 @@ namespace MidiMinuit.Music.Core.Degrees
             = new Pitch(new StepNameE());
 
         public override Pitch PitchInCMinor { get; }
-            = new Pitch(new StepNameE(), new NoteAccidentalFlat());
+            = new Pitch(new StepNameE(), new StepAccidentalFlat());
 
         public override string ToString()
             => Alias.ToString();

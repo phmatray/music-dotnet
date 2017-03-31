@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Instruments.GuitarTunings
         public GuitarString(int stringIndex, int noteMidi, int retune, int? fret = null)
         {
             StringIndex = stringIndex;
-            Pitch = new Pitch(noteMidi);
+            Pitch = Pitch.FromMidiPitch(noteMidi, Pitch.MidiPitchTranslationMode.Auto);
             Retune = retune;
             Fret = fret;
         }

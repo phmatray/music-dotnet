@@ -5,7 +5,7 @@ namespace MidiMinuit.Music.Core.NoteAccidentals
 {
     public class NoteAccidentalRepository
     {
-        private readonly List<NoteAccidental> _noteAccidentals;
+        private readonly List<StepAccidental> _noteAccidentals;
 
         public NoteAccidentalRepository()
         {
@@ -13,18 +13,18 @@ namespace MidiMinuit.Music.Core.NoteAccidentals
             _noteAccidentals = factory.CreateAllNoteAccidentals();
         }
 
-        public List<NoteAccidental> GetAll()
+        public List<StepAccidental> GetAll()
             => _noteAccidentals;
 
-        public NoteAccidental Get(NoteAccidentalAlias accidental)
+        public StepAccidental Get(NoteAccidentalAlias accidental)
             => _noteAccidentals
                 .Single(x => x.Alias == accidental);
 
-        public NoteAccidental Get(int accidentalValue)
+        public StepAccidental Get(int accidentalValue)
             => _noteAccidentals
                 .Single(x => x.Value == accidentalValue);
 
-        public NoteAccidental GetBySymbol(string symbol)
+        public StepAccidental GetBySymbol(string symbol)
             => _noteAccidentals
                 .Single(x => x.SignUnicode == symbol || x.SignAscii == symbol);
     }

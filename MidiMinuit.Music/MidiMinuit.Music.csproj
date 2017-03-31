@@ -36,7 +36,7 @@
     <CodeAnalysisRuleSet>MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Core\Notes\NoteClassDiagram.cd" />
+    <None Include="Core\Pitches\NoteClassDiagram.cd" />
     <None Include="MidiMinuit.Music.ruleset" />
     <None Include="project.json" />
     <!-- A reference to the entire .NET Framework is automatically included -->
@@ -132,19 +132,19 @@
     <Compile Include="Core\Intervals\IntervalPerfectFourth.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectOctave.cs" />
     <Compile Include="Core\Intervals\IntervalPerfectUnison.cs" />
-    <Compile Include="Core\NoteAccidentals\Base\NoteAccidental.cs" />
+    <Compile Include="Core\NoteAccidentals\Base\StepAccidental.cs" />
     <Compile Include="Core\NoteAccidentals\Base\NoteAccidentalFactory.cs" />
     <Compile Include="Core\NoteAccidentals\Base\NoteAccidentalRepository.cs" />
     <Compile Include="Core\NoteAccidentals\Enum\NoteAccidentalAlias.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalDoubleFlat.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalDoubleSharp.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalFlat.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalNatural.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalQuadrupleFlat.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalQuadrupleSharp.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalSharp.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalTripleFlat.cs" />
-    <Compile Include="Core\NoteAccidentals\NoteAccidentalTripleSharp.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalDoubleFlat.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalDoubleSharp.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalFlat.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalNatural.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalQuadrupleFlat.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalQuadrupleSharp.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalSharp.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalTripleFlat.cs" />
+    <Compile Include="Core\NoteAccidentals\StepAccidentalTripleSharp.cs" />
     <Compile Include="Core\Scales\Base\ScaleRepository.cs" />
     <Compile Include="Core\StepNames\Base\StepName.cs" />
     <Compile Include="Core\StepNames\Base\StepNameFactory.cs" />
@@ -157,11 +157,11 @@
     <Compile Include="Core\StepNames\StepNameE.cs" />
     <Compile Include="Core\StepNames\StepNameF.cs" />
     <Compile Include="Core\StepNames\StepNameG.cs" />
-    <Compile Include="Core\Notes\Base\IHasPitch.cs" />
-    <Compile Include="Core\Notes\Base\Pitch.cs" />
-    <Compile Include="Core\Notes\Base\Step.cs" />
-    <Compile Include="Core\Notes\Base\TunedPitch.cs" />
-    <Compile Include="Core\Notes\Extensions\NoteExtensions.cs" />
+    <Compile Include="Core\Pitches\Base\IHasPitch.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.cs" />
+    <Compile Include="Core\Pitches\Base\Step.cs" />
+    <Compile Include="Core\Pitches\Base\TunedPitch.cs" />
+    <Compile Include="Core\Pitches\Extensions\NoteExtensions.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
     <Compile Include="Core\Scales\Base\ScaleFactory.cs" />
     <Compile Include="Core\Scales\Enum\ScaleAlias.cs" />
@@ -234,13 +234,14 @@
     <Compile Include="Tmp\Class1.cs" />
     <Compile Include="Tmp\DiatonicInterval.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
+    <Compile Include="Tmp\MemoryContext.cs" />
     <Compile Include="Tmp\SemitoneTypeEnum.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Tools\StringExtensions.cs" />
     <Compile Include="Tools\UsefulMathHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\Notes\Enum\" />
+    <Folder Include="Core\Pitches\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Extensions\" />

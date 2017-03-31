@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.NoteAccidentals
 {
     public class NoteAccidentalFactory
     {
-        public List<NoteAccidental> CreateAllNoteAccidentals()
+        public List<StepAccidental> CreateAllNoteAccidentals()
         {
             return Enum.GetValues(typeof(NoteAccidentalAlias))
                 .Cast<NoteAccidentalAlias>()
@@ -14,28 +14,28 @@ namespace MidiMinuit.Music.Core.NoteAccidentals
                 .ToList();
         }
 
-        public NoteAccidental CreateNoteAccidental(NoteAccidentalAlias accidental)
+        public StepAccidental CreateNoteAccidental(NoteAccidentalAlias accidental)
         {
             switch (accidental)
             {
                 case NoteAccidentalAlias.Natural:
-                    return new NoteAccidentalNatural();
+                    return new StepAccidentalNatural();
                 case NoteAccidentalAlias.Flat:
-                    return new NoteAccidentalFlat();
+                    return new StepAccidentalFlat();
                 case NoteAccidentalAlias.Sharp:
-                    return new NoteAccidentalSharp();
+                    return new StepAccidentalSharp();
                 case NoteAccidentalAlias.DoubleFlat:
-                    return new NoteAccidentalDoubleFlat();
+                    return new StepAccidentalDoubleFlat();
                 case NoteAccidentalAlias.DoubleSharp:
-                    return new NoteAccidentalDoubleSharp();
+                    return new StepAccidentalDoubleSharp();
                 case NoteAccidentalAlias.TripleFlat:
-                    return new NoteAccidentalTripleFlat();
+                    return new StepAccidentalTripleFlat();
                 case NoteAccidentalAlias.TripleSharp:
-                    return new NoteAccidentalTripleSharp();
+                    return new StepAccidentalTripleSharp();
                 case NoteAccidentalAlias.QuadrupleFlat:
-                    return new NoteAccidentalQuadrupleFlat();
+                    return new StepAccidentalQuadrupleFlat();
                 case NoteAccidentalAlias.QuadrupleSharp:
-                    return new NoteAccidentalQuadrupleSharp();
+                    return new StepAccidentalQuadrupleSharp();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(accidental), accidental, null);
             }

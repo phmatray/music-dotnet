@@ -63,7 +63,7 @@ namespace MidiMinuit.Music.Core.Intervals
         public abstract string WikipediaDescription { get; }
 
         public string Notes
-            => $"{LowerPitch.Details} - {UpperPitch.Details}";
+            => $"{LowerPitch} - {UpperPitch}";
 
         public string Name
             => Names.FirstOrDefault();

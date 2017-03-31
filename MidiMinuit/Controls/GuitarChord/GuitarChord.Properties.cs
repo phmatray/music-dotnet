@@ -3,6 +3,7 @@ using MidiMinuit.Common;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using MidiMinuit.Music.Core.Chords;
+using MidiMinuit.Music.Core.NoteNames;
 using MidiMinuit.Music.Core.Notes;
 using MidiMinuit.Music.Instruments.GuitarTunings;
 
@@ -68,7 +69,7 @@ namespace MidiMinuit.Controls
         /// Identifies the <see cref="Chord"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ChordProperty =
-            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(new ChordMajor(new Pitch())));
+            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(new ChordMajor(new Pitch(StepNameAlias.C))));
 
 
 

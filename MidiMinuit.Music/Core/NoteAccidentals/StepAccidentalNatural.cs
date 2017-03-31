@@ -1,7 +1,7 @@
 namespace MidiMinuit.Music.Core.NoteAccidentals
 {
-    public class NoteAccidentalNatural
-        : NoteAccidental
+    public class StepAccidentalNatural
+        : StepAccidental
     {
         public override NoteAccidentalAlias Alias { get; }
             = NoteAccidentalAlias.Natural;
@@ -13,15 +13,15 @@ namespace MidiMinuit.Music.Core.NoteAccidentals
             = "Natural";
 
         public override string SignUnicode { get; }
-            = "";
+            = string.Empty;
 
         public override string SignAscii { get; }
-            = "";
+            = string.Empty;
 
         public override string ToString()
             => SignUnicode;
 
-        public override NoteAccidental Clone()
-            => MemberwiseClone() as NoteAccidental;
+        public override StepAccidental Clone()
+            => MemberwiseClone() as StepAccidental;
     }
 }

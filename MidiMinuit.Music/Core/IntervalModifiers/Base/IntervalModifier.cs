@@ -2,6 +2,18 @@
 {
     public abstract class IntervalModifier
     {
+        public static implicit operator IntervalModifier(IntervalModifierAlias alias)
+        {
+            var repo = new IntervalModifierRepository();
+            var modifier = repo.Get(alias);
+            return modifier;
+        }
+
+        public static implicit operator IntervalModifierAlias(IntervalModifier modifier)
+        {
+            return modifier.Alias;
+        }
+
         public abstract IntervalModifierAlias Alias { get; }
 
         public abstract string Name { get; }

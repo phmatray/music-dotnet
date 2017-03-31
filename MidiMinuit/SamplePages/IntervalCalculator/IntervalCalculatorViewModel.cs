@@ -14,13 +14,13 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
         public IntervalCalculatorViewModel()
         {
             StepName = new StepNameC();
-            NoteAccidental = new NoteAccidentalNatural();
-            var note = new Pitch(StepName, NoteAccidental);
+            StepAccidental = new StepAccidentalNatural();
+            var note = new Pitch(StepName, StepAccidental);
             Interval = new IntervalPerfectFifth(note);
         }
 
         private StepName _stepName;
-        private NoteAccidental _noteAccidental;
+        private StepAccidental _stepAccidental;
         private Interval _interval;
 
         public StepName StepName
@@ -29,10 +29,10 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
             set { Set(ref _stepName, value); }
         }
 
-        public NoteAccidental NoteAccidental
+        public StepAccidental StepAccidental
         {
-            get { return _noteAccidental; }
-            set { Set(ref _noteAccidental, value); }
+            get { return _stepAccidental; }
+            set { Set(ref _stepAccidental, value); }
         }
 
         public Interval Interval
@@ -49,11 +49,11 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
         public StepName StepNameA { get; } = new StepNameA();
         public StepName StepNameB { get; } = new StepNameB();
 
-        public NoteAccidental NoteAccidentalDoubleFlat { get; } = new NoteAccidentalDoubleFlat();
-        public NoteAccidental NoteAccidentalFlat { get; } = new NoteAccidentalFlat();
-        public NoteAccidental NoteAccidentalNatural { get; } = new NoteAccidentalNatural();
-        public NoteAccidental NoteAccidentalSharp { get; } = new NoteAccidentalSharp();
-        public NoteAccidental NoteAccidentalDoubleSharp { get; } = new NoteAccidentalDoubleSharp();
+        public StepAccidental StepAccidentalDoubleFlat { get; } = new StepAccidentalDoubleFlat();
+        public StepAccidental StepAccidentalFlat { get; } = new StepAccidentalFlat();
+        public StepAccidental StepAccidentalNatural { get; } = new StepAccidentalNatural();
+        public StepAccidental StepAccidentalSharp { get; } = new StepAccidentalSharp();
+        public StepAccidental StepAccidentalDoubleSharp { get; } = new StepAccidentalDoubleSharp();
 
         public Interval IntervalA2 { get; } = new IntervalAugmentedSecond();
         public Interval IntervalA3 { get; } = new IntervalAugmentedThird();
@@ -84,21 +84,21 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
         public void NoteName_OnChecked(object sender, RoutedEventArgs e)
         {
             StepName = (sender as RadioButton)?.Tag as StepName;
-            Interval.LowerPitch = new Pitch(StepName, NoteAccidental);
+            Interval.LowerPitch = new Pitch(StepName, StepAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void NoteAccidental_OnChecked(object sender, RoutedEventArgs e)
         {
-            NoteAccidental = (sender as RadioButton)?.Tag as NoteAccidental;
-            Interval.LowerPitch = new Pitch(StepName, NoteAccidental);
+            StepAccidental = (sender as RadioButton)?.Tag as StepAccidental;
+            Interval.LowerPitch = new Pitch(StepName, StepAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void Interval_OnChecked(object sender, RoutedEventArgs e)
         {
             var interval = (sender as RadioButton)?.Tag as Interval;
-            interval.LowerPitch = new Pitch(StepName, NoteAccidental);
+            interval.LowerPitch = new Pitch(StepName, StepAccidental);
             Interval = interval;
         }
     }

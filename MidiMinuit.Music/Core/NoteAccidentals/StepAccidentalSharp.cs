@@ -1,27 +1,27 @@
 ﻿namespace MidiMinuit.Music.Core.NoteAccidentals
 {
-    public class NoteAccidentalTripleSharp
-        : NoteAccidental
+    public class StepAccidentalSharp
+        : StepAccidental
     {
         public override NoteAccidentalAlias Alias { get; }
-            = NoteAccidentalAlias.TripleSharp;
+            = NoteAccidentalAlias.Sharp;
 
         public override int Value { get; }
-            = 3;
+            = 1;
 
         public override string Name { get; }
-            = "Triple Sharp";
+            = "Sharp";
 
         public override string SignUnicode { get; }
-            = "♯♯♯";
+            = "♯";
 
         public override string SignAscii { get; }
-            = "###";
+            = "#";
 
         public override string ToString()
             => SignUnicode;
 
-        public override NoteAccidental Clone()
-            => MemberwiseClone() as NoteAccidental;
+        public override StepAccidental Clone()
+            => MemberwiseClone() as StepAccidental;
     }
 }

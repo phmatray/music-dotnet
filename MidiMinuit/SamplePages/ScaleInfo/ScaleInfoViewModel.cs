@@ -1,4 +1,5 @@
-﻿using MidiMinuit.Music.Core.Notes;
+﻿using MidiMinuit.Music.Core.NoteNames;
+using MidiMinuit.Music.Core.Notes;
 using MidiMinuit.Music.Core.Scales;
 
 namespace MidiMinuit.SamplePages.ScaleInfo
@@ -12,7 +13,7 @@ namespace MidiMinuit.SamplePages.ScaleInfo
 
         public ScaleInfoViewModel()
         {
-            var allScales = new ScaleFactory().CreateAllScales(new Pitch());
+            var allScales = new ScaleFactory().CreateAllScales(new Pitch(StepNameAlias.C));
             Scales = new ObservableCollection<Scale>(allScales);
         }
     }

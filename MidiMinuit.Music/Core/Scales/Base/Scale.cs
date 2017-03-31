@@ -29,10 +29,9 @@ namespace MidiMinuit.Music.Core.Scales
 
     public abstract class Scale
     {
-        public static implicit operator Scale(ScaleAlias alias)
-        {
-            
-        }
+        ////public static implicit operator Scale(ScaleAlias alias)
+        ////{
+        ////}
 
         /// <summary>
         ///     Gets the type of the scale.

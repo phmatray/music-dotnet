@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using MidiMinuit.Music.Core.Intervals;
 using MidiMinuit.Music.Core.NoteAccidentals;
 using MidiMinuit.Music.Core.NoteNames;
-using MidiMinuit.Music.Core.Tuning;
-using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core.Notes
 {
@@ -231,136 +228,34 @@ namespace MidiMinuit.Music.Core.Notes
 
         public static Pitch GSharp6 => FromStep(GSharp, 6);
 
-        public Pitch(string stepName, int alter, int octaveNumber)
+        public Pitch(string name, int accidental, int octaveNumber)
         {
-            StepName = stepName;
-            Alter = alter;
-            MidiPitch = _pitches[stepName] + alter + ((octaveNumber - 4) * 12);
+            Name = new StepNameRepository().GetByName(name);
+            Accidental = new NoteAccidentalRepository().Get(accidental);
+            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
             Octave = octaveNumber;
         }
 
-        protected Pitch()
-        {
-        }
-
         /// <summary>
         ///     Initializes a new instance of the <see cref="Pitch" /> class.
         /// </summary>
         /// <param name="name">The name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
-        public Pitch(StepName name = null, NoteAccidental accidental = null)
+        /// <param name="octaveNumber">The octave of the note.</param>
+        public Pitch(StepName name, StepAccidental accidental = null, int octaveNumber = 4)
         {
-            Name = name ?? new StepNameC();
-            Accidental = accidental ?? new NoteAccidentalNatural();
+            Name = name;
+            Accidental = accidental ?? new StepAccidentalNatural();
+            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
+            Octave = octaveNumber;
         }
 
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Pitch" /> class.
-        /// </summary>
-        /// <param name="name">The name of the note.</param>
-        /// <param name="accidental">The accidental of the note.</param>
-        public Pitch(StepNameAlias name, NoteAccidentalAlias accidental = NoteAccidentalAlias.Natural)
+        public Pitch(StepNameAlias name, NoteAccidentalAlias accidental = NoteAccidentalAlias.Flat, int octaveNumber = 4)
         {
-            Name = new StepNameRepository().Get(name);
-            Accidental = new NoteAccidentalRepository().Get(accidental);
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Pitch" /> class.
-        /// </summary>
-        /// <param name="note">
-        ///     The name of the note with its accidental.
-        ///     ex: "C#" or "Db" or E...
-        /// </param>
-        /// <exception cref="ArgumentNullException">note</exception>
-        /// <exception cref="ArgumentException">incorrect format</exception>
-        public Pitch(string note)
-        {
-            if (string.IsNullOrWhiteSpace(note))
-            {
-                throw new ArgumentNullException(nameof(note));
-            }
-
-            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(note))
-            {
-                throw new ArgumentException("incorrect format");
-            }
-
-            Name = new StepNameRepository()
-                .GetByName(note[0].ToString());
-
-            Accidental = new NoteAccidentalRepository()
-                .GetBySymbol(note.Substring(1, note.Length - 1));
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Pitch" /> class.
-        /// </summary>
-        /// <param name="midiValue">
-        ///     The midi value of the note.
-        /// </param>
-        /// <exception cref="ArgumentNullException">note</exception>
-        /// <exception cref="ArgumentException">incorrect format</exception>
-        public Pitch(int midiValue)
-        {
-            if (midiValue < 0 || midiValue > 127)
-            {
-                throw new ArgumentOutOfRangeException(nameof(midiValue));
-            }
-
-            switch (midiValue % 12)
-            {
-                case 0:
-                    Name = new StepNameC();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                case 1:
-                    Name = new StepNameC();
-                    Accidental = new NoteAccidentalSharp();
-                    break;
-                case 2:
-                    Name = new StepNameD();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                case 3:
-                    Name = new StepNameD();
-                    Accidental = new NoteAccidentalSharp();
-                    break;
-                case 4:
-                    Name = new StepNameE();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                case 5:
-                    Name = new StepNameF();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                case 6:
-                    Name = new StepNameF();
-                    Accidental = new NoteAccidentalSharp();
-                    break;
-                case 7:
-                    Name = new StepNameG();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                case 8:
-                    Name = new StepNameG();
-                    Accidental = new NoteAccidentalSharp();
-                    break;
-                case 9:
-                    Name = new StepNameA();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                case 10:
-                    Name = new StepNameA();
-                    Accidental = new NoteAccidentalSharp();
-                    break;
-                case 11:
-                    Name = new StepNameB();
-                    Accidental = new NoteAccidentalNatural();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(midiValue));
-            }
+            Name = name;
+            Accidental = accidental;
+            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
+            Octave = octaveNumber;
         }
 
         /// <summary>
@@ -368,32 +263,76 @@ namespace MidiMinuit.Music.Core.Notes
         /// </summary>
         /// <param name="pitch">The note.</param>
         public Pitch(Pitch pitch)
-            : this(pitch.Name, pitch.Accidental)
+            : this(pitch.Name, pitch.Accidental, pitch.Octave)
         {
         }
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Pitch" /> class.
+        /// </summary>
+        /// <param name="s">
+        ///     The name of the note with its accidental.
+        ///     ex: "C#" or "Db" or E...
+        /// </param>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
+        public Pitch(string s)
+        {
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                throw new ArgumentNullException(nameof(s));
+            }
 
+            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?[0-8]?$").IsMatch(s))
+            {
+                throw new ArgumentException("incorrect format");
+            }
 
+            var regexNote = new Regex("^[A-Ga-g]$");
+            var regexAlter = new Regex("^[b♭#♯]$");
+            var regexOctave = new Regex("^[0-8]$");
 
+            string name = string.Empty;
+            string accidental = string.Empty;
+            string octaveNumber = string.Empty;
 
-        public StepName Name { get; }
+            foreach (char c in s)
+            {
+                if (name == string.Empty)
+                {
+                    if (regexNote.IsMatch(c.ToString()))
+                    {
+                        name += char.ToUpper(c).ToString();
+                    }
+                }
+                else
+                {
+                    if (regexAlter.IsMatch(c.ToString()))
+                    {
+                        accidental += c.ToString();
+                    }
+                    else if (regexOctave.IsMatch(c.ToString()))
+                    {
+                        octaveNumber += c.ToString();
+                    }
+                }
+            }
 
-        public NoteAccidental Accidental { get; }
+            var octaveNumberParsed = Convert.ToInt32(octaveNumber);
 
+            Name = new StepNameRepository().GetByName(name);
+            Accidental = new NoteAccidentalRepository().GetBySymbol(accidental);
+            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumberParsed - 4) * 12);
+            Octave = octaveNumberParsed;
+        }
 
+        protected Pitch()
+        {
+        }
 
         public int MidiPitch { get; set; }
 
         public int Octave { get; set; }
-
-
-
-
-
-        public string Details
-            => $"{Name}{Accidental}";
-
-        ////public Interval Interval => GetInterval();
 
         public int PitchAbsolute
         {
@@ -407,109 +346,6 @@ namespace MidiMinuit.Music.Core.Notes
 
                 return pitch;
             }
-        }
-
-        public static Pitch GetNoteSharp(int value)
-        {
-            if (value < 0)
-            {
-                value += 12;
-            }
-
-            switch (value)
-            {
-                case 0:
-                    return new Pitch(new StepNameC());
-                case 1:
-                    return new Pitch(new StepNameC(), new NoteAccidentalSharp());
-                case 2:
-                    return new Pitch(new StepNameD());
-                case 3:
-                    return new Pitch(new StepNameD(), new NoteAccidentalSharp());
-                case 4:
-                    return new Pitch(new StepNameE());
-                case 5:
-                    return new Pitch(new StepNameF());
-                case 6:
-                    return new Pitch(new StepNameF(), new NoteAccidentalSharp());
-                case 7:
-                    return new Pitch(new StepNameG());
-                case 8:
-                    return new Pitch(new StepNameG(), new NoteAccidentalSharp());
-                case 9:
-                    return new Pitch(new StepNameA());
-                case 10:
-                    return new Pitch(new StepNameA(), new NoteAccidentalSharp());
-                case 11:
-                    return new Pitch(new StepNameB());
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(value));
-            }
-        }
-
-        public static Pitch GetNoteFlat(int value)
-        {
-            switch (value)
-            {
-                case 0:
-                    return new Pitch(new StepNameC());
-                case 1:
-                    return new Pitch(new StepNameD(), new NoteAccidentalFlat());
-                case 2:
-                    return new Pitch(new StepNameD());
-                case 3:
-                    return new Pitch(new StepNameE(), new NoteAccidentalFlat());
-                case 4:
-                    return new Pitch(new StepNameE());
-                case 5:
-                    return new Pitch(new StepNameF());
-                case 6:
-                    return new Pitch(new StepNameG(), new NoteAccidentalFlat());
-                case 7:
-                    return new Pitch(new StepNameG());
-                case 8:
-                    return new Pitch(new StepNameA(), new NoteAccidentalFlat());
-                case 9:
-                    return new Pitch(new StepNameA());
-                case 10:
-                    return new Pitch(new StepNameB(), new NoteAccidentalFlat());
-                case 11:
-                    return new Pitch(new StepNameB());
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(value));
-            }
-        }
-
-        public static List<Pitch> GetNotesSharp()
-        {
-            return Enumerable
-                .Range(0, 12)
-                .Select(GetNoteSharp)
-                .ToList();
-        }
-
-        public static List<Pitch> GetNotesFlat()
-        {
-            return Enumerable
-                .Range(0, 12)
-                .Select(GetNoteFlat)
-                .ToList();
-        }
-
-        public static List<Pitch> GetNotesNatural()
-        {
-            return new[] { 0, 2, 4, 5, 7, 9, 11 }
-                .Select(GetNoteFlat)
-                .ToList();
-        }
-
-        public static List<Pitch> GetNotes(params string[] tuning)
-        {
-            var notes = tuning
-                .Select((n, i) => new Pitch(tuning[i]))
-                .ToList();
-
-            return new List<Pitch>(notes);
         }
 
         ////public Interval GetInterval()
@@ -575,14 +411,13 @@ namespace MidiMinuit.Music.Core.Notes
         ////    }
         ////}
 
-        public Pitch Add(int semitone)
-            => GetNoteSharp((PitchAbsolute + semitone) % 12);
-
-        public Pitch Substract(int semitone)
-            => Add(-semitone);
-
         public double GetFrequency(int octave = 4)
         {
+            if (octave <= 0 || octave > 8)
+            {
+                throw new ArgumentOutOfRangeException(nameof(octave));
+            }
+
             // http://blog.jerome.rouaix.eu/2009/09/la-formule-de-la-frequence-exacte-des.html
             // Dans cette formule 0=La, donc -9 sur le pitch pour rétabli 0=Do
             var pitch = PitchAbsolute;
@@ -592,12 +427,6 @@ namespace MidiMinuit.Music.Core.Notes
 
             return result;
         }
-
-        public Pitch ToFlat()
-            => GetNoteFlat(PitchAbsolute);
-
-        public Pitch ToSharp()
-            => GetNoteSharp(PitchAbsolute);
 
         public int FromNote(Pitch relativePitch)
         {
@@ -637,11 +466,11 @@ namespace MidiMinuit.Music.Core.Notes
         public static bool operator >=(Pitch p1, Pitch p2)
             => p1.MidiPitch >= p2.MidiPitch;
 
-        public static Pitch operator +(Pitch pitch, Interval interval)
-            => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
+        ////public static Pitch operator +(Pitch pitch, Interval interval)
+        ////    => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
 
-        public static Pitch operator -(Pitch pitch, Interval interval)
-            => pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto);
+        ////public static Pitch operator -(Pitch pitch, Interval interval)
+        ////    => pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto);
 
         public static int CalculateMidiPitch(string stepName, int alter, int octave)
         {
@@ -723,11 +552,11 @@ namespace MidiMinuit.Music.Core.Notes
         public static Pitch FromStep(Step step, int octaveNumber = 4)
         {
             var pitch = new Pitch();
-            var stepName = step.StepName;
-            pitch.StepName = stepName;
-            var alter = step.Alter;
-            pitch.Alter = alter;
-            var num1 = _pitches[step.StepName.Name] + step.Alter.Value + ((octaveNumber - 4) * 12);
+            var stepName = step.Name;
+            pitch.Name = stepName;
+            var alter = step.Accidental;
+            pitch.Accidental = alter;
+            var num1 = _pitches[step.Name.Name] + step.Accidental.Value + ((octaveNumber - 4) * 12);
             pitch.MidiPitch = num1;
             var num2 = octaveNumber;
             pitch.Octave = num2;
@@ -735,7 +564,7 @@ namespace MidiMinuit.Music.Core.Notes
         }
 
         public static int StepDistance(Pitch p1, Pitch p2)
-            => p1.StepName.StepNumber - 1 + (p1.Octave * 7) - (p2.StepName.StepNumber - 1 + (p2.Octave * 7));
+            => p1.Name.StepNumber - 1 + (p1.Octave * 7) - (p2.Name.StepNumber - 1 + (p2.Octave * 7));
 
         public static int StepDistance(IHasPitch h1, Pitch p2)
             => StepDistance(h1.Pitch, p2);
@@ -760,52 +589,52 @@ namespace MidiMinuit.Music.Core.Notes
                     switch (num)
                     {
                         case 21:
-                            StepName = new StepNameA();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameA();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 22:
-                            StepName = new StepNameB();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameB();
+                            Accidental = new StepAccidentalFlat();
                             break;
                         case 23:
-                            StepName = new StepNameB();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameB();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 24:
-                            StepName = new StepNameC();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameC();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 25:
-                            StepName = new StepNameC();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameC();
+                            Accidental = new StepAccidentalSharp();
                             break;
                         case 26:
-                            StepName = new StepNameD();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameD();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 27:
-                            StepName = new StepNameE();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameE();
+                            Accidental = new StepAccidentalFlat();
                             break;
                         case 28:
-                            StepName = new StepNameE();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameE();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 29:
-                            StepName = new StepNameF();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameF();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 30:
-                            StepName = new StepNameF();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameF();
+                            Accidental = new StepAccidentalSharp();
                             break;
                         case 31:
-                            StepName = new StepNameG();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameG();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 32:
-                            StepName = new StepNameG();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameG();
+                            Accidental = new StepAccidentalSharp();
                             break;
                     }
                     break;
@@ -813,52 +642,52 @@ namespace MidiMinuit.Music.Core.Notes
                     switch (num)
                     {
                         case 21:
-                            StepName = new StepNameA();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameA();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 22:
-                            StepName = new StepNameA();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameA();
+                            Accidental = new StepAccidentalSharp();
                             break;
                         case 23:
-                            StepName = new StepNameB();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameB();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 24:
-                            StepName = new StepNameC();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameC();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 25:
-                            StepName = new StepNameC();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameC();
+                            Accidental = new StepAccidentalSharp();
                             break;
                         case 26:
-                            StepName = new StepNameD();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameD();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 27:
-                            StepName = new StepNameD();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameD();
+                            Accidental = new StepAccidentalSharp();
                             break;
                         case 28:
-                            StepName = new StepNameE();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameE();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 29:
-                            StepName = new StepNameF();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameF();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 30:
-                            StepName = new StepNameF();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameF();
+                            Accidental = new StepAccidentalSharp();
                             break;
                         case 31:
-                            StepName = new StepNameG();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameG();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 32:
-                            StepName = new StepNameG();
-                            Alter = new NoteAccidentalSharp();
+                            Name = new StepNameG();
+                            Accidental = new StepAccidentalSharp();
                             break;
                     }
                     break;
@@ -866,52 +695,52 @@ namespace MidiMinuit.Music.Core.Notes
                     switch (num)
                     {
                         case 21:
-                            StepName = new StepNameA();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameA();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 22:
-                            StepName = new StepNameB();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameB();
+                            Accidental = new StepAccidentalFlat();
                             break;
                         case 23:
-                            StepName = new StepNameB();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameB();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 24:
-                            StepName = new StepNameC();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameC();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 25:
-                            StepName = new StepNameD();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameD();
+                            Accidental = new StepAccidentalFlat();
                             break;
                         case 26:
-                            StepName = new StepNameD();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameD();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 27:
-                            StepName = new StepNameE();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameE();
+                            Accidental = new StepAccidentalFlat();
                             break;
                         case 28:
-                            StepName = new StepNameE();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameE();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 29:
-                            StepName = new StepNameF();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameF();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 30:
-                            StepName = new StepNameG();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameG();
+                            Accidental = new StepAccidentalFlat();
                             break;
                         case 31:
-                            StepName = new StepNameG();
-                            Alter = new NoteAccidentalNatural();
+                            Name = new StepNameG();
+                            Accidental = new StepAccidentalNatural();
                             break;
                         case 32:
-                            StepName = new StepNameA();
-                            Alter = new NoteAccidentalFlat();
+                            Name = new StepNameA();
+                            Accidental = new StepAccidentalFlat();
                             break;
                     }
                     break;
@@ -963,25 +792,22 @@ namespace MidiMinuit.Music.Core.Notes
             => MidiPitch - other.MidiPitch;
 
         public Pitch Flatten()
-            => new Pitch(StepName.Name, Alter.Value - 1, Octave);
+            => new Pitch(Name.Name, Accidental.Value - 1, Octave);
 
         public Pitch OctaveDown()
-            => new Pitch(StepName.Name, Alter.Value, Octave - 1);
+            => new Pitch(Name.Name, Accidental.Value, Octave - 1);
 
         public Pitch OctaveUp()
-            => new Pitch(StepName.Name, Alter.Value, Octave + 1);
+            => new Pitch(Name.Name, Accidental.Value, Octave + 1);
 
         public Pitch Sharpen()
-            => new Pitch(StepName.Name, Alter.Value + 1, Octave);
+            => new Pitch(Name.Name, Accidental.Value + 1, Octave);
 
         public Step ToStep()
             => FromPitch(this);
 
-        ////public override string ToString()
-        ////    => $"{Name}{Accidental}{Octave}";
-
         public override string ToString()
-            => $"{StepName}{Alter.SignAscii}{Octave}";
+            => $"{Name}{Accidental.SignAscii}";
 
         ////public Pitch Translate(Interval interval, MidiPitchTranslationMode mode)
         ////{
@@ -998,7 +824,7 @@ namespace MidiMinuit.Music.Core.Notes
         {
             Auto,
             Sharps,
-            Flats,
+            Flats
         }
     }
 }

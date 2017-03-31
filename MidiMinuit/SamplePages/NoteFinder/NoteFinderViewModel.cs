@@ -7,6 +7,7 @@ using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using MidiMinuit.Music.Core.Chords;
+using MidiMinuit.Music.Core.NoteNames;
 using MidiMinuit.Music.Core.Notes;
 using MidiMinuit.Music.Instruments.GuitarTunings;
 
@@ -17,7 +18,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
         private string _noteText = "Use your MIDI keyboard";
         private Brush _chordFontBrush = Constants.ThemeResources.SystemControlHighlightAccentBrush;
         private GuitarTuning _tuning = new GuitarTuningStandard();
-        private Chord _chord = new ChordMinor(new Pitch());
+        private Chord _chord = new ChordMinor(new Pitch(StepNameAlias.C));
 
         public string NoteText
         {
@@ -59,7 +60,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
                                 return;
                             }
 
-                            NoteText = new Pitch(((MidiNoteOnMessage) action).Note).ToString();
+                            NoteText = Pitch.FromMidiPitch(((MidiNoteOnMessage)action).Note, Pitch.MidiPitchTranslationMode.Auto).ToString();
                             break;
                     }
                 });
@@ -78,7 +79,7 @@ namespace MidiMinuit.SamplePages.NoteFinder
 
         public void ChangeChord_OnClick(object sender, RoutedEventArgs e)
         {
-            Chord = new ChordMinorDiminishedSeventhDiminished(new Pitch());
+            Chord = new ChordMinorDiminishedSeventhDiminished(new Pitch(StepNameAlias.C));
         }
     }
 }
