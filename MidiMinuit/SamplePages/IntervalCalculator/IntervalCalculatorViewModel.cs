@@ -13,20 +13,20 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
     {
         public IntervalCalculatorViewModel()
         {
-            NoteName = new NoteNameC();
+            StepName = new StepNameC();
             NoteAccidental = new NoteAccidentalNatural();
-            var note = new Pitch(NoteName, NoteAccidental);
+            var note = new Pitch(StepName, NoteAccidental);
             Interval = new IntervalPerfectFifth(note);
         }
 
-        private NoteName _noteName;
+        private StepName _stepName;
         private NoteAccidental _noteAccidental;
         private Interval _interval;
 
-        public NoteName NoteName
+        public StepName StepName
         {
-            get { return _noteName; }
-            set { Set(ref _noteName, value); }
+            get { return _stepName; }
+            set { Set(ref _stepName, value); }
         }
 
         public NoteAccidental NoteAccidental
@@ -41,13 +41,13 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
             set { Set(ref _interval, value); }
         }
 
-        public NoteName NoteNameC { get; } = new NoteNameC();
-        public NoteName NoteNameD { get; } = new NoteNameD();
-        public NoteName NoteNameE { get; } = new NoteNameE();
-        public NoteName NoteNameF { get; } = new NoteNameF();
-        public NoteName NoteNameG { get; } = new NoteNameG();
-        public NoteName NoteNameA { get; } = new NoteNameA();
-        public NoteName NoteNameB { get; } = new NoteNameB();
+        public StepName StepNameC { get; } = new StepNameC();
+        public StepName StepNameD { get; } = new StepNameD();
+        public StepName StepNameE { get; } = new StepNameE();
+        public StepName StepNameF { get; } = new StepNameF();
+        public StepName StepNameG { get; } = new StepNameG();
+        public StepName StepNameA { get; } = new StepNameA();
+        public StepName StepNameB { get; } = new StepNameB();
 
         public NoteAccidental NoteAccidentalDoubleFlat { get; } = new NoteAccidentalDoubleFlat();
         public NoteAccidental NoteAccidentalFlat { get; } = new NoteAccidentalFlat();
@@ -83,22 +83,22 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
 
         public void NoteName_OnChecked(object sender, RoutedEventArgs e)
         {
-            NoteName = (sender as RadioButton)?.Tag as NoteName;
-            Interval.LowerPitch = new Pitch(NoteName, NoteAccidental);
+            StepName = (sender as RadioButton)?.Tag as StepName;
+            Interval.LowerPitch = new Pitch(StepName, NoteAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void NoteAccidental_OnChecked(object sender, RoutedEventArgs e)
         {
             NoteAccidental = (sender as RadioButton)?.Tag as NoteAccidental;
-            Interval.LowerPitch = new Pitch(NoteName, NoteAccidental);
+            Interval.LowerPitch = new Pitch(StepName, NoteAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void Interval_OnChecked(object sender, RoutedEventArgs e)
         {
             var interval = (sender as RadioButton)?.Tag as Interval;
-            interval.LowerPitch = new Pitch(NoteName, NoteAccidental);
+            interval.LowerPitch = new Pitch(StepName, NoteAccidental);
             Interval = interval;
         }
     }

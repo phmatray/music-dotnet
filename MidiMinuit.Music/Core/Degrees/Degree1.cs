@@ -24,10 +24,10 @@ namespace MidiMinuit.Music.Core.Degrees
             = "tonique";
 
         public override Pitch PitchInCMajor { get; }
-            = new Pitch(new NoteNameC());
+            = new Pitch(new StepNameC());
 
         public override Pitch PitchInCMinor { get; }
-            = new Pitch(new NoteNameC());
+            = new Pitch(new StepNameC());
 
         public override string ToString()
             => Alias.ToString();

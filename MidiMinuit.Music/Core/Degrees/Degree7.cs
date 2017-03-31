@@ -26,10 +26,10 @@ namespace MidiMinuit.Music.Core.Degrees
             = "sensible";
 
         public override Pitch PitchInCMajor { get; }
-            = new Pitch(new NoteNameB());
+            = new Pitch(new StepNameB());
 
         public override Pitch PitchInCMinor { get; }
-            = new Pitch(new NoteNameB(), new NoteAccidentalFlat());
+            = new Pitch(new StepNameB(), new NoteAccidentalFlat());
 
         public override string ToString()
             => Alias.ToString();

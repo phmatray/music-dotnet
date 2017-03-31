@@ -26,6 +26,6 @@ namespace MidiMinuit.Music.Core.NoteAccidentals
 
         public NoteAccidental GetBySymbol(string symbol)
             => _noteAccidentals
-                .Single(x => x.Symbol == symbol || x.Symbol2 == symbol);
+                .Single(x => x.SignUnicode == symbol || x.SignAscii == symbol);
     }
 }

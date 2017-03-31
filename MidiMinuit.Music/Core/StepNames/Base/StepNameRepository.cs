@@ -3,28 +3,28 @@ using System.Linq;
 
 namespace MidiMinuit.Music.Core.NoteNames
 {
-    public class NoteNameRepository
+    public class StepNameRepository
     {
-        private readonly List<NoteName> _noteNames;
+        private readonly List<StepName> _noteNames;
 
-        public NoteNameRepository()
+        public StepNameRepository()
         {
-            var factory = new NoteNameFactory();
+            var factory = new StepNameFactory();
             _noteNames = factory.CreateAllNoteNames();
         }
 
-        public List<NoteName> GetAll()
+        public List<StepName> GetAll()
             => _noteNames;
 
-        public NoteName Get(NoteNameAlias name)
+        public StepName Get(StepNameAlias name)
             => _noteNames
                 .Single(x => x.Alias == name);
 
-        public NoteName GetByOrder(int order)
+        public StepName GetByOrder(int order)
             => _noteNames
-                .Single(x => x.Order == order);
+                .Single(x => x.StepNumber == order);
 
-        public NoteName GetByName(string name)
+        public StepName GetByName(string name)
             => _noteNames
                 .Single(x => x.Name == name || x.NameLatin == name);
     }

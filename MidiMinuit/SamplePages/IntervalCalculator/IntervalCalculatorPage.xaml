@@ -231,13 +231,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <RadioButton Name="RadioButtonNoteNameC" GroupName="NoteName" Content="C" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameC}" Grid.Column="0" Style="{StaticResource ButtonRadioButtonStyle}"/>
-                    <RadioButton GroupName="NoteName" Content="D" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameD}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyle}"/>
-                    <RadioButton GroupName="NoteName" Content="E" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameE}" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyle}"/>
-                    <RadioButton GroupName="NoteName" Content="F" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameF}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyle}"/>
-                    <RadioButton GroupName="NoteName" Content="G" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameG}" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyle}"/>
-                    <RadioButton GroupName="NoteName" Content="A" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameA}" Grid.Column="5" Style="{StaticResource ButtonRadioButtonStyle}"/>
-                    <RadioButton GroupName="NoteName" Content="B" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.NoteNameB}" Grid.Column="6" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton Name="RadioButtonNoteNameC" GroupName="NoteName" Content="C" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameC}" Grid.Column="0" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="D" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameD}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="E" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameE}" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="F" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameF}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="G" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameG}" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="A" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameA}" Grid.Column="5" Style="{StaticResource ButtonRadioButtonStyle}"/>
+                    <RadioButton GroupName="NoteName" Content="B" Checked="{x:Bind ViewModel.NoteName_OnChecked}" Tag="{x:Bind ViewModel.StepNameB}" Grid.Column="6" Style="{StaticResource ButtonRadioButtonStyle}"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>

@@ -12,14 +12,14 @@
         public override string Name { get; }
             = "Flat";
 
-        public override string Symbol { get; }
+        public override string SignUnicode { get; }
             = "♭";
 
-        public override string Symbol2 { get; }
+        public override string SignAscii { get; }
             = "b";
 
         public override string ToString()
-            => Symbol;
+            => SignUnicode;
 
         public override NoteAccidental Clone()
             => MemberwiseClone() as NoteAccidental;

@@ -1,6 +1,6 @@
 namespace MidiMinuit.Music.Core.NoteNames
 {
-    public enum NoteNameAlias
+    public enum StepNameAlias
     {
         C,
         D,

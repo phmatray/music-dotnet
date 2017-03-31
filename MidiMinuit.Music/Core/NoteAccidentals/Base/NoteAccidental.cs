@@ -8,9 +8,9 @@
 
         public abstract string Name { get; }
 
-        public abstract string Symbol { get; }
+        public abstract string SignUnicode { get; }
 
-        public abstract string Symbol2 { get; }
+        public abstract string SignAscii { get; }
 
         public abstract override string ToString();
 

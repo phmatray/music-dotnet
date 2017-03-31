@@ -1,85 +1,101 @@
-using System;
-using System.Linq;
-using System.Text;
-
-namespace MidiMinuit.Music.Core.Notes
+﻿namespace MidiMinuit.Music.Core.Notes
 {
+    using System;
+    using System.Text.RegularExpressions;
+    using NoteAccidentals;
+    using NoteNames;
+
     public class Step : IEquatable<Step>
     {
-        public string StepName { get; set; }
+        public StepName StepName { get; set; }
 
-        public int Alter { get; set; }
+        public NoteAccidental Alter { get; set; }
 
-        public static Step Cb => new Step { StepName = "C", Alter = -1 };
+        public static Step Cb => new Step { StepName = new StepNameC(), Alter = new NoteAccidentalFlat() };
 
-        public static Step C => new Step { StepName = "C", Alter = 0 };
+        public static Step C => new Step { StepName = new StepNameC(), Alter = new NoteAccidentalNatural() };
 
-        public static Step CSharp => new Step { StepName = "C", Alter = 1 };
+        public static Step CSharp => new Step { StepName = new StepNameC(), Alter = new NoteAccidentalSharp() };
 
-        public static Step Db => new Step { StepName = "D", Alter = -1 };
+        public static Step Db => new Step { StepName = new StepNameD(), Alter = new NoteAccidentalFlat() };
 
-        public static Step D => new Step { StepName = "D", Alter = 0 };
+        public static Step D => new Step { StepName = new StepNameD(), Alter = new NoteAccidentalNatural() };
 
-        public static Step DSharp => new Step { StepName = "D", Alter = 1 };
+        public static Step DSharp => new Step { StepName = new StepNameD(), Alter = new NoteAccidentalSharp() };
 
-        public static Step Eb => new Step { StepName = "E", Alter = -1 };
+        public static Step Eb => new Step { StepName = new StepNameE(), Alter = new NoteAccidentalFlat() };
 
-        public static Step E => new Step { StepName = "E", Alter = 0 };
+        public static Step E => new Step { StepName = new StepNameE(), Alter = new NoteAccidentalNatural() };
 
-        public static Step ESharp => new Step { StepName = "E", Alter = 1 };
+        public static Step ESharp => new Step { StepName = new StepNameE(), Alter = new NoteAccidentalSharp() };
 
-        public static Step Fb => new Step { StepName = "F", Alter = -1 };
+        public static Step Fb => new Step { StepName = new StepNameF(), Alter = new NoteAccidentalFlat() };
 
-        public static Step F => new Step { StepName = "F", Alter = 0 };
+        public static Step F => new Step { StepName = new StepNameF(), Alter = new NoteAccidentalNatural() };
 
-        public static Step FSharp => new Step { StepName = "F", Alter = 1 };
+        public static Step FSharp => new Step { StepName = new StepNameF(), Alter = new NoteAccidentalSharp() };
 
-        public static Step Gb => new Step { StepName = "G", Alter = -1 };
+        public static Step Gb => new Step { StepName = new StepNameG(), Alter = new NoteAccidentalFlat() };
 
-        public static Step G => new Step { StepName = "G", Alter = 0 };
+        public static Step G => new Step { StepName = new StepNameG(), Alter = new NoteAccidentalNatural() };
 
-        public static Step GSharp => new Step { StepName = "G", Alter = 1 };
+        public static Step GSharp => new Step { StepName = new StepNameG(), Alter = new NoteAccidentalSharp() };
 
-        public static Step Ab => new Step { StepName = "A", Alter = -1 };
+        public static Step Ab => new Step { StepName = new StepNameA(), Alter = new NoteAccidentalFlat() };
 
-        public static Step A => new Step { StepName = "A", Alter = 0 };
+        public static Step A => new Step { StepName = new StepNameA(), Alter = new NoteAccidentalNatural() };
 
-        public static Step ASharp => new Step { StepName = "A", Alter = 1 };
+        public static Step ASharp => new Step { StepName = new StepNameA(), Alter = new NoteAccidentalSharp() };
 
-        public static Step Bb => new Step { StepName = "B", Alter = -1 };
+        public static Step Bb => new Step { StepName = new StepNameB(), Alter = new NoteAccidentalFlat() };
 
-        public static Step B => new Step { StepName = "B", Alter = 0 };
+        public static Step B => new Step { StepName = new StepNameB(), Alter = new NoteAccidentalNatural() };
 
-        public static Step BSharp => new Step { StepName = "B", Alter = 1 };
+        public static Step BSharp => new Step { StepName = new StepNameB(), Alter = new NoteAccidentalSharp() };
 
         protected Step()
         {
         }
 
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Step" /> class.
+        /// </summary>
+        /// <param name="s">
+        ///     The name of the note with its accidental.
+        ///     ex: "C#" or "Db" or E...
+        /// </param>
+        /// <exception cref="ArgumentNullException">note</exception>
+        /// <exception cref="ArgumentException">incorrect format</exception>
         public static implicit operator Step(string s)
         {
-            if (s == null)
+            if (string.IsNullOrWhiteSpace(s))
             {
                 throw new ArgumentNullException(nameof(s));
             }
 
-            var stepNames = new[] { "A", "B", "C", "D", "E", "F", "G" };
-            if (!stepNames.Contains(s.ToUpper()))
+            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?$").IsMatch(s))
             {
-                throw new InvalidCastException($"{s} is not a valid step name.");
+                throw new ArgumentException("incorrect format");
             }
 
-            return new Step { StepName = s, Alter = 0 };
+            var stepName = new StepNameRepository()
+                .GetByName(s[0].ToString());
+
+            var accidental = new NoteAccidentalRepository()
+                .GetBySymbol(s.Substring(1, s.Length - 1));
+
+            return new Step { StepName = stepName, Alter = accidental };
         }
 
         public static implicit operator string(Step s)
         {
-            return s.StepName;
+            return s.StepName.Name;
         }
 
         public static bool operator ==(Step s1, Step s2)
         {
-            if (s1.StepName.Equals(s2.StepName, StringComparison.OrdinalIgnoreCase))
+            if (s1.StepName.Name.Equals(s2.StepName.Name, StringComparison.OrdinalIgnoreCase))
             {
                 return s1.Alter == s2.Alter;
             }
@@ -89,7 +105,7 @@ namespace MidiMinuit.Music.Core.Notes
 
         public static bool operator !=(Step s1, Step s2)
         {
-            if (s1.StepName.Equals(s2.StepName, StringComparison.OrdinalIgnoreCase))
+            if (s1.StepName.Name.Equals(s2.StepName.Name, StringComparison.OrdinalIgnoreCase))
             {
                 return s1.Alter != s2.Alter;
             }
@@ -109,48 +125,14 @@ namespace MidiMinuit.Music.Core.Notes
 
         public override string ToString()
         {
-            return $"{StepName}{AlterToSigns(Alter)}";
-        }
-
-        protected static string AlterToSigns(int alter)
-        {
-            var stringBuilder = new StringBuilder();
-            for (var index = 0; index < Math.Abs(alter); ++index)
-            {
-                stringBuilder.Append(alter < 0 ? "b" : "#");
-            }
-
-            return stringBuilder.ToString();
-        }
-
-        public int ToStepNumber()
-        {
-            switch (StepName)
-            {
-                case "C":
-                    return 1;
-                case "D":
-                    return 2;
-                case "E":
-                    return 3;
-                case "F":
-                    return 4;
-                case "G":
-                    return 5;
-                case "A":
-                    return 6;
-                case "B":
-                    return 7;
-                default:
-                    return 0;
-            }
+            return $"{StepName}{Alter.SignAscii}";
         }
 
         public bool Equals(Step other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return string.Equals(StepName, other.StepName) && Alter == other.Alter;
+            return Equals(StepName, other.StepName) && Equals(Alter, other.Alter);
         }
 
         public override bool Equals(object obj)
@@ -165,7 +147,7 @@ namespace MidiMinuit.Music.Core.Notes
         {
             unchecked
             {
-                return ((StepName != null ? StepName.GetHashCode() : 0) * 397) ^ Alter;
+                return ((StepName?.GetHashCode() ?? 0) * 397) ^ (Alter?.GetHashCode() ?? 0);
             }
         }
     }

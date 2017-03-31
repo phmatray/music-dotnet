@@ -8,7 +8,7 @@ namespace MidiMinuit.Music.Core.Notes
     {
         public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)
         {
-            var lowerNoteOrder = lowerPitch.Name.Order;
+            var lowerNoteOrder = lowerPitch.Name.StepNumber;
             var intervalOrder = interval.Number.Order;
 
             var upperNoteOrder = lowerNoteOrder + intervalOrder - 1;
@@ -17,11 +17,11 @@ namespace MidiMinuit.Music.Core.Notes
                 upperNoteOrder -= 7;
             }
 
-            var noteNameRepo = new NoteNameRepository();
+            var noteNameRepo = new StepNameRepository();
             var upperNoteName = noteNameRepo.GetByOrder(upperNoteOrder);
             var upperNotePitch = lowerPitch.PitchAbsolute + interval.Semitones;
 
-            var accidentalCorrection = upperNotePitch - upperNoteName.Value;
+            var accidentalCorrection = upperNotePitch - upperNoteName.Semitones;
             while (accidentalCorrection >= 8)
             {
                 accidentalCorrection -= 12;
