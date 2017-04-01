@@ -425,22 +425,22 @@ namespace MidiMinuit.Music.Core.Notes
 
 
         public static bool operator <(Pitch p1, Pitch p2)
-            => p1.MidiPitch < p2.MidiPitch;
+            => p1?.MidiPitch < p2?.MidiPitch;
 
         public static bool operator <=(Pitch p1, Pitch p2)
-            => p1.MidiPitch <= p2.MidiPitch;
+            => p1?.MidiPitch <= p2?.MidiPitch;
 
         public static bool operator ==(Pitch p1, Pitch p2)
-            => p1.MidiPitch == p2.MidiPitch;
+            => p1?.MidiPitch == p2?.MidiPitch;
 
         public static bool operator !=(Pitch p1, Pitch p2)
-            => p1.MidiPitch != p2.MidiPitch;
+            => p1?.MidiPitch != p2?.MidiPitch;
 
         public static bool operator >(Pitch p1, Pitch p2)
-            => p1.MidiPitch > p2.MidiPitch;
+            => p1?.MidiPitch > p2?.MidiPitch;
 
         public static bool operator >=(Pitch p1, Pitch p2)
-            => p1.MidiPitch >= p2.MidiPitch;
+            => p1?.MidiPitch >= p2?.MidiPitch;
 
         public static Pitch operator +(Pitch pitch, Interval interval)
             => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
