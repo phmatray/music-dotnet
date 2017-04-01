@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Unison");
 
         public override string WikipediaDescription { get; }
             = "NO DATA";

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = null;
 
         public override string WikipediaDescription { get; }
             = @"In classical music from Western culture, a seventh is a musical interval encompassing seven staff positions, and the major seventh is one of two commonly occurring sevenths. It is qualified as major because it is the larger of the two. The major seventh spans eleven semitones, its smaller counterpart being the minor seventh, spanning ten semitones. For example, the interval from C to B is a major seventh, as the note B lies eleven semitones above C, and there are seven staff positions from C to B. Diminished and augmented sevenths span the same number of staff positions, but consist of a different number of semitones (nine and twelve).";

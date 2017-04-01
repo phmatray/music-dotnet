@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
@@ -44,8 +45,15 @@ namespace MidiMinuit.Music.Core.Intervals
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Compound;
 
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Eleventh");
+
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"In music or music theory an eleventh is the note eleven scale degrees from the root of a chord and also the interval between the root and the eleventh. The interval can be also described as a compound fourth, spanning an octave plus a fourth.
+
+Since there are only seven degrees in a diatonic scale the eleventh degree is the same as the subdominant.
+
+The eleventh is considered highly dissonant with the third.";
 
         public override string ToString()
             => Abbreviation;

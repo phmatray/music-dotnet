@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using MidiMinuit.Music.Core.IntervalModifiers;
-using MidiMinuit.Music.Core.IntervalNumbers;
-using MidiMinuit.Music.Core.Notes;
-using MidiMinuit.Music.Tools;
-
-namespace MidiMinuit.Music.Core.Intervals
+﻿namespace MidiMinuit.Music.Core.Intervals
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using IntervalModifiers;
+    using IntervalNumbers;
+    using Notes;
+    using Tools;
+
     public abstract class Interval
     {
         /* Possibilités d'évolution
@@ -71,6 +72,8 @@ namespace MidiMinuit.Music.Core.Intervals
         public abstract List<string> Abbreviations { get; }
 
         public abstract string QualityComposition { get; }
+
+        public abstract Uri WikipediaUrl { get; }
 
         public abstract string WikipediaDescription { get; }
 

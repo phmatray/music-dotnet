@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
 using MidiMinuit.Music.Core.Notes;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Augmented_second");
 
         public override string WikipediaDescription { get; }
             = @"In classical music from Western culture, an augmented second is an interval that is sonically equivalent to a minor third, spanning three semitones, and is created by widening a major second by a chromatic semitone. For instance, the interval from C to D is a major second, two semitones wide, and the interval from C to D♯ is an augmented second, spanning three semitones.

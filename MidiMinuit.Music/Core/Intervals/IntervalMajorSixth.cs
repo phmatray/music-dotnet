@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
 using MidiMinuit.Music.Core.Notes;
@@ -51,6 +52,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Major_sixth");
 
         public override string WikipediaDescription { get; }
             = @"In music from Western culture, a sixth is a musical interval encompassing six note letter names or staff positions, and the major sixth is one of two commonly occurring sixths. It is qualified as major because it is the larger of the two. The major sixth spans nine semitones. Its smaller counterpart, the minor sixth, spans eight semitones. For example, the interval from C up to the nearest A is a major sixth. It's a sixth because it encompasses six note letter names (C, D, E, F, G, A) and six staff positions. It's a major sixth, not a minor sixth, because the note A lies nine semitones above C. Diminished and augmented sixths (such as C♯ to A♭ and C to A♯) span the same number of note letter names and staff positions, but consist of a different number of semitones (seven and ten).";

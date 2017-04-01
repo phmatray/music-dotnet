@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Semitone");
 
         public override string WikipediaDescription { get; }
             = @"Melodically, this interval is very frequently used, and is of particular importance in cadences. In the perfect and deceptive cadences it appears as a resolution of the leading-tone to the tonic. In the plagal cadence, it appears as the falling of the subdominant to the mediant. It also occurs in many forms of the imperfect cadence, wherever the tonic falls to the leading-tone.

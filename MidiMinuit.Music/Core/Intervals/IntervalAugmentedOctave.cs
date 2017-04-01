@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
 using MidiMinuit.Music.Core.Notes;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Augmented_octave");
 
         public override string WikipediaDescription { get; }
             = @"In modern Western tonal music theory an augmented octave is the sum of a perfect octave and an augmented unison or chromatic semitone. It is the interval between two notes, with the same note letter on staff positions an octave apart, whose alterations cause them, in ordinary equal temperament, to be thirteen semitones apart. In other words, it is a perfect octave which has been widened by a half-step, such as B♭ and B♮ or C and C♯; it is a compound augmented unison. It is the enharmonic equivalent of a minor ninth.";

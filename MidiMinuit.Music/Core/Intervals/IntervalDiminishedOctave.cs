@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
 using MidiMinuit.Music.Core.Notes;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Diminished_octave");
 
         public override string WikipediaDescription { get; }
             = @"In classical music from Western culture, a diminished octave is an interval produced by narrowing a perfect octave by a chromatic semitone. As such, the two notes are denoted by the same letter but have different accidentals. For instance, the interval from C4 to C5 is a perfect octave, twelve semitones wide, and both the intervals from C♯4 to C5, and from C4 to C♭5 are diminished octaves, spanning eleven semitones. Being diminished, it is considered a dissonant interval.

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
 using MidiMinuit.Music.Core.Notes;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Diminished_fourth");
 
         public override string WikipediaDescription { get; }
             = @"In classical music from Western culture, a diminished fourth is an interval produced by narrowing a perfect fourth by a chromatic semitone. For example, the interval from C to F is a perfect fourth, five semitones wide, and both the intervals from C♯ to F, and from C to F♭ are diminished fourths, spanning four semitones. Being diminished, it is considered a dissonant interval.";
