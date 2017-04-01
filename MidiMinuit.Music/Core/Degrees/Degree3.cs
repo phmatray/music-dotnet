@@ -25,10 +25,10 @@ namespace MidiMinuit.Music.Core.Degrees
             = "médiante";
 
         public override Pitch PitchInCMajor { get; }
-            = new Pitch(new StepNameE());
+            = new Pitch(StepNameAlias.E);
 
         public override Pitch PitchInCMinor { get; }
-            = new Pitch(new StepNameE(), new StepAccidentalFlat());
+            = new Pitch(StepNameAlias.E);
 
         public override string ToString()
             => Alias.ToString();

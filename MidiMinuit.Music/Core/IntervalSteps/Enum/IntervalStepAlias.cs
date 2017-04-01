@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Music.Core.IntervalNumbers
 {
-    public enum IntervalNumberAlias
+    public enum IntervalStepAlias
     {
         Unison = 1,
         Second = 2,

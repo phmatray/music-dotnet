@@ -19,9 +19,9 @@ namespace MidiMinuit.Music.Core.Intervals
         public List<Interval> GetAll()
             => _intervals;
 
-        public List<Interval> GetByNumber(IntervalNumber number)
+        public List<Interval> GetByNumber(IntervalStep step)
             => _intervals
-                .Where(x => x.Number == number)
+                .Where(x => x.Step == step)
                 .ToList();
 
         public List<Interval> GetByModifier(IntervalModifier modifier)

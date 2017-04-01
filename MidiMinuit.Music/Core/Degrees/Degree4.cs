@@ -24,10 +24,10 @@ namespace MidiMinuit.Music.Core.Degrees
             = "sous-dominante";
 
         public override Pitch PitchInCMajor { get; }
-            = new Pitch(new StepNameF());
+            = new Pitch(StepNameAlias.F);
 
         public override Pitch PitchInCMinor { get; }
-            = new Pitch(new StepNameF());
+            = new Pitch(StepNameAlias.F);
 
         public override string ToString()
             => Alias.ToString();

@@ -15,6 +15,18 @@ namespace MidiMinuit.Music.Core.Intervals
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
+        public static implicit operator Interval(IntervalAlias alias)
+        {
+            var repo = new IntervalRepository();
+            var interval = repo.Get(alias);
+            return interval;
+        }
+
+        public static implicit operator IntervalAlias(Interval interval)
+        {
+            return interval.Alias;
+        }
+
         private Pitch _lowerPitch;
 
         protected Interval()
@@ -46,7 +58,7 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public abstract int Semitones { get; }
 
-        public abstract IntervalNumber Number { get; }
+        public abstract IntervalStep Step { get; }
 
         public abstract IntervalModifier Modifier { get; }
 

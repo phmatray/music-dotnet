@@ -35,8 +35,8 @@ namespace MidiMinuit.Music.Core.Intervals
         public override int Semitones { get; }
             = 14;
 
-        public override IntervalNumber Number { get; }
-            = new IntervalNumberNinth();
+        public override IntervalStep Step { get; }
+            = new IntervalStepNinth();
 
         public override IntervalModifier Modifier { get; }
             = new IntervalModifierMajor();

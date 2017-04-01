@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using MidiMinuit.Music.Core.Intervals;
 using MidiMinuit.Music.Core.NoteAccidentals;
 using MidiMinuit.Music.Core.NoteNames;
 
@@ -242,29 +243,12 @@ namespace MidiMinuit.Music.Core.Notes
         /// <param name="name">The name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
         /// <param name="octaveNumber">The octave of the note.</param>
-        public Pitch(StepName name, StepAccidental accidental = null, int octaveNumber = 4)
-        {
-            Name = name;
-            Accidental = accidental ?? new StepAccidentalNatural();
-            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
-            Octave = octaveNumber;
-        }
-
         public Pitch(StepNameAlias name, NoteAccidentalAlias accidental = NoteAccidentalAlias.Flat, int octaveNumber = 4)
         {
             Name = name;
             Accidental = accidental;
             MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
             Octave = octaveNumber;
-        }
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="Pitch" /> class.
-        /// </summary>
-        /// <param name="pitch">The note.</param>
-        public Pitch(Pitch pitch)
-            : this(pitch.Name, pitch.Accidental, pitch.Octave)
-        {
         }
 
         /// <summary>
@@ -324,6 +308,15 @@ namespace MidiMinuit.Music.Core.Notes
             Accidental = new NoteAccidentalRepository().GetBySymbol(accidental);
             MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumberParsed - 4) * 12);
             Octave = octaveNumberParsed;
+        }
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Pitch" /> class.
+        /// </summary>
+        /// <param name="pitch">The note.</param>
+        public Pitch(Pitch pitch)
+            : this(pitch.Name, pitch.Accidental, pitch.Octave)
+        {
         }
 
         protected Pitch()
@@ -411,32 +404,15 @@ namespace MidiMinuit.Music.Core.Notes
         ////    }
         ////}
 
-        public double GetFrequency(int octave = 4)
-        {
-            if (octave <= 0 || octave > 8)
-            {
-                throw new ArgumentOutOfRangeException(nameof(octave));
-            }
+        ////public int FromNote(Pitch relativePitch)
+        ////{
+        ////    var value = PitchAbsolute;
+        ////    var relative = relativePitch.PitchAbsolute;
 
-            // http://blog.jerome.rouaix.eu/2009/09/la-formule-de-la-frequence-exacte-des.html
-            // Dans cette formule 0=La, donc -9 sur le pitch pour rétabli 0=Do
-            var pitch = PitchAbsolute;
-            var absolutePicth = octave + (pitch - 9) / 12d;
-            var noteFrequency = Math.Pow(2, absolutePicth + 6) - 9d * Math.Pow(2, absolutePicth);
-            var result = Math.Round(noteFrequency, 2);
-
-            return result;
-        }
-
-        public int FromNote(Pitch relativePitch)
-        {
-            var value = PitchAbsolute;
-            var relative = relativePitch.PitchAbsolute;
-
-            return relative > value
-                ? value - relative + 12
-                : value - relative - 12;
-        }
+        ////    return relative > value
+        ////        ? value - relative + 12
+        ////        : value - relative - 12;
+        ////}
 
 
 
@@ -466,8 +442,8 @@ namespace MidiMinuit.Music.Core.Notes
         public static bool operator >=(Pitch p1, Pitch p2)
             => p1.MidiPitch >= p2.MidiPitch;
 
-        ////public static Pitch operator +(Pitch pitch, Interval interval)
-        ////    => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
+        public static Pitch operator +(Pitch pitch, Interval interval)
+            => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
 
         ////public static Pitch operator -(Pitch pitch, Interval interval)
         ////    => pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto);
@@ -538,6 +514,16 @@ namespace MidiMinuit.Music.Core.Notes
             }
 
             return (int)num + 21;
+        }
+
+        public static double MidiPitchToFrequency(int midiPitch)
+        {
+            if (midiPitch < 0 || midiPitch > 127)
+            {
+                throw new ArgumentOutOfRangeException(nameof(midiPitch));
+            }
+
+            return Math.Round(440d / 32 * Math.Pow(2, (double)(midiPitch - 9) / 12), 2);
         }
 
         public static Pitch FromMidiPitch(int midiPitch, MidiPitchTranslationMode mode)
@@ -809,10 +795,10 @@ namespace MidiMinuit.Music.Core.Notes
         public override string ToString()
             => $"{Name}{Accidental.SignAscii}";
 
-        ////public Pitch Translate(Interval interval, MidiPitchTranslationMode mode)
-        ////{
-        ////    return FromMidiPitch(MidiPitch + interval.Halftones, mode);
-        ////}
+        public Pitch Translate(Interval interval, MidiPitchTranslationMode mode)
+        {
+            return FromMidiPitch(MidiPitch + interval.Semitones, mode);
+        }
 
         ////public TunedPitch Tune(TunedPitch standardPitch, TuningSystem tuningSystem)
         ////{

@@ -38,7 +38,6 @@ namespace MidiMinuit.Music.Core.Chords
         public override string Name
             => $"{Fondamental.UpperPitch}maj";
 
-
         public override string ToString()
             => Name;
 
