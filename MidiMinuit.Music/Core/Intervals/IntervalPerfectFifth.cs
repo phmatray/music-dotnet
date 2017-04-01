@@ -46,7 +46,7 @@ namespace MidiMinuit.Music.Core.Intervals
             = IntervalSpanning.Simple;
 
         public override Uri WikipediaUrl { get; }
-            = null;
+            = new Uri("https://en.wikipedia.org/wiki/Perfect_fifth");
 
         public override string WikipediaDescription { get; }
             = @"In music theory, a perfect fifth is the musical interval corresponding to a pair of pitches with a frequency ratio of 3:2, or very nearly so.

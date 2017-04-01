@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MidiMinuit.Music.Core.IntervalModifiers;
 using MidiMinuit.Music.Core.IntervalNumbers;
@@ -43,6 +44,9 @@ namespace MidiMinuit.Music.Core.Intervals
 
         public override IntervalSpanning Spanning { get; }
             = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Octave");
 
         public override string WikipediaDescription { get; }
             = @"In music, an octave (Latin: octavus: eighth) or perfect octave is the interval between one musical pitch and another with half or double its frequency. It is defined by ANSI as the unit of frequency level when the base of the logarithm is two. The octave relationship is a natural phenomenon that has been referred to as the ""basic miracle of music"", the use of which is ""common in most musical systems"".";

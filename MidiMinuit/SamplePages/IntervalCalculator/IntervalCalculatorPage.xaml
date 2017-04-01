@@ -320,13 +320,16 @@
                     </DataTemplate>
                 </Pivot.HeaderTemplate>
                 <PivotItem Header="Description">
-                    <ScrollViewer Margin="0,0,-12,0" >
-                        <TextBlock Text="{x:Bind ViewModel.Interval.WikipediaDescription, Mode=OneWay}"
-                                TextWrapping="WrapWholeWords" TextAlignment="Justify" Padding="0,0,20,20">
-                            <TextBlock.Foreground>
-                                <SolidColorBrush Color="{ThemeResource SystemChromeWhiteColor}"/>
-                            </TextBlock.Foreground>
-                        </TextBlock>
+                    <ScrollViewer Margin="0,0,-12,0">
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind ViewModel.Interval.WikipediaDescription, Mode=OneWay}"
+                                       TextWrapping="WrapWholeWords" TextAlignment="Justify" Padding="0,0,20,20">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{ThemeResource SystemChromeWhiteColor}"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <HyperlinkButton NavigateUri="{x:Bind ViewModel.Interval.WikipediaUrl}" Content="Wikipédia" />
+                        </StackPanel>
                     </ScrollViewer>
                 </PivotItem>
             </Pivot>
