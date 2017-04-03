@@ -11,19 +11,7 @@
     Loaded="IntervalCalculatorPage_OnLoaded">
 
     <Page.Resources>
-        <Style TargetType="Button">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Margin" Value="0"/>
-            <Setter Property="FontSize" Value="20px"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <SolidColorBrush Color="{ThemeResource SystemChromeMediumColor}"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
+        <!-- Control templates -->
         <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyle">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Gray"/>
@@ -179,26 +167,35 @@
             <Setter Property="Foreground" Value="#84AFFF"/>
         </Style>
         
-        <!--<Style x:Key="ButtonRadioButtonStyle" TargetType="RadioButton">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="RadioButton">
-                        <Button Content="{TemplateBinding Content}"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>-->
-
+        <!-- Converters -->
         <converters:ToUpperConverter x:Key="ToUpperConverter" />
         <converters:AccidentalToBrushConverter x:Key="AccidentalToBrushConverter" />
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainGrid">
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window
+                         width is >=720 effective pixels. -->
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="PivotRight.Visibility"
+                                Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Grid>
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="2*"/>
@@ -320,7 +317,7 @@
             <Grid.BorderBrush>
                 <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
             </Grid.BorderBrush>
-            <Pivot>
+            <Pivot x:Name="PivotRight" Width="300" Visibility="Collapsed">
                 <Pivot.HeaderTemplate>
                     <DataTemplate>
                         <Grid>
