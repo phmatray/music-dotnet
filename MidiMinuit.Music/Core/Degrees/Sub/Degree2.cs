@@ -1,0 +1,38 @@
+﻿using MidiMinuit.Music.Core.Pitches;
+using MidiMinuit.Music.Core.StepNames;
+
+namespace MidiMinuit.Music.Core.Degrees
+{
+    public class Degree2 : Degree
+    {
+        public override DegreeAlias Alias { get; }
+            = DegreeAlias.II;
+
+        public override string DiatonicFunction { get; }
+            = "Supertonic";
+
+        public override string CorrespondingModeMajorKey { get; }
+            = "Dorian";
+
+        public override string CorrespondingModeMinorKey { get; }
+            = "Locrian";
+
+        public override string Meaning { get; }
+            = "One whole step above the tonic";
+
+        public override string Function { get; }
+            = "sus-tonique";
+
+        public override Pitch PitchInCMajor { get; }
+            = new Pitch(StepNameAlias.D);
+
+        public override Pitch PitchInCMinor { get; }
+            = new Pitch(StepNameAlias.D);
+
+        public override string ToString()
+            => Alias.ToString();
+
+        public override Degree Clone()
+            => MemberwiseClone() as Degree;
+    }
+}

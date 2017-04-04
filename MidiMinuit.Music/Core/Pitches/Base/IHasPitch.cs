@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.Notes
+﻿namespace MidiMinuit.Music.Core.Pitches
 {
     public interface IHasPitch
     {

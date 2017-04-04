@@ -27,7 +27,7 @@ namespace MidiMinuit.Music.Core.Scales
      * Le VIIeme degré a fonction de note sensible
     */
 
-    public abstract class Scale
+    public abstract partial class Scale
     {
         ////public static implicit operator Scale(ScaleAlias alias)
         ////{

@@ -1,4 +1,4 @@
-namespace MidiMinuit.Music.Core.NoteNames
+namespace MidiMinuit.Music.Core.StepNames
 {
     public enum StepNameAlias
     {

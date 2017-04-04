@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MidiMinuit.Music.Core.Scales.Scale" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAIBEAAEBAAAAAQAAAAAAEAAAAAAAAAAABE=</HashCode>
+      <FileName>Core\Scales\Base\Scale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Scales.ScaleBlues" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAhAAAAAAIBAAAEIAAAAAUAAgAAAAAAAAAAAAACAhA=</HashCode>
+      <FileName>Core\Scales\Sub\ScaleBlues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Scales.ScaleMajor" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAhAAAAAAIBAAAEAAAAAAUAAAAAABAAAAAAAAAigJA=</HashCode>
+      <FileName>Core\Scales\Sub\ScaleMajor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MidiMinuit.Music.Core.Scales.ScaleAlias" Collapsed="true">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBIIAIAAABAAAAAAAEAAkQCAABAAEAAAAYAkARAAAAA=</HashCode>
+      <FileName>Core\Scales\Enum\ScaleAlias.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.88" />
+</ClassDiagram>

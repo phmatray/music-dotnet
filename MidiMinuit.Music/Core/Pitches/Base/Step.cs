@@ -1,10 +1,10 @@
-﻿namespace MidiMinuit.Music.Core.Notes
-{
-    using System;
-    using System.Text.RegularExpressions;
-    using NoteAccidentals;
-    using NoteNames;
+﻿using System;
+using System.Text.RegularExpressions;
+using MidiMinuit.Music.Core.StepAccidentals;
+using MidiMinuit.Music.Core.StepNames;
 
+namespace MidiMinuit.Music.Core.Pitches
+{
     public class Step : IEquatable<Step>
     {
         public StepName Name { get; set; }
@@ -103,13 +103,7 @@
                 }
             }
 
-            var stepNameObj = new StepNameRepository()
-                .GetByName(stepName);
-
-            var accidentalObj = new NoteAccidentalRepository()
-                .GetBySymbol(accidental);
-
-            return new Step { Name = stepNameObj, Accidental = accidentalObj };
+            return new Step { Name = stepName, Accidental = accidental };
         }
 
         public static implicit operator string(Step s)

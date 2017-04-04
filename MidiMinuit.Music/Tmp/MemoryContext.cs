@@ -2,7 +2,7 @@
 using System.Linq;
 using MidiMinuit.Music.Core.Chords;
 using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Core.Pitches;
 using MidiMinuit.Music.Instruments.GuitarTunings;
 
 namespace MidiMinuit.Music.Tmp

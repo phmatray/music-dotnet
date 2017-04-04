@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.NoteAccidentals;
-using MidiMinuit.Music.Core.NoteNames;
+using MidiMinuit.Music.Core.StepAccidentals;
+using MidiMinuit.Music.Core.StepNames;
+using MidiMinuit.Music.Tmp;
 
-namespace MidiMinuit.Music.Core.Notes
+namespace MidiMinuit.Music.Core.Pitches
 {
     /// <summary>
     ///     Note Pitch (hauteur).
     ///     Cette classe représente la hauteur d'un son
     ///     http://programmers.stackexchange.com/questions/178817/oo-design-how-to-model-tonal-harmony
     /// </summary>
-    public class Pitch
+    public partial class Pitch
         : Step, IComparable<Pitch>
     {
         private static Dictionary<string, int> _pitches
-            = new StepNameFactory()
-                .CreateAllNoteNames()
+            = StepName
+                .CreateAll()
                 .ToDictionary(x => x.Name, x => x.MidiPitch);
+
+        #region Instances
 
         public static Pitch A1 => FromStep(A, 1);
 
@@ -229,10 +232,12 @@ namespace MidiMinuit.Music.Core.Notes
 
         public static Pitch GSharp6 => FromStep(GSharp, 6);
 
-        public Pitch(string name, int accidental, int octaveNumber)
+        #endregion
+
+        public Pitch(string name, int accidentalValue, int octaveNumber)
         {
-            Name = new StepNameRepository().GetByName(name);
-            Accidental = new NoteAccidentalRepository().Get(accidental);
+            Name = name;
+            Accidental = accidentalValue;
             MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
             Octave = octaveNumber;
         }
@@ -304,8 +309,8 @@ namespace MidiMinuit.Music.Core.Notes
 
             var octaveNumberParsed = Convert.ToInt32(octaveNumber);
 
-            Name = new StepNameRepository().GetByName(name);
-            Accidental = new NoteAccidentalRepository().GetBySymbol(accidental);
+            Name = name;
+            Accidental = accidental;
             MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumberParsed - 4) * 12);
             Octave = octaveNumberParsed;
         }

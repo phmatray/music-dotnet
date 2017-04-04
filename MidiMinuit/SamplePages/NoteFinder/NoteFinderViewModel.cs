@@ -7,8 +7,8 @@ using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using MidiMinuit.Music.Core.Chords;
-using MidiMinuit.Music.Core.NoteNames;
-using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Core.Pitches;
+using MidiMinuit.Music.Core.StepNames;
 using MidiMinuit.Music.Instruments.GuitarTunings;
 
 namespace MidiMinuit.SamplePages.NoteFinder

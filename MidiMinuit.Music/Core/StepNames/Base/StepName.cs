@@ -1,19 +1,7 @@
-﻿namespace MidiMinuit.Music.Core.NoteNames
+﻿namespace MidiMinuit.Music.Core.StepNames
 {
-    public abstract class StepName
+    public abstract partial class StepName
     {
-        public static implicit operator StepName(StepNameAlias alias)
-        {
-            var repo = new StepNameRepository();
-            var stepName = repo.Get(alias);
-            return stepName;
-        }
-
-        public static implicit operator StepNameAlias(StepName stepName)
-        {
-            return stepName.Alias;
-        }
-
         public abstract StepNameAlias Alias { get; }
 
         public abstract int Semitones { get; }

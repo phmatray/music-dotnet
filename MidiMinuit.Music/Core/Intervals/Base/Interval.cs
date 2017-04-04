@@ -1,32 +1,21 @@
-﻿namespace MidiMinuit.Music.Core.Intervals
+﻿using MidiMinuit.Music.Core.IntervalSteps;
+
+namespace MidiMinuit.Music.Core.Intervals
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using IntervalModifiers;
-    using IntervalNumbers;
-    using Notes;
+    using Pitches;
     using Tools;
 
-    public abstract class Interval
+    public abstract partial class Interval
     {
         /* Possibilités d'évolution
          * --------------------------------------
          * Additionner une note et un interval: ex: Note.C + Interval.PerfectFifth = Note.G
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
-
-        public static implicit operator Interval(IntervalAlias alias)
-        {
-            var repo = new IntervalRepository();
-            var interval = repo.Get(alias);
-            return interval;
-        }
-
-        public static implicit operator IntervalAlias(Interval interval)
-        {
-            return interval.Alias;
-        }
 
         private Pitch _lowerPitch;
 
@@ -38,6 +27,12 @@
         {
             LowerPitch = lowerPitch;
         }
+
+        ////protected Interval(Pitch lowerPitch, Pitch upperPitch)
+        ////{
+        ////    _lowerPitch = lowerPitch;
+        ////    UpperPitch = upperPitch;
+        ////}
 
         public Pitch LowerPitch
         {

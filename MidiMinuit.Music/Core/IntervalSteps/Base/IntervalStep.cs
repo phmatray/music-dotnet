@@ -1,22 +1,10 @@
-﻿namespace MidiMinuit.Music.Core.IntervalNumbers
+﻿namespace MidiMinuit.Music.Core.IntervalSteps
 {
-    public abstract class IntervalStep
+    public abstract partial class IntervalStep
     {
         /*
          * See https://en.wikipedia.org/wiki/Interval_(music)
          */
-
-        public static implicit operator IntervalStep(IntervalStepAlias alias)
-        {
-            var repo = new IntervalStepRepository();
-            var number = repo.Get(alias);
-            return number;
-        }
-
-        public static implicit operator IntervalStepAlias(IntervalStep step)
-        {
-            return step.Alias;
-        }
 
         public abstract IntervalStepAlias Alias { get; }
 

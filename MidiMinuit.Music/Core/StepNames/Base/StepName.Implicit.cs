@@ -1,0 +1,18 @@
+﻿using System.Linq;
+using MidiMinuit.Music.Tmp;
+
+namespace MidiMinuit.Music.Core.StepNames
+{
+    public partial class StepName
+    {
+        public static implicit operator StepNameAlias(StepName stepName)
+            => stepName.Alias;
+
+        public static implicit operator StepName(StepNameAlias alias)
+            => Create(alias);
+
+        public static implicit operator StepName(string name)
+            => MusicContext.StepNames
+                .Single(x => x.Name == name || x.NameLatin == name);
+    }
+}

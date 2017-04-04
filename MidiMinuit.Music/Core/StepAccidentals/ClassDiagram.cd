@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MidiMinuit.Music.Core.StepAccidentals.StepAccidentalFlat" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAIAAAEEAAAAAAQAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Core\StepAccidentals\Sub\StepAccidentalFlat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.StepAccidentals.StepAccidentalSharp" Collapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAIAAAEEAAAAAAQAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Core\StepAccidentals\Sub\StepAccidentalSharp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.StepAccidentals.StepAccidental" Collapsed="true">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAIAAAEEAABAAAQAAAAAAEAAAAAgAgAAABA=</HashCode>
+      <FileName>Core\StepAccidentals\Base\StepAccidental.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MidiMinuit.Music.Core.StepAccidentals.NoteAccidentalAlias" Collapsed="true">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAEAAIAAAgAAAAAEAEAgAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\StepAccidentals\Enum\NoteAccidentalAlias.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.88" />
+</ClassDiagram>

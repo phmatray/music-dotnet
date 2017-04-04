@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Core.Pitches;
 
 namespace MidiMinuit.Music.Instruments.GuitarTunings
 {
-    public abstract class GuitarTuning
+    public abstract partial class GuitarTuning
     {
         /// <summary>
         ///     Gets the tuning type of the Guitar Tuning.

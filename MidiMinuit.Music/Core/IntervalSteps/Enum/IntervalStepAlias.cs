@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.IntervalNumbers
+﻿namespace MidiMinuit.Music.Core.IntervalSteps
 {
     public enum IntervalStepAlias
     {

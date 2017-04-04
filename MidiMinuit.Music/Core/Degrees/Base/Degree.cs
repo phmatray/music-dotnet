@@ -1,8 +1,8 @@
-﻿using MidiMinuit.Music.Core.Notes;
+﻿using MidiMinuit.Music.Core.Pitches;
 
 namespace MidiMinuit.Music.Core.Degrees
 {
-    public abstract class Degree
+    public abstract partial class Degree
     {
         public abstract DegreeAlias Alias { get; }
 

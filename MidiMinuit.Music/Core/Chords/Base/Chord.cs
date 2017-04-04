@@ -1,13 +1,17 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Core.Pitches;
 
 namespace MidiMinuit.Music.Core.Chords
 {
-    public abstract class Chord
+    public abstract partial class Chord
     {
+        /// <summary>
+        ///     Gets the fondamental of the chord.
+        /// </summary>
+        public IntervalPerfectUnison Fondamental { get; protected set; }
+
         /// <summary>
         ///     Gets the quality of the chord.
         /// </summary>

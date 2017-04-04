@@ -1,7 +1,7 @@
 ﻿using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.NoteAccidentals;
-using MidiMinuit.Music.Core.NoteNames;
-using MidiMinuit.Music.Core.Notes;
+using MidiMinuit.Music.Core.Pitches;
+using MidiMinuit.Music.Core.StepAccidentals;
+using MidiMinuit.Music.Core.StepNames;
 
 namespace MidiMinuit.SamplePages.IntervalCalculator
 {
