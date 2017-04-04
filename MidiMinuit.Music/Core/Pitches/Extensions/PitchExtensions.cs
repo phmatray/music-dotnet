@@ -18,7 +18,7 @@ namespace MidiMinuit.Music.Core.Pitches
                 upperNoteOrder -= 7;
             }
 
-            var upperNoteName = StepNameRepository.GetByOrder(upperNoteOrder);
+            StepName upperNoteName = upperNoteOrder;
             var upperNotePitch = lowerPitch.PitchAbsolute + interval.Semitones;
 
             var accidentalCorrection = upperNotePitch - upperNoteName.Semitones;
@@ -27,7 +27,7 @@ namespace MidiMinuit.Music.Core.Pitches
                 accidentalCorrection -= 12;
             }
 
-            var noteAccidental = StepAccidentalRepository.Get(accidentalCorrection);
+            StepAccidental noteAccidental = accidentalCorrection;
 
             var upperNote = new Pitch(upperNoteName, noteAccidental);
             return upperNote;

@@ -14,5 +14,9 @@ namespace MidiMinuit.Music.Core.StepNames
         public static implicit operator StepName(string name)
             => MusicContext.StepNames
                 .Single(x => x.Name == name || x.NameLatin == name);
+
+        public static implicit operator StepName(int stepNumber)
+            => MusicContext.StepNames
+                .Single(x => x.StepNumber == stepNumber);
     }
 }
