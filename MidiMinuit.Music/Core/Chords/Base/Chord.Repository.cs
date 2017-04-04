@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MidiMinuit.Music.Core.Pitches;
 
 namespace MidiMinuit.Music.Core.Chords
 {
     public partial class Chord
     {
-        internal static List<Chord> CreateAll(Pitch fondamental)
+        internal static List<Chord> CreateAll()
         {
             return Enum.GetValues(typeof(ChordAlias))
                 .Cast<ChordAlias>()

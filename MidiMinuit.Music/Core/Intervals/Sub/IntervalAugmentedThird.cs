@@ -19,7 +19,7 @@ namespace MidiMinuit.Music.Core.Intervals
         }
 
         public override IntervalAlias Alias { get; }
-            = IntervalAlias.IntervalAugmentedThird;
+            = IntervalAlias.AugmentedThird;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Mixte;

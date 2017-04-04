@@ -19,7 +19,7 @@ namespace MidiMinuit.Music.Core.Intervals
         }
 
         public override IntervalAlias Alias { get; }
-            = IntervalAlias.IntervalMajorNinth;
+            = IntervalAlias.MajorNinth;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Dissonante;

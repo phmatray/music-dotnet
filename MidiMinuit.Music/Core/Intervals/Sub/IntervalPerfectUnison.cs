@@ -19,7 +19,7 @@ namespace MidiMinuit.Music.Core.Intervals
         }
 
         public override IntervalAlias Alias { get; }
-            = IntervalAlias.IntervalPerfectUnison;
+            = IntervalAlias.PerfectUnison;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Parfaite;

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using MidiMinuit.Music.Tmp;
+using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core.StepAccidentals
 {

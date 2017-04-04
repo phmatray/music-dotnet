@@ -1,11 +1,10 @@
-﻿using MidiMinuit.Music.Core.IntervalSteps;
-
-namespace MidiMinuit.Music.Core.Intervals
+﻿namespace MidiMinuit.Music.Core.Intervals
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using IntervalModifiers;
+    using IntervalSteps;
     using Pitches;
     using Tools;
 

@@ -19,7 +19,7 @@ namespace MidiMinuit.Music.Core.Intervals
         }
 
         public override IntervalAlias Alias { get; }
-            = IntervalAlias.IntervalPerfectFourth;
+            = IntervalAlias.PerfectFourth;
 
         public override IntervalConsonance HarmonicConsonance { get; }
             = IntervalConsonance.Mixte;
