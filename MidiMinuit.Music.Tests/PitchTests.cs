@@ -7,7 +7,7 @@ namespace MidiMinuit.UnitTestProject
     using Music.Core.Steps;
 
     [TestClass]
-    public class Pitch_UnitTest
+    public class PitchTests
     {
         [TestMethod]
         public void Pitch_FromStep1()

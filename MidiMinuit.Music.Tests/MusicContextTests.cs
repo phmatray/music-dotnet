@@ -5,7 +5,7 @@ using MidiMinuit.Music.Tools;
 namespace MidiMinuit.UnitTestProject
 {
     [TestClass]
-    public class MusicContext_UnitTest
+    public class MusicContextTests
     {
         [TestMethod]
         public void TestMethod1()

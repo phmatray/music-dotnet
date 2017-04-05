@@ -6,7 +6,7 @@ using MidiMinuit.Music.Core.Pitches;
 namespace MidiMinuit.UnitTestProject
 {
     [TestClass]
-    public class ChordMajor_UnitTest
+    public class ChordMajorTests
     {
         [TestMethod]
         public void TestMethod2()
