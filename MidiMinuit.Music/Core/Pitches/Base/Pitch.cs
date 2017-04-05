@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using MidiMinuit.Music.Common;
 using MidiMinuit.Music.Core.Intervals;
 using MidiMinuit.Music.Core.StepAccidentals;
@@ -27,7 +26,6 @@ namespace MidiMinuit.Music.Core.Pitches
         {
             Name = name;
             Accidental = accidentalValue;
-            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
             Octave = octaveNumber;
         }
 
@@ -41,7 +39,6 @@ namespace MidiMinuit.Music.Core.Pitches
         {
             Name = name;
             Accidental = accidental;
-            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumber - 4) * 12);
             Octave = octaveNumber;
         }
 
@@ -50,58 +47,13 @@ namespace MidiMinuit.Music.Core.Pitches
         /// </summary>
         /// <param name="s">
         ///     The name of the note with its accidental.
-        ///     ex: "C#" or "Db" or E...
+        ///     ex: "C#4" or "Dbb3" or E5...
         /// </param>
         /// <exception cref="ArgumentNullException">note</exception>
         /// <exception cref="ArgumentException">incorrect format</exception>
         public Pitch(string s)
+            : this((Pitch)s)
         {
-            if (string.IsNullOrWhiteSpace(s))
-            {
-                throw new ArgumentNullException(nameof(s));
-            }
-
-            if (!new Regex("^[A-Ga-g]((bb?|##?)|(♭♭?|♯♯?))?[0-8]?$").IsMatch(s))
-            {
-                throw new ArgumentException("incorrect format");
-            }
-
-            var regexNote = new Regex("^[A-Ga-g]$");
-            var regexAlter = new Regex("^[b♭#♯]$");
-            var regexOctave = new Regex("^[0-8]$");
-
-            string name = string.Empty;
-            string accidental = string.Empty;
-            string octaveNumber = string.Empty;
-
-            foreach (char c in s)
-            {
-                if (name == string.Empty)
-                {
-                    if (regexNote.IsMatch(c.ToString()))
-                    {
-                        name += char.ToUpper(c).ToString();
-                    }
-                }
-                else
-                {
-                    if (regexAlter.IsMatch(c.ToString()))
-                    {
-                        accidental += c.ToString();
-                    }
-                    else if (regexOctave.IsMatch(c.ToString()))
-                    {
-                        octaveNumber += c.ToString();
-                    }
-                }
-            }
-
-            var octaveNumberParsed = Convert.ToInt32(octaveNumber);
-
-            Name = name;
-            Accidental = accidental;
-            MidiPitch = _pitches[Name.Name] + Accidental.Value + ((octaveNumberParsed - 4) * 12);
-            Octave = octaveNumberParsed;
         }
 
         /// <summary>
@@ -117,10 +69,12 @@ namespace MidiMinuit.Music.Core.Pitches
         {
         }
 
-        public int MidiPitch { get; set; }
-
         public int Octave { get; set; }
 
+        public int MidiPitch
+            => _pitches[Name.Name] + Accidental.Value + ((Octave - 4) * 12);
+
+        // TODO: Remove this property
         public int PitchAbsolute
         {
             get
@@ -325,14 +279,12 @@ namespace MidiMinuit.Music.Core.Pitches
 
         public static Pitch FromStep(Step step, int octaveNumber = 4)
         {
-            var pitch = new Pitch
+            return new Pitch
             {
                 Name = step.Name,
                 Accidental = step.Accidental,
-                MidiPitch = _pitches[step.Name.Name] + step.Accidental.Value + ((octaveNumber - 4) * 12),
                 Octave = octaveNumber
             };
-            return pitch;
         }
 
         public static int StepDistance(Pitch p1, Pitch p2)
@@ -556,8 +508,6 @@ namespace MidiMinuit.Music.Core.Pitches
             {
                 Octave = 8;
             }
-
-            MidiPitch = midiPitch;
         }
 
         public int CompareTo(Pitch other)
