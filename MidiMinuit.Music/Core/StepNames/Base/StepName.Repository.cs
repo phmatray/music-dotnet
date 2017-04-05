@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.StepNames
 {
     public partial class StepName
     {
-        internal static List<StepName> CreateAll()
+        public static List<StepName> CreateAll()
         {
             return Enum.GetValues(typeof(StepNameAlias))
                 .Cast<StepNameAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.StepNames
                 .ToList();
         }
 
-        internal static StepName Create(StepNameAlias name)
+        public static StepName Create(StepNameAlias name)
         {
             switch (name)
             {

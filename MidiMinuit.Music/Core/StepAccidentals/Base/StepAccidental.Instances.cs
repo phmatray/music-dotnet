@@ -2,31 +2,31 @@
 {
     public partial class StepAccidental
     {
-        public static StepAccidental Natural
-            => Create(NoteAccidentalAlias.Natural);
+        public static StepAccidentalNatural Natural
+            => new StepAccidentalNatural();
 
-        public static StepAccidental Flat
-            => Create(NoteAccidentalAlias.Flat);
+        public static StepAccidentalFlat Flat
+            => new StepAccidentalFlat();
 
-        public static StepAccidental Sharp
-            => Create(NoteAccidentalAlias.Sharp);
+        public static StepAccidentalSharp Sharp
+            => new StepAccidentalSharp();
 
-        public static StepAccidental DoubleFlat
-            => Create(NoteAccidentalAlias.DoubleFlat);
+        public static StepAccidentalDoubleFlat DoubleFlat
+            => new StepAccidentalDoubleFlat();
 
-        public static StepAccidental DoubleSharp
-            => Create(NoteAccidentalAlias.DoubleSharp);
+        public static StepAccidentalDoubleSharp DoubleSharp
+            => new StepAccidentalDoubleSharp();
 
-        public static StepAccidental TripleFlat
-            => Create(NoteAccidentalAlias.TripleFlat);
+        public static StepAccidentalTripleFlat TripleFlat
+            => new StepAccidentalTripleFlat();
 
-        public static StepAccidental TripleSharp
-            => Create(NoteAccidentalAlias.TripleSharp);
+        public static StepAccidentalTripleSharp TripleSharp
+            => new StepAccidentalTripleSharp();
 
-        public static StepAccidental QuadrupleFlat
-            => Create(NoteAccidentalAlias.QuadrupleFlat);
+        public static StepAccidentalQuadrupleFlat QuadrupleFlat
+            => new StepAccidentalQuadrupleFlat();
 
-        public static StepAccidental QuadrupleSharp
-            => Create(NoteAccidentalAlias.QuadrupleSharp);
+        public static StepAccidentalQuadrupleSharp QuadrupleSharp
+            => new StepAccidentalQuadrupleSharp();
     }
 }

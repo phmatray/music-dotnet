@@ -9,6 +9,15 @@ namespace MidiMinuit.Music.Core.Chords
     {
         private Pitch _key;
 
+        public ChordSuspendedFourth()
+        {
+        }
+
+        public ChordSuspendedFourth(Pitch key)
+        {
+            Key = key;
+        }
+
         public Pitch Key
         {
             get
@@ -40,6 +49,12 @@ namespace MidiMinuit.Music.Core.Chords
 
         public override string Name
             => $"{Fondamental}sus4";
+
+        public ChordSuspendedFourth SetKey(Pitch key)
+        {
+            Key = key;
+            return this;
+        }
 
         public override string ToString()
             => Name;

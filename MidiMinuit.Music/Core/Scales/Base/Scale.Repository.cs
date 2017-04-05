@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MidiMinuit.Music.Core.Pitches;
 
 namespace MidiMinuit.Music.Core.Scales
 {
     public partial class Scale
     {
-        internal static List<Scale> CreateAll()
+        public static List<Scale> CreateAll()
         {
             return Enum.GetValues(typeof(ScaleAlias))
                 .Cast<ScaleAlias>()
@@ -15,7 +14,7 @@ namespace MidiMinuit.Music.Core.Scales
                 .ToList();
         }
 
-        internal static Scale Create(ScaleAlias scaleType)
+        public static Scale Create(ScaleAlias scaleType)
         {
             switch (scaleType)
             {

@@ -6,7 +6,7 @@
 
     public partial class Interval
     {
-        internal static List<Interval> CreateAll()
+        public static List<Interval> CreateAll()
         {
             return Enum.GetValues(typeof(IntervalAlias))
                 .Cast<IntervalAlias>()
@@ -14,7 +14,7 @@
                 .ToList();
         }
 
-        internal static Interval Create(IntervalAlias interval)
+        public static Interval Create(IntervalAlias interval)
         {
             switch (interval)
             {

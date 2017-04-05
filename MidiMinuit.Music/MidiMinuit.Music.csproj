@@ -41,6 +41,7 @@
     <None Include="Core\IntervalModifiers\ClassDiagram.cd" />
     <None Include="Core\IntervalSteps\ClassDiagram.cd" />
     <None Include="Core\Intervals\ClassDiagram.cd" />
+    <Compile Include="Common\IWikipedia.cs" />
     <Compile Include="Core\Chords\Base\Chord.Implicit.cs" />
     <Compile Include="Core\Chords\Base\Chord.Instances.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Instances.cs" />
@@ -181,7 +182,7 @@
     <Compile Include="Core\StepNames\Sub\StepNameG.cs" />
     <Compile Include="Core\Pitches\Base\IHasPitch.cs" />
     <Compile Include="Core\Pitches\Base\Pitch.cs" />
-    <Compile Include="Core\Pitches\Base\Step.cs" />
+    <Compile Include="Core\Steps\Base\Step.cs" />
     <Compile Include="Core\Pitches\Base\TunedPitch.cs" />
     <Compile Include="Core\Pitches\Extensions\PitchExtensions.cs" />
     <Compile Include="Core\Scales\Base\Scale.cs" />
@@ -260,13 +261,13 @@
     <Compile Include="Tools\MusicContext.cs" />
     <Compile Include="Tmp\DiatonicInterval.cs" />
     <Compile Include="Tmp\HelperBeta.cs" />
-    <Compile Include="Tmp\MemoryContext.cs" />
     <Compile Include="Tmp\SemitoneTypeEnum.cs" />
     <Compile Include="Tools\UsefulExtensions.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Tools\UsefulMathHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\Steps\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Extensions\" />

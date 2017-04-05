@@ -2,28 +2,28 @@
 {
     public partial class Degree
     {
-        public static Degree I
-            => Create(DegreeAlias.I);
+        public static Degree1 I
+            => new Degree1();
 
-        public static Degree II
-            => Create(DegreeAlias.II);
+        public static Degree2 II
+            => new Degree2();
 
-        public static Degree III
-            => Create(DegreeAlias.III);
+        public static Degree3 III
+            => new Degree3();
 
-        public static Degree IV
-            => Create(DegreeAlias.IV);
+        public static Degree4 IV
+            => new Degree4();
 
-        public static Degree V
-            => Create(DegreeAlias.V);
+        public static Degree5 V
+            => new Degree5();
 
-        public static Degree VI
-            => Create(DegreeAlias.VI);
+        public static Degree6 VI
+            => new Degree6();
 
-        public static Degree VII
-            => Create(DegreeAlias.VII);
+        public static Degree7 VII
+            => new Degree7();
 
-        public static Degree VIII
-            => Create(DegreeAlias.VIII);
+        public static Degree8 VIII
+            => VIII;
     }
 }

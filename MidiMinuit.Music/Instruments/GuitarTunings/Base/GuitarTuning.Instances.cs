@@ -2,121 +2,121 @@
 {
     public partial class GuitarTuning
     {
-        public static GuitarTuning Standard
-            => Create(GuitarTuningAlias.Standard);
+        public static GuitarTuningStandard Standard
+            => new GuitarTuningStandard();
 
-        public static GuitarTuning OpenC
-            => Create(GuitarTuningAlias.OpenC);
+        public static GuitarTuningOpenC OpenC
+            => new GuitarTuningOpenC();
 
-        public static GuitarTuning OpenD
-            => Create(GuitarTuningAlias.OpenD);
+        public static GuitarTuningOpenD OpenD
+            => new GuitarTuningOpenD();
 
-        public static GuitarTuning ModalD
-            => Create(GuitarTuningAlias.ModalD);
+        public static GuitarTuningModalD ModalD
+            => new GuitarTuningModalD();
 
-        public static GuitarTuning OpenDMinor
-            => Create(GuitarTuningAlias.OpenDMinor);
+        public static GuitarTuningOpenDMinor OpenDMinor
+            => new GuitarTuningOpenDMinor();
 
-        public static GuitarTuning OpenG
-            => Create(GuitarTuningAlias.OpenG);
+        public static GuitarTuningOpenG OpenG
+            => new GuitarTuningOpenG();
 
-        public static GuitarTuning ModalG
-            => Create(GuitarTuningAlias.ModalG);
+        public static GuitarTuningModalG ModalG
+            => new GuitarTuningModalG();
 
-        public static GuitarTuning OpenGMinor
-            => Create(GuitarTuningAlias.OpenGMinor);
+        public static GuitarTuningOpenGMinor OpenGMinor
+            => new GuitarTuningOpenGMinor();
 
-        public static GuitarTuning OpenA
-            => Create(GuitarTuningAlias.OpenA);
+        public static GuitarTuningOpenA OpenA
+            => new GuitarTuningOpenA();
 
-        public static GuitarTuning Balalaika
-            => Create(GuitarTuningAlias.Balalaika);
+        public static GuitarTuningBalalaika Balalaika
+            => new GuitarTuningBalalaika();
 
-        public static GuitarTuning Charango
-            => Create(GuitarTuningAlias.Charango);
+        public static GuitarTuningCharango Charango
+            => new GuitarTuningCharango();
 
-        public static GuitarTuning Cittern1
-            => Create(GuitarTuningAlias.Cittern1);
+        public static GuitarTuningCittern1 Cittern1
+            => new GuitarTuningCittern1();
 
-        public static GuitarTuning Cittern2
-            => Create(GuitarTuningAlias.Cittern2);
+        public static GuitarTuningCittern2 Cittern2
+            => new GuitarTuningCittern2();
 
-        public static GuitarTuning Dobro
-            => Create(GuitarTuningAlias.Dobro);
+        public static GuitarTuningDobro Dobro
+            => new GuitarTuningDobro();
 
-        public static GuitarTuning Lefty
-            => Create(GuitarTuningAlias.Lefty);
+        public static GuitarTuningLefty Lefty
+            => new GuitarTuningLefty();
 
-        public static GuitarTuning Overtone
-            => Create(GuitarTuningAlias.Overtone);
+        public static GuitarTuningOvertone Overtone
+            => new GuitarTuningOvertone();
 
-        public static GuitarTuning Pentatonic
-            => Create(GuitarTuningAlias.Pentatonic);
+        public static GuitarTuningPentatonic Pentatonic
+            => new GuitarTuningPentatonic();
 
-        public static GuitarTuning MinorThird
-            => Create(GuitarTuningAlias.MinorThird);
+        public static GuitarTuningMinorThird MinorThird
+            => new GuitarTuningMinorThird();
 
-        public static GuitarTuning MajorThird
-            => Create(GuitarTuningAlias.MajorThird);
+        public static GuitarTuningMajorThird MajorThird
+            => new GuitarTuningMajorThird();
 
-        public static GuitarTuning AllFourths
-            => Create(GuitarTuningAlias.AllFourths);
+        public static GuitarTuningAllFourths AllFourths
+            => new GuitarTuningAllFourths();
 
-        public static GuitarTuning AugFourths
-            => Create(GuitarTuningAlias.AugFourths);
+        public static GuitarTuningAugFourths AugFourths
+            => new GuitarTuningAugFourths();
 
-        public static GuitarTuning Mandoguitar
-            => Create(GuitarTuningAlias.Mandoguitar);
+        public static GuitarTuningMandoguitar Mandoguitar
+            => new GuitarTuningMandoguitar();
 
-        public static GuitarTuning MinorSixth
-            => Create(GuitarTuningAlias.MinorSixth);
+        public static GuitarTuningMinorSixth MinorSixth
+            => new GuitarTuningMinorSixth();
 
-        public static GuitarTuning MajorSixth
-            => Create(GuitarTuningAlias.MajorSixth);
+        public static GuitarTuningMajorSixth MajorSixth
+            => new GuitarTuningMajorSixth();
 
-        public static GuitarTuning Admiral
-            => Create(GuitarTuningAlias.Admiral);
+        public static GuitarTuningAdmiral Admiral
+            => new GuitarTuningAdmiral();
 
-        public static GuitarTuning Buzzard
-            => Create(GuitarTuningAlias.Buzzard);
+        public static GuitarTuningBuzzard Buzzard
+            => new GuitarTuningBuzzard();
 
-        public static GuitarTuning DropD
-            => Create(GuitarTuningAlias.DropD);
+        public static GuitarTuningDropD DropD
+            => new GuitarTuningDropD();
 
-        public static GuitarTuning Face
-            => Create(GuitarTuningAlias.Face);
+        public static GuitarTuningFace Face
+            => new GuitarTuningFace();
 
-        public static GuitarTuning FourAndTwenty
-            => Create(GuitarTuningAlias.FourAndTwenty);
+        public static GuitarTuningFourAndTwenty FourAndTwenty
+            => new GuitarTuningFourAndTwenty();
 
-        public static GuitarTuning HotType
-            => Create(GuitarTuningAlias.HotType);
+        public static GuitarTuningHotType HotType
+            => new GuitarTuningHotType();
 
-        public static GuitarTuning Layover
-            => Create(GuitarTuningAlias.Layover);
+        public static GuitarTuningLayover Layover
+            => new GuitarTuningLayover();
 
-        public static GuitarTuning MagicFarmer
-            => Create(GuitarTuningAlias.MagicFarmer);
+        public static GuitarTuningMagicFarmer MagicFarmer
+            => new GuitarTuningMagicFarmer();
 
-        public static GuitarTuning Pelican
-            => Create(GuitarTuningAlias.Pelican);
+        public static GuitarTuningPelican Pelican
+            => new GuitarTuningPelican();
 
-        public static GuitarTuning Processional
-            => Create(GuitarTuningAlias.Processional);
+        public static GuitarTuningProcessional Processional
+            => new GuitarTuningProcessional();
 
-        public static GuitarTuning SlowMotion
-            => Create(GuitarTuningAlias.SlowMotion);
+        public static GuitarTuningSlowMotion SlowMotion
+            => new GuitarTuningSlowMotion();
 
-        public static GuitarTuning Spirit
-            => Create(GuitarTuningAlias.Spirit);
+        public static GuitarTuningSpirit Spirit
+            => new GuitarTuningSpirit();
 
-        public static GuitarTuning Tarboulton
-            => Create(GuitarTuningAlias.Tarboulton);
+        public static GuitarTuningTarboulton Tarboulton
+            => new GuitarTuningTarboulton();
 
-        public static GuitarTuning Toulouse
-            => Create(GuitarTuningAlias.Toulouse);
+        public static GuitarTuningToulouse Toulouse
+            => new GuitarTuningToulouse();
 
-        public static GuitarTuning Triqueen
-            => Create(GuitarTuningAlias.Triqueen);
+        public static GuitarTuningTriqueen Triqueen
+            => new GuitarTuningTriqueen();
     }
 }

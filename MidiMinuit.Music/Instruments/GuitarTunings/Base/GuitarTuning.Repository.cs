@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Instruments.GuitarTunings
 {
     public partial class GuitarTuning
     {
-        internal static List<GuitarTuning> CreateAll()
+        public static List<GuitarTuning> CreateAll()
         {
             return Enum.GetValues(typeof(GuitarTuningAlias))
                 .Cast<GuitarTuningAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Instruments.GuitarTunings
                 .ToList();
         }
 
-        internal static GuitarTuning Create(GuitarTuningAlias guitarTuningType)
+        public static GuitarTuning Create(GuitarTuningAlias guitarTuningType)
         {
             switch (guitarTuningType)
             {

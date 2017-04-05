@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using MidiMinuit.Music.Core.Pitches;
 using MidiMinuit.Music.Core.StepAccidentals;
 using MidiMinuit.Music.Core.StepNames;
 
-namespace MidiMinuit.Music.Core.Pitches
+namespace MidiMinuit.Music.Core.Steps
 {
     public class Step : IEquatable<Step>
     {
@@ -165,7 +166,7 @@ namespace MidiMinuit.Music.Core.Pitches
         {
             unchecked
             {
-                return ((Name?.GetHashCode() ?? 0) * 397) ^ (Accidental?.GetHashCode() ?? 0);
+                return ((Name != null ? Name.GetHashCode() : 0) * 397) ^ (Accidental != null ? Accidental.GetHashCode() : 0);
             }
         }
     }

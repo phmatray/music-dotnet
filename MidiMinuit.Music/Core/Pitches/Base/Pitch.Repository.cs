@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.Pitches
 {
     public partial class Pitch
     {
-        internal static List<Pitch> CreateAll()
+        public static List<Pitch> CreateAll()
         {
             return Enum.GetValues(typeof(PitchAlias))
                 .Cast<PitchAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.Pitches
                 .ToList();
         }
 
-        internal static Pitch Create(PitchAlias alias)
+        public static Pitch Create(PitchAlias alias)
         {
             throw new NotImplementedException();
         }

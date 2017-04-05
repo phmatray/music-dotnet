@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.Degrees
 {
     public partial class Degree
     {
-        internal static List<Degree> CreateAll()
+        public static List<Degree> CreateAll()
         {
             return Enum.GetValues(typeof(DegreeAlias))
                 .Cast<DegreeAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.Degrees
                 .ToList();
         }
 
-        internal static Degree Create(DegreeAlias degree)
+        public static Degree Create(DegreeAlias degree)
         {
             switch (degree)
             {

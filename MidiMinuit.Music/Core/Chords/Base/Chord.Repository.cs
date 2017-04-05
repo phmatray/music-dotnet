@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.Chords
 {
     public partial class Chord
     {
-        internal static List<Chord> CreateAll()
+        public static List<Chord> CreateAll()
         {
             return Enum.GetValues(typeof(ChordAlias))
                 .Cast<ChordAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.Chords
                 .ToList();
         }
 
-        internal static Chord Create(ChordAlias chordQuality)
+        public static Chord Create(ChordAlias chordQuality)
         {
             /*
              * Implements FactoryPattern

@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.IntervalSteps
 {
     public partial class IntervalStep
     {
-        internal static List<IntervalStep> CreateAll()
+        public static List<IntervalStep> CreateAll()
         {
             return Enum.GetValues(typeof(IntervalStepAlias))
                 .Cast<IntervalStepAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.IntervalSteps
                 .ToList();
         }
 
-        internal static IntervalStep Create(IntervalStepAlias step)
+        public static IntervalStep Create(IntervalStepAlias step)
         {
             switch (step)
             {

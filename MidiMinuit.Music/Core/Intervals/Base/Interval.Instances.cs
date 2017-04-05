@@ -2,91 +2,91 @@
 {
     public partial class Interval
     {
-        public static Interval PerfectUnison
-            => Create(IntervalAlias.PerfectUnison);
+        public static IntervalPerfectUnison PerfectUnison
+            => new IntervalPerfectUnison();
 
-        public static Interval PerfectFourth
-            => Create(IntervalAlias.PerfectFourth);
+        public static IntervalPerfectFourth PerfectFourth
+            => new IntervalPerfectFourth();
 
-        public static Interval PerfectFifth
-            => Create(IntervalAlias.PerfectFifth);
+        public static IntervalPerfectFifth PerfectFifth
+            => new IntervalPerfectFifth();
 
-        public static Interval PerfectOctave
-            => Create(IntervalAlias.PerfectOctave);
+        public static IntervalPerfectOctave PerfectOctave
+            => new IntervalPerfectOctave();
 
-        public static Interval MajorSecond
-            => Create(IntervalAlias.MajorSecond);
+        public static IntervalMajorSecond MajorSecond
+            => new IntervalMajorSecond();
 
-        public static Interval MajorThird
-            => Create(IntervalAlias.MajorThird);
+        public static IntervalMajorThird MajorThird
+            => new IntervalMajorThird();
 
-        public static Interval MajorSixth
-            => Create(IntervalAlias.MajorSixth);
+        public static IntervalMajorSixth MajorSixth
+            => new IntervalMajorSixth();
 
-        public static Interval MajorSeventh
-            => Create(IntervalAlias.MajorSeventh);
+        public static IntervalMajorSeventh MajorSeventh
+            => new IntervalMajorSeventh();
 
-        public static Interval MinorSecond
-            => Create(IntervalAlias.MinorSecond);
+        public static IntervalMinorSecond MinorSecond
+            => new IntervalMinorSecond();
 
-        public static Interval MinorThird
-            => Create(IntervalAlias.MinorThird);
+        public static IntervalMinorThird MinorThird
+            => new IntervalMinorThird();
 
-        public static Interval MinorSixth
-            => Create(IntervalAlias.MinorSixth);
+        public static IntervalMinorSixth MinorSixth
+            => new IntervalMinorSixth();
 
-        public static Interval MinorSeventh
-            => Create(IntervalAlias.MinorSeventh);
+        public static IntervalMinorSeventh MinorSeventh
+            => new IntervalMinorSeventh();
 
-        public static Interval AugmentedUnison
-            => Create(IntervalAlias.AugmentedUnison);
+        public static IntervalAugmentedUnison AugmentedUnison
+            => new IntervalAugmentedUnison();
 
-        public static Interval AugmentedSecond
-            => Create(IntervalAlias.AugmentedSecond);
+        public static IntervalAugmentedSecond AugmentedSecond
+            => new IntervalAugmentedSecond();
 
-        public static Interval AugmentedThird
-            => Create(IntervalAlias.AugmentedThird);
+        public static IntervalAugmentedThird AugmentedThird
+            => new IntervalAugmentedThird();
 
-        public static Interval AugmentedFourth
-            => Create(IntervalAlias.AugmentedFourth);
+        public static IntervalAugmentedFourth AugmentedFourth
+            => new IntervalAugmentedFourth();
 
-        public static Interval AugmentedFifth
-            => Create(IntervalAlias.AugmentedFifth);
+        public static IntervalAugmentedFifth AugmentedFifth
+            => new IntervalAugmentedFifth();
 
-        public static Interval AugmentedSixth
-            => Create(IntervalAlias.AugmentedSixth);
+        public static IntervalAugmentedSixth AugmentedSixth
+            => new IntervalAugmentedSixth();
 
-        public static Interval AugmentedSeventh
-            => Create(IntervalAlias.AugmentedSeventh);
+        public static IntervalAugmentedSeventh AugmentedSeventh
+            => new IntervalAugmentedSeventh();
 
-        public static Interval AugmentedOctave
-            => Create(IntervalAlias.AugmentedOctave);
+        public static IntervalAugmentedOctave AugmentedOctave
+            => new IntervalAugmentedOctave();
 
-        public static Interval DiminishedSecond
-            => Create(IntervalAlias.DiminishedSecond);
+        public static IntervalDiminishedSecond DiminishedSecond
+            => new IntervalDiminishedSecond();
 
-        public static Interval DiminishedThird
-            => Create(IntervalAlias.DiminishedThird);
+        public static IntervalDiminishedThird DiminishedThird
+            => new IntervalDiminishedThird();
 
-        public static Interval DiminishedFourth
-            => Create(IntervalAlias.DiminishedFourth);
+        public static IntervalDiminishedFourth DiminishedFourth
+            => new IntervalDiminishedFourth();
 
-        public static Interval DiminishedFifth
-            => Create(IntervalAlias.DiminishedFifth);
+        public static IntervalDiminishedFifth DiminishedFifth
+            => new IntervalDiminishedFifth();
 
-        public static Interval DiminishedSixth
-            => Create(IntervalAlias.DiminishedSixth);
+        public static IntervalDiminishedSixth DiminishedSixth
+            => new IntervalDiminishedSixth();
 
-        public static Interval DiminishedSeventh
-            => Create(IntervalAlias.DiminishedSeventh);
+        public static IntervalDiminishedSeventh DiminishedSeventh
+            => new IntervalDiminishedSeventh();
 
-        public static Interval DiminishedOctave
-            => Create(IntervalAlias.DiminishedOctave);
+        public static IntervalDiminishedOctave DiminishedOctave
+            => new IntervalDiminishedOctave();
 
-        public static Interval MajorNinth
-            => Create(IntervalAlias.MajorNinth);
+        public static IntervalMajorNinth MajorNinth
+            => new IntervalMajorNinth();
 
-        public static Interval AugmentedEleventh
-            => Create(IntervalAlias.AugmentedEleventh);
+        public static IntervalAugmentedEleventh AugmentedEleventh
+            => new IntervalAugmentedEleventh();
     }
 }

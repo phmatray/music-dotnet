@@ -2,61 +2,61 @@
 {
     public partial class Scale
     {
-        public static Scale Major
-            => Create(ScaleAlias.Major);
+        public static ScaleMajor Major
+            => new ScaleMajor();
 
-        public static Scale MinorMelodic
-            => Create(ScaleAlias.MinorMelodic);
+        public static ScaleMinorMelodic MinorMelodic
+            => new ScaleMinorMelodic();
 
-        public static Scale MinorHarmonic
-            => Create(ScaleAlias.MinorHarmonic);
+        public static ScaleMinorHarmonic MinorHarmonic
+            => new ScaleMinorHarmonic();
 
-        public static Scale MinorNaturalEolian
-            => Create(ScaleAlias.MinorNaturalEolian);
+        public static ScaleMinorNaturalEolian MinorNaturalEolian
+            => new ScaleMinorNaturalEolian();
 
-        public static Scale ModeDorian
-            => Create(ScaleAlias.ModeDorian);
+        public static ScaleModeDorian ModeDorian
+            => new ScaleModeDorian();
 
-        public static Scale ModeMixolydian
-            => Create(ScaleAlias.ModeMixolydian);
+        public static ScaleModeMixolydian ModeMixolydian
+            => new ScaleModeMixolydian();
 
-        public static Scale ModeLydian
-            => Create(ScaleAlias.ModeLydian);
+        public static ScaleModeLydian ModeLydian
+            => new ScaleModeLydian();
 
-        public static Scale ModeLydianB7
-            => Create(ScaleAlias.ModeLydianB7);
+        public static ScaleModeLydianB7 ModeLydianB7
+            => new ScaleModeLydianB7();
 
-        public static Scale PentatonicMajor
-            => Create(ScaleAlias.PentatonicMajor);
+        public static ScalePentatonicMajor PentatonicMajor
+            => new ScalePentatonicMajor();
 
-        public static Scale PentatonicMinor
-            => Create(ScaleAlias.PentatonicMinor);
+        public static ScalePentatonicMinor PentatonicMinor
+            => new ScalePentatonicMinor();
 
-        public static Scale Blues
-            => Create(ScaleAlias.Blues);
+        public static ScaleBlues Blues
+            => new ScaleBlues();
 
-        public static Scale ModePhrygian
-            => Create(ScaleAlias.ModePhrygian);
+        public static ScaleModePhrygian ModePhrygian
+            => new ScaleModePhrygian();
 
-        public static Scale ModeLocrian
-            => Create(ScaleAlias.ModeLocrian);
+        public static ScaleModeLocrian ModeLocrian
+            => new ScaleModeLocrian();
 
-        public static Scale ModeLocrianBec2
-            => Create(ScaleAlias.ModeLocrianBec2);
+        public static ScaleModeLocrianBec2 ModeLocrianBec2
+            => new ScaleModeLocrianBec2();
 
-        public static Scale ModeMixolydianB2B6
-            => Create(ScaleAlias.ModeMixolydianB2B6);
+        public static ScaleModeMixolydianB2B6 ModeMixolydianB2B6
+            => new ScaleModeMixolydianB2B6();
 
-        public static Scale ModeAltered
-            => Create(ScaleAlias.ModeAltered);
+        public static ScaleModeAltered ModeAltered
+            => new ScaleModeAltered();
 
-        public static Scale ModeLydianAdded
-            => Create(ScaleAlias.ModeLydianAdded);
+        public static ScaleModeLydianAdded ModeLydianAdded
+            => new ScaleModeLydianAdded();
 
-        public static Scale ModeDiminishedReverse
-            => Create(ScaleAlias.ModeDiminishedReverse);
+        public static ScaleModeDiminishedReverse ModeDiminishedReverse
+            => new ScaleModeDiminishedReverse();
 
-        public static Scale ModeDiminished
-            => Create(ScaleAlias.ModeDiminished);
+        public static ScaleModeDiminished ModeDiminished
+            => new ScaleModeDiminished();
     }
 }

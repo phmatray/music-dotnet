@@ -2,55 +2,55 @@
 {
     public partial class Chord
     {
-        public static Chord Major
-            => Create(ChordAlias.Major);
+        public static ChordMajor Major
+            => new ChordMajor();
 
-        public static Chord Minor
-            => Create(ChordAlias.Minor);
+        public static ChordMinor Minor
+            => new ChordMinor();
 
-        public static Chord MajorSixthMajor
-            => Create(ChordAlias.MajorSixthMajor);
+        public static ChordMajorSixthMajor MajorSixthMajor
+            => new ChordMajorSixthMajor();
 
-        public static Chord MinorSixthMajor
-            => Create(ChordAlias.MinorSixthMajor);
+        public static ChordMinorSixthMajor MinorSixthMajor
+            => new ChordMinorSixthMajor();
 
-        public static Chord SuspendedFourth
-            => Create(ChordAlias.SuspendedFourth);
+        public static ChordSuspendedFourth SuspendedFourth
+            => new ChordSuspendedFourth();
 
-        public static Chord Fifth
-            => Create(ChordAlias.Fifth);
+        public static ChordFifth Fifth
+            => new ChordFifth();
 
-        public static Chord MajorAugmented
-            => Create(ChordAlias.MajorAugmented);
+        public static ChordMajorAugmented MajorAugmented
+            => new ChordMajorAugmented();
 
-        public static Chord MinorDiminished
-            => Create(ChordAlias.MinorDiminished);
+        public static ChordMinorDiminished MinorDiminished
+            => new ChordMinorDiminished();
 
-        public static Chord MajorSeventhMajor
-            => Create(ChordAlias.MajorSeventhMajor);
+        public static ChordMajorSeventhMajor MajorSeventhMajor
+            => new ChordMajorSeventhMajor();
 
-        public static Chord MajorSeventhMinor
-            => Create(ChordAlias.MajorSeventhMinor);
+        public static ChordMajorSeventhMinor MajorSeventhMinor
+            => new ChordMajorSeventhMinor();
 
-        public static Chord MinorSeventhMinor
-            => Create(ChordAlias.MinorSeventhMinor);
+        public static ChordMinorSeventhMinor MinorSeventhMinor
+            => new ChordMinorSeventhMinor();
 
-        public static Chord MinorFifthDiminishedSeventhMinor
-            => Create(ChordAlias.MinorFifthDiminishedSeventhMinor);
+        public static ChordMinorFifthDiminishedSeventhMinor MinorFifthDiminishedSeventhMinor
+            => new ChordMinorFifthDiminishedSeventhMinor();
 
-        public static Chord SuspendedFourthSeventhMinor
-            => Create(ChordAlias.SuspendedFourthSeventhMinor);
+        public static ChordSuspendedFourthSeventhMinor SuspendedFourthSeventhMinor
+            => new ChordSuspendedFourthSeventhMinor();
 
-        public static Chord MajorAugmentedSeventhMinor
-            => Create(ChordAlias.MajorAugmentedSeventhMinor);
+        public static ChordMajorAugmentedSeventhMinor MajorAugmentedSeventhMinor
+            => new ChordMajorAugmentedSeventhMinor();
 
-        public static Chord MinorDiminishedSeventhDiminished
-            => Create(ChordAlias.MinorDiminishedSeventhDiminished);
+        public static ChordMinorDiminishedSeventhDiminished MinorDiminishedSeventhDiminished
+            => new ChordMinorDiminishedSeventhDiminished();
 
-        public static Chord MinorSeventhMajor
-            => Create(ChordAlias.MinorSeventhMajor);
+        public static ChordMinorSeventhMajor MinorSeventhMajor
+            => new ChordMinorSeventhMajor();
 
-        public static Chord MajorNinthMajor
-            => Create(ChordAlias.MajorNinthMajor);
+        public static ChordMajorNinthMajor MajorNinthMajor
+            => new ChordMajorNinthMajor();
     }
 }

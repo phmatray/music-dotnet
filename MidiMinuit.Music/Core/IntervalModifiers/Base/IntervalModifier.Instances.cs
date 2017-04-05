@@ -2,19 +2,19 @@
 {
     public partial class IntervalModifier
     {
-        public static IntervalModifier Perfect
-            => Create(IntervalModifierAlias.Perfect);
+        public static IntervalModifierPerfect Perfect
+            => new IntervalModifierPerfect();
 
-        public static IntervalModifier Major
-            => Create(IntervalModifierAlias.Major);
+        public static IntervalModifierMajor Major
+            => new IntervalModifierMajor();
 
-        public static IntervalModifier Minor
-            => Create(IntervalModifierAlias.Minor);
+        public static IntervalModifierMinor Minor
+            => new IntervalModifierMinor();
 
-        public static IntervalModifier Augmented
-            => Create(IntervalModifierAlias.Augmented);
+        public static IntervalModifierAugmented Augmented
+            => new IntervalModifierAugmented();
 
-        public static IntervalModifier Diminished
-            => Create(IntervalModifierAlias.Diminished);
+        public static IntervalModifierDiminished Diminished
+            => new IntervalModifierDiminished();
     }
 }

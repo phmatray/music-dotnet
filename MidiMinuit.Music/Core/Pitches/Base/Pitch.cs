@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using MidiMinuit.Music.Core.Intervals;
 using MidiMinuit.Music.Core.StepAccidentals;
 using MidiMinuit.Music.Core.StepNames;
-using MidiMinuit.Music.Tmp;
+using MidiMinuit.Music.Core.Steps;
 
 namespace MidiMinuit.Music.Core.Pitches
 {
@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core.Pitches
     ///     http://programmers.stackexchange.com/questions/178817/oo-design-how-to-model-tonal-harmony
     /// </summary>
     public partial class Pitch
-        : Step, IComparable<Pitch>
+        : Step, IComparable<Pitch>, IEquatable<Pitch>
     {
         private static Dictionary<string, int> _pitches
             = StepName
@@ -604,6 +604,34 @@ namespace MidiMinuit.Music.Core.Pitches
             Auto,
             Sharps,
             Flats
+        }
+
+        public bool Equals(Pitch other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            var b = base.Equals(other) && MidiPitch == other.MidiPitch && Octave == other.Octave;
+            return b;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            var b = Equals((Pitch) obj);
+            return b;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hashCode = base.GetHashCode();
+                hashCode = (hashCode * 397) ^ MidiPitch;
+                hashCode = (hashCode * 397) ^ Octave;
+                return hashCode;
+            }
         }
     }
 }

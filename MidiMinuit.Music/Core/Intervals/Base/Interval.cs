@@ -1,14 +1,17 @@
-﻿namespace MidiMinuit.Music.Core.Intervals
+﻿
+namespace MidiMinuit.Music.Core.Intervals
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Common;
     using IntervalModifiers;
     using IntervalSteps;
     using Pitches;
     using Tools;
 
     public abstract partial class Interval
+        : IWikipedia
     {
         /* Possibilités d'évolution
          * --------------------------------------
@@ -51,15 +54,15 @@
 
         public abstract IntervalAlias Alias { get; }
 
+        public abstract IntervalSpanning Spanning { get; }
+
+        public abstract IntervalConsonance HarmonicConsonance { get; }
+
         public abstract int Semitones { get; }
 
         public abstract IntervalStep Step { get; }
 
         public abstract IntervalModifier Modifier { get; }
-
-        public abstract IntervalSpanning Spanning { get; }
-
-        public abstract IntervalConsonance HarmonicConsonance { get; }
 
         public abstract List<string> Names { get; }
 

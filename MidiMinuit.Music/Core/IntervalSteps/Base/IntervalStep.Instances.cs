@@ -2,28 +2,28 @@
 {
     public partial class IntervalStep
     {
-        public static IntervalStep Unison
-            => Create(IntervalStepAlias.Unison);
+        public static IntervalStepUnison Unison
+            => new IntervalStepUnison();
 
-        public static IntervalStep Second
-            => Create(IntervalStepAlias.Second);
+        public static IntervalStepSecond Second
+            => new IntervalStepSecond();
 
-        public static IntervalStep Third
-            => Create(IntervalStepAlias.Third);
+        public static IntervalStepThird Third
+            => new IntervalStepThird();
 
-        public static IntervalStep Fourth
-            => Create(IntervalStepAlias.Fourth);
+        public static IntervalStepFourth Fourth
+            => new IntervalStepFourth();
 
-        public static IntervalStep Fifth
-            => Create(IntervalStepAlias.Fifth);
+        public static IntervalStepFifth Fifth
+            => new IntervalStepFifth();
 
-        public static IntervalStep Sixth
-            => Create(IntervalStepAlias.Sixth);
+        public static IntervalStepSixth Sixth
+            => new IntervalStepSixth();
 
-        public static IntervalStep Seventh
-            => Create(IntervalStepAlias.Seventh);
+        public static IntervalStepSeventh Seventh
+            => new IntervalStepSeventh();
 
-        public static IntervalStep Octave
-            => Create(IntervalStepAlias.Octave);
+        public static IntervalStepOctave Octave
+            => new IntervalStepOctave();
     }
 }

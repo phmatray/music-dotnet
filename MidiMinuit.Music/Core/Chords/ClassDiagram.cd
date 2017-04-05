@@ -3,21 +3,21 @@
   <Class Name="MidiMinuit.Music.Core.Chords.Chord" Collapsed="true">
     <Position X="2.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAjAAAAAAIhAAAEAIAAAAQAAAAAAEAQAAAAAAAAEBA=</HashCode>
-      <FileName>Core\Chords\Base\Chord.Implicit.cs</FileName>
+      <HashCode>AJAjAoAAAQIhQAAEAYAAAAQAIAAAAEAQAAEoIIAAEDA=</HashCode>
+      <FileName>Core\Chords\Base\Chord.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MidiMinuit.Music.Core.Chords.ChordMajor" Collapsed="true">
     <Position X="1.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIgAAAEAIAAAAUAAAAAAAAAAAAAAAAAAJA=</HashCode>
+      <HashCode>AAAAAAAAAAIgAAQEAICAAAUAAAAAAAAAAAAAAAAAAJA=</HashCode>
       <FileName>Core\Chords\Sub\ChordMajor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MidiMinuit.Music.Core.Chords.ChordMinor" Collapsed="true">
     <Position X="3.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIgAAAEIIAAAAUAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAIgAAQEIICAAAUAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Core\Chords\Sub\ChordMinor.cs</FileName>
     </TypeIdentifier>
   </Class>

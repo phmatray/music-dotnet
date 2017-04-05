@@ -9,6 +9,15 @@ namespace MidiMinuit.Music.Core.Chords
     {
         private Pitch _key;
 
+        public ChordMinorFifthDiminishedSeventhMinor()
+        {
+        }
+
+        public ChordMinorFifthDiminishedSeventhMinor(Pitch key)
+        {
+            Key = key;
+        }
+
         public Pitch Key
         {
             get
@@ -43,6 +52,12 @@ namespace MidiMinuit.Music.Core.Chords
 
         public override string Name
             => $"{Fondamental}min7b5";
+
+        public ChordMinorFifthDiminishedSeventhMinor SetKey(Pitch key)
+        {
+            Key = key;
+            return this;
+        }
 
         public override string ToString()
             => Name;

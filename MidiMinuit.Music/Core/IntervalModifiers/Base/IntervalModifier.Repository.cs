@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.IntervalModifiers
 {
     public partial class IntervalModifier
     {
-        internal static List<IntervalModifier> CreateAll()
+        public static List<IntervalModifier> CreateAll()
         {
             return Enum.GetValues(typeof(IntervalModifierAlias))
                 .Cast<IntervalModifierAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.IntervalModifiers
                 .ToList();
         }
 
-        internal static IntervalModifier Create(IntervalModifierAlias modifier)
+        public static IntervalModifier Create(IntervalModifierAlias modifier)
         {
             switch (modifier)
             {

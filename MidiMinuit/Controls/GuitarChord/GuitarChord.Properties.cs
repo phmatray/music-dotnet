@@ -3,6 +3,7 @@ using MidiMinuit.Common;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using MidiMinuit.Music.Core.Chords;
+using MidiMinuit.Music.Core.Intervals;
 using MidiMinuit.Music.Core.Pitches;
 using MidiMinuit.Music.Core.StepNames;
 using MidiMinuit.Music.Instruments.GuitarTunings;
@@ -65,11 +66,13 @@ namespace MidiMinuit.Controls
         public static readonly DependencyProperty TuningNote6Property =
             DependencyProperty.Register(nameof(TuningNote6), typeof(string), typeof(GuitarChord), new PropertyMetadata("e"));
 
+        private static readonly Chord DefaultChord = new ChordMajor { Key = Pitch.C4 };
+
         /// <summary>
         /// Identifies the <see cref="Chord"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ChordProperty =
-            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(new ChordMajor(new Pitch(StepNameAlias.C))));
+            DependencyProperty.Register(nameof(Chord), typeof(Chord), typeof(GuitarChord), new PropertyMetadata(DefaultChord));
 
 
 

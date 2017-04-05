@@ -6,7 +6,7 @@ namespace MidiMinuit.Music.Core.StepAccidentals
 {
     public partial class StepAccidental
     {
-        internal static List<StepAccidental> CreateAll()
+        public static List<StepAccidental> CreateAll()
         {
             return Enum.GetValues(typeof(NoteAccidentalAlias))
                 .Cast<NoteAccidentalAlias>()
@@ -14,7 +14,7 @@ namespace MidiMinuit.Music.Core.StepAccidentals
                 .ToList();
         }
 
-        internal static StepAccidental Create(NoteAccidentalAlias accidental)
+        public static StepAccidental Create(NoteAccidentalAlias accidental)
         {
             switch (accidental)
             {
