@@ -1,27 +1,13 @@
 using System;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MidiMinuit.Music.Core.Chords;
 using MidiMinuit.Music.Core.Pitches;
-using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.UnitTestProject
 {
     [TestClass]
-    public class MusicContext_UnitTest
+    public class ChordMajor_UnitTest
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            var context = MusicContext.Intervals
-                .Where(x => x.Semitones == 5)
-                .ToList();
-
-            var count = context.Count;
-
-            Assert.AreEqual(2, count);
-        }
-
         [TestMethod]
         public void TestMethod2()
         {
@@ -31,7 +17,8 @@ namespace MidiMinuit.UnitTestProject
             var third = chordMajor.ThirdMajor.UpperPitch;
             var fifth = chordMajor.FifthPerfect.UpperPitch;
 
-            Assert.AreEqual(Pitch.C4, fond);
+            var expected = Pitch.C4;
+            Assert.AreEqual(expected, fond);
             Assert.AreEqual(Pitch.E4, third);
             Assert.AreEqual(Pitch.G4, fifth);
         }

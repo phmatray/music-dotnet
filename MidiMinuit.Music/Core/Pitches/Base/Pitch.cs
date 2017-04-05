@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using MidiMinuit.Music.Common;
 using MidiMinuit.Music.Core.Intervals;
 using MidiMinuit.Music.Core.StepAccidentals;
 using MidiMinuit.Music.Core.StepNames;
@@ -15,7 +16,7 @@ namespace MidiMinuit.Music.Core.Pitches
     ///     http://programmers.stackexchange.com/questions/178817/oo-design-how-to-model-tonal-harmony
     /// </summary>
     public partial class Pitch
-        : Step, IComparable<Pitch>, IEquatable<Pitch>
+        : Step, IComparable<Pitch>
     {
         private static Dictionary<string, int> _pitches
             = StepName
@@ -223,12 +224,6 @@ namespace MidiMinuit.Music.Core.Pitches
         public static bool operator <=(Pitch p1, Pitch p2)
             => p1?.MidiPitch <= p2?.MidiPitch;
 
-        public static bool operator ==(Pitch p1, Pitch p2)
-            => p1?.MidiPitch == p2?.MidiPitch;
-
-        public static bool operator !=(Pitch p1, Pitch p2)
-            => p1?.MidiPitch != p2?.MidiPitch;
-
         public static bool operator >(Pitch p1, Pitch p2)
             => p1?.MidiPitch > p2?.MidiPitch;
 
@@ -238,8 +233,8 @@ namespace MidiMinuit.Music.Core.Pitches
         public static Pitch operator +(Pitch pitch, Interval interval)
             => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
 
-        ////public static Pitch operator -(Pitch pitch, Interval interval)
-        ////    => pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto);
+        //public static Pitch operator -(Pitch pitch, Interval interval)
+        //    => pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto);
 
         public static int CalculateMidiPitch(string stepName, int alter, int octave)
         {
@@ -330,15 +325,13 @@ namespace MidiMinuit.Music.Core.Pitches
 
         public static Pitch FromStep(Step step, int octaveNumber = 4)
         {
-            var pitch = new Pitch();
-            var stepName = step.Name;
-            pitch.Name = stepName;
-            var alter = step.Accidental;
-            pitch.Accidental = alter;
-            var num1 = _pitches[step.Name.Name] + step.Accidental.Value + ((octaveNumber - 4) * 12);
-            pitch.MidiPitch = num1;
-            var num2 = octaveNumber;
-            pitch.Octave = num2;
+            var pitch = new Pitch
+            {
+                Name = step.Name,
+                Accidental = step.Accidental,
+                MidiPitch = _pitches[step.Name.Name] + step.Accidental.Value + ((octaveNumber - 4) * 12),
+                Octave = octaveNumber
+            };
             return pitch;
         }
 
@@ -586,7 +579,7 @@ namespace MidiMinuit.Music.Core.Pitches
             => FromPitch(this);
 
         public override string ToString()
-            => $"{Name}{Accidental.SignAscii}";
+            => $"{Name}{Accidental.SignAscii}{Octave}";
 
         public Pitch Translate(Interval interval, MidiPitchTranslationMode mode)
         {
@@ -604,34 +597,6 @@ namespace MidiMinuit.Music.Core.Pitches
             Auto,
             Sharps,
             Flats
-        }
-
-        public bool Equals(Pitch other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
-            var b = base.Equals(other) && MidiPitch == other.MidiPitch && Octave == other.Octave;
-            return b;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            var b = Equals((Pitch) obj);
-            return b;
-        }
-
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                int hashCode = base.GetHashCode();
-                hashCode = (hashCode * 397) ^ MidiPitch;
-                hashCode = (hashCode * 397) ^ Octave;
-                return hashCode;
-            }
         }
     }
 }

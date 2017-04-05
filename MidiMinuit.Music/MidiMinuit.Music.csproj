@@ -44,14 +44,20 @@
     <Compile Include="Common\IWikipedia.cs" />
     <Compile Include="Core\Chords\Base\Chord.Implicit.cs" />
     <Compile Include="Core\Chords\Base\Chord.Instances.cs" />
+    <Compile Include="Core\Chords\Base\Chord.Equatable.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.Equatable.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Instances.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Implicit.cs" />
+    <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Equatable.cs" />
     <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Instances.cs" />
     <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Implicit.cs" />
+    <Compile Include="Core\IntervalSteps\Base\IntervalStep.Equatable.cs" />
     <Compile Include="Core\IntervalSteps\Base\IntervalStep.Instances.cs" />
     <Compile Include="Core\IntervalSteps\Base\IntervalStep.Implicit.cs" />
+    <Compile Include="Core\Intervals\Base\Interval.Equatable.cs" />
     <Compile Include="Core\Intervals\Base\Interval.Instances.cs" />
     <Compile Include="Core\Intervals\Base\Interval.Implicit.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.Equatable.cs" />
     <Compile Include="Core\Pitches\Base\Pitch.Instances.cs" />
     <Compile Include="Core\Pitches\Base\Pitch.Implicit.cs" />
     <Compile Include="Core\Pitches\Base\Pitch.Repository.cs" />
@@ -153,8 +159,10 @@
     <Compile Include="Core\Intervals\Sub\IntervalPerfectOctave.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalPerfectUnison.cs" />
     <Compile Include="Core\Pitches\Enum\PitchAlias.cs" />
+    <Compile Include="Core\Scales\Base\Scale.Equatable.cs" />
     <Compile Include="Core\Scales\Base\Scale.Instances.cs" />
     <Compile Include="Core\Scales\Base\Scale.Implicit.cs" />
+    <Compile Include="Core\StepAccidentals\Base\StepAccidental.Equatable.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Instances.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Implicit.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.cs" />
@@ -169,6 +177,7 @@
     <Compile Include="Core\StepAccidentals\Sub\StepAccidentalSharp.cs" />
     <Compile Include="Core\StepAccidentals\Sub\StepAccidentalTripleFlat.cs" />
     <Compile Include="Core\StepAccidentals\Sub\StepAccidentalTripleSharp.cs" />
+    <Compile Include="Core\StepNames\Base\StepName.Equatable.cs" />
     <Compile Include="Core\StepNames\Base\StepName.Instances.cs" />
     <Compile Include="Core\StepNames\Base\StepName.cs" />
     <Compile Include="Core\StepNames\Base\StepName.Repository.cs" />
@@ -180,8 +189,12 @@
     <Compile Include="Core\StepNames\Sub\StepNameE.cs" />
     <Compile Include="Core\StepNames\Sub\StepNameF.cs" />
     <Compile Include="Core\StepNames\Sub\StepNameG.cs" />
-    <Compile Include="Core\Pitches\Base\IHasPitch.cs" />
+    <Compile Include="Common\IHasPitch.cs" />
     <Compile Include="Core\Pitches\Base\Pitch.cs" />
+    <Compile Include="Core\Steps\Base\Step.Equatable.cs" />
+    <Compile Include="Core\Steps\Base\Step.Repository.cs" />
+    <Compile Include="Core\Steps\Base\Step.Instances.cs" />
+    <Compile Include="Core\Steps\Base\Step.Implicit.cs" />
     <Compile Include="Core\Steps\Base\Step.cs" />
     <Compile Include="Core\Pitches\Base\TunedPitch.cs" />
     <Compile Include="Core\Pitches\Extensions\PitchExtensions.cs" />
@@ -207,6 +220,8 @@
     <Compile Include="Core\Scales\Sub\ScaleModePhrygian.cs" />
     <Compile Include="Core\Scales\Sub\ScalePentatonicMajor.cs" />
     <Compile Include="Core\Scales\Sub\ScalePentatonicMinor.cs" />
+    <Compile Include="Core\Steps\Enum\StepAlias.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Equatable.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Instances.cs" />
     <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Implicit.cs" />
     <Compile Include="Tmp\MusicContextTest.cs" />
@@ -267,7 +282,6 @@
     <Compile Include="Tools\UsefulMathHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\Steps\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Base\" />
     <Folder Include="Instruments\GuitarPositions\Enum\" />
     <Folder Include="Instruments\GuitarPositions\Extensions\" />

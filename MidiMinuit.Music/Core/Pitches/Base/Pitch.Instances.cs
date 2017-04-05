@@ -3,315 +3,315 @@
     public partial class Pitch
     {
         public static Pitch A1
-            => FromStep(A, 1);
+            => Create(PitchAlias.A1);
 
         public static Pitch A2
-            => FromStep(A, 2);
+            => Create(PitchAlias.A2);
 
         public static Pitch A3
-            => FromStep(A, 3);
+            => Create(PitchAlias.A3);
 
         public static Pitch A4
-            => FromStep(A, 4);
+            => Create(PitchAlias.A4);
 
         public static Pitch A5
-            => FromStep(A, 5);
+            => Create(PitchAlias.A5);
 
         public static Pitch A6
-            => FromStep(A, 6);
+            => Create(PitchAlias.A6);
 
         public static Pitch Ab1
-            => FromStep(Ab, 1);
+            => Create(PitchAlias.Ab1);
 
         public static Pitch Ab2
-            => FromStep(Ab, 2);
+            => Create(PitchAlias.Ab2);
 
         public static Pitch Ab3
-            => FromStep(Ab, 3);
+            => Create(PitchAlias.Ab3);
 
         public static Pitch ASharp1
-            => FromStep(ASharp, 1);
+            => Create(PitchAlias.ASharp1);
 
         public static Pitch ASharp2
-            => FromStep(ASharp, 2);
+            => Create(PitchAlias.ASharp2);
 
         public static Pitch ASharp3
-            => FromStep(ASharp, 3);
+            => Create(PitchAlias.ASharp3);
 
         public static Pitch ASharp4
-            => FromStep(ASharp, 4);
+            => Create(PitchAlias.ASharp4);
 
         public static Pitch ASharp5
-            => FromStep(ASharp, 5);
+            => Create(PitchAlias.ASharp5);
 
         public static Pitch ASharp6
-            => FromStep(ASharp, 6);
+            => Create(PitchAlias.ASharp6);
 
         public static Pitch B1
-            => FromStep(B, 1);
+            => Create(PitchAlias.B1);
 
         public static Pitch B2
-            => FromStep(B, 2);
+            => Create(PitchAlias.B2);
 
         public static Pitch B3
-            => FromStep(B, 3);
+            => Create(PitchAlias.B3);
 
         public static Pitch B4
-            => FromStep(B, 4);
+            => Create(PitchAlias.B4);
 
         public static Pitch B5
-            => FromStep(B, 5);
+            => Create(PitchAlias.B5);
 
         public static Pitch B6
-            => FromStep(B, 6);
+            => Create(PitchAlias.B6);
 
         public static Pitch Bb1
-            => FromStep(Bb, 1);
+            => Create(PitchAlias.Bb1);
 
         public static Pitch Bb2
-            => FromStep(Bb, 2);
+            => Create(PitchAlias.Bb2);
 
         public static Pitch Bb3
-            => FromStep(Bb, 3);
+            => Create(PitchAlias.Bb3);
 
         public static Pitch BSharp1
-            => FromStep(BSharp, 1);
+            => Create(PitchAlias.BSharp1);
 
         public static Pitch BSharp2
-            => FromStep(BSharp, 2);
+            => Create(PitchAlias.BSharp2);
 
         public static Pitch BSharp3
-            => FromStep(BSharp, 3);
+            => Create(PitchAlias.BSharp3);
 
         public static Pitch BSharp4
-            => FromStep(BSharp, 4);
+            => Create(PitchAlias.BSharp4);
 
         public static Pitch BSharp5
-            => FromStep(BSharp, 5);
+            => Create(PitchAlias.BSharp5);
 
         public static Pitch BSharp6
-            => FromStep(BSharp, 6);
+            => Create(PitchAlias.BSharp6);
 
         public static Pitch C1
-            => FromStep(C, 1);
+            => Create(PitchAlias.C1);
 
         public static Pitch C2
-            => FromStep(C, 2);
+            => Create(PitchAlias.C2);
 
         public static Pitch C3
-            => FromStep(C, 3);
+            => Create(PitchAlias.C3);
 
         public static Pitch C4
-            => FromStep(C, 4);
+            => Create(PitchAlias.C4);
 
         public static Pitch C5
-            => FromStep(C, 5);
+            => Create(PitchAlias.C5);
 
         public static Pitch C6
-            => FromStep(C, 6);
+            => Create(PitchAlias.C6);
 
         public static Pitch C7
-            => FromStep(C, 7);
+            => Create(PitchAlias.C7);
 
         public static Pitch Cb1
-            => FromStep(Cb, 1);
+            => Create(PitchAlias.Cb1);
 
         public static Pitch Cb2
-            => FromStep(Cb, 2);
+            => Create(PitchAlias.Cb2);
 
         public static Pitch Cb3
-            => FromStep(Cb, 3);
+            => Create(PitchAlias.Cb3);
 
         public static Pitch CSharp1
-            => FromStep(CSharp, 1);
+            => Create(PitchAlias.CSharp1);
 
         public static Pitch CSharp2
-            => FromStep(CSharp, 2);
+            => Create(PitchAlias.CSharp2);
 
         public static Pitch CSharp3
-            => FromStep(CSharp, 3);
+            => Create(PitchAlias.CSharp3);
 
         public static Pitch CSharp4
-            => FromStep(CSharp, 4);
+            => Create(PitchAlias.CSharp4);
 
         public static Pitch CSharp5
-            => FromStep(CSharp, 5);
+            => Create(PitchAlias.CSharp5);
 
         public static Pitch CSharp6
-            => FromStep(CSharp, 6);
+            => Create(PitchAlias.CSharp6);
 
         public static Pitch CSharp7
-            => FromStep(CSharp, 7);
+            => Create(PitchAlias.CSharp7);
 
         public static Pitch D1
-            => FromStep(D, 1);
+            => Create(PitchAlias.D1);
 
         public static Pitch D2
-            => FromStep(D, 2);
+            => Create(PitchAlias.D2);
 
         public static Pitch D3
-            => FromStep(D, 3);
+            => Create(PitchAlias.D3);
 
         public static Pitch D4
-            => FromStep(D, 4);
+            => Create(PitchAlias.D4);
 
         public static Pitch D5
-            => FromStep(D, 5);
+            => Create(PitchAlias.D5);
 
         public static Pitch D6
-            => FromStep(D, 6);
+            => Create(PitchAlias.D6);
 
         public static Pitch Db1
-            => FromStep(Db, 1);
+            => Create(PitchAlias.Db1);
 
         public static Pitch Db2
-            => FromStep(Db, 2);
+            => Create(PitchAlias.Db2);
 
         public static Pitch Db3
-            => FromStep(Db, 3);
+            => Create(PitchAlias.Db3);
 
         public static Pitch DSharp1
-            => FromStep(DSharp, 1);
+            => Create(PitchAlias.DSharp1);
 
         public static Pitch DSharp2
-            => FromStep(DSharp, 2);
+            => Create(PitchAlias.DSharp2);
 
         public static Pitch DSharp3
-            => FromStep(DSharp, 3);
+            => Create(PitchAlias.DSharp3);
 
         public static Pitch DSharp4
-            => FromStep(DSharp, 4);
+            => Create(PitchAlias.DSharp4);
 
         public static Pitch DSharp5
-            => FromStep(DSharp, 5);
+            => Create(PitchAlias.DSharp5);
 
         public static Pitch DSharp6
-            => FromStep(DSharp, 6);
+            => Create(PitchAlias.DSharp6);
 
         public static Pitch E1
-            => FromStep(E, 1);
+            => Create(PitchAlias.E1);
 
         public static Pitch E2
-            => FromStep(E, 2);
+            => Create(PitchAlias.E2);
 
         public static Pitch E3
-            => FromStep(E, 3);
+            => Create(PitchAlias.E3);
 
         public static Pitch E4
-            => FromStep(E, 4);
+            => Create(PitchAlias.E4);
 
         public static Pitch E5
-            => FromStep(E, 5);
+            => Create(PitchAlias.E5);
 
         public static Pitch E6
-            => FromStep(E, 6);
+            => Create(PitchAlias.E6);
 
         public static Pitch Eb1
-            => FromStep(Eb, 1);
+            => Create(PitchAlias.Eb1);
 
         public static Pitch Eb2
-            => FromStep(Eb, 2);
+            => Create(PitchAlias.Eb2);
 
         public static Pitch Eb3
-            => FromStep(Eb, 3);
+            => Create(PitchAlias.Eb3);
 
         public static Pitch ESharp4
-            => FromStep(ESharp, 4);
+            => Create(PitchAlias.ESharp4);
 
         public static Pitch ESharp5
-            => FromStep(ESharp, 5);
+            => Create(PitchAlias.ESharp5);
 
         public static Pitch ESharp6
-            => FromStep(ESharp, 6);
+            => Create(PitchAlias.ESharp6);
 
         public static Pitch F1
-            => FromStep(F, 1);
+            => Create(PitchAlias.F1);
 
         public static Pitch F2
-            => FromStep(F, 2);
+            => Create(PitchAlias.F2);
 
         public static Pitch F3
-            => FromStep(F, 3);
+            => Create(PitchAlias.F3);
 
         public static Pitch F4
-            => FromStep(F, 4);
+            => Create(PitchAlias.F4);
 
         public static Pitch F5
-            => FromStep(F, 5);
+            => Create(PitchAlias.F5);
 
         public static Pitch F6
-            => FromStep(F, 6);
+            => Create(PitchAlias.F6);
 
         public static Pitch Fb1
-            => FromStep(Fb, 1);
+            => Create(PitchAlias.Fb1);
 
         public static Pitch Fb2
-            => FromStep(Fb, 2);
+            => Create(PitchAlias.Fb2);
 
         public static Pitch Fb3
-            => FromStep(Fb, 3);
+            => Create(PitchAlias.Fb3);
 
         public static Pitch FSharp1
-            => FromStep(FSharp, 1);
+            => Create(PitchAlias.FSharp1);
 
         public static Pitch FSharp2
-            => FromStep(FSharp, 2);
+            => Create(PitchAlias.FSharp2);
 
         public static Pitch FSharp3
-            => FromStep(FSharp, 3);
+            => Create(PitchAlias.FSharp3);
 
         public static Pitch FSharp4
-            => FromStep(FSharp, 4);
+            => Create(PitchAlias.FSharp4);
 
         public static Pitch FSharp5
-            => FromStep(FSharp, 5);
+            => Create(PitchAlias.FSharp5);
 
         public static Pitch FSharp6
-            => FromStep(FSharp, 6);
+            => Create(PitchAlias.FSharp6);
 
         public static Pitch G1
-            => FromStep(G, 1);
+            => Create(PitchAlias.G1);
 
         public static Pitch G2
-            => FromStep(G, 2);
+            => Create(PitchAlias.G2);
 
         public static Pitch G3
-            => FromStep(G, 3);
+            => Create(PitchAlias.G3);
 
         public static Pitch G4
-            => FromStep(G, 4);
+            => Create(PitchAlias.G4);
 
         public static Pitch G5
-            => FromStep(G, 5);
+            => Create(PitchAlias.G5);
 
         public static Pitch G6
-            => FromStep(G, 6);
+            => Create(PitchAlias.G6);
 
         public static Pitch Gb1
-            => FromStep(Gb, 1);
+            => Create(PitchAlias.Gb1);
 
         public static Pitch Gb2
-            => FromStep(Gb, 2);
+            => Create(PitchAlias.Gb2);
 
         public static Pitch Gb3
-            => FromStep(Gb, 3);
+            => Create(PitchAlias.Gb3);
 
         public static Pitch GSharp1
-            => FromStep(GSharp, 1);
+            => Create(PitchAlias.GSharp1);
 
         public static Pitch GSharp2
-            => FromStep(GSharp, 2);
+            => Create(PitchAlias.GSharp2);
 
         public static Pitch GSharp3
-            => FromStep(GSharp, 3);
+            => Create(PitchAlias.GSharp3);
 
         public static Pitch GSharp4
-            => FromStep(GSharp, 4);
+            => Create(PitchAlias.GSharp4);
 
         public static Pitch GSharp5
-            => FromStep(GSharp, 5);
+            => Create(PitchAlias.GSharp5);
 
         public static Pitch GSharp6
-            => FromStep(GSharp, 6);
+            => Create(PitchAlias.GSharp6);
     }
 }

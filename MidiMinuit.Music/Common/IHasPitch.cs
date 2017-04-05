@@ -1,4 +1,6 @@
-﻿namespace MidiMinuit.Music.Core.Pitches
+﻿using MidiMinuit.Music.Core.Pitches;
+
+namespace MidiMinuit.Music.Common
 {
     public interface IHasPitch
     {
