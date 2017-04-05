@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.Intervals
+﻿namespace MidiMinuit.Music.Core
 {
     /// <summary>
     /// Consonance and dissonance are relative terms that refer to the stability,

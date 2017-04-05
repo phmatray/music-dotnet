@@ -1,8 +1,7 @@
 ﻿using System.Linq;
-using MidiMinuit.Music.Tmp;
 using MidiMinuit.Music.Tools;
 
-namespace MidiMinuit.Music.Core.StepNames
+namespace MidiMinuit.Music.Core
 {
     public partial class StepName
     {

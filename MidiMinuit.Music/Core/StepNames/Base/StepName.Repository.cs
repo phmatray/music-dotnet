@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MidiMinuit.Music.Core.StepNames
+namespace MidiMinuit.Music.Core
 {
     public partial class StepName
     {

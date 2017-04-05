@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace MidiMinuit.Music.Core.Pitches
+namespace MidiMinuit.Music.Core
 {
     public partial class Pitch
     {

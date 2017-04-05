@@ -1,4 +1,4 @@
-﻿using MidiMinuit.Music.Core.Pitches;
+﻿using MidiMinuit.Music.Core;
 
 namespace MidiMinuit.Music.Common
 {

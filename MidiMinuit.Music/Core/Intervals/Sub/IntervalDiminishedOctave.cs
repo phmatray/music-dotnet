@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using MidiMinuit.Music.Core.IntervalModifiers;
-using MidiMinuit.Music.Core.IntervalSteps;
-using MidiMinuit.Music.Core.Pitches;
 
-namespace MidiMinuit.Music.Core.Intervals
+namespace MidiMinuit.Music.Core
 {
     public class IntervalDiminishedOctave
         : Interval

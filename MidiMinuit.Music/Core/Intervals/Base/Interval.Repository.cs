@@ -1,9 +1,9 @@
-﻿namespace MidiMinuit.Music.Core.Intervals
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace MidiMinuit.Music.Core
+{
     public partial class Interval
     {
         public static List<Interval> CreateAll()

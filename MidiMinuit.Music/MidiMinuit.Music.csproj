@@ -168,7 +168,7 @@
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Implicit.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Repository.cs" />
-    <Compile Include="Core\StepAccidentals\Enum\NoteAccidentalAlias.cs" />
+    <Compile Include="Core\StepAccidentals\Enum\StepAccidentalAlias.cs" />
     <Compile Include="Core\StepAccidentals\Sub\StepAccidentalDoubleFlat.cs" />
     <Compile Include="Core\StepAccidentals\Sub\StepAccidentalDoubleSharp.cs" />
     <Compile Include="Core\StepAccidentals\Sub\StepAccidentalFlat.cs" />

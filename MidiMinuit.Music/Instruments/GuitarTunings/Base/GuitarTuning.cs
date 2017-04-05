@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MidiMinuit.Music.Core.Pitches;
+using MidiMinuit.Music.Core;
 
-namespace MidiMinuit.Music.Instruments.GuitarTunings
+namespace MidiMinuit.Music.Instruments
 {
     public abstract partial class GuitarTuning
     {

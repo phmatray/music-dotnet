@@ -1,15 +1,12 @@
 ﻿
-namespace MidiMinuit.Music.Core.Intervals
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Common;
-    using IntervalModifiers;
-    using IntervalSteps;
-    using Pitches;
-    using Tools;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using MidiMinuit.Music.Common;
+using MidiMinuit.Music.Tools;
 
+namespace MidiMinuit.Music.Core
+{
     public abstract partial class Interval
         : IWikipedia
     {

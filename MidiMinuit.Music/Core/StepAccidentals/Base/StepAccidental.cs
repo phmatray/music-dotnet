@@ -1,8 +1,8 @@
-﻿namespace MidiMinuit.Music.Core.StepAccidentals
+﻿namespace MidiMinuit.Music.Core
 {
     public abstract partial class StepAccidental
     {
-        public abstract NoteAccidentalAlias Alias { get; }
+        public abstract StepAccidentalAlias Alias { get; }
 
         public abstract int Value { get; }
 

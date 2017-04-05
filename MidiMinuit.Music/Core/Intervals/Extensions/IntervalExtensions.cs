@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MidiMinuit.Music.Core.Intervals
+namespace MidiMinuit.Music.Core
 {
     public static class IntervalExtensions
     {

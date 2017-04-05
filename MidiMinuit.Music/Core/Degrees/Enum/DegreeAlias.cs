@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.Degrees
+﻿namespace MidiMinuit.Music.Core
 {
     // https://en.wikipedia.org/wiki/Degree_(music)
 

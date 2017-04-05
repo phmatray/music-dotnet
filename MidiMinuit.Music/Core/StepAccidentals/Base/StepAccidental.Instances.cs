@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.StepAccidentals
+﻿namespace MidiMinuit.Music.Core
 {
     public partial class StepAccidental
     {

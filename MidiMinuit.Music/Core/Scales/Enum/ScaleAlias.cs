@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.Scales
+﻿namespace MidiMinuit.Music.Core
 {
     public enum ScaleAlias
     {

@@ -1,10 +1,5 @@
-﻿using MidiMinuit.Music.Core.StepAccidentals;
-using MidiMinuit.Music.Core.StepNames;
-
-namespace MidiMinuit.Music.Core.Pitches
+﻿namespace MidiMinuit.Music.Core
 {
-    using Intervals;
-
     public static class PitchExtensions
     {
         public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)

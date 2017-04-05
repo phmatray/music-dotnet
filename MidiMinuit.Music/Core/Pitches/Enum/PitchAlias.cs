@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.Pitches
+﻿namespace MidiMinuit.Music.Core
 {
     public enum PitchAlias
     {

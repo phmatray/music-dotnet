@@ -1,7 +1,4 @@
-﻿using MidiMinuit.Music.Core.Pitches;
-using MidiMinuit.Music.Core.StepNames;
-
-namespace MidiMinuit.Music.Core.Degrees
+﻿namespace MidiMinuit.Music.Core
 {
     public class Degree6 : Degree
     {

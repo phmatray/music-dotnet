@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MidiMinuit.Music.Core.Chords
+namespace MidiMinuit.Music.Core
 {
     public partial class Chord
         : IEquatable<Chord>

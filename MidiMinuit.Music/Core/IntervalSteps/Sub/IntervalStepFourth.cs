@@ -1,4 +1,4 @@
-namespace MidiMinuit.Music.Core.IntervalSteps
+namespace MidiMinuit.Music.Core
 {
     public class IntervalStepFourth
         : IntervalStep

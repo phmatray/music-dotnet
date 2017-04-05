@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MidiMinuit.Music.Core.Degrees
+namespace MidiMinuit.Music.Core
 {
     public partial class Degree
         : IEquatable<Degree>

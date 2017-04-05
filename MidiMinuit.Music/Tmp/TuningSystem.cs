@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using MidiMinuit.Music.Core.Scales;
 
 namespace MidiMinuit.Music.Core.Tuning
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MidiMinuit.Music.Core.IntervalSteps
+namespace MidiMinuit.Music.Core
 {
     public partial class IntervalStep
         : IEquatable<IntervalStep>

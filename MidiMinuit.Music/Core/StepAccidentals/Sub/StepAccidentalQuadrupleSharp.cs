@@ -1,10 +1,10 @@
-﻿namespace MidiMinuit.Music.Core.StepAccidentals
+﻿namespace MidiMinuit.Music.Core
 {
     public class StepAccidentalQuadrupleSharp
         : StepAccidental
     {
-        public override NoteAccidentalAlias Alias { get; }
-            = NoteAccidentalAlias.QuadrupleSharp;
+        public override StepAccidentalAlias Alias { get; }
+            = StepAccidentalAlias.QuadrupleSharp;
 
         public override int Value { get; }
             = 4;

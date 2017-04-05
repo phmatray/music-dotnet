@@ -1,6 +1,6 @@
-﻿using MidiMinuit.Music.Core.Pitches;
+﻿using MidiMinuit.Music.Core;
 
-namespace MidiMinuit.Music.Instruments.GuitarTunings
+namespace MidiMinuit.Music.Instruments
 {
     public class GuitarString
     {

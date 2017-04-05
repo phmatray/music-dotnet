@@ -1,5 +1,5 @@
 ﻿using System;
-using MidiMinuit.Music.Core.Pitches;
+using MidiMinuit.Music.Core;
 
 namespace MidiMinuit.Cli
 {

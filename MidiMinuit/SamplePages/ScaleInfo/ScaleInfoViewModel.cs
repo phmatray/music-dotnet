@@ -1,4 +1,4 @@
-﻿using MidiMinuit.Music.Core.Scales;
+﻿using MidiMinuit.Music.Core;
 
 namespace MidiMinuit.SamplePages.ScaleInfo
 {

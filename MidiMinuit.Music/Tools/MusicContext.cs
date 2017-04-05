@@ -1,14 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using MidiMinuit.Music.Core.Chords;
-using MidiMinuit.Music.Core.Degrees;
-using MidiMinuit.Music.Core.IntervalModifiers;
-using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.IntervalSteps;
-using MidiMinuit.Music.Core.Pitches;
-using MidiMinuit.Music.Core.Scales;
-using MidiMinuit.Music.Core.StepAccidentals;
-using MidiMinuit.Music.Core.StepNames;
-using MidiMinuit.Music.Instruments.GuitarTunings;
+using MidiMinuit.Music.Core;
+using MidiMinuit.Music.Instruments;
 
 namespace MidiMinuit.Music.Tools
 {

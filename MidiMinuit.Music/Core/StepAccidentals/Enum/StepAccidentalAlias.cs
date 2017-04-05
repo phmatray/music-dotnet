@@ -1,6 +1,6 @@
-namespace MidiMinuit.Music.Core.StepAccidentals
+namespace MidiMinuit.Music.Core
 {
-    public enum NoteAccidentalAlias
+    public enum StepAccidentalAlias
     {
         Natural,
         Flat,

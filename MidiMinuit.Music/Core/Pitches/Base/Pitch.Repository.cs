@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MidiMinuit.Music.Core.Pitches
+namespace MidiMinuit.Music.Core
 {
     public partial class Pitch
     {

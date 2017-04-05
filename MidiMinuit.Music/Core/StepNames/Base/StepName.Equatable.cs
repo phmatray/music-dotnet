@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MidiMinuit.Music.Core.StepNames
+namespace MidiMinuit.Music.Core
 {
     public partial class StepName
         : IEquatable<StepName>

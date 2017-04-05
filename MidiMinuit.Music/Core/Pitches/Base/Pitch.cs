@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using MidiMinuit.Music.Common;
-using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.StepAccidentals;
-using MidiMinuit.Music.Core.StepNames;
-using MidiMinuit.Music.Core.Steps;
 
-namespace MidiMinuit.Music.Core.Pitches
+namespace MidiMinuit.Music.Core
 {
     /// <summary>
     ///     Note Pitch (hauteur).
@@ -35,7 +31,7 @@ namespace MidiMinuit.Music.Core.Pitches
         /// <param name="name">The name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
         /// <param name="octaveNumber">The octave of the note.</param>
-        public Pitch(StepNameAlias name, NoteAccidentalAlias accidental = NoteAccidentalAlias.Flat, int octaveNumber = 4)
+        public Pitch(StepNameAlias name, StepAccidentalAlias accidental = StepAccidentalAlias.Flat, int octaveNumber = 4)
         {
             Name = name;
             Accidental = accidental;

@@ -1,15 +1,32 @@
-﻿using System;
-using MidiMinuit.Music.Core.Pitches;
-using MidiMinuit.Music.Core.StepAccidentals;
-using MidiMinuit.Music.Core.StepNames;
-
-namespace MidiMinuit.Music.Core.Steps
+﻿namespace MidiMinuit.Music.Core
 {
     public partial class Step
     {
         public StepName Name { get; set; }
 
         public StepAccidental Accidental { get; set; }
+
+        public Step(string name, int accidentalValue)
+        {
+            Name = name;
+            Accidental = accidentalValue;
+        }
+
+        public Step(StepNameAlias name, StepAccidentalAlias accidental = StepAccidentalAlias.Natural)
+        {
+            Name = name;
+            Accidental = accidental;
+        }
+
+        public Step(string s)
+            : this((Step)s)
+        {
+        }
+
+        public Step(Step step)
+            : this(step.Name, step.Accidental)
+        {
+        }
 
         protected Step()
         {

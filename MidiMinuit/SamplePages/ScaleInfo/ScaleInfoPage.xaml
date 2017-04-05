@@ -6,11 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    xmlns:scales="using:MidiMinuit.Music.Core.Scales"
+    xmlns:core="using:MidiMinuit.Music.Core"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="ScalesTemplate" x:DataType="scales:Scale" >
+        <DataTemplate x:Key="ScalesTemplate" x:DataType="core:Scale" >
             <StackPanel>
                 <TextBlock Text="{x:Bind Name}"/>
                 <TextBlock Text="{x:Bind Details}"/>

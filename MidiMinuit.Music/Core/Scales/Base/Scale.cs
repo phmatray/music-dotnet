@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using MidiMinuit.Music.Core.Intervals;
 
-namespace MidiMinuit.Music.Core.Scales
+namespace MidiMinuit.Music.Core
 {
     /*
      * Une gamme est l'application d'un mode. Par exemple la gamme de Sol majeur est l'application du mode majeur avec Sol comme note  fondamentale (Sol La Si Do Re Mi Fa#).

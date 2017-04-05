@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.IntervalModifiers
+﻿namespace MidiMinuit.Music.Core
 {
     public enum IntervalModifierAlias
     {

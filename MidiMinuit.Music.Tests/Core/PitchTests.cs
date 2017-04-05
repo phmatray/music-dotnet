@@ -1,11 +1,8 @@
-namespace MidiMinuit.UnitTestProject
-{
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Music.Core.Pitches;
-    using Music.Core.StepAccidentals;
-    using Music.Core.StepNames;
-    using Music.Core.Steps;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MidiMinuit.Music.Core;
 
+namespace MidiMinuit.Music.Tests
+{
     [TestClass]
     public class PitchTests
     {
@@ -45,7 +42,7 @@ namespace MidiMinuit.UnitTestProject
         [TestMethod]
         public void Pitch_Ctor2()
         {
-            var pitch = new Pitch(StepNameAlias.D, NoteAccidentalAlias.DoubleFlat, 3);
+            var pitch = new Pitch(StepNameAlias.D, StepAccidentalAlias.DoubleFlat, 3);
 
             Assert.AreEqual(StepName.D, pitch.Name);
             Assert.AreEqual(StepAccidental.DoubleFlat, pitch.Accidental);
@@ -86,6 +83,14 @@ namespace MidiMinuit.UnitTestProject
             Assert.AreEqual(StepAccidental.Natural, pitch.Accidental);
             Assert.AreEqual(4, pitch.Octave);
             Assert.AreEqual(64, pitch.MidiPitch);
+        }
+
+        [TestMethod]
+        public void PitchToStringCb2()
+        {
+            Pitch pitch = Pitch.Cb2;
+            string expectedResult = pitch.ToString();
+            Assert.AreEqual("Cb2", expectedResult);
         }
     }
 }

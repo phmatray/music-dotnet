@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.Pitches;
 
-namespace MidiMinuit.Music.Core.Chords
+namespace MidiMinuit.Music.Core
 {
     public class ChordFifth
         : Chord

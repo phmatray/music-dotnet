@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MidiMinuit.Music.Core.StepAccidentals;
-using MidiMinuit.Music.Core.StepNames;
 
-namespace MidiMinuit.Music.Core.Steps
+namespace MidiMinuit.Music.Core
 {
     public partial class Step
     {

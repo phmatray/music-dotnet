@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MidiMinuit.Music.Core.Pitches
+namespace MidiMinuit.Music.Core
 {
     public partial class Pitch
         : IEquatable<Pitch>

@@ -6,11 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    xmlns:degrees="using:MidiMinuit.Music.Core.Degrees"
+    xmlns:core="using:MidiMinuit.Music.Core"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="DegreesTemplate" x:DataType="degrees:Degree" >
+        <DataTemplate x:Key="DegreesTemplate" x:DataType="core:Degree" >
             <StackPanel>
                 <TextBlock Text="{x:Bind Alias}"/>
                 <TextBlock Text="{x:Bind DiatonicFunction}"/>

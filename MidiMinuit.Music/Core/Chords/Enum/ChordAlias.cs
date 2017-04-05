@@ -1,4 +1,4 @@
-namespace MidiMinuit.Music.Core.Chords
+namespace MidiMinuit.Music.Core
 {
     public enum ChordAlias
     {

@@ -1,4 +1,4 @@
-﻿namespace MidiMinuit.Music.Core.StepNames
+﻿namespace MidiMinuit.Music.Core
 {
     public abstract partial class StepName
     {

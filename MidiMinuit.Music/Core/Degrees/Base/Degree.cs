@@ -1,6 +1,4 @@
-﻿using MidiMinuit.Music.Core.Pitches;
-
-namespace MidiMinuit.Music.Core.Degrees
+﻿namespace MidiMinuit.Music.Core
 {
     public abstract partial class Degree
     {

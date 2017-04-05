@@ -1,7 +1,6 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MidiMinuit.Music.Core.Chords;
-using MidiMinuit.Music.Core.Pitches;
+using MidiMinuit.Music.Core;
 
 namespace MidiMinuit.UnitTestProject
 {

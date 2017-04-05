@@ -1,7 +1,4 @@
-﻿using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.Pitches;
-using MidiMinuit.Music.Core.StepAccidentals;
-using MidiMinuit.Music.Core.StepNames;
+﻿using MidiMinuit.Music.Core;
 
 namespace MidiMinuit.SamplePages.IntervalCalculator
 {

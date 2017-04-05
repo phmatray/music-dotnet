@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MidiMinuit.Music.Core.IntervalModifiers
+namespace MidiMinuit.Music.Core
 {
     public partial class IntervalModifier
         : IEquatable<IntervalModifier>

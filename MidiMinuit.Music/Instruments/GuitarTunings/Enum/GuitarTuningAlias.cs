@@ -1,4 +1,4 @@
-namespace MidiMinuit.Music.Instruments.GuitarTunings
+namespace MidiMinuit.Music.Instruments
 {
     public enum GuitarTuningAlias
     {

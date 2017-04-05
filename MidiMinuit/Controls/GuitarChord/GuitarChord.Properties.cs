@@ -2,11 +2,8 @@
 using MidiMinuit.Common;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
-using MidiMinuit.Music.Core.Chords;
-using MidiMinuit.Music.Core.Intervals;
-using MidiMinuit.Music.Core.Pitches;
-using MidiMinuit.Music.Core.StepNames;
-using MidiMinuit.Music.Instruments.GuitarTunings;
+using MidiMinuit.Music.Core;
+using MidiMinuit.Music.Instruments;
 
 namespace MidiMinuit.Controls
 {
