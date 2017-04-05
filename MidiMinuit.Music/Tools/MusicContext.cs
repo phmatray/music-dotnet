@@ -11,6 +11,7 @@ namespace MidiMinuit.Music.Tools
         private static ReadOnlyCollection<IntervalModifier> _intervalModifiers;
         private static ReadOnlyCollection<Interval> _intervals;
         private static ReadOnlyCollection<IntervalStep> _intervalSteps;
+        private static ReadOnlyCollection<Step> _steps;
         private static ReadOnlyCollection<Pitch> _pitches;
         private static ReadOnlyCollection<Scale> _scales;
         private static ReadOnlyCollection<StepAccidental> _stepAccidentals;
@@ -36,6 +37,10 @@ namespace MidiMinuit.Music.Tools
         public static ReadOnlyCollection<IntervalStep> IntervalSteps
             => _intervalSteps ?? (_intervalSteps =
                    IntervalStep.CreateAll().AsReadOnly());
+
+        public static ReadOnlyCollection<Step> Steps
+            => _steps ?? (_steps =
+                   Step.CreateAll().AsReadOnly());
 
         public static ReadOnlyCollection<Pitch> Pitches
             => _pitches ?? (_pitches =

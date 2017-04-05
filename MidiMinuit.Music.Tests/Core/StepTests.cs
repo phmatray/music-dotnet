@@ -55,7 +55,7 @@ namespace MidiMinuit.Music.Tests
         public void StepToPitchCSharp4()
         {
             Step step = Step.CSharp;
-            Pitch pitch = step.ToPitch(4);
+            Pitch pitch = step.ToPitch();
             Assert.AreEqual(StepName.C, pitch.Name);
             Assert.AreEqual(StepAccidental.Sharp, pitch.Accidental);
             Assert.AreEqual(4, pitch.Octave);
@@ -92,6 +92,42 @@ namespace MidiMinuit.Music.Tests
             Step step = new Step(StepNameAlias.C, StepAccidentalAlias.Flat);
             string expectedResult = step.ToString();
             Assert.AreEqual("Cb", expectedResult);
+        }
+
+        [TestMethod]
+        public void StepEqualsToObject()
+        {
+            Step stepA = new Step("A");
+            object stepABis = new Step("A");
+            var expected = stepA.Equals(stepABis);
+            Assert.AreEqual(true, expected);
+        }
+
+        [TestMethod]
+        public void StepEqualsOperator()
+        {
+            Step stepA = new Step("A");
+            Step stepABis = new Step("A");
+            bool expected = stepA == stepABis;
+            Assert.AreEqual(true, expected);
+        }
+
+        [TestMethod]
+        public void StepNotEqualsOperator()
+        {
+            Step stepA = new Step("A");
+            Step stepABis = new Step("A");
+            bool expected = stepA != stepABis;
+            Assert.AreNotEqual(true, expected);
+        }
+
+        [TestMethod]
+        public void StepGetHashCode()
+        {
+            int stepA = new Step("A").GetHashCode();
+            int stepABis = new Step("A").GetHashCode();
+            bool expected = stepA == stepABis;
+            Assert.AreEqual(true, expected);
         }
     }
 }

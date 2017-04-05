@@ -55,10 +55,5 @@ namespace MidiMinuit.Music.Core
 
             return new Step { Name = stepName, Accidental = accidental };
         }
-
-        public static implicit operator string(Step s)
-        {
-            return s.Name.Name;
-        }
     }
 }

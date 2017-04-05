@@ -2,7 +2,7 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MidiMinuit.Music.Core;
 
-namespace MidiMinuit.UnitTestProject
+namespace MidiMinuit.Music.Tests
 {
     [TestClass]
     public class ChordMajorTests
