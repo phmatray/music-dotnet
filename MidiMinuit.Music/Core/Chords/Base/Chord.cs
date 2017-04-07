@@ -6,11 +6,6 @@ namespace MidiMinuit.Music.Core
     public abstract partial class Chord
     {
         /// <summary>
-        ///     Gets the fondamental of the chord.
-        /// </summary>
-        public IntervalPerfectUnison Fondamental { get; protected set; }
-
-        /// <summary>
         ///     Gets the quality of the chord.
         /// </summary>
         public abstract ChordAlias Alias { get; }
@@ -29,6 +24,70 @@ namespace MidiMinuit.Music.Core
         ///     Gets description of the chord.
         /// </summary>
         public abstract string Description { get; }
+
+        public abstract Pitch Key { get; set; }
+
+        /// <summary>
+        ///     Gets the fondamental of the chord.
+        /// </summary>
+        public IntervalPerfectUnison Fondamental { get; protected set; }
+
+        /// <summary>
+        ///     Gets the perfect fourth of the chord.
+        /// </summary>
+        public IntervalPerfectFourth PerfectFourth { get; protected set; }
+
+        public IntervalPerfectFifth PerfectFifth { get; protected set; }
+
+        public IntervalMajorSecond MajorSecond { get; protected set; }
+
+        public IntervalMajorThird MajorThird { get; protected set; }
+
+        public IntervalMajorSixth MajorSixth { get; protected set; }
+
+        public IntervalMajorSeventh MajorSeventh { get; protected set; }
+
+        public IntervalMinorSecond MinorSecond { get; protected set; }
+
+        public IntervalMinorThird MinorThird { get; protected set; }
+
+        public IntervalMinorSixth MinorSixth { get; protected set; }
+
+        public IntervalMinorSeventh MinorSeventh { get; protected set; }
+
+        public IntervalAugmentedUnison AugmentedUnison { get; protected set; }
+
+        public IntervalAugmentedSecond AugmentedSecond { get; protected set; }
+
+        public IntervalAugmentedThird AugmentedThird { get; protected set; }
+
+        public IntervalAugmentedFourth AugmentedFourth { get; protected set; }
+
+        public IntervalAugmentedFifth AugmentedFifth { get; protected set; }
+
+        public IntervalAugmentedSixth AugmentedSixth { get; protected set; }
+
+        public IntervalAugmentedSeventh AugmentedSeventh { get; protected set; }
+
+        public IntervalAugmentedOctave AugmentedOctave { get; protected set; }
+
+        public IntervalDiminishedSecond DiminishedSecond { get; protected set; }
+
+        public IntervalDiminishedThird DiminishedThird { get; protected set; }
+
+        public IntervalDiminishedFourth DiminishedFourth { get; protected set; }
+
+        public IntervalDiminishedFifth DiminishedFifth { get; protected set; }
+
+        public IntervalDiminishedSixth DiminishedSixth { get; protected set; }
+
+        public IntervalDiminishedSeventh DiminishedSeventh { get; protected set; }
+
+        public IntervalDiminishedOctave DiminishedOctave { get; protected set; }
+
+        public IntervalMajorNinth MajorNinth { get; protected set; }
+
+        public IntervalAugmentedEleventh AugmentedEleventh { get; protected set; }
 
         /// <summary>
         ///     Gets notes of the chord.

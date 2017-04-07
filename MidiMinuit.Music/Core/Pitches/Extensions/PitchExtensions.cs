@@ -2,6 +2,20 @@
 {
     public static class PitchExtensions
     {
+        public static Chord ToChord(this Pitch pitch, ChordAlias chordAlias)
+        {
+            var chord = Chord.Create(chordAlias);
+            chord.Key = pitch;
+            return chord;
+        }
+
+        ////public static Scale ToScale(this Pitch pitch, ScaleAlias scaleAlias)
+        ////{
+        ////    var scale = Scale.Create(scaleAlias);
+        ////    scale.Key = pitch;
+        ////    return scale;
+        ////}
+
         public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)
         {
             var lowerNoteOrder = lowerPitch.Name.StepNumber;

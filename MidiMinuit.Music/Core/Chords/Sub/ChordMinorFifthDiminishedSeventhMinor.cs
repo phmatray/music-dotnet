@@ -17,7 +17,7 @@ namespace MidiMinuit.Music.Core
             Key = key;
         }
 
-        public Pitch Key
+        public override Pitch Key
         {
             get
             {
@@ -28,17 +28,11 @@ namespace MidiMinuit.Music.Core
             {
                 _key = value;
                 Fondamental = new IntervalPerfectUnison(_key);
-                ThirdMinor = new IntervalMinorThird(_key);
-                FifthDiminished = new IntervalDiminishedFifth(_key);
-                SeventhMinor = new IntervalMinorSeventh(_key);
+                MinorThird = new IntervalMinorThird(_key);
+                DiminishedFifth = new IntervalDiminishedFifth(_key);
+                MinorSeventh = new IntervalMinorSeventh(_key);
             }
         }
-
-        public IntervalMinorThird ThirdMinor { get; private set; }
-
-        public IntervalDiminishedFifth FifthDiminished { get; private set; }
-
-        public IntervalMinorSeventh SeventhMinor { get; private set; }
 
         public override ChordAlias Alias { get; }
             = ChordAlias.MinorFifthDiminishedSeventhMinor;
@@ -47,7 +41,7 @@ namespace MidiMinuit.Music.Core
             = "Description not added yet.";
 
         public override List<Interval> Intervals
-            => new List<Interval> { Fondamental, ThirdMinor, FifthDiminished, SeventhMinor };
+            => new List<Interval> { Fondamental, MinorThird, DiminishedFifth, MinorSeventh };
 
         public override string Abbreviation
             => Fondamental == null ? null : $"{Fondamental}min7b5";

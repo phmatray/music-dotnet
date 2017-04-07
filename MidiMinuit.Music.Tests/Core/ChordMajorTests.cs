@@ -13,11 +13,10 @@ namespace MidiMinuit.Music.Tests
             var chordMajor = new ChordMajor(Pitch.C4);
 
             var fond = chordMajor.Fondamental.UpperPitch;
-            var third = chordMajor.ThirdMajor.UpperPitch;
-            var fifth = chordMajor.FifthPerfect.UpperPitch;
+            var third = chordMajor.MajorThird.UpperPitch;
+            var fifth = chordMajor.PerfectFifth.UpperPitch;
 
-            var expected = Pitch.C4;
-            Assert.AreEqual(expected, fond);
+            Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);
             Assert.AreEqual(Pitch.G4, fifth);
         }
@@ -28,8 +27,8 @@ namespace MidiMinuit.Music.Tests
             var chordMajor = new ChordMajor { Key = Pitch.C4 };
 
             var fond = chordMajor.Fondamental.UpperPitch;
-            var third = chordMajor.ThirdMajor.UpperPitch;
-            var fifth = chordMajor.FifthPerfect.UpperPitch;
+            var third = chordMajor.MajorThird.UpperPitch;
+            var fifth = chordMajor.PerfectFifth.UpperPitch;
 
             Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);
@@ -155,6 +154,21 @@ namespace MidiMinuit.Music.Tests
             var result = fond == Pitch.C4;
 
             Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void ChordPitchToChord()
+        {
+            var pitch = Pitch.C4;
+            var chordMajor = pitch.ToChord(ChordAlias.Major);
+
+            var fond = chordMajor.Fondamental.UpperPitch;
+            var third = chordMajor.MajorThird.UpperPitch;
+            var fifth = chordMajor.PerfectFifth.UpperPitch;
+
+            Assert.AreEqual(Pitch.C4, fond);
+            Assert.AreEqual(Pitch.E4, third);
+            Assert.AreEqual(Pitch.G4, fifth);
         }
     }
 }
