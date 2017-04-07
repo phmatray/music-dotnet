@@ -43,7 +43,7 @@ namespace MidiMinuit.Music.Core
             set
             {
                 _lowerPitch = value;
-                UpperPitch = _lowerPitch.AddInterval(this);
+                UpperPitch = _lowerPitch?.AddInterval(this);
             }
         }
 
@@ -57,9 +57,9 @@ namespace MidiMinuit.Music.Core
 
         public abstract int Semitones { get; }
 
-        public abstract IntervalStep Step { get; }
+        public abstract IntervalStep IntervalStep { get; }
 
-        public abstract IntervalModifier Modifier { get; }
+        public abstract IntervalModifier IntervalModifier { get; }
 
         public abstract List<string> Names { get; }
 

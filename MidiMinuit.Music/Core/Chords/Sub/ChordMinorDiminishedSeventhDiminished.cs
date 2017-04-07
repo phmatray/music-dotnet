@@ -8,6 +8,7 @@ namespace MidiMinuit.Music.Core
         private Pitch _key;
 
         public ChordMinorDiminishedSeventhDiminished()
+            : this(null)
         {
         }
 
@@ -49,8 +50,10 @@ namespace MidiMinuit.Music.Core
         public override List<Interval> Intervals
             => new List<Interval> { Fondamental, ThirdMinor, FifthDiminished, SeventhDiminished };
 
-        public override string Name
-            => $"{Fondamental}dim7";
+        public override string Abbreviation
+            => Fondamental?.UpperPitch != null
+                ? $"{Fondamental}dim7"
+                : null;
 
         public ChordMinorDiminishedSeventhDiminished SetKey(Pitch key)
         {
@@ -59,7 +62,7 @@ namespace MidiMinuit.Music.Core
         }
 
         public override string ToString()
-            => Name;
+            => Abbreviation;
 
         public override Chord Clone()
             => MemberwiseClone() as Chord;

@@ -8,6 +8,7 @@ namespace MidiMinuit.Music.Core
         private Pitch _key;
 
         public ChordMajor()
+            : this(null)
         {
         }
 
@@ -45,8 +46,11 @@ namespace MidiMinuit.Music.Core
         public override List<Interval> Intervals
             => new List<Interval> { Fondamental, ThirdMajor, FifthPerfect };
 
-        public override string Name
-            => $"{Fondamental.UpperPitch}maj";
+        // TODO: Apply this modification to other Chord classes.
+        public override string Abbreviation
+            => Fondamental?.UpperPitch != null
+                ? $"{Fondamental.UpperPitch.ToStep()} maj"
+                : null;
 
         public ChordMajor SetKey(Pitch key)
         {
@@ -55,7 +59,7 @@ namespace MidiMinuit.Music.Core
         }
 
         public override string ToString()
-            => Name;
+            => Abbreviation;
 
         public override Chord Clone()
             => MemberwiseClone() as Chord;

@@ -17,7 +17,7 @@
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             <!--<TextBlock FontSize="36" Text="Adim7 (°7)" HorizontalAlignment="Center" />-->
-            <TextBlock FontSize="36" Text="{x:Bind ViewModel.Chord.Name}" HorizontalAlignment="Center" />
+            <TextBlock FontSize="36" Text="{x:Bind ViewModel.Chord.Abbreviation}" HorizontalAlignment="Center" />
 
             <!-- TODO: Use this formating style for all chords - Don't delete the following lines -->
             <!--<TextBlock Margin="0,0,6,0" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center">

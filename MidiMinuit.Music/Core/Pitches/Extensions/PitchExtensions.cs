@@ -5,7 +5,7 @@
         public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)
         {
             var lowerNoteOrder = lowerPitch.Name.StepNumber;
-            var intervalOrder = interval.Step.Steps;
+            var intervalOrder = interval.IntervalStep.Steps;
 
             var upperNoteOrder = lowerNoteOrder + intervalOrder - 1;
             while (upperNoteOrder > 7)

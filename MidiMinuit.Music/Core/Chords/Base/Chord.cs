@@ -23,7 +23,7 @@ namespace MidiMinuit.Music.Core
         /// <summary>
         ///     Gets name of the chord.
         /// </summary>
-        public abstract string Name { get; }
+        public abstract string Abbreviation { get; }
 
         /// <summary>
         ///     Gets description of the chord.
@@ -36,13 +36,30 @@ namespace MidiMinuit.Music.Core
         public List<Pitch> Notes
             => Intervals.Select(x => x.UpperPitch).ToList();
 
+        public bool HasUpperPitches
+            => Intervals.Any(x => x.UpperPitch != null);
+
         /// <summary>
         ///     Gets details of the chord.
         /// </summary>
         public string Details
-            => Intervals.Aggregate(
-                string.Empty,
-                (current, interval) => current + $"{interval.UpperPitch} ({interval.Abbreviation})");
+            => HasUpperPitches
+                ? Intervals
+                    .Select(x => $"{x.UpperPitch.ToStep()} ({x.Abbreviation})")
+                    .Aggregate((current, next) => current + " - " + next)
+                : IntervalDetails;
+
+        public string IntervalDetails
+            => Intervals?
+                .Select(x => x.Abbreviations.First())
+                .Aggregate((current, next) => current + " - " + next);
+
+        public string StepsDetails
+            => HasUpperPitches
+                ? Intervals?
+                    .Select(x => x.UpperPitch.ToStep().ToString())
+                    .Aggregate((current, next) => current + " - " + next)
+                : null;
 
         /// <summary>
         ///     Gets nombre de sons constituant l'accord

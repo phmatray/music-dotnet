@@ -18,6 +18,15 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
+        public void MusicContextIntervalsSimples27()
+        {
+            var intervals = MusicContext.Intervals
+                .Count(x => x.Spanning == IntervalSpanning.Simple);
+
+            Assert.AreEqual(27, intervals);
+        }
+
+        [TestMethod]
         public void MusicContextStepsCountNatural()
         {
             var steps = MusicContext.Steps
