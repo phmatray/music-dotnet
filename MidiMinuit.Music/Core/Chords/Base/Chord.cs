@@ -16,7 +16,7 @@ namespace MidiMinuit.Music.Core
         public abstract List<Interval> Intervals { get; }
 
         /// <summary>
-        ///     Gets name of the chord.
+        ///     Gets abbreviation of the chord.
         /// </summary>
         public abstract string Abbreviation { get; }
 
@@ -25,16 +25,13 @@ namespace MidiMinuit.Music.Core
         /// </summary>
         public abstract string Description { get; }
 
+        /// <summary>
+        ///     Gets key of the chord.
+        /// </summary>
         public abstract Pitch Key { get; set; }
 
-        /// <summary>
-        ///     Gets the fondamental of the chord.
-        /// </summary>
         public IntervalPerfectUnison Fondamental { get; protected set; }
 
-        /// <summary>
-        ///     Gets the perfect fourth of the chord.
-        /// </summary>
         public IntervalPerfectFourth PerfectFourth { get; protected set; }
 
         public IntervalPerfectFifth PerfectFifth { get; protected set; }

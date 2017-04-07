@@ -9,37 +9,65 @@
             return chord;
         }
 
-        ////public static Scale ToScale(this Pitch pitch, ScaleAlias scaleAlias)
+        public static Scale ToScale(this Pitch pitch, ScaleAlias scaleAlias)
+        {
+            var scale = Scale.Create(scaleAlias);
+            scale.Key = pitch;
+            return scale;
+        }
+
+        ////[Obsolete("User 'lowerPitch + interval' instead.")]
+        ////public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)
         ////{
-        ////    var scale = Scale.Create(scaleAlias);
-        ////    scale.Key = pitch;
-        ////    return scale;
+        ////    var lowerPitchOrder = lowerPitch.Name.StepNumber;
+        ////    var intervalOrder = interval.IntervalStep.Steps;
+
+        ////    var upperPitchOrder = lowerPitchOrder + intervalOrder - 1;
+        ////    while (upperPitchOrder > 7)
+        ////    {
+        ////        upperPitchOrder -= 7;
+        ////    }
+
+        ////    StepName upperPitchName = upperPitchOrder;
+        ////    int upperPitchValue = lowerPitch.PitchAbsolute + interval.Semitones;
+
+        ////    int accidentalCorrection = upperPitchValue - upperPitchName.Semitones;
+        ////    while (accidentalCorrection >= 8)
+        ////    {
+        ////        accidentalCorrection -= 12;
+        ////    }
+
+        ////    StepAccidental stepAccidental = accidentalCorrection;
+
+        ////    var upperPitch = new Pitch(upperPitchName, stepAccidental);
+        ////    return upperPitch;
         ////}
 
-        public static Pitch AddInterval(this Pitch lowerPitch, Interval interval)
-        {
-            var lowerNoteOrder = lowerPitch.Name.StepNumber;
-            var intervalOrder = interval.IntervalStep.Steps;
+        ////[Obsolete("User 'upperPitch + interval' instead.")]
+        ////public static Pitch SubstractInterval(this Pitch upperPitch, Interval interval)
+        ////{
+        ////    var upperPitchOrder = upperPitch.Name.StepNumber;
+        ////    var intervalOrder = interval.IntervalStep.Steps;
 
-            var upperNoteOrder = lowerNoteOrder + intervalOrder - 1;
-            while (upperNoteOrder > 7)
-            {
-                upperNoteOrder -= 7;
-            }
+        ////    var lowerPitchOrder = upperPitchOrder - intervalOrder + 1;
+        ////    while (lowerPitchOrder < 7)
+        ////    {
+        ////        lowerPitchOrder += 7;
+        ////    }
 
-            StepName upperNoteName = upperNoteOrder;
-            var upperNotePitch = lowerPitch.PitchAbsolute + interval.Semitones;
+        ////    StepName lowerPitchName = lowerPitchOrder;
+        ////    int lowerPitchValue = upperPitch.PitchAbsolute - interval.Semitones;
 
-            var accidentalCorrection = upperNotePitch - upperNoteName.Semitones;
-            while (accidentalCorrection >= 8)
-            {
-                accidentalCorrection -= 12;
-            }
+        ////    int accidentalCorrection = lowerPitchValue + lowerPitchName.Semitones;
+        ////    while (accidentalCorrection < 8)
+        ////    {
+        ////        accidentalCorrection += 12;
+        ////    }
 
-            StepAccidental noteAccidental = accidentalCorrection;
+        ////    StepAccidental stepAccidental = accidentalCorrection;
 
-            var upperNote = new Pitch(upperNoteName, noteAccidental);
-            return upperNote;
-        }
+        ////    var lowerPitch = new Pitch(lowerPitchName, stepAccidental);
+        ////    return lowerPitch;
+        ////}
     }
 }

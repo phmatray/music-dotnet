@@ -7,13 +7,7 @@ namespace MidiMinuit.Music.Core
     {
         private Pitch _key;
 
-        /// <summary>
-        ///     Gets Gamme Mineure Mélodique : T 2M 3m 4j 5j 6M 7M
-        /// </summary>
-        public override ScaleAlias Alias { get; }
-            = ScaleAlias.MinorMelodic;
-
-        public Pitch Key
+        public override Pitch Key
         {
             get
             {
@@ -24,46 +18,35 @@ namespace MidiMinuit.Music.Core
             {
                 _key = value;
                 Fondamental = new IntervalPerfectUnison(_key);
-                SecondMajor = new IntervalMajorSecond(_key);
-                ThirdMinor = new IntervalMinorThird(_key);
-                FourthPerfect = new IntervalPerfectFourth(_key);
-                FifthPerfect = new IntervalPerfectFifth(_key);
-                SixthMajor = new IntervalMajorSixth(_key);
-                SeventhMajor = new IntervalMajorSeventh(_key);
+                MajorSecond = new IntervalMajorSecond(_key);
+                MinorThird = new IntervalMinorThird(_key);
+                PerfectFourth = new IntervalPerfectFourth(_key);
+                PerfectFifth = new IntervalPerfectFifth(_key);
+                MajorSixth = new IntervalMajorSixth(_key);
+                MajorSeventh = new IntervalMajorSeventh(_key);
             }
         }
 
-        public IntervalPerfectUnison Fondamental { get; private set; }
+        /// <summary>
+        ///     Gets Gamme Mineure Mélodique : T 2M 3m 4j 5j 6M 7M
+        /// </summary>
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.MinorMelodic;
 
-        public IntervalMajorSecond SecondMajor { get; private set; }
-
-        public IntervalMinorThird ThirdMinor { get; private set; }
-
-        public IntervalPerfectFourth FourthPerfect { get; private set; }
-
-        public IntervalPerfectFifth FifthPerfect { get; private set; }
-
-        public IntervalMajorSixth SixthMajor { get; private set; }
-
-        public IntervalMajorSeventh SeventhMajor { get; private set; }
-
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval>
             {
                 Fondamental,
-                SecondMajor,
-                ThirdMinor,
-                FourthPerfect,
-                FifthPerfect,
-                SixthMajor,
-                SeventhMajor
+                MajorSecond,
+                MinorThird,
+                PerfectFourth,
+                PerfectFifth,
+                MajorSixth,
+                MajorSeventh
             };
 
         public override string Name { get; }
             = "Minor Melodic";
-
-        public override string Details { get; }
-            = "T 2M 3m 4j 5j 6M 7M";
 
         public override string ToString()
             => Name;

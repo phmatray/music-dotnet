@@ -7,13 +7,7 @@ namespace MidiMinuit.Music.Core
     {
         private Pitch _key;
 
-        /// <summary>
-        ///     Gets Mode Lydien Augmenté : T 2M 3M #11 #5 6M 7M
-        /// </summary>
-        public override ScaleAlias Alias { get; }
-            = ScaleAlias.ModeLydianAdded;
-
-        public Pitch Key
+        public override Pitch Key
         {
             get
             {
@@ -24,46 +18,35 @@ namespace MidiMinuit.Music.Core
             {
                 _key = value;
                 Fondamental = new IntervalPerfectUnison(_key);
-                SecondMajor = new IntervalMajorSecond(_key);
-                ThirdMajor = new IntervalMajorThird(_key);
+                MajorSecond = new IntervalMajorSecond(_key);
+                MajorThird = new IntervalMajorThird(_key);
                 Eleventh = new IntervalAugmentedEleventh(_key);
-                FifthAugmented = new IntervalAugmentedFifth(_key);
-                SixthMajor = new IntervalMajorSixth(_key);
-                SeventhMajor = new IntervalMajorSeventh(_key);
+                AugmentedFifth = new IntervalAugmentedFifth(_key);
+                MajorSixth = new IntervalMajorSixth(_key);
+                MajorSeventh = new IntervalMajorSeventh(_key);
             }
         }
 
-        public IntervalPerfectUnison Fondamental { get; private set; }
+        /// <summary>
+        ///     Gets Mode Lydien Augmenté : T 2M 3M #11 #5 6M 7M
+        /// </summary>
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.ModeLydianAdded;
 
-        public IntervalMajorSecond SecondMajor { get; private set; }
-
-        public IntervalMajorThird ThirdMajor { get; private set; }
-
-        public IntervalAugmentedEleventh Eleventh { get; private set; }
-
-        public IntervalAugmentedFifth FifthAugmented { get; private set; }
-
-        public IntervalMajorSixth SixthMajor { get; private set; }
-
-        public IntervalMajorSeventh SeventhMajor { get; private set; }
-
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval>
             {
                 Fondamental,
-                SecondMajor,
-                ThirdMajor,
+                MajorSecond,
+                MajorThird,
                 Eleventh,
-                FifthAugmented,
-                SixthMajor,
-                SeventhMajor
+                AugmentedFifth,
+                MajorSixth,
+                MajorSeventh
             };
 
         public override string Name { get; }
             = "Mode Lydian Added";
-
-        public override string Details { get; }
-            = "T 2M 3M #11 #5 6M 7M";
 
         public override string ToString()
             => Name;

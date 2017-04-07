@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
 {
@@ -79,6 +80,15 @@ namespace MidiMinuit.Music.Core
                 default:
                     throw new ArgumentOutOfRangeException(nameof(interval), interval, null);
             }
+        }
+
+        public static Interval Create(int steps, int semitones)
+        {
+            var interval = MusicContext.Intervals
+                .Where(x => x.IntervalStep.Steps == steps && x.Semitones == semitones)
+                .ToList();
+
+            return interval.FirstOrDefault();
         }
     }
 }

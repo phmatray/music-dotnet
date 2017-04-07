@@ -8,7 +8,7 @@ namespace MidiMinuit.Music.Tests
     public class ChordMajorTests
     {
         [TestMethod]
-        public void TestMethod2()
+        public void ChordCtor1()
         {
             var chordMajor = new ChordMajor(Pitch.C4);
 
@@ -22,7 +22,7 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void ChordCtorProperty()
         {
             var chordMajor = new ChordMajor { Key = Pitch.C4 };
 
@@ -36,7 +36,7 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void TestMethod4()
+        public void ChordSetKey()
         {
             Chord chordMajor = Chord.Major.SetKey(Pitch.C4);
 
@@ -138,7 +138,7 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void TestMethod5()
+        public void ChordEquals()
         {
             Type chordMajor = Chord.Major.GetType();
 
@@ -146,7 +146,7 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void TestMethod6()
+        public void ChordFondamentalPitch()
         {
             var chordMajor = new ChordMajor(Pitch.C4);
 

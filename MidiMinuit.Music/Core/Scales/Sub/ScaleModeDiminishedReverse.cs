@@ -7,13 +7,7 @@ namespace MidiMinuit.Music.Core
     {
         private Pitch _key;
 
-        /// <summary>
-        ///     Gets Mode Diminué Inversé : T 2m 3m 3M b5 5j 6M 7m
-        /// </summary>
-        public override ScaleAlias Alias { get; }
-            = ScaleAlias.ModeDiminishedReverse;
-
-        public Pitch Key
+        public override Pitch Key
         {
             get
             {
@@ -24,50 +18,37 @@ namespace MidiMinuit.Music.Core
             {
                 _key = value;
                 Fondamental = new IntervalPerfectUnison(_key);
-                SecondMinor = new IntervalMinorSecond(_key);
-                ThirdMinor = new IntervalMinorThird(_key);
-                ThirdMajor = new IntervalMajorThird(_key);
-                FifthDiminished = new IntervalDiminishedFifth(_key);
-                FifthPerfect = new IntervalPerfectFifth(_key);
-                SixthMajor = new IntervalMajorSixth(_key);
-                SeventhMinor = new IntervalMinorSeventh(_key);
+                MinorSecond = new IntervalMinorSecond(_key);
+                MinorThird = new IntervalMinorThird(_key);
+                MajorThird = new IntervalMajorThird(_key);
+                DiminishedFifth = new IntervalDiminishedFifth(_key);
+                PerfectFifth = new IntervalPerfectFifth(_key);
+                MajorSixth = new IntervalMajorSixth(_key);
+                MinorSeventh = new IntervalMinorSeventh(_key);
             }
         }
 
-        public IntervalPerfectUnison Fondamental { get; private set; }
+        /// <summary>
+        ///     Gets Mode Diminué Inversé : T 2m 3m 3M b5 5j 6M 7m
+        /// </summary>
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.ModeDiminishedReverse;
 
-        public IntervalMinorSecond SecondMinor { get; private set; }
-
-        public IntervalMinorThird ThirdMinor { get; private set; }
-
-        public IntervalMajorThird ThirdMajor { get; private set; }
-
-        public IntervalDiminishedFifth FifthDiminished { get; private set; }
-
-        public IntervalPerfectFifth FifthPerfect { get; private set; }
-
-        public IntervalMajorSixth SixthMajor { get; private set; }
-
-        public IntervalMinorSeventh SeventhMinor { get; private set; }
-
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval>
             {
                 Fondamental,
-                SecondMinor,
-                ThirdMinor,
-                ThirdMajor,
-                FifthDiminished,
-                FifthPerfect,
-                SixthMajor,
-                SeventhMinor
+                MinorSecond,
+                MinorThird,
+                MajorThird,
+                DiminishedFifth,
+                PerfectFifth,
+                MajorSixth,
+                MinorSeventh
             };
 
         public override string Name { get; }
             = "Mode Diminished Reverse";
-
-        public override string Details { get; }
-            = "T 2m 3m 3M b5 5j 6M 7m";
 
         public override string ToString()
             => Name;

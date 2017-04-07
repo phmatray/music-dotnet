@@ -181,10 +181,18 @@ namespace MidiMinuit.Music.Core
             => p1?.MidiPitch >= p2?.MidiPitch;
 
         public static Pitch operator +(Pitch pitch, Interval interval)
-            => pitch.Translate(interval, MidiPitchTranslationMode.Auto);
+        {
+            return pitch != null && interval != null
+                ? pitch.Translate(interval, MidiPitchTranslationMode.Auto)
+                : null;
+        }
 
-        //public static Pitch operator -(Pitch pitch, Interval interval)
-        //    => pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto);
+        public static Pitch operator -(Pitch pitch, Interval interval)
+        {
+            return pitch != null && interval != null
+                ? pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto)
+                : null;
+        }
 
         public static int CalculateMidiPitch(string stepName, int alter, int octave)
         {
@@ -267,9 +275,7 @@ namespace MidiMinuit.Music.Core
         public static Pitch FromMidiPitch(int midiPitch, MidiPitchTranslationMode mode)
         {
             var pitch = new Pitch();
-            var midiPitch1 = midiPitch;
-            var num = (int)mode;
-            pitch.ApplyMidiPitch(midiPitch1, (MidiPitchTranslationMode)num);
+            pitch.ApplyMidiPitch(midiPitch, mode);
             return pitch;
         }
 

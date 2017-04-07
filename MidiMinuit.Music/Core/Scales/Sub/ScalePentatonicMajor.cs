@@ -7,13 +7,7 @@ namespace MidiMinuit.Music.Core
     {
         private Pitch _key;
 
-        /// <summary>
-        ///     Gets Gamme Pentatonique Majeure : T 2M 3M 5j 6M
-        /// </summary>
-        public override ScaleAlias Alias { get; }
-            = ScaleAlias.PentatonicMajor;
-
-        public Pitch Key
+        public override Pitch Key
         {
             get
             {
@@ -24,38 +18,31 @@ namespace MidiMinuit.Music.Core
             {
                 _key = value;
                 Fondamental = new IntervalPerfectUnison(_key);
-                SecondMajor = new IntervalMajorSecond(_key);
-                ThirdMajor = new IntervalMajorThird(_key);
-                FifthPerfect = new IntervalPerfectFifth(_key);
-                SixthMajor = new IntervalMajorSixth(_key);
+                MajorSecond = new IntervalMajorSecond(_key);
+                MajorThird = new IntervalMajorThird(_key);
+                PerfectFifth = new IntervalPerfectFifth(_key);
+                MajorSixth = new IntervalMajorSixth(_key);
             }
         }
 
-        public IntervalPerfectUnison Fondamental { get; private set; }
+        /// <summary>
+        ///     Gets Gamme Pentatonique Majeure : T 2M 3M 5j 6M
+        /// </summary>
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.PentatonicMajor;
 
-        public IntervalMajorSecond SecondMajor { get; private set; }
-
-        public IntervalMajorThird ThirdMajor { get; private set; }
-
-        public IntervalPerfectFifth FifthPerfect { get; private set; }
-
-        public IntervalMajorSixth SixthMajor { get; private set; }
-
-        public override List<Interval> Notes
+        public override List<Interval> Intervals
             => new List<Interval>
             {
                 Fondamental,
-                SecondMajor,
-                ThirdMajor,
-                FifthPerfect,
-                SixthMajor
+                MajorSecond,
+                MajorThird,
+                PerfectFifth,
+                MajorSixth
             };
 
         public override string Name { get; }
             = "Pentatonic Major";
-
-        public override string Details { get; }
-            = "T 2M 3M 5j 6M";
 
         public override string ToString()
             => Name;
