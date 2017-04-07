@@ -17,8 +17,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => Name;
-
-        public override IntervalModifier Clone()
-            => MemberwiseClone() as IntervalModifier;
     }
 }

@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public override IntervalAlias Alias { get; }
+        public override IntervalAlias IntervalAlias { get; }
             = IntervalAlias.AugmentedSecond;
 
         public override IntervalConsonance HarmonicConsonance { get; }
@@ -52,8 +52,5 @@ Augmented seconds occur in many scales, most important the harmonic minor and it
 
         public override string ToString()
             => Abbreviation;
-
-        public override Interval Clone()
-            => MemberwiseClone() as Interval;
     }
 }

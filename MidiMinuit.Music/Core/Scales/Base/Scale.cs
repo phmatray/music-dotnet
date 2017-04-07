@@ -140,8 +140,6 @@ namespace MidiMinuit.Music.Core
 
         public abstract override string ToString();
 
-        public abstract Scale Clone();
-
         ////    return hasChord;
         ////        .All(x => x);
         ////        .Select(x => Notes.Any(y => y.Pitch == x.Pitch))

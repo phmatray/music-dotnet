@@ -30,8 +30,5 @@ namespace MidiMinuit.Music.Instruments
                 new GuitarString(2, 71, 0, 1),
                 new GuitarString(1, 72, -4)
             };
-
-        public override GuitarTuning Clone()
-            => MemberwiseClone() as GuitarTuning;
     }
 }

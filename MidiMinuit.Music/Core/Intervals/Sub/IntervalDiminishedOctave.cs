@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public override IntervalAlias Alias { get; }
+        public override IntervalAlias IntervalAlias { get; }
             = IntervalAlias.DiminishedOctave;
 
         public override IntervalConsonance HarmonicConsonance { get; }
@@ -52,8 +52,5 @@ The diminished octave is enharmonically equivalent to the major seventh.";
 
         public override string ToString()
             => Abbreviation;
-
-        public override Interval Clone()
-            => MemberwiseClone() as Interval;
     }
 }

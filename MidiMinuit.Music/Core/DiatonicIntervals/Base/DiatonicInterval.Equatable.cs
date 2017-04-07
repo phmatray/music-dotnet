@@ -20,7 +20,7 @@ namespace MidiMinuit.Music.Core
 
         public override int GetHashCode()
         {
-            return Alias.GetHashCode();
+            return DiatonicIntervalAlias.GetHashCode();
         }
 
         public static bool operator ==(DiatonicInterval left, DiatonicInterval right)

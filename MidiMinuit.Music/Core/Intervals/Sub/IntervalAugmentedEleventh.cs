@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public override IntervalAlias Alias { get; }
+        public override IntervalAlias IntervalAlias { get; }
             = IntervalAlias.AugmentedEleventh;
 
         public override IntervalConsonance HarmonicConsonance { get; }
@@ -54,8 +54,5 @@ The eleventh is considered highly dissonant with the third.";
 
         public override string ToString()
             => Abbreviation;
-
-        public override Interval Clone()
-            => MemberwiseClone() as Interval;
     }
 }

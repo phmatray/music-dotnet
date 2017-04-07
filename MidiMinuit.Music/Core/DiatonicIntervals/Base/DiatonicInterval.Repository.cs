@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
 {
@@ -37,6 +38,12 @@ namespace MidiMinuit.Music.Core
                 default:
                     throw new ArgumentOutOfRangeException(nameof(step), step, null);
             }
+        }
+
+        public static DiatonicInterval Create(int steps)
+        {
+            return MusicContext.DiatonicIntervals
+                .Single(x => x.Steps == steps);
         }
     }
 }

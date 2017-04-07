@@ -15,7 +15,5 @@
         public abstract string NameLatin { get; }
 
         public abstract override string ToString();
-
-        public abstract StepName Clone();
     }
 }

@@ -56,8 +56,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => Abbreviation;
-
-        public override Chord Clone()
-            => MemberwiseClone() as Chord;
     }
 }

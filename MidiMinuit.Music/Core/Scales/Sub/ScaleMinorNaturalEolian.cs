@@ -50,8 +50,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => Name;
-
-        public override Scale Clone()
-            => MemberwiseClone() as Scale;
     }
 }

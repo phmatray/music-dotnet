@@ -23,8 +23,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => Name;
-
-        public override StepName Clone()
-            => MemberwiseClone() as StepName;
     }
 }

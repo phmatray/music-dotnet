@@ -20,8 +20,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => SignUnicode;
-
-        public override StepAccidental Clone()
-            => MemberwiseClone() as StepAccidental;
     }
 }

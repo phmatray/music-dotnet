@@ -13,7 +13,5 @@
         public abstract string SignAscii { get; }
 
         public abstract override string ToString();
-
-        public abstract StepAccidental Clone();
     }
 }

@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public override IntervalAlias Alias { get; }
+        public override IntervalAlias IntervalAlias { get; }
             = IntervalAlias.AugmentedSixth;
 
         public override IntervalConsonance HarmonicConsonance { get; }
@@ -52,8 +52,5 @@ Its inversion is the diminished third, and its enharmonic equivalent is the mino
 
         public override string ToString()
             => Abbreviation;
-
-        public override Interval Clone()
-            => MemberwiseClone() as Interval;
     }
 }

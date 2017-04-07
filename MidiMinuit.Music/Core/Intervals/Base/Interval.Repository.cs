@@ -90,5 +90,11 @@ namespace MidiMinuit.Music.Core
 
             return interval.FirstOrDefault();
         }
+
+        public static Interval Create(Pitch lowerPitch, Pitch upperPitch)
+        {
+            // TODO: Implement this
+            throw new NotImplementedException();
+        }
     }
 }

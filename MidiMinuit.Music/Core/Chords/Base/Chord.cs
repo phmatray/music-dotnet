@@ -125,8 +125,6 @@ namespace MidiMinuit.Music.Core
 
         public abstract override string ToString();
 
-        public abstract Chord Clone();
-
         ////    _notes = notes.ToList();
         ////        throw new ArgumentException("notes cannot be empty", "notes");
         ////    if (notes.Length == 0)

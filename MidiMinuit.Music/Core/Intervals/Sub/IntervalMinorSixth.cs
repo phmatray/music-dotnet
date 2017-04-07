@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public override IntervalAlias Alias { get; }
+        public override IntervalAlias IntervalAlias { get; }
             = IntervalAlias.MinorSixth;
 
         public override IntervalConsonance HarmonicConsonance { get; }
@@ -52,8 +52,5 @@ In equal temperament, the minor sixth is enharmonically equivalent to the augmen
 
         public override string ToString()
             => Abbreviation;
-
-        public override Interval Clone()
-            => MemberwiseClone() as Interval;
     }
 }

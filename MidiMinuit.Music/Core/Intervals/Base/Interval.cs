@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using MidiMinuit.Music.Common;
@@ -12,7 +11,6 @@ namespace MidiMinuit.Music.Core
     {
         /* Possibilités d'évolution
          * --------------------------------------
-         * Additionner une note et un interval: ex: Note.C + Interval.PerfectFifth = Note.G
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
@@ -27,12 +25,6 @@ namespace MidiMinuit.Music.Core
         {
             LowerPitch = lowerPitch;
         }
-
-        ////protected Interval(Pitch lowerPitch, Pitch upperPitch)
-        ////{
-        ////    _lowerPitch = lowerPitch;
-        ////    UpperPitch = upperPitch;
-        ////}
 
         public Pitch LowerPitch
         {
@@ -62,7 +54,7 @@ namespace MidiMinuit.Music.Core
             }
         }
 
-        public abstract IntervalAlias Alias { get; }
+        public abstract IntervalAlias IntervalAlias { get; }
 
         public abstract IntervalSpanning Spanning { get; }
 
@@ -108,7 +100,5 @@ namespace MidiMinuit.Music.Core
             => Create(Math.Abs(DiatonicInterval.Steps) * -1, Math.Abs(Semitones) * -1);
 
         public abstract override string ToString();
-
-        public abstract Interval Clone();
     }
 }

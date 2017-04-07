@@ -11,7 +11,5 @@
         public abstract IntervalModifier Inverse();
 
         public abstract override string ToString();
-
-        public abstract IntervalModifier Clone();
     }
 }

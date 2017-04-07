@@ -28,8 +28,5 @@
 
         public override string ToString()
             => Alias.ToString();
-
-        public override Degree Clone()
-            => MemberwiseClone() as Degree;
     }
 }

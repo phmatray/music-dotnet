@@ -56,7 +56,5 @@ namespace MidiMinuit.Music.Instruments
 
             return $"{Name} ({notes})";
         }
-
-        public abstract GuitarTuning Clone();
     }
 }

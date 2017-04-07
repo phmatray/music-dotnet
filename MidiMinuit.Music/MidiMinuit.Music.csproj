@@ -49,6 +49,7 @@
     <Compile Include="Core\Degrees\Base\Degree.Equatable.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Instances.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Implicit.cs" />
+    <Compile Include="Core\DiatonicIntervals\Extensions\DiatonicIntervalExtensions.cs" />
     <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Equatable.cs" />
     <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Instances.cs" />
     <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Implicit.cs" />

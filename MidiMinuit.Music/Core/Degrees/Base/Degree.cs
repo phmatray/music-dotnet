@@ -22,7 +22,5 @@
             => (int)Alias - 1;
 
         public abstract override string ToString();
-
-        public abstract Degree Clone();
     }
 }

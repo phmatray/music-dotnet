@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public override IntervalAlias Alias { get; }
+        public override IntervalAlias IntervalAlias { get; }
             = IntervalAlias.MajorSixth;
 
         public override IntervalConsonance HarmonicConsonance { get; }
@@ -58,8 +58,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => Abbreviation;
-
-        public override Interval Clone()
-            => MemberwiseClone() as Interval;
     }
 }

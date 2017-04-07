@@ -3,7 +3,7 @@ namespace MidiMinuit.Music.Core
     public class DiatonicIntervalFifth
         : DiatonicInterval
     {
-        public override DiatonicIntervalAlias Alias { get; }
+        public override DiatonicIntervalAlias DiatonicIntervalAlias { get; }
             = DiatonicIntervalAlias.Fifth;
 
         public override int Steps { get; }
@@ -20,8 +20,5 @@ namespace MidiMinuit.Music.Core
 
         public override string ToString()
             => Name;
-
-        public override DiatonicInterval Clone()
-            => MemberwiseClone() as DiatonicInterval;
     }
 }
