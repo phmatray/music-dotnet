@@ -37,6 +37,9 @@ namespace MidiMinuit.Music.Core
         public override ChordAlias Alias { get; }
             = ChordAlias.MinorSeventhMajor;
 
+        public override string Name { get; }
+            = "Minor Seventh Major";
+
         public override string Description { get; }
             = "Description not added yet.";
 

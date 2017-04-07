@@ -36,6 +36,9 @@ namespace MidiMinuit.Music.Core
         public override ChordAlias Alias { get; }
             = ChordAlias.MinorDiminished;
 
+        public override string Name { get; }
+            = "Minor Diminished";
+
         public override string Description { get; }
             = "Description not added yet.";
 

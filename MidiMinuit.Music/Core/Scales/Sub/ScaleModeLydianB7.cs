@@ -20,7 +20,7 @@ namespace MidiMinuit.Music.Core
                 Fondamental = new IntervalPerfectUnison(_key);
                 MajorSecond = new IntervalMajorSecond(_key);
                 MajorThird = new IntervalMajorThird(_key);
-                Eleventh = new IntervalAugmentedEleventh(_key);
+                AugmentedEleventh = new IntervalAugmentedEleventh(_key);
                 PerfectFifth = new IntervalPerfectFifth(_key);
                 MajorSixth = new IntervalMajorSixth(_key);
                 MinorSeventh = new IntervalMinorSeventh(_key);
@@ -39,7 +39,7 @@ namespace MidiMinuit.Music.Core
                 Fondamental,
                 MajorSecond,
                 MajorThird,
-                Eleventh,
+                AugmentedEleventh,
                 PerfectFifth,
                 MajorSixth,
                 MinorSeventh

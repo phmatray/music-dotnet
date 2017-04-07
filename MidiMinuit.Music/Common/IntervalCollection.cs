@@ -64,20 +64,30 @@ namespace MidiMinuit.Music.Common
 
         public IntervalDiminishedOctave DiminishedOctave { get; protected set; }
 
-        public IntervalMajorNinth Ninth { get; protected set; }
+        public IntervalMajorNinth MajorNinth { get; protected set; }
 
-        public IntervalAugmentedEleventh Eleventh { get; protected set; }
+        public IntervalAugmentedEleventh AugmentedEleventh { get; protected set; }
 
         public bool HasUpperPitches
             => Intervals.Any(x => x.UpperPitch != null);
 
         /// <summary>
-        ///     Gets notes of the chord.
+        ///     Gets pitches from the interval collection.
         /// </summary>
         public List<Pitch> Pitches
             => HasUpperPitches
                 ? Intervals
                     .Select(x => x.UpperPitch)
+                    .ToList()
+                : null;
+
+        /// <summary>
+        ///     Gets steps from the interval collection.
+        /// </summary>
+        public List<Step> Steps
+            => HasUpperPitches
+                ? Intervals
+                    .Select(x => x.UpperPitch.ToStep())
                     .ToList()
                 : null;
 

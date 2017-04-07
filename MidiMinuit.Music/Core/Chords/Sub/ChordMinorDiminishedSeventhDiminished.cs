@@ -37,6 +37,9 @@ namespace MidiMinuit.Music.Core
         public override ChordAlias Alias { get; }
             = ChordAlias.MinorDiminishedSeventhDiminished;
 
+        public override string Name { get; }
+            = "Minor Diminished Seventh Diminished";
+
         public override string Description { get; }
             = "Un accord dim7 est un accord 7 dont toutes les notes ont été diminuées " +
               "d'un demi-ton (1 case) à l'exception de la fondamentale.";

@@ -47,6 +47,7 @@
     <Compile Include="Core\Chords\Base\Chord.Implicit.cs" />
     <Compile Include="Core\Chords\Base\Chord.Instances.cs" />
     <Compile Include="Core\Chords\Base\Chord.Equatable.cs" />
+    <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Equatable.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Instances.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Implicit.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Core\Scales\Base\Scale.Equatable.cs" />
     <Compile Include="Core\Scales\Base\Scale.Instances.cs" />
     <Compile Include="Core\Scales\Base\Scale.Implicit.cs" />
+    <Compile Include="Core\Scales\Extensions\ScaleExtensions.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Equatable.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Instances.cs" />
     <Compile Include="Core\StepAccidentals\Base\StepAccidental.Implicit.cs" />

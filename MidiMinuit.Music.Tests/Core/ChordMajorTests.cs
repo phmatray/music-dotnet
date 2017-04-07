@@ -170,5 +170,27 @@ namespace MidiMinuit.Music.Tests
             Assert.AreEqual(Pitch.E4, third);
             Assert.AreEqual(Pitch.G4, fifth);
         }
+
+        [TestMethod]
+        public void ChordIsInScale()
+        {
+            Pitch key = Pitch.C4;
+            Chord chordMajor = key.ToChord(ChordAlias.Major);
+            Scale scaleMajor = key.ToScale(ScaleAlias.Major);
+            bool expected = chordMajor.IsInScale(scaleMajor);
+
+            Assert.AreEqual(true, expected);
+        }
+
+        [TestMethod]
+        public void ChordIsNotInScale()
+        {
+            Pitch key = Pitch.C4;
+            Chord chordMinor = key.ToChord(ChordAlias.Minor);
+            Scale scaleMajor = key.ToScale(ScaleAlias.Major);
+            bool expected = chordMinor.IsInScale(scaleMajor);
+
+            Assert.AreEqual(false, expected);
+        }
     }
 }

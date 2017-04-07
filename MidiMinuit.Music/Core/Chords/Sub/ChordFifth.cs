@@ -35,6 +35,9 @@ namespace MidiMinuit.Music.Core
         public override ChordAlias Alias { get; }
             = ChordAlias.Fifth;
 
+        public override string Name { get; }
+            = "Fifth";
+
         public override string Description { get; }
             = "Description not added yet.";
 

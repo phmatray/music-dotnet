@@ -37,6 +37,9 @@ namespace MidiMinuit.Music.Core
         public override ChordAlias Alias { get; }
             = ChordAlias.MajorNinthMajor;
 
+        public override string Name { get; }
+            = "Major Ninth Major";
+
         public override string Description { get; }
             = "Description not added yet.";
 

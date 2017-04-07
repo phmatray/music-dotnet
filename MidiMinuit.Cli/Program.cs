@@ -7,6 +7,11 @@ namespace MidiMinuit.Cli
     {
         static void Main(string[] args)
         {
+            Pitch pitch = Pitch.G4;
+            IntervalPerfectFifth fifth = Interval.PerfectFifth;
+            Pitch expected = pitch - fifth;
+
+
             var interval1 = new IntervalPerfectFifth(Pitch.C4);
             var interval2 = interval1.MakeDescending();
 

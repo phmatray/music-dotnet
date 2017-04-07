@@ -37,6 +37,9 @@ namespace MidiMinuit.Music.Core
         public override ChordAlias Alias { get; }
             = ChordAlias.SuspendedFourthSeventhMinor;
 
+        public override string Name { get; }
+            = "Suspended Fourth Seventh Minor";
+
         public override string Description { get; }
             = "Description not added yet.";
 
