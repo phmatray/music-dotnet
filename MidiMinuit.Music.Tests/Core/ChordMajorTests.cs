@@ -87,7 +87,7 @@ namespace MidiMinuit.Music.Tests
         public void ChordMajorStepsDetails()
         {
             ChordMajor chordMajor = Chord.Major.SetKey(Pitch.C4);
-            var expected = chordMajor.StepsDetails;
+            var expected = chordMajor.PitchesDetails;
 
             Assert.AreEqual("C - E - G", expected);
         }
@@ -96,7 +96,7 @@ namespace MidiMinuit.Music.Tests
         public void ChordMajorStepsDetailsNull()
         {
             ChordMajor chordMajor = Chord.Major;
-            var expected = chordMajor.StepsDetails;
+            var expected = chordMajor.PitchesDetails;
 
             Assert.AreEqual(null, expected);
         }

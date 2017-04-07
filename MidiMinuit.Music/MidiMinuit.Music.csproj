@@ -42,6 +42,7 @@
     <None Include="Core\IntervalModifiers\ClassDiagram.cd" />
     <None Include="Core\DiatonicIntervals\ClassDiagram.cd" />
     <None Include="Core\Intervals\ClassDiagram.cd" />
+    <Compile Include="Common\IntervalCollection.cs" />
     <Compile Include="Common\IWikipedia.cs" />
     <Compile Include="Core\Chords\Base\Chord.Implicit.cs" />
     <Compile Include="Core\Chords\Base\Chord.Instances.cs" />
@@ -130,7 +131,6 @@
     <Compile Include="Core\Intervals\Enum\IntervalAlias.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalConsonance.cs" />
     <Compile Include="Core\Intervals\Enum\IntervalSpanning.cs" />
-    <Compile Include="Core\Intervals\Extensions\IntervalExtensions.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalAugmentedEleventh.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalAugmentedFifth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalAugmentedFourth.cs" />
