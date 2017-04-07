@@ -10,7 +10,7 @@ namespace MidiMinuit.Music.Tools
         private static ReadOnlyCollection<Degree> _degrees;
         private static ReadOnlyCollection<IntervalModifier> _intervalModifiers;
         private static ReadOnlyCollection<Interval> _intervals;
-        private static ReadOnlyCollection<IntervalStep> _intervalSteps;
+        private static ReadOnlyCollection<DiatonicInterval> _diatonicIntervals;
         private static ReadOnlyCollection<Step> _steps;
         private static ReadOnlyCollection<Pitch> _pitches;
         private static ReadOnlyCollection<Scale> _scales;
@@ -34,9 +34,9 @@ namespace MidiMinuit.Music.Tools
             => _intervals ?? (_intervals =
                    Interval.CreateAll().AsReadOnly());
 
-        public static ReadOnlyCollection<IntervalStep> IntervalSteps
-            => _intervalSteps ?? (_intervalSteps =
-                   IntervalStep.CreateAll().AsReadOnly());
+        public static ReadOnlyCollection<DiatonicInterval> DiatonicIntervals
+            => _diatonicIntervals ?? (_diatonicIntervals =
+                   DiatonicInterval.CreateAll().AsReadOnly());
 
         public static ReadOnlyCollection<Step> Steps
             => _steps ?? (_steps =

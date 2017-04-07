@@ -1,6 +1,6 @@
 ﻿namespace MidiMinuit.Music.Core
 {
-    public enum IntervalStepAlias
+    public enum DiatonicIntervalAlias
     {
         Unison = 1,
         Second = 2,

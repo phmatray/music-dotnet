@@ -7,11 +7,6 @@ using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
 {
-    public abstract class DiatonicInterval
-    {
-        
-    }
-
     public abstract partial class Interval
         : IWikipedia
     {
@@ -75,7 +70,7 @@ namespace MidiMinuit.Music.Core
 
         public abstract int Semitones { get; }
 
-        public abstract IntervalStep IntervalStep { get; }
+        public abstract DiatonicInterval DiatonicInterval { get; }
 
         public abstract IntervalModifier IntervalModifier { get; }
 
@@ -107,10 +102,10 @@ namespace MidiMinuit.Music.Core
             => UsefulMathHelpers.InvervalClass(Semitones);
 
         public Interval MakeAscending()
-            => Create(Math.Abs(IntervalStep.Steps), Math.Abs(Semitones));
+            => Create(Math.Abs(DiatonicInterval.Steps), Math.Abs(Semitones));
 
         public Interval MakeDescending()
-            => Create(Math.Abs(IntervalStep.Steps) * -1, Math.Abs(Semitones) * -1);
+            => Create(Math.Abs(DiatonicInterval.Steps) * -1, Math.Abs(Semitones) * -1);
 
         public abstract override string ToString();
 

@@ -2,10 +2,10 @@
 
 namespace MidiMinuit.Music.Core
 {
-    public partial class IntervalStep
-        : IEquatable<IntervalStep>
+    public partial class DiatonicInterval
+        : IEquatable<DiatonicInterval>
     {
-        public bool Equals(IntervalStep other)
+        public bool Equals(DiatonicInterval other)
         {
             return GetHashCode().Equals(other.GetHashCode());
         }
@@ -15,7 +15,7 @@ namespace MidiMinuit.Music.Core
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((IntervalStep) obj);
+            return Equals((DiatonicInterval) obj);
         }
 
         public override int GetHashCode()
@@ -23,12 +23,12 @@ namespace MidiMinuit.Music.Core
             return Alias.GetHashCode();
         }
 
-        public static bool operator ==(IntervalStep left, IntervalStep right)
+        public static bool operator ==(DiatonicInterval left, DiatonicInterval right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(IntervalStep left, IntervalStep right)
+        public static bool operator !=(DiatonicInterval left, DiatonicInterval right)
         {
             return !Equals(left, right);
         }
