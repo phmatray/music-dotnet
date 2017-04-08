@@ -14,43 +14,49 @@ namespace MidiMinuit.Music.Core
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
-        private Pitch _lowerPitch;
-        private Pitch _upperPitch;
+        ////public static Interval Between(Pitch p1, Pitch p2)
+        ////{
+        ////    return Create(p2.ToStep().Name.StepNumber - p1.ToStep().Name.StepNumber + 1,
+        ////        (p2.MidiPitch - p1.MidiPitch) % 12);
+        ////}
+
+        private Pitch _startingPitch;
+        private Pitch _endingPitch;
 
         protected Interval()
         {
         }
 
-        protected Interval(Pitch lowerPitch)
+        protected Interval(Pitch startingPitch)
         {
-            LowerPitch = lowerPitch;
+            StartingPitch = startingPitch;
         }
 
-        public Pitch LowerPitch
+        public Pitch StartingPitch
         {
             get
             {
-                return _lowerPitch;
+                return _startingPitch;
             }
 
             set
             {
-                _lowerPitch = value;
-                _upperPitch = _lowerPitch + this;
+                _startingPitch = value;
+                _endingPitch = _startingPitch + this;
             }
         }
 
-        public Pitch UpperPitch
+        public Pitch EndingPitch
         {
             get
             {
-                return _upperPitch;
+                return _endingPitch;
             }
 
             set
             {
-                _upperPitch = value;
-                _lowerPitch = _upperPitch - this;
+                _endingPitch = value;
+                _startingPitch = _endingPitch - this;
             }
         }
 
@@ -76,8 +82,28 @@ namespace MidiMinuit.Music.Core
 
         public abstract string WikipediaDescription { get; }
 
-        public string Notes
-            => $"{LowerPitch} - {UpperPitch}";
+        public bool HasPitches
+            => StartingPitch != null && EndingPitch != null;
+
+        public List<Pitch> Pitches
+            => HasPitches
+                ? new List<Pitch> { StartingPitch, EndingPitch }
+                : null;
+
+        public List<Step> Steps
+            => HasPitches
+                ? new List<Step> { StartingPitch.ToStep(), EndingPitch.ToStep() }
+                : null;
+
+        public string PitchesDetails
+            => StartingPitch != null && EndingPitch != null
+                ? $"{StartingPitch} to {EndingPitch}"
+                : null;
+
+        public string StepsDetails
+            => StartingPitch != null && EndingPitch != null
+                ? $"{StartingPitch.ToStep()} to {EndingPitch.ToStep()}"
+                : null;
 
         public string Name
             => Names.FirstOrDefault();
@@ -94,10 +120,26 @@ namespace MidiMinuit.Music.Core
             => UsefulMathHelpers.InvervalClass(Semitones);
 
         public Interval MakeAscending()
-            => Create(Math.Abs(DiatonicInterval.Steps), Math.Abs(Semitones));
+        {
+            var startingPitch = EndingPitch;
+            var endingPitch = StartingPitch;
+
+            endingPitch.Octave++;
+
+            var result = Create(startingPitch, endingPitch);
+            return result;
+        }
 
         public Interval MakeDescending()
-            => Create(Math.Abs(DiatonicInterval.Steps) * -1, Math.Abs(Semitones) * -1);
+        {
+            var startingPitch = EndingPitch;
+            var endingPitch = StartingPitch;
+
+            startingPitch.Octave--;
+
+            var result = Create(startingPitch, endingPitch);
+            return result;
+        }
 
         public abstract override string ToString();
     }

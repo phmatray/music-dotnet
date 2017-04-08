@@ -12,9 +12,9 @@ namespace MidiMinuit.Music.Tests
         {
             var chordMajor = new ChordMajor(Pitch.C4);
 
-            var fond = chordMajor.Fondamental.UpperPitch;
-            var third = chordMajor.MajorThird.UpperPitch;
-            var fifth = chordMajor.PerfectFifth.UpperPitch;
+            var fond = chordMajor.Fondamental.EndingPitch;
+            var third = chordMajor.MajorThird.EndingPitch;
+            var fifth = chordMajor.PerfectFifth.EndingPitch;
 
             Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);
@@ -26,9 +26,9 @@ namespace MidiMinuit.Music.Tests
         {
             var chordMajor = new ChordMajor { Key = Pitch.C4 };
 
-            var fond = chordMajor.Fondamental.UpperPitch;
-            var third = chordMajor.MajorThird.UpperPitch;
-            var fifth = chordMajor.PerfectFifth.UpperPitch;
+            var fond = chordMajor.Fondamental.EndingPitch;
+            var third = chordMajor.MajorThird.EndingPitch;
+            var fifth = chordMajor.PerfectFifth.EndingPitch;
 
             Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);
@@ -40,9 +40,9 @@ namespace MidiMinuit.Music.Tests
         {
             Chord chordMajor = Chord.Major.SetKey(Pitch.C4);
 
-            var fond = chordMajor.Intervals[0].UpperPitch;
-            var third = chordMajor.Intervals[1].UpperPitch;
-            var fifth = chordMajor.Intervals[2].UpperPitch;
+            var fond = chordMajor.Intervals[0].EndingPitch;
+            var third = chordMajor.Intervals[1].EndingPitch;
+            var fifth = chordMajor.Intervals[2].EndingPitch;
 
             Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);
@@ -56,9 +56,9 @@ namespace MidiMinuit.Music.Tests
             chordMajor.SetKey(Pitch.E4);
             chordMajor.SetKey(Pitch.C4);
 
-            var fond = chordMajor.Intervals[0].UpperPitch;
-            var third = chordMajor.Intervals[1].UpperPitch;
-            var fifth = chordMajor.Intervals[2].UpperPitch;
+            var fond = chordMajor.Intervals[0].EndingPitch;
+            var third = chordMajor.Intervals[1].EndingPitch;
+            var fifth = chordMajor.Intervals[2].EndingPitch;
 
             Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);
@@ -84,10 +84,28 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void ChordMajorStepsDetails()
+        public void ChordMajorPitchesDetails()
         {
             ChordMajor chordMajor = Chord.Major.SetKey(Pitch.C4);
             var expected = chordMajor.PitchesDetails;
+
+            Assert.AreEqual("C4 - E4 - G4", expected);
+        }
+
+        [TestMethod]
+        public void ChordMajorPitchesDetailsNull()
+        {
+            ChordMajor chordMajor = Chord.Major;
+            var expected = chordMajor.PitchesDetails;
+
+            Assert.AreEqual(null, expected);
+        }
+
+        [TestMethod]
+        public void ChordMajorStepsDetails()
+        {
+            ChordMajor chordMajor = Chord.Major.SetKey(Pitch.C4);
+            var expected = chordMajor.StepsDetails;
 
             Assert.AreEqual("C - E - G", expected);
         }
@@ -96,7 +114,7 @@ namespace MidiMinuit.Music.Tests
         public void ChordMajorStepsDetailsNull()
         {
             ChordMajor chordMajor = Chord.Major;
-            var expected = chordMajor.PitchesDetails;
+            var expected = chordMajor.StepsDetails;
 
             Assert.AreEqual(null, expected);
         }
@@ -150,7 +168,7 @@ namespace MidiMinuit.Music.Tests
         {
             var chordMajor = new ChordMajor(Pitch.C4);
 
-            var fond = chordMajor.Fondamental.UpperPitch;
+            var fond = chordMajor.Fondamental.EndingPitch;
             var result = fond == Pitch.C4;
 
             Assert.AreEqual(true, result);
@@ -162,9 +180,9 @@ namespace MidiMinuit.Music.Tests
             var pitch = Pitch.C4;
             var chordMajor = pitch.ToChord(ChordAlias.Major);
 
-            var fond = chordMajor.Fondamental.UpperPitch;
-            var third = chordMajor.MajorThird.UpperPitch;
-            var fifth = chordMajor.PerfectFifth.UpperPitch;
+            var fond = chordMajor.Fondamental.EndingPitch;
+            var third = chordMajor.MajorThird.EndingPitch;
+            var fifth = chordMajor.PerfectFifth.EndingPitch;
 
             Assert.AreEqual(Pitch.C4, fond);
             Assert.AreEqual(Pitch.E4, third);

@@ -11,13 +11,13 @@ namespace MidiMinuit.Music.Tests
         {
             var scaleMajor = Pitch.C4.ToScale(ScaleAlias.Major);
 
-            Assert.AreEqual(Pitch.C4, scaleMajor.Fondamental.UpperPitch);
-            Assert.AreEqual(Pitch.D4, scaleMajor.MajorSecond.UpperPitch);
-            Assert.AreEqual(Pitch.E4, scaleMajor.MajorThird.UpperPitch);
-            Assert.AreEqual(Pitch.F4, scaleMajor.PerfectFourth.UpperPitch);
-            Assert.AreEqual(Pitch.G4, scaleMajor.PerfectFifth.UpperPitch);
-            Assert.AreEqual(Pitch.A4, scaleMajor.MajorSixth.UpperPitch);
-            Assert.AreEqual(Pitch.B4, scaleMajor.MajorSeventh.UpperPitch);
+            Assert.AreEqual(Pitch.C4, scaleMajor.Fondamental.EndingPitch);
+            Assert.AreEqual(Pitch.D4, scaleMajor.MajorSecond.EndingPitch);
+            Assert.AreEqual(Pitch.E4, scaleMajor.MajorThird.EndingPitch);
+            Assert.AreEqual(Pitch.F4, scaleMajor.PerfectFourth.EndingPitch);
+            Assert.AreEqual(Pitch.G4, scaleMajor.PerfectFifth.EndingPitch);
+            Assert.AreEqual(Pitch.A4, scaleMajor.MajorSixth.EndingPitch);
+            Assert.AreEqual(Pitch.B4, scaleMajor.MajorSeventh.EndingPitch);
         }
 
         [TestMethod]
@@ -25,13 +25,13 @@ namespace MidiMinuit.Music.Tests
         {
             var scaleMajor = Pitch.G4.ToScale(ScaleAlias.Major);
 
-            Assert.AreEqual(Pitch.G4, scaleMajor.Fondamental.UpperPitch);
-            Assert.AreEqual(Pitch.A4, scaleMajor.MajorSecond.UpperPitch);
-            Assert.AreEqual(Pitch.B4, scaleMajor.MajorThird.UpperPitch);
-            Assert.AreEqual(Pitch.C5, scaleMajor.PerfectFourth.UpperPitch);
-            Assert.AreEqual(Pitch.D5, scaleMajor.PerfectFifth.UpperPitch);
-            Assert.AreEqual(Pitch.E5, scaleMajor.MajorSixth.UpperPitch);
-            Assert.AreEqual(Pitch.FSharp5, scaleMajor.MajorSeventh.UpperPitch);
+            Assert.AreEqual(Pitch.G4, scaleMajor.Fondamental.EndingPitch);
+            Assert.AreEqual(Pitch.A4, scaleMajor.MajorSecond.EndingPitch);
+            Assert.AreEqual(Pitch.B4, scaleMajor.MajorThird.EndingPitch);
+            Assert.AreEqual(Pitch.C5, scaleMajor.PerfectFourth.EndingPitch);
+            Assert.AreEqual(Pitch.D5, scaleMajor.PerfectFifth.EndingPitch);
+            Assert.AreEqual(Pitch.E5, scaleMajor.MajorSixth.EndingPitch);
+            Assert.AreEqual(Pitch.FSharp5, scaleMajor.MajorSeventh.EndingPitch);
         }
 
         [TestMethod]

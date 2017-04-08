@@ -10,8 +10,8 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public IntervalDiminishedOctave(Pitch lowerPitch)
-            : base(lowerPitch)
+        public IntervalDiminishedOctave(Pitch startingPitch)
+            : base(startingPitch)
         {
         }
 

@@ -34,7 +34,7 @@ namespace MidiMinuit.Music.Tools
 
         public static int InvervalClass(int pitch)
         {
-            if (pitch <= 0)
+            if (pitch < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(pitch));
             }

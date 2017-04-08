@@ -10,8 +10,8 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public IntervalPerfectFifth(Pitch lowerPitch)
-            : base(lowerPitch)
+        public IntervalPerfectFifth(Pitch startingPitch)
+            : base(startingPitch)
         {
         }
 

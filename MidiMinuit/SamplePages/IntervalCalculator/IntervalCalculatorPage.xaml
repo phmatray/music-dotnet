@@ -207,7 +207,7 @@
                 </TextBlock>
                 <TextBlock Margin="20" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold" 
                            Foreground="{StaticResource Brush-White}">
-                    <Run Text="{x:Bind ViewModel.Interval.Notes, Mode=OneWay}"/>
+                    <Run Text="{x:Bind ViewModel.Interval.PitchesDetails, Mode=OneWay}"/>
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center"
                            Foreground="{StaticResource Brush-White}" FontSize="18">

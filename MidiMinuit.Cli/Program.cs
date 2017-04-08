@@ -7,22 +7,16 @@ namespace MidiMinuit.Cli
     {
         static void Main(string[] args)
         {
+            var interval = Interval.Create(Pitch.C4, Pitch.G4);
+
             Pitch pitch = Pitch.G4;
             IntervalPerfectFifth fifth = Interval.PerfectFifth;
             Pitch expected = pitch - fifth;
 
-
             var interval1 = new IntervalPerfectFifth(Pitch.C4);
             var interval2 = interval1.MakeDescending();
 
-            //Assert.AreEqual(Pitch.C4, interval1.LowerPitch);
-            //Assert.AreEqual(Pitch.G4, interval1.UpperPitch);
-            //Assert.AreEqual(Pitch.G4, interval2.LowerPitch);
-            //Assert.AreEqual(Pitch.C4, interval2.UpperPitch);
-
-            ChordMajor chordMajor = Chord.Major;
-
-            var chord = Pitch.CSharp4.ToChord(ChordAlias.Major);
+            Chord chord = Pitch.CSharp4.ToChord(ChordAlias.Major);
             Console.WriteLine(chord.ToString());
             Console.ReadLine();
         }

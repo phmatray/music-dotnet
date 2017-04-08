@@ -10,8 +10,8 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public IntervalPerfectOctave(Pitch lowerPitch)
-            : base(lowerPitch)
+        public IntervalPerfectOctave(Pitch startingPitch)
+            : base(startingPitch)
         {
         }
 

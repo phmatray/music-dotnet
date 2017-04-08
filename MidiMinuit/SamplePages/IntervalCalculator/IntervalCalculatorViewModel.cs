@@ -81,21 +81,21 @@ namespace MidiMinuit.SamplePages.IntervalCalculator
         public void NoteName_OnChecked(object sender, RoutedEventArgs e)
         {
             StepName = (sender as RadioButton)?.Tag as StepName;
-            Interval.LowerPitch = new Pitch(StepName, StepAccidental);
+            Interval.StartingPitch = new Pitch(StepName, StepAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void NoteAccidental_OnChecked(object sender, RoutedEventArgs e)
         {
             StepAccidental = (sender as RadioButton)?.Tag as StepAccidental;
-            Interval.LowerPitch = new Pitch(StepName, StepAccidental);
+            Interval.StartingPitch = new Pitch(StepName, StepAccidental);
             RaisePropertyChanged(() => Interval);
         }
 
         public void Interval_OnChecked(object sender, RoutedEventArgs e)
         {
             var interval = (sender as RadioButton)?.Tag as Interval;
-            interval.LowerPitch = new Pitch(StepName, StepAccidental);
+            interval.StartingPitch = new Pitch(StepName, StepAccidental);
             Interval = interval;
         }
     }

@@ -10,8 +10,8 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public IntervalMajorThird(Pitch lowerPitch)
-            : base(lowerPitch)
+        public IntervalMajorThird(Pitch startingPitch)
+            : base(startingPitch)
         {
         }
 

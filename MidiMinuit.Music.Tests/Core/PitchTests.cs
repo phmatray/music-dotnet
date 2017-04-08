@@ -92,5 +92,27 @@ namespace MidiMinuit.Music.Tests
             string expectedResult = pitch.ToString();
             Assert.AreEqual("Cb2", expectedResult);
         }
+
+        [TestMethod]
+        public void PitchStepDistanceC4G4()
+        {
+            var pitch1 = Pitch.C4;
+            var pitch2 = Pitch.G4;
+
+            var expected = Pitch.StepDistance(pitch1, pitch2);
+
+            Assert.AreEqual(5, expected);
+        }
+
+        [TestMethod]
+        public void PitchStepDistanceG4C5()
+        {
+            var pitch1 = Pitch.G4;
+            var pitch2 = Pitch.C5;
+
+            var expected = Pitch.StepDistance(pitch1, pitch2);
+
+            Assert.AreEqual(4, expected);
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace MidiMinuit.Music.Core
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return Equals(_lowerPitch, other._lowerPitch) && Equals(UpperPitch, other.UpperPitch);
+            return Equals(_startingPitch, other._startingPitch) && Equals(EndingPitch, other.EndingPitch);
         }
 
         public override bool Equals(object obj)
@@ -24,7 +24,7 @@ namespace MidiMinuit.Music.Core
         {
             unchecked
             {
-                return ((_lowerPitch != null ? _lowerPitch.GetHashCode() : 0) * 397) ^ (UpperPitch != null ? UpperPitch.GetHashCode() : 0);
+                return ((_startingPitch != null ? _startingPitch.GetHashCode() : 0) * 397) ^ (EndingPitch != null ? EndingPitch.GetHashCode() : 0);
             }
         }
 

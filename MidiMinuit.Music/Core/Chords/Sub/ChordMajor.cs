@@ -47,8 +47,8 @@ namespace MidiMinuit.Music.Core
 
         // TODO: Apply this modification to other Chord classes.
         public override string Abbreviation
-            => Fondamental?.UpperPitch != null
-                ? $"{Fondamental.UpperPitch.ToStep()} maj"
+            => Fondamental?.EndingPitch != null
+                ? $"{Fondamental.EndingPitch.ToStep()} maj"
                 : null;
 
         public ChordMajor SetKey(Pitch key)

@@ -68,16 +68,16 @@ namespace MidiMinuit.Music.Common
 
         public IntervalAugmentedEleventh AugmentedEleventh { get; protected set; }
 
-        public bool HasUpperPitches
-            => Intervals.Any(x => x.UpperPitch != null);
+        public bool HasPitches
+            => Intervals.Any(x => x.StartingPitch != null && x.EndingPitch != null);
 
         /// <summary>
         ///     Gets pitches from the interval collection.
         /// </summary>
         public List<Pitch> Pitches
-            => HasUpperPitches
+            => HasPitches
                 ? Intervals
-                    .Select(x => x.UpperPitch)
+                    .Select(x => x.EndingPitch)
                     .ToList()
                 : null;
 
@@ -85,9 +85,9 @@ namespace MidiMinuit.Music.Common
         ///     Gets steps from the interval collection.
         /// </summary>
         public List<Step> Steps
-            => HasUpperPitches
+            => HasPitches
                 ? Intervals
-                    .Select(x => x.UpperPitch.ToStep())
+                    .Select(x => x.EndingPitch.ToStep())
                     .ToList()
                 : null;
 
@@ -95,9 +95,9 @@ namespace MidiMinuit.Music.Common
         ///     Gets details of the chord.
         /// </summary>
         public string Details
-            => HasUpperPitches
+            => HasPitches
                 ? Intervals
-                    .Select(x => $"{x.UpperPitch.ToStep()} ({x.Abbreviation})")
+                    .Select(x => $"{x.EndingPitch.ToStep()} ({x.Abbreviation})")
                     .Aggregate((current, next) => current + " - " + next)
                 : IntervalDetails;
 
@@ -107,9 +107,16 @@ namespace MidiMinuit.Music.Common
                 .Aggregate((current, next) => current + " - " + next);
 
         public string PitchesDetails
-            => HasUpperPitches
+            => HasPitches
                 ? Intervals?
-                    .Select(x => x.UpperPitch.ToStep().ToString())
+                    .Select(x => x.EndingPitch.ToString())
+                    .Aggregate((current, next) => current + " - " + next)
+                : null;
+
+        public string StepsDetails
+            => HasPitches
+                ? Intervals?
+                    .Select(x => x.EndingPitch.ToStep().ToString())
                     .Aggregate((current, next) => current + " - " + next)
                 : null;
 

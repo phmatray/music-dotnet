@@ -290,7 +290,11 @@ namespace MidiMinuit.Music.Core
         }
 
         public static int StepDistance(Pitch p1, Pitch p2)
-            => p1.Name.StepNumber - 1 + (p1.Octave * 7) - (p2.Name.StepNumber - 1 + (p2.Octave * 7));
+        {
+            var p1Absolute = p1.Name.StepNumber - 1 + (p1.Octave * 7);
+            var p2Absolute = p2.Name.StepNumber - 1 + (p2.Octave * 7);
+            return Math.Abs(p1Absolute - p2Absolute) + 1;
+        }
 
         public static int StepDistance(IHasPitch h1, Pitch p2)
             => StepDistance(h1.Pitch, p2);

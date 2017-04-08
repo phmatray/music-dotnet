@@ -82,19 +82,77 @@ namespace MidiMinuit.Music.Core
             }
         }
 
-        public static Interval Create(int steps, int semitones)
+        ////public static Interval Create(DiatonicInterval diatonicInterval, int semitones)
+        ////{
+        ////    var interval = MusicContext.Intervals
+        ////        .Where(x => x.DiatonicInterval == diatonicInterval && x.Semitones == semitones)
+        ////        .ToList();
+
+        ////    return interval.FirstOrDefault();
+        ////}
+
+        public static Interval Create(Pitch startingPitch, Pitch endingPitch)
         {
+            if (startingPitch == null)
+            {
+                throw new ArgumentNullException(nameof(startingPitch));
+            }
+
+            if (endingPitch == null)
+            {
+                throw new ArgumentNullException(nameof(endingPitch));
+            }
+
+            if (startingPitch > endingPitch)
+            {
+                var message = $"{nameof(startingPitch)} must be lower than {nameof(endingPitch)}";
+                throw new ArgumentException(message);
+            }
+
+            var stepDistance = Pitch.StepDistance(startingPitch, endingPitch);
+            var semitones = (endingPitch.MidiPitch - startingPitch.MidiPitch + 12) % 12;
+
             var interval = MusicContext.Intervals
-                .Where(x => x.DiatonicInterval.Steps == steps && x.Semitones == semitones)
-                .ToList();
+                .Where(x => x.DiatonicInterval.Steps == stepDistance)
+                .Single(x => x.Semitones == semitones);
 
-            return interval.FirstOrDefault();
-        }
+            interval.StartingPitch = startingPitch;
 
-        public static Interval Create(Pitch lowerPitch, Pitch upperPitch)
-        {
-            // TODO: Implement this
-            throw new NotImplementedException();
+            return interval;
+
+            ////var isUpsideDown = startingPitch > endingPitch;
+
+            ////Pitch lowerPitch;
+            ////Pitch upperPitch;
+
+            ////if (isUpsideDown)
+            ////{
+            ////    lowerPitch = endingPitch;
+            ////    upperPitch = startingPitch;
+            ////}
+            ////else
+            ////{
+            ////    lowerPitch = startingPitch;
+            ////    upperPitch = endingPitch;
+            ////}
+
+            ////Interval result = null;
+            ////foreach (var interval in CreateAll())
+            ////{
+            ////    interval.StartingPitch = lowerPitch;
+            ////    if (interval.EndingPitch == upperPitch)
+            ////    {
+            ////        result = interval;
+            ////        break;
+            ////    }
+            ////}
+
+            ////if (isUpsideDown)
+            ////{
+            ////    ////return result.Inverse();
+            ////}
+
+            ////return result;
         }
     }
 }

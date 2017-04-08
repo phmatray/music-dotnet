@@ -14,7 +14,7 @@
             <StackPanel>
                 <TextBlock Text="{x:Bind Name}"/>
                 <TextBlock Text="{x:Bind Details}"/>
-                <TextBlock Text="{x:Bind NoteDetails}"/>
+                <TextBlock Text="{x:Bind PitchesDetails}"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>

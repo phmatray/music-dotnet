@@ -10,8 +10,8 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public IntervalDiminishedSecond(Pitch lowerPitch)
-            : base(lowerPitch)
+        public IntervalDiminishedSecond(Pitch startingPitch)
+            : base(startingPitch)
         {
         }
 

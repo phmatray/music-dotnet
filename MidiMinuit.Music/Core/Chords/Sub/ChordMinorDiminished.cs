@@ -46,7 +46,7 @@ namespace MidiMinuit.Music.Core
             => new List<Interval> { Fondamental, MinorThird, DiminishedFifth };
 
         public override string Abbreviation
-            => Fondamental?.UpperPitch != null
+            => Fondamental?.EndingPitch != null
                 ? $"{Fondamental}dim"
                 : null;
 

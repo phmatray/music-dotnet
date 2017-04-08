@@ -10,8 +10,8 @@ namespace MidiMinuit.Music.Core
         {
         }
 
-        public IntervalAugmentedUnison(Pitch lowerPitch)
-            : base(lowerPitch)
+        public IntervalAugmentedUnison(Pitch startingPitch)
+            : base(startingPitch)
         {
         }
 
