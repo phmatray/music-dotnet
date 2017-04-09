@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{D49A7F56-1205-44D0-80DB-4D61BA6CE210}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrumPadMachine</RootNamespace>
+    <AssemblyName>DrumPadMachine</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>DrumPadMachine_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>B80C26CA06656B51F7FD29EE8CA49CC53C9770C6</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="DrumPadMachine_StoreKey.pfx" />
+    <None Include="DrumPadMachine_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\clap-808.wav" />
+    <Content Include="Sounds\clap-analog.wav" />
+    <Content Include="Sounds\clap-crushed.wav" />
+    <Content Include="Sounds\clap-fat.wav" />
+    <Content Include="Sounds\clap-slapper.wav" />
+    <Content Include="Sounds\clap-tape.wav" />
+    <Content Include="Sounds\cowbell-808.wav" />
+    <Content Include="Sounds\crash-808.wav" />
+    <Content Include="Sounds\crash-acoustic.wav" />
+    <Content Include="Sounds\crash-noise.wav" />
+    <Content Include="Sounds\crash-tape.wav" />
+    <Content Include="Sounds\hihat-808.wav" />
+    <Content Include="Sounds\hihat-acoustic01.wav" />
+    <Content Include="Sounds\hihat-acoustic02.wav" />
+    <Content Include="Sounds\hihat-analog.wav" />
+    <Content Include="Sounds\hihat-digital.wav" />
+    <Content Include="Sounds\hihat-dist01.wav" />
+    <Content Include="Sounds\hihat-dist02.wav" />
+    <Content Include="Sounds\hihat-electro.wav" />
+    <Content Include="Sounds\hihat-plain.wav" />
+    <Content Include="Sounds\hihat-reso.wav" />
+    <Content Include="Sounds\hihat-ring.wav" />
+    <Content Include="Sounds\kick-808.wav" />
+    <Content Include="Sounds\kick-acoustic01.wav" />
+    <Content Include="Sounds\kick-acoustic02.wav" />
+    <Content Include="Sounds\kick-big.wav" />
+    <Content Include="Sounds\kick-classic.wav" />
+    <Content Include="Sounds\kick-cultivator.wav" />
+    <Content Include="Sounds\kick-deep.wav" />
+    <Content Include="Sounds\kick-dry.wav" />
+    <Content Include="Sounds\kick-electro01.wav" />
+    <Content Include="Sounds\kick-electro02.wav" />
+    <Content Include="Sounds\kick-floppy.wav" />
+    <Content Include="Sounds\kick-gritty.wav" />
+    <Content Include="Sounds\kick-heavy.wav" />
+    <Content Include="Sounds\kick-newwave.wav" />
+    <Content Include="Sounds\kick-oldschool.wav" />
+    <Content Include="Sounds\kick-plain.wav" />
+    <Content Include="Sounds\kick-slapback.wav" />
+    <Content Include="Sounds\kick-softy.wav" />
+    <Content Include="Sounds\kick-stomp.wav" />
+    <Content Include="Sounds\kick-tape.wav" />
+    <Content Include="Sounds\kick-thump.wav" />
+    <Content Include="Sounds\kick-tight.wav" />
+    <Content Include="Sounds\kick-tron.wav" />
+    <Content Include="Sounds\kick-vinyl01.wav" />
+    <Content Include="Sounds\kick-vinyl02.wav" />
+    <Content Include="Sounds\kick-zapper.wav" />
+    <Content Include="Sounds\openhat-808.wav" />
+    <Content Include="Sounds\openhat-acoustic01.wav" />
+    <Content Include="Sounds\openhat-analog.wav" />
+    <Content Include="Sounds\openhat-slick.wav" />
+    <Content Include="Sounds\openhat-tight.wav" />
+    <Content Include="Sounds\perc-808.wav" />
+    <Content Include="Sounds\perc-chirpy.wav" />
+    <Content Include="Sounds\perc-hollow.wav" />
+    <Content Include="Sounds\perc-laser.wav" />
+    <Content Include="Sounds\perc-metal.wav" />
+    <Content Include="Sounds\perc-nasty.wav" />
+    <Content Include="Sounds\perc-short.wav" />
+    <Content Include="Sounds\perc-tambo.wav" />
+    <Content Include="Sounds\perc-tribal.wav" />
+    <Content Include="Sounds\perc-weirdo.wav" />
+    <Content Include="Sounds\ride-acoustic01.wav" />
+    <Content Include="Sounds\ride-acoustic02.wav" />
+    <Content Include="Sounds\shaker-analog.wav" />
+    <Content Include="Sounds\shaker-shuffle.wav" />
+    <Content Include="Sounds\shaker-suckup.wav" />
+    <Content Include="Sounds\snare-808.wav" />
+    <Content Include="Sounds\snare-acoustic01.wav" />
+    <Content Include="Sounds\snare-acoustic02.wav" />
+    <Content Include="Sounds\snare-analog.wav" />
+    <Content Include="Sounds\snare-big.wav" />
+    <Content Include="Sounds\snare-block.wav" />
+    <Content Include="Sounds\snare-brute.wav" />
+    <Content Include="Sounds\snare-dist01.wav" />
+    <Content Include="Sounds\snare-dist02.wav" />
+    <Content Include="Sounds\snare-dist03.wav" />
+    <Content Include="Sounds\snare-electro.wav" />
+    <Content Include="Sounds\snare-lofi01.wav" />
+    <Content Include="Sounds\snare-lofi02.wav" />
+    <Content Include="Sounds\snare-modular.wav" />
+    <Content Include="Sounds\snare-noise.wav" />
+    <Content Include="Sounds\snare-pinch.wav" />
+    <Content Include="Sounds\snare-punch.wav" />
+    <Content Include="Sounds\snare-smasher.wav" />
+    <Content Include="Sounds\snare-sumo.wav" />
+    <Content Include="Sounds\snare-tape.wav" />
+    <Content Include="Sounds\snare-vinyl01.wav" />
+    <Content Include="Sounds\snare-vinyl02.wav" />
+    <Content Include="Sounds\tom-808.wav" />
+    <Content Include="Sounds\tom-acoustic01.wav" />
+    <Content Include="Sounds\tom-acoustic02.wav" />
+    <Content Include="Sounds\tom-analog.wav" />
+    <Content Include="Sounds\tom-chiptune.wav" />
+    <Content Include="Sounds\tom-fm.wav" />
+    <Content Include="Sounds\tom-lofi.wav" />
+    <Content Include="Sounds\tom-rototom.wav" />
+    <Content Include="Sounds\tom-short.wav" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>5.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmLight">
+      <Version>5.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

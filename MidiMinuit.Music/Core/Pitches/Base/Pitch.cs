@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MidiMinuit.Music.Common;
+using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
 {
@@ -13,11 +14,6 @@ namespace MidiMinuit.Music.Core
     public partial class Pitch
         : Step, IComparable<Pitch>
     {
-        private static Dictionary<string, int> _pitches
-            = StepName
-                .CreateAll()
-                .ToDictionary(x => x.Name, x => x.MidiPitch);
-
         public Pitch(string name, int accidentalValue, int octaveNumber)
         {
             Name = name;
@@ -68,20 +64,11 @@ namespace MidiMinuit.Music.Core
         public int Octave { get; set; }
 
         public int MidiPitch
-            => _pitches[Name.Name] + Accidental.Value + ((Octave - 4) * 12);
-
-        // TODO: Remove this property
-        public int PitchAbsolute
         {
             get
             {
-                var pitch = Name.Semitones + Accidental.Value;
-                if (pitch < 0)
-                {
-                    pitch += 12;
-                }
-
-                return pitch;
+                var stepMidiPitch = MusicContext.StepNames.Single(x => x == Name).MidiPitch;
+                return stepMidiPitch + Accidental.Value + ((Octave - 4) * 12);
             }
         }
 
@@ -148,15 +135,6 @@ namespace MidiMinuit.Music.Core
         ////    }
         ////}
 
-        ////public int FromNote(Pitch relativePitch)
-        ////{
-        ////    var value = PitchAbsolute;
-        ////    var relative = relativePitch.PitchAbsolute;
-
-        ////    return relative > value
-        ////        ? value - relative + 12
-        ////        : value - relative - 12;
-        ////}
 
 
 

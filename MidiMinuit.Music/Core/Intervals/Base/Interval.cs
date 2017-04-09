@@ -6,6 +6,34 @@ using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
 {
+    public abstract class IntervalSimple
+        : Interval
+    {
+        protected IntervalSimple()
+        {
+        }
+
+        protected IntervalSimple(Pitch startingPitch)
+            : base(startingPitch)
+        {
+            StartingPitch = startingPitch;
+        }
+    }
+
+    public abstract class IntervalCompound
+        : Interval
+    {
+        protected IntervalCompound()
+        {
+        }
+
+        protected IntervalCompound(Pitch startingPitch)
+            : base(startingPitch)
+        {
+            StartingPitch = startingPitch;
+        }
+    }
+
     public abstract partial class Interval
         : IWikipedia
     {

@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IntervalCalculator"
     xmlns:viewModels="using:IntervalCalculator.ViewModels"
-    RequestedTheme="Light">
+    RequestedTheme="Dark">
 
     <Application.Resources>
         

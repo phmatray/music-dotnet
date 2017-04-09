@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace MidiMinuit.Music.Core
 {
     public class IntervalAugmentedFourth
-        : Interval
+        : IntervalSimple
     {
         public IntervalAugmentedFourth()
         {

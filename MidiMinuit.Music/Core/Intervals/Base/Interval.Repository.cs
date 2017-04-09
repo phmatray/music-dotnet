@@ -119,40 +119,6 @@ namespace MidiMinuit.Music.Core
             interval.StartingPitch = startingPitch;
 
             return interval;
-
-            ////var isUpsideDown = startingPitch > endingPitch;
-
-            ////Pitch lowerPitch;
-            ////Pitch upperPitch;
-
-            ////if (isUpsideDown)
-            ////{
-            ////    lowerPitch = endingPitch;
-            ////    upperPitch = startingPitch;
-            ////}
-            ////else
-            ////{
-            ////    lowerPitch = startingPitch;
-            ////    upperPitch = endingPitch;
-            ////}
-
-            ////Interval result = null;
-            ////foreach (var interval in CreateAll())
-            ////{
-            ////    interval.StartingPitch = lowerPitch;
-            ////    if (interval.EndingPitch == upperPitch)
-            ////    {
-            ////        result = interval;
-            ////        break;
-            ////    }
-            ////}
-
-            ////if (isUpsideDown)
-            ////{
-            ////    ////return result.Inverse();
-            ////}
-
-            ////return result;
         }
     }
 }
