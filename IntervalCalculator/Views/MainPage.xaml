@@ -215,10 +215,10 @@
                 </TextBlock>
                 <TextBlock Margin="20" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold"
                            Foreground="White">
-                    <Run Text="{x:Bind ViewModel.Interval.StartingPitch, Mode=OneWay}"/>
-                    <Run Text="-"/>
-                    <Run Text="{x:Bind ViewModel.Interval.EndingPitch, Mode=OneWay}"
-                         Foreground="{x:Bind ViewModel.Interval.EndingPitch, Converter={StaticResource AccidentalToBrushConverter}, Mode=OneWay}"/>
+                    <Run Text="{x:Bind ViewModel.Interval.StartingStep, Mode=OneWay}"/>
+                    <Run Text="to"/>
+                    <Run Text="{x:Bind ViewModel.Interval.EndingStep, Mode=OneWay}"
+                         Foreground="{x:Bind ViewModel.Interval.EndingStep, Converter={StaticResource AccidentalToBrushConverter}, Mode=OneWay}"/>
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center"
                            Foreground="{StaticResource Brush-White}" FontSize="18">

@@ -9,9 +9,6 @@ namespace MidiMinuit.Music.Core
         public override int Semitones { get; }
             = 2;
 
-        public override int MidiPitch { get; }
-            = 62;
-
         public override int StepNumber { get; }
             = 2;
 

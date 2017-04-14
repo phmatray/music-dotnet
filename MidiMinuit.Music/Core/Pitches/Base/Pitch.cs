@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MidiMinuit.Music.Common;
+using MidiMinuit.Music.Core.Extensions;
 using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
@@ -27,7 +28,7 @@ namespace MidiMinuit.Music.Core
         /// <param name="name">The name of the note.</param>
         /// <param name="accidental">The accidental of the note.</param>
         /// <param name="octaveNumber">The octave of the note.</param>
-        public Pitch(StepNameAlias name, StepAccidentalAlias accidental = StepAccidentalAlias.Flat, int octaveNumber = 4)
+        public Pitch(StepNameAlias name, StepAccidentalAlias accidental = StepAccidentalAlias.Natural, int octaveNumber = 4)
         {
             Name = name;
             Accidental = accidental;
@@ -64,13 +65,7 @@ namespace MidiMinuit.Music.Core
         public int Octave { get; set; }
 
         public int MidiPitch
-        {
-            get
-            {
-                var stepMidiPitch = MusicContext.StepNames.Single(x => x == Name).MidiPitch;
-                return stepMidiPitch + Accidental.Value + ((Octave - 4) * 12);
-            }
-        }
+            => Name.GetMidiPitch(Octave) + Accidental.Value;
 
         ////public Interval GetInterval()
         ////{
@@ -161,14 +156,14 @@ namespace MidiMinuit.Music.Core
         public static Pitch operator +(Pitch pitch, Interval interval)
         {
             return pitch != null && interval != null
-                ? pitch.Translate(interval, MidiPitchTranslationMode.Auto)
+                ? pitch.AddInterval(interval)
                 : null;
         }
 
         public static Pitch operator -(Pitch pitch, Interval interval)
         {
             return pitch != null && interval != null
-                ? pitch.Translate(interval.MakeDescending(), MidiPitchTranslationMode.Auto)
+                ? pitch.SubstractInterval(interval)
                 : null;
         }
 

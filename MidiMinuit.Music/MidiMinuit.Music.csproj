@@ -186,6 +186,7 @@
     <Compile Include="Core\StepNames\Base\StepName.cs" />
     <Compile Include="Core\StepNames\Base\StepName.Repository.cs" />
     <Compile Include="Core\StepNames\Enum\StepNameAlias.cs" />
+    <Compile Include="Core\StepNames\Extensions\StepNameExtensions.cs" />
     <Compile Include="Core\StepNames\Sub\StepNameA.cs" />
     <Compile Include="Core\StepNames\Sub\StepNameB.cs" />
     <Compile Include="Core\StepNames\Sub\StepNameC.cs" />

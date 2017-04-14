@@ -54,6 +54,7 @@
     <Compile Include="Core\MusicContextTests.cs" />
     <Compile Include="Core\PitchTests.cs" />
     <Compile Include="Core\ScaleMajorTests.cs" />
+    <Compile Include="Core\StepNameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\StepTests.cs" />
   </ItemGroup>

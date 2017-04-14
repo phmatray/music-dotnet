@@ -11,7 +11,7 @@ namespace IntervalCalculator.Views.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            return ((Pitch) value).Accidental.SignAscii.Length > 2
+            return ((Step) value).Accidental.SignAscii.Length > 2
                 ? new SolidColorBrush(Color.FromArgb(255, 167, 16, 20))
                 : new SolidColorBrush(Colors.White);
         }

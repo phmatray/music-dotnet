@@ -70,7 +70,7 @@ namespace MidiMinuit.Music.Core
             set
             {
                 _startingPitch = value;
-                _endingPitch = _startingPitch + this;
+                _endingPitch = _startingPitch?.AddInterval(this);
             }
         }
 
@@ -84,9 +84,15 @@ namespace MidiMinuit.Music.Core
             set
             {
                 _endingPitch = value;
-                _startingPitch = _endingPitch - this;
+                _startingPitch = _endingPitch?.SubstractInterval(this);
             }
         }
+
+        public Step StartingStep
+            => StartingPitch?.ToStep();
+
+        public Step EndingStep
+            => EndingPitch?.ToStep();
 
         public abstract IntervalAlias IntervalAlias { get; }
 
@@ -147,26 +153,22 @@ namespace MidiMinuit.Music.Core
         public int IntervalClass
             => UsefulMathHelpers.InvervalClass(Semitones);
 
-        public Interval MakeAscending()
+        public Interval InverseOctaveUp()
         {
             var startingPitch = EndingPitch;
             var endingPitch = StartingPitch;
-
             endingPitch.Octave++;
 
-            var result = Create(startingPitch, endingPitch);
-            return result;
+            return Create(startingPitch, endingPitch);
         }
 
-        public Interval MakeDescending()
+        public Interval InverseOctaveDown()
         {
             var startingPitch = EndingPitch;
             var endingPitch = StartingPitch;
-
             startingPitch.Octave--;
 
-            var result = Create(startingPitch, endingPitch);
-            return result;
+            return Create(startingPitch, endingPitch);
         }
 
         public abstract override string ToString();

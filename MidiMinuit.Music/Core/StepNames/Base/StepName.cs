@@ -6,8 +6,6 @@
 
         public abstract int Semitones { get; }
 
-        public abstract int MidiPitch { get; }
-
         public abstract int StepNumber { get; }
 
         public abstract string Name { get; }

@@ -27,7 +27,7 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void IntervalPitchAddInterval()
+        public void IntervalPitchOperatorAddInterval()
         {
             Pitch pitch = Pitch.C4;
             IntervalPerfectFifth fifth = Interval.PerfectFifth;
@@ -37,7 +37,7 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void IntervalPitchSubstractInterval()
+        public void IntervalPitchOperatorSubstractInterval()
         {
             Pitch pitch = Pitch.G4;
             IntervalPerfectFifth fifth = Interval.PerfectFifth;
@@ -47,15 +47,52 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void IntervalMakeDescending()
+        public void IntervalPitchAddInterval()
         {
-            var interval1 = new IntervalPerfectFifth(Pitch.C4);
-            var interval2 = interval1.MakeDescending();
+            Pitch pitch = new Pitch(StepNameAlias.C, StepAccidentalAlias.DoubleSharp);
+            var octave = Interval.PerfectOctave;
+            Pitch expected = pitch.AddInterval(octave);
 
-            Assert.AreEqual(Pitch.C4, interval1.StartingPitch);
-            Assert.AreEqual(Pitch.G4, interval1.EndingPitch);
-            Assert.AreEqual(Pitch.G4, interval2.StartingPitch);
-            Assert.AreEqual(Pitch.C4, interval2.EndingPitch);
+            var left = new Pitch(StepNameAlias.C, StepAccidentalAlias.DoubleSharp, 5);
+            Assert.AreEqual(left, expected);
+        }
+
+        [TestMethod]
+        public void IntervalPitchSubstractInterval()
+        {
+            Pitch pitch = new Pitch(StepNameAlias.C, StepAccidentalAlias.DoubleSharp);
+            var octave = Interval.PerfectOctave;
+            Pitch expected = pitch.SubstractInterval(octave);
+
+            var left = new Pitch(StepNameAlias.C, StepAccidentalAlias.DoubleSharp, 3);
+            Assert.AreEqual(left, expected);
+
+        }
+
+        [TestMethod]
+        public void IntervalInverseOctaveUp()
+        {
+            var pitch1 = Pitch.C4;
+            var pitch2 = Pitch.G4;
+            var interval = Interval.Create(pitch1, pitch2);
+
+            Interval expected = interval.InverseOctaveUp();
+
+            Assert.AreEqual(Pitch.G4, expected.StartingPitch);
+            Assert.AreEqual(Pitch.C5, expected.EndingPitch);
+        }
+
+        [TestMethod]
+        public void IntervalInverseDown()
+        {
+            var pitch1 = Pitch.C4;
+            var pitch2 = Pitch.G4;
+            var interval = Interval.Create(pitch1, pitch2);
+
+            Interval expected = interval.InverseOctaveDown();
+
+            Assert.AreEqual(Pitch.G3, expected.StartingPitch);
+            Assert.AreEqual(Pitch.C4, expected.EndingPitch);
         }
 
         [TestMethod]
@@ -65,6 +102,17 @@ namespace MidiMinuit.Music.Tests
             string expected = fifth.StepsDetails;
 
             Assert.AreEqual("C to G", expected);
+        }
+
+        [TestMethod]
+        public void IntervalStepsDetailsOctave()
+        {
+            var pitch = new Pitch(StepNameAlias.C, StepAccidentalAlias.DoubleSharp);
+            var octave = Interval.PerfectOctave;
+            octave.StartingPitch = pitch;
+            var expected = octave.StepsDetails;
+
+            Assert.AreEqual("C## to C##", expected);
         }
 
         [TestMethod]

@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MidiMinuit.Music.Core;
+using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Tests
 {
@@ -113,6 +114,56 @@ namespace MidiMinuit.Music.Tests
             var expected = Pitch.StepDistance(pitch1, pitch2);
 
             Assert.AreEqual(4, expected);
+        }
+
+        [TestMethod]
+        public void PitchAddInterval()
+        {
+            Pitch startingPitch = new Pitch(StepNameAlias.C, StepAccidentalAlias.DoubleFlat); 
+            Interval interval = new IntervalDiminishedSecond();
+
+            Pitch expected = startingPitch.AddInterval(interval);
+            Assert.AreEqual(new Pitch(StepNameAlias.D, StepAccidentalAlias.QuadrupleFlat), expected);
+        }
+
+        [TestMethod]
+        public void PitchAddInterval2()
+        {
+            Pitch startingPitch = new Pitch(StepNameAlias.F, StepAccidentalAlias.DoubleSharp, 4); 
+            Interval interval = new IntervalAugmentedOctave();
+
+            Pitch expected = startingPitch.AddInterval(interval);
+            Assert.AreEqual(new Pitch(StepNameAlias.F, StepAccidentalAlias.TripleSharp, 5), expected);
+        }
+
+        [TestMethod]
+        public void PitchAddInterval3()
+        {
+            Pitch startingPitch = Pitch.C4; 
+            Interval interval = new IntervalPerfectFifth();
+
+            Pitch expected = startingPitch.AddInterval(interval);
+            Assert.AreEqual(Pitch.G4, expected);
+        }
+
+        [TestMethod]
+        public void PitchAddInterval4()
+        {
+            Pitch startingPitch = Pitch.C4; 
+            Interval interval = new IntervalMajorSixth();
+
+            Pitch expected = startingPitch.AddInterval(interval);
+            Assert.AreEqual(Pitch.A4, expected);
+        }
+
+        [TestMethod]
+        public void PitchAddInterval5()
+        {
+            Pitch startingPitch = Pitch.E4; 
+            Interval interval = new IntervalPerfectFifth();
+
+            Pitch expected = startingPitch.AddInterval(interval);
+            Assert.AreEqual(Pitch.B4, expected);
         }
     }
 }
