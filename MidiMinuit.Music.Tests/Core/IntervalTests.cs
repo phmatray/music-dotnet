@@ -18,7 +18,37 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void IntervalCreateWithPitchiesInverse()
+        public void IntervalCreateWithPitches2()
+        {
+            var interval = Interval.Create(Pitch.C3, Pitch.C4);
+
+            Assert.AreEqual("P8", interval.Abbreviation);
+            Assert.AreEqual(Pitch.C3, interval.StartingPitch);
+            Assert.AreEqual(Pitch.C4, interval.EndingPitch);
+        }
+
+        [TestMethod]
+        public void IntervalCreateWithPitches3()
+        {
+            var interval = Interval.Create(Pitch.C3, Pitch.CSharp4);
+
+            Assert.AreEqual("A8", interval.Abbreviation);
+            Assert.AreEqual(Pitch.C3, interval.StartingPitch);
+            Assert.AreEqual(Pitch.CSharp4, interval.EndingPitch);
+        }
+
+        //[TestMethod]
+        //public void IntervalCreateWithPitches4()
+        //{
+        //    var interval = Interval.Create(new Pitch("Cbb3"), Pitch.CSharp4);
+
+        //    Assert.AreEqual("A8", interval.Abbreviation);
+        //    Assert.AreEqual(Pitch.C3, interval.StartingPitch);
+        //    Assert.AreEqual(Pitch.CSharp4, interval.EndingPitch);
+        //}
+
+        [TestMethod]
+        public void IntervalCreateWithPitchesInverse()
         {
             Assert.ThrowsException<ArgumentException>(() =>
             {
@@ -83,7 +113,20 @@ namespace MidiMinuit.Music.Tests
         }
 
         [TestMethod]
-        public void IntervalInverseDown()
+        public void IntervalInverseOctaveUp2()
+        {
+            var pitch1 = Pitch.C3;
+            var pitch2 = Pitch.CSharp4;
+            var interval = Interval.Create(pitch1, pitch2);
+
+            Interval expected = interval.InverseOctaveUp();
+
+            Assert.AreEqual(Pitch.Cb4, expected.StartingPitch);
+            Assert.AreEqual(Pitch.C5, expected.EndingPitch);
+        }
+
+        [TestMethod]
+        public void IntervalInverseOctaveDown()
         {
             var pitch1 = Pitch.C4;
             var pitch2 = Pitch.G4;

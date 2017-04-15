@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using MidiMinuit.Music.Core;
 using MidiMinuit.Music.Instruments;
 
@@ -10,6 +11,8 @@ namespace MidiMinuit.Music.Tools
         private static ReadOnlyCollection<Degree> _degrees;
         private static ReadOnlyCollection<IntervalModifier> _intervalModifiers;
         private static ReadOnlyCollection<Interval> _intervals;
+        private static ReadOnlyCollection<IntervalSimple> _intervalSimples;
+        private static ReadOnlyCollection<IntervalCompound> _intervalCompounds;
         private static ReadOnlyCollection<DiatonicInterval> _diatonicIntervals;
         private static ReadOnlyCollection<Step> _steps;
         private static ReadOnlyCollection<Pitch> _pitches;
@@ -33,6 +36,20 @@ namespace MidiMinuit.Music.Tools
         public static ReadOnlyCollection<Interval> Intervals
             => _intervals ?? (_intervals =
                    Interval.CreateAll().AsReadOnly());
+
+        public static ReadOnlyCollection<IntervalSimple> IntervalSimples
+            => _intervalSimples ?? (_intervalSimples =
+                   Interval.CreateAll()
+                       .OfType<IntervalSimple>()
+                       .ToList()
+                       .AsReadOnly());
+
+        public static ReadOnlyCollection<IntervalCompound> IntervalCompounds
+            => _intervalCompounds ?? (_intervalCompounds =
+                   Interval.CreateAll()
+                       .OfType<IntervalCompound>()
+                       .ToList()
+                       .AsReadOnly());
 
         public static ReadOnlyCollection<DiatonicInterval> DiatonicIntervals
             => _diatonicIntervals ?? (_diatonicIntervals =

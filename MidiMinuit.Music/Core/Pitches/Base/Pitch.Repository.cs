@@ -36,6 +36,12 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Ab, 2);
                 case PitchAlias.Ab3:
                     return FromStep(Ab, 3);
+                case PitchAlias.Ab4:
+                    return FromStep(Ab, 4);
+                case PitchAlias.Ab5:
+                    return FromStep(Ab, 5);
+                case PitchAlias.Ab6:
+                    return FromStep(Ab, 6);
                 case PitchAlias.ASharp1:
                     return FromStep(ASharp, 1);
                 case PitchAlias.ASharp2:
@@ -66,6 +72,12 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Bb, 2);
                 case PitchAlias.Bb3:
                     return FromStep(Bb, 3);
+                case PitchAlias.Bb4:
+                    return FromStep(Bb, 4);
+                case PitchAlias.Bb5:
+                    return FromStep(Bb, 5);
+                case PitchAlias.Bb6:
+                    return FromStep(Bb, 6);
                 case PitchAlias.BSharp1:
                     return FromStep(BSharp, 1);
                 case PitchAlias.BSharp2:
@@ -98,6 +110,14 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Cb, 2);
                 case PitchAlias.Cb3:
                     return FromStep(Cb, 3);
+                case PitchAlias.Cb4:
+                    return FromStep(Cb, 4);
+                case PitchAlias.Cb5:
+                    return FromStep(Cb, 5);
+                case PitchAlias.Cb6:
+                    return FromStep(Cb, 6);
+                case PitchAlias.Cb7:
+                    return FromStep(Cb, 7);
                 case PitchAlias.CSharp1:
                     return FromStep(CSharp, 1);
                 case PitchAlias.CSharp2:
@@ -130,6 +150,12 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Db, 2);
                 case PitchAlias.Db3:
                     return FromStep(Db, 3);
+                case PitchAlias.Db4:
+                    return FromStep(Db, 4);
+                case PitchAlias.Db5:
+                    return FromStep(Db, 5);
+                case PitchAlias.Db6:
+                    return FromStep(Db, 6);
                 case PitchAlias.DSharp1:
                     return FromStep(DSharp, 1);
                 case PitchAlias.DSharp2:
@@ -160,6 +186,18 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Eb, 2);
                 case PitchAlias.Eb3:
                     return FromStep(Eb, 3);
+                case PitchAlias.Eb4:
+                    return FromStep(Eb, 4);
+                case PitchAlias.Eb5:
+                    return FromStep(Eb, 5);
+                case PitchAlias.Eb6:
+                    return FromStep(Eb, 6);
+                case PitchAlias.ESharp1:
+                    return FromStep(ESharp, 1);
+                case PitchAlias.ESharp2:
+                    return FromStep(ESharp, 2);
+                case PitchAlias.ESharp3:
+                    return FromStep(ESharp, 3);
                 case PitchAlias.ESharp4:
                     return FromStep(ESharp, 4);
                 case PitchAlias.ESharp5:
@@ -184,6 +222,12 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Fb, 2);
                 case PitchAlias.Fb3:
                     return FromStep(Fb, 3);
+                case PitchAlias.Fb4:
+                    return FromStep(Fb, 4);
+                case PitchAlias.Fb5:
+                    return FromStep(Fb, 5);
+                case PitchAlias.Fb6:
+                    return FromStep(Fb, 6);
                 case PitchAlias.FSharp1:
                     return FromStep(FSharp, 1);
                 case PitchAlias.FSharp2:
@@ -214,6 +258,12 @@ namespace MidiMinuit.Music.Core
                     return FromStep(Gb, 2);
                 case PitchAlias.Gb3:
                     return FromStep(Gb, 3);
+                case PitchAlias.Gb4:
+                    return FromStep(Gb, 4);
+                case PitchAlias.Gb5:
+                    return FromStep(Gb, 5);
+                case PitchAlias.Gb6:
+                    return FromStep(Gb, 6);
                 case PitchAlias.GSharp1:
                     return FromStep(GSharp, 1);
                 case PitchAlias.GSharp2:

@@ -24,6 +24,7 @@ namespace IntervalCalculator.Views
             RadioButtonNoteNameC.IsChecked = true;
             RadioButtonNoteAccidentalNatural.IsChecked = true;
             RadioButtonIntervalPerfectFifth.IsChecked = true;
+            RadioButtonIntervalInversionUp.IsChecked = true;
         }
     }
 }

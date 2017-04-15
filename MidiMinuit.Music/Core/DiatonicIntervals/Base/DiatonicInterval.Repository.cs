@@ -35,6 +35,12 @@ namespace MidiMinuit.Music.Core
                     return new DiatonicIntervalSeventh();
                 case DiatonicIntervalAlias.Octave:
                     return new DiatonicIntervalOctave();
+                case DiatonicIntervalAlias.Ninth:
+                    return new DiatonicIntervalNinth();
+                case DiatonicIntervalAlias.Eleventh:
+                    return new DiatonicIntervalEleventh();
+                case DiatonicIntervalAlias.Thirteenth:
+                    return new DiatonicIntervalThirteenth();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(step), step, null);
             }

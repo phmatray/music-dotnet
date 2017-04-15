@@ -11,6 +11,7 @@
         Seventh = 7,
         Octave = 8,
         Ninth = 9,
-        Eleventh = 11
+        Eleventh = 11,
+        Thirteenth = 13
     }
 }

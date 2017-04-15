@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using MidiMinuit.Music.Core;
 using MidiMinuit.Music.Tools;
 
@@ -8,20 +10,38 @@ namespace MidiMinuit.Cli
     {
         static void Main(string[] args)
         {
-
-            foreach (var p in MusicContext.Pitches)
+            var stepNames = MusicContext.StepNames;
+            var stepAccidentals = new List<StepAccidental>()
             {
-                foreach (var i in MusicContext.Intervals)
+                StepAccidental.Natural,
+                StepAccidental.Sharp,
+                StepAccidental.Flat,
+                StepAccidental.DoubleSharp,
+                StepAccidental.DoubleFlat
+            };
+            var intervals = MusicContext.IntervalSimples;
+
+            foreach (var stepName in stepNames)
+            {
+                foreach (var stepAccidental in stepAccidentals)
                 {
-                    Pitch result = p + i;
+                    foreach (var interval in intervals)
+                    {
+                        var pitch = new Pitch(stepName, stepAccidental);
+                        interval.StartingPitch = pitch;
+                        var inverse = interval.InverseOctaveDown();
+
+                        Console.WriteLine(interval);
+                        Console.WriteLine(inverse);
+                        Console.WriteLine();
+                    }
                 }
             }
 
-            var interval = Interval.Create(Pitch.C4, Pitch.G4);
 
-            Pitch pitch = Pitch.G4;
-            IntervalPerfectFifth fifth = Interval.PerfectFifth;
-            Pitch expected = pitch - fifth;
+
+            var pitches = MusicContext.Pitches;
+
 
             Chord chord = Pitch.CSharp4.ToChord(ChordAlias.Major);
             Console.WriteLine(chord.ToString());

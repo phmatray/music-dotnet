@@ -2,34 +2,54 @@
 {
     public enum IntervalAlias
     {
+        DiminishedUnison,
         PerfectUnison,
-        PerfectFourth,
-        PerfectFifth,
-        PerfectOctave,
-        MajorSecond,
-        MajorThird,
-        MajorSixth,
-        MajorSeventh,
-        MinorSecond,
-        MinorThird,
-        MinorSixth,
-        MinorSeventh,
         AugmentedUnison,
-        AugmentedSecond,
-        AugmentedThird,
-        AugmentedFourth,
-        AugmentedFifth,
-        AugmentedSixth,
-        AugmentedSeventh,
-        AugmentedOctave,
+
         DiminishedSecond,
+        MinorSecond,
+        MajorSecond,
+        AugmentedSecond,
+
         DiminishedThird,
+        MinorThird,
+        MajorThird,
+        AugmentedThird,
+
         DiminishedFourth,
+        PerfectFourth,
+        AugmentedFourth,
+
         DiminishedFifth,
+        PerfectFifth,
+        AugmentedFifth,
+
         DiminishedSixth,
+        MinorSixth,
+        MajorSixth,
+        AugmentedSixth,
+
         DiminishedSeventh,
+        MinorSeventh,
+        MajorSeventh,
+        AugmentedSeventh,
+
         DiminishedOctave,
+        PerfectOctave,
+        AugmentedOctave,
+
+        DiminishedNinth,
+        MinorNinth,
         MajorNinth,
-        AugmentedEleventh
+        AugmentedNinth,
+
+        DiminishedEleventh,
+        PerfectEleventh,
+        AugmentedEleventh,
+
+        DiminishedThirteenth,
+        MinorThirteenth,
+        MajorThirteenth,
+        AugmentedThirteenth
     }
 }

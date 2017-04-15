@@ -165,20 +165,26 @@
             <Setter Property="BorderBrush" Value="#57C259"/>
             <Setter Property="Foreground" Value="#72FF75"/>
         </Style>
-        
+
         <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleInterval"
                BasedOn="{StaticResource ButtonRadioButtonStyle}">
             <Setter Property="BorderBrush" Value="#6180BB"/>
             <Setter Property="Foreground" Value="#84AFFF"/>
         </Style>
-        
+
+        <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleIntervalInversion"
+               BasedOn="{StaticResource ButtonRadioButtonStyle}">
+            <Setter Property="BorderBrush" Value="#E0B013"/>
+            <Setter Property="Foreground" Value="#FFCE2F"/>
+        </Style>
+
         <!-- Converters -->
         <converters:ToUpperConverter x:Key="ToUpperConverter" />
         <converters:AccidentalToBrushConverter x:Key="AccidentalToBrushConverter" />
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainGrid">
-        
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
@@ -195,7 +201,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
@@ -209,16 +215,16 @@
                 <StackPanel.BorderBrush>
                     <SolidColorBrush Color="{ThemeResource SystemChromeMediumLowColor}"/>
                 </StackPanel.BorderBrush>
-                <TextBlock Margin="20,12,20,20" FontSize="16" HorizontalAlignment="Left" FontWeight="SemiBold" 
-                           Foreground="{StaticResource Brush-White}">
-                    <Run Text="{x:Bind ViewModel.Interval.Name, Mode=OneWay, Converter={StaticResource ToUpperConverter}}"/>
-                </TextBlock>
-                <TextBlock Margin="20" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold"
+                <TextBlock Margin="20,50,20,20" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold"
                            Foreground="White">
                     <Run Text="{x:Bind ViewModel.Interval.StartingStep, Mode=OneWay}"/>
                     <Run Text="to"/>
                     <Run Text="{x:Bind ViewModel.Interval.EndingStep, Mode=OneWay}"
                          Foreground="{x:Bind ViewModel.Interval.EndingStep, Converter={StaticResource AccidentalToBrushConverter}, Mode=OneWay}"/>
+                </TextBlock>
+                <TextBlock FontSize="18" HorizontalAlignment="Center" FontWeight="SemiBold" Margin="0,0,0,20"
+                           Foreground="{StaticResource Brush-White}">
+                    <Run Text="{x:Bind ViewModel.Interval.Name, Mode=OneWay, Converter={StaticResource ToUpperConverter}}"/>
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center"
                            Foreground="{StaticResource Brush-White}" FontSize="18">
@@ -232,6 +238,10 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -264,7 +274,7 @@
                     <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalSharp}" Content="♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
                     <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalDoubleSharp}" Content="♯♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2" Grid.ColumnSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -315,6 +325,19 @@
                     <RadioButton Content="d6" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim6}" Grid.Column="4" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
                     <RadioButton Content="d7" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim7}" Grid.Column="5" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
                     <RadioButton Content="d8" GroupName="Interval" Checked="{x:Bind ViewModel.Interval_OnChecked}" Tag="{x:Bind ViewModel.IntervalDim8}" Grid.Column="6" Grid.Row="3" Style="{StaticResource ButtonRadioButtonStyleInterval}"/>
+                </Grid>
+                <Grid Grid.Column="1" Grid.RowSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="7*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <RadioButton Name="RadioButtonIntervalInversionUp"  GroupName="Inversion" Content="Up" Checked="{x:Bind ViewModel.IntervalInversionUp_OnChecked}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleIntervalInversion}"/>
+                    <RadioButton GroupName="Inversion" Content="Down" Checked="{x:Bind ViewModel.IntervalInversionDown_OnChecked}" Grid.Row="1" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleIntervalInversion}"/>
                 </Grid>
             </Grid>
         </Grid>

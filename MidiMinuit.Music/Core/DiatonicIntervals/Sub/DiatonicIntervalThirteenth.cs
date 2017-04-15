@@ -1,19 +1,19 @@
 namespace MidiMinuit.Music.Core
 {
-    public class DiatonicIntervalEleventh
+    public class DiatonicIntervalThirteenth
         : DiatonicInterval
     {
         public override DiatonicIntervalAlias DiatonicIntervalAlias { get; }
-            = DiatonicIntervalAlias.Eleventh;
+            = DiatonicIntervalAlias.Thirteenth;
 
         public override int Steps { get; }
-            = 11;
+            = 13;
 
         public override string Name { get; }
-            = "Eleventh";
+            = "Thirteenth";
 
         public override string Abbreviation { get; }
-            = "11th";
+            = "13th";
 
         public override DiatonicInterval Inverse()
             => null;

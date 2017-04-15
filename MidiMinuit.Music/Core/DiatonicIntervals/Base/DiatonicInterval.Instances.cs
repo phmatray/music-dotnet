@@ -25,5 +25,14 @@
 
         public static DiatonicIntervalOctave Octave
             => new DiatonicIntervalOctave();
+
+        public static DiatonicIntervalNinth Ninth
+            => new DiatonicIntervalNinth();
+
+        public static DiatonicIntervalEleventh Eleventh
+            => new DiatonicIntervalEleventh();
+
+        public static DiatonicIntervalThirteenth Thirteenth
+            => new DiatonicIntervalThirteenth();
     }
 }

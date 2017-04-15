@@ -29,6 +29,15 @@
         public static Pitch Ab3
             => Create(PitchAlias.Ab3);
 
+        public static Pitch Ab4
+            => Create(PitchAlias.Ab4);
+
+        public static Pitch Ab5
+            => Create(PitchAlias.Ab5);
+
+        public static Pitch Ab6
+            => Create(PitchAlias.Ab6);
+
         public static Pitch ASharp1
             => Create(PitchAlias.ASharp1);
 
@@ -73,6 +82,15 @@
 
         public static Pitch Bb3
             => Create(PitchAlias.Bb3);
+
+        public static Pitch Bb4
+            => Create(PitchAlias.Bb4);
+
+        public static Pitch Bb5
+            => Create(PitchAlias.Bb5);
+
+        public static Pitch Bb6
+            => Create(PitchAlias.Bb6);
 
         public static Pitch BSharp1
             => Create(PitchAlias.BSharp1);
@@ -122,6 +140,18 @@
         public static Pitch Cb3
             => Create(PitchAlias.Cb3);
 
+        public static Pitch Cb4
+            => Create(PitchAlias.Cb4);
+
+        public static Pitch Cb5
+            => Create(PitchAlias.Cb5);
+
+        public static Pitch Cb6
+            => Create(PitchAlias.Cb6);
+
+        public static Pitch Cb7
+            => Create(PitchAlias.Cb7);
+
         public static Pitch CSharp1
             => Create(PitchAlias.CSharp1);
 
@@ -170,6 +200,15 @@
         public static Pitch Db3
             => Create(PitchAlias.Db3);
 
+        public static Pitch Db4
+            => Create(PitchAlias.Db4);
+
+        public static Pitch Db5
+            => Create(PitchAlias.Db5);
+
+        public static Pitch Db6
+            => Create(PitchAlias.Db6);
+
         public static Pitch DSharp1
             => Create(PitchAlias.DSharp1);
 
@@ -215,6 +254,24 @@
         public static Pitch Eb3
             => Create(PitchAlias.Eb3);
 
+        public static Pitch Eb4
+            => Create(PitchAlias.Eb4);
+
+        public static Pitch Eb5
+            => Create(PitchAlias.Eb5);
+
+        public static Pitch Eb6
+            => Create(PitchAlias.Eb6);
+
+        public static Pitch ESharp1
+            => Create(PitchAlias.ESharp1);
+
+        public static Pitch ESharp2
+            => Create(PitchAlias.ESharp2);
+
+        public static Pitch ESharp3
+            => Create(PitchAlias.ESharp3);
+
         public static Pitch ESharp4
             => Create(PitchAlias.ESharp4);
 
@@ -250,6 +307,15 @@
 
         public static Pitch Fb3
             => Create(PitchAlias.Fb3);
+
+        public static Pitch Fb4
+            => Create(PitchAlias.Fb4);
+
+        public static Pitch Fb5
+            => Create(PitchAlias.Fb5);
+
+        public static Pitch Fb6
+            => Create(PitchAlias.Fb6);
 
         public static Pitch FSharp1
             => Create(PitchAlias.FSharp1);
@@ -295,6 +361,15 @@
 
         public static Pitch Gb3
             => Create(PitchAlias.Gb3);
+
+        public static Pitch Gb4
+            => Create(PitchAlias.Gb4);
+
+        public static Pitch Gb5
+            => Create(PitchAlias.Gb5);
+
+        public static Pitch Gb6
+            => Create(PitchAlias.Gb6);
 
         public static Pitch GSharp1
             => Create(PitchAlias.GSharp1);

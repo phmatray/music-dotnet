@@ -16,7 +16,7 @@ namespace MidiMinuit.Music.Core
             = "9th";
 
         public override DiatonicInterval Inverse()
-            => new DiatonicIntervalNinth();
+            => null;
 
         public override string ToString()
             => Name;

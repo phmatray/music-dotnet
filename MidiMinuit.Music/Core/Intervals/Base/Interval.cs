@@ -155,20 +155,49 @@ namespace MidiMinuit.Music.Core
 
         public Interval InverseOctaveUp()
         {
-            var startingPitch = EndingPitch;
-            var endingPitch = StartingPitch;
-            endingPitch.Octave++;
+            if (EndingPitch.MidiPitch - StartingPitch.MidiPitch <= 12)
+            {
+                var startingPitch = new Pitch(EndingPitch);
 
-            return Create(startingPitch, endingPitch);
+                var endingPitch = new Pitch(StartingPitch);
+                endingPitch.Octave++;
+
+                return Create(startingPitch, endingPitch);
+            }
+            else
+            {
+                var startingPitch = new Pitch(EndingPitch);
+                startingPitch.Accidental = startingPitch.Accidental.Value * -1;
+
+                var endingPitch = new Pitch(StartingPitch);
+                endingPitch.Octave++;
+                endingPitch.Octave++;
+
+                return Create(startingPitch, endingPitch);
+            }
         }
 
         public Interval InverseOctaveDown()
         {
-            var startingPitch = EndingPitch;
-            var endingPitch = StartingPitch;
-            startingPitch.Octave--;
+            if (EndingPitch.MidiPitch - StartingPitch.MidiPitch <= 12)
+            {
+                var startingPitch = new Pitch(EndingPitch);
+                var endingPitch = new Pitch(StartingPitch);
+                startingPitch.Octave--;
 
-            return Create(startingPitch, endingPitch);
+                return Create(startingPitch, endingPitch);
+            }
+            else
+            {
+                var startingPitch = new Pitch(EndingPitch);
+                startingPitch.Accidental = startingPitch.Accidental.Value * -1;
+
+                var endingPitch = new Pitch(StartingPitch);
+                startingPitch.Octave--;
+                startingPitch.Octave--;
+
+                return Create(startingPitch, endingPitch);
+            }
         }
 
         public abstract override string ToString();
