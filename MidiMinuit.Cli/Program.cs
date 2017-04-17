@@ -27,13 +27,25 @@ namespace MidiMinuit.Cli
                 {
                     foreach (var interval in intervals)
                     {
-                        var pitch = new Pitch(stepName, stepAccidental);
-                        interval.StartingPitch = pitch;
-                        var inverse = interval.InverseOctaveDown();
+                        try
+                        {
+                            var pitch = new Pitch(stepName, stepAccidental);
+                            interval.StartingPitch = pitch;
+                            var inverse = interval.InverseOctaveDown();
 
-                        Console.WriteLine(interval);
-                        Console.WriteLine(inverse);
-                        Console.WriteLine();
+                            Console.WriteLine($"{interval} ({interval.PitchesDetails}) ==> {inverse} ({inverse.PitchesDetails})");
+                        }
+                        catch (Exception e)
+                        {
+                            var pitch = new Pitch(stepName, stepAccidental);
+                            interval.StartingPitch = pitch;
+                            var inverse = interval.InverseOctaveDown();
+
+                            Console.WriteLine($"{interval} ({interval.PitchesDetails}) ==> {inverse} ({inverse.PitchesDetails})");
+
+                            Console.WriteLine(e);
+                            throw;
+                        }
                     }
                 }
             }

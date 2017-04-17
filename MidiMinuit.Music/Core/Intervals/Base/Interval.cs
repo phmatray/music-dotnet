@@ -6,33 +6,10 @@ using MidiMinuit.Music.Tools;
 
 namespace MidiMinuit.Music.Core
 {
-    public abstract class IntervalSimple
-        : Interval
-    {
-        protected IntervalSimple()
-        {
-        }
-
-        protected IntervalSimple(Pitch startingPitch)
-            : base(startingPitch)
-        {
-            StartingPitch = startingPitch;
-        }
-    }
-
-    public abstract class IntervalCompound
-        : Interval
-    {
-        protected IntervalCompound()
-        {
-        }
-
-        protected IntervalCompound(Pitch startingPitch)
-            : base(startingPitch)
-        {
-            StartingPitch = startingPitch;
-        }
-    }
+    /*
+     * Informations about simple et compound intervals
+     * https://ultimatemusictheory.com/octave/
+     */
 
     public abstract partial class Interval
         : IWikipedia
@@ -42,13 +19,13 @@ namespace MidiMinuit.Music.Core
          * Additionner 2 intervals pour obtenir un interval composé: ex: Interval.Octave + Interval.MinorSecond = Interval.Ninth
          */
 
-        ////public static Interval Between(Pitch p1, Pitch p2)
-        ////{
-        ////    return Create(p2.ToStep().Name.StepNumber - p1.ToStep().Name.StepNumber + 1,
-        ////        (p2.MidiPitch - p1.MidiPitch) % 12);
-        ////}
+    ////public static Interval Between(Pitch p1, Pitch p2)
+    ////{
+    ////    return Create(p2.ToStep().Name.StepNumber - p1.ToStep().Name.StepNumber + 1,
+    ////        (p2.MidiPitch - p1.MidiPitch) % 12);
+    ////}
 
-        private Pitch _startingPitch;
+    private Pitch _startingPitch;
         private Pitch _endingPitch;
 
         protected Interval()
@@ -153,52 +130,9 @@ namespace MidiMinuit.Music.Core
         public int IntervalClass
             => UsefulMathHelpers.InvervalClass(Semitones);
 
-        public Interval InverseOctaveUp()
-        {
-            if (EndingPitch.MidiPitch - StartingPitch.MidiPitch <= 12)
-            {
-                var startingPitch = new Pitch(EndingPitch);
+        public abstract Interval InverseOctaveUp();
 
-                var endingPitch = new Pitch(StartingPitch);
-                endingPitch.Octave++;
-
-                return Create(startingPitch, endingPitch);
-            }
-            else
-            {
-                var startingPitch = new Pitch(EndingPitch);
-                startingPitch.Accidental = startingPitch.Accidental.Value * -1;
-
-                var endingPitch = new Pitch(StartingPitch);
-                endingPitch.Octave++;
-                endingPitch.Octave++;
-
-                return Create(startingPitch, endingPitch);
-            }
-        }
-
-        public Interval InverseOctaveDown()
-        {
-            if (EndingPitch.MidiPitch - StartingPitch.MidiPitch <= 12)
-            {
-                var startingPitch = new Pitch(EndingPitch);
-                var endingPitch = new Pitch(StartingPitch);
-                startingPitch.Octave--;
-
-                return Create(startingPitch, endingPitch);
-            }
-            else
-            {
-                var startingPitch = new Pitch(EndingPitch);
-                startingPitch.Accidental = startingPitch.Accidental.Value * -1;
-
-                var endingPitch = new Pitch(StartingPitch);
-                startingPitch.Octave--;
-                startingPitch.Octave--;
-
-                return Create(startingPitch, endingPitch);
-            }
-        }
+        public abstract Interval InverseOctaveDown();
 
         public abstract override string ToString();
     }

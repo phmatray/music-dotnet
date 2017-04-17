@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace MidiMinuit.Music.Core
 {
     public class IntervalAugmentedOctave
-        : IntervalSimple
+        : IntervalCompound
     {
         public IntervalAugmentedOctave()
         {
@@ -40,7 +40,7 @@ namespace MidiMinuit.Music.Core
             = new IntervalModifierAugmented();
 
         public override IntervalSpanning Spanning { get; }
-            = IntervalSpanning.Simple;
+            = IntervalSpanning.Compound;
 
         public override Uri WikipediaUrl { get; }
             = new Uri("https://en.wikipedia.org/wiki/Augmented_octave");

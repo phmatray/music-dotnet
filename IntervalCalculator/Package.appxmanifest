@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="24148phmatray.MusicIntervalCalculator" Publisher="CN=6CF66277-0E97-4BC1-8557-E0214D213453" Version="1.0.0.0" />
+  <Identity Name="24148phmatray.MusicIntervalCalculator" Publisher="CN=6CF66277-0E97-4BC1-8557-E0214D213453" Version="1.1.0.0" />
   <mp:PhoneIdentity PhoneProductId="f46d4bb6-0327-4d6a-9b6e-e5abfb955fdb" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Music Interval Calculator</DisplayName>

@@ -37,15 +37,16 @@ namespace MidiMinuit.Music.Tests
             Assert.AreEqual(Pitch.CSharp4, interval.EndingPitch);
         }
 
-        //[TestMethod]
-        //public void IntervalCreateWithPitches4()
-        //{
-        //    var interval = Interval.Create(new Pitch("Cbb3"), Pitch.CSharp4);
+        [TestMethod]
+        public void IntervalCreateWithPitches4()
+        {
+            var interval = Interval.Create(IntervalAlias.AugmentedOctave);
+            interval.StartingPitch = Pitch.CSharp4;
 
-        //    Assert.AreEqual("A8", interval.Abbreviation);
-        //    Assert.AreEqual(Pitch.C3, interval.StartingPitch);
-        //    Assert.AreEqual(Pitch.CSharp4, interval.EndingPitch);
-        //}
+            Assert.AreEqual("A8", interval.Abbreviation);
+            Assert.AreEqual(Pitch.CSharp4, interval.StartingPitch);
+            Assert.AreEqual(new Pitch("C##5"), interval.EndingPitch);
+        }
 
         [TestMethod]
         public void IntervalCreateWithPitchesInverse()
@@ -121,8 +122,21 @@ namespace MidiMinuit.Music.Tests
 
             Interval expected = interval.InverseOctaveUp();
 
-            Assert.AreEqual(Pitch.Cb4, expected.StartingPitch);
+            Assert.AreEqual(Pitch.CSharp4, expected.StartingPitch);
             Assert.AreEqual(Pitch.C5, expected.EndingPitch);
+        }
+
+        [TestMethod]
+        public void IntervalInverseOctaveUp3()
+        {
+            var interval = Interval.Create(IntervalAlias.AugmentedOctave);
+            interval.StartingPitch = Pitch.CSharp4;
+
+            Interval expected = interval.InverseOctaveUp();
+
+            Assert.AreEqual("d8", expected.Abbreviation);
+            Assert.AreEqual(Pitch.CSharp4, interval.StartingPitch);
+            Assert.AreEqual(new Pitch("C##5"), interval.EndingPitch);
         }
 
         [TestMethod]

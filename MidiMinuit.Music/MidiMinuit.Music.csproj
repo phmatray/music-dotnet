@@ -62,6 +62,8 @@
     <Compile Include="Core\Intervals\Base\Interval.Equatable.cs" />
     <Compile Include="Core\Intervals\Base\Interval.Instances.cs" />
     <Compile Include="Core\Intervals\Base\Interval.Implicit.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalCompound.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalSimple.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedThirteenth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalDiminishedNinth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedNinth.cs" />
@@ -69,7 +71,6 @@
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalDiminishedThirteenth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMajorThirteeth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMinorThirteenth.cs" />
-    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedUnison.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMinorNinth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalPerfectEleventh.cs" />
     <Compile Include="Core\Pitches\Base\Pitch.Equatable.cs" />
@@ -146,7 +147,7 @@
     <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedEleventh.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedFifth.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedFourth.cs" />
-    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedOctave.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedOctave.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedSecond.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedSeventh.cs" />
     <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedSixth.cs" />

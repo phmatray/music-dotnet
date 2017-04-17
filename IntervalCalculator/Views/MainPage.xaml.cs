@@ -12,9 +12,9 @@ namespace IntervalCalculator.Views
     {
         public MainPage()
         {
-            InitializeComponent();
-
             ViewModel = ViewModelLocator.Instance.MainInstance;
+
+            InitializeComponent();
         }
 
         public MainViewModel ViewModel { get; set; }

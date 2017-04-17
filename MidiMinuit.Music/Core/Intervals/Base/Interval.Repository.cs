@@ -19,8 +19,6 @@ namespace MidiMinuit.Music.Core
         {
             switch (interval)
             {
-                case IntervalAlias.DiminishedUnison:
-                    return new IntervalDiminishedUnison();
                 case IntervalAlias.PerfectUnison:
                     return new IntervalPerfectUnison();
                 case IntervalAlias.AugmentedUnison:

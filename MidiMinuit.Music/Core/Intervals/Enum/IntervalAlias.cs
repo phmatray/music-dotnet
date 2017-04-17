@@ -2,7 +2,6 @@
 {
     public enum IntervalAlias
     {
-        DiminishedUnison,
         PerfectUnison,
         AugmentedUnison,
 

@@ -11,33 +11,75 @@
         {
             _stepName = new StepNameC();
             _stepAccidental = new StepAccidentalNatural();
-            _interval = new IntervalPerfectFifth(new Pitch(_stepName, _stepAccidental));
-            _intervalInversion = _interval.InverseOctaveUp();
+
+            var perfectFifth = new IntervalPerfectFifth(new Pitch(_stepName, _stepAccidental));
+
+            _intervalOriginal = perfectFifth;
+            _intervalInversion = _intervalOriginal.InverseOctaveUp();
+
+            _isInversionUpChecked = true;
+            _interval = perfectFifth;
         }
 
         private StepName _stepName;
         private StepAccidental _stepAccidental;
+
         private Interval _interval;
+        private Interval _intervalOriginal;
         private Interval _intervalInversion;
+
+        private Pitch _pitchOriginal;
+
         private bool _isInversionUpChecked;
-        private bool _isInversionDownChecked;
-
-        public StepName StepName
-        {
-            get { return _stepName; }
-            set { Set(ref _stepName, value); }
-        }
-
-        public StepAccidental StepAccidental
-        {
-            get { return _stepAccidental; }
-            set { Set(ref _stepAccidental, value); }
-        }
 
         public Interval Interval
         {
             get { return _interval; }
             set { Set(ref _interval, value); }
+        }
+
+        public void NoteName_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _stepName = (sender as RadioButton)?.Tag as StepName;
+            RefreshInterval();
+        }
+
+        public void NoteAccidental_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _stepAccidental = (sender as RadioButton)?.Tag as StepAccidental;
+            RefreshInterval();
+        }
+
+        public void Interval_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _intervalOriginal = (sender as RadioButton)?.Tag as Interval;
+            RefreshInterval();
+        }
+
+        public void IntervalInversionUp_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _isInversionUpChecked = true;
+            RefreshInterval();
+        }
+
+        public void IntervalInversionDown_OnChecked(object sender, RoutedEventArgs e)
+        {
+            _isInversionUpChecked = false;
+            RefreshInterval();
+        }
+
+        private void RefreshInterval()
+        {
+            _pitchOriginal = new Pitch(_stepName, _stepAccidental);
+
+            _intervalOriginal.StartingPitch = _pitchOriginal;
+            _intervalInversion = _intervalOriginal.InverseOctaveUp();
+
+            Interval = _isInversionUpChecked
+                ? _intervalOriginal
+                : _intervalInversion;
+
+            RaisePropertyChanged(() => Interval);
         }
 
         public StepName StepNameC { get; } = new StepNameC();
@@ -114,53 +156,26 @@
 
         public Interval IntervalDim8 { get; } = new IntervalDiminishedOctave();
 
-        public void NoteName_OnChecked(object sender, RoutedEventArgs e)
-        {
-            StepName = (sender as RadioButton)?.Tag as StepName;
-            Interval.StartingPitch = new Pitch(StepName, StepAccidental);
-            _intervalInversion = _interval.InverseOctaveUp();
-            RaisePropertyChanged(() => Interval);
-        }
+        public Interval IntervalA9 { get; } = new IntervalAugmentedNinth();
 
-        public void NoteAccidental_OnChecked(object sender, RoutedEventArgs e)
-        {
-            StepAccidental = (sender as RadioButton)?.Tag as StepAccidental;
-            Interval.StartingPitch = new Pitch(StepName, StepAccidental);
-            _intervalInversion = _interval.InverseOctaveUp();
-            RaisePropertyChanged(() => Interval);
-        }
+        public Interval IntervalA11 { get; } = new IntervalAugmentedEleventh();
 
-        public void Interval_OnChecked(object sender, RoutedEventArgs e)
-        {
-            var interval = (sender as RadioButton)?.Tag as Interval;
-            interval.StartingPitch = new Pitch(StepName, StepAccidental);
-            _intervalInversion = _interval.InverseOctaveUp();
+        public Interval IntervalA13 { get; } = new IntervalAugmentedThirteenth();
 
-            Interval = _isInversionUpChecked
-                ? interval
-                : _intervalInversion;
-        }
+        public Interval IntervalM9 { get; } = new IntervalMajorNinth();
 
-        public void IntervalInversionUp_OnChecked(object sender, RoutedEventArgs e)
-        {
-            _isInversionUpChecked = true;
-            _isInversionDownChecked = false;
+        public Interval IntervalM13 { get; } = new IntervalMajorThirteeth();
 
-            if (_interval == _intervalInversion)
-            {
-                Interval = Interval.InverseOctaveDown();
-            }
-        }
+        public Interval IntervalP11 { get; } = new IntervalPerfectEleventh();
 
-        public void IntervalInversionDown_OnChecked(object sender, RoutedEventArgs e)
-        {
-            _isInversionUpChecked = false;
-            _isInversionDownChecked = true;
+        public Interval IntervalMin9 { get; } = new IntervalMinorNinth();
 
-            if (_interval != _intervalInversion)
-            {
-                Interval = _intervalInversion;
-            }
-        }
+        public Interval IntervalMin13 { get; } = new IntervalMinorThirteenth();
+
+        public Interval IntervalDim9 { get; } = new IntervalDiminishedNinth();
+
+        public Interval IntervalDim11 { get; } = new IntervalDiminishedEleventh();
+
+        public Interval IntervalDim13 { get; } = new IntervalDiminishedThirteenth();
     }
 }

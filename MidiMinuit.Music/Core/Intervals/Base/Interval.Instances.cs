@@ -2,8 +2,6 @@
 {
     public partial class Interval
     {
-        public static IntervalDiminishedUnison DiminishedUnison
-            => new IntervalDiminishedUnison();
         public static IntervalPerfectUnison PerfectUnison
             => new IntervalPerfectUnison();
         public static IntervalAugmentedUnison AugmentedUnison
