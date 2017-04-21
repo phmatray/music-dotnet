@@ -48,6 +48,8 @@
     <Compile Include="Core\Chords\Base\Chord.Instances.cs" />
     <Compile Include="Core\Chords\Base\Chord.Equatable.cs" />
     <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordAugmented.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordDiminished.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Equatable.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Instances.cs" />
     <Compile Include="Core\Degrees\Base\Degree.Implicit.cs" />
@@ -90,14 +92,14 @@
     <Compile Include="Core\Chords\Base\Chord.cs" />
     <Compile Include="Core\Chords\Base\Chord.Repository.cs" />
     <Compile Include="Core\Chords\Sub\ChordFifth.cs" />
-    <Compile Include="Core\Chords\Sub\ChordMajor.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordMajor.cs" />
     <Compile Include="Core\Chords\Sub\ChordMajorAugmented.cs" />
     <Compile Include="Core\Chords\Sub\ChordMajorAugmentedSeventhMinor.cs" />
     <Compile Include="Core\Chords\Sub\ChordMajorNinthMajor.cs" />
     <Compile Include="Core\Chords\Sub\ChordMajorSeventhMajor.cs" />
     <Compile Include="Core\Chords\Sub\ChordMajorSeventhMinor.cs" />
     <Compile Include="Core\Chords\Sub\ChordMajorSixthMajor.cs" />
-    <Compile Include="Core\Chords\Sub\ChordMinor.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordMinor.cs" />
     <Compile Include="Core\Chords\Sub\ChordMinorDiminished.cs" />
     <Compile Include="Core\Chords\Sub\ChordMinorDiminishedSeventhDiminished.cs" />
     <Compile Include="Core\Chords\Sub\ChordMinorFifthDiminishedSeventhMinor.cs" />

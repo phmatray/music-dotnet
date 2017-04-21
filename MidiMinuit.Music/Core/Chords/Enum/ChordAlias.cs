@@ -3,7 +3,10 @@ namespace MidiMinuit.Music.Core
     public enum ChordAlias
     {
         Major,
+        Augmented,
         Minor,
+        Diminished,
+
         MajorSixthMajor,
         MinorSixthMajor,
         SuspendedFourth,
