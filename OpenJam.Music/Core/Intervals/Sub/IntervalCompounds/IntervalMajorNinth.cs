@@ -43,10 +43,10 @@ namespace OpenJam.Music.Core
             = IntervalSpanning.Compound;
 
         public override Uri WikipediaUrl { get; }
-            = new Uri("https://en.wikipedia.org/wiki/Ninth");
+            = new Uri("https://en.wikipedia.org/wiki/Ninth#Major_ninth");
 
         public override string WikipediaDescription { get; }
-            = "NO DATA";
+            = @"A major ninth is a compound musical interval spanning 14 semitones, or an octave plus 2 semitones. If transposed into a single octave, it becomes a major second or minor seventh. The major ninth is somewhat dissonant in sound.";
 
         public override string ToString()
             => Abbreviation;

@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IntervalCalculator"
     xmlns:viewModels="using:IntervalCalculator.ViewModels"
-    RequestedTheme="Dark">
+    RequestedTheme="Light">
 
     <Application.Resources>
         
@@ -13,9 +13,11 @@
         
         <!--  Colors  -->
         <Color x:Key="White">#FFFFFFFF</Color>
+        <Color x:Key="Blue">#FF00CEFF</Color>
         
         <!--  Brushes  -->
         <SolidColorBrush x:Key="Brush-White" Color="{StaticResource White}" />
+        <SolidColorBrush x:Key="Brush-Blue" Color="{StaticResource Blue}" />
         
     </Application.Resources>
 </Application>

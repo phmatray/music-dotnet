@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:converters="using:IntervalCalculator.Views.Converters"
     mc:Ignorable="d"
-    RequestedTheme="Dark"
+    RequestedTheme="Light"
     Loaded="IntervalCalculatorPage_OnLoaded">
 
     <Page.Resources>
@@ -23,7 +23,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="4"/>
-            <Setter Property="FontSize" Value="20px"/>
+            <Setter Property="FontSize" Value="22px"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="MinWidth" Value="0"></Setter>
             <Setter Property="Template">
@@ -156,26 +156,26 @@
 
         <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleStepName"
                BasedOn="{StaticResource ButtonRadioButtonStyle}">
-            <Setter Property="BorderBrush" Value="#C50082"/>
-            <Setter Property="Foreground" Value="#FF00AB"/>
+            <Setter Property="BorderBrush" Value="#FF0083"/>
+            <Setter Property="Foreground" Value="#7F0041"/>
         </Style>
 
         <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleNoteAccidental"
                BasedOn="{StaticResource ButtonRadioButtonStyle}">
-            <Setter Property="BorderBrush" Value="#57C259"/>
-            <Setter Property="Foreground" Value="#72FF75"/>
+            <Setter Property="BorderBrush" Value="#0CE825"/>
+            <Setter Property="Foreground" Value="#056811"/>
         </Style>
 
         <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleInterval"
                BasedOn="{StaticResource ButtonRadioButtonStyle}">
-            <Setter Property="BorderBrush" Value="#6180BB"/>
-            <Setter Property="Foreground" Value="#84AFFF"/>
+            <Setter Property="BorderBrush" Value="#3B0CE8"/>
+            <Setter Property="Foreground" Value="#1B0568"/>
         </Style>
 
         <Style TargetType="RadioButton" x:Key="ButtonRadioButtonStyleIntervalInversion"
                BasedOn="{StaticResource ButtonRadioButtonStyle}">
-            <Setter Property="BorderBrush" Value="#E0B013"/>
-            <Setter Property="Foreground" Value="#FFCE2F"/>
+            <Setter Property="BorderBrush" Value="#FFF10D"/>
+            <Setter Property="Foreground" Value="#7F7806"/>
         </Style>
 
         <!-- Converters -->
@@ -183,7 +183,7 @@
         <converters:AccidentalToBrushConverter x:Key="AccidentalToBrushConverter" />
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainGrid">
+    <Grid Background="{ThemeResource Brush-Blue}" x:Name="MainGrid">
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -212,11 +212,11 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
-                <TextBlock FontSize="18" HorizontalAlignment="Center" FontWeight="SemiBold" Margin="20,50,20,20"
+                <TextBlock FontSize="22" HorizontalAlignment="Center" FontWeight="SemiBold" Margin="20,50,20,20"
                            Foreground="{StaticResource Brush-White}">
                     <Run Text="{x:Bind ViewModel.Interval.Name, Mode=OneWay, Converter={StaticResource ToUpperConverter}}"/>
                 </TextBlock>
-                <TextBlock Margin="0,0,0,12" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold"
+                <TextBlock Margin="0,0,0,16" FontSize="36" HorizontalAlignment="Center" FontWeight="Bold"
                            Foreground="White">
                     <Run Text="{x:Bind ViewModel.Interval.StartingStep, Mode=OneWay}"/>
                     <Run Text="to"/>
@@ -224,7 +224,7 @@
                          Foreground="{x:Bind ViewModel.Interval.EndingStep, Converter={StaticResource AccidentalToBrushConverter}, Mode=OneWay}"/>
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center"
-                           Foreground="{StaticResource Brush-White}" FontSize="18">
+                           Foreground="{StaticResource Brush-White}" FontSize="22">
                     <Run Text="{x:Bind ViewModel.Interval.Semitones, Mode=OneWay}"/>
                     <Run Text="semitones"/>
                 </TextBlock>
@@ -276,11 +276,11 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalDoubleFlat}" Content="♭♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
-                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalFlat}" Content="♭" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
-                        <RadioButton x:Name="RadioButtonNoteAccidentalNatural" GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalNatural}" Content="♮" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
-                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalSharp}" Content="♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
-                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalDoubleSharp}" Content="♯♯" FontSize="24px" Background="{ThemeResource ButtonBackgroundThemeBrush}" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalDoubleFlat}" Content="♭♭" FontSize="26px" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalFlat}" Content="♭" FontSize="26px" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                        <RadioButton x:Name="RadioButtonNoteAccidentalNatural" GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalNatural}" Content="♮" FontSize="26px" Grid.Column="2" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalSharp}" Content="♯" FontSize="26px" Grid.Column="3" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
+                        <RadioButton GroupName="NoteAccidental" Checked="{x:Bind ViewModel.NoteAccidental_OnChecked}" Tag="{x:Bind ViewModel.StepAccidentalDoubleSharp}" Content="♯♯" FontSize="26px" Grid.Column="4" Style="{StaticResource ButtonRadioButtonStyleNoteAccidental}"/>
                     </Grid>
                     <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                         <Grid.RowDefinitions>
@@ -292,15 +292,19 @@
                             <ColumnDefinition Width="7*"/>
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton x:Name="RadioButtonIntervalInversionUp"  GroupName="Inversion" Content="Up" Checked="{x:Bind ViewModel.IntervalInversionUp_OnChecked}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleIntervalInversion}"/>
-                        <RadioButton GroupName="Inversion" Content="Down" Checked="{x:Bind ViewModel.IntervalInversionDown_OnChecked}" Grid.Row="1" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleIntervalInversion}"/>
+                        <RadioButton x:Name="RadioButtonIntervalInversionUp"  GroupName="Inversion" Checked="{x:Bind ViewModel.IntervalInversionUp_OnChecked}" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleIntervalInversion}">
+                            <TextBlock Text="&#xE74A;" FontFamily="Segoe MDL2 Assets"/>
+                        </RadioButton>
+                        <RadioButton GroupName="Inversion" Checked="{x:Bind ViewModel.IntervalInversionDown_OnChecked}" Grid.Row="1" Grid.Column="1" Style="{StaticResource ButtonRadioButtonStyleIntervalInversion}">
+                            <TextBlock Text="&#xE74B;" FontFamily="Segoe MDL2 Assets"/>
+                        </RadioButton>
                     </Grid>
                 </Grid>
                 <Pivot Grid.Row="2" Grid.ColumnSpan="2">
                     <Pivot.HeaderTemplate>
                         <DataTemplate>
                             <Grid>
-                                <TextBlock Text="{Binding}" FontSize="18" FontWeight="SemiBold" Margin="2,0,0,0" />
+                                <TextBlock Text="{Binding}" FontSize="18" FontWeight="SemiBold" Margin="2,0,0,0" Foreground="White" />
                             </Grid>
                         </DataTemplate>
                     </Pivot.HeaderTemplate>
@@ -389,7 +393,7 @@
                 <Pivot.HeaderTemplate>
                     <DataTemplate>
                         <Grid>
-                            <TextBlock Text="{Binding}" FontSize="16" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding}" FontSize="18" FontWeight="SemiBold" Foreground="White" />
                         </Grid>
                     </DataTemplate>
                 </Pivot.HeaderTemplate>
@@ -397,12 +401,12 @@
                     <ScrollViewer Margin="0,0,-12,0">
                         <StackPanel>
                             <TextBlock Text="{x:Bind ViewModel.Interval.WikipediaDescription, Mode=OneWay}"
-                                       TextWrapping="WrapWholeWords" TextAlignment="Justify" Padding="0,0,20,20">
+                                       TextWrapping="WrapWholeWords" TextAlignment="Left" Padding="0,0,20,20" FontSize="16">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{ThemeResource SystemChromeWhiteColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <HyperlinkButton NavigateUri="{x:Bind ViewModel.Interval.WikipediaUrl}" Content="Wikipédia" />
+                            <HyperlinkButton NavigateUri="{x:Bind ViewModel.Interval.WikipediaUrl}" Content="Wikipédia" Foreground="#FF003340" />
                         </StackPanel>
                     </ScrollViewer>
                 </PivotItem>
@@ -410,3 +414,4 @@
         </Grid>
     </Grid>
 </Page>
+
