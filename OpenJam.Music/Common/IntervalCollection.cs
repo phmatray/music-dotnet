@@ -1,0 +1,128 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using OpenJam.Music.Core;
+
+namespace OpenJam.Music.Common
+{
+    public abstract class IntervalCollection
+    {
+        public abstract string Name { get; }
+
+        public abstract List<Interval> Intervals { get; }
+
+        public abstract Pitch Key { get; set; }
+
+        public IntervalPerfectUnison Fondamental { get; protected set; }
+
+        public IntervalPerfectFourth PerfectFourth { get; protected set; }
+
+        public IntervalPerfectFifth PerfectFifth { get; protected set; }
+
+        public IntervalMajorSecond MajorSecond { get; protected set; }
+
+        public IntervalMajorThird MajorThird { get; protected set; }
+
+        public IntervalMajorSixth MajorSixth { get; protected set; }
+
+        public IntervalMajorSeventh MajorSeventh { get; protected set; }
+
+        public IntervalMinorSecond MinorSecond { get; protected set; }
+
+        public IntervalMinorThird MinorThird { get; protected set; }
+
+        public IntervalMinorSixth MinorSixth { get; protected set; }
+
+        public IntervalMinorSeventh MinorSeventh { get; protected set; }
+
+        public IntervalAugmentedUnison AugmentedUnison { get; protected set; }
+
+        public IntervalAugmentedSecond AugmentedSecond { get; protected set; }
+
+        public IntervalAugmentedThird AugmentedThird { get; protected set; }
+
+        public IntervalAugmentedFourth AugmentedFourth { get; protected set; }
+
+        public IntervalAugmentedFifth AugmentedFifth { get; protected set; }
+
+        public IntervalAugmentedSixth AugmentedSixth { get; protected set; }
+
+        public IntervalAugmentedSeventh AugmentedSeventh { get; protected set; }
+
+        public IntervalAugmentedOctave AugmentedOctave { get; protected set; }
+
+        public IntervalDiminishedSecond DiminishedSecond { get; protected set; }
+
+        public IntervalDiminishedThird DiminishedThird { get; protected set; }
+
+        public IntervalDiminishedFourth DiminishedFourth { get; protected set; }
+
+        public IntervalDiminishedFifth DiminishedFifth { get; protected set; }
+
+        public IntervalDiminishedSixth DiminishedSixth { get; protected set; }
+
+        public IntervalDiminishedSeventh DiminishedSeventh { get; protected set; }
+
+        public IntervalDiminishedOctave DiminishedOctave { get; protected set; }
+
+        public IntervalMajorNinth MajorNinth { get; protected set; }
+
+        public IntervalAugmentedEleventh AugmentedEleventh { get; protected set; }
+
+        public bool HasPitches
+            => Intervals.Any(x => x.StartingPitch != null && x.EndingPitch != null);
+
+        /// <summary>
+        ///     Gets pitches from the interval collection.
+        /// </summary>
+        public List<Pitch> Pitches
+            => HasPitches
+                ? Intervals
+                    .Select(x => x.EndingPitch)
+                    .ToList()
+                : null;
+
+        /// <summary>
+        ///     Gets steps from the interval collection.
+        /// </summary>
+        public List<Step> Steps
+            => HasPitches
+                ? Intervals
+                    .Select(x => x.EndingPitch.ToStep())
+                    .ToList()
+                : null;
+
+        /// <summary>
+        ///     Gets details of the chord.
+        /// </summary>
+        public string Details
+            => HasPitches
+                ? Intervals
+                    .Select(x => $"{x.EndingPitch.ToStep()} ({x.Abbreviation})")
+                    .Aggregate((current, next) => current + " - " + next)
+                : IntervalDetails;
+
+        public string IntervalDetails
+            => Intervals?
+                .Select(x => x.Abbreviations.First())
+                .Aggregate((current, next) => current + " - " + next);
+
+        public string PitchesDetails
+            => HasPitches
+                ? Intervals?
+                    .Select(x => x.EndingPitch.ToString())
+                    .Aggregate((current, next) => current + " - " + next)
+                : null;
+
+        public string StepsDetails
+            => HasPitches
+                ? Intervals?
+                    .Select(x => x.EndingPitch.ToStep().ToString())
+                    .Aggregate((current, next) => current + " - " + next)
+                : null;
+
+        public int ToneCount
+            => Intervals.Count;
+
+        public abstract override string ToString();
+    }
+}

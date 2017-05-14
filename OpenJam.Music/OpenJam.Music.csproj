@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{371DF4D3-ED60-4ABE-8E2B-3B7A8629EEDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenJam.Music</RootNamespace>
+    <AssemblyName>OpenJam.Music</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MidiMinuit.Music.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Core\Chords\ClassDiagram.cd" />
+    <None Include="Core\Degrees\ClassDiagram.cd" />
+    <None Include="Core\IntervalModifiers\ClassDiagram.cd" />
+    <None Include="Core\DiatonicIntervals\ClassDiagram.cd" />
+    <None Include="Core\Intervals\ClassDiagram.cd" />
+    <Compile Include="Common\IntervalCollection.cs" />
+    <Compile Include="Common\IWikipedia.cs" />
+    <Compile Include="Core\Chords\Base\Chord.Implicit.cs" />
+    <Compile Include="Core\Chords\Base\Chord.Instances.cs" />
+    <Compile Include="Core\Chords\Base\Chord.Equatable.cs" />
+    <Compile Include="Core\Chords\Extensions\ChordExtensions.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordAugmented.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordDiminished.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.Equatable.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.Instances.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.Implicit.cs" />
+    <Compile Include="Core\DiatonicIntervals\Extensions\DiatonicIntervalExtensions.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalThirteenth.cs" />
+    <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Equatable.cs" />
+    <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Instances.cs" />
+    <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Implicit.cs" />
+    <Compile Include="Core\DiatonicIntervals\Base\DiatonicInterval.Equatable.cs" />
+    <Compile Include="Core\DiatonicIntervals\Base\DiatonicInterval.Instances.cs" />
+    <Compile Include="Core\DiatonicIntervals\Base\DiatonicInterval.Implicit.cs" />
+    <Compile Include="Core\Intervals\Base\Interval.Equatable.cs" />
+    <Compile Include="Core\Intervals\Base\Interval.Instances.cs" />
+    <Compile Include="Core\Intervals\Base\Interval.Implicit.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalCompound.cs" />
+    <Compile Include="Core\Intervals\Base\IntervalSimple.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedThirteenth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalDiminishedNinth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedNinth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalDiminishedEleventh.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalDiminishedThirteenth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMajorThirteeth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMinorThirteenth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMinorNinth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalPerfectEleventh.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.Equatable.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.Instances.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.Implicit.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.Repository.cs" />
+    <None Include="Core\Pitches\ClassDiagram.cd" />
+    <None Include="Core\Scales\ClassDiagram.cd" />
+    <None Include="Core\StepAccidentals\ClassDiagram.cd" />
+    <None Include="Core\StepNames\ClassDiagram.cd" />
+    <None Include="Instruments\GuitarTunings\ClassDiagram.cd" />
+    <None Include="MidiMinuit.Music.ruleset" />
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Chords\Base\Chord.cs" />
+    <Compile Include="Core\Chords\Base\Chord.Repository.cs" />
+    <Compile Include="Core\Chords\Sub\ChordFifth.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordMajor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMajorAugmented.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMajorAugmentedSeventhMinor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMajorNinthMajor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMajorSeventhMajor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMajorSeventhMinor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMajorSixthMajor.cs" />
+    <Compile Include="Core\Chords\Sub\verified\ChordMinor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMinorDiminished.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMinorDiminishedSeventhDiminished.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMinorFifthDiminishedSeventhMinor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMinorSeventhMajor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMinorSeventhMinor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordMinorSixthMajor.cs" />
+    <Compile Include="Core\Chords\Sub\ChordSuspendedFourth.cs" />
+    <Compile Include="Core\Chords\Sub\ChordSuspendedFourthSeventhMinor.cs" />
+    <Compile Include="Core\Chords\Enum\ChordAlias.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.cs" />
+    <Compile Include="Core\Degrees\Base\Degree.Repository.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree1.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree2.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree3.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree4.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree5.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree6.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree7.cs" />
+    <Compile Include="Core\Degrees\Sub\Degree8.cs" />
+    <Compile Include="Core\Degrees\Enum\DegreeAlias.cs" />
+    <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.cs" />
+    <Compile Include="Core\IntervalModifiers\Base\IntervalModifier.Repository.cs" />
+    <Compile Include="Core\IntervalModifiers\Enum\IntervalModifierAlias.cs" />
+    <Compile Include="Core\IntervalModifiers\Sub\IntervalModifierAugmented.cs" />
+    <Compile Include="Core\IntervalModifiers\Sub\IntervalModifierDiminished.cs" />
+    <Compile Include="Core\IntervalModifiers\Sub\IntervalModifierMajor.cs" />
+    <Compile Include="Core\IntervalModifiers\Sub\IntervalModifierMinor.cs" />
+    <Compile Include="Core\IntervalModifiers\Sub\IntervalModifierPerfect.cs" />
+    <Compile Include="Core\DiatonicIntervals\Base\DiatonicInterval.cs" />
+    <Compile Include="Core\DiatonicIntervals\Base\DiatonicInterval.Repository.cs" />
+    <Compile Include="Core\DiatonicIntervals\Enum\DiatonicIntervalAlias.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalEleventh.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalFifth.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalFourth.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalNinth.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalOctave.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalSecond.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalSeventh.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalSixth.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalThird.cs" />
+    <Compile Include="Core\DiatonicIntervals\Sub\DiatonicIntervalUnison.cs" />
+    <Compile Include="Core\Intervals\Base\Interval.cs" />
+    <Compile Include="Core\Intervals\Base\Interval.Repository.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalAlias.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalConsonance.cs" />
+    <Compile Include="Core\Intervals\Enum\IntervalSpanning.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedEleventh.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedFifth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedFourth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalAugmentedOctave.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedSecond.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedSeventh.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedSixth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedThird.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalAugmentedUnison.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedFifth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedFourth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedOctave.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedSecond.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedSeventh.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedSixth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalDiminishedThird.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalCompounds\IntervalMajorNinth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMajorSecond.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMajorSeventh.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMajorSixth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMajorThird.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMinorSecond.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMinorSeventh.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMinorSixth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalMinorThird.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalPerfectFifth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalPerfectFourth.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalPerfectOctave.cs" />
+    <Compile Include="Core\Intervals\Sub\IntervalSimples\IntervalPerfectUnison.cs" />
+    <Compile Include="Core\Pitches\Enum\PitchAlias.cs" />
+    <Compile Include="Core\Scales\Base\Scale.Equatable.cs" />
+    <Compile Include="Core\Scales\Base\Scale.Instances.cs" />
+    <Compile Include="Core\Scales\Base\Scale.Implicit.cs" />
+    <Compile Include="Core\Scales\Extensions\ScaleExtensions.cs" />
+    <Compile Include="Core\StepAccidentals\Base\StepAccidental.Equatable.cs" />
+    <Compile Include="Core\StepAccidentals\Base\StepAccidental.Instances.cs" />
+    <Compile Include="Core\StepAccidentals\Base\StepAccidental.Implicit.cs" />
+    <Compile Include="Core\StepAccidentals\Base\StepAccidental.cs" />
+    <Compile Include="Core\StepAccidentals\Base\StepAccidental.Repository.cs" />
+    <Compile Include="Core\StepAccidentals\Enum\StepAccidentalAlias.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalDoubleFlat.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalDoubleSharp.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalFlat.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalNatural.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalQuadrupleFlat.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalQuadrupleSharp.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalSharp.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalTripleFlat.cs" />
+    <Compile Include="Core\StepAccidentals\Sub\StepAccidentalTripleSharp.cs" />
+    <Compile Include="Core\StepNames\Base\StepName.Equatable.cs" />
+    <Compile Include="Core\StepNames\Base\StepName.Instances.cs" />
+    <Compile Include="Core\StepNames\Base\StepName.cs" />
+    <Compile Include="Core\StepNames\Base\StepName.Repository.cs" />
+    <Compile Include="Core\StepNames\Enum\StepNameAlias.cs" />
+    <Compile Include="Core\StepNames\Extensions\StepNameExtensions.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameA.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameB.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameC.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameD.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameE.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameF.cs" />
+    <Compile Include="Core\StepNames\Sub\StepNameG.cs" />
+    <Compile Include="Common\IHasPitch.cs" />
+    <Compile Include="Core\Pitches\Base\Pitch.cs" />
+    <Compile Include="Core\Steps\Base\Step.Equatable.cs" />
+    <Compile Include="Core\Steps\Base\Step.Repository.cs" />
+    <Compile Include="Core\Steps\Base\Step.Instances.cs" />
+    <Compile Include="Core\Steps\Base\Step.Implicit.cs" />
+    <Compile Include="Core\Steps\Base\Step.cs" />
+    <Compile Include="Core\Pitches\Base\TunedPitch.cs" />
+    <Compile Include="Core\Pitches\Extensions\PitchExtensions.cs" />
+    <Compile Include="Core\Scales\Base\Scale.cs" />
+    <Compile Include="Core\Scales\Base\Scale.Repository.cs" />
+    <Compile Include="Core\Scales\Enum\ScaleAlias.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleBlues.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleMajor.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleMinorHarmonic.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleMinorMelodic.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleMinorNaturalEolian.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeAltered.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeDiminished.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeDiminishedReverse.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeDorian.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeLocrian.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeLocrianBec2.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeLydian.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeLydianAdded.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeLydianB7.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeMixolydian.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModeMixolydianB2B6.cs" />
+    <Compile Include="Core\Scales\Sub\ScaleModePhrygian.cs" />
+    <Compile Include="Core\Scales\Sub\ScalePentatonicMajor.cs" />
+    <Compile Include="Core\Scales\Sub\ScalePentatonicMinor.cs" />
+    <Compile Include="Core\Steps\Enum\StepAlias.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Equatable.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Instances.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Implicit.cs" />
+    <Compile Include="Tmp\MusicContextTest.cs" />
+    <Compile Include="Tools\UnicodeMusicSymbol.cs" />
+    <Compile Include="Tmp\TuningSystem.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarString.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.cs" />
+    <Compile Include="Instruments\GuitarTunings\Base\GuitarTuning.Repository.cs" />
+    <Compile Include="Instruments\GuitarTunings\Enum\GuitarTuningAlias.cs" />
+    <Compile Include="Instruments\GuitarTunings\Enum\GuitarTuningCategory.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningAdmiral.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningAllFourths.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningAugFourths.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningBalalaika.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningBuzzard.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningCharango.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningCittern1.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningCittern2.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningDobro.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningDropD.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningFace.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningFourAndTwenty.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningHotType.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningLayover.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningLefty.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningMagicFarmer.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningMajorSixth.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningMajorThird.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningMandoguitar.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningMinorSixth.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningMinorThird.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningModalD.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningModalG.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOpenA.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOpenC.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOpenD.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOpenDMinor.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOpenG.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOpenGMinor.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningOvertone.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningPelican.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningPentatonic.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningProcessional.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningSlowMotion.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningSpirit.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningStandard.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningTarboulton.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningToulouse.cs" />
+    <Compile Include="Instruments\GuitarTunings\Sub\GuitarTuningTriqueen.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tmp\Class1.cs" />
+    <Compile Include="Tools\MusicContext.cs" />
+    <Compile Include="Tmp\DiatonicInterval.cs" />
+    <Compile Include="Tmp\HelperBeta.cs" />
+    <Compile Include="Tmp\SemitoneTypeEnum.cs" />
+    <Compile Include="Tools\UsefulExtensions.cs" />
+    <Compile Include="Tools\EnumerableExtensions.cs" />
+    <Compile Include="Tools\UsefulMathHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Instruments\GuitarPositions\Base\" />
+    <Folder Include="Instruments\GuitarPositions\Enum\" />
+    <Folder Include="Instruments\GuitarPositions\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\StepNames\Base\StepName.Implicit.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

@@ -1,0 +1,153 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using OpenJam.Music.Tools;
+
+namespace OpenJam.Music.Core
+{
+    public partial class Interval
+    {
+        public static List<Interval> CreateAll()
+        {
+            return Enum.GetValues(typeof(IntervalAlias))
+                .Cast<IntervalAlias>()
+                .Select(Create)
+                .ToList();
+        }
+
+        public static Interval Create(IntervalAlias interval)
+        {
+            switch (interval)
+            {
+                case IntervalAlias.PerfectUnison:
+                    return new IntervalPerfectUnison();
+                case IntervalAlias.AugmentedUnison:
+                    return new IntervalAugmentedUnison();
+
+                case IntervalAlias.DiminishedSecond:
+                    return new IntervalDiminishedSecond();
+                case IntervalAlias.MinorSecond:
+                    return new IntervalMinorSecond();
+                case IntervalAlias.MajorSecond:
+                    return new IntervalMajorSecond();
+                case IntervalAlias.AugmentedSecond:
+                    return new IntervalAugmentedSecond();
+
+                case IntervalAlias.DiminishedThird:
+                    return new IntervalDiminishedThird();
+                case IntervalAlias.MinorThird:
+                    return new IntervalMinorThird();
+                case IntervalAlias.MajorThird:
+                    return new IntervalMajorThird();
+                case IntervalAlias.AugmentedThird:
+                    return new IntervalAugmentedThird();
+
+                case IntervalAlias.DiminishedFourth:
+                    return new IntervalDiminishedFourth();
+                case IntervalAlias.PerfectFourth:
+                    return new IntervalPerfectFourth();
+                case IntervalAlias.AugmentedFourth:
+                    return new IntervalAugmentedFourth();
+
+                case IntervalAlias.DiminishedFifth:
+                    return new IntervalDiminishedFifth();
+                case IntervalAlias.PerfectFifth:
+                    return new IntervalPerfectFifth();
+                case IntervalAlias.AugmentedFifth:
+                    return new IntervalAugmentedFifth();
+
+                case IntervalAlias.DiminishedSixth:
+                    return new IntervalDiminishedSixth();
+                case IntervalAlias.MinorSixth:
+                    return new IntervalMinorSixth();
+                case IntervalAlias.MajorSixth:
+                    return new IntervalMajorSixth();
+                case IntervalAlias.AugmentedSixth:
+                    return new IntervalAugmentedSixth();
+
+                case IntervalAlias.DiminishedSeventh:
+                    return new IntervalDiminishedSeventh();
+                case IntervalAlias.MinorSeventh:
+                    return new IntervalMinorSeventh();
+                case IntervalAlias.MajorSeventh:
+                    return new IntervalMajorSeventh();
+                case IntervalAlias.AugmentedSeventh:
+                    return new IntervalAugmentedSeventh();
+
+                case IntervalAlias.DiminishedOctave:
+                    return new IntervalDiminishedOctave();
+                case IntervalAlias.PerfectOctave:
+                    return new IntervalPerfectOctave();
+                case IntervalAlias.AugmentedOctave:
+                    return new IntervalAugmentedOctave();
+
+                case IntervalAlias.DiminishedNinth:
+                    return new IntervalDiminishedNinth();
+                case IntervalAlias.MinorNinth:
+                    return new IntervalMinorNinth();
+                case IntervalAlias.MajorNinth:
+                    return new IntervalMajorNinth();
+                case IntervalAlias.AugmentedNinth:
+                    return new IntervalAugmentedNinth();
+
+                case IntervalAlias.DiminishedEleventh:
+                    return new IntervalDiminishedEleventh();
+                case IntervalAlias.PerfectEleventh:
+                    return new IntervalPerfectEleventh();
+                case IntervalAlias.AugmentedEleventh:
+                    return new IntervalAugmentedEleventh();
+
+                case IntervalAlias.DiminishedThirteenth:
+                    return new IntervalDiminishedThirteenth();
+                case IntervalAlias.MinorThirteenth:
+                    return new IntervalMinorThirteenth();
+                case IntervalAlias.MajorThirteenth:
+                    return new IntervalMajorThirteeth();
+                case IntervalAlias.AugmentedThirteenth:
+                    return new IntervalAugmentedThirteenth();
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(interval), interval, null);
+            }
+        }
+
+        ////public static Interval Create(DiatonicInterval diatonicInterval, int semitones)
+        ////{
+        ////    var interval = MusicContext.Intervals
+        ////        .Where(x => x.DiatonicInterval == diatonicInterval && x.Semitones == semitones)
+        ////        .ToList();
+
+        ////    return interval.FirstOrDefault();
+        ////}
+
+        public static Interval Create(Pitch startingPitch, Pitch endingPitch)
+        {
+            if (startingPitch == null)
+            {
+                throw new ArgumentNullException(nameof(startingPitch));
+            }
+
+            if (endingPitch == null)
+            {
+                throw new ArgumentNullException(nameof(endingPitch));
+            }
+
+            if (startingPitch > endingPitch)
+            {
+                var message = $"{nameof(startingPitch)} must be lower than {nameof(endingPitch)}";
+                throw new ArgumentException(message);
+            }
+
+            var stepDistance = Pitch.StepDistance(startingPitch, endingPitch);
+            var semitones = (endingPitch.MidiPitch - startingPitch.MidiPitch) % 24;
+
+            var interval = MusicContext.Intervals
+                .Where(x => x.DiatonicInterval.Steps == stepDistance)
+                .Single(x => x.Semitones == semitones);
+
+            interval.StartingPitch = startingPitch;
+
+            return interval;
+        }
+    }
+}

@@ -2,7 +2,7 @@
 using Windows.UI;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
-using MidiMinuit.Music.Core;
+using OpenJam.Music.Core;
 
 namespace IntervalCalculator.Views.Converters
 {

@@ -1,10 +1,10 @@
-﻿namespace MidiMinuit.SamplePages.IntervalCalculator
-{
-    using GalaSoft.MvvmLight;
-    using Music.Core;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using GalaSoft.MvvmLight;
+using OpenJam.Music.Core;
 
+namespace IntervalCalculator.ViewModels
+{
     public class MainViewModel : ViewModelBase
     {
         public MainViewModel()

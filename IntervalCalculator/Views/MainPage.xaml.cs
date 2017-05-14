@@ -1,7 +1,5 @@
 ﻿using Windows.UI.Xaml;
 using IntervalCalculator.ViewModels;
-using MidiMinuit.SamplePages;
-using MidiMinuit.SamplePages.IntervalCalculator;
 
 namespace IntervalCalculator.Views
 {

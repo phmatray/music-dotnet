@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace OpenJam.Music.Core
+{
+    public class IntervalDiminishedOctave
+        : IntervalSimple
+    {
+        public IntervalDiminishedOctave()
+        {
+        }
+
+        public IntervalDiminishedOctave(Pitch startingPitch)
+            : base(startingPitch)
+        {
+        }
+
+        public override IntervalAlias IntervalAlias { get; }
+            = IntervalAlias.DiminishedOctave;
+
+        public override IntervalConsonance HarmonicConsonance { get; }
+            = IntervalConsonance.Dissonante;
+
+        public override List<string> Names { get; }
+            = new List<string> { "Diminished Octave", "Diminished Eighth" };
+
+        public override List<string> Abbreviations { get; }
+            = new List<string> { "d8", "°8", "deg. 8", "dim. 8" };
+
+        public override string QualityComposition { get; }
+            = "4 tons et 3 demi-tons diatoniques";
+
+        public override int Semitones { get; }
+            = 11;
+
+        public override DiatonicInterval DiatonicInterval { get; }
+            = new DiatonicIntervalOctave();
+
+        public override IntervalModifier IntervalModifier { get; }
+            = new IntervalModifierDiminished();
+
+        public override IntervalSpanning Spanning { get; }
+            = IntervalSpanning.Simple;
+
+        public override Uri WikipediaUrl { get; }
+            = new Uri("https://en.wikipedia.org/wiki/Diminished_octave");
+
+        public override string WikipediaDescription { get; }
+            = @"In classical music from Western culture, a diminished octave is an interval produced by narrowing a perfect octave by a chromatic semitone. As such, the two notes are denoted by the same letter but have different accidentals. For instance, the interval from C4 to C5 is a perfect octave, twelve semitones wide, and both the intervals from C♯4 to C5, and from C4 to C♭5 are diminished octaves, spanning eleven semitones. Being diminished, it is considered a dissonant interval.
+
+The diminished octave is enharmonically equivalent to the major seventh.";
+
+        public override string ToString()
+            => Abbreviation;
+    }
+}

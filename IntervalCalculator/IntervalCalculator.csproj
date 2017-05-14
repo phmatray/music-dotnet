@@ -158,9 +158,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MidiMinuit.Music\MidiMinuit.Music.csproj">
+    <ProjectReference Include="..\OpenJam.Music\OpenJam.Music.csproj">
       <Project>{371df4d3-ed60-4abe-8e2b-3b7a8629eeda}</Project>
-      <Name>MidiMinuit.Music</Name>
+      <Name>OpenJam.Music</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
