@@ -43,7 +43,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.1.1" />
     <PackageReference Include="React.AspNet" Version="3.4.1" />
     <PackageReference Include="Sendgrid" Version="9.29.3" />
-    <PackageReference Include="Twilio" Version="5.81.2" />
+    <PackageReference Include="Twilio" Version="7.14.3" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
