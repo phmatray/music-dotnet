@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "express": "^4.4.4",
+    "express": "^5.0.0",
     "pug": "^2.0.0",
     "marked": "^0.8.0"
   }
