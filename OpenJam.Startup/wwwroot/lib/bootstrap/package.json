@@ -51,7 +51,7 @@
     "grunt-csscomb": "~3.1.0",
     "grunt-exec": "~3.0.0",
     "grunt-html": "~8.6.0",
-    "grunt-jekyll": "~0.4.4",
+    "grunt-jekyll": "~1.0.0",
     "grunt-jscs": "~3.0.1",
     "grunt-saucelabs": "~9.0.0",
     "load-grunt-tasks": "~3.5.0",
