@@ -49,7 +49,7 @@
     "grunt-contrib-uglify": "~1.0.0",
     "grunt-contrib-watch": "~1.1.0",
     "grunt-csscomb": "~3.1.0",
-    "grunt-exec": "~1.0.0",
+    "grunt-exec": "~3.0.0",
     "grunt-html": "~8.6.0",
     "grunt-jekyll": "~0.4.4",
     "grunt-jscs": "~3.0.1",
