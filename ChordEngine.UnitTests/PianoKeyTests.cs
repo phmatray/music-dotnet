@@ -25,7 +25,7 @@ public class PianoKeyTests
         var actual = pianoKey.IsWhiteKey;
 
         // Assert
-        actual.Should().Be(isWhiteKey);
+        actual.ShouldBe(isWhiteKey);
     }
     
     [Theory]
@@ -49,6 +49,6 @@ public class PianoKeyTests
         var actual = pianoKey.IsBlackKey;
 
         // Assert
-        actual.Should().Be(isBlackKey);
+        actual.ShouldBe(isBlackKey);
     }
 }

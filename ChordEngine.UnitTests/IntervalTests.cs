@@ -21,8 +21,8 @@ public class IntervalTests
         var actual = interval.HalfSteps;
 
         // Assert
-        actual.Should().Be(halfSteps);
-        interval.Abbreviation.Should().Be(name);
+        actual.ShouldBe(halfSteps);
+        interval.Abbreviation.ShouldBe(name);
     }
 
     [Theory]
@@ -53,8 +53,8 @@ public class IntervalTests
         var actual = interval.NoteB;
 
         // Assert
-        actual.Name.Should().Be(note2);
-        interval.ToString().Should().Be(name);
+        actual.Name.ShouldBe(note2);
+        interval.ToString().ShouldBe(name);
     }
     
 
