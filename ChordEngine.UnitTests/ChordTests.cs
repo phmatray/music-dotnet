@@ -17,6 +17,6 @@ public class ChordTests
         var actualNotes = chord.ToString();
 
         // Assert
-        actualNotes.Should().Be(expectedNotes);
+        actualNotes.ShouldBe(expectedNotes);
     }
 }

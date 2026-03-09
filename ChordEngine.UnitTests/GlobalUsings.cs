@@ -1,4 +1,4 @@
 // Global using directives
 
-global using FluentAssertions;
+global using Shouldly;
 global using Xunit;

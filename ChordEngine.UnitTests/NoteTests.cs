@@ -15,10 +15,10 @@ public class NoteTests
         var note = new Note (pitch);
 
         // Assert
-        note.Pitch.Should().Be(pitch);
-        note.Name.Should().Be(expectedName);
-        // note.LetterIndex.Should().Be(expectedName.Substring(0, 1));
-        note.Octave.Should().Be(expectedOctave);
+        note.Pitch.ShouldBe(pitch);
+        note.Name.ShouldBe(expectedName);
+        // note.LetterIndex.ShouldBe(expectedName.Substring(0, 1));
+        note.Octave.ShouldBe(expectedOctave);
     }
     
     [Theory]
@@ -38,7 +38,7 @@ public class NoteTests
         var actual = note.Name;
 
         // Assert
-        actual.Should().Be(expected);
+        actual.ShouldBe(expected);
     }
 
     [Fact]
@@ -61,7 +61,7 @@ public class NoteTests
         var actual = note.Pitch;
 
         // Assert
-        actual.Should().BeInRange(0, 127);
+        actual.ShouldBeInRange(0, 127);
     }
 
     [Theory]
@@ -84,7 +84,7 @@ public class NoteTests
         var actual = note.Name;
 
         // Assert
-        actual.Should().Be(expected);
+        actual.ShouldBe(expected);
     }
 
     [Fact]
@@ -97,7 +97,7 @@ public class NoteTests
         var actual = note.Pitch;
 
         // Assert
-        actual.Should().BeInRange(0, 127);
+        actual.ShouldBeInRange(0, 127);
     }
     
     [Theory]
@@ -117,7 +117,7 @@ public class NoteTests
         var actual = note.Pitch;
 
         // Assert
-        actual.Should().Be(expected);
+        actual.ShouldBe(expected);
     }
     
     [Theory]
@@ -139,8 +139,8 @@ public class NoteTests
         var transposedNote = note.Transpose(halfSteps);
 
         // Assert
-        transposedNote.Name.Should().Be(expectedName);
-        transposedNote.Octave.Should().Be(expectedOctave);
-        transposedNote.Pitch.Should().Be(expectedPitch);
+        transposedNote.Name.ShouldBe(expectedName);
+        transposedNote.Octave.ShouldBe(expectedOctave);
+        transposedNote.Pitch.ShouldBe(expectedPitch);
     }
 }
