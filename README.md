@@ -64,6 +64,14 @@ var progression = Progression.Create(Key.CMajor, "I IV V I");
 
 <!-- portfolio-techstack:end -->
 
+<!-- portfolio-roadmap:start -->
+
+## Roadmap
+
+Planned work and known limitations are tracked in the [open issues](https://github.com/phmatray/ChordEngine/issues). Contributions toward them are welcome.
+
+<!-- portfolio-roadmap:end -->
+
 ## 📄 License
 MIT — see LICENSE
 
