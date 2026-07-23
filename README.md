@@ -1,3 +1,5 @@
+![vgm banner](.github/banner.png)
+
 # vgm
 
 > A web application for Video Game Music (VGM) management and playback.
