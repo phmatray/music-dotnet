@@ -15,6 +15,20 @@
 [![Last commit](https://img.shields.io/github/last-commit/phmatray/ChordEngine)](https://github.com/phmatray/ChordEngine/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [✨ Features](#-features)
+- [📦 Installation](#-installation)
+- [🚀 Quick Start](#-quick-start)
+- [Tech Stack](#tech-stack)
+- [📄 License](#-license)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 
 A .NET library for music chord generation, analysis, and visualization. Includes a Blazor demo app for interactive chord exploration.
 
