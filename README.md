@@ -16,6 +16,19 @@
 [![Last commit](https://img.shields.io/github/last-commit/phmatray/music-dotnet)](https://github.com/phmatray/music-dotnet/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [Projects](#projects)
+- [Features](#features)
+- [Usage](#usage)
+- [History](#history)
+- [License](#license)
+
+<!-- portfolio-toc:end -->
+
+
 
 > **Music and audio for .NET** — a theory library, a chord engine, MIDI tooling,
 > Web Audio bindings, and a VGM player, consolidated in one place (full git history preserved).
