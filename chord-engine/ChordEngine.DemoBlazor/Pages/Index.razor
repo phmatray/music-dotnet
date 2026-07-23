@@ -1,0 +1,72 @@
+﻿@page "/"
+
+<h1>Notes</h1>
+<p>This page demonstrates the use of the <code>Note</code> model from the <code>ChordEngine</code> assembly.</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Note</th>
+        <th>Octave</th>
+        <th>Pitch</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var note in _notes)
+    {
+        <tr>
+            <td>@note.Name</td>
+            <td>@note.Octave</td>
+            <td>@note.Pitch</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<h1>Intervals</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Interval</th>
+        @* <th>Distance</th> *@
+        @* <th>Quality</th> *@
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var interval in _intervals)
+    {
+        <tr>
+            <td>@interval.Abbreviation</td>
+            @* <td>@interval.Distance</td> *@
+            @* <td>@interval.Quality</td> *@
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+
+    private readonly List<Note> _notes = new();
+    private readonly List<Interval> _intervals = new();
+
+    protected override void OnInitialized()
+    {
+        var c = new Note("C");
+        var d = new Note("D");
+        var e = new Note("E");
+        var f = new Note("F");
+        var g = new Note("G");
+        var a = new Note("A", 5);
+        var b = new Note("B", 5);
+        
+        _notes.AddRange(new List<Note> {c, d, e, f, g, a, b});
+
+        var m2 = new Interval(c, d);
+        var m3 = new Interval(c, e);
+        var m6 = new Interval(c, a);
+        var m7 = new Interval(c, b);
+        
+        _intervals.AddRange(new List<Interval> {m2, m3, m6, m7});
+    }
+}

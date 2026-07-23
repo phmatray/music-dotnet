@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChordEngine", "ChordEngine\ChordEngine.csproj", "{95B47DC3-4234-4DA9-8588-71A9AA734D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChordEngine.UnitTests", "ChordEngine.UnitTests\ChordEngine.UnitTests.csproj", "{91296AB4-347D-464A-9435-9EBA88B8F347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChordEngine.DemoBlazor", "ChordEngine.DemoBlazor\ChordEngine.DemoBlazor.csproj", "{933D781D-9644-40A4-91F5-8E9A30ED3553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95B47DC3-4234-4DA9-8588-71A9AA734D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B47DC3-4234-4DA9-8588-71A9AA734D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B47DC3-4234-4DA9-8588-71A9AA734D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B47DC3-4234-4DA9-8588-71A9AA734D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91296AB4-347D-464A-9435-9EBA88B8F347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91296AB4-347D-464A-9435-9EBA88B8F347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91296AB4-347D-464A-9435-9EBA88B8F347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91296AB4-347D-464A-9435-9EBA88B8F347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933D781D-9644-40A4-91F5-8E9A30ED3553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933D781D-9644-40A4-91F5-8E9A30ED3553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933D781D-9644-40A4-91F5-8E9A30ED3553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933D781D-9644-40A4-91F5-8E9A30ED3553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
