@@ -461,6 +461,19 @@ dotnet restore
 dotnet build
 ```
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **C#**
+- MudBlazor
+- Microsoft.Testing.Extensions.CodeCoverage
+- xunit.v3
+- xunit.runner.visualstudio
+- Shouldly
+
+<!-- portfolio-techstack:end -->
+
 ### Contributing
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/new-feature`
