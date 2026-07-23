@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MidiMinuit.Music.Core.Pitches.Pitch" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMA3AAIABQAAAAQE+AaBAtU+Sgjwj/8fAAIEiP8PByg=</HashCode>
+      <FileName>Core\Pitches\Base\Pitch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Pitches.Step" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAAQEQAAG+AZAAAQAgAAAAJAACAAgvgEAAiQ=</HashCode>
+      <FileName>Core\Pitches\Base\Step.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Pitches.PitchExtensions" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Core\Pitches\Extensions\PitchExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MidiMinuit.Music.Core.Pitches.IHasPitch" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Core\Pitches\Base\IHasPitch.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MidiMinuit.Music.Core.Pitches.PitchAlias" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMA3AAAAAAAAAAAA+AYAAME+AADwD/8fAAAAgP8PAAA=</HashCode>
+      <FileName>Core\Pitches\Enum\PitchAlias.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.88" />
+</ClassDiagram>

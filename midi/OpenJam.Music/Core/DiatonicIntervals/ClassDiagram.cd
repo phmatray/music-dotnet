@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MidiMinuit.Music.Core.IntervalSteps.IntervalStep" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAABAAAIAAAAEAAIAAAQAAAAAAEAAAAAAAACAABA=</HashCode>
+      <FileName>Core\IntervalSteps\Base\IntervalStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.IntervalSteps.IntervalStepThird" Collapsed="true">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABAAAIAAAAEAAIAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Core\IntervalSteps\Sub\IntervalStepThird.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.IntervalSteps.IntervalStepFifth" Collapsed="true">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABAAAIAAAAEAAIAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Core\IntervalSteps\Sub\IntervalStepFifth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MidiMinuit.Music.Core.IntervalSteps.IntervalStepAlias" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAAAAAAAAAAAAAAIgYAAAAgAAAAAAAAAAAYg=</HashCode>
+      <FileName>Core\IntervalSteps\Enum\IntervalStepAlias.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.88" />
+</ClassDiagram>

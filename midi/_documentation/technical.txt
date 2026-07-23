@@ -1,0 +1,3 @@
+#UWPXAML – Compiled Binding – Binding to events
+https://mcnextpost.com/2015/11/10/uwpxaml-compiled-binding-binding-to-events/
+

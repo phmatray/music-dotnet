@@ -1,0 +1,56 @@
+﻿using System.Collections.Generic;
+
+namespace OpenJam.Music.Core
+{
+    public class ScaleModeDiminishedReverse
+        : Scale
+    {
+        private Pitch _key;
+
+        public override Pitch Key
+        {
+            get
+            {
+                return _key;
+            }
+
+            set
+            {
+                _key = value;
+                Fondamental = new IntervalPerfectUnison(_key);
+                MinorSecond = new IntervalMinorSecond(_key);
+                MinorThird = new IntervalMinorThird(_key);
+                MajorThird = new IntervalMajorThird(_key);
+                DiminishedFifth = new IntervalDiminishedFifth(_key);
+                PerfectFifth = new IntervalPerfectFifth(_key);
+                MajorSixth = new IntervalMajorSixth(_key);
+                MinorSeventh = new IntervalMinorSeventh(_key);
+            }
+        }
+
+        /// <summary>
+        ///     Gets Mode Diminué Inversé : T 2m 3m 3M b5 5j 6M 7m
+        /// </summary>
+        public override ScaleAlias Alias { get; }
+            = ScaleAlias.ModeDiminishedReverse;
+
+        public override List<Interval> Intervals
+            => new List<Interval>
+            {
+                Fondamental,
+                MinorSecond,
+                MinorThird,
+                MajorThird,
+                DiminishedFifth,
+                PerfectFifth,
+                MajorSixth,
+                MinorSeventh
+            };
+
+        public override string Name { get; }
+            = "Mode Diminished Reverse";
+
+        public override string ToString()
+            => Name;
+    }
+}

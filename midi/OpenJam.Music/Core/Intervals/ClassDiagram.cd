@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MidiMinuit.Music.Core.Intervals.Interval" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIihABAEMYAIBgEAAAACAQAAAACAEAAIAAEAAAAAJA=</HashCode>
+      <FileName>Core\Intervals\Base\Interval.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Intervals.IntervalExtensions" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Intervals\Extensions\IntervalExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Intervals.IntervalMajorThird" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAhAAAAEYAAAgEAAAAAAAAAAACAAAAIAAEAAAAAJA=</HashCode>
+      <FileName>Core\Intervals\Sub\IntervalMajorThird.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MidiMinuit.Music.Core.Intervals.IntervalPerfectFifth" Collapsed="true">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAhAAAAEYAAAgEAAAAAAAAAAACAAAAIAAEAAAAAJA=</HashCode>
+      <FileName>Core\Intervals\Sub\IntervalPerfectFifth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MidiMinuit.Music.Core.Intervals.IntervalAlias" Collapsed="true">
+    <Position X="8.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIAAAAAwAgAEMIQBICAgQAAAAogAgAAAEgAAMQALAA=</HashCode>
+      <FileName>Core\Intervals\Enum\IntervalAlias.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MidiMinuit.Music.Core.Intervals.IntervalConsonance" Collapsed="true">
+    <Position X="10.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAACAACAAQAAAAA=</HashCode>
+      <FileName>Core\Intervals\Enum\IntervalConsonance.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MidiMinuit.Music.Core.Intervals.IntervalSpanning" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Intervals\Enum\IntervalSpanning.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.88" />
+</ClassDiagram>

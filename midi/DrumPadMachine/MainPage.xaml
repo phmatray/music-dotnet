@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="DrumPadMachine.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrumPadMachine"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="MainPage_OnLoaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Button1" Content="Clap" Tapped="Button1_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6" />
+        <Button x:Name="Button2" Content="Hi-Hat" Tapped="Button2_Click" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6"/>
+        <Button x:Name="Button3" Content="Crash" Tapped="Button3_Click" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6"/>
+        <Button x:Name="Button4" Content="Kick" Tapped="Button4_Click" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6"/>
+        <Button x:Name="Button5" Content="Open-Hat" Tapped="Button5_Click" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6" />
+        <Button x:Name="Button6" Content="Perc" Tapped="Button6_Click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6" />
+        <Button x:Name="Button7" Content="Snare" Tapped="Button7_Click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6" />
+        <Button x:Name="Button8" Content="Tom" Tapped="Button8_Click" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="6" />
+    </Grid>
+</Page>
