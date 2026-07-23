@@ -37,6 +37,19 @@ Console.WriteLine(chord.Notes); // C, E, G
 var progression = Progression.Create(Key.CMajor, "I IV V I");
 ```
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 7**
+- Microsoft.AspNetCore.Components.WebAssembly
+- Microsoft.AspNetCore.Components.WebAssembly.DevServer
+- Shouldly
+- xunit
+- xunit.runner.visualstudio
+
+<!-- portfolio-techstack:end -->
+
 ## 📄 License
 MIT — see LICENSE
 
