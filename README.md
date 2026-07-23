@@ -46,6 +46,14 @@ Midiminuit is a .NET-based music application providing MIDI processing, music th
 dotnet run --project OpenJam.Startup/OpenJam.Startup.csproj
 ```
 
+<!-- portfolio-roadmap:start -->
+
+## Roadmap
+
+Planned work and known limitations are tracked in the [open issues](https://github.com/phmatray/midiminuit/issues). Contributions toward them are welcome.
+
+<!-- portfolio-roadmap:end -->
+
 ## License
 MIT
 
