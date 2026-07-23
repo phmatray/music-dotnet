@@ -2,6 +2,21 @@
 
 # WebAudioInterop — Web Audio API bindings for Blazor
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [✨ Features](#-features)
+- [📦 Installation](#-installation)
+- [🚀 Quick Start](#-quick-start)
+- [🏗 Project Structure](#-project-structure)
+- [Tech Stack](#tech-stack)
+- [📄 License](#-license)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 ![Build](https://img.shields.io/github/actions/workflow/status/phmatray/WebAudioInterop/dotnet.yml?branch=main)
 ![License](https://img.shields.io/github/license/phmatray/WebAudioInterop)
 
