@@ -1,3 +1,5 @@
+![music-dotnet banner](.github/banner.png)
+
 # Music .NET
 
 > **Music and audio for .NET** — a theory library, a chord engine, MIDI tooling,
