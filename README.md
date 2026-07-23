@@ -15,6 +15,19 @@
 [![Last commit](https://img.shields.io/github/last-commit/phmatray/midiminuit)](https://github.com/phmatray/midiminuit/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [Description](#description)
+- [Stack / Tech](#stack--tech)
+- [Getting Started](#getting-started)
+- [License](#license)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 
 > A .NET music toolkit with MIDI processing and OpenJam integration.
 
