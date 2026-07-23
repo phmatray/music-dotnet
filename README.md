@@ -1,3 +1,5 @@
+![MusicTheory banner](.github/banner.png)
+
 # MusicTheory
 
 [![NuGet](https://img.shields.io/nuget/v/MusicTheory.svg)](https://www.nuget.org/packages/MusicTheory/)
