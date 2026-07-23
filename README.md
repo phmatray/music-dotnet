@@ -62,6 +62,21 @@ dotnet build
 Each folder was merged with **full git history preserved** (`git subtree`). The
 original repositories are archived and redirect here.
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 7 · netcoreapp1.1**
+- Microsoft.AspNetCore.Components.WebAssembly
+- Microsoft.AspNetCore.Components.WebAssembly.DevServer
+- Shouldly
+- xunit
+- xunit.runner.visualstudio
+- Microsoft.NETCore.UniversalWindowsPlatform
+- MvvmLight
+
+<!-- portfolio-techstack:end -->
+
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
