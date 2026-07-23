@@ -1,0 +1,12 @@
+C:\Users\Philippe\Documents\Workspace\phmatray-home\VGM\VGM.Web\bin\VGM.Web.dll.config
+C:\Users\Philippe\Documents\Workspace\phmatray-home\VGM\VGM.Web\bin\VGM.Web.dll
+C:\Users\Philippe\Documents\Workspace\phmatray-home\VGM\VGM.Web\bin\VGM.Web.pdb
+C:\Users\Philippe\Documents\Workspace\phmatray-home\VGM\VGM.Web\obj\Debug\VGM.Web.dll
+C:\Users\Philippe\Documents\Workspace\phmatray-home\VGM\VGM.Web\obj\Debug\VGM.Web.pdb
+C:\Users\Philippe\Documents\Workspace\phmatray-home\VGM\VGM.Web\obj\Debug\VGM.Web.csprojResolveAssemblyReference.cache
+C:\Users\Philippe\Documents\Workspace\vgm\VGM.Web\bin\VGM.Web.dll.config
+C:\Users\Philippe\Documents\Workspace\vgm\VGM.Web\bin\VGM.Web.dll
+C:\Users\Philippe\Documents\Workspace\vgm\VGM.Web\bin\VGM.Web.pdb
+C:\Users\Philippe\Documents\Workspace\vgm\VGM.Web\obj\Debug\VGM.Web.csprojResolveAssemblyReference.cache
+C:\Users\Philippe\Documents\Workspace\vgm\VGM.Web\obj\Debug\VGM.Web.dll
+C:\Users\Philippe\Documents\Workspace\vgm\VGM.Web\obj\Debug\VGM.Web.pdb
