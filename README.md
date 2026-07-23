@@ -1,3 +1,5 @@
+![ChordEngine banner](.github/banner.png)
+
 # ChordEngine — Music Chord Engine in .NET
 
 A .NET library for music chord generation, analysis, and visualization. Includes a Blazor demo app for interactive chord exploration.
