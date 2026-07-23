@@ -15,6 +15,19 @@
 [![Last commit](https://img.shields.io/github/last-commit/phmatray/vgm)](https://github.com/phmatray/vgm/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [Description](#description)
+- [Stack / Tech](#stack--tech)
+- [Getting Started](#getting-started)
+- [License](#license)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 
 > A web application for Video Game Music (VGM) management and playback.
 
