@@ -2,6 +2,31 @@
 
 # MusicTheory
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [✨ Features](#-features)
+- [🎯 Why MusicTheory?](#-why-musictheory)
+- [📦 Installation](#-installation)
+- [🚀 Quick Start](#-quick-start)
+- [📚 Core Classes](#-core-classes)
+- [🎼 Supported Scale Types](#-supported-scale-types)
+- [🎸 Supported Chord Types](#-supported-chord-types)
+- [🧪 Testing](#-testing)
+- [🏛️ Architecture](#-architecture)
+- [💡 Real-World Examples](#-real-world-examples)
+- [🔧 Development](#-development)
+- [Tech Stack](#tech-stack)
+- [📊 Performance](#-performance)
+- [🗺️ Roadmap](#-roadmap)
+- [📖 Documentation](#-documentation)
+- [📄 License](#-license)
+- [🤝 Acknowledgments](#-acknowledgments)
+
+<!-- portfolio-toc:end -->
+
+
 [![NuGet](https://img.shields.io/nuget/v/MusicTheory.svg)](https://www.nuget.org/packages/MusicTheory/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/MusicTheory.svg)](https://www.nuget.org/packages/MusicTheory/)
 [![.NET](https://img.shields.io/badge/.NET-9.0-blue)](https://dotnet.microsoft.com/)
