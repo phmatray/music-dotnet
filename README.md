@@ -2,6 +2,20 @@
 
 # vgm
 
+<!-- portfolio-badges:start -->
+<!-- Identity -->
+[![phmatray - vgm](https://img.shields.io/static/v1?label=phmatray&message=vgm&color=blue&logo=github)](https://github.com/phmatray/vgm)
+![Top language](https://img.shields.io/github/languages/top/phmatray/vgm)
+[![Stars](https://img.shields.io/github/stars/phmatray/vgm?style=social)](https://github.com/phmatray/vgm/stargazers)
+[![Forks](https://img.shields.io/github/forks/phmatray/vgm?style=social)](https://github.com/phmatray/vgm/network/members)
+
+<!-- Activity -->
+[![Issues](https://img.shields.io/github/issues/phmatray/vgm)](https://github.com/phmatray/vgm/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/phmatray/vgm)](https://github.com/phmatray/vgm/pulls)
+[![Last commit](https://img.shields.io/github/last-commit/phmatray/vgm)](https://github.com/phmatray/vgm/commits)
+<!-- portfolio-badges:end -->
+
+
 > A web application for Video Game Music (VGM) management and playback.
 
 ## Description
