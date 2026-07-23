@@ -27,6 +27,19 @@
 
 <!-- portfolio-toc:end -->
 
+<!-- portfolio-features:start -->
+
+## Features
+
+- **Video Game Music library** — browse and organize a collection of VGM tracks
+- **Streaming playback** — play tracks from a web interface
+- **ASP.NET MVC** — a .NET web application (`VGM.Web`)
+- **Cloud-backed** — Azure/Firebase integration for hosting and data
+- **Scripted deploys** — PowerShell publish scripts for Azure Web Apps
+
+<!-- portfolio-features:end -->
+
+
 
 
 > A web application for Video Game Music (VGM) management and playback.
