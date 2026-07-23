@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAudioInterop", "WebAudioInterop\WebAudioInterop.csproj", "{60587DF6-8260-4C10-8D0F-60C4E9164D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{0D1FCC2F-4470-44AD-B7ED-D2DF7500030E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{586F5E5E-8683-42EA-9A38-43400A5B7E69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9FFEBE94-74DD-43D9-A8B8-B6DE4E024856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{BD551B7A-AE18-4854-86DE-13C07C1DDE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAudio", "..\demo\WebAudioInterop\BlazorWebAudio\BlazorWebAudio.csproj", "{4B4F4BA4-EAEA-4003-ABC8-397AB14A9539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60587DF6-8260-4C10-8D0F-60C4E9164D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60587DF6-8260-4C10-8D0F-60C4E9164D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60587DF6-8260-4C10-8D0F-60C4E9164D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60587DF6-8260-4C10-8D0F-60C4E9164D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1FCC2F-4470-44AD-B7ED-D2DF7500030E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1FCC2F-4470-44AD-B7ED-D2DF7500030E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1FCC2F-4470-44AD-B7ED-D2DF7500030E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1FCC2F-4470-44AD-B7ED-D2DF7500030E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4F4BA4-EAEA-4003-ABC8-397AB14A9539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4F4BA4-EAEA-4003-ABC8-397AB14A9539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4F4BA4-EAEA-4003-ABC8-397AB14A9539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4F4BA4-EAEA-4003-ABC8-397AB14A9539}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B4F4BA4-EAEA-4003-ABC8-397AB14A9539} = {BD551B7A-AE18-4854-86DE-13C07C1DDE68}
+		{60587DF6-8260-4C10-8D0F-60C4E9164D01} = {586F5E5E-8683-42EA-9A38-43400A5B7E69}
+		{0D1FCC2F-4470-44AD-B7ED-D2DF7500030E} = {9FFEBE94-74DD-43D9-A8B8-B6DE4E024856}
+	EndGlobalSection
+EndGlobal
