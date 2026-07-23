@@ -1,3 +1,5 @@
+![midiminuit banner](.github/banner.png)
+
 # midiminuit
 
 > A .NET music toolkit with MIDI processing and OpenJam integration.
