@@ -46,6 +46,14 @@ VGM is a web application for organizing and playing Video Game Music tracks. Bui
 dotnet run --project VGM.Web/VGM.Web.csproj
 ```
 
+<!-- portfolio-roadmap:start -->
+
+## Roadmap
+
+Planned work and known limitations are tracked in the [open issues](https://github.com/phmatray/vgm/issues). Contributions toward them are welcome.
+
+<!-- portfolio-roadmap:end -->
+
 ## License
 MIT
 
