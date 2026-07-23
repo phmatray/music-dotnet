@@ -1,3 +1,5 @@
+![WebAudioInterop banner](.github/banner.png)
+
 # WebAudioInterop — Web Audio API bindings for Blazor
 
 ![Build](https://img.shields.io/github/actions/workflow/status/phmatray/WebAudioInterop/dotnet.yml?branch=main)
