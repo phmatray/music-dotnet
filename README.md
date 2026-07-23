@@ -61,6 +61,19 @@ WebAudioInterop/
 UnitTests/                                 # Test project
 ```
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 7**
+- bunit
+- xunit
+- xunit.runner.visualstudio
+- Microsoft.AspNetCore.Components.Web
+- Microsoft.TypeScript.MSBuild
+
+<!-- portfolio-techstack:end -->
+
 ## 📄 License
 
 MIT — see [LICENSE](LICENSE)
