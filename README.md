@@ -27,6 +27,19 @@
 
 <!-- portfolio-toc:end -->
 
+<!-- portfolio-features:start -->
+
+## Features
+
+- **MIDI processing** — a .NET toolkit for reading and manipulating MIDI and musical note data
+- **Music theory utilities** — intervals, scales and accidentals (natural/sharp/flat/double) via an interval calculator
+- **Drum pad machine** — an interactive drum-pad module
+- **OpenJam integration** — `OpenJam.Music` library plus an `OpenJam.Cli` for the OpenJam platform
+- **Tested core** — `OpenJam.Music.Tests` covers the music-theory logic
+
+<!-- portfolio-features:end -->
+
+
 
 
 > A .NET music toolkit with MIDI processing and OpenJam integration.
