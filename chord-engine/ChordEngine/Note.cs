@@ -22,6 +22,13 @@ public record Note
         .GroupBy(kvp => kvp.Value)
         .ToDictionary(g => g.Key, g => g.First().Key);
 
+    private const string Letters = "CDEFGAB";
+
+    private static readonly IReadOnlyDictionary<char, int> NaturalPitchByLetter = new Dictionary<char, int>
+    {
+        { 'C', 0 }, { 'D', 2 }, { 'E', 4 }, { 'F', 5 }, { 'G', 7 }, { 'A', 9 }, { 'B', 11 }
+    };
+
     private const int DefaultOctave = 4;
 
     public string Name { get; }
@@ -85,6 +92,50 @@ public record Note
         }
 
         string newName = FindNoteNameByPitch(newPitch);
+        return new Note(newName, newOctave);
+    }
+
+    /// <summary>
+    /// Transpose the note to a specific diatonic interval, given as the number of letter-name
+    /// steps to move (0 = same letter/unison, 1 = a 2nd away, 2 = a 3rd away, ...) together with
+    /// the exact number of half steps the target must be. This yields the theoretically correct
+    /// enharmonic spelling for the target - e.g. an augmented 5th is spelled with a raised
+    /// 5th-degree letter (G to D#), while a diminished 5th is spelled with a lowered 5th-degree
+    /// letter (D to Ab) - which <see cref="Transpose"/> cannot do, since a bare half-step count
+    /// alone does not carry enough information to know which diatonic degree is intended.
+    /// </summary>
+    public Note TransposeDiatonic(int letterSteps, int semitones)
+    {
+        int targetLetterIndex = ((LetterIndex + letterSteps) % 7 + 7) % 7;
+        char targetLetter = Letters[targetLetterIndex];
+
+        int targetPitchClass = ((Pitch + semitones) % 12 + 12) % 12;
+        int naturalTargetPitch = NaturalPitchByLetter[targetLetter];
+        int accidentalOffset = ((targetPitchClass - naturalTargetPitch + 6) % 12 + 12) % 12 - 6;
+
+        string accidental = accidentalOffset switch
+        {
+            0 => "",
+            1 => "#",
+            -1 => "b",
+            _ => throw new InvalidOperationException(
+                $"Cannot represent an accidental offset of {accidentalOffset} for the note '{targetLetter}'.")
+        };
+
+        string newName = $"{targetLetter}{accidental}";
+
+        int totalPitch = Pitch + semitones;
+        int newOctave = totalPitch / 12 - 1;
+        if (totalPitch < 0 && totalPitch % 12 != 0) // Decrement the octave if the total pitch is negative and not a multiple of 12
+        {
+            newOctave--;
+        }
+
+        if (newOctave < -1 || newOctave > 9)
+        {
+            throw new InvalidOctaveException($"Invalid octave value {newOctave}. Must be between -1 and 9.");
+        }
+
         return new Note(newName, newOctave);
     }
 

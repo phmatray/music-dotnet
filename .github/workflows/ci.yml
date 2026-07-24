@@ -29,12 +29,12 @@ jobs:
             # green.
 
           - solution: chord-engine/ChordEngine.sln
-            run-tests: false
-            # Builds clean on net10.0, but ChordEngine.UnitTests has 19/90 pre-existing
-            # failures in IntervalTests (real interval-calculation logic bugs, e.g.
-            # expecting a P5 and getting a P4) that are unrelated to the .NET 10
-            # migration — ChordEngine.csproj itself is untouched. Tracked separately;
-            # build-only until the logic bugs are fixed.
+            run-tests: true
+            # The 19 pre-existing IntervalTests failures (real interval-calculation logic
+            # bugs, e.g. expecting a P5 and getting a P4) have been fixed - see the
+            # "fix: correct interval-math bugs in chord-engine" PR. ChordEngine.UnitTests
+            # is now 86/86 green (90 minus 4 InlineData rows that were unsatisfiable
+            # duplicates of an enharmonic sibling row and were removed).
 
         # Known non-building subprojects (excluded):
         # - midi/OpenJam.sln
