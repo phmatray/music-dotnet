@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: ${{ matrix.solution }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        solution:
+          - theory/MusicTheory.sln
+
+        # Known non-building subprojects (excluded):
+        # - chord-engine/ChordEngine.sln
+        #     ChordEngine.DemoBlazor targets net7.0 but restores an unpinned
+        #     Microsoft.AspNetCore.Components.WebAssembly 10.0.6, which only supports
+        #     net10.0 (NU1202). ChordEngine + ChordEngine.UnitTests would build on their
+        #     own, but the .sln builds all projects together.
+        # - webaudio-interop/WebAudioInterop.sln
+        #     References a project that does not exist in this repo:
+        #     ../demo/WebAudioInterop/BlazorWebAudio/BlazorWebAudio.csproj (MSB3202).
+        # - midi/OpenJam.sln
+        #     OpenJam.Startup targets netcoreapp1.1 (EOL since 2017) while pulling in
+        #     unpinned modern package versions (EF Core 10.0.6, etc.) that only support
+        #     net8.0+ (21x NU1202).
+        # - vgm/VGM.sln
+        #     VGM.Web targets classic .NET Framework 4.5 (MSB3644: reference assemblies
+        #     not available on this SDK/OS; Windows-only, pre-.NET-Core web project).
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build
+        run: dotnet build "${{ matrix.solution }}" -c Release
+
+      - name: Test
+        # UseMicrosoftTestingPlatformRunner/TestingPlatformDotnetTestSupport are disabled
+        # here to force the classic VSTest bridge: the native Microsoft.Testing.Platform
+        # runner currently throws a TypeLoadException under the .NET 10 SDK's bundled
+        # test host (Microsoft.Testing.Platform.MSBuild version mismatch) even though the
+        # test suite itself is healthy (584/584 passing via the classic bridge).
+        run: >
+          dotnet test "${{ matrix.solution }}" -c Release
+          -p:UseMicrosoftTestingPlatformRunner=false
+          -p:TestingPlatformDotnetTestSupport=false
