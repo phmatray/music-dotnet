@@ -6,12 +6,15 @@ public class Chord
     public string Type { get; }
     public List<Note> Notes { get; }
 
-    private static readonly Dictionary<string, List<int>> ChordTypes = new()
+    // Each chord tone is defined by (letter steps, half steps) from the root, e.g. the diminished
+    // fifth of a diminished triad is 4 letter-steps and 6 half-steps above the root, which lets
+    // TransposeDiatonic pick the theoretically correct enharmonic spelling (e.g. Ab, not G#).
+    private static readonly Dictionary<string, List<(int LetterSteps, int Semitones)>> ChordTypes = new()
     {
-        { "major", new List<int> { 0, 4, 7 } },
-        { "minor", new List<int> { 0, 3, 7 } },
-        { "diminished", new List<int> { 0, 3, 6 } },
-        { "augmented", new List<int> { 0, 4, 8 } }
+        { "major", new List<(int, int)> { (0, 0), (2, 4), (4, 7) } },
+        { "minor", new List<(int, int)> { (0, 0), (2, 3), (4, 7) } },
+        { "diminished", new List<(int, int)> { (0, 0), (2, 3), (4, 6) } },
+        { "augmented", new List<(int, int)> { (0, 0), (2, 4), (4, 8) } }
     };
 
     public Chord(Note root, string type)
@@ -29,7 +32,7 @@ public class Chord
         }
 
         var intervals = ChordTypes[type];
-        var notes = intervals.Select(halfSteps => root.Transpose(halfSteps)).ToList();
+        var notes = intervals.Select(i => root.TransposeDiatonic(i.LetterSteps, i.Semitones)).ToList();
 
         return notes;
     }
