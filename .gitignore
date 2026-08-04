@@ -6,3 +6,14 @@ node_modules/
 *.user
 .vs/
 .idea/
+
+# IDE / ReSharper
+*.DotSettings
+*.DotSettings.user
+/_ReSharper.Caches/
+riderModule.iml
+
+# Build output
+build.log
+packages/
+artifacts/
