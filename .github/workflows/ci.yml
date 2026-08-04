@@ -41,9 +41,6 @@ jobs:
         #     OpenJam.Startup targets netcoreapp1.1 (EOL since 2017) while pulling in
         #     unpinned modern package versions (EF Core 10.0.6, etc.) that only support
         #     net8.0+ (21x NU1202).
-        # - vgm/VGM.sln
-        #     VGM.Web targets classic .NET Framework 4.5 (MSB3644: reference assemblies
-        #     not available on this SDK/OS; Windows-only, pre-.NET-Core web project).
 
     steps:
       - name: Checkout

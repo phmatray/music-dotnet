@@ -30,8 +30,8 @@
 
 
 
-> **Music and audio for .NET** — a theory library, a chord engine, MIDI tooling,
-> Web Audio bindings, and a VGM player, consolidated in one place (full git history preserved).
+> **Music and audio for .NET** — a theory library, a chord engine, MIDI tooling and
+> Web Audio bindings, consolidated in one place (full git history preserved).
 
 ## Projects
 
@@ -41,7 +41,6 @@
 | [`chord-engine/`](chord-engine) | **Chord generation, analysis & Blazor visualization** | `phmatray/ChordEngine` |
 | [`midi/`](midi) | **MIDI processing** toolkit with OpenJam integration | `phmatray/midiminuit` |
 | [`webaudio-interop/`](webaudio-interop) | **Web Audio API** bindings for Blazor (C# ⇄ TS/JS interop) | `phmatray/WebAudioInterop` |
-| [`vgm/`](vgm) | **Video Game Music** management & playback web app | `phmatray/vgm` |
 
 ## Features
 
@@ -53,7 +52,7 @@
 
 ```bash
 git clone https://github.com/phmatray/music-dotnet.git
-cd music-dotnet/theory   # or chord-engine / midi / webaudio-interop / vgm
+cd music-dotnet/theory   # or chord-engine / midi / webaudio-interop
 dotnet build
 ```
 
@@ -66,14 +65,14 @@ original repositories are archived and redirect here.
 
 ## Tech Stack
 
-- **.NET 7 · netcoreapp1.1**
-- Microsoft.AspNetCore.Components.WebAssembly
+- **.NET 8 · .NET 10**
+- Microsoft.AspNetCore.Components.WebAssembly (Blazor)
 - Microsoft.AspNetCore.Components.WebAssembly.DevServer
+- xunit · xunit.runner.visualstudio
 - Shouldly
-- xunit
-- xunit.runner.visualstudio
-- Microsoft.NETCore.UniversalWindowsPlatform
-- MvvmLight
+
+`midi/` is archived and not built — it targets `netcoreapp1.1` and UWP
+(`Microsoft.NETCore.UniversalWindowsPlatform`, MvvmLight).
 
 <!-- portfolio-techstack:end -->
 
