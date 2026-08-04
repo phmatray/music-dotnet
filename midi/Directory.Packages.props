@@ -1,0 +1,10 @@
+<Project>
+
+  <PropertyGroup>
+    <!-- Opt midi/ out of the repo-root Central Package Management. These legacy
+         projects pin their versions inline (and via project.json/packages.config),
+         which CPM rejects with NU1008. See midi/Directory.Build.props. -->
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+</Project>

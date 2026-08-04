@@ -1,0 +1,45 @@
+<Project>
+
+  <PropertyGroup>
+    <!-- Enable Central Package Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Build and SourceLink -->
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.301" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- ASP.NET Core / Blazor -->
+    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.10" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.10" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.10" />
+    <PackageVersion Include="Microsoft.TypeScript.MSBuild" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- UI Framework -->
+    <PackageVersion Include="MudBlazor" Version="9.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Testing. All suites run on xunit.v3 under the native Microsoft.Testing.Platform
+         runner. xunit 2.x is deliberately absent: do not reintroduce it.
+
+         Microsoft.Testing.Extensions.CodeCoverage is also deliberately absent. xunit.v3
+         3.2.2 is built against MTP v1 (see its xunit.v3.core.mtp-v1 dependency) and pins
+         Microsoft.Testing.Platform.MSBuild to 1.9.1, while every current CodeCoverage
+         release (18.6.2 through 18.9.0) requires MTP 2.x. NuGet unifies the platform
+         assembly upward, the v1 MSBuild hook then cannot find IDataConsumer in
+         Microsoft.Testing.Platform.Extensions.TestHost, and every test run dies with a
+         TypeLoadException. Re-add it only once xunit.v3 ships an mtp-v2 build; until
+         then it forces the whole repo back onto the classic VSTest bridge. -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
+    <PackageVersion Include="xunit.v3" Version="3.2.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Shouldly" Version="4.3.0" />
+    <PackageVersion Include="bunit" Version="2.9.0" />
+  </ItemGroup>
+
+</Project>
