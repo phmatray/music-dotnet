@@ -1,12 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- Lib publiee sur NuGet (2 327 telechargements) : net8.0 (LTS jusqu'au 10/11/2026) + net10.0.
-         net9.0 retire, hors support depuis le 12/05/2026.
-         TargetFramework doit etre vide : herite de Directory.Build.props, non vide il ferait
-         ignorer TargetFrameworks par le SDK. -->
-    <TargetFramework></TargetFramework>
-    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <!-- Lib publiee sur NuGet : net10.0 uniquement.
+         net8.0 retire volontairement pour simplifier (le multi-ciblage n'apportait
+         qu'une surface de build supplementaire). TargetFramework vient de la
+         Directory.Build.props a la racine du depot. -->
 
     <!-- Package Information -->
     <PackageId>MusicTheory</PackageId>

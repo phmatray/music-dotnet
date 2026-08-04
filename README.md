@@ -52,8 +52,9 @@
 
 ```bash
 git clone https://github.com/phmatray/music-dotnet.git
-cd music-dotnet/theory   # or chord-engine / midi / webaudio-interop
-dotnet build
+cd music-dotnet
+dotnet build music-dotnet.slnx
+dotnet test  music-dotnet.slnx
 ```
 
 ## History
@@ -65,14 +66,18 @@ original repositories are archived and redirect here.
 
 ## Tech Stack
 
-- **.NET 8 · .NET 10**
+- **.NET 10** (single target across the repo)
 - Microsoft.AspNetCore.Components.WebAssembly (Blazor)
-- Microsoft.AspNetCore.Components.WebAssembly.DevServer
-- xunit · xunit.runner.visualstudio
-- Shouldly
+- MudBlazor
+- xunit.v3 on Microsoft.Testing.Platform · Shouldly · bunit
+
+Build configuration is centralised at the repo root: `Directory.Build.props` sets the
+target framework, `Directory.Packages.props` pins every package version (Central
+Package Management), and `global.json` pins the SDK.
 
 `midi/` is archived and not built — it targets `netcoreapp1.1` and UWP
-(`Microsoft.NETCore.UniversalWindowsPlatform`, MvvmLight).
+(`Microsoft.NETCore.UniversalWindowsPlatform`, MvvmLight), and opts out of the root
+build configuration via its own `Directory.Build.props`.
 
 <!-- portfolio-techstack:end -->
 

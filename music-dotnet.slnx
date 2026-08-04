@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/chord-engine/">
+    <Project Path="chord-engine/ChordEngine.DemoBlazor/ChordEngine.DemoBlazor.csproj" />
+    <Project Path="chord-engine/ChordEngine.UnitTests/ChordEngine.UnitTests.csproj" />
+    <Project Path="chord-engine/ChordEngine/ChordEngine.csproj" />
+  </Folder>
+  <Folder Name="/theory/">
+    <Project Path="theory/GuitarChords/GuitarChords.csproj" />
+    <Project Path="theory/MusicTheory.UnitTests/MusicTheory.UnitTests.csproj" />
+    <Project Path="theory/MusicTheory/MusicTheory.csproj" />
+  </Folder>
+  <Folder Name="/webaudio-interop/">
+    <Project Path="webaudio-interop/WebAudioInterop/WebAudioInterop.csproj" />
+  </Folder>
+</Solution>

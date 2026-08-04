@@ -1,0 +1,13 @@
+<Project>
+
+  <!-- Intentionally empty.
+
+       midi/ is archived and not built (UWP + netcoreapp1.1). MSBuild stops its
+       walk-up at the first Directory.Build.props it finds, so this file shields
+       the legacy projects here from the repo-root defaults (net10.0 TFM, nullable,
+       implicit usings, SourceLink), which they cannot satisfy.
+
+       The three UWP apps (DrumPadMachine, IntervalCalculator, OpenJam) are slated
+       for a rewrite as Blazor apps against MusicTheory; this file goes away then. -->
+
+</Project>
